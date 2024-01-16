@@ -14,7 +14,7 @@ export async function generateMetadata() {
  
   }
 }
-
+//
 export default async function Home() {
   const dataFilePath = path.join(process.cwd() + '/public/brandNames.json')
   const brandNames = await fs.readFile(dataFilePath, 'utf8');
