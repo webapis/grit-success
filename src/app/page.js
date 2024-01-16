@@ -1,95 +1,49 @@
-import Image from 'next/image'
-import styles from './page.module.css'
 
-export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+import BrandInfor from './components/BrandInfor'
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+import { promises as fs } from 'fs';
+import { Container, Typography } from '@mui/material';
+import NextPagination from './components/NextPagination';
+import filterByKeywords from './utils/filterByKeywords'
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+export async function generateMetadata() {
+ 
+  return {
+    title: 'Kıyafet Markaları' ,
+ 
+  }
 }
+
+export default async function Home() {
+  const brandNames = await fs.readFile(process.cwd() + '/public/brandNames.json', 'utf8');
+  const brandObjects = JSON.parse(brandNames)
+  const filteredObjects = filterByKeywords(brandObjects, [
+    "kadın",
+    "kıyafet",
+    "kıyafeti",
+    "gelinlik",
+    "erkek",
+    "bebek",
+    "takı",
+    "pijama",
+    "sabahlık",
+    "gecelik"
+  ])
+  console.log('filteredObjects', Math.ceil(filteredObjects.length / 20))
+
+  const pageCount = Math.ceil(filteredObjects.length / 20)
+  //const arrayOfPages= Array.from({ length: pageCount }, (_, i) => i);
+
+
+  return <Container>
+     <Typography variant='h2'>Kıyafet Markaları</Typography>
+    {filteredObjects.filter((f,i)=> i<=20 ).map((m, i) => { return <BrandInfor key={i} description={m.description} tag={m.tag} title={m.title} keywords={m.keywords} href={m.href} /> })}
+
+    <div>
+      <NextPagination pageCount={pageCount} page={1} />
+    </div>
+  </Container>
+}
+
+
