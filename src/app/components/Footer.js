@@ -13,7 +13,7 @@ const Footer = () => {
       <Container maxWidth="lg">
    
         <Typography variant="body2" color="textSecondary" align="center">
-          © {new Date().getFullYear()} Glumzi.com. Her hakkı saklıdır.
+          © {new Date().getFullYear()} Glumzi.com. Her hakkı saklıdır. glumzi.land@gmail.com
         </Typography>
       </Container>
     </footer>
