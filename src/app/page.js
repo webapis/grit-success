@@ -1,7 +1,7 @@
 
 
 import BrandInfor from './components/BrandInfor'
-
+import path from 'path'
 import { promises as fs } from 'fs';
 import { Container, Typography } from '@mui/material';
 import NextPagination from './components/NextPagination';
@@ -16,7 +16,8 @@ export async function generateMetadata() {
 }
 
 export default async function Home() {
-  const brandNames = await fs.readFile(process.cwd() + '/public/brandNames.json', 'utf8');
+  const dataFilePath = path.join(process.cwd() + '/public/brandNames.json')
+  const brandNames = await fs.readFile(dataFilePath, 'utf8');
   const brandObjects = JSON.parse(brandNames)
   const filteredObjects = filterByKeywords(brandObjects, [
     "kadın",
