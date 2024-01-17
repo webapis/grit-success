@@ -1,5 +1,7 @@
 
-
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import Link from '@mui/material/Link';
+import HomeIcon from '@mui/icons-material/Home';
 import BrandInfor from './components/BrandInfor'
 import path from 'path'
 import { promises as fs } from 'fs';
@@ -38,6 +40,17 @@ export default async function Home() {
 
 
   return <Container>
+        <Breadcrumbs>
+
+        <Typography
+          sx={{ display: 'flex', alignItems: 'center' }}
+          color="text.primary"
+        >
+     
+     <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
+          Anasayfa
+        </Typography>
+    </Breadcrumbs>
      <Typography variant='h2'>Kıyafet Markaları</Typography>
     {filteredObjects.filter((f,i)=> i<=20 ).map((m, i) => { return <BrandInfor key={i} description={m.description} tag={m.tag} title={m.title} keywords={m.keywords} href={m.href} /> })}
 
