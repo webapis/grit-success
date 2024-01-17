@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Pagination from '@mui/material/Pagination';
 import { useRouter } from 'next/navigation'
 import LinearProgress from '@mui/material/LinearProgress';
-export default function NextPagination({ pageCount, page }) {
+export default function NextPagination({ pageCount, page,pagePrefix }) {
     const [loading, setLoading] = useState(false)
     const router = useRouter()
 

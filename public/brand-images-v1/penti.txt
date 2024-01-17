@@ -1,2 +1,2 @@
 https://www.penti.com/tr/
-kıyafet
+kıyafet,kadın,erkek,çocuk

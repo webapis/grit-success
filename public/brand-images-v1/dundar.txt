@@ -1,2 +1,2 @@
 https://www.dundarcorap.com/
-çorap,kadın,erkek,çocuk,thermal, diabetik
+kıyafet,çorap,kadın,erkek,çocuk,thermal, diabetik

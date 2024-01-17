@@ -1,2 +1,2 @@
 https://www.leecooper.com.tr/
-kıyafet
+kıyafet,kadın,erkek,çocuk

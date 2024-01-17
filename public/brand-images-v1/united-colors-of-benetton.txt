@@ -1,2 +1,2 @@
 https://tr.benetton.com/
-kıyafet
+kıyafet,kadın,erkek,çocuk
