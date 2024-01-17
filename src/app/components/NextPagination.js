@@ -11,7 +11,7 @@ export default function NextPagination({ pageCount, page,pagePrefix }) {
     function handleChange(event, value) {
         event.preventDefault()
         setLoading(true)
-        const href = `/page/${value}`
+        const href = `${pagePrefix}page/${value}`
         router.push(href)
 
     }

@@ -55,7 +55,7 @@ export default async function Home() {
     {filteredObjects.filter((f,i)=> i<=20 ).map((m, i) => { return <BrandInfor key={i} description={m.description} tag={m.tag} title={m.title} keywords={m.keywords} href={m.href} /> })}
 
     <div>
-      <NextPagination pageCount={pageCount} page={1} />
+      <NextPagination pageCount={pageCount} page={1} pagePrefix="/"/>
     </div>
   </Container>
 }

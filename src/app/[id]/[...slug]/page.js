@@ -9,23 +9,35 @@ import { promises as fs } from 'fs';
 import pageMetaObjects from './pageMetadata.json'
 import filterByKeywords from '@/app/utils/filterByKeywords';
 
+
+export async function generateMetadata(props) {
+    const {params:{slug}}=props
+    const selectedPageMeta= pageMetaObjects.find(f=>f.id==='k' && f.slug===slug[0])
+    return {
+      title: selectedPageMeta.pageTitle ,
+   
+    }
+  }
+  
+
 export default async function Page (props){
     const {params:{id,slug}}=props
-    console.log('props', id, slug)
-    const pageSize=10
-    const currentPage =slug[1] ? slug[1] :1
+  
+    const pageSize=20
+    const currentPage =slug[2] ? slug[2] :1
     const startIndex = (currentPage - 1) * pageSize;
     const endIndex = startIndex + pageSize;
     const selectedPageMeta= pageMetaObjects.find(f=>f.id==='k' && f.slug===slug[0])
 
-    console.log('selectedPageMeta',selectedPageMeta)
+
     const dataFilePath = path.join(process.cwd() + '/public/brandNames.json')
     const brandNames = await fs.readFile(dataFilePath, 'utf8');
     const brandObjects = JSON.parse(brandNames)
     const filteredObjects = filterByKeywords(brandObjects,selectedPageMeta.filter )
     const currentPageData = filteredObjects.slice(startIndex, endIndex);
-    const pageCount = Math.ceil(filteredObjects.length / 10)
-    console.log('currentPageData',currentPageData.length)
+    const pageCount = Math.ceil(filteredObjects.length / 20)
+
+    debugger
     return <Container>
     <Breadcrumbs>
     <Link
@@ -47,7 +59,7 @@ export default async function Page (props){
     </Breadcrumbs>
       <Typography variant='h2'>{selectedPageMeta.pageTitle}</Typography>
     {currentPageData.map((m, i) => { return <BrandInfor key={i} description={m.description} tag={m.tag} title={m.title} keywords={m.keywords} href={m.href} /> })}
-    <NextPagination pageCount={pageCount} page={parseInt(currentPage)} />
+    <NextPagination pageCount={pageCount} page={parseInt(currentPage)} pagePrefix={`/k/${slug[0]}/`} />
   </Container>
 
 }
