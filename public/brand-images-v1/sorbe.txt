@@ -1,2 +1,3 @@
 https://www.sorbe.co/
-kadın kıyafet
+kıyafet
+kadın,kıyafet

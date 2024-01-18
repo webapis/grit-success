@@ -1,2 +1,3 @@
 https://www.ladymina.net/
-kıyafet,kadın,bebek
+kıyafet
+kadın,bebek,pijama,sabahlık,emzirme t-shirt

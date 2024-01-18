@@ -1,2 +1,3 @@
 https://www.dsdamat.com/
-erkek kıyafeti
+kıyafet,ayakkabı,aksesuar
+erkek,kıyafet,çanta,ayakkabı

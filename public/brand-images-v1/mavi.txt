@@ -1,2 +1,3 @@
 https://www.mavi.com/
-kıyafet
+kıyafet,ayakkabı,kozmetik,aksesuar
+kadın,erkek,çocuk,kıyafet,ayakkabı,kozmetik

@@ -1,2 +1,3 @@
 https://www.mobzandi.com/
-mobilya,koltuk
+mobilya
+mobilya,koltuk, köşe takımı,salon takımı

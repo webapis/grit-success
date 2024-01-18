@@ -1,2 +1,3 @@
 https://www.keramika.com.tr/
-kupalar,kahve fıncanları,çay fıncanları,kaseler
+sofra
+kupa,kahve fıncan,çay fıncan,kase,çerezlik,sosluk,zeytinlik,kayık tabak

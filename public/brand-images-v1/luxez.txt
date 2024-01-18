@@ -1,2 +1,3 @@
 https://www.luxez.co/
-kadın kıyafeti
+kıyafet
+kadın,kıyafet

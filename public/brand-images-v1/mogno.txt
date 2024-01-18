@@ -1,2 +1,3 @@
 https://mogno.com.tr/
-mobilya,lüks
+mobilya
+mobilya,lüks,adriana,art istanbul,yatak odası,yemek odası,tv set,yaşam odası

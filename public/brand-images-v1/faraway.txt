@@ -1,2 +1,3 @@
 https://farawayclothing.com/
-kıyafet,kadın,erkek,çocuk,takı
+kıyafet,ayakkabı,takı
+kadın,erkek,çocuk,takı,küpe,bileklik

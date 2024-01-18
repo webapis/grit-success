@@ -1,2 +1,4 @@
 https://www.beymenclub.com/
-kıyafet,kadın,erkek,outlet
+kıyafet,ayakkabı,aksesuar,takı
+kadın,erkek,ayakkabı,çanta,kolye,küpe,bileklik,yüzük,kemer
+

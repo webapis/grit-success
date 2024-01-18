@@ -1,2 +1,3 @@
 https://www.batikmoda.com/
-kadın kıyafeti
+kıyafet
+kadın,kıyafet,dış giyim,üst giyim,alt giyim

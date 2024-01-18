@@ -1,2 +1,3 @@
 https://www.sofiaszoo.com.tr/
 takı
+kadın,erkek,broş,küpe,kolye

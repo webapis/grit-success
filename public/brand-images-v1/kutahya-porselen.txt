@@ -1,2 +1,3 @@
 https://kutahyaporselen.com/
-sofra,mutfak,çay&kahve
+sofra,mutfak
+yemek takımı,kahvaltı takımı,çatal kaşık bıcak takımı,tencere,tavan

@@ -1,2 +1,3 @@
 https://www.myall.com.tr/
-kadın çanta
+çanta
+kadın,çanta

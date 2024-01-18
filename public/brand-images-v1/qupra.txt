@@ -1,2 +1,3 @@
 https://www.qupra.com.tr/
-kadın kıyafeti
+kıyafet
+kadın,kıyafet,günlük,abiye,takım,spor

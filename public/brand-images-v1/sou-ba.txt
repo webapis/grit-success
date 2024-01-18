@@ -1,2 +1,3 @@
 https://souba.com.tr/
-çantalar, el çantası
+çanta,aksesuar
+kadın,çanta, el çantası

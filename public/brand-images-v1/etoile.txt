@@ -1,2 +1,3 @@
 https://www.etoilepijama.com/
-kıyafet,pijama,sabahlık,gecelik
+kıyafet
+kadın,pijama,sabahlık,gecelik
