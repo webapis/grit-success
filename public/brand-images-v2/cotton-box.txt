@@ -1,2 +1,3 @@
 https://cottonbox.com.tr/
-tekstil, ev tekstili ürünleri,
+tekstil
+bebek,çocuk,uyku seti,battaniye,yatak örtüsü,banyo,yorgan,yastık,pike

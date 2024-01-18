@@ -1,2 +1,3 @@
 https://www.kulah.com.tr/
-kıyafet,kadın,erkek,çocuk
+kıyafet
+kadın,erkek,çocuk,kıyafet

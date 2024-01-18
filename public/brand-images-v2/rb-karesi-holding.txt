@@ -1,2 +1,3 @@
 https://www.rbkaresi.com.tr/
 Kimya,Tekstil,Enerji,Geri Dönüşüm
+Kimya,Tekstil,Enerji,Geri Dönüşüm

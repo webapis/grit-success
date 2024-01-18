@@ -1,2 +1,3 @@
 https://www.beautyomelette.com/
-kadın kıyafet, kozmetik,cilt bakımı,saç bakımı
+kıyafet,kozmetik,aksesuar,takı
+kadın,kıyafet,çanta, kozmetik,cilt bakımı,saç bakımı,bileklik,küpe,kolye

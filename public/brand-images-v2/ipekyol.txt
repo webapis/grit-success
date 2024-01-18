@@ -1,2 +1,3 @@
 https://www.ipekyol.com.tr/
-kadın kıyafeti,kozmetik
+kıyafet,kozmetik,aksesuar,ayakkabı
+kadın,kıyafet,kozmetik,kişisel bakım,ev kozmetiği,seyahat seti,ayakkabı,çanta,cüzdan

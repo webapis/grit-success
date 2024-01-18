@@ -1,2 +1,3 @@
 https://www.setre.com/
-kadın kıyafeti
+kıyafet,takı,kozmetik
+kadın,kıyafet,takı,ofis giyim,gece elbise,parfüm

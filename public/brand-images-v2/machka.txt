@@ -1,2 +1,3 @@
 https://www.machka.com.tr/
-kadın kıyafeti
+kıyafet
+kadın,kıyafet

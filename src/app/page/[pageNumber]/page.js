@@ -61,7 +61,7 @@ const dataFilePath = path.join(process.cwd() + '/public/brandNames.json')
         </Typography>
     </Breadcrumbs>
       <Typography variant='h2'>Kıyafet Markaları</Typography>
-    {currentPageData.map((m, i) => { return <BrandInfor key={i} description={m.description} tag={m.tag} title={m.title} keywords={m.keywords} href={m.href} /> })}
+    {currentPageData.map((m, i) => { return <BrandInfor key={i} description={m.description} tag={m.tag} title={m.title} keywords={m.tagwords} href={m.href} /> })}
     <NextPagination pageCount={pageCount} page={parseInt(pageNumber)} pagePrefix="/" />
   </Container>
 }

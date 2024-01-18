@@ -1,2 +1,3 @@
 https://www.czlondon.com/
-ayakkabı,kadın,erkek,bebek ,çanta,deri ceket,mont
+kıyafet,ayakkabı,aksesuar
+kadın,erkek,bebek,çanta

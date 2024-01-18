@@ -1,2 +1,3 @@
 https://www.luxplastic.com/
+mutfak,banyo
 cam,mutfak,ev&yaşam,banyo

@@ -1,2 +1,3 @@
 https://www.levis.com.tr/
-kıyafet,kadın,erkek
+kıyafet,ayakkabı,aksesuar
+kadın,erkek,kıyafet,ayakkabı,cüzdan

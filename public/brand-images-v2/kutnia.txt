@@ -1,2 +1,3 @@
 https://tr.kutnia.com/
-kadın kıyafeti
+kıyafet,ayakkabı
+kadın,kıyafet,ayakkabı,terlik

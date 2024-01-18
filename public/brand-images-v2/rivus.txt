@@ -1,2 +1,3 @@
 https://rivus.com.tr/en
-kadın kıyafeti
+kıyafet,aksesuar,ayakkabı,takı
+kadın,kıyafet,deri,ayakkabı,çanta,vegan,takı

@@ -1,2 +1,3 @@
 https://www.kravatkolik.com/
-kıyafet, kravat
+kravat,aksesuar,takı
+erkek,papyon,kravat,takı,kolye,bileklik,çanta,cüzdan

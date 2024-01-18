@@ -1,2 +1,3 @@
 https://www.ecocotton.com.tr/
-tekstil ürünleri,banyo,yatak odası,bebek ve çocuk,mutfak,kıyafet,ev&yaşam
+kıyafet,tekstil
+kadın,erkek,banyo,yatak odası,bebek ve çocuk,mutfak,kıyafet,ev&yaşam

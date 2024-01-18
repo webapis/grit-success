@@ -1,2 +1,3 @@
 https://www.colins.com.tr/
-kıyafet,kadın,erkek
+kıyafet,aksesuar,ayakkabı
+kadın,erkek,kıyafet,çanta,atkı,bere,kemer,cüzdan,terlik

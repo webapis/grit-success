@@ -1,2 +1,3 @@
 https://www.aldisahome.com/
-mobilya,koltuk
+mobilya
+koltuk takımı,aksesuarlar

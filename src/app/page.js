@@ -22,16 +22,8 @@ export default async function Home() {
   const brandNames = await fs.readFile(dataFilePath, 'utf8');
   const brandObjects = JSON.parse(brandNames)
   const filteredObjects = filterByKeywords(brandObjects, [
-    "kadın",
-    "kıyafet",
-    "kıyafeti",
-    "gelinlik",
-    "erkek",
-    "bebek",
-    "takı",
-    "pijama",
-    "sabahlık",
-    "gecelik"
+    "kıyafet"
+
   ])
   console.log('filteredObjects', Math.ceil(filteredObjects.length / 20))
 
@@ -52,7 +44,7 @@ export default async function Home() {
         </Typography>
     </Breadcrumbs>
      <Typography variant='h2'>Kıyafet Markaları</Typography>
-    {filteredObjects.filter((f,i)=> i<=20 ).map((m, i) => { return <BrandInfor key={i} description={m.description} tag={m.tag} title={m.title} keywords={m.keywords} href={m.href} /> })}
+    {filteredObjects.filter((f,i)=> i<=20 ).map((m, i) => { return <BrandInfor key={i} description={m.description} tag={m.tag} title={m.title} keywords={m.tagwords} href={m.href} /> })}
 
     <div>
       <NextPagination pageCount={pageCount} page={1} pagePrefix="/"/>

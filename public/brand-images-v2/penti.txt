@@ -1,2 +1,3 @@
 https://www.penti.com/tr/
-kıyafet,kadın,erkek,çocuk
+kıyafet,aksesuar,ayakkabı
+kadın,erkek,çocuk,kıyafet,ayakkabı,çanta

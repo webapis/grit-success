@@ -1,2 +1,3 @@
 https://tr.benetton.com/
-kıyafet,kadın,erkek,çocuk
+kıyafet,ayakkabı,çanta
+kıyafet,kadın,erkek,çocuk,çanta

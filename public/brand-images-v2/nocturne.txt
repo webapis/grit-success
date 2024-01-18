@@ -1,2 +1,3 @@
 https://www.nocturne.com.tr/
-kadın kıyaferi
+kıyafet,aksesuar,kozmetik,ayakkabı
+kadın,kıyafet,çanta,kozmetik,ayakkabı

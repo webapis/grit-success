@@ -1,2 +1,3 @@
 https://www.twist.com.tr/
-kadın kıyafeti
+kıyafet,takı,aksesuar,ayakkabı,çanta
+kadın,kıyafet,ayakkabı,takı,çanta

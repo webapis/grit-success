@@ -1,2 +1,3 @@
 https://www.lovemybody.com.tr/
-kadın kıyafeti
+kıyafet,ayakkabı,aksesuar
+kadın,kıyafet,ayakkabı,çanta

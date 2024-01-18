@@ -1,2 +1,3 @@
 https://gustoeshop.com/
-kadın kıyafet
+kıyafet,aksesuar,takı
+kadın,kıyafet,abiye,broş,kolye,küpe

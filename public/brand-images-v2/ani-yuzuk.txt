@@ -1,2 +1,3 @@
 https://www.aniyuzuk.com/
-takı
+takı,cüzdan,rozet
+kadın,erkek,yüzük,kolye,tespi,tesbih,bileklik,saat

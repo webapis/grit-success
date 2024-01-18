@@ -1,2 +1,3 @@
 https://alissenuera.com/
-kıyafet,gelinlik,gelinlik taçları
+kıyafet
+kadın,gelinlik,gelinlik taçları

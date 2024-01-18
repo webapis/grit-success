@@ -58,7 +58,7 @@ export default async function Page (props){
         </Typography>
     </Breadcrumbs>
       <Typography variant='h2'>{selectedPageMeta.pageTitle}</Typography>
-    {currentPageData.map((m, i) => { return <BrandInfor key={i} description={m.description} tag={m.tag} title={m.title} keywords={m.keywords} href={m.href} /> })}
+    {currentPageData.map((m, i) => { return <BrandInfor key={i} description={m.description} tag={m.tag} title={m.title} keywords={m.tagwords} href={m.href} /> })}
     <NextPagination pageCount={pageCount} page={parseInt(currentPage)} pagePrefix={`/k/${slug[0]}/`} />
   </Container>
 
