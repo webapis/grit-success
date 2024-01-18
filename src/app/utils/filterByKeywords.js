@@ -1,6 +1,22 @@
 export default function filterByKeywords(mainArray, keywordsArray) {
     return mainArray.filter(obj => {
       // Convert keywords to lowercase for case-insensitive matching
+
+   
+      const lowercaseKeywords = keywordsArray.map(keyword => keyword.toLowerCase());
+
+
+      // Check if any of the keywords intersect with the object's keywords
+      return lowercaseKeywords.every(keyword => [...obj.tagwords.split(","),...obj.keywords.split(",")].some(objKeyword => objKeyword.toLowerCase().includes(keyword)));
+    });
+  }
+
+  
+
+  /*
+  export default function filterByKeywords(mainArray, keywordsArray) {
+    return mainArray.filter(obj => {
+      // Convert keywords to lowercase for case-insensitive matching
       const lowercaseKeywords = keywordsArray.map(keyword => keyword.toLowerCase());
   
       // Check if any of the keywords intersect with the object's keywords
@@ -9,3 +25,4 @@ export default function filterByKeywords(mainArray, keywordsArray) {
   }
 
   
+  */

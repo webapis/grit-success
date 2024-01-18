@@ -28,16 +28,8 @@ const dataFilePath = path.join(process.cwd() + '/public/brandNames.json')
   const brandNames = await fs.readFile(dataFilePath, 'utf8');
   const brandObjects = JSON.parse(brandNames)
   const filteredObjects = filterByKeywords(brandObjects, [
-    "kadın",
     "kıyafet",
-    "kıyafeti",
-    "gelinlik",
-    "erkek",
-    "bebek",
-    "takı",
-    "pijama",
-    "sabahlık",
-    "gecelik"
+
   ])
   const currentPageData = filteredObjects.slice(startIndex, endIndex);
   const pageCount = Math.ceil(filteredObjects.length / 20)

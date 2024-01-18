@@ -6,8 +6,33 @@
         "id":"k",
         "filter": [
             "kadın",
-            "kıyafet",
-            "kıyafeti"
+            "kıyafet"
+          
+         
+        ]
+    },
+
+    {
+        "slug": "erkek-kiyafet-markalari",
+        "pageTitle":"Erkek Kıyafet Markaları",
+        "description":"",
+        "id":"k",
+        "filter": [
+            "erkek",
+            "kıyafet"
+       
+         
+        ]
+    },
+    {
+        "slug": "kadin-taki-markalari",
+        "pageTitle":"Kadın Takı Markaları",
+        "description":"",
+        "id":"k",
+        "filter": [
+            "kadın",
+            "takı"
+       
          
         ]
     }
