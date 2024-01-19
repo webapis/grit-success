@@ -5,6 +5,7 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Footer from '../app/components/Footer';
+import Script from 'next/script'
 const inter = Poppins({ subsets: ['latin'], weight: ['400', '700'], })
 
 export const metadata = {
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
       </AppBar>
         {children}
 <Footer/>
+<Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1960990522971470" crossorigin="anonymous"/>
 <GoogleTagManager gtmId="GTM-WVW74LTW" />
         </body>
     </html>
