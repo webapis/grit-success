@@ -1,3 +1,4 @@
+import { GoogleTagManager } from '@next/third-parties/google'
 import { Inter,Poppins } from 'next/font/google'
 import './globals.css'
 import AppBar from '@mui/material/AppBar';
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
       </AppBar>
         {children}
 <Footer/>
+<GoogleTagManager gtmId="GTM-WVW74LTW" />
         </body>
     </html>
   )
