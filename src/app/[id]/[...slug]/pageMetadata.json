@@ -35,5 +35,17 @@
        
          
         ]
+    },
+    {
+        "slug": "deri-ceket-satan-markalar",
+        "pageTitle":"Kadın Takı Markaları",
+        "description":"",
+        "id":"liste",
+        "filter": [
+            "kadın",
+            "takı"
+       
+         
+        ]
     }
 ]
