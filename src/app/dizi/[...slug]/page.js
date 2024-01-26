@@ -1,13 +1,20 @@
 
-import path from 'path'
-import { promises as fs } from 'fs';
+
 import pageMetaObjects from './pageMetadata.json'
 import SearchResultContainer from './comp/SearchResultContainer';
-import { Grid,Container } from '@mui/material';
+
 const algoliasearch = require('algoliasearch');
 
 const client = algoliasearch("7JF244QSZZ", process.env.ALGOLIAKEY);
-
+export async function generateMetadata(props) {
+    const { params: {  slug } } = props
+  
+const selectedPageMeta = pageMetaObjects.find(f => f.slug === slug[0])
+    return {
+      title: selectedPageMeta.pageTitle ,
+   
+    }
+  }
 
 export default async function DiziPage(props) {
     const { params: {  slug } } = props
