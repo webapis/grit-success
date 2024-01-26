@@ -1,5 +1,39 @@
-export default function SearchResultItem(){
+import extractSubdomain from '../../../utils/extractSubdomain'
+
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import IconButton from '@mui/material/IconButton';
+import Link from 'next/link';
+export default function SearchResultItem({ item }) {
+    const { "Row Labels": name, Website, ServiceName, Acyklama } = item
+    const imageName = Website ? extractSubdomain(Website) : ""
+    return <Card sx={{ maxWidth: 345 }}>
+        <CardMedia
+            component="img"
+            alt="green iguana"
+            width="200"
+            image={`/dizi/marka/${imageName}.jpg`}
+        />
+        <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+                {name}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+                {Acyklama}
+            </Typography>
+        </CardContent>
+        <CardActions>
+            <IconButton component={Link} variant="contained" target='_blank' href={Website}>
+                Siteye Git
+                <OpenInNewIcon />
+            </IconButton>
+        </CardActions>
+    </Card>
 
 
-    return <div>SearchResultItem</div>
+
 }

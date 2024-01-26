@@ -1,4 +1,4 @@
-[
+export default [
     {
       "Row Labels": "Decorall",
       Website: "https://decorall.com/",
