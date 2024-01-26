@@ -28,7 +28,7 @@ export default function SearchResultItem({ item }) {
         </CardContent>
         <CardActions>
             <IconButton component={Link} variant="contained" target='_blank' href={Website}>
-                Siteye Git
+                web sitesine git
                 <OpenInNewIcon />
             </IconButton>
         </CardActions>
