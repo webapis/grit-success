@@ -10,7 +10,7 @@ export default function SearchResultContainer({ items,pageTitle }) {
                 </Grid>
         <Grid item xs={12} sx={{textAlign:"center"}}>
 
-            <img src={diziImage}/>
+            <img src={diziImage} alt={pageTitle}/>
         </Grid>
             {items.sort((a,b)=>b["Count of EpisodeNumber"]-a["Count of EpisodeNumber"]).map((m, i) => <Grid item key={i}> <SearchResultItem item={m} /></Grid>)}
         </Grid>

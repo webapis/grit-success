@@ -14,7 +14,7 @@ export default function SearchResultItem({ item }) {
     return <Card sx={{ maxWidth: 345 }}>
         <CardMedia
             component="img"
-            alt="green iguana"
+            alt={`${imageName} marka resmi`}
             width="200"
             image={`/dizi/marka/${imageName}.jpg`}
         />
