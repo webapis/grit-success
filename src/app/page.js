@@ -1,5 +1,5 @@
 import Application from "./Application"
-import Categories from "./home/components/categories"
+
 export async function generateMetadata() {
  
   return {
@@ -8,8 +8,8 @@ export async function generateMetadata() {
   }
 }
 
-export default async function Home({searchParams}) {
-console.log("props",JSON.stringify( searchParams))
+export default async function Home() {
+
 
     return <Application/>
 
