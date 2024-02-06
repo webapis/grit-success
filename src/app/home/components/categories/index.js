@@ -3,14 +3,14 @@ import { Grid, Typography,Container } from "@mui/material"
 
 const products = [
     
-{ image: '/home-images/elbise.jpg', title: 'Kadın Kıyafeti', url: '/?brand%5Bquery%5D=kadin%20elbise',alt:'Kadın Kıyafet Markalar'  }, 
-{ image: '/home-images/taki.jpg', title: 'Takı Markaları', url: '/?brand%5Bquery%5D=yüzük' },
-{ image: '/home-images/erkek-giyim-markalari.jpg', title: 'Erkek Kıyafeti', url: '/?brand%5Bquery%5D=erkek%20giyim',alt:'Erkek Kıyafet Markaları' },
-{ image: '/home-images/bebek-kiyafet-markalari.jpg', title: 'Bebek Kıyafeti', url: '/?brand%5Bquery%5D=bebek%20giyim',alt:'Bebek Kıyafet Markaları' },
-{ image: '/home-images/kiz-cocuk-kiyafet-markalari.jpg', title: 'Kız Çocuk Kıyafeti', url: '/?brand%5Bquery%5D=kiz%20cocuk%20giyim',alt:'Kız Çocuk Kıyafet Markaları' },
-{ image: '/home-images/erkek-cocuk-kiyafeti-markalar.jpg', title: 'Erkek Çocuk Kıyafeti', url: '/?brand%5Bquery%5D=erkek%20cocuk%20giyim',alt:'Erkek Çocuk Kıyafet Markaları' },
-{ image: '/home-images/kozmetik-urun-markalari.jpg', title: 'Kozmetik Ürünleri', url: '/?brand%5Bquery%5D=kozmetik',alt:'Kozmetik Ürün Markaları' },
-{ image: '/home-images/kadin-canta-markalari.jpg', title: 'Kadın Çantaları', url: '/?brand%5Bquery%5D=kadin%20canta',alt:'Kadın Çanta Markaları' }
+{ image: '/home-images/elbise.jpg', title: 'Kadın Kıyafeti', url: '/moda/?brand%5Bquery%5D=kadin%20elbise',alt:'Kadın Kıyafet Markalar'  }, 
+{ image: '/home-images/taki.jpg', title: 'Takı Markaları', url: '/moda/?brand%5Bquery%5D=yüzük' },
+{ image: '/home-images/erkek-giyim-markalari.jpg', title: 'Erkek Kıyafeti', url: '/moda/?brand%5Bquery%5D=erkek%20giyim',alt:'Erkek Kıyafet Markaları' },
+{ image: '/home-images/bebek-kiyafet-markalari.jpg', title: 'Bebek Kıyafeti', url: '/moda/?brand%5Bquery%5D=bebek%20giyim',alt:'Bebek Kıyafet Markaları' },
+{ image: '/home-images/kiz-cocuk-kiyafet-markalari.jpg', title: 'Kız Çocuk Kıyafeti', url: '/moda/?brand%5Bquery%5D=kiz%20cocuk%20giyim',alt:'Kız Çocuk Kıyafet Markaları' },
+{ image: '/home-images/erkek-cocuk-kiyafeti-markalar.jpg', title: 'Erkek Çocuk Kıyafeti', url: '/moda/?brand%5Bquery%5D=erkek%20cocuk%20giyim',alt:'Erkek Çocuk Kıyafet Markaları' },
+{ image: '/home-images/kozmetik-urun-markalari.jpg', title: 'Kozmetik Ürünleri', url: '/moda/?brand%5Bquery%5D=kozmetik',alt:'Kozmetik Ürün Markaları' },
+{ image: '/home-images/kadin-canta-markalari.jpg', title: 'Kadın Çantaları', url: '/moda/?brand%5Bquery%5D=kadin%20canta',alt:'Kadın Çanta Markaları' }
 ]
 
 export default function Categories() {
