@@ -1,4 +1,4 @@
-import Application from "../Application"
+import Application from "../AlgoliaProvider"
 import Categories from "../home/components/categories"
 export async function generateMetadata() {
 

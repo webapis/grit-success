@@ -11,7 +11,7 @@ export async function generateMetadata() {
 export default async function Home({searchParams}) {
 console.log("props",JSON.stringify( searchParams))
 
-    return <Categories/>
+    return <Application/>
 
 }
 

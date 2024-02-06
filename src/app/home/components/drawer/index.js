@@ -24,7 +24,10 @@ import MailIcon from '@mui/icons-material/Mail';
 //     SearchBox,RefinementList,InfiniteHits
 // } from 'react-instantsearch';
 
-
+import {
+  
+    SearchBox,RefinementList,InfiniteHits
+} from 'react-instantsearch';
 
 
 const drawerWidth = 240;
@@ -114,7 +117,7 @@ export default function PersistentDrawerLeft({children}) {
                         boxSizing: 'border-box',
                     },
                 }}
-                variant="temporary"
+                variant="persistent"
                 anchor="left"
                 open={open}
             >
@@ -124,20 +127,9 @@ export default function PersistentDrawerLeft({children}) {
                     </IconButton>
                 </DrawerHeader>
                 <Divider />
-                {/* <RefinementList attribute='category'/> */}
+                <RefinementList attribute='category'/>
                 <Divider />
-                <List>
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                        <ListItem key={text} disablePadding>
-                            <ListItemButton>
-                                <ListItemIcon>
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                </ListItemIcon>
-                                <ListItemText primary={text} />
-                            </ListItemButton>
-                        </ListItem>
-                    ))}
-                </List>
+                <RefinementList attribute='gender'/>
             </Drawer>
             <Main open={open}>
                 <DrawerHeader />

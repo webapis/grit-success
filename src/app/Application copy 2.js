@@ -18,8 +18,7 @@ export default  function Application({query}) {
         <Box sx={{width:{xs:'100%', md:'50%'},margin:'0 auto',marginTop:3, marginBottom:3 }}>
         <SearchBox searchAsYouType={false}/>
         </Box>
-   <RefinementList attribute='category'/>
-   <RefinementList attribute='gender'/>
+
         {/* other widgets */}
         
         <Box sx={{width:{xs:'100%', md:'50%'},margin:'0 auto' }}>

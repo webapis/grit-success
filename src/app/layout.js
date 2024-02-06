@@ -1,9 +1,7 @@
 import { GoogleTagManager } from '@next/third-parties/google'
-import { Inter,Poppins } from 'next/font/google'
+import { Inter, Poppins } from 'next/font/google'
 import './globals.css'
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
+import AlgoliaProvider from './AlgoliaProvider';
 import Footer from '../app/components/Footer';
 import Script from 'next/script'
 import PersistentDrawerLeft from './home/components/drawer';
@@ -21,16 +19,19 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        
-      <PersistentDrawerLeft>
-      {children}
-      </PersistentDrawerLeft>
-       
-<Footer/>
-<Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9521301536686282" crossorigin="anonymous"/>
+        <AlgoliaProvider>
+          <PersistentDrawerLeft>
 
-<GoogleTagManager gtmId="GTM-WVW74LTW" />
-        </body>
+            {children}
+          </PersistentDrawerLeft>
+        </AlgoliaProvider>
+
+
+        <Footer />
+        <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9521301536686282" crossorigin="anonymous" />
+
+        <GoogleTagManager gtmId="GTM-WVW74LTW" />
+      </body>
     </html>
   )
 }
