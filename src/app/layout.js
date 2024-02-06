@@ -6,6 +6,9 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Footer from '../app/components/Footer';
 import Script from 'next/script'
+import 'instantsearch.css/themes/reset.css';
+
+import 'instantsearch.css/themes/satellite.css';
 const inter = Poppins({ subsets: ['latin'], weight: ['400', '700'], })
 
 export const metadata = {
