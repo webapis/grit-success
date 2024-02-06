@@ -6,6 +6,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Footer from '../app/components/Footer';
 import Script from 'next/script'
+import PersistentDrawerLeft from './home/components/drawer';
 import 'instantsearch.css/themes/reset.css';
 
 import 'instantsearch.css/themes/satellite.css';
@@ -21,17 +22,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         
-      <AppBar position="static">
-        <Toolbar>
-      
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-           
-            Glumzi
-          </Typography>
-    
-        </Toolbar>
-      </AppBar>
-        {children}
+      <PersistentDrawerLeft>
+      {children}
+      </PersistentDrawerLeft>
+       
 <Footer/>
 <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9521301536686282" crossorigin="anonymous"/>
 
