@@ -28,7 +28,8 @@ export default function ListItem({hit}) {
             <Typography sx={{fontSize:{xs:14,md:18} }}>{title}</Typography>
         </div>
         <div  style={{ paddingLeft:2 }}>
-            <img src={imageUrl} width="80" height="100" style={{  borderRadius: '10%', objectFit:'contain' }} alt={title}/>
+            {imageUrl&& imageUrl.length>0 &&   <img src={imageUrl} width="80" height="100" style={{  borderRadius: '10%', objectFit:'contain' }} alt={title}/>}
+          
         </div>
         
         </div>
