@@ -19,7 +19,7 @@ export default function Application() {
             <SearchBox searchAsYouType={false} />
         </Box>
         <Box sx={{ width: { xs: '100%', md: '50%' }, margin: '0 auto' }}>
-            <InfiniteHits hitComponent={ListItem} />
+            <InfiniteHits hitComponent={ListItem} showPrevious={false} />
         </Box>
 
     </Box>

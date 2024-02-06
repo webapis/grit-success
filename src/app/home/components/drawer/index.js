@@ -13,20 +13,15 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+
 // import {
-  
+
 //     SearchBox,RefinementList,InfiniteHits
 // } from 'react-instantsearch';
 
 import {
-  
-    SearchBox,RefinementList,InfiniteHits
+
+    SearchBox, RefinementList, InfiniteHits
 } from 'react-instantsearch';
 
 
@@ -77,7 +72,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
     justifyContent: 'flex-end',
 }));
 
-export default function PersistentDrawerLeft({children}) {
+export default function PersistentDrawerLeft({ children }) {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
@@ -92,20 +87,29 @@ export default function PersistentDrawerLeft({children}) {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar position="fixed" open={open}>
+            <AppBar position="fixed" open={open} style={{ color: '' }}>
                 <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        onClick={handleDrawerOpen}
-                        edge="start"
-                        sx={{ mr: 2, ...(open && { display: 'none' }) }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant="h6" noWrap component="div">
-                      Glumzi
-                    </Typography>
+                 
+                        <IconButton
+                            color="inherit"
+                            aria-label="open drawer"
+                            onClick={handleDrawerOpen}
+                            edge="start"
+                            sx={{ mr: 2, ...(open && { display: 'none' }) }}
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                        <Typography variant="h6" noWrap component="div" >
+                            Glumzi
+                        </Typography>
+                
+
+             
+                    
+
+
+
+
                 </Toolbar>
             </AppBar>
             <Drawer
@@ -127,16 +131,16 @@ export default function PersistentDrawerLeft({children}) {
                     </IconButton>
                 </DrawerHeader>
                 <Divider />
-                <RefinementList attribute='category'/>
+                <RefinementList attribute='category' />
                 <Divider />
-                <RefinementList attribute='gender'/>
+                <RefinementList attribute='gender' operator='and' />
             </Drawer>
             <Main open={open}>
                 <DrawerHeader />
-          
+
                 {children}
-             
-       
+
+
             </Main>
         </Box>
     );
