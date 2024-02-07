@@ -1,3 +1,7 @@
+
+
+
+
 .image-text-box {
   border: 1px solid #ddd;
   padding: 15px;
@@ -20,4 +24,8 @@
 
 .show-more-btn:hover {
   background-color: #eee;
+}
+
+.ais-Hits-item{
+  padding: 0.5rem !important;
 }
