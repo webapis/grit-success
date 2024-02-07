@@ -17,7 +17,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 import {
 
-     RefinementList
+    RefinementList
 } from 'react-instantsearch';
 
 
@@ -85,23 +85,23 @@ export default function PersistentDrawerLeft({ children }) {
             <CssBaseline />
             <AppBar position="fixed" open={open} style={{ color: '' }}>
                 <Toolbar>
-                 
-                        <IconButton
-                            color="inherit"
-                            aria-label="open drawer"
-                            onClick={handleDrawerOpen}
-                            edge="start"
-                            sx={{ mr: 2, ...(open && { display: 'none' }) }}
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                        <Typography variant="h6" noWrap component="div" >
-                            Glumzi
-                        </Typography>
-                
 
-             
-                    
+                    <IconButton
+                        color="inherit"
+                        aria-label="open drawer"
+                        onClick={handleDrawerOpen}
+                        edge="start"
+                        sx={{ mr: 2, ...(open && { display: 'none' }) }}
+                    >
+                        <MenuIcon />
+                    </IconButton>
+                    <Typography variant="h6" noWrap component="div" >
+                        Glumzi
+                    </Typography>
+
+
+
+
 
 
 
@@ -116,6 +116,7 @@ export default function PersistentDrawerLeft({ children }) {
                         width: drawerWidth,
                         boxSizing: 'border-box',
                     },
+
                 }}
                 variant="persistent"
                 anchor="left"
@@ -127,9 +128,18 @@ export default function PersistentDrawerLeft({ children }) {
                     </IconButton>
                 </DrawerHeader>
                 <Divider />
-                <RefinementList attribute='category' />
-                <Divider />
-                <RefinementList attribute='gender' operator='and' />
+                <div style={{ padding: 10 }}>
+                    <Typography variant='h4'>Kategori</Typography>
+                    <RefinementList searchable={true} attribute='category' showMore={true} translations={{
+                        showMoreButtonText({ isShowingMore }) {
+                            return isShowingMore ? 'Az kategori göster' : 'Fazla kategori göster';
+                        },
+                    }} />
+                    <Divider sx={{ paddingTop: 2 }} />
+                    <Typography variant='h4'>Cinsiyet</Typography>
+                    <RefinementList attribute='gender' operator='and' showMore={true} />
+                </div>
+
             </Drawer>
             <Main open={open}>
                 <DrawerHeader />

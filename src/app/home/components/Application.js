@@ -3,7 +3,7 @@
 
 import {
 
-    SearchBox, InfiniteHits
+    SearchBox, InfiniteHits,Stats ,CurrentRefinements 
 } from 'react-instantsearch';
 import PersistentDrawerLeft from './drawer';
 import AlgoliaProvider from './AlgoliaProvider'
@@ -18,13 +18,17 @@ export default function Application() {
 
       
     <Box>
-        <Box sx={{ width: { xs: '100%', md: '50%' }, margin: '0 auto', marginTop: 3, marginBottom: 3 }}>
+        <Box sx={{ width: { xs: '100%', md: '50%' }, margin: '0 auto', marginTop: 3 }}>
 
             <SearchBox searchAsYouType={false} placeholder='Kıyafet, Aksesuar, Takı...' />
         </Box>
         <Box sx={{ width: { xs: '100%', md: '50%' }, margin: '0 auto' }}>
-     
-            <InfiniteHits hitComponent={ListItem} showPrevious={false} />
+        <CurrentRefinements style={{padding:5}} />
+        <Stats style={{margin:5}}  />
+            <InfiniteHits hitComponent={ListItem} showPrevious={false}  translations={{
+  
+    showMoreButtonText: 'Daha fazla sonuç yükle',
+  }} />
        
         </Box>
 

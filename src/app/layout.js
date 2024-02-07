@@ -1,5 +1,6 @@
 import { GoogleTagManager } from '@next/third-parties/google'
 import { Inter, Poppins } from 'next/font/google'
+import ScrollToTopButton from './home/components/ScrollToTopButton';
 import './globals.css'
 
 import Footer from './components/Footer';
@@ -22,7 +23,7 @@ export default function RootLayout({ children }) {
 
             {children}
        
-
+<ScrollToTopButton/>
 
 
         <Footer />
