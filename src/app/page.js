@@ -1,5 +1,5 @@
-import Application from "./Application"
-
+import Application from "../app/home/components/Application"
+import { Suspense } from 'react'
 export async function generateMetadata() {
  
   return {
@@ -11,7 +11,9 @@ export async function generateMetadata() {
 export default async function Home() {
 
 
-    return <Application/>
+    return     <Suspense fallback={<p>Loading feed...</p>}>
+<Application/>
+  </Suspense>
 
 }
 

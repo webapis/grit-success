@@ -1,11 +1,13 @@
 import { GoogleTagManager } from '@next/third-parties/google'
 import { Inter, Poppins } from 'next/font/google'
 import './globals.css'
-
-import Footer from './components/Footer';
+import AlgoliaProvider from './AlgoliaProvider';
+import Footer from '../app/components/Footer';
 import Script from 'next/script'
+import PersistentDrawerLeft from './home/components/drawer';
+import 'instantsearch.css/themes/reset.css';
 
-
+import 'instantsearch.css/themes/satellite.css';
 const inter = Poppins({ subsets: ['latin'], weight: ['400', '700'], })
 
 export const metadata = {
@@ -17,12 +19,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-   
-
+        <AlgoliaProvider>
+          <PersistentDrawerLeft>
 
             {children}
-       
-
+          </PersistentDrawerLeft>
+        </AlgoliaProvider>
 
 
         <Footer />
