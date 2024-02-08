@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
 
             {children}
        
-<ScrollToTopButton/>
+<ScrollToTopButton />
 
 
         <Footer />

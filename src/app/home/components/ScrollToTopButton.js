@@ -41,6 +41,7 @@ const ScrollToTopButton = () => {
           position: 'fixed',
           bottom: 16,
           right: 16,
+          marginBottom:70,
           display: isVisible ? 'block' : 'none',
         }}
       >

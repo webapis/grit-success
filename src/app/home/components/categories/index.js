@@ -32,6 +32,6 @@ export default function Categories() {
     return <Container >
         <Typography variant="h4" sx={{ textAlign: 'center' }}>Kıyafet, Takı, Çanta Markaları</Typography>
         <Grid container gap={1} sx={{ display: 'flex', justifyContent: 'center' }}>
-            {products.map((m, i) => <Grid onClick={() => handler({ url: m.url })} key={i} item xs={5} md={3} ><div style={{ ...borderStyles, textAlign: 'center', cursor: 'pointer' }}><div><img alt={m.alt} src={`${m.image}`} style={{ width: 120, height: 200, objectFit: 'contain' }} /></div><Typography variant="body" style={{ textAlign: 'center', padding: 3 }}>{m.title}</Typography></div></Grid>)}
+            {products.map((m, i) => <Grid onClick={() => handler({ url: m.url })} key={i} item xs={5} md={3} ><div style={{ ...borderStyles, textAlign: 'center', cursor: 'pointer' }}><div><img alt={m.alt} src={`${m.image}`} style={{ width: 100, height: 180, objectFit: 'contain' }} /></div><Typography variant="body" style={{ textAlign: 'center', padding: 3 }}>{m.title}</Typography></div></Grid>)}
         </Grid></Container>
 }
