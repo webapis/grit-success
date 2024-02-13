@@ -2,66 +2,51 @@
 // EditActorDialog.js
 import React, { useState } from 'react';
 import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  Button,
-  TextField,
-  Autocomplete,
+    Dialog,
+    DialogTitle,
+    DialogContent,
+    DialogActions,
+    Button,
+    TextField,
+    Autocomplete,
 } from '@mui/material';
 
 const allActors = [
-  'Tom Hanks',
-  'Brad Pitt',
-  'Meryl Streep',
-  'Leonardo DiCaprio',
-  // Add more names as needed
+    'Tom Hanks',
+    'Brad Pitt',
+    'Meryl Streep',
+    'Leonardo DiCaprio',
+    // Add more names as needed
 ];
 
-const allCharacters = [
-  'Forrest Gump',
-  'Tyler Durden',
-  'Margaret Thatcher',
-  'Cobb',
-  // Add more characters as needed
+const allCarachters = [
+    'Tom Hanks',
+    'Brad Pitt',
+    'Meryl Streep',
+    'Leonardo DiCaprio',
+    // Add more names as needed
 ];
-
 const EditActorDialog = ({ open, onClose, actor, onSave }) => {
-  const [editedActor, setEditedActor] = useState(actor || {
-    name: '',
-    imageUrl: '',
-    season: '',
-    year: '',
-    productLink: '',
-    character: '',
-    productTitle: '',
-    alt: '',
-    date: '',
-    episode: '',
-    TVseries: '',
-    ProductCategory: '',
-  });
+    const [editedActor, setEditedActor] = useState(actor);
 
-  const handleInputChange = (event, newValue) => {
-    const { name, value } = event.target;
-    setEditedActor((prevActor) => ({
-      ...prevActor,
-      [name]: value || '',
-    }));
-  };
+    const handleInputChange = (event, newValue) => {
+        setEditedActor((prevActor) => ({
+            ...prevActor,
+            name: newValue || '', // Set the name to the selecated value or an empty string if cleared
+        }));
+    };
 
-  const handleSave = () => {
-    onSave(editedActor);
-    onClose();
-  };
+    const handleSave = () => {
+        onSave(editedActor);
+        onClose();
+    };
 
-  return (
-    <Dialog open={open} onClose={onClose}>
-      <DialogTitle>{actor ? 'Edit Actor' : 'Add New Actor'}</DialogTitle>
-      <DialogContent>
-      <Autocomplete size='small'
-                    options={allCharacters}
+    return (
+        <Dialog open={open} onClose={onClose}>
+            <DialogTitle>Edit Actor</DialogTitle>
+            <DialogContent>
+                <Autocomplete size='small'
+                    options={allCarachters}
                     value={editedActor.TVseries}
                     onChange={handleInputChange}
                     renderInput={(params) => (
@@ -114,7 +99,7 @@ const EditActorDialog = ({ open, onClose, actor, onSave }) => {
                     )}
                 />
                 <Autocomplete size='small'
-                    options={allCharacters}
+                    options={allCarachters}
                     value={editedActor.character}
                     onChange={handleInputChange}
                     renderInput={(params) => (
@@ -128,7 +113,7 @@ const EditActorDialog = ({ open, onClose, actor, onSave }) => {
 
 
                 <Autocomplete size='small'
-                    options={allCharacters}
+                    options={allCarachters}
                     value={editedActor.ProductCategory}
                     onChange={handleInputChange}
                     renderInput={(params) => (
@@ -172,14 +157,15 @@ const EditActorDialog = ({ open, onClose, actor, onSave }) => {
                     onChange={handleInputChange}
                     fullWidth
                 />
-        {/* Add more fields for other properties as needed */}
-      </DialogContent>
-      <DialogActions>
-        <Button onClick={onClose}>Cancel</Button>
-        <Button onClick={handleSave}>{actor ? 'Save' : 'Add Actor'}</Button>
-      </DialogActions>
-    </Dialog>
-  );
+                {/* Add more fields for other properties as needed */}
+            </DialogContent>
+            <DialogActions>
+                <Button onClick={onClose}>Cancel</Button>
+                <Button onClick={handleSave}>Save</Button>
+            </DialogActions>
+        </Dialog>
+    );
 };
 
 export default EditActorDialog;
+
