@@ -1,7 +1,7 @@
 'use client'
 // App.js
 import { InstantSearchNext } from 'react-instantsearch-nextjs';
-
+import { SearchBox, Hits } from 'react-instantsearch';
 import React, { useState } from 'react';
 import ActorTable from './ActorTable';
 const customSearchClient = {
@@ -92,10 +92,15 @@ const App = () => {
 
     return (
         <InstantSearchNext indexName="dizikiyefeti" searchClient={customSearchClient} >
-            <h1>Actor Table</h1>
-            <ActorTable actors={actors} onActorEdit={handleActorEdit} possibleActorNames={possibleActorNames} />
+    <Hits hitComponent={Hitter} />
+            <ActorTable actors={actors} onActorEdit={handleActorEdit}  />
         </InstantSearchNext >
     );
 };
 
 export default App;
+
+function Hitter({hit}){
+console.log('hit',hit)
+return <div>Hit</div>
+}

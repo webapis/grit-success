@@ -13,8 +13,8 @@ import {
     IconButton,
 } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
-import EditActorDialog from './EditActorDialog.js';
-import Button from '@mui/material/Button';
+import EditActorDialog from './EditActorDialog';
+
 const ActorTable = ({ actors, onActorEdit }) => {
     const [editDialogOpen, setEditDialogOpen] = useState(false);
     const [selectedActor, setSelectedActor] = useState(null);
@@ -32,15 +32,9 @@ const ActorTable = ({ actors, onActorEdit }) => {
         setEditDialogOpen(false);
         setSelectedActor(null);
     };
-    const handleAddNewActor = () => {
-        setSelectedActor(null); // Clear selected actor for adding new actor
-        setEditDialogOpen(true);
-      };
+
     return (
         <div>
-                 <Button variant="contained" color="primary" onClick={handleAddNewActor}>
-        Add New Actor
-      </Button>
             <TableContainer component={Paper}>
                 <Table>
                     <TableHead>
@@ -57,14 +51,32 @@ const ActorTable = ({ actors, onActorEdit }) => {
                             <TableCell>Edit</TableCell>
                         </TableRow>
                     </TableHead>
-                
-                        <Hits component={TableData} />
-                    
-               
+                    <TableBody>
+                        <Hits component={null} />
+                        {actors.map((actor) => (
+                            <TableRow key={actor.id}>
+                                <TableCell>{actor.name}</TableCell>
+                                <TableCell>
+                                    <img src={actor.imageUrl} alt={actor.alt} style={{ maxWidth: '50px' }} />
+                                </TableCell>
+                                <TableCell>{actor.season}</TableCell>
+                                <TableCell>{actor.year}</TableCell>
+                                <TableCell>{actor.character}</TableCell>
+                                <TableCell>{actor.date}</TableCell>
+                                <TableCell>{actor.episode}</TableCell>
+                                <TableCell>{actor.TVseries}</TableCell>
+                                <TableCell>{actor.ProductCategory}</TableCell>
+                                <TableCell>
+                                    <IconButton onClick={() => handleEditClick(actor)}>
+                                        <EditIcon />
+                                    </IconButton>
+                                </TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
                 </Table>
             </TableContainer>
-       
-            { <EditActorDialog
+            {selectedActor && <EditActorDialog
                 open={editDialogOpen}
                 onClose={handleEditDialogClose}
                 actor={selectedActor}
@@ -77,27 +89,3 @@ const ActorTable = ({ actors, onActorEdit }) => {
 };
 
 export default ActorTable;
-
-
-
-function TableData(actor) {
-console.log('actor--------',actor)
-    return <TableRow key={actor.id}>
-        <TableCell>{actor.name}</TableCell>
-        <TableCell>
-            <img src={actor.imageUrl} alt={actor.alt} style={{ maxWidth: '50px' }} />
-        </TableCell>
-        <TableCell>{actor.season}</TableCell>
-        <TableCell>{actor.year}</TableCell>
-        <TableCell>{actor.character}</TableCell>
-        <TableCell>{actor.date}</TableCell>
-        <TableCell>{actor.episode}</TableCell>
-        <TableCell>{actor.TVseries}</TableCell>
-        <TableCell>{actor.ProductCategory}</TableCell>
-        <TableCell>
-            <IconButton onClick={() => handleEditClick(actor)}>
-                <EditIcon />
-            </IconButton>
-        </TableCell>
-    </TableRow>
-}
