@@ -13,7 +13,7 @@ export default async function Home(props) {
 
 
 
-  return <Suspense fallback={<p style={{height:'100vh'}}>Loading feed....</p>}>
+  return <Suspense fallback={<p style={{height:'100vh'}}>Loading....</p>}>
     <Application {...props}/>
   </Suspense>
 

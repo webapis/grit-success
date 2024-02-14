@@ -12,11 +12,19 @@ import {
     IconButton,
     Button,
 } from '@mui/material';
-
+import { useInstantSearch } from 'react-instantsearch';
 import EditIcon from '@mui/icons-material/Edit';
 import EditActorDialog from './EditActorDialog';
 import { useHits } from 'react-instantsearch';
+
+const LoadingIndicator = ({ isSearchStalled }) =>
+    isSearchStalled ? 'Loading...' : null;
+
 const ActorTable = ({ onActorEdit, }) => {
+
+    const { status } = useInstantSearch({
+        // ... your search configuration
+    });
     const { hits: actors } = useHits();
     const [editDialogOpen, setEditDialogOpen] = useState(false);
     const [selectedActor, setSelectedActor] = useState(null);
@@ -33,7 +41,7 @@ const ActorTable = ({ onActorEdit, }) => {
             imageUrl,
             productLink,
             productTitle,
-            alt } = actor
+            alt, objectID } = actor
         setSelectedActor({
             TVseries,
             season,
@@ -46,7 +54,8 @@ const ActorTable = ({ onActorEdit, }) => {
             imageUrl,
             productLink,
             productTitle,
-            alt
+            alt,
+            objectID
         });
         setEditDialogOpen(true);
     };
@@ -75,7 +84,9 @@ const ActorTable = ({ onActorEdit, }) => {
         setEditDialogOpen(false);
         setSelectedActor(null);
     };
-
+    if (status === 'loading') {
+        return <LoadingIndicator isSearchStalled={status === 'loading'} />
+    }
     return (
         <div>
             <Button onClick={handleEditNewClick}>Add New</Button>
@@ -96,7 +107,6 @@ const ActorTable = ({ onActorEdit, }) => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-
                         {actors.map((actor) => (
                             <TableRow key={actor.id}>
                                 <TableCell>{actor.name}</TableCell>
