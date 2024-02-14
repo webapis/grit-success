@@ -7,7 +7,7 @@ export async function   POST(request) {
     const body = await request.json()
     debugger
     const { requests } = body;
-    console.log('body',body)
+
     const results = await algoliaClient.search(requests);
    
     debugger

@@ -1,6 +1,6 @@
 import Application from "../app/home/components/Application"
 import { Suspense } from 'react'
-import Categories from "./home/components/categories"
+
 export async function generateMetadata() {
 
   return {
