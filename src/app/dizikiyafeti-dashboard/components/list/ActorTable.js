@@ -1,7 +1,6 @@
 'use client'
 // ActorTable.js
 import React, { useState } from 'react';
-import { InstantSearch, SearchBox, Hits } from 'react-instantsearch';
 import {
     Table,
     TableBody,
@@ -11,11 +10,14 @@ import {
     TableRow,
     Paper,
     IconButton,
+    Button,
 } from '@mui/material';
+
 import EditIcon from '@mui/icons-material/Edit';
 import EditActorDialog from './EditActorDialog';
-
-const ActorTable = ({ actors, onActorEdit }) => {
+import { useHits } from 'react-instantsearch';
+const ActorTable = ({  onActorEdit, }) => {
+    const { hits:actors } = useHits();
     const [editDialogOpen, setEditDialogOpen] = useState(false);
     const [selectedActor, setSelectedActor] = useState(null);
 
@@ -23,7 +25,10 @@ const ActorTable = ({ actors, onActorEdit }) => {
         setSelectedActor(actor);
         setEditDialogOpen(true);
     };
-
+    const handleEditNewClick = () => {
+        setSelectedActor(null);
+        setEditDialogOpen(true);
+    };
     const handleEditSave = (editedActor) => {
         onActorEdit(editedActor);
     };
@@ -35,6 +40,7 @@ const ActorTable = ({ actors, onActorEdit }) => {
 
     return (
         <div>
+            <Button onClick={handleEditNewClick}>Add New</Button>
             <TableContainer component={Paper}>
                 <Table>
                     <TableHead>
@@ -52,7 +58,7 @@ const ActorTable = ({ actors, onActorEdit }) => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        <Hits component={null} />
+             
                         {actors.map((actor) => (
                             <TableRow key={actor.id}>
                                 <TableCell>{actor.name}</TableCell>
@@ -76,7 +82,7 @@ const ActorTable = ({ actors, onActorEdit }) => {
                     </TableBody>
                 </Table>
             </TableContainer>
-            {selectedActor && <EditActorDialog
+            {<EditActorDialog
                 open={editDialogOpen}
                 onClose={handleEditDialogClose}
                 actor={selectedActor}
@@ -89,3 +95,5 @@ const ActorTable = ({ actors, onActorEdit }) => {
 };
 
 export default ActorTable;
+
+

@@ -1,0 +1,1 @@
+export default ["Afra Saraçoğlu","Sümeyye Aydoğan"]
