@@ -10,7 +10,7 @@ const searchClient = algoliasearch('7JF244QSZZ', 'af8e387eae1a3614f7b0ba204c59f4
 
 const customSearchClient = {
     search(requests) {
-        return fetch('http://localhost:3000/dizikiyafeti-dashboard/search', {
+        return fetch(`${window.location.origin}/dizikiyafeti-dashboard/search`, {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
