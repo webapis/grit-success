@@ -16,6 +16,7 @@ import products from './products';
 
 
 const EditActorDialog = ({ open, onClose, actor, onSave }) => {
+  
   const [editedActor, setEditedActor] = useState(actor || {
     TVseries: '',
     season: '',
