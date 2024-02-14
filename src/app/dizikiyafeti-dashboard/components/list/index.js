@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 import algoliasearch from 'algoliasearch/lite';
 import ActorTable from './ActorTable';
 
-const searchClient = algoliasearch('7JF244QSZZ', 'af8e387eae1a3614f7b0ba204c59f4a5');
+
 
 const customSearchClient = {
     search(requests) {
