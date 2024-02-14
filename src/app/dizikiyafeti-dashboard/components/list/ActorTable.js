@@ -16,17 +16,55 @@ import {
 import EditIcon from '@mui/icons-material/Edit';
 import EditActorDialog from './EditActorDialog';
 import { useHits } from 'react-instantsearch';
-const ActorTable = ({  onActorEdit, }) => {
-    const { hits:actors } = useHits();
+const ActorTable = ({ onActorEdit, }) => {
+    const { hits: actors } = useHits();
     const [editDialogOpen, setEditDialogOpen] = useState(false);
     const [selectedActor, setSelectedActor] = useState(null);
 
     const handleEditClick = (actor) => {
-        setSelectedActor(actor);
+        const { TVseries,
+            season,
+            date,
+            episode,
+            year,
+            name,
+            character,
+            ProductCategory,
+            imageUrl,
+            productLink,
+            productTitle,
+            alt } = actor
+        setSelectedActor({
+            TVseries,
+            season,
+            date,
+            episode,
+            year,
+            name,
+            character,
+            ProductCategory,
+            imageUrl,
+            productLink,
+            productTitle,
+            alt
+        });
         setEditDialogOpen(true);
     };
     const handleEditNewClick = () => {
-        setSelectedActor(null);
+        setSelectedActor({
+            TVseries: '',
+            season: '',
+            date: '',
+            episode: '',
+            year: '',
+            name: '',
+            character: '',
+            ProductCategory: '',
+            imageUrl: '',
+            productLink: '',
+            productTitle: '',
+            alt: '',
+        });
         setEditDialogOpen(true);
     };
     const handleEditSave = (editedActor) => {
@@ -58,7 +96,7 @@ const ActorTable = ({  onActorEdit, }) => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-             
+
                         {actors.map((actor) => (
                             <TableRow key={actor.id}>
                                 <TableCell>{actor.name}</TableCell>
@@ -82,7 +120,7 @@ const ActorTable = ({  onActorEdit, }) => {
                     </TableBody>
                 </Table>
             </TableContainer>
-            {<EditActorDialog
+            {selectedActor && <EditActorDialog
                 open={editDialogOpen}
                 onClose={handleEditDialogClose}
                 actor={selectedActor}
