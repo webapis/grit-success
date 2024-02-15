@@ -9,7 +9,9 @@
     "lint": "next lint",
     "snap": "node snap.js",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+
+    "extDizikiyafetiPageData":"node src/app/dizikiyafeti/utils/extractPageData.mjs"
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",

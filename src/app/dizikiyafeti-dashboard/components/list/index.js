@@ -2,9 +2,9 @@
 // App.js
 import { InstantSearchNext } from 'react-instantsearch-nextjs';
 
-import { useRouter } from 'next/navigation'
-import React, { useState } from 'react';
-import algoliasearch from 'algoliasearch/lite';
+
+import React from 'react';
+
 import ActorTable from './ActorTable';
 
 
@@ -22,17 +22,17 @@ const customSearchClient = {
 };
 
 const App = () => {
-    const router = useRouter()
-    console.log('router',router)
+
     const handleActorEdit = async (editedActor) => {
+
         const response = await fetch('/dizikiyafeti-dashboard/api', { method: 'post', body: JSON.stringify(editedActor) })
-        console.log('response', response)
+     
     
     };
 
     return (
         <InstantSearchNext indexName="dizikiyefeti" searchClient={customSearchClient} >
-       
+            
             <ActorTable  onActorEdit={handleActorEdit}  />
        
         </InstantSearchNext>

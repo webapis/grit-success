@@ -120,6 +120,7 @@ const ActorTable = ({ onActorEdit, }) => {
                                 <TableCell>{actor.episode}</TableCell>
                                 <TableCell>{actor.TVseries}</TableCell>
                                 <TableCell>{actor.ProductCategory}</TableCell>
+                                <TableCell> <a href={actor.productLink} target='_blank'>Product Link</a></TableCell>
                                 <TableCell>
                                     <IconButton onClick={() => handleEditClick(actor)}>
                                         <EditIcon />
