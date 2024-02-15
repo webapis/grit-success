@@ -16,8 +16,12 @@ export default function ImageContainer({ filteredData, pageTitle }) {
             const title = m.productTitle
             debugger
             return <Grid item xs={12} lg={5} key={a} >
-                 
-                 <Chip size='small' label={<Typography variant='caption' textAlign="center"  >{m.season}. sezon <span>{m.episode}. bölüm </span></Typography>}/>
+                 <div style={{display:'flex',justifyContent:'space-around'}}>
+                 <Chip size='small' label={<Typography variant='caption' textAlign="center"  >{m.season}. sezon <span>{m.episode}. bölüm </span></Typography>}/> 
+               
+                 <Typography variant='caption' textAlign="center"   sx={{opacity:0.7}}><span>{m.date} </span></Typography>
+                 </div>
+       
                 <div style={{marginTop:3, width:"100%"}}><Image fotografUrl={m.imageUrl} alt={m.alt}  /></div>
                 <div style={{ width:'100%' }}>
                     { m.productLink.length>0 &&  title.split(',').map((m, i) => <div key={i} style={{ margin: 5 }}><span style={{ textTransform: "uppercase", fontWeight: 700 }}></span> <a href={`${links[i]}`} target='_blank' style={{ textTransform: 'capitalize',fontSize:16 }} rel="nofollow"> {m.toLowerCase()}</a> </div>)}
