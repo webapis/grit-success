@@ -1,0 +1,340 @@
+[
+    {
+        "TVseries": "Gaddar",
+        "season": "1",
+        "date": "19 Ocak 2024",
+        "episode": "1",
+        "year": "2024",
+        "name": "Sümeyye Aydoğan",
+        "character": "Aydan",
+        "ProductCategory": "ceket",
+        "imageUrl": "https://i.pinimg.com/originals/2c/1a/2c/2c1a2cc44d0b2f26b42eedfc2b4eaaef.jpg",
+        "productLink": "https://www.stradivarius.com/tr/ici-suni-kurklu-suni-suet-crop-biker-ceket-l05758423?categoryId=1020594791&colorId=004&pelement=378940193",
+        "productTitle": "Stradivarus- İÇİ SUNİ KÜRKLÜ SUNİ SÜET CROP BİKER CEKET",
+        "alt": "Aydanını giydigi Stradivarus- İÇİ SUNİ KÜRKLÜ SUNİ SÜET CROP BİKER CEKET",
+        "objectID": "18701906001",
+        "_highlightResult": {
+            "TVseries": {
+                "value": "<em>Gaddar</em>",
+                "matchLevel": "partial",
+                "fullyHighlighted": true,
+                "matchedWords": [
+                    "gaddar"
+                ]
+            },
+            "season": {
+                "value": "1",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "date": {
+                "value": "19 Ocak 2024",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "episode": {
+                "value": "1",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "year": {
+                "value": "2024",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "name": {
+                "value": "Sümeyye Aydoğan",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "character": {
+                "value": "<em>Aydan</em>",
+                "matchLevel": "partial",
+                "fullyHighlighted": true,
+                "matchedWords": [
+                    "aydan"
+                ]
+            },
+            "ProductCategory": {
+                "value": "ceket",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "imageUrl": {
+                "value": "https://i.pinimg.com/originals/2c/1a/2c/2c1a2cc44d0b2f26b42eedfc2b4eaaef.jpg",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "productLink": {
+                "value": "https://www.stradivarius.com/tr/ici-suni-kurklu-suni-suet-crop-biker-ceket-l05758423?categoryId=1020594791&colorId=004&pelement=378940193",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "productTitle": {
+                "value": "Stradivarus- İÇİ SUNİ KÜRKLÜ SUNİ SÜET CROP BİKER CEKET",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "alt": {
+                "value": "Aydanını giydigi Stradivarus- İÇİ SUNİ KÜRKLÜ SUNİ SÜET CROP BİKER CEKET",
+                "matchLevel": "none",
+                "matchedWords": []
+            }
+        }
+    },
+    {
+        "TVseries": "Gaddar",
+        "season": "1",
+        "date": "9 Şubat 2024",
+        "episode": "4",
+        "year": "2024",
+        "name": "Sümeyye Aydoğan",
+        "character": "Aydan",
+        "ProductCategory": "palto",
+        "imageUrl": "https://i.pinimg.com/originals/9b/c6/db/9bc6db17b74df0c983c42b3bf38ff776.jpg",
+        "productLink": "https://shop.mango.com/tr/kadin/palto-palto/kemerli-manteco-yunu-palto_57085990.html?c=43",
+        "productTitle": "Mango-Kemerli Manteco yünü palto",
+        "alt": "Gaddar dizisinde Aydanın giydiği yeşil palto",
+        "objectID": "18701905001",
+        "_highlightResult": {
+            "TVseries": {
+                "value": "<em>Gaddar</em>",
+                "matchLevel": "partial",
+                "fullyHighlighted": true,
+                "matchedWords": [
+                    "gaddar"
+                ]
+            },
+            "season": {
+                "value": "1",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "date": {
+                "value": "9 Şubat 2024",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "episode": {
+                "value": "4",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "year": {
+                "value": "2024",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "name": {
+                "value": "Sümeyye Aydoğan",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "character": {
+                "value": "<em>Aydan</em>",
+                "matchLevel": "partial",
+                "fullyHighlighted": true,
+                "matchedWords": [
+                    "aydan"
+                ]
+            },
+            "ProductCategory": {
+                "value": "palto",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "imageUrl": {
+                "value": "https://i.pinimg.com/originals/9b/c6/db/9bc6db17b74df0c983c42b3bf38ff776.jpg",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "productLink": {
+                "value": "https://shop.mango.com/tr/kadin/palto-palto/kemerli-manteco-yunu-palto_57085990.html?c=43",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "productTitle": {
+                "value": "Mango-Kemerli Manteco yünü palto",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "alt": {
+                "value": "<em>Gaddar</em> dizisinde Aydanın giydiği yeşil palto",
+                "matchLevel": "partial",
+                "fullyHighlighted": false,
+                "matchedWords": [
+                    "gaddar"
+                ]
+            }
+        }
+    },
+    {
+        "TVseries": "Gaddar",
+        "season": "1",
+        "date": "19 Ocak 2024",
+        "episode": "1",
+        "year": "2024",
+        "name": "Sümeyye Aydoğan",
+        "character": "Aydan",
+        "ProductCategory": "ceket",
+        "imageUrl": "https://i.pinimg.com/originals/bd/f1/e0/bdf1e08dc9e0cff0bcc199ec68e51d82.jpg",
+        "productLink": "https://www.oxxo.com.tr/tr/yun-karisimli-kapusonlu-ceket_23kox-yunkapzip/turuncu/4797",
+        "productTitle": "Oxxo -Turuncu Yün Karışımlı Kapüşonlu Ceket",
+        "alt": "Gaddar dizi Aydanın giydiği  Turuncu Yün Karışımlı Kapüşonlu Ceket",
+        "objectID": "16317853002",
+        "_highlightResult": {
+            "TVseries": {
+                "value": "<em>Gaddar</em>",
+                "matchLevel": "partial",
+                "fullyHighlighted": true,
+                "matchedWords": [
+                    "gaddar"
+                ]
+            },
+            "season": {
+                "value": "1",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "date": {
+                "value": "19 Ocak 2024",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "episode": {
+                "value": "1",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "year": {
+                "value": "2024",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "name": {
+                "value": "Sümeyye Aydoğan",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "character": {
+                "value": "<em>Aydan</em>",
+                "matchLevel": "partial",
+                "fullyHighlighted": true,
+                "matchedWords": [
+                    "aydan"
+                ]
+            },
+            "ProductCategory": {
+                "value": "ceket",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "imageUrl": {
+                "value": "https://i.pinimg.com/originals/bd/f1/e0/bdf1e08dc9e0cff0bcc199ec68e51d82.jpg",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "productLink": {
+                "value": "https://www.oxxo.com.tr/tr/yun-karisimli-kapusonlu-ceket_23kox-yunkapzip/turuncu/4797",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "productTitle": {
+                "value": "Oxxo -Turuncu Yün Karışımlı Kapüşonlu Ceket",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "alt": {
+                "value": "<em>Gaddar</em> dizi Aydanın giydiği  Turuncu Yün Karışımlı Kapüşonlu Ceket",
+                "matchLevel": "partial",
+                "fullyHighlighted": false,
+                "matchedWords": [
+                    "gaddar"
+                ]
+            }
+        }
+    },
+    {
+        "TVseries": "Gaddar",
+        "season": "1",
+        "date": "19 Ocak 2024",
+        "episode": "1",
+        "year": "2024",
+        "name": "Sümeyye Aydoğan",
+        "character": "Aydan",
+        "ProductCategory": "kaban",
+        "imageUrl": "https://i.pinimg.com/originals/60/56/14/605614e40afe1ca97ebbcd203bc548b0.jpg",
+        "productLink": "https://www.stradivarius.com/tr/k%C4%B1sa-kruvaze-kaban-l01771855?categoryId=1020206509&colorId=004&pelement=378940001",
+        "productTitle": "Stradivarus- Kısa Kruvaze Kaban",
+        "alt": "Sümeyye Aydoğanın canlandırdığı Aydanın giydiği erku kruvaze kaban",
+        "objectID": "16317852002",
+        "_highlightResult": {
+            "TVseries": {
+                "value": "<em>Gaddar</em>",
+                "matchLevel": "partial",
+                "fullyHighlighted": true,
+                "matchedWords": [
+                    "gaddar"
+                ]
+            },
+            "season": {
+                "value": "1",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "date": {
+                "value": "19 Ocak 2024",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "episode": {
+                "value": "1",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "year": {
+                "value": "2024",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "name": {
+                "value": "Sümeyye Aydoğan",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "character": {
+                "value": "<em>Aydan</em>",
+                "matchLevel": "partial",
+                "fullyHighlighted": true,
+                "matchedWords": [
+                    "aydan"
+                ]
+            },
+            "ProductCategory": {
+                "value": "kaban",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "imageUrl": {
+                "value": "https://i.pinimg.com/originals/60/56/14/605614e40afe1ca97ebbcd203bc548b0.jpg",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "productLink": {
+                "value": "https://www.stradivarius.com/tr/k%C4%B1sa-kruvaze-kaban-l01771855?categoryId=1020206509&colorId=004&pelement=378940001",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "productTitle": {
+                "value": "Stradivarus- Kısa Kruvaze Kaban",
+                "matchLevel": "none",
+                "matchedWords": []
+            },
+            "alt": {
+                "value": "Sümeyye Aydoğanın canlandırdığı Aydanın giydiği erku kruvaze kaban",
+                "matchLevel": "none",
+                "matchedWords": []
+            }
+        }
+    }
+]
