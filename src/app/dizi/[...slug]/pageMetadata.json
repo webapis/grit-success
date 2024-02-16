@@ -6,5 +6,13 @@
        
         "search": "mobilya",
         "index":"yalicapkini"
+    },
+    {
+        "slug": "kizilcik-serbeti-mobilya-sponsorlari",
+        "pageTitle":"Kızılcık Şerbeti Mobilya Sponsorları",
+        "description":"Kızılcık Şerbeti Mobilya Sponsoru: Kaliteli ve uygun fiyatlı mobilyalarla tanışın.",
+       
+        "search": "mobilya",
+        "index":"kizilcikserbeti"
     }
 ]

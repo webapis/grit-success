@@ -10,8 +10,8 @@
     "snap": "node snap.js",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-
-    "extDizikiyafetiPageData":"node src/app/dizikiyafeti/utils/extractPageData.mjs"
+    "extDizikiyafetiPageData": "node src/app/dizikiyafeti/utils/extractPageData.mjs",
+    "exportFromSQL": "node src/app/dizi/utils/sqlquery.js"
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",
@@ -20,7 +20,10 @@
     "@mui/material": "^5.15.4",
     "@next/third-parties": "^14.1.0",
     "algoliasearch": "^4.22.1",
+    "dotenv": "^16.4.4",
     "instantsearch.css": "^8.1.0",
+    "msnodesqlv8": "^4.1.2",
+    "mssql": "^10.0.2",
     "next": "^14.1.0",
     "react": "^18",
     "react-dom": "^18",
