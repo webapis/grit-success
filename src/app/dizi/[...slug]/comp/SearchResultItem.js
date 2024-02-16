@@ -9,7 +9,7 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import IconButton from '@mui/material/IconButton';
 import Link from 'next/link';
 export default function SearchResultItem({ item }) {
-    const { "Row Labels": name, Website, Acyklama,"Count of EpisodeNumber":count } = item
+    const { Name:name, Website, Acyklama,TOTAL:count } = item
     const imageName = Website ? extractSubdomain(Website) : ""
     return <Card sx={{ maxWidth: 345 }}>
         <CardMedia
