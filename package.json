@@ -22,7 +22,6 @@
     "algoliasearch": "^4.22.1",
     "dotenv": "^16.4.4",
     "instantsearch.css": "^8.1.0",
-    "msnodesqlv8": "^4.1.2",
     "mssql": "^10.0.2",
     "next": "^14.1.0",
     "react": "^18",
