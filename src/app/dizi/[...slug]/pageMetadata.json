@@ -5,7 +5,8 @@
         "description":"Yalı Çapkını Mobilya Sponsoru: Kaliteli ve uygun fiyatlı mobilyalarla tanışın.",
        
         "search": "mobilya Yalı Çapkını",
-        "index":"sponsorbrands"
+        "index":"sponsorbrands",
+        "coverimage":"yali-capkini.jpg"
     },
     {
         "slug": "kizilcik-serbeti-mobilya-sponsorlari",
@@ -13,6 +14,7 @@
         "description":"Kızılcık Şerbeti Mobilya Sponsoru: Kaliteli ve uygun fiyatlı mobilyalarla tanışın.",
        
         "search": "mobilya Kızılcık Şerbeti",
-        "index":"sponsorbrands"
+        "index":"sponsorbrands",
+        "coverimage":"kizilcik-serbeti.jpg"
     }
 ]

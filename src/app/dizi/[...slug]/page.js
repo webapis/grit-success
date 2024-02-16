@@ -32,5 +32,5 @@ export default async function DiziPage(props) {
     // const currentPageData = filteredObjects.slice(startIndex, endIndex);
     // const pageCount = Math.ceil(filteredObjects.length / 20)
 
-    return <SearchResultContainer items={data.hits} pageTitle={selectedPageMeta.pageTitle}/>
+    return <SearchResultContainer items={data.hits} pageTitle={selectedPageMeta.pageTitle} coverimage={selectedPageMeta.coverimage}/>
 }
