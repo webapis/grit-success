@@ -12,7 +12,7 @@ import 'instantsearch.css/themes/satellite.css';
 export default function AlgoliaProvider({ children}) {
 
 
-    return <InstantSearchNext indexName="brand" searchClient={searchClient} routing>
+    return <InstantSearchNext indexName="dizikiyafeti" searchClient={searchClient} routing>
 
         {children}
 
