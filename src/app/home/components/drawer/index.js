@@ -129,15 +129,22 @@ export default function PersistentDrawerLeft({ children }) {
                 </DrawerHeader>
                 <Divider />
                 <div style={{ padding: 10 }}>
-                    <Typography variant='h4'>Kategori</Typography>
-                    <RefinementList searchable={true} attribute='category' showMore={true} translations={{
+                <Divider sx={{ paddingTop: 2 }} />
+                    <Typography variant='h4'>Dizi</Typography>
+                    <RefinementList attribute='TVSeriesTitle' operator='and' showMore={true} />
+                    <Typography variant='h4'>Oyuncu</Typography>
+                    <RefinementList searchable={true} attribute='FullName' showMore={true} translations={{
                         showMoreButtonText({ isShowingMore }) {
                             return isShowingMore ? 'Az kategori göster' : 'Fazla kategori göster';
                         },
                     }} />
                     <Divider sx={{ paddingTop: 2 }} />
-                    <Typography variant='h4'>Cinsiyet</Typography>
-                    <RefinementList attribute='gender' operator='and' showMore={true} />
+                    <Typography variant='h4'>Karakter</Typography>
+                    <RefinementList attribute='CaracterName' operator='and' showMore={true} />
+
+                    <Divider sx={{ paddingTop: 2 }} />
+                    <Typography variant='h4'>Kıyafet</Typography>
+                    <RefinementList attribute='ProductTitle' operator='and' showMore={true} />
                 </div>
 
             </Drawer>

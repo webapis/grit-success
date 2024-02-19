@@ -1,16 +1,16 @@
 'use client'
-
+import React from 'react';
 
 import {
 
-    SearchBox, InfiniteHits, Stats, CurrentRefinements, Hits
+    SearchBox, Stats, CurrentRefinements
 } from 'react-instantsearch';
 import PersistentDrawerLeft from './drawer';
 import AlgoliaProvider from './AlgoliaProvider'
 import ImageContainer from './ImageContainer';
 import { Box, Grid } from '@mui/material';
 
-export default function Application(props) {
+export default function Application() {
 
 
 
@@ -21,7 +21,7 @@ export default function Application(props) {
             <Box>
                 <Box sx={{ width: { xs: '100%', md: '50%' }, margin: '0 auto', marginTop: 3 }}>
 
-                    <SearchBox searchAsYouType={false} placeholder='Kıyafet, Aksesuar, Takı...' />
+                    <SearchBox searchAsYouType={false} placeholder='Dizi, Karakter, Oyuncu, Kıyafet...' />
                 </Box>
                 <Box sx={{ width: { xs: '100%', md: '50%' }, margin: '0 auto' }}>
                     <CurrentRefinements style={{ padding: 5 }} />
