@@ -1,2 +1,3 @@
 User-agent: *
 Disallow: /kadin/
+Disallow:/dizikiyafeti/incitaneleri-dilber-kiyafetler
