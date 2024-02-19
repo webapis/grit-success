@@ -3,7 +3,7 @@ import { promises as fs } from 'fs';
 
 import ImageContainer from '../comps/ImageContainer';
 import { Container, Stack, Grid } from '@mui/material';
-
+import path from 'path'
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 const algoliasearch = require('algoliasearch')
@@ -12,7 +12,7 @@ const index = algoliaClient.initIndex('dizikiyafeti');
 
 export async function generateMetadata({ params, searchParams }, parent) {
 
-    const pages = await fs.readFile(process.cwd() + '/src/app/dizikiyafeti/meta/pageMetaData.json', 'utf8');
+    const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizikiyafeti/meta/pageMetaData.json'), 'utf8');
     const pagesData = JSON.parse(pages);
     const { title } = pagesData.find(f => {
         const current = f.slug[0]
@@ -31,20 +31,20 @@ export async function generateMetadata({ params, searchParams }, parent) {
 
 export default async function DiziPage({ params }) {
 
-    const pages = await fs.readFile(process.cwd() + '/src/app/dizikiyafeti/meta/pageMetaData.json', 'utf8');
+    const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizikiyafeti/meta/pageMetaData.json'),'utf8');
     const pagesData = JSON.parse(pages);
 
-    const { slug, title, nextpages,algoliaQuery } = pagesData.find(f => {
+    const { slug, title, nextpages, algoliaQuery } = pagesData.find(f => {
         const current = f.slug[0]
         const slug = params.slug[0]
         const match = current === slug
 
         return match
     })
-debugger
-    const query =algoliaQuery
-    const {hits} = await index.search(query,{  hitsPerPage: 200})
-   // const filename =c.slug[0]
+    debugger
+    const query = algoliaQuery
+    const { hits } = await index.search(query, { hitsPerPage: 200 })
+    // const filename =c.slug[0]
 
     // const data = await fs.readFile(process.cwd() + `/src/app/dizikiyafeti/page-data/${slug[0]}.json`, 'utf8');
     // const dataObj = JSON.parse(data)
@@ -62,7 +62,7 @@ debugger
             </Grid>
 
         </Container>
-     
+
     </div>
 
 }
