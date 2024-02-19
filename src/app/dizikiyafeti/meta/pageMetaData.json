@@ -11,5 +11,18 @@
         ],
         "title": "Gaddar Dizisinde Aydan'ın rolünü canlandıran Sümeyye Aydoğan'ın giydiği Kıyafetler",
         "nextpages": []
+    },
+    {
+        "dizi": "İnci Taneleri",
+        "karakter": "Dilber",
+        "pageTitle": "İnci Taneleri Dilber",
+        "tumurun": true,
+        "algoliaQuery":"dilber inci taneleri",
+        "urun": [],
+        "slug": [
+            "incitaneleri-dilber-kiyafetler"
+        ],
+        "title": "İnci Taneleri Dizisinde Dilber'ın rolünü canlandıran Hazar Ergüçlü'nin giydiği Kıyafetler",
+        "nextpages": []
     }
 ]
