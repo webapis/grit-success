@@ -24,5 +24,19 @@
         ],
         "title": "İnci Taneleri Dizisinde Dilber'ın rolünü canlandıran Hazar Ergüçlü'nin giydiği Kıyafetler",
         "nextpages": []
+    },
+
+    {
+        "dizi": "Yalı Çapkını",
+        "karakter": "Seyran",
+        "pageTitle": "Yalı Çapkını Seyran",
+        "tumurun": true,
+        "algoliaQuery":"seyran yalı çapkını",
+        "urun": [],
+        "slug": [
+            "yali-capkini-seyran-kiyafetler"
+        ],
+        "title": "Yalı Çapkını Dizisinde Seyran'ın rolünü canlandıran Afra Saraçoğlu'nun giydiği Kıyafetler",
+        "nextpages": []
     }
 ]
