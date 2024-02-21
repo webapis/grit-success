@@ -11,7 +11,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "extDizikiyafetiPageData": "node src/app/dizikiyafeti/utils/extractPageData.mjs",
-    "exportFromSQL": "node src/app/dizi/utils/sqlquery.js",
+    "exportFromSQLDizisponsoru": "node src/app/dizi-sponsoru/utils/sqlquery.js",
     "exportFromSQLDizikiyafeti": "node src/app/dizikiyafeti/utils/sqlquery.js"
   },
   "dependencies": {
