@@ -51,5 +51,19 @@
         ],
         "title": "Yalı Çapkını Dizisinde Suna'ın rolünü canlandıran Beril Pozam'ın giydiği Kıyafetler",
         "nextpages": []
+    },
+    
+    {
+        "dizi": "Yalı Çapkını",
+        "karakter": "",
+        "pageTitle": "Yalı Çapkını ",
+        "tumurun": true,
+        "algoliaQuery":"yalı çapkını",
+        "urun": [],
+        "slug": [
+            "yali-capkini-kiyafetler"
+        ],
+        "title": "Yalı Çapkını Dizi Kıyafetleri",
+        "nextpages": []
     }
 ]
