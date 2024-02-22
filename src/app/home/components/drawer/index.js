@@ -145,6 +145,13 @@ export default function PersistentDrawerLeft({ children }) {
                     <Divider sx={{ paddingTop: 2 }} />
                     <Typography variant='h4'>Kıyafet</Typography>
                     <RefinementList attribute='ProductTitle' operator='and' showMore={true} />
+                    
+                    <Divider sx={{ paddingTop: 2 }} />
+                    <Typography variant='h4'>Sezon</Typography>
+                    <RefinementList attribute='Season' operator='and' showMore={true} />
+                    <Divider sx={{ paddingTop: 2 }} />
+                    <Typography variant='h4'>Bölüm</Typography>
+                    <RefinementList attribute='Episode' operator='and' showMore={true} />
                 </div>
 
             </Drawer>

@@ -38,5 +38,18 @@
         ],
         "title": "Yalı Çapkını Dizisinde Seyran'ın rolünü canlandıran Afra Saraçoğlu'nun giydiği Kıyafetler",
         "nextpages": []
+    },
+    {
+        "dizi": "Yalı Çapkını",
+        "karakter": "Suna",
+        "pageTitle": "Yalı Çapkını Suna",
+        "tumurun": true,
+        "algoliaQuery":"pozam yalı çapkını",
+        "urun": [],
+        "slug": [
+            "yali-capkini-suna-kiyafetler"
+        ],
+        "title": "Yalı Çapkını Dizisinde Suna'ın rolünü canlandıran Beril Pozam'ın giydiği Kıyafetler",
+        "nextpages": []
     }
 ]
