@@ -1,7 +1,7 @@
 import SearchResultItem from "./SearchResultItem";
 
 export default {
-  title: 'SearchResultItem',
+  title: 'Dizi/SearchResultItem',
   component: SearchResultItem,
 
 };

@@ -1,6 +1,6 @@
 
 
-import Application from "../app/home/components/Application"
+import Application from "./Application"
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { Suspense } from 'react'
@@ -20,9 +20,9 @@ export default async function Home(props) {
 
   return <Suspense fallback={<p style={{height:'100vh'}}>Loading....</p>}>
     <div style={{marginTop:70,display:'flex',justifyContent:'center'}}>
-    <Tabs value={0}>
-      <Tab label="Dizi Kıyafetleri"/>
-      <Tab label="Dizi Sponsorları" component ={Link} href="/dizi-sponsoru"/>
+    <Tabs value={1}>
+      <Tab label="Dizi Kıyafetleri"  component ={Link} href="/"/>
+      <Tab label="Dizi Sponsoru"/>
     </Tabs>
     </div>
     <Application {...props}/>
@@ -31,5 +31,3 @@ export default async function Home(props) {
   </Suspense>
 
 }
-
-

@@ -1,5 +1,5 @@
 import Image from "./Image";
-import ycim from '../../../../public/images/ycimage.jpg'
+
 export default {
     component: Image
 }

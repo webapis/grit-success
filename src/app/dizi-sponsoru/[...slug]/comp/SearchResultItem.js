@@ -12,12 +12,25 @@ export default function SearchResultItem({ item }) {
     const { Name:name, Website, Acyklama,TOTAL:count } = item
     const imageName = Website ? extractSubdomain(Website) : ""
     return <Card sx={{ maxWidth: 345 }}>
-        <CardMedia
+        <div style={{display:'flex',alignItems:'start'}}>
+        <img
+            component="img"
+            alt={`${imageName} marka resmi`}
+            width="90"
+            height="110"
+            style={{objectFit:'contain'}}
+            src={`/dizi/cover-image/yali-capkini.jpg`}
+        />
+          <img
             component="img"
             alt={`${imageName} marka resmi`}
             width="200"
-            image={`/dizi/marka/${imageName}.jpg`}
+            height="100"
+            style={{objectFit:'contain'}}
+            src={`/dizi/marka/${imageName}.jpg`}
         />
+        </div>
+    
         <CardContent>
             <Typography gutterBottom variant="h5" component="div">
                 {name}

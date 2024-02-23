@@ -83,7 +83,7 @@ export default function PersistentDrawerLeft({ children }) {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar position="fixed" open={open} style={{ color: '' }}>
+            <AppBar position="fixed" open={open} style={{ color: 'GrayText' }}>
                 <Toolbar>
 
                     <IconButton
@@ -98,6 +98,13 @@ export default function PersistentDrawerLeft({ children }) {
                     <Typography variant="h6" noWrap component="div" >
                         Glumzi
                     </Typography>
+
+
+
+
+
+
+
 
                 </Toolbar>
             </AppBar>
