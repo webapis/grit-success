@@ -25,7 +25,7 @@ export default function Application() {
                 </Box>
                 <Box sx={{ width: { xs: '100%', md: '50%' }, margin: '0 auto' }}>
                     <CurrentRefinements style={{ padding: 5 }} />
-                    <Stats style={{ margin: 5 }} />
+                    {/* <Stats style={{ margin: 5 }} /> */}
 
 
 
