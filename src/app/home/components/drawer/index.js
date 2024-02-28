@@ -135,23 +135,39 @@ export default function PersistentDrawerLeft({ children }) {
                     <Typography variant='h4'>Oyuncu</Typography>
                     <RefinementList searchable={true} attribute='FullName' showMore={true} translations={{
                         showMoreButtonText({ isShowingMore }) {
-                            return isShowingMore ? 'Az kategori göster' : 'Fazla kategori göster';
+                            return isShowingMore ? 'Az göster' : 'Fazla göster';
                         },
                     }} />
                     <Divider sx={{ paddingTop: 2 }} />
                     <Typography variant='h4'>Karakter</Typography>
-                    <RefinementList attribute='CaracterName' operator='and' showMore={true} />
+                    <RefinementList attribute='CaracterName' operator='and' showMore={true} translations={{
+                        showMoreButtonText({ isShowingMore }) {
+                            return isShowingMore ? 'Az göster' : 'Fazla göster';
+                        },
+                    }} />
 
                     <Divider sx={{ paddingTop: 2 }} />
                     <Typography variant='h4'>Kıyafet</Typography>
-                    <RefinementList attribute='ProductTitle' operator='and' showMore={true} />
+                    <RefinementList attribute='ProductTitle' operator='and' showMore={true} translations={{
+                        showMoreButtonText({ isShowingMore }) {
+                            return isShowingMore ? 'Az göster' : 'Fazla göster';
+                        },
+                    }}/>
                     
                     <Divider sx={{ paddingTop: 2 }} />
                     <Typography variant='h4'>Sezon</Typography>
-                    <RefinementList attribute='Season' operator='and' showMore={true} />
+                    <RefinementList attribute='Season' operator='and' showMore={true} translations={{
+                        showMoreButtonText({ isShowingMore }) {
+                            return isShowingMore ? 'Az göster' : 'Fazla göster';
+                        },
+                    }}/>
                     <Divider sx={{ paddingTop: 2 }} />
                     <Typography variant='h4'>Bölüm</Typography>
-                    <RefinementList attribute='Episode' operator='and' showMore={true} />
+                    <RefinementList attribute='Episode' operator='and' showMore={true} translations={{
+                        showMoreButtonText({ isShowingMore }) {
+                            return isShowingMore ? 'Az göster' : 'Fazla göster';
+                        },
+                    }}/>
                 </div>
 
             </Drawer>
