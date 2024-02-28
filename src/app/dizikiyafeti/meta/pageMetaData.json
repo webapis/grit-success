@@ -20,7 +20,7 @@
         "algoliaQuery":"dilber inci taneleri",
         "urun": [],
         "slug": [
-            "inci-taneleri-dilber-kiyafetler"
+            "incitaneleri-dilber-kiyafetler"
         ],
         "title": "İnci Taneleri Dizisinde Dilber'ın rolünü canlandıran Hazar Ergüçlü'nin giydiği Kıyafetler",
         "nextpages": []
@@ -64,6 +64,65 @@
             "yali-capkini-kiyafetler"
         ],
         "title": "Yalı Çapkını Dizi Kıyafetleri",
+        "nextpages": []
+    },
+
+    {
+        "dizi": "Kardeşlerim",
+        "karakter": "",
+        "pageTitle": "Kardeşlerim Dizisi",
+        "tumurun": true,
+        "algoliaQuery":"kardeşlerim",
+        "urun": [],
+        "slug": [
+            "kardeslerim-dizi-kiyafetler"
+        ],
+        "title": "Kardeşlerim Dizi Kıyafetleri",
+        "nextpages": []
+    },
+
+    
+
+    {
+        "dizi": "Sakla Beni",
+        "karakter": "",
+        "pageTitle": "Sakla Beni Dizisi",
+        "tumurun": true,
+        "algoliaQuery":"sakla beni",
+        "urun": [],
+        "slug": [
+            "sakla-beni-dizi-kiyafetler"
+        ],
+        "title": "Sakla Beni Dizi Kıyafetleri",
+        "nextpages": []
+    },
+
+    {
+        "dizi": "Yargı",
+        "karakter": "Ceylin",
+        "pageTitle": "Yargı Ceylin",
+        "tumurun": true,
+        "algoliaQuery":"ceylin yargı",
+        "urun": [],
+        "slug": [
+            "yargi-dizi-ceylin-kiyafetler"
+        ],
+        "title": "Yalı Çapkını Dizisinde Ceylin'in rolünü canlandıran Pınar Deniz'in giydiği Kıyafetler",
+        "nextpages": []
+    },
+    
+
+    {
+        "dizi": "Kızılcık Şerbeti",
+        "karakter": "",
+        "pageTitle": "Kızılcık Şerbeti Dizisi",
+        "tumurun": true,
+        "algoliaQuery":"kızılcık şerbeti",
+        "urun": [],
+        "slug": [
+            "kizilcik-serbeti-dizi-kiyafetler"
+        ],
+        "title": "Kızılcık Şerbeti Dizi Kıyafetleri",
         "nextpages": []
     }
 ]
