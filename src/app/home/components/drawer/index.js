@@ -131,7 +131,7 @@ export default function PersistentDrawerLeft({ children }) {
                 <div style={{ padding: 10 }}>
                 <Divider sx={{ paddingTop: 2 }} />
                     <Typography variant='h4'>Dizi</Typography>
-                    <RefinementList attribute='TVSeriesTitle' operator='and' showMore={true} />
+                    <RefinementList attribute='TVSeriesTitle' operator='or' showMore={true} />
                     <Typography variant='h4'>Oyuncu</Typography>
                     <RefinementList searchable={true} attribute='FullName' showMore={true} translations={{
                         showMoreButtonText({ isShowingMore }) {
@@ -140,7 +140,7 @@ export default function PersistentDrawerLeft({ children }) {
                     }} />
                     <Divider sx={{ paddingTop: 2 }} />
                     <Typography variant='h4'>Karakter</Typography>
-                    <RefinementList attribute='CaracterName' operator='and' showMore={true} translations={{
+                    <RefinementList attribute='CaracterName' operator='or' showMore={true} translations={{
                         showMoreButtonText({ isShowingMore }) {
                             return isShowingMore ? 'Az göster' : 'Fazla göster';
                         },
@@ -148,7 +148,7 @@ export default function PersistentDrawerLeft({ children }) {
 
                     <Divider sx={{ paddingTop: 2 }} />
                     <Typography variant='h4'>Kıyafet</Typography>
-                    <RefinementList attribute='ProductTitle' operator='and' showMore={true} translations={{
+                    <RefinementList attribute='ProductTitle' operator='or' showMore={true} translations={{
                         showMoreButtonText({ isShowingMore }) {
                             return isShowingMore ? 'Az göster' : 'Fazla göster';
                         },
@@ -163,7 +163,7 @@ export default function PersistentDrawerLeft({ children }) {
                     }}/>
                     <Divider sx={{ paddingTop: 2 }} />
                     <Typography variant='h4'>Bölüm</Typography>
-                    <RefinementList attribute='Episode' operator='and' showMore={true} translations={{
+                    <RefinementList attribute='Episode' operator='or' showMore={true} translations={{
                         showMoreButtonText({ isShowingMore }) {
                             return isShowingMore ? 'Az göster' : 'Fazla göster';
                         },
