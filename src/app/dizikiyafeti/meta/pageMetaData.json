@@ -124,5 +124,20 @@
         ],
         "title": "Kızılcık Şerbeti Dizi Kıyafetleri",
         "nextpages": []
+    },
+
+    
+    {
+        "dizi": "Bahar",
+        "karakter": "",
+        "pageTitle": "Bahar Dizisi",
+        "tumurun": true,
+        "algoliaQuery":"bahar demet evgar",
+        "urun": [],
+        "slug": [
+            "barah-dizi-demet-evgar-kiyafetler"
+        ],
+        "title": "Bahar Dizisinde Bahar'ın rolünü canlandıran Demet Evgar'ın giydiği Kıyafetler",
+        "nextpages": []
     }
 ]
