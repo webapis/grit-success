@@ -7,8 +7,9 @@ import {
 } from 'react-instantsearch';
 import PersistentDrawerLeft from './drawer';
 import AlgoliaProvider from './AlgoliaProvider'
-//import ImageContainer from './ImageContainer';
-import { Box, Grid } from '@mui/material';
+import SearchResultContainer from './[...slug]/comp/SearchResultContainer';
+
+import { Box, Grid, Typography } from '@mui/material';
 
 export default function Application() {
 
@@ -23,14 +24,15 @@ export default function Application() {
 
                     <SearchBox searchAsYouType={false} placeholder='Dizi, Sponsor, Sponsorluk...' />
                 </Box>
+                <Typography variant='h5' textAlign='center' sx={{marginTop:2}}>Türk dizilerinde sponsorluk yapan markalar</Typography>
                 <Box sx={{ width: { xs: '100%', md: '50%' }, margin: '0 auto' }}>
                     <CurrentRefinements style={{ padding: 5 }} />
-                    <Stats style={{ margin: 5 }} />
+                    {/* <Stats style={{ margin: 5 }} /> */}
 
 
 
 
-                 {/*    <ImageContainer /> */}
+          <SearchResultContainer /> 
 
 
                 </Box>

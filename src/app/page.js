@@ -21,8 +21,8 @@ export default async function Home(props) {
   return <Suspense fallback={<p style={{height:'100vh'}}>Loading....</p>}>
     <div style={{marginTop:70,display:'flex',justifyContent:'center'}}>
     <Tabs value={0}>
-      <Tab label="Dizi Kıyafetleri"/>
-      <Tab label="Dizi Sponsorları" component ={Link} href="/dizi-sponsoru"/>
+      <Tab label="Dizi Kıyafeti"/>
+      <Tab label="Dizi Sponsoru" component ={Link} href="/dizi-sponsoru"/>
     </Tabs>
     </div>
     <Application {...props}/>

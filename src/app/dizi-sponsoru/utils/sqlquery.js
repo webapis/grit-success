@@ -20,10 +20,11 @@ pool.connect().then(() => {
     pool.request().query('select * from View_Sponsor_Brands', async(err, result) => {
           if(err) res.send(err)
           const objects = result.recordsets[0]
+          const filteredObjects= objects.filter(f=> f.Website!=='YBA')
           const index = client.initIndex('dizisponsoru');
           await  index.clearObjects()
-          await  index.saveObjects(objects, { autoGenerateObjectIDIfNotExist: true });
-        console.log('data uploaded',objects.length)
+          await  index.saveObjects(filteredObjects, { autoGenerateObjectIDIfNotExist: true });
+        console.log('data uploaded',filteredObjects.length)
       })
       sql.close();
       console.log('end sql');

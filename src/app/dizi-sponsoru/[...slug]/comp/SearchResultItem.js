@@ -9,18 +9,23 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import IconButton from '@mui/material/IconButton';
 import Link from 'next/link';
 export default function SearchResultItem({ item }) {
-    const { Name:name, Website, Acyklama,TOTAL:count } = item
+    const { Name:name, Website, Acyklama,TOTAL:count,TVSeriesTitle,Tag } = item
     const imageName = Website ? extractSubdomain(Website) : ""
-    return <Card sx={{ maxWidth: 345 }}>
-        <div style={{display:'flex',alignItems:'start'}}>
+    console.log('imageName',imageName)
+    return <Card sx={{ width: '100%' }}>
+        <div style={{display:'flex',justifyContent:'space-between'}}>
+        <div style={{width:50,textAlign:'center',marginLeft:3}}>
         <img
             component="img"
             alt={`${imageName} marka resmi`}
-            width="90"
-            height="110"
+            width="50"
+            height="90"
             style={{objectFit:'contain'}}
-            src={`/dizi/cover-image/yali-capkini.jpg`}
+            src={`/dizi/cover-image/${Tag}.jpg`}
         />
+        <span style={{fontSize:12}}>{TVSeriesTitle}</span>
+        </div>
+   
           <img
             component="img"
             alt={`${imageName} marka resmi`}
@@ -32,7 +37,7 @@ export default function SearchResultItem({ item }) {
         </div>
     
         <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography gutterBottom variant="h5" component={Link} href={Website}>
                 {name}
             </Typography>
             <Typography variant="body1" color="text.secondary">
