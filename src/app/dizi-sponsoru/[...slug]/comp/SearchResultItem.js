@@ -9,8 +9,8 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import IconButton from '@mui/material/IconButton';
 import Link from 'next/link';
 export default function SearchResultItem({ item }) {
-    const { Name:name, Website, Acyklama,TOTAL:count,TVSeriesTitle,Tag } = item
-    const imageName = Website ? extractSubdomain(Website) : ""
+    const { Name:name, Website, Acyklama,TOTAL:count,TVSeriesTitle,Tag,brandTag } = item
+    const imageName = brandTag ?brandTag: extractSubdomain(Website) 
     console.log('imageName',imageName)
     return <Card sx={{ width: '100%' }}>
         <div style={{display:'flex',justifyContent:'space-between'}}>

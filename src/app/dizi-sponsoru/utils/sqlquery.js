@@ -21,6 +21,7 @@ pool.connect().then(() => {
           if(err) res.send(err)
           const objects = result.recordsets[0]
           const filteredObjects= objects.filter(f=> f.Website!=='YBA')
+          const mappedData =filteredObjects.map((m)=>{return {...m,}})
           const index = client.initIndex('dizisponsoru');
           await  index.clearObjects()
           await  index.saveObjects(filteredObjects, { autoGenerateObjectIDIfNotExist: true });
