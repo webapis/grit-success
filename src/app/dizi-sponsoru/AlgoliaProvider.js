@@ -9,14 +9,22 @@ import { InstantSearchNext } from 'react-instantsearch-nextjs';
 import 'instantsearch.css/themes/reset.css';
 
 import 'instantsearch.css/themes/satellite.css';
-export default function AlgoliaProvider({ children}) {
+export default function AlgoliaProvider({ children, initialUiState }) {
 
+    if (initialUiState) {
+        return <InstantSearchNext indexName="dizisponsoru" searchClient={searchClient}  initialUiState={initialUiState}>
 
-    return <InstantSearchNext indexName="dizisponsoru" searchClient={searchClient} routing>
+            {children}
+
+        </InstantSearchNext>
+    } else {
+        return <InstantSearchNext indexName="dizisponsoru" searchClient={searchClient} routing >
 
         {children}
 
     </InstantSearchNext>
+    }
+
 }
 
 

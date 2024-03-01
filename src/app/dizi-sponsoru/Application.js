@@ -11,11 +11,11 @@ import SearchResultContainer from './[...slug]/comp/SearchResultContainer';
 
 import { Box, Grid, Typography } from '@mui/material';
 
-export default function Application() {
+export default function Application({initialUiState}) {
 
 
 
-    return <AlgoliaProvider>
+    return <AlgoliaProvider initialUiState={initialUiState}>
         <PersistentDrawerLeft>
 
 
