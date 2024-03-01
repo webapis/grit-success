@@ -24,7 +24,7 @@ export default function Application() {
 
                     <SearchBox searchAsYouType={false} placeholder='Dizi, Sponsor, Sponsorluk...' />
                 </Box>
-                <Typography variant='h5' textAlign='center' sx={{marginTop:2}}>Türk dizilerinde sponsorluk yapan markalar</Typography>
+                <Typography variant='h5' textAlign='center' sx={{marginTop:2}}>Türk dizilerin sponsor markaları</Typography>
                 <Box sx={{ width: { xs: '100%', md: '50%' }, margin: '0 auto' }}>
                     <CurrentRefinements style={{ padding: 5 }} />
                     {/* <Stats style={{ margin: 5 }} /> */}
