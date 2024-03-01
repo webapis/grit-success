@@ -12,15 +12,15 @@ export default function SearchResultItem({ item }) {
     const { Name:name, Website, Acyklama,TOTAL:count,TVSeriesTitle,Tag,brandTag } = item
     const imageName = brandTag ?brandTag: extractSubdomain(Website) 
 
-    return <Card sx={{ width: '100%' }}>
+    return <Card sx={{ width: '100%', border:'1px solid #bdbdbd', borderRadius:4 }} elevation={0}>
         <div style={{display:'flex',justifyContent:'space-between'}}>
-        <div style={{width:50,textAlign:'center',marginLeft:3}}>
+        <div style={{width:50,textAlign:'center',marginLeft:3, padding:5}}>
         <img
             component="img"
             alt={`${imageName} marka resmi`}
-            width="50"
-            height="90"
-            style={{objectFit:'contain'}}
+            width="60"
+            height="80"
+            style={{objectFit:'contain', borderRadius:5}}
             src={`/dizi/cover-image/${Tag}.jpg`}
         />
         <span style={{fontSize:12}}>{TVSeriesTitle}</span>
@@ -37,7 +37,7 @@ export default function SearchResultItem({ item }) {
         </div>
     
         <CardContent>
-            <Typography gutterBottom variant="h5" component={Link} href={Website}>
+            <Typography gutterBottom variant="h5" component={Link} href={Website} target='_blank'>
                 {name}
             </Typography>
             <Typography variant="body1" color="text.secondary">
