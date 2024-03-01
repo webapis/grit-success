@@ -3,7 +3,7 @@ import SearchResultItem from "./SearchResultItem"
 import {useInfiniteHits } from 'react-instantsearch';
 export default function SearchResultContainer({ items,pageTitle,coverimage }) {
     const { hits,showMore,isLastPage  } = useInfiniteHits();
-    console.log('hits',hits)
+
     return <Container>
         <Grid container gap={1} justifyContent="center">
            

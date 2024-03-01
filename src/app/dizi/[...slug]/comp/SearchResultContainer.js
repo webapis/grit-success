@@ -1,18 +1,13 @@
 import { Grid, Container,Typography } from "@mui/material"
-import SearchResultItem from "./SearchResultItem"
+import SearchResultItem from "../../../dizi-sponsoru/[...slug]/comp/SearchResultItem"
 
-export default function SearchResultContainer({ items,pageTitle,coverimage }) {
+export default function SearchResultContainer({ items,pageTitle }) {
 
     return <Container>
+          <Typography variant="h4" sx={{textAlign:"center"}}>{pageTitle}</Typography>
         <Grid container gap={1} justifyContent="center">
-            <Grid item xs={12}>
-            <Typography variant="h2" sx={{textAlign:"center"}}>{pageTitle}</Typography>
-                </Grid>
-        <Grid item xs={12} sx={{textAlign:"center"}}>
-
-            <img src={`/dizi/cover-image/${coverimage}`} alt={pageTitle}/>
-        </Grid>
-            {items.sort((a,b)=>b["TOTAL"]-a["TOTAL"]).map((m, i) => <Grid item key={i}> <SearchResultItem item={m} /></Grid>)}
+     
+            {items.sort((a,b)=>b["TOTAL"]-a["TOTAL"]).map((m, i) => <Grid item key={i} xs={12} md={5} > <SearchResultItem item={m} /></Grid>)}
         </Grid>
     </Container>
 }
