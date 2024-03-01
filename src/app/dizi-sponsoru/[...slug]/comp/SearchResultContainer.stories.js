@@ -4,7 +4,7 @@ import items from "../fake";
 
 
 export default {
-  title: 'SearchResultContainer',
+  title: 'Dizisponsoru/SearchResultContainer',
   component: SearchResultContainer,
 
 };

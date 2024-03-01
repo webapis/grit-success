@@ -26,7 +26,7 @@ const drawerWidth = 240;
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
     ({ theme, open }) => ({
         flexGrow: 1,
-        padding: theme.spacing(3),
+        padding: theme.spacing(1),
         transition: theme.transitions.create('margin', {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
@@ -99,13 +99,6 @@ export default function PersistentDrawerLeft({ children }) {
                         Glumzi
                     </Typography>
 
-
-
-
-
-
-
-
                 </Toolbar>
             </AppBar>
             <Drawer
@@ -171,10 +164,11 @@ export default function PersistentDrawerLeft({ children }) {
                 </div>
 
             </Drawer>
-            <Main open={open}>
+            <Main open={open} style={{padding:3}}>
+            {children}
                 <DrawerHeader />
 
-                {children}
+               
 
 
             </Main>

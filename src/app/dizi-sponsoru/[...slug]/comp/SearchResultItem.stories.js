@@ -18,4 +18,4 @@ const item ={
   }
 
 
-export const Primary =()=><SearchResultItem item={item}/>
+export const Primary =()=><SearchResultItem item={item} dizi="Yalı Çapkını Dizisi"/>

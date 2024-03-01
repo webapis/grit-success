@@ -1,4 +1,4 @@
-import App from "./index copy 1";
+import App from "./index";
 
 
 
