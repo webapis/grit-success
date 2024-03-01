@@ -11,7 +11,7 @@ import Link from 'next/link';
 export default function SearchResultItem({ item }) {
     const { Name:name, Website, Acyklama,TOTAL:count,TVSeriesTitle,Tag,brandTag } = item
     const imageName = brandTag ?brandTag: extractSubdomain(Website) 
-    console.log('imageName',imageName)
+
     return <Card sx={{ width: '100%' }}>
         <div style={{display:'flex',justifyContent:'space-between'}}>
         <div style={{width:50,textAlign:'center',marginLeft:3}}>
