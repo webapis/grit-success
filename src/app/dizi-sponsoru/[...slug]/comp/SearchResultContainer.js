@@ -1,7 +1,7 @@
 import { Grid, Container,Box,Button } from "@mui/material"
 import SearchResultItem from "./SearchResultItem"
 import {useInfiniteHits } from 'react-instantsearch';
-export default function SearchResultContainer({ items,pageTitle,coverimage }) {
+export default function SearchResultContainer() {
     const { hits,showMore,isLastPage  } = useInfiniteHits();
 
     return <Container>
