@@ -6,9 +6,7 @@ export default function SearchResultContainer() {
 
     return <Container>
         <Grid container gap={1} justifyContent="center">
-           
-     
-            {hits.sort((a,b)=>b["TOTAL"]-a["TOTAL"]).map((m, i) => <Grid item key={i} xs={12} md={5} > <SearchResultItem item={m} /></Grid>)}
+            {hits.map((m, i) => <Grid item key={i} xs={12} md={5} > <SearchResultItem item={m} /></Grid>)}
         </Grid>
         <Box sx={{display:'flex',justifyContent:'center',marginTop:5}}>
         <Button variant='outlined' onClick={showMore} disabled={isLastPage}>
@@ -18,3 +16,4 @@ export default function SearchResultContainer() {
         </Box>
     </Container>
 }
+//      {hits.sort((a,b)=>b["TOTAL"]-a["TOTAL"]).map((m, i) => <Grid item key={i} xs={12} md={5} > <SearchResultItem item={m} /></Grid>)}
