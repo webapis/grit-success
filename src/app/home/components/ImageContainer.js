@@ -1,13 +1,19 @@
 
 'use client'
-import React from 'react';
+import React, {useState} from 'react';
 import Image from "./Image";
 import {useInfiniteHits } from 'react-instantsearch';
-import { Typography,Grid, Container, Box } from '@mui/material';
+import { Typography,Grid, Container, Box,LinearProgress } from '@mui/material';
 import { Button } from '@mui/material';
 export default function ImageContainer() {
     const { hits,showMore,isLastPage  } = useInfiniteHits();
-  
+  const {load,setLoad}=useState(false)
+
+  function handleClickMore (){
+    showMore()
+    setLoad(true)
+
+  }
     return <Container>
       
         <Grid container gap={2} justifyContent="center"
@@ -34,9 +40,10 @@ export default function ImageContainer() {
             </Grid>
         })}</Grid>
         <Box sx={{display:'flex',justifyContent:'center',marginTop:5}}>
-        <Button variant='outlined' onClick={showMore} disabled={isLastPage}>
+            {load ? <LinearProgress/>:  <Button variant='outlined' onClick={handleClickMore} disabled={isLastPage}>
         Fazla Göster
-      </Button>
+      </Button>}
+      
 
         </Box>
 
