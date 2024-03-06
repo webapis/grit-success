@@ -82,12 +82,13 @@
     ,
 
     {
-        "slug": "tas-kagit-makas-taki-sponsorlari",
-        "pageTitle":"Taş Kağıt Makas Takı Sponsorları",
-        "description":"Taş Kağıt Makas Takı Sponsoru: Kaliteli ve uygun fiyatlı mobilyalarla tanışın.",
+        "slug": "tas-kagit-makas-taki-mucevher-sponsorlari",
+        "pageTitle":"Taş Kağıt Makas Takı, Mücevher Sponsorları",
+        "description":"Taş Kağıt Makas Takı, Mücevher Sponsoru: Kaliteli ve uygun fiyatlı mobilyalarla tanışın.",
        
-        "search": "takı Taş Kağıt Makas",
+        "search": "mücevher Taş Kağıt Makas",
         "index":"dizisponsoru",
         "coverimage":"tas-kagit-makas.jpg"
     }
+    
 ]
