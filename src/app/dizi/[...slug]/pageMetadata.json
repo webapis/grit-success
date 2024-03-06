@@ -47,5 +47,47 @@
         "search": "Kızılcık Şerbeti kıyafet",
         "index":"dizisponsoru",
         "coverimage":"kizilcik-serbeti.jpg"
+    },
+
+    {
+        "slug": "tas-kagit-makas-kiyafet-sponsorlari",
+        "pageTitle":"Taş Kağıt Makas Dizisi Kıyafet Sponsorları",
+        "description":"Taş Kağıt Makas Dizisi Tüm Kıyafet Sponsor Markalar.",
+       
+        "search": "Taş Kağıt Makas kıyafet",
+        "index":"dizisponsoru",
+        "coverimage":"tas-kagit-makas.jpg"
+    },
+
+    {
+        "slug": "tas-kagit-makas-mobilya-sponsorlari",
+        "pageTitle":"Taş Kağıt Makas Mobilya Sponsorları",
+        "description":"Taş Kağıt Makas Mobilya Sponsoru: Kaliteli ve uygun fiyatlı mobilyalarla tanışın.",
+       
+        "search": "mobilya Taş Kağıt Makas",
+        "index":"dizisponsoru",
+        "coverimage":"tas-kagit-makas.jpg"
+    }
+    ,
+
+    {
+        "slug": "tas-kagit-makas-sponsorlari",
+        "pageTitle":"Taş Kağıt Makas Dizi Sponsorları",
+        "description":"Taş Kağıt Makas Dizi Sponsorları: Kaliteli ve uygun fiyatlı mobilyalarla tanışın.",
+       
+        "search": "Taş Kağıt Makas",
+        "index":"dizisponsoru",
+        "coverimage":"tas-kagit-makas.jpg"
+    }
+    ,
+
+    {
+        "slug": "tas-kagit-makas-taki-sponsorlari",
+        "pageTitle":"Taş Kağıt Makas Takı Sponsorları",
+        "description":"Taş Kağıt Makas Takı Sponsoru: Kaliteli ve uygun fiyatlı mobilyalarla tanışın.",
+       
+        "search": "takı Taş Kağıt Makas",
+        "index":"dizisponsoru",
+        "coverimage":"tas-kagit-makas.jpg"
     }
 ]
