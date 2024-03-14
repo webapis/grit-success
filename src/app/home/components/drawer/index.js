@@ -78,22 +78,34 @@ export default function PersistentDrawerLeft({ children }) {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar position="fixed" open={open}>
-                <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        onClick={handleDrawerOpen}
-                        edge="start"
-                        sx={{ mr: 2, ...(open && { display: 'none' }) }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant="h6" noWrap component="div">
-                        Glumzi
-                    </Typography>
-                </Toolbar>
-            </AppBar>
+            <AppBar position="fixed" open={open} style={{ backgroundColor: 'white' }}>
+    <Toolbar>
+        <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleDrawerOpen}
+            edge="start"
+            sx={{ mr: 2, ...(open && { display: 'none' }) }}
+        >
+            <MenuIcon sx={{ color: 'black' }} />
+        </IconButton>
+        <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{
+                color: 'black',
+                fontFamily: 'Arial, sans-serif',
+                fontWeight: 600,
+                fontSize: '1.5rem',
+                letterSpacing: '0.05em',
+                textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
+            }}
+        >
+            Glumzi
+        </Typography>
+    </Toolbar>
+</AppBar>
             <Drawer
                 sx={{
                     width: drawerWidth,
