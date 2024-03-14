@@ -3,12 +3,13 @@ import React from 'react';
 import { Typography, Grid, Container } from '@mui/material';
 import Diziview from '@/app/dizikiyafeti/comps/Diziview';
 import data from '@/app/dizikiyafeti/page-data/dizikiyafetiMenu.json'
+import Drawer from './drawer/index'
 const arrayData = Object.entries(data)
 
 
 export default function Application() {
 
-    return <Container >
+    return <Drawer> <Container >
 
         <Typography variant='h4' textAlign='center' sx={{ marginTop: 2 }}>Dizi kıyafetleri</Typography>
 
@@ -32,7 +33,7 @@ export default function Application() {
 
 
     </Container>
-
+    </Drawer>
 }
 
 

@@ -15,11 +15,6 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 
-import {
-
-    RefinementList
-} from 'react-instantsearch';
-
 
 const drawerWidth = 240;
 
@@ -66,7 +61,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
-}));
+}))
 
 export default function PersistentDrawerLeft({ children }) {
     const theme = useTheme();
@@ -83,24 +78,34 @@ export default function PersistentDrawerLeft({ children }) {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar position="fixed" open={open} style={{ color: '' }}>
-                <Toolbar>
-
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        onClick={handleDrawerOpen}
-                        edge="start"
-                        sx={{ mr: 2, ...(open && { display: 'none' }) }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant="h6" noWrap component="div" >
-                        Glumzi
-                    </Typography>
-
-                </Toolbar>
-            </AppBar>
+            <AppBar position="fixed" open={open} style={{ backgroundColor: 'white' }}>
+    <Toolbar>
+        <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleDrawerOpen}
+            edge="start"
+            sx={{ mr: 2, ...(open && { display: 'none' }) }}
+        >
+            <MenuIcon sx={{ color: 'black' }} />
+        </IconButton>
+        <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{
+                color: 'black',
+                fontFamily: 'Arial, sans-serif',
+                fontWeight: 600,
+                fontSize: '1.5rem',
+                letterSpacing: '0.05em',
+                textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
+            }}
+        >
+            Glumzi
+        </Typography>
+    </Toolbar>
+</AppBar>
             <Drawer
                 sx={{
                     width: drawerWidth,
@@ -124,53 +129,14 @@ export default function PersistentDrawerLeft({ children }) {
                 <div style={{ padding: 10 }}>
                 <Divider sx={{ paddingTop: 2 }} />
                     <Typography variant='h4'>Dizi</Typography>
-                    <RefinementList attribute='TVSeriesTitle' operator='or' showMore={true} />
-                    <Typography variant='h4'>Oyuncu</Typography>
-                    <RefinementList searchable={true} attribute='FullName' showMore={true} translations={{
-                        showMoreButtonText({ isShowingMore }) {
-                            return isShowingMore ? 'Az göster' : 'Fazla göster';
-                        },
-                    }} />
+                  
                     <Divider sx={{ paddingTop: 2 }} />
                     <Typography variant='h4'>Karakter</Typography>
-                    <RefinementList attribute='CaracterName' operator='or' showMore={true} translations={{
-                        showMoreButtonText({ isShowingMore }) {
-                            return isShowingMore ? 'Az göster' : 'Fazla göster';
-                        },
-                    }} />
-
-                    <Divider sx={{ paddingTop: 2 }} />
-                    <Typography variant='h4'>Kıyafet</Typography>
-                    <RefinementList attribute='ProductTitle' operator='or' showMore={true} translations={{
-                        showMoreButtonText({ isShowingMore }) {
-                            return isShowingMore ? 'Az göster' : 'Fazla göster';
-                        },
-                    }}/>
-                    
-                    <Divider sx={{ paddingTop: 2 }} />
-                    <Typography variant='h4'>Sezon</Typography>
-                    <RefinementList attribute='Season' operator='and' showMore={true} translations={{
-                        showMoreButtonText({ isShowingMore }) {
-                            return isShowingMore ? 'Az göster' : 'Fazla göster';
-                        },
-                    }}/>
-                    <Divider sx={{ paddingTop: 2 }} />
-                    <Typography variant='h4'>Bölüm</Typography>
-                    <RefinementList attribute='Episode' operator='or' showMore={true} translations={{
-                        showMoreButtonText({ isShowingMore }) {
-                            return isShowingMore ? 'Az göster' : 'Fazla göster';
-                        },
-                    }}/>
                 </div>
-
             </Drawer>
             <Main open={open} style={{padding:3}}>
             {children}
                 <DrawerHeader />
-
-               
-
-
             </Main>
         </Box>
     );
