@@ -12,7 +12,8 @@
         "Season": "2",
         "ProductTitle": "Hırka",
         "Episode": "59",
-        "Time": 1711152000
+        "Time": 1711152000,
+        "tag": "yali-capkini"
     },
     "Sakla Beni": {
         "FullName": "Cemre Baysel",
@@ -27,7 +28,8 @@
         "Season": "1",
         "ProductTitle": "Elbise",
         "Episode": "19",
-        "Time": 1709164800
+        "Time": 1709164800,
+        "tag": "sakla-beni"
     },
     "Bahar": {
         "FullName": "Demet Evgar",
@@ -42,7 +44,8 @@
         "Season": "1",
         "ProductTitle": "Ceket",
         "Episode": "3",
-        "Time": 1708992000
+        "Time": 1708992000,
+        "tag": "bahar"
     },
     "Kızılcık Şerbeti": {
         "FullName": "Evrim Alasya",
@@ -57,7 +60,8 @@
         "Season": "2",
         "ProductTitle": "Blazer Ceket",
         "Episode": "52",
-        "Time": 1708646400
+        "Time": 1708646400,
+        "tag": "kizilcik-serbeti"
     },
     "Yargı": {
         "FullName": "Pınar Deniz",
@@ -72,7 +76,8 @@
         "Season": "3",
         "ProductTitle": "Elbise",
         "Episode": "83",
-        "Time": 1708214400
+        "Time": 1708214400,
+        "tag": "yargi"
     },
     "Gaddar": {
         "FullName": "Sümeyye Aydoğan",
@@ -87,7 +92,8 @@
         "Season": "1",
         "ProductTitle": "Kaban",
         "Episode": "4",
-        "Time": 1707436800
+        "Time": 1707436800,
+        "tag": "gaddar"
     },
     "Inci Taneleri": {
         "FullName": "Hazar Ergüçlü",
@@ -102,7 +108,8 @@
         "Season": "1",
         "ProductTitle": "Elbise",
         "Episode": "1",
-        "Time": 1706140800
+        "Time": 1706140800,
+        "tag": "inci-taneleri"
     },
     "Kardeşlerim": {
         "FullName": "Melis Minkari",
@@ -117,7 +124,8 @@
         "Season": "4",
         "ProductTitle": "Kazak",
         "Episode": "112",
-        "Time": 1705104000
+        "Time": 1705104000,
+        "tag": "kardeslerim"
     },
     "Kader Bağları": {
         "FullName": "Ayça Ayşin",
@@ -132,7 +140,8 @@
         "Season": "1",
         "ProductTitle": "Kazak",
         "Episode": "2",
-        "Time": 1696636800
+        "Time": 1696636800,
+        "tag": "kader-baglari"
     },
     "Dönence": {
         "FullName": "Sümeyye Aydoğan",
@@ -147,6 +156,7 @@
         "Season": "1",
         "ProductTitle": "Gömlek",
         "Episode": "8",
-        "Time": 1693267200
+        "Time": 1693267200,
+        "tag": "donence"
     }
 }
