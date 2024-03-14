@@ -20,7 +20,6 @@ export default function Diziview({title ,content }) {
 
             <CardContent>
                 <Box  style={{display:'flex', alignItems:'baseline', justifyContent:'space-between'}}>
-             
                 <Typography  variant="h5" component="div" style={{ textTransform: 'capitalize' }}>
                     {title}
                 </Typography>

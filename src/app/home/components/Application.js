@@ -17,7 +17,7 @@ export default function Application() {
             {arrayData.sort((a,b)=>b[1].Time-a[1].Time).map((m,i) => {
                 const title = m[0]
                 const content = m[1]
-                debugger
+           
                 return <Grid key={i} item xs={12} md={3}> <Diziview title={title} content={content} /></Grid>
 
             })}

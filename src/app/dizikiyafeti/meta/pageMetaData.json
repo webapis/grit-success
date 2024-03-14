@@ -1,10 +1,104 @@
 [
     {
+        "dizi": "Yalı Çapkını",
+        "karakter": "Seyran",
+        "pageTitle": "Yalı Çapkını Seyran",
+        "tumurun": true,
+        "algoliaQuery":{ "$and": [{ "TVSeriesTitle": "Yalı Çapkını" }]},
+        "urun": [],
+        "slug": [
+            "yali-capkini-dizi-kiyafetleri"
+        ],
+        "title": "Yalı Çapkını Dizisinde Seyran'ın rolünü canlandıran Afra Saraçoğlu'nun giydiği Kıyafetler",
+        "nextpages": []
+    },
+    
+    {
+        "dizi": "Sakla Beni",
+        "karakter": "",
+        "pageTitle": "Sakla Beni Dizisi",
+        "tumurun": true,
+        "algoliaQuery":{ "$and": [{ "TVSeriesTitle": "Sakla Beni" }]},
+        "urun": [],
+        "slug": [
+            "sakla-beni-dizi-kiyafetleri"
+        ],
+        "title": "Sakla Beni Dizi Kıyafetleri",
+        "nextpages": []
+    },
+
+    {
+        "dizi": "Bahar",
+        "karakter": "",
+        "pageTitle": "Bahar Dizisi",
+        "tumurun": true,
+        "algoliaQuery":{ "$and": [{ "TVSeriesTitle": "Bahar", "FullName": "Demet Evgar" }]},
+        "urun": [],
+        "slug": [
+            "bahar-dizi-kiyafetleri"
+        ],
+        "title": "Bahar Dizisinde Bahar'ın rolünü canlandıran Demet Evgar'ın giydiği Kıyafetler",
+        "nextpages": []
+    },
+    {
+        "dizi": "Kızılcık Şerbeti",
+        "karakter": "",
+        "pageTitle": "Kızılcık Şerbeti Dizisi",
+        "tumurun": true,
+        "algoliaQuery":{ "$and": [{ "TVSeriesTitle": "Kızılcık Şerbeti" }]},
+        "urun": [],
+        "slug": [
+            "kizilcik-serbeti-dizi-kiyafetleri"
+        ],
+        "title": "Kızılcık Şerbeti Dizi Kıyafetleri",
+        "nextpages": []
+    },
+    
+    {
+        "dizi": "Yargı",
+        "karakter": "Ceylin",
+        "pageTitle": "Yargı Ceylin",
+        "tumurun": true,
+        "algoliaQuery":{ "$and": [{ "TVSeriesTitle": "Yargı","tag":"yargi" }]},
+        "urun": [],
+        "slug": [
+            "yargi-dizi-kiyafetleri"
+        ],
+        "title": "Yalı Çapkını Dizisinde Ceylin'in rolünü canlandıran Pınar Deniz'in giydiği Kıyafetler",
+        "nextpages": []
+    },
+    {
+        "dizi": "Gaddar",
+        "karakter": "",
+        "pageTitle": "Gaddar",
+        "tumurun": true,
+        "algoliaQuery":{ "$and": [{ "TVSeriesTitle": "Gaddar" }]},
+        "urun": [],
+        "slug": [
+            "gaddar-dizi-kiyafetleri"
+        ],
+        "title": "Gaddar Dizisinde Aydan'ın rolünü canlandıran Sümeyye Aydoğan'ın giydiği Kıyafetler",
+        "nextpages": []
+    },
+    {
+        "dizi": "İnci Taneleri",
+        "karakter": "",
+        "pageTitle": "İnci Taneleri",
+        "tumurun": true,
+        "algoliaQuery":{ "$and": [{ "TVSeriesTitle": "İnci Taneleri" }]},
+        "urun": [],
+        "slug": [
+            "inci-taneleri-dizi-kiyafetleri"
+        ],
+        "title": "",
+        "nextpages": []
+    },
+    {
         "dizi": "Gaddar",
         "karakter": "Aydan",
         "pageTitle": "Gaddar Aydan",
         "tumurun": true,
-        "algoliaQuery":"aydan gaddar",
+        "algoliaQuery":{ "$and": [{ "TVSeriesTitle": "Gaddar" }]},
         "urun": [],
         "slug": [
             "gaddar-aydan-kiyafetler"
@@ -17,7 +111,7 @@
         "karakter": "Dilber",
         "pageTitle": "İnci Taneleri Dilber",
         "tumurun": true,
-        "algoliaQuery":"dilber inci taneleri",
+        "algoliaQuery":{ "$and": [{ "TVSeriesTitle": "İnci Taneleri" }]},
         "urun": [],
         "slug": [
             "incitaneleri-dilber-kiyafetler"
@@ -25,13 +119,25 @@
         "title": "İnci Taneleri Dizisinde Dilber'ın rolünü canlandıran Hazar Ergüçlü'nin giydiği Kıyafetler",
         "nextpages": []
     },
-
+    {
+        "dizi": "Kardeşlerim",
+        "karakter": "",
+        "pageTitle": "Kardeşlerim Dizisi",
+        "tumurun": true,
+        "algoliaQuery":{ "$and": [{ "TVSeriesTitle": "Kardeşlerim" },{ "tag": "kardeslerim" }]},
+        "urun": [],
+        "slug": [
+            "kardeslerim-dizi-kiyafetleri"
+        ],
+        "title": "Kardeşlerim Dizi Kıyafetleri",
+        "nextpages": []
+    },
     {
         "dizi": "Yalı Çapkını",
         "karakter": "Seyran",
         "pageTitle": "Yalı Çapkını Seyran",
         "tumurun": true,
-        "algoliaQuery":"seyran yalı çapkını",
+        "algoliaQuery":{ "$and": [{ "TVSeriesTitle": "Yalı Çapkını","CaracterName":"Seyran" }]},
         "urun": [],
         "slug": [
             "yali-capkini-seyran-kiyafetler"
@@ -44,7 +150,7 @@
         "karakter": "Suna",
         "pageTitle": "Yalı Çapkını Suna",
         "tumurun": true,
-        "algoliaQuery":"pozam yalı çapkını",
+        "algoliaQuery":{ "$and": [{ "TVSeriesTitle": "Yalı Çapkını","CaracterName":"Suna" }]},
         "urun": [],
         "slug": [
             "yali-capkini-suna-kiyafetler"
@@ -58,7 +164,7 @@
         "karakter": "",
         "pageTitle": "Yalı Çapkını ",
         "tumurun": true,
-        "algoliaQuery":"yalı çapkını",
+        "algoliaQuery":{ "$and": [{ "TVSeriesTitle": "Yalı Çapkını" }]},
         "urun": [],
         "slug": [
             "yali-capkini-kiyafetler"
@@ -72,7 +178,7 @@
         "karakter": "",
         "pageTitle": "Kardeşlerim Dizisi",
         "tumurun": true,
-        "algoliaQuery":"kardeşlerim",
+        "algoliaQuery":{ "$and": [{ "TVSeriesTitle": "Kardeşlerim" }]},
         "urun": [],
         "slug": [
             "kardeslerim-dizi-kiyafetler"
@@ -88,7 +194,7 @@
         "karakter": "",
         "pageTitle": "Sakla Beni Dizisi",
         "tumurun": true,
-        "algoliaQuery":"sakla beni",
+        "algoliaQuery":{ "$and": [{ "TVSeriesTitle": "Sakla Beni" }]},
         "urun": [],
         "slug": [
             "sakla-beni-dizi-kiyafetler"
@@ -102,7 +208,7 @@
         "karakter": "Ceylin",
         "pageTitle": "Yargı Ceylin",
         "tumurun": true,
-        "algoliaQuery":"ceylin yargı",
+        "algoliaQuery":{ "$and": [{ "TVSeriesTitle": "Yargı" }]},
         "urun": [],
         "slug": [
             "yargi-dizi-ceylin-kiyafetler"
@@ -117,7 +223,7 @@
         "karakter": "",
         "pageTitle": "Kızılcık Şerbeti Dizisi",
         "tumurun": true,
-        "algoliaQuery":"kızılcık şerbeti",
+        "algoliaQuery":{ "$and": [{ "TVSeriesTitle": "Kızılcık Şerbeti" }]},
         "urun": [],
         "slug": [
             "kizilcik-serbeti-dizi-kiyafetler"
@@ -132,12 +238,40 @@
         "karakter": "",
         "pageTitle": "Bahar Dizisi",
         "tumurun": true,
-        "algoliaQuery":"bahar demet evgar",
+        "algoliaQuery":{ "$and": [{ "TVSeriesTitle": "Bahar" }]},
         "urun": [],
         "slug": [
             "barah-dizi-demet-evgar-kiyafetler"
         ],
         "title": "Bahar Dizisinde Bahar'ın rolünü canlandıran Demet Evgar'ın giydiği Kıyafetler",
+        "nextpages": []
+    },
+      
+    {
+        "dizi": "Kader Bağları",
+        "karakter": "",
+        "pageTitle": "Kader Bağları Dizisi",
+        "tumurun": true,
+        "algoliaQuery":{ "$and": [{ "TVSeriesTitle": "Kader Bağları" }]},
+        "urun": [],
+        "slug": [
+            "kader-baglari-dizi-kiyafetleri"
+        ],
+        "title": "Kader Bağları Dizi Kıyafetleri",
+        "nextpages": []
+    },
+      
+    {
+        "dizi": "Dönence",
+        "karakter": "",
+        "pageTitle": "Dönence Dizisi",
+        "tumurun": true,
+        "algoliaQuery":{ "$and": [{ "TVSeriesTitle": "Dönence" }]},
+        "urun": [],
+        "slug": [
+            "donence-dizi-kiyafetleri"
+        ],
+        "title": "Dönence Dizi Kıyafetleri",
         "nextpages": []
     }
 ]

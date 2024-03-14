@@ -22,7 +22,7 @@ pool.connect().then(() => {
   pool.request().query('select * from View_DiziKiyafeti', async (err, result) => {
     if (err) res.send(err)
     const objects = result.recordsets[0].map(m => { return { ...m, Time: Math.round(new Date(m.Time).getTime() / 1000) } }).sort((a, b) => b.Time - a.Time)
-    const objectsWithTags =objects.map(m=>{return {...m,tag: deaccent( m.TVSeriesTitle).replaceAll(' ','-').toLowerCase() }})
+    const objectsWithTags =objects.map((m,i)=>{return {...m,id:i,tag: deaccent( m.TVSeriesTitle).replaceAll(' ','-').toLowerCase() }})
     debugger
     const groubByDizi = groupBy(objectsWithTags, 'TVSeriesTitle')
     for (let currentGroup in groubByDizi) {
