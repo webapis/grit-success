@@ -8,17 +8,17 @@ const arrayData = Object.entries(data)
 
 export default function Application() {
 
-    return <Container>
+    return <Container >
 
-        <Typography variant='h5' textAlign='center' sx={{ marginTop: 2 }}>Türk dizilerinde giyilen marka kıyafetler</Typography>
+        <Typography variant='h4' textAlign='center' sx={{ marginTop: 2 }}>Dizi kıyafetleri</Typography>
 
 
         <Grid container gap={1} style={{display:'flex',justifyContent:'center'}}>
-            {arrayData.map(m => {
+            {arrayData.sort((a,b)=>b[1].Time-a[1].Time).map((m,i) => {
                 const title = m[0]
                 const content = m[1]
                 debugger
-                return <Grid item xs={12} md={3}> <Diziview title={title} content={content} /></Grid>
+                return <Grid key={i} item xs={12} md={3}> <Diziview title={title} content={content} /></Grid>
 
             })}
         </Grid>
