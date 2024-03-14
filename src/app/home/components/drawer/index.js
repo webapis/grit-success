@@ -6,22 +6,22 @@ import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-
 import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import Divider from '@mui/material/Divider';
+import DizivliewListItem from './DiziviewListItem';
+import data from '@/app/dizikiyafeti/page-data/dizikiyafetiMenu.json';
 
-
-
+const arrayData = Object.entries(data);
 const drawerWidth = 240;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
     ({ theme, open }) => ({
         flexGrow: 1,
-        padding: theme.spacing(1),
+        padding: theme.spacing(3),
         transition: theme.transitions.create('margin', {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
@@ -61,7 +61,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
-}))
+}));
 
 export default function PersistentDrawerLeft({ children }) {
     const theme = useTheme();
@@ -78,34 +78,22 @@ export default function PersistentDrawerLeft({ children }) {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar position="fixed" open={open} style={{ backgroundColor: 'white' }}>
-    <Toolbar>
-        <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{ mr: 2, ...(open && { display: 'none' }) }}
-        >
-            <MenuIcon sx={{ color: 'black' }} />
-        </IconButton>
-        <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{
-                color: 'black',
-                fontFamily: 'Arial, sans-serif',
-                fontWeight: 600,
-                fontSize: '1.5rem',
-                letterSpacing: '0.05em',
-                textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
-            }}
-        >
-            Glumzi
-        </Typography>
-    </Toolbar>
-</AppBar>
+            <AppBar position="fixed" open={open}>
+                <Toolbar>
+                    <IconButton
+                        color="inherit"
+                        aria-label="open drawer"
+                        onClick={handleDrawerOpen}
+                        edge="start"
+                        sx={{ mr: 2, ...(open && { display: 'none' }) }}
+                    >
+                        <MenuIcon />
+                    </IconButton>
+                    <Typography variant="h6" noWrap component="div">
+                        Glumzi
+                    </Typography>
+                </Toolbar>
+            </AppBar>
             <Drawer
                 sx={{
                     width: drawerWidth,
@@ -114,7 +102,6 @@ export default function PersistentDrawerLeft({ children }) {
                         width: drawerWidth,
                         boxSizing: 'border-box',
                     },
-
                 }}
                 variant="persistent"
                 anchor="left"
@@ -126,17 +113,18 @@ export default function PersistentDrawerLeft({ children }) {
                     </IconButton>
                 </DrawerHeader>
                 <Divider />
-                <div style={{ padding: 10 }}>
-                <Divider sx={{ paddingTop: 2 }} />
-                    <Typography variant='h4'>Dizi</Typography>
-                  
-                    <Divider sx={{ paddingTop: 2 }} />
-                    <Typography variant='h4'>Karakter</Typography>
-                </div>
+                <Box sx={{ padding: 2 }}>
+                    <Typography variant="h5" gutterBottom>Diziler</Typography>
+                    {arrayData.sort((a, b) => b[1].Time - a[1].Time).map((m, i) => {
+                        const title = m[0];
+                        const content = m[1];
+                        return <DizivliewListItem key={title} title={title} content={content} />;
+                    })}
+                </Box>
             </Drawer>
-            <Main open={open} style={{padding:3}}>
-            {children}
+            <Main open={open}>
                 <DrawerHeader />
+                {children}
             </Main>
         </Box>
     );

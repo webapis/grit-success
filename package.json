@@ -26,7 +26,6 @@
     "fuse.js": "^7.0.0",
     "instantsearch.css": "^8.1.0",
     "minisearch": "^6.3.0",
-    "msnodesqlv8": "^4.1.2",
     "mssql": "^10.0.2",
     "next": "^14.1.0",
     "react": "^18",
