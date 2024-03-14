@@ -1,44 +1,37 @@
 'use client'
 import React from 'react';
+import { Typography, Grid, Container } from '@mui/material';
+import Diziview from '@/app/dizikiyafeti/comps/Diziview';
+import data from '@/app/dizikiyafeti/page-data/dizikiyafetiMenu.json'
+const arrayData = Object.entries(data)
 
-import {
-
-    SearchBox, Stats, CurrentRefinements
-} from 'react-instantsearch';
-import PersistentDrawerLeft from './drawer';
-import AlgoliaProvider from './AlgoliaProvider'
-import ImageContainer from './ImageContainer';
-import { Box, Typography } from '@mui/material';
 
 export default function Application() {
 
+    return <Container>
+
+        <Typography variant='h5' textAlign='center' sx={{ marginTop: 2 }}>Türk dizilerinde giyilen marka kıyafetler</Typography>
 
 
-    return <AlgoliaProvider>
-        <PersistentDrawerLeft>
+        <Grid container gap={1} style={{display:'flex',justifyContent:'center'}}>
+            {arrayData.map(m => {
+                const title = m[0]
+                const content = m[1]
+                debugger
+                return <Grid item xs={12} md={3}> <Diziview title={title} content={content} /></Grid>
 
-
-            <Box>
-                <Box sx={{ width: { xs: '100%', md: '50%' }, margin: '0 auto', marginTop: 0 }}>
-
-                    <SearchBox searchAsYouType={false} placeholder='Dizi, Karakter, Oyuncu, Kıyafet...' />
-                </Box>
-                <Typography variant='h5' textAlign='center' sx={{marginTop:2}}>Türk dizilerinde giyilen marka kıyafetler</Typography>
-                <Box sx={{ width: { xs: '100%', md: '50%' }, margin: '0 auto' }}>
-                    <CurrentRefinements style={{ padding: 5 }} />
-                    {/* <Stats style={{ margin: 5 }} /> */}
+            })}
+        </Grid>
 
 
 
 
-                    <ImageContainer />
 
 
-                </Box>
 
-            </Box>
-        </PersistentDrawerLeft>
-    </AlgoliaProvider>
+
+
+    </Container>
 
 }
 

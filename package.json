@@ -12,7 +12,8 @@
     "build-storybook": "storybook build",
     "extDizikiyafetiPageData": "node src/app/dizikiyafeti/utils/extractPageData.mjs",
     "exportFromSQLDizisponsoru": "node src/app/dizi-sponsoru/utils/sqlquery.js",
-    "exportFromSQLDizikiyafeti": "node src/app/dizikiyafeti/utils/sqlquery.js"
+    "exportFromSQLDizikiyafeti": "node src/app/dizikiyafeti/utils/sqlquery.js",
+    "exportFromSQLDizikiyafeti1": "node src/app/dizikiyafeti/utils/sqlquery1.js"
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",
