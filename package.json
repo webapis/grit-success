@@ -12,7 +12,9 @@
     "build-storybook": "storybook build",
     "extDizikiyafetiPageData": "node src/app/dizikiyafeti/utils/extractPageData.mjs",
     "exportFromSQLDizisponsoru": "node src/app/dizi-sponsoru/utils/sqlquery.js",
-    "exportFromSQLDizikiyafeti": "node src/app/dizikiyafeti/utils/sqlquery.js"
+    "exportFromSQLDizisponsoru1": "node src/app/dizi-sponsoru/utils/sqlquery1.js",
+    "exportFromSQLDizikiyafeti": "node src/app/dizikiyafeti/utils/sqlquery.js",
+    "exportFromSQLDizikiyafeti1": "node src/app/dizikiyafeti/utils/sqlquery1.js"
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",
@@ -22,7 +24,9 @@
     "@next/third-parties": "^14.1.0",
     "algoliasearch": "^4.22.1",
     "dotenv": "^16.4.4",
+    "fuse.js": "^7.0.0",
     "instantsearch.css": "^8.1.0",
+    "minisearch": "^6.3.0",
     "mssql": "^10.0.2",
     "next": "^14.1.0",
     "react": "^18",

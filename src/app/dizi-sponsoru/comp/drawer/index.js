@@ -13,7 +13,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Divider from '@mui/material/Divider';
 import DizivliewListItem from './DiziviewListItem';
-import data from '@/app/dizikiyafeti/page-data/dizikiyafetiMenu.json';
+import data from '@/app/dizi-sponsoru/page-data/dizisponsoruMenu.json';
 import Link from 'next/link';
 const arrayData = Object.entries(data);
 const drawerWidth = 240;
@@ -78,36 +78,36 @@ export default function PersistentDrawerLeft({ children }) {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar position="fixed" open={open} style={{ backgroundColor: 'white',zIndex:500 }} >
-    <Toolbar>
-        <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{ mr: 2, ...(open && { display: 'none' }) }}
-        >
-            <MenuIcon sx={{ color: 'black' }} />
-        </IconButton>
-        <Typography
-            variant="h6"
-            noWrap
-            component={Link}
-            sx={{
-                color: 'black',
-                fontFamily: 'Arial, sans-serif',
-                fontWeight: 600,
-                fontSize: '1.5rem',
-                letterSpacing: '0.05em',
-                textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
-                textDecoration:'none'
-            }}
-            href={'/'}
-        >
-            Glumzi
-        </Typography>
-    </Toolbar>
-</AppBar>
+            <AppBar position="fixed" open={open} style={{ backgroundColor: 'white', zIndex: 500 }} >
+                <Toolbar>
+                    <IconButton
+                        color="inherit"
+                        aria-label="open drawer"
+                        onClick={handleDrawerOpen}
+                        edge="start"
+                        sx={{ mr: 2, ...(open && { display: 'none' }) }}
+                    >
+                        <MenuIcon sx={{ color: 'black' }} />
+                    </IconButton>
+                    <Typography
+                        variant="h6"
+                        noWrap
+                        component={Link}
+                        sx={{
+                            color: 'black',
+                            fontFamily: 'Arial, sans-serif',
+                            fontWeight: 600,
+                            fontSize: '1.5rem',
+                            letterSpacing: '0.05em',
+                            textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
+                            textDecoration:'none'
+                        }}
+                        href={'/'}
+                    >
+                        Glumzi
+                    </Typography>
+                </Toolbar>
+            </AppBar>
             <Drawer
                 sx={{
                     width: drawerWidth,
@@ -137,7 +137,7 @@ export default function PersistentDrawerLeft({ children }) {
                 </Box>
             </Drawer>
             <Main open={open}>
-            
+              
                 {children}
             </Main>
         </Box>

@@ -1,1 +1,0 @@
-export default ["elbise","pantolon","mont","palto","ceket","kaban"]

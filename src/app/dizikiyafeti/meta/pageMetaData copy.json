@@ -1,0 +1,143 @@
+[
+    {
+        "dizi": "Gaddar",
+        "karakter": "Aydan",
+        "pageTitle": "Gaddar Aydan",
+        "tumurun": true,
+        "algoliaQuery":"aydan gaddar",
+        "urun": [],
+        "slug": [
+            "gaddar-aydan-kiyafetler"
+        ],
+        "title": "Gaddar Dizisinde Aydan'ın rolünü canlandıran Sümeyye Aydoğan'ın giydiği Kıyafetler",
+        "nextpages": []
+    },
+    {
+        "dizi": "İnci Taneleri",
+        "karakter": "Dilber",
+        "pageTitle": "İnci Taneleri Dilber",
+        "tumurun": true,
+        "algoliaQuery":"dilber inci taneleri",
+        "urun": [],
+        "slug": [
+            "incitaneleri-dilber-kiyafetler"
+        ],
+        "title": "İnci Taneleri Dizisinde Dilber'ın rolünü canlandıran Hazar Ergüçlü'nin giydiği Kıyafetler",
+        "nextpages": []
+    },
+
+    {
+        "dizi": "Yalı Çapkını",
+        "karakter": "Seyran",
+        "pageTitle": "Yalı Çapkını Seyran",
+        "tumurun": true,
+        "algoliaQuery":"seyran yalı çapkını",
+        "urun": [],
+        "slug": [
+            "yali-capkini-seyran-kiyafetler"
+        ],
+        "title": "Yalı Çapkını Dizisinde Seyran'ın rolünü canlandıran Afra Saraçoğlu'nun giydiği Kıyafetler",
+        "nextpages": []
+    },
+    {
+        "dizi": "Yalı Çapkını",
+        "karakter": "Suna",
+        "pageTitle": "Yalı Çapkını Suna",
+        "tumurun": true,
+        "algoliaQuery":"pozam yalı çapkını",
+        "urun": [],
+        "slug": [
+            "yali-capkini-suna-kiyafetler"
+        ],
+        "title": "Yalı Çapkını Dizisinde Suna'ın rolünü canlandıran Beril Pozam'ın giydiği Kıyafetler",
+        "nextpages": []
+    },
+    
+    {
+        "dizi": "Yalı Çapkını",
+        "karakter": "",
+        "pageTitle": "Yalı Çapkını ",
+        "tumurun": true,
+        "algoliaQuery":"yalı çapkını",
+        "urun": [],
+        "slug": [
+            "yali-capkini-kiyafetler"
+        ],
+        "title": "Yalı Çapkını Dizi Kıyafetleri",
+        "nextpages": []
+    },
+
+    {
+        "dizi": "Kardeşlerim",
+        "karakter": "",
+        "pageTitle": "Kardeşlerim Dizisi",
+        "tumurun": true,
+        "algoliaQuery":"kardeşlerim",
+        "urun": [],
+        "slug": [
+            "kardeslerim-dizi-kiyafetler"
+        ],
+        "title": "Kardeşlerim Dizi Kıyafetleri",
+        "nextpages": []
+    },
+
+    
+
+    {
+        "dizi": "Sakla Beni",
+        "karakter": "",
+        "pageTitle": "Sakla Beni Dizisi",
+        "tumurun": true,
+        "algoliaQuery":"sakla beni",
+        "urun": [],
+        "slug": [
+            "sakla-beni-dizi-kiyafetler"
+        ],
+        "title": "Sakla Beni Dizi Kıyafetleri",
+        "nextpages": []
+    },
+
+    {
+        "dizi": "Yargı",
+        "karakter": "Ceylin",
+        "pageTitle": "Yargı Ceylin",
+        "tumurun": true,
+        "algoliaQuery":"ceylin yargı",
+        "urun": [],
+        "slug": [
+            "yargi-dizi-ceylin-kiyafetler"
+        ],
+        "title": "Yalı Çapkını Dizisinde Ceylin'in rolünü canlandıran Pınar Deniz'in giydiği Kıyafetler",
+        "nextpages": []
+    },
+    
+
+    {
+        "dizi": "Kızılcık Şerbeti",
+        "karakter": "",
+        "pageTitle": "Kızılcık Şerbeti Dizisi",
+        "tumurun": true,
+        "algoliaQuery":"kızılcık şerbeti",
+        "urun": [],
+        "slug": [
+            "kizilcik-serbeti-dizi-kiyafetler"
+        ],
+        "title": "Kızılcık Şerbeti Dizi Kıyafetleri",
+        "nextpages": []
+    },
+
+    
+    {
+        "dizi": "Bahar",
+        "karakter": "",
+        "pageTitle": "Bahar Dizisi",
+        "tumurun": true,
+        "algoliaQuery":"bahar demet evgar",
+        "urun": [],
+        "slug": [
+            "barah-dizi-demet-evgar-kiyafetler"
+        ],
+        "title": "Bahar Dizisinde Bahar'ın rolünü canlandıran Demet Evgar'ın giydiği Kıyafetler",
+        "nextpages": []
+    }
+]

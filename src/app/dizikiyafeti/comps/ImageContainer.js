@@ -12,8 +12,8 @@ export default function ImageContainer({ filteredData, pageTitle }) {
         <Grid container gap={2} justifyContent="center"
         
         >
-             <Typography variant='h4' textAlign="center" sx={{ padding: 5, width:'100%' }}>{pageTitle}</Typography>
-            {filteredData.map((m, a) => {
+             <Typography variant='h4' textAlign="center" sx={{ padding: 5, marginTop:3, width:'100%' }}>{pageTitle}</Typography>
+            {filteredData.map(m=>{return {...m.item}}).map((m, a) => {
             const links = m.ProductLink
     
             const title = m.Title
