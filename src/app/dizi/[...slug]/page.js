@@ -5,34 +5,34 @@ import SearchResultContainer from '../../dizi-sponsoru/comp/SearchResultContaine
 import { Container, Grid } from '@mui/material';
 import path from 'path'
 import Fuse from 'fuse.js'
-import { title } from 'process';
 
 
 
 
-export async function generateMetadata({ params }) {
 
-    const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizi-sponsoru/meta/pageMetaData.json'), 'utf8');
-    const pagesData = JSON.parse(pages);
-    debugger
-    const result = pagesData.find(f => {
-        const current = f.slug
-        const slug = params.slug[0]
-        const match = current === slug
+// export async function generateMetadata({ params }) {
 
-        return match
-    })
-    if (result) {
+//     const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizi-sponsoru/meta/pageMetaData.json'), 'utf8');
+//     const pagesData = JSON.parse(pages);
+//     debugger
+//     const result = pagesData.find(f => {
+//         const current = f.slug
+//         const slug = params.slug[0]
+//         const match = current === slug
 
-        const { pageTitle } = result
-        return {
-            title: pageTitle
+//         return match
+//     })
+//     if (result) {
 
-        }
-    }
+//         const { pageTitle } = result
+//         return {
+//             title: pageTitle
+
+//         }
+//     }
 
 
-}
+// }
 
 
 
