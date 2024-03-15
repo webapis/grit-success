@@ -56,14 +56,9 @@ debugger
 
 debugger
     const fuse = new Fuse(pagesData,{keys:['ServiceName','TVSeriesTitle','Tag','Name'], minMatchCharLength: 6})
-debugger
 
-
-    debugger
-
-    debugger
-    if(result){
-      const {  pageTitle, nextpages, search }=result
+   
+      const {  pageTitle, search }=result
       let results = fuse.search(search)
       return <div>
       <Container >
@@ -74,9 +69,7 @@ debugger
       </Container>
 
   </div>
-    } else{
-      <div>Loading</div>
-    }
+    
 
 
 }
