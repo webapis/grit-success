@@ -22,6 +22,8 @@ export default function SearchResultItem({ item }) {
             height="80"
             style={{objectFit:'contain', borderRadius:5}}
             src={`/dizi/cover-image/${Tag}.jpg`}
+            loading="lazy"
+            
         />
         <span style={{fontSize:12}}>{TVSeriesTitle}</span>
         </div>
@@ -33,6 +35,7 @@ export default function SearchResultItem({ item }) {
             height="100"
             style={{objectFit:'contain'}}
             src={`/dizi/marka/${imageName}.jpg`}
+            loading="lazy"
         />
         </div>
     
