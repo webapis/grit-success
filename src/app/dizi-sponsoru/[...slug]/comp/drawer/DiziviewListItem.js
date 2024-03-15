@@ -5,14 +5,11 @@ import ListItemButton from '@mui/material/ListItemButton';
 import Link from 'next/link';
 
 export default function Diziview({ title, content }) {
-    const { ImageUrl, Date, tag } = content;
+    const { tag } = content;
 
     return (
         <List sx={{ maxWidth: 345 }}>
-
-
             <ListItem disablePadding
-
             >
                 <ListItemButton component={Link}
                     href={`/dizi/${tag}-dizi-sponsorlari`}

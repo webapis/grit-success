@@ -22,7 +22,7 @@ pool.connect().then(() => {
   pool.request().query('select * from View_Sponsor_Brands', async (err, result) => {
     if (err) res.send(err)
     const objects = result.recordsets[0]
-    const objectsWithTags =objects.map((m,i)=>{return {...m,id:i,tag: deaccent( m.TVSeriesTitle).replaceAll(' ','-').toLowerCase() }})
+    const objectsWithTags =objects.filter(f=> f.Website!=='YBA').map((m,i)=>{return {...m,id:i,tag: deaccent( m.TVSeriesTitle).replaceAll(' ','-').toLowerCase() }})
     debugger
     const groubByDizi = groupBy(objectsWithTags, 'TVSeriesTitle')
     for (let currentGroup in groubByDizi) {
