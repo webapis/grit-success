@@ -1,4 +1,4 @@
-import extractSubdomain from '../../../utils/extractSubdomain'
+import extractSubdomain from './extractSubdomain'
 
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';

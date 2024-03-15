@@ -1,20 +1,20 @@
 
-import { promises as fs } from 'fs';
+//import { promises as fs } from 'fs';
 
-import SearchResultContainer from '../../dizi-sponsoru/[...slug]/comp/SearchResultContainer';
+import SearchResultContainer from '../../dizi-sponsoru/comp/SearchResultContainer';
 import { Container, Grid } from '@mui/material';
-import path from 'path'
+//import path from 'path'
 import Fuse from 'fuse.js'
-
-
+import pagesMetaData from '@/app/dizi-sponsoru/meta/pageMetaData.json';
+import pagesData from '@/app/dizi-sponsoru/page-data/dizisponsoru.json';
 
 
 export async function generateMetadata({ params }) {
 
-    const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/[...slug]/pageMetaData.json'), 'utf8');
-    const pagesData = JSON.parse(pages);
+   // const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/pageMetaData.json'), 'utf8');
+  //  const pagesData = JSON.parse(pages);
     debugger
-    const result = pagesData.find(f => {
+    const result = pagesMetaData.find(f => {
         const current = f.slug
         const slug = params.slug[0]
         const match = current === slug
@@ -37,12 +37,12 @@ export async function generateMetadata({ params }) {
 export default async function DiziPage({ params }) {
 
 
-  const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/[...slug]/pageMetaData.json'), 'utf8');
+ // const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/pageMetaData.json'), 'utf8');
 
-    const pagesMetaData = JSON.parse(pages);
+    //const pagesMetaData = JSON.parse(pages);
 
-    const data = await fs.readFile(path.join(process.cwd(), 'src/app/dizi-sponsoru/page-data/dizisponsoru.json'),'utf8');
-    const pagesData = JSON.parse(data);
+   // const data = await fs.readFile(path.join(process.cwd(), 'src/app/dizi-sponsoru/page-data/dizisponsoru.json'),'utf8');
+   // const pagesData = JSON.parse(data);
 
     const result = pagesMetaData.find(f => {
 
@@ -56,9 +56,12 @@ export default async function DiziPage({ params }) {
     const fuse = new Fuse(pagesData,{keys:['ServiceName','TVSeriesTitle','Tag','Name'], minMatchCharLength: 6})
 
    
-      const {  pageTitle, search }=result
-      let results = fuse.search(search)
-      return <div>
+    
+
+      if(result){
+        const {  pageTitle, search }=result
+        let results = fuse.search(search)
+        return <div>
       <Container >
           <SearchResultContainer data={results} pageTitle={pageTitle} />
           <Grid sx={{ paddingTop: 5, paddingBottom: 5 }} container justifyContent="center">
@@ -67,6 +70,11 @@ export default async function DiziPage({ params }) {
       </Container>
 
   </div>
+      }else{
+        return <div>Loading.......</div>
+      }
+   
+      
     
 
 
