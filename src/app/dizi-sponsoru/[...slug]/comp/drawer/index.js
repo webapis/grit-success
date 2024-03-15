@@ -14,7 +14,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Divider from '@mui/material/Divider';
 import DizivliewListItem from './DiziviewListItem';
 import data from '@/app/dizi-sponsoru/page-data/dizisponsoruMenu.json';
-
+import Link from 'next/link';
 const arrayData = Object.entries(data);
 const drawerWidth = 240;
 
@@ -92,7 +92,7 @@ export default function PersistentDrawerLeft({ children }) {
                     <Typography
                         variant="h6"
                         noWrap
-                        component="div"
+                        component={Link}
                         sx={{
                             color: 'black',
                             fontFamily: 'Arial, sans-serif',
@@ -100,7 +100,9 @@ export default function PersistentDrawerLeft({ children }) {
                             fontSize: '1.5rem',
                             letterSpacing: '0.05em',
                             textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
+                            textDecoration:'none'
                         }}
+                        href={'/'}
                     >
                         Glumzi
                     </Typography>
