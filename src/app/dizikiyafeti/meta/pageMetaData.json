@@ -9,7 +9,7 @@
         "slug": [
             "yali-capkini-dizi-kiyafetleri"
         ],
-        "title": "Yalı Çapkını Dizisinde Seyran'ın rolünü canlandıran Afra Saraçoğlu'nun giydiği Kıyafetler",
+        "title": "Yalı Çapkını Dizi Kıyafetleri",
         "nextpages": []
     },
     
@@ -37,7 +37,7 @@
         "slug": [
             "bahar-dizi-kiyafetleri"
         ],
-        "title": "Bahar Dizisinde Bahar'ın rolünü canlandıran Demet Evgar'ın giydiği Kıyafetler",
+        "title": "Bahar Dizi Kıyafetleri",
         "nextpages": []
     },
     {
@@ -64,7 +64,7 @@
         "slug": [
             "yargi-dizi-kiyafetleri"
         ],
-        "title": "Yalı Çapkını Dizisinde Ceylin'in rolünü canlandıran Pınar Deniz'in giydiği Kıyafetler",
+        "title": "Yargı Dizi Kıyafetler",
         "nextpages": []
     },
     {
@@ -77,7 +77,7 @@
         "slug": [
             "gaddar-dizi-kiyafetleri"
         ],
-        "title": "Gaddar Dizisinde Aydan'ın rolünü canlandıran Sümeyye Aydoğan'ın giydiği Kıyafetler",
+        "title": "Gaddar Dizi Kıyafetleri",
         "nextpages": []
     },
     {
@@ -90,7 +90,7 @@
         "slug": [
             "inci-taneleri-dizi-kiyafetleri"
         ],
-        "title": "",
+        "title": "İnci Taneleri Dizi Kıyafetleri",
         "nextpages": []
     },
     {
@@ -111,7 +111,7 @@
         "karakter": "Dilber",
         "pageTitle": "İnci Taneleri Dilber",
         "tumurun": true,
-        "algoliaQuery":{ "$and": [{ "TVSeriesTitle": "İnci Taneleri" }]},
+        "algoliaQuery":{ "$and": [{ "TVSeriesTitle": "İnci Taneleri","CaracterName":"Dilber" }]},
         "urun": [],
         "slug": [
             "incitaneleri-dilber-kiyafetler"
@@ -208,7 +208,7 @@
         "karakter": "Ceylin",
         "pageTitle": "Yargı Ceylin",
         "tumurun": true,
-        "algoliaQuery":{ "$and": [{ "TVSeriesTitle": "Yargı" }]},
+        "algoliaQuery":{ "$and": [{ "TVSeriesTitle": "Yargı", "CaracterName": "Ceylin" }]},
         "urun": [],
         "slug": [
             "yargi-dizi-ceylin-kiyafetler"
@@ -238,7 +238,7 @@
         "karakter": "",
         "pageTitle": "Bahar Dizisi",
         "tumurun": true,
-        "algoliaQuery":{ "$and": [{ "TVSeriesTitle": "Bahar" }]},
+        "algoliaQuery":{ "$and": [{ "TVSeriesTitle": "Bahar","CaracterName": "Bahar Yavuzoğlu" }]},
         "urun": [],
         "slug": [
             "barah-dizi-demet-evgar-kiyafetler"
