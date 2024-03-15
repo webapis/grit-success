@@ -10,29 +10,30 @@ import Fuse from 'fuse.js'
 
 
 
-// export async function generateMetadata({ params }) {
-
-//     const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizi-sponsoru/meta/pageMetaData.json'), 'utf8');
-//     const pagesData = JSON.parse(pages);
-//     debugger
-//     const result = pagesData.find(f => {
-//         const current = f.slug
-//         const slug = params.slug[0]
-//         const match = current === slug
-
-//         return match
-//     })
-//     if (result) {
-
-//         const { pageTitle } = result
-//         return {
-//             title: pageTitle
-
-//         }
-//     }
+export async function generateMetadata({ params }) {
 
 
-// }
+    const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/pageMetadata.json'), 'utf8');
+    const pagesData = JSON.parse(pages);
+    debugger
+    const result = pagesData.find(f => {
+        const current = f.slug
+        const slug = params.slug[0]
+        const match = current === slug
+
+        return match
+    })
+    if (result) {
+
+        const { pageTitle } = result
+        return {
+            title: pageTitle
+
+        }
+    }
+
+
+}
 
 
 
