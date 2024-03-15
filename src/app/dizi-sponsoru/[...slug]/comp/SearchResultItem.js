@@ -51,7 +51,7 @@ export default function SearchResultItem({ item }) {
             </Typography>
         </CardContent>
         <CardActions>
-            <Button variant='outlined' endIcon={<OpenInNewIcon/>}  component={Link}  target='_blank' href={Website}>
+            <Button  endIcon={<OpenInNewIcon/>}  component={Link}  target='_blank' href={Website}>
                 web sitesine git
            
             </Button>

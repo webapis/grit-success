@@ -135,7 +135,7 @@ export default function PersistentDrawerLeft({ children }) {
                 </Box>
             </Drawer>
             <Main open={open}>
-                <DrawerHeader />
+              
                 {children}
             </Main>
         </Box>

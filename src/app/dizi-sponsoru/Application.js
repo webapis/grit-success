@@ -11,7 +11,7 @@ export default function Application() {
 
     return <Drawer><Container>
 
-        <Typography variant='h4' textAlign='center' sx={{ marginTop: 2 }}>Dizi Sponsorları</Typography>
+        <Typography variant='h4' textAlign='center' sx={{ marginTop: 0}}>Dizi Sponsorları</Typography>
 
         <Grid container gap={1} style={{display:'flex',justifyContent:'center'}}>
             {arrayData.sort((a,b)=> b[1].toplamSponsor-a[1].toplamSponsor).map((m,i) => {

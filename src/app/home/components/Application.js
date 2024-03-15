@@ -11,7 +11,7 @@ export default function Application() {
 
     return <Drawer> <Container >
 
-        <Typography variant='h4' textAlign='center' sx={{ marginTop: 2 }}>Dizi kıyafetleri</Typography>
+        <Typography variant='h4' textAlign='center' sx={{ marginTop: 0 }}>Dizi kıyafetleri</Typography>
 
 
         <Grid container gap={1} style={{display:'flex',justifyContent:'center'}}>
