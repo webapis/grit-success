@@ -2,14 +2,14 @@
 import { promises as fs } from 'fs';
 
 import SearchResultContainer from '../../dizi-sponsoru/[...slug]/comp/SearchResultContainer';
-import { Container, Stack, Grid } from '@mui/material';
+import { Container, Grid } from '@mui/material';
 import path from 'path'
 import Fuse from 'fuse.js'
-import { createRequire } from "module";
-const require = createRequire(import.meta.url);
 
 
-export async function generateMetadata({ params, searchParams }, parent) {
+
+
+export async function generateMetadata({ params }) {
 
     const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/[...slug]/pageMetaData.json'), 'utf8');
     const pagesData = JSON.parse(pages);
@@ -21,14 +21,14 @@ export async function generateMetadata({ params, searchParams }, parent) {
 
         return match
     })
-if(result){
+
 
     const {pageTitle} =result
     return {
         title:pageTitle
 
     }
-}
+
  
 }
 
@@ -38,23 +38,21 @@ export default async function DiziPage({ params }) {
 
 
   const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/[...slug]/pageMetaData.json'), 'utf8');
-debugger
+
     const pagesMetaData = JSON.parse(pages);
-debugger
+
     const data = await fs.readFile(path.join(process.cwd(), 'src/app/dizi-sponsoru/page-data/dizisponsoru.json'),'utf8');
     const pagesData = JSON.parse(data);
-debugger
+
     const result = pagesMetaData.find(f => {
 
         const current = f.slug
         const slug = params.slug[0]
         const match = current === slug
-debugger
+
         return match
     })
-    debugger
-
-debugger
+ 
     const fuse = new Fuse(pagesData,{keys:['ServiceName','TVSeriesTitle','Tag','Name'], minMatchCharLength: 6})
 
    
