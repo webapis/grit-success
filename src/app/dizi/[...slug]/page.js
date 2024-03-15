@@ -38,7 +38,8 @@ import Fuse from 'fuse.js'
 
 export default async function DiziPage({ params }) {
 
-     const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizi-sponsoru/meta/pageMetaData.json'), 'utf8');
+     const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/pageMetadata.json'), 'utf8');
+     
     return <div>Empry</div>
     // const pagesMetaData = JSON.parse(pages);
 
