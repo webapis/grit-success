@@ -40,8 +40,8 @@ export default async function DiziPage({ params }) {
 
      const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/pageMetadata.json'), 'utf8');
        const pagesMetaData = JSON.parse(pages);
-     //  const data = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/dizisponsoru.json'), 'utf8');
-     //  const pagesData = JSON.parse(data);
+       const data = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/dizisponsoru.json'), 'utf8');
+      const pagesData = JSON.parse(data);
     return <div>Empry</div>
    
 
