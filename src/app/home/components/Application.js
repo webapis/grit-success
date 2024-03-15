@@ -1,4 +1,4 @@
-'use client'
+
 import React from 'react';
 import { Typography, Grid, Container } from '@mui/material';
 import Diziview from '@/app/dizikiyafeti/comps/Diziview';

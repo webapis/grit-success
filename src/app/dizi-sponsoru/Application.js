@@ -3,16 +3,15 @@ import React from 'react';
 import { Typography, Grid, Container } from '@mui/material';
 import SponsorView from '@/app/dizi-sponsoru/[...slug]/comp/SponsorView';
 import data from '@/app/dizi-sponsoru/page-data/dizisponsoruMenu.json'
-//import Drawer from './drawer/index'
+
 const arrayData = Object.entries(data)
 
 
 export default function Application() {
 
-    return <Container >
+    return <Container>
 
         <Typography variant='h4' textAlign='center' sx={{ marginTop: 2 }}>Dizi Sponsorları</Typography>
-
 
         <Grid container gap={1} style={{display:'flex',justifyContent:'center'}}>
             {arrayData.sort((a,b)=> b[1].toplamSponsor-a[1].toplamSponsor).map((m,i) => {
@@ -22,9 +21,6 @@ export default function Application() {
 
             })}
         </Grid>
-
-
-
 
     </Container>
   

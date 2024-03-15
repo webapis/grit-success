@@ -1,12 +1,44 @@
 [
+    
+    {
+        "slug": "yali-capkini-dizi-sponsorlari",
+        "pageTitle":"Yalı Çapkını Dizi Sponsorları",
+        "description":"",
+       
+        "search":{ "$and": [{ "TVSeriesTitle": "Yalı Çapkını" }]}
+
+    },
+    {
+        "slug": "kizilcik-serbeti-dizi-sponsorlari",
+        "pageTitle":"Kızılcık Şerbeti Dizi Sponsorları",
+        "description":"",
+       
+        "search":{ "$and": [{ "TVSeriesTitle": "Kızılcık Şerbeti" }]}
+     
+    },
+    {
+        "slug": "ego-dizi-sponsorlari",
+        "pageTitle":"Ego Dizi Sponsorları",
+        "description":"",
+       
+        "search":{ "$and": [{ "TVSeriesTitle": "Ego" }]}
+     
+    },
+    {
+        "slug": "bambaska-biri-dizi-sponsorlari",
+        "pageTitle":"Bambaşka Biri Dizi Sponsorları",
+        "description":"",
+       
+        "search":{ "$and": [{ "TVSeriesTitle": "Bambaşka Biri" }]}
+
+    },
     {
         "slug": "yali-capkini-mobilya-sponsoru",
         "pageTitle":"Yalı Çapkını Mobilya Sponsoru",
         "description":"Yalı Çapkını Mobilya Sponsoru: Kaliteli ve uygun fiyatlı mobilyalarla tanışın.",
        
-        "search": "mobilya Yalı Çapkını",
-        "index":"dizisponsoru",
-        "coverimage":"yali-capkini.jpg"
+        "search":{ "$and": [{ "TVSeriesTitle": "Yalı Çapkını",   "ServiceName": "Mobilya" }]}
+ 
     },
 
     {
@@ -14,18 +46,16 @@
         "pageTitle":"Yalı Çapkını Sponsorları",
         "description":"Yalı Çapkını Dizi Sponsorları.",
        
-        "search": "yalı çapkını",
-        "index":"dizisponsoru",
-        "coverimage":"yali-capkini.jpg"
+        "search":{ "$and": [{ "TVSeriesTitle": "Yalı Çapkını"}]}
+   
     },
     {
         "slug": "kizilcik-serbeti-mobilya-sponsorlari",
         "pageTitle":"Kızılcık Şerbeti Mobilya Sponsorları",
         "description":"Kızılcık Şerbeti Mobilya Sponsoru: Kaliteli ve uygun fiyatlı mobilyalarla tanışın.",
        
-        "search": "mobilya Kızılcık Şerbeti",
-        "index":"dizisponsoru",
-        "coverimage":"kizilcik-serbeti.jpg"
+        "search":{ "$and": [{ "TVSeriesTitle": "Kızılcık Şerbeti",   "ServiceName": "Mobilya" }]}
+       
     },
 
     
@@ -34,9 +64,8 @@
         "pageTitle":"Kızılcık Şerbeti Sponsorları",
         "description":"Kızılcık Şerbeti Tüm sponsor markalar.",
        
-        "search": "Kızılcık Şerbeti",
-        "index":"dizisponsoru",
-        "coverimage":"kizilcik-serbeti.jpg"
+        "search":{ "$and": [{ "TVSeriesTitle": "Kızılcık Şerbeti"}]}
+      
     },
 
     {
@@ -44,8 +73,72 @@
         "pageTitle":"Kızılcık Şerbeti Kıyafet Sponsorları",
         "description":"Kızılcık Şerbeti Tüm Kıyafet Sponsor Markalar.",
        
-        "search": "Kızılcık Şerbeti kıyafet",
-        "index":"dizisponsoru",
-        "coverimage":"kizilcik-serbeti.jpg"
+        "search":{ "$and": [{ "TVSeriesTitle": "Kızılcık Şerbeti",   "ServiceName": "kıyafet" }]}
+        
+    }
+    ,
+
+    {
+        "slug": "inci-taneleri-dizi-sponsorlari",
+        "pageTitle":"İnci Taneleri Dizi Sponsorları",
+        "description":"",
+       
+        "search":{ "$and": [{ "TVSeriesTitle": "İnci Taneleri" }]}
+     
+     
+    }
+    ,
+
+    {
+        "slug": "aile-dizi-sponsorlari",
+        "pageTitle":"Aile Dizi Sponsorları",
+        "description":"",
+       
+        "search":{ "$and": [{ "TVSeriesTitle": "Aile" }]}
+      
+    
+    }
+    ,
+
+    {
+        "slug": "kader-baglari-dizi-sponsorlari",
+        "pageTitle":"Kader Bağları Dizi Sponsorları",
+        "description":"",
+       
+        "search":{ "$and": [{ "TVSeriesTitle": "Kader Bağları" }]}
+   
+       
+    }
+    ,
+
+    {
+        "slug": "gaddar-dizi-sponsorlari",
+        "pageTitle":"Gaddar Dizi Sponsorları",
+        "description":"",
+       
+        "search":{ "$and": [{ "TVSeriesTitle": "Gaddar" }]}
+   
+       
+    }    ,
+
+    {
+        "slug": "tas-kagit-makas-dizi-sponsorlari",
+        "pageTitle":"Taş Kagıt Makas Dizi Sponsorları",
+        "description":"",
+       
+        "search":{ "$and": [{ "TVSeriesTitle": "Taş Kagıt Makas" }]}
+   
+       
+    }
+    ,
+
+    {
+        "slug": "kara-agac-destani-dizi-sponsorlari",
+        "pageTitle":"Kara Ağaç Destanı Dizi Sponsorları",
+        "description":"",
+       
+        "search":{ "$and": [{ "TVSeriesTitle": "Kara Ağaç Destanı" }]}
+   
+       
     }
 ]

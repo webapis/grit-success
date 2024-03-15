@@ -3,12 +3,12 @@ import extractSubdomain from '../../../utils/extractSubdomain'
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import IconButton from '@mui/material/IconButton';
 import Link from 'next/link';
 export default function SearchResultItem({ item }) {
+    debugger
     const { Name:name, Website, Acyklama,TOTAL:count,TVSeriesTitle,Tag,brandTag } = item
     const imageName = brandTag ?brandTag: extractSubdomain(Website) 
 

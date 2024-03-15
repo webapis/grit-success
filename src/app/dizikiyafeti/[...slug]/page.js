@@ -1,6 +1,6 @@
 
 import { promises as fs } from 'fs';
-import MiniSearch from 'minisearch'
+
 import ImageContainer from '../comps/ImageContainer';
 import { Container, Stack, Grid } from '@mui/material';
 import path from 'path'
