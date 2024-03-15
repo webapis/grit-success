@@ -5,7 +5,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import IconButton from '@mui/material/IconButton';
+import Button from '@mui/material/Button';
 import Link from 'next/link';
 export default function SearchResultItem({ item }) {
     debugger
@@ -51,10 +51,10 @@ export default function SearchResultItem({ item }) {
             </Typography>
         </CardContent>
         <CardActions>
-            <IconButton component={Link} variant="contained" target='_blank' href={Website}>
+            <Button variant='outlined' endIcon={<OpenInNewIcon/>}  component={Link}  target='_blank' href={Website}>
                 web sitesine git
-                <OpenInNewIcon />
-            </IconButton>
+           
+            </Button>
         </CardActions>
     </Card>
 
