@@ -6,27 +6,22 @@ import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-
 import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import Divider from '@mui/material/Divider';
+import DizivliewListItem from './DiziviewListItem';
+import data from '@/app/dizi-sponsoru/page-data/dizisponsoruMenu.json';
 
-
-import {
-
-    RefinementList
-} from 'react-instantsearch';
-
-
+const arrayData = Object.entries(data);
 const drawerWidth = 240;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
     ({ theme, open }) => ({
         flexGrow: 1,
-        padding: theme.spacing(1),
+        padding: theme.spacing(3),
         transition: theme.transitions.create('margin', {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
@@ -83,9 +78,8 @@ export default function PersistentDrawerLeft({ children }) {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar position="fixed" open={open} >
+            <AppBar position="fixed" open={open} style={{ backgroundColor: 'white', zIndex: 500 }} >
                 <Toolbar>
-
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
@@ -93,19 +87,23 @@ export default function PersistentDrawerLeft({ children }) {
                         edge="start"
                         sx={{ mr: 2, ...(open && { display: 'none' }) }}
                     >
-                        <MenuIcon />
+                        <MenuIcon sx={{ color: 'black' }} />
                     </IconButton>
-                    <Typography variant="h6" noWrap component="div" >
+                    <Typography
+                        variant="h6"
+                        noWrap
+                        component="div"
+                        sx={{
+                            color: 'black',
+                            fontFamily: 'Arial, sans-serif',
+                            fontWeight: 600,
+                            fontSize: '1.5rem',
+                            letterSpacing: '0.05em',
+                            textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
+                        }}
+                    >
                         Glumzi
                     </Typography>
-
-
-
-
-
-
-
-
                 </Toolbar>
             </AppBar>
             <Drawer
@@ -116,7 +114,6 @@ export default function PersistentDrawerLeft({ children }) {
                         width: drawerWidth,
                         boxSizing: 'border-box',
                     },
-
                 }}
                 variant="persistent"
                 anchor="left"
@@ -128,31 +125,18 @@ export default function PersistentDrawerLeft({ children }) {
                     </IconButton>
                 </DrawerHeader>
                 <Divider />
-                <div style={{ padding: 10 }}>
-                <Divider sx={{ paddingTop: 2 }} />
-                    <Typography variant='h4'>Dizi</Typography>
-                    <RefinementList attribute='TVSeriesTitle' operator='and' showMore={true} />
-                    <Typography variant='h4'>Sponsor</Typography>
-                    <RefinementList searchable={true} attribute='Name' showMore={true} translations={{
-                        showMoreButtonText({ isShowingMore }) {
-                            return isShowingMore ? 'Az kategori göster' : 'Fazla kategori göster';
-                        },
-                    }} />
-                   <Divider sx={{ paddingTop: 2 }} />
-                    <Typography variant='h4'>Sponsorluk</Typography>
-                    <RefinementList attribute='ServiceName' operator='and' showMore={true} />
-
-                   
-                </div>
-
+                <Box sx={{ padding: 2 }}>
+                    <Typography variant="h5" gutterBottom>Diziler</Typography>
+                    {arrayData.sort((a, b) => b[1].Time - a[1].Time).map((m, i) => {
+                        const title = m[0];
+                        const content = m[1];
+                        return <DizivliewListItem key={title} title={title} content={content} />;
+                    })}
+                </Box>
             </Drawer>
-            <Main open={open} style={{padding:3}}>
-            {children}
+            <Main open={open}>
                 <DrawerHeader />
-
-               
-
-
+                {children}
             </Main>
         </Box>
     );

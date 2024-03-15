@@ -3,13 +3,13 @@ import React from 'react';
 import { Typography, Grid, Container } from '@mui/material';
 import SponsorView from '@/app/dizi-sponsoru/[...slug]/comp/SponsorView';
 import data from '@/app/dizi-sponsoru/page-data/dizisponsoruMenu.json'
-
+import Drawer from './[...slug]/comp/drawer'
 const arrayData = Object.entries(data)
 
 
 export default function Application() {
 
-    return <Container>
+    return <Drawer><Container>
 
         <Typography variant='h4' textAlign='center' sx={{ marginTop: 2 }}>Dizi Sponsorları</Typography>
 
@@ -18,11 +18,9 @@ export default function Application() {
                 const title = m[0]
                 const content = m[1]
                 return <Grid key={i} item xs={12} md={3}> <SponsorView title={title} content={content} /></Grid>
-
             })}
         </Grid>
-
     </Container>
-  
+    </Drawer>
 }
 
