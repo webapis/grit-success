@@ -11,20 +11,25 @@ const require = createRequire(import.meta.url);
 
 export async function generateMetadata({ params, searchParams }, parent) {
 
-    // const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/[...slug]/pageMetaData.json'), 'utf8');
-    // const pagesData = JSON.parse(pages);
-    // debugger
-    // const { pageTitle } = pagesData.find(f => {
-    //     const current = f.slug[0]
-    //     const slug = params.slug[0]
-    //     const match = current === slug
+    const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/[...slug]/pageMetaData.json'), 'utf8');
+    const pagesData = JSON.parse(pages);
+    debugger
+    const result = pagesData.find(f => {
+        const current = f.slug
+        const slug = params.slug[0]
+        const match = current === slug
 
-    //     return match
-    // })
-    // return {
-    //     title:pageTitle
+        return match
+    })
+if(result){
 
-    // }
+    const {pageTitle} =result
+    return {
+        title:pageTitle
+
+    }
+}
+ 
 }
 
 
