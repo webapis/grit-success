@@ -32,7 +32,7 @@
         "karakter": "",
         "pageTitle": "Bahar Dizisi",
         "tumurun": true,
-        "algoliaQuery":{ "$and": [{ "TVSeriesTitle": "Bahar", "FullName": "Demet Evgar" }]},
+        "algoliaQuery":{ "$and": [{ "TVSeriesTitle": "Bahar" }]},
         "urun": [],
         "slug": [
             "bahar-dizi-kiyafetleri"
