@@ -123,10 +123,10 @@
 
     {
         "slug": "tas-kagit-makas-dizi-sponsorlari",
-        "pageTitle":"Taş Kagıt Makas Dizi Sponsorları",
+        "pageTitle":"Taş Kağıt Makas Dizi Sponsorları",
         "description":"",
        
-        "search":{ "$and": [{ "TVSeriesTitle": "Taş Kagıt Makas" }]}
+        "search":{ "$and": [{ "TVSeriesTitle": "Taş Kağıt Makas" }]}
    
        
     }
