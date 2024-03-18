@@ -46,7 +46,7 @@ export default function SearchResultItem({ item }) {
     
         <CardContent>
         <Typography gutterBottom variant="body" component='div' style={{textTransform:'lowercase'}}>
-             {ServiceName.trim().replaceAll(',',' ').split(' ').filter(f=>f).map((m)=>{return <Chip size='small' label={m} style={{marginLeft:1}}/>})}
+             {ServiceName&& ServiceName.trim().replaceAll(',',' ').split(' ').filter(f=>f).map((m,i)=>{return <Chip key={i} size='small' label={m} style={{marginLeft:1}}/>})}
             </Typography>
             <Typography gutterBottom variant="h5" component='div'>
              {name}
