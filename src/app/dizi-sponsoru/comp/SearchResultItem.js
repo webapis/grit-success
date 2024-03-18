@@ -7,52 +7,64 @@ import Typography from '@mui/material/Typography';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import Button from '@mui/material/Button';
 import Link from 'next/link';
+import { Grid,Chip } from '@mui/material';
 export default function SearchResultItem({ item }) {
     debugger
-    const { Name:name, Website, Acyklama,TOTAL:count,TVSeriesTitle,Tag,brandTag } = item
+    const { Name:name, Website, Acyklama,TOTAL:count,TVSeriesTitle,Tag,brandTag,ServiceName } = item
     const imageName = brandTag ?brandTag: extractSubdomain(Website) 
 
     return <Card sx={{ width: '100%', border:'1px solid #bdbdbd', borderRadius:4 }} elevation={0}>
-        <div style={{display:'flex',justifyContent:'space-between'}}>
-        <div style={{width:50,textAlign:'center',marginLeft:3, padding:5}}>
-        <img
+        {/* <div style={{display:'flex',justifyContent:'space-between'}}>
+        <div style={{width:50,textAlign:'center',marginLeft:3, padding:5}}> */}
+<Grid container gap={1} style={{display:'flex',justifyContent:'space-between'}}>
+<Grid item xs={4}>
+<img
             component="img"
             alt={`${imageName} marka resmi`}
-            width="60"
+           
             height="80"
-            style={{objectFit:'contain', borderRadius:5}}
+            style={{objectFit:'contain', borderRadius:5,width:'100%'}}
             src={`/dizi/cover-image/${Tag}.jpg`}
             loading="lazy"
             
         />
-        <span style={{fontSize:12}}>{TVSeriesTitle}</span>
-        </div>
-   
-          <img
+        <span style={{fontSize:12}}>Dizi: {TVSeriesTitle}</span>
+</Grid>
+<Grid item xs={7}>
+<img
             component="img"
             alt={`${imageName} marka resmi`}
-            width="200"
+        
             height="100"
-            style={{objectFit:'contain'}}
+            style={{objectFit:'contain',width:'100%',borderLeft:'1px solid #bdbdbd',borderBottom:'1px solid #bdbdbd', borderRadius:4}}
             src={`/dizi/marka/${imageName}.jpg`}
             loading="lazy"
         />
-        </div>
+</Grid>
+</Grid>
+      
+        {/* </div> */}
+   
+     
+        {/* </div> */}
     
         <CardContent>
-            <Typography gutterBottom variant="h5" component={Link} href={Website} target='_blank'>
-                {name}
+        <Typography gutterBottom variant="body" component='div' style={{textTransform:'lowercase'}}>
+             {ServiceName.trim().replaceAll(',',' ').split(' ').filter(f=>f).map((m)=>{return <Chip size='small' label={m} style={{marginLeft:1}}/>})}
+            </Typography>
+            <Typography gutterBottom variant="h5" component='div'>
+             {name}
             </Typography>
             <Typography variant="body1" color="text.secondary">
                 {Acyklama}
             </Typography>
-            <Typography variant="body2" color="text.secondary" sx={{marginTop:2,textAlign:'end',fontStyle:"italic"}}>
+            {/* <Typography variant="body2" color="text.secondary" sx={{marginTop:2,textAlign:'end',fontStyle:"italic"}}>
              Bu marka {count} bölümde sponsor oldu.
-            </Typography>
+            </Typography> */}
         </CardContent>
         <CardActions>
             <Button  endIcon={<OpenInNewIcon/>}  component={Link}  target='_blank' href={Website}>
-                web sitesine git
+               sponsor web sitesine git
            
             </Button>
         </CardActions>
