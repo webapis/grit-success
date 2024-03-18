@@ -14,8 +14,7 @@ export default function SearchResultItem({ item }) {
     const imageName = brandTag ?brandTag: extractSubdomain(Website) 
 
     return <Card sx={{ width: '100%', border:'1px solid #bdbdbd', borderRadius:4 }} elevation={0}>
-        {/* <div style={{display:'flex',justifyContent:'space-between'}}>
-        <div style={{width:50,textAlign:'center',marginLeft:3, padding:5}}> */}
+    
 <Grid container gap={1} style={{display:'flex',justifyContent:'space-between'}}>
 <Grid item xs={4}>
 <img
@@ -43,10 +42,7 @@ export default function SearchResultItem({ item }) {
 </Grid>
 </Grid>
       
-        {/* </div> */}
-   
-     
-        {/* </div> */}
+    
     
         <CardContent>
         <Typography gutterBottom variant="body" component='div' style={{textTransform:'lowercase'}}>

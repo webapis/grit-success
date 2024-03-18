@@ -65,15 +65,11 @@ export default async function DiziPage({ params }) {
     if (result) {
         const { pageTitle, search } = result
         let results = fuse.search(search)
-        return <div>
-            <Container >
-                <SearchResultContainer data={results} pageTitle={pageTitle} />
-                <Grid sx={{ paddingTop: 5, paddingBottom: 5 }} container justifyContent="center">
-                    {/* {nextpages.length>0 && nextpages.map((m, i) => <Grid item key={i}> <Button size="small"   component={Link} href={`/${m.slug}`} startIcon={<SearchIcon />} variant='secondary' sx={{ fontSize: 16, textTransform: "lowercase", backgroundColor: "#eeeeee", margin: 1, borderRadius: 7, padding:2, textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}>{m.title}</Button> </Grid>)} */}
-                </Grid>
-            </Container>
+        return <SearchResultContainer data={results} pageTitle={pageTitle} />
+          
+          
 
-        </div>
+      
     } else {
         return <div>Loading....</div>
     }
