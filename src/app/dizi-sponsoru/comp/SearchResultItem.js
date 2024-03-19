@@ -10,7 +10,7 @@ import Link from 'next/link';
 import { Grid,Chip } from '@mui/material';
 export default function SearchResultItem({ item }) {
     debugger
-    const { Name:name, Website, Acyklama,TOTAL:count,TVSeriesTitle,Tag,brandTag,ServiceName } = item
+    const { Name:name, Website, Acyklama,TOTAL:count,TVSeriesTitle,Tag,brandTag,ServiceName,h3 } = item
     const imageName = brandTag ?brandTag: extractSubdomain(Website) 
 
     return <Card sx={{ width: '100%', border:'1px solid #bdbdbd', borderRadius:4 }} elevation={0}>
@@ -50,6 +50,9 @@ export default function SearchResultItem({ item }) {
             </Typography>
             <Typography gutterBottom variant="h5" component='div'>
              {name}
+            </Typography>
+            <Typography gutterBottom variant="caption" component='div' style={{fontWeight:700}}>
+             {h3}
             </Typography>
             <Typography variant="body1" color="text.secondary">
                 {Acyklama}
