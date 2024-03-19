@@ -21,13 +21,7 @@ export default function Application() {
                             const catName = m[0]
                             const content = m[1]
                             return <Grid key={i} item xs={12} md={3}> <SponsorKiyafetView group={topGroup} title={catName} content={content} /></Grid>
-
                         })
-                   
-               
-
-                debugger
-                // return <Grid key={i} item xs={12} md={3}> <SponsorKiyafetView title={title} content={content} /></Grid>
             })}
         </Grid>
     </Container></Drawer>
