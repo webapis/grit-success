@@ -12,10 +12,9 @@
     "build-storybook": "storybook build",
     "downloadProds": "node src/app/utils/downloadData.mjs",
     "extDizikiyafetiPageData": "node src/app/dizikiyafeti/utils/extractPageData.mjs",
-    "exportFromSQLDizisponsoru": "node src/app/dizi-sponsoru/utils/sqlquery.js",
-    "exportFromSQLDizisponsoru1": "node src/app/dizi-sponsoru/utils/sqlquery1.js",
-    "exportFromSQLDizikiyafeti": "node src/app/dizikiyafeti/utils/sqlquery.js",
-    "exportFromSQLDizikiyafeti1": "node src/app/dizikiyafeti/utils/sqlquery1.js"
+    "sponsorkiyafeti": "node src/app/sponsor-kiyafeti/utils/sqlquery.mjs",
+    "dizisponsoru": "node src/app/dizi-sponsoru/utils/sqlquery1.js",
+    "dizikiyafeti": "node src/app/dizikiyafeti/utils/sqlquery1.js"
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",

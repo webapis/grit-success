@@ -16,14 +16,12 @@ export async function generateMetadata() {
 export default async function Home(props) {
 
 
-
-
   return <Suspense fallback={<p style={{height:'100vh'}}>Loading....</p>}>
     <div style={{marginTop:70,display:'flex',justifyContent:'center'}}>
-    <Tabs value={1}>
+    <Tabs value={2}>
       <Tab label="Dizi Kıyafeti"  component ={Link} href="/"/>
-      <Tab label="Dizi Sponsoru"/>
-      <Tab label="Kıyafet" component ={Link} href="/sponsor-kiyafeti"/>
+      <Tab label="Dizi Sponsoru"  href="/dizi-sponsoru"/>
+      <Tab label="Kıyafet" />
     </Tabs>
     </div>
     <Application {...props}/>
