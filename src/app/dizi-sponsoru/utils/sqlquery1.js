@@ -35,8 +35,8 @@ pool.connect().then(() => {
 
     }
     debugger
-    fs.writeFileSync(`${process.cwd()}/src/app/dizi-sponsoru/page-data/dizisponsoru.json`, JSON.stringify(objectsWithTags), { encoding: 'utf8' })
-    fs.writeFileSync(`${process.cwd()}/src/app/dizi-sponsoru/page-data/dizisponsoruMenu.json`, JSON.stringify(groubByDizi), { encoding: 'utf8' })
+    fs.writeFileSync(`${process.cwd()}/src/app/dizi/dizisponsoru.json`, JSON.stringify(objectsWithTags), { encoding: 'utf8' })
+    fs.writeFileSync(`${process.cwd()}/src/app/dizi/dizisponsoruMenu.json`, JSON.stringify(groubByDizi), { encoding: 'utf8' })
     debugger
 
     console.log('data uploaded', objectsWithTags.length)
