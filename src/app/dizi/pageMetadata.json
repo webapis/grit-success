@@ -162,5 +162,17 @@
         "search":{ "$and": [{ "TVSeriesTitle": "Kara Ağaç Destanı" }]}
    
        
+    },
+
+    
+
+    {
+        "slug": "yan-oda-dizi-sponsorlari",
+        "pageTitle":"Yan Oda Dizi Sponsorları",
+        "description":"",
+       
+        "search":{ "$and": [{ "TVSeriesTitle": "Yan Oda" }]}
+   
+       
     }
 ]
