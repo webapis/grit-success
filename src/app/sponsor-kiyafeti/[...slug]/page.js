@@ -11,23 +11,25 @@ import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 
 
-// export async function generateMetadata({ params, searchParams }, parent) {
+export async function generateMetadata({ params, searchParams }, parent) {
 
-//     const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizikiyafeti/meta/pageMetaData.json'), 'utf8');
-//     const pagesData = JSON.parse(pages);
-//     debugger
-//     const { title } = pagesData.find(f => {
-//         const current = f.slug[0]
-//         const slug = params.slug[0]
-//         const match = current === slug
+    const pages = await fs.readFile(path.join(process.cwd(), 'src/app/sponsor-kiyafeti/pageMetaData.json'), 'utf8');
+    const pagesMetaData = JSON.parse(pages);
+    debugger
+    const { pageTitle } = pagesMetaData.find(f => {
+        const current = f.slug
+        const slug = params.slug[0]
+        const match = current === slug
 
-//         return match
-//     })
-//     return {
-//         title
+        return match
+    })
 
-//     }
-// }
+
+    return {
+        title:pageTitle
+
+    }
+}
 
 
 
@@ -60,7 +62,7 @@ export default async function DiziPage({ params }) {
 
 
         return <Container >
-            <Grid container gap={1}> {results.map((m, i) => <Grid item key={i} xs={5} sm={3} md={2}> <Image item={m.item} /></Grid>)}</Grid>
+            <Grid container gap={1}> {results.map((m, i) => <Grid item key={i} xs={5} sm={3} md={2}> <Image item={m.item} pageTitle={pageTitle} /></Grid>)}</Grid>
 
         </Container>
 
