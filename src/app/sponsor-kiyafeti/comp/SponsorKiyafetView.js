@@ -11,7 +11,7 @@ import Link from 'next/link';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 export default function SponsorKiyafetView({title ,content,group }) {
     debugger
-    const {image}=content
+    const {image,category,gender}=content
 
     return (
         <Card sx={{ maxWidth: 345 }}>
@@ -38,7 +38,7 @@ export default function SponsorKiyafetView({title ,content,group }) {
              
             </CardContent>
             <CardActions>
-                <Button endIcon={  <OpenInNewIcon/>} component={Link} href={''} target='_blank'>
+                <Button endIcon={  <OpenInNewIcon/>} component={Link} href={`/sponsor-kiyafeti/dizi-sponsor-marka-${gender}-${category}`} target='_blank'>
                 sayfaya git
                   
                 </Button>
