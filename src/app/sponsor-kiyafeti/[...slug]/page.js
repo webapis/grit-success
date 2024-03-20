@@ -43,7 +43,7 @@ export default async function DiziPage({ params }) {
     debugger
     const metasearchResult = pagesMetaData.find(f => {
         const current = f.slug
-        const slug = params.slug[0]
+        const slug = params.slug[1]
         const match = current === slug
         debugger
         return match

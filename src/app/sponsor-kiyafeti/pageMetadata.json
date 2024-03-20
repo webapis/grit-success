@@ -1,40 +1,15 @@
 [
-    
     {
         "slug": "dizi-sponsor-marka-kadin-elbise",
-        "pageTitle":"Dizilerde Sponsor Olan Markaların Elbiseleri",
-        "description":"",
-       
-        "search":{ "$and": [{ "category": "elbise" }]}
-    },
-    {
-        "slug": "dizi-sponsor-marka-kadin-yelek",
-        "pageTitle":"Kadın Yelek",
-        "description":"",
-       
-        "search":{ "$and": [{ "category": "yelek" }]}
-    },
-    {
-        "slug": "dizi-sponsor-marka-kadin-ceket",
-        "pageTitle":"Kadın Ceket",
-        "description":"",
-       
-        "search":{ "$and": [{ "category": "ceket" }]}
-    }
-    ,
-    {
-        "slug": "dizi-sponsor-marka-kadin-kaban",
-        "pageTitle":"Kadın Kaban",
-        "description":"",
-       
-        "search":{ "$and": [{ "category": "kaban" }]}
-    }
-    ,
-    {
-        "slug": "dizi-sponsor-marka-kadin-mont",
-        "pageTitle":"Kadın Mont",
-        "description":"",
-       
-        "search":{ "$and": [{ "category": "mont" }]}
+        "pageTitle": "Dizilerde Sponsor Olan Markaların Elbiseleri",
+        "description": "",
+        "gender": "diger",
+        "search": {
+            "$and": [
+                {
+                    "category": "elbise"
+                }
+            ]
+        }
     }
 ]
