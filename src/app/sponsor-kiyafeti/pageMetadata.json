@@ -1,0 +1,12 @@
+[
+    
+    {
+        "slug": "dizilerde-sponsor-olan-markalarin-elbiseleri",
+        "pageTitle":"Dizilerde Sponsor Olan Markaların Elbiseleri",
+        "description":"",
+       
+        "search":{ "$and": [{ "category": "elbise" }]}
+
+    }
+
+]

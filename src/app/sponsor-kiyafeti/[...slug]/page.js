@@ -1,7 +1,8 @@
 
 import { promises as fs } from 'fs';
 
-import ImageContainer from '../comps/ImageContainer';
+import Image from "../comp/Image";
+import { Grid } from "@mui/material";
 import { Container } from '@mui/material';
 import path from 'path'
 import Fuse from 'fuse.js'
@@ -32,31 +33,43 @@ const require = createRequire(import.meta.url);
 
 export default async function DiziPage({ params }) {
 
-    const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizikiyafeti/meta/pageMetaData.json'),'utf8');
+    const pages = await fs.readFile(path.join(process.cwd(), 'src/app/sponsor-kiyafeti/pageMetaData.json'), 'utf8');
     const pagesMetaData = JSON.parse(pages);
 
-    const data = await fs.readFile(path.join(process.cwd(), 'src/app/dizikiyafeti/page-data/dizikiyafeti.json'),'utf8');
+    const data = await fs.readFile(path.join(process.cwd(), 'src/app/sponsor-kiyafeti/sponsorkiyafeti.json'), 'utf8');
     const pagesData = JSON.parse(data);
-debugger
-    const {  title, algoliaQuery } = pagesMetaData.find(f => {
-        const current = f.slug[0]
+    debugger
+    const metasearchResult = pagesMetaData.find(f => {
+        const current = f.slug
         const slug = params.slug[0]
         const match = current === slug
-
+        debugger
         return match
     })
-    const fuse = new Fuse(pagesData,{keys:['FullName','CaracterName','TVSeriesTitle','tag'], minMatchCharLength: 6})
-debugger
-
-    let results = fuse.search(algoliaQuery)
-    debugger
 
     debugger
-    return  <Container >
-            <ImageContainer filteredData={results} pageTitle={title} />
-         
+
+    if (metasearchResult) {
+
+        const { pageTitle, search } = metasearchResult
+
+        const fuse = new Fuse(pagesData, { keys: ['image', 'title', 'price', 'link', 'currency', 'color', 'gender', 'category', 'marka'], minMatchCharLength: 6 })
+        debugger
+
+        let results = fuse.search(search)
+
+
+        return <Container >
+            <Grid container gap={1}> {results.map((m, i) => <Grid item key={i} xs={5} sm={3} md={2}> <Image item={m.item} /></Grid>)}</Grid>
+
         </Container>
-      
+
+    } else {
+
+        return <div>Loading...</div>
+    }
+
+
 
 }
 

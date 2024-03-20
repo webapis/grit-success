@@ -45,6 +45,7 @@ debugger
 
     debugger
    //fs.writeFileSync(`${process.cwd()}/src/app/d/page-data/dizikiyafeti.json`, JSON.stringify(objectsWithTags), { encoding: 'utf8' })
+   fs.writeFileSync(`${process.cwd()}/src/app/sponsor-kiyafeti/sponsorkiyafeti.json`, JSON.stringify(data), { encoding: 'utf8' })
     fs.writeFileSync(`${process.cwd()}/src/app/sponsor-kiyafeti/sponsorkiyafetiMenu.json`, JSON.stringify(groupedData), { encoding: 'utf8' })
     debugger
 
