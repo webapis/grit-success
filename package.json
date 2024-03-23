@@ -26,6 +26,7 @@
     "dotenv": "^16.4.4",
     "fuse.js": "^7.0.0",
     "instantsearch.css": "^8.1.0",
+    "make-dir": "^4.0.0",
     "minisearch": "^6.3.0",
     "mssql": "^10.0.2",
     "next": "^14.1.0",

@@ -4,6 +4,55 @@ import { promises as fs } from 'fs';
 import Image from "../comp/Image";
 import { Grid } from "@mui/material";
 import { Container } from '@mui/material';
+
+import path from 'path'
+import Fuse from 'fuse.js'
+
+export default async function DiziPage({ params }) {
+
+    const { slug } = params
+
+    let gender = decodeURI(slug[0])
+    let category = decodeURI(slug[1])
+
+    let page = decodeURI(slug[2])
+
+    const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/${gender}/${category}-sponsorkiyafeti.json`), 'utf8');
+    const pagesData = JSON.parse(data);
+   
+    console.log("gener", gender)
+    console.log("category", category)
+    console.log("page", page)
+
+    console.log("pageDataLength", pagesData.length)
+
+
+    return <><Grid container="true" gap={1}> {pagesData.map((m, i) => <Grid item key={i} xs={5} sm={3} md={2}> <Image content={m} pageTitle={''} /></Grid>)}</Grid></>
+
+}
+
+
+
+
+function Tab (){
+
+    return<div></div>
+}
+
+
+
+
+
+
+
+
+/*
+
+import { promises as fs } from 'fs';
+
+import Image from "../comp/Image";
+import { Grid } from "@mui/material";
+import { Container } from '@mui/material';
 import path from 'path'
 import Fuse from 'fuse.js'
 import { createRequire } from "module";
@@ -26,7 +75,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
 
 
     return {
-        title:pageTitle
+        title: pageTitle
 
     }
 }
@@ -61,10 +110,7 @@ export default async function DiziPage({ params }) {
         let results = fuse.search(search)
 
 
-        return <Container >
-            <Grid container gap={1}> {results.map((m, i) => <Grid item key={i} xs={5} sm={3} md={2}> <Image item={m.item} pageTitle={pageTitle} /></Grid>)}</Grid>
-
-        </Container>
+        return <Container><Grid container gap={1}> {results.map((m, i) => <Grid item key={i} xs={5} sm={3} md={2}> <Image item={m.item} pageTitle={pageTitle} /></Grid>)}</Grid></Container>
 
     } else {
 
@@ -76,3 +122,14 @@ export default async function DiziPage({ params }) {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+*/
