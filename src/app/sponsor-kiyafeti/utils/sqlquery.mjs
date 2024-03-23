@@ -1,7 +1,7 @@
 import { walkSync } from './walkSync.mjs'
 import path from 'path'
 import 'dotenv/config'
-
+import { mkdirSync } from 'fs'
 import { deaccent } from './deaccent.mjs'
 debugger
 import fs from "fs"
@@ -25,25 +25,29 @@ for (let file of files) {
 
 const genderData = groupBy(data, 'gender')
 
-for(let gnd in genderData){
-  const currentData =genderData[gnd]
-  const groupedData = groupBy(currentData,'group')
+for (let gnd in genderData) {
+  mkdirSync(`${process.cwd()}/src/app/sponsor-kiyafeti/data/${gnd}`)
+  const currentData = genderData[gnd]
+  const groupedData = groupBy(currentData, 'group')
   for (let group in groupedData) {
     const current = groupBy(groupedData[group], 'category')
-  
-    for (let c in current) {
-      const carr = current[c][0]
-      current[c] = carr
+
+    for (let category in current) {
+      const carr = current[category][0]
+      current[category] = carr
+      debugger
+
+      fs.writeFileSync(`${process.cwd()}/src/app/sponsor-kiyafeti/data/${gnd}/${category}-sponsorkiyafeti.json`, JSON.stringify(currentData), { encoding: 'utf8' })
+
     }
-  
+
     groupedData[group] = current
-  
+
     debugger
   }
-  fs.writeFileSync(`${process.cwd()}/src/app/sponsor-kiyafeti/${gnd}-sponsorkiyafeti.json`, JSON.stringify(currentData), { encoding: 'utf8' })
-  fs.writeFileSync(`${process.cwd()}/src/app/sponsor-kiyafeti/${gnd}-sponsorkiyafetiMenu.json`, JSON.stringify(groupedData), { encoding: 'utf8' })
+  fs.writeFileSync(`${process.cwd()}/src/app/sponsor-kiyafeti/data/${gnd}/sponsorkiyafetiMenu.json`, JSON.stringify(groupedData), { encoding: 'utf8' })
 
-debugger
+  debugger
 }
 debugger
 
