@@ -1,10 +1,11 @@
 
 import { promises as fs } from 'fs';
-
+import Link from 'next/link';
 import Image from "../comp/Image";
 import { Grid } from "@mui/material";
 import { Container } from '@mui/material';
-
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
 import path from 'path'
 import Fuse from 'fuse.js'
 
@@ -27,16 +28,24 @@ export default async function DiziPage({ params }) {
     console.log("pageDataLength", pagesData.length)
 
 
-    return <><Grid container="true" gap={1}> {pagesData.map((m, i) => <Grid item key={i} xs={5} sm={3} md={2}> <Image content={m} pageTitle={''} /></Grid>)}</Grid></>
+    return <>
+    <TabContainer/>
+    <Grid container="true" gap={1}> {pagesData.map((m, i) => <Grid item key={i} xs={5} sm={3} md={2}> <Image content={m} pageTitle={''} /></Grid>)}</Grid></>
 
 }
 
 
 
 
-function Tab (){
+function TabContainer (){
 
-    return<div></div>
+    return    <Tabs value={2}>
+    <Tab label="Kadın"  component ={Link} href="/"/>
+    <Tab label="Erkek"  href="/dizi-sponsoru"/>
+    <Tab label="Kız Çocuk" />
+    <Tab label="Erkek Çocuk" />
+    <Tab label="Diğer" />
+  </Tabs>
 }
 
 
