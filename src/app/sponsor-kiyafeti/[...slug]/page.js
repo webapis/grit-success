@@ -1,4 +1,4 @@
-
+import Application from "../Application"
 import { promises as fs } from 'fs';
 import Link from 'next/link';
 import Image from "../comp/Image";
@@ -29,7 +29,7 @@ export default async function DiziPage({ params }) {
 
 
     return <>
-    <TabContainer/>
+    <GenderTabContainer/>
     <Grid container="true" gap={1}> {pagesData.map((m, i) => <Grid item key={i} xs={5} sm={3} md={2}> <Image content={m} pageTitle={''} /></Grid>)}</Grid></>
 
 }
@@ -37,9 +37,9 @@ export default async function DiziPage({ params }) {
 
 
 
-function TabContainer (){
+export function GenderTabContainer (){
 
-    return    <Tabs value={2}>
+    return    <Tabs value={0} centered>
     <Tab label="Kadın"  component ={Link} href="/"/>
     <Tab label="Erkek"  href="/dizi-sponsoru"/>
     <Tab label="Kız Çocuk" />
