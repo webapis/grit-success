@@ -95,13 +95,14 @@ export default async function DiziPage({ params }) {
 
 export function GenderTabContainer({ value = 0 }) {
 
-    return <Tabs value={value} centered sx={{ marginBottom: 1 }}>
+    return <Container sx={{display:'flex',justifyContent:"center"}}> <Tabs value={value}  sx={{ marginBottom: 1 }} variant="scrollable"   scrollButtons
+    allowScrollButtonsMobile> 
         <Tab label="Kadın" component={Link} href="/sponsor-kiyafeti" />
         <Tab label="Erkek" component={Link} href="/sponsor-kiyafeti/erkek" />
         <Tab label="Kız Çocuk" component={Link} href="/sponsor-kiyafeti/kiz-cocuk" />
         <Tab label="Erkek Çocuk" href="/dizi-sponsoru/erkek-cocuk" />
         <Tab label="Diğer" component={Link} href="/sponsor-kiyafeti/diğer" />
-    </Tabs>
+    </Tabs></Container>
 }
 
 
