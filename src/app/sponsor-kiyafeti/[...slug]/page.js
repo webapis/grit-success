@@ -8,96 +8,112 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import path from 'path'
 import Fuse from 'fuse.js'
-
+import Pagination from '@mui/material/Pagination';
+import PaginationContainer from "../comp/PaginationContainer";
 export default async function DiziPage({ params }) {
 
     const { slug } = params
 
     let gender = decodeURI(slug[0])
     let category = decodeURI(slug[1])
-
-    let page = decodeURI(slug[2])
-    let genderIndex=0
-    switch(gender){
+    let page = decodeURI(slug[3])
+    let genderIndex = 0
+    switch (gender) {
         case 'kadın':
-            genderIndex= 0;
+            genderIndex = 0;
             break;
         case 'erkek':
-            genderIndex= 1;
+            genderIndex = 1;
             break;
         case 'kiz-cocuk':
-            genderIndex= 2;
+            genderIndex = 2;
             break;
         case 'erkek-cocuk':
-            genderIndex= 3;
+            genderIndex = 3;
             break;
         case 'diğer':
-            genderIndex= 4;
+            genderIndex = 4;
             break;
         case 'bebek':
-            genderIndex= 5;
+            genderIndex = 5;
             break;
 
-            default:
-                genderIndex= 1;
-              
+        default:
+            genderIndex = 1;
+
     }
 
-   console.log('slug',slug)
+    console.log('slug', slug)
     console.log("gener", gender)
     console.log("category", category)
     console.log("page", page)
 
- //  
 
-if(category==="undefined"){
 
-    return<>
-        <div style={{marginTop:70,display:'flex',justifyContent:'center'}}>
-    <Tabs value={2}>
-      <Tab label="Dizi Kıyafeti"  component ={Link} href="/"/>
-      <Tab label="Dizi Sponsoru"  href="/dizi-sponsoru"/>
-      <Tab label="Sponsor Kıyafeti" />
+    if (category === "undefined") {
+
+        return <>
+            <div style={{ marginTop: 70, display: 'flex', justifyContent: 'center' }}>
+                <Tabs value={2}>
+                    <Tab label="Dizi Kıyafeti" component={Link} href="/" />
+                    <Tab label="Dizi Sponsoru" href="/dizi-sponsoru" />
+                    <Tab label="Sponsor Kıyafeti" />
+                </Tabs>
+            </div>
+            <Application gender={gender} value={genderIndex} />
+        </>
+    } else {
+
+        const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/${gender}/${category}-sponsorkiyafeti.json`), 'utf8');
+        const rawData = JSON.parse(data)
+        
+        const pagesData = paginate(rawData, page, 100)
+        const pageCount =Math.ceil(rawData.length/100)
+        console.log('pageCount',pageCount)
+        console.log("pageDataLength", JSON.parse(data).length)
+        return <Container>
+            <div style={{ marginTop: 70, display: 'flex', justifyContent: 'center' }}>
+                <Tabs value={2}>
+                    <Tab label="Dizi Kıyafeti" component={Link} href="/" />
+                    <Tab label="Dizi Sponsoru" href="/dizi-sponsoru" />
+                    <Tab label="Sponsor Kıyafeti" />
+                </Tabs>
+            </div>
+            <GenderTabContainer value={genderIndex} />
+            <Grid container="true" gap={1} sx={{ display: 'flex', justifyContent: 'center' }}> {pagesData.map((m, i) => <Grid item key={i} xs={5} sm={3} md={2}> <Image content={m} pageTitle={''} /></Grid>)}</Grid>
+            <PaginationContainer count={pageCount} page={page} url={`/sponsor-kiyafeti/${gender}/${category}/page/`} />
+            </Container>
+
+
+    }
+
+}
+
+
+
+
+
+export function GenderTabContainer({ value = 0 }) {
+
+    return <Tabs value={value} centered sx={{ marginBottom: 1 }}>
+        <Tab label="Kadın" component={Link} href="/sponsor-kiyafeti" />
+        <Tab label="Erkek" component={Link} href="/sponsor-kiyafeti/erkek" />
+        <Tab label="Kız Çocuk" component={Link} href="/sponsor-kiyafeti/kiz-cocuk" />
+        <Tab label="Erkek Çocuk" href="/dizi-sponsoru/erkek-cocuk" />
+        <Tab label="Diğer" component={Link} href="/sponsor-kiyafeti/diğer" />
     </Tabs>
-    </div>
-    <Application gender={gender} value={genderIndex} />
-    </> 
-}else{
-    const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/${gender}/${category}-sponsorkiyafeti.json`), 'utf8');
-    const pagesData = JSON.parse(data)
-    console.log("pageDataLength", pagesData.length)
- return <Container >
-     <div style={{marginTop:70,display:'flex',justifyContent:'center'}}>
-    <Tabs value={2}>
-      <Tab label="Dizi Kıyafeti"  component ={Link} href="/"/>
-      <Tab label="Dizi Sponsoru"  href="/dizi-sponsoru"/>
-      <Tab label="Sponsor Kıyafeti" />
-    </Tabs>
-    </div>
-    <GenderTabContainer value={genderIndex}/>
-    <Grid container="true" gap={1} sx={{display:'flex',justifyContent:'center'}}> {pagesData.map((m, i) => <Grid item key={i} xs={5} sm={3} md={2}> <Image content={m} pageTitle={''} /></Grid>)}</Grid></Container>
-
-}
-}
-   
-
-
-
-
-export function GenderTabContainer ({value=0}){
-
-    return    <Tabs value={value} centered sx={{marginBottom:1}}>
-    <Tab label="Kadın"  component ={Link} href="/sponsor-kiyafeti"/>
-    <Tab label="Erkek"  component ={Link} href="/sponsor-kiyafeti/erkek"/>
-    <Tab label="Kız Çocuk"  component ={Link}  href="/sponsor-kiyafeti/kiz-cocuk" />
-    <Tab label="Erkek Çocuk"  href="/dizi-sponsoru/erkek-cocuk"/>
-    <Tab label="Diğer"  component ={Link}  href="/sponsor-kiyafeti/diğer"/>
-  </Tabs>
 }
 
 
 
+function paginate(array, page, pageSize) {
+    --page; // Adjusting to zero-based index
 
+    const startIndex = page * pageSize;
+    const endIndex = startIndex + pageSize;
+
+    return array.slice(startIndex, endIndex);
+}
 
 
 
