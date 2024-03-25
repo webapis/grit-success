@@ -24,7 +24,7 @@ export default async function Home(props) {
       <Tab label="Kıyafet" />
     </Tabs>
     </div>
-    <Application {...props}/>
+    <Application {...props} gender="kadın"/>
   
 
   </Suspense>
