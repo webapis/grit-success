@@ -16,7 +16,7 @@ export async function generateMetadata() {
 export default async function Home(props) {
 
 
-  return  <div style={{marginTop:70,display:'flex',justifyContent:'center'}}>
+  return <>  <div style={{marginTop:70,display:'flex',justifyContent:'center'}}>
     <Tabs value={2}  variant="scrollable"   scrollButtons allowScrollButtonsMobile>
       <Tab label="Dizi Kıyafeti"  component ={Link} href="/"/>
       <Tab label="Dizi Sponsoru"  href="/dizi-sponsoru"/>
@@ -26,6 +26,6 @@ export default async function Home(props) {
     <Application {...props} gender="kadın"/>
   
 
-</div>
+</>
 
 }
