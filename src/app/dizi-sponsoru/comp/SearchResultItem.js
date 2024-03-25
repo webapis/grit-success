@@ -10,7 +10,8 @@ import Link from 'next/link';
 import { Grid,Chip } from '@mui/material';
 export default function SearchResultItem({ item }) {
     debugger
-    const { Name:name, Website, Acyklama,TOTAL:count,TVSeriesTitle,Tag,brandTag,ServiceName,h3 } = item
+    const { Name:name, Website, Acyklama,TOTAL:count,TVSeriesTitle,tag,brandTag,ServiceName,h3 } = item
+
     const imageName = brandTag ?brandTag: extractSubdomain(Website) 
 
     return <Card sx={{ width: '100%', border:'1px solid #bdbdbd', borderRadius:4 }} elevation={0}>
@@ -23,7 +24,7 @@ export default function SearchResultItem({ item }) {
            
             height="80"
             style={{objectFit:'contain', borderRadius:5,width:'100%'}}
-            src={`/dizi/cover-image/${Tag}.jpg`}
+            src={`/dizi/cover-image/${tag}.jpg`}
             loading="lazy"
             
         />

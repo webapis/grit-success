@@ -172,7 +172,39 @@
         "description":"",
        
         "search":{ "$and": [{ "TVSeriesTitle": "Yan Oda" }]}
-   
+    }
+
+    ,
+
+    
+
+    {
+        "slug": "bahar-dizi-sponsorlari",
+        "pageTitle":"Bahar Dizi Sponsorları",
+        "description":"",
        
+        "search":{ "$and": [{ "TVSeriesTitle": "Bahar" }]}
+    }
+    ,
+
+    
+
+    {
+        "slug": "yargi-dizi-sponsorlari",
+        "pageTitle":"Yargı Dizi Sponsorları",
+        "description":"",
+       
+        "search":{ "$and": [{ "TVSeriesTitle": "Yargı" }]}
+    }
+    ,
+
+    
+
+    {
+        "slug": "sandik-kokusu-dizi-sponsorlari",
+        "pageTitle":"Sandık Kokusu Dizi Sponsorları",
+        "description":"",
+       
+        "search":{ "$and": [{ "TVSeriesTitle": "Sandık Kokusu" }]}
     }
 ]

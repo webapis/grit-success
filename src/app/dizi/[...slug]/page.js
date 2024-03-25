@@ -5,7 +5,7 @@ import SearchResultContainer from '../../dizi-sponsoru/comp/SearchResultContaine
 import { Container, Grid } from '@mui/material';
 import path from 'path'
 import Fuse from 'fuse.js'
-
+import pagesData from '@/app/dizi/pageMetadata.json'
 
 
 
@@ -13,8 +13,8 @@ import Fuse from 'fuse.js'
 export async function generateMetadata({ params }) {
 
 
-    const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/pageMetadata.json'), 'utf8');
-    const pagesData = JSON.parse(pages);
+    // const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/pageMetadata.json'), 'utf8');
+    // const pagesData = JSON.parse(pages);
     debugger
     const result = pagesData.find(f => {
         const current = f.slug
@@ -23,14 +23,14 @@ export async function generateMetadata({ params }) {
 
         return match
     })
-    if (result) {
+   
 
         const { pageTitle } = result
         return {
             title: pageTitle
 
         }
-    }
+    
 
 
 }

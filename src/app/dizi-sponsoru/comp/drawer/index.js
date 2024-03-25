@@ -13,7 +13,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Divider from '@mui/material/Divider';
 import DizivliewListItem from './DiziviewListItem';
-import data from '@/app/dizi-sponsoru/page-data/dizisponsoruMenu.json';
+import data from '@/app/dizi/dizisponsoruMenu.json'
 import Link from 'next/link';
 const arrayData = Object.entries(data);
 const drawerWidth = 240;
