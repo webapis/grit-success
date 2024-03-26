@@ -8,7 +8,8 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import path from 'path'
 import Fuse from 'fuse.js'
-import Pagination from '@mui/material/Pagination';
+import Pagination from '@mui/material/Pagination'
+import orderData from "./orderData";
 import PaginationContainer from "../comp/PaginationContainer";
 export default async function DiziPage({ params }) {
 
@@ -65,11 +66,11 @@ export default async function DiziPage({ params }) {
     } else {
 
         const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/${gender}/${category}-sponsorkiyafeti.json`), 'utf8');
-        const rawData = JSON.parse(data)
-        
+        const rawData = orderData(JSON.parse(data))
+
         const pagesData = paginate(rawData, page, 100)
-        const pageCount =Math.ceil(rawData.length/100)
-        console.log('pageCount',pageCount)
+        const pageCount = Math.ceil(rawData.length / 100)
+        console.log('pageCount', pageCount)
         console.log("pageDataLength", JSON.parse(data).length)
         return <Container>
             <div style={{ marginTop: 70, display: 'flex', justifyContent: 'center' }}>
@@ -82,7 +83,7 @@ export default async function DiziPage({ params }) {
             <GenderTabContainer value={genderIndex} />
             <Grid container="true" gap={1} sx={{ display: 'flex', justifyContent: 'center' }}> {pagesData.map((m, i) => <Grid item key={i} xs={5} sm={3} md={2}> <Image content={m} pageTitle={''} /></Grid>)}</Grid>
             <PaginationContainer count={pageCount} page={page} url={`/sponsor-kiyafeti/${gender}/${category}/page/`} />
-            </Container>
+        </Container>
 
 
     }
@@ -95,12 +96,12 @@ export default async function DiziPage({ params }) {
 
 export function GenderTabContainer({ value = 0 }) {
 
-    return <Container sx={{display:'flex',justifyContent:"center"}}> <Tabs value={value}  sx={{ marginBottom: 1 }} variant="scrollable"   scrollButtons allowScrollButtonsMobile> 
+    return <Container sx={{ display: 'flex', justifyContent: "center" }}> <Tabs value={value} sx={{ marginBottom: 1 }} variant="scrollable" scrollButtons allowScrollButtonsMobile>
         <Tab label="Kadın" component={Link} href="/sponsor-kiyafeti" />
         <Tab label="Erkek" component={Link} href="/sponsor-kiyafeti/erkek" />
-        <Tab label="Kız Çocuk" component={Link} href="/sponsor-kiyafeti/kiz-cocuk" />
+        {/* <Tab label="Kız Çocuk" component={Link} href="/sponsor-kiyafeti/kiz-cocuk" />
         <Tab label="Erkek Çocuk" href="/dizi-sponsoru/erkek-cocuk" />
-        <Tab label="Diğer" component={Link} href="/sponsor-kiyafeti/diğer" />
+        <Tab label="Diğer" component={Link} href="/sponsor-kiyafeti/diğer" /> */}
     </Tabs></Container>
 }
 

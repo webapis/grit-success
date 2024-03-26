@@ -142,13 +142,13 @@ async function getZipFiles(gender) {
 debugger
     const mainSha = data.find(d => d.name === 'main')
     const { commit: { sha } } = mainSha
-
+debugger
     //------Git database / Get a tree endpoint------
     /*required to retrieve list of file and folder into*/
     const treeResponse = await fetch(`https://api.github.com/repos/webapis/crawler-state-2/git/trees/${sha}?recursive=1`, { method: 'get', headers: { Accept: "application/vnd.github.raw", authorization: `token ${process.env.GH_TOKEN}`, "X-GitHub-Api-Version": "2022-11-28" } })
     const treeData = await treeResponse.json()
     const { tree } = treeData
-        ;
+        
     const dataFolderTrees = tree.filter(f => f.type === 'blob' && f.path.includes(`${gender}/`))
 
 
@@ -198,7 +198,7 @@ async function getSingleContent(filepath) {
     const response = await fetch(`https://api.github.com/repos/webapis/crawler-state-2/contents/${filepath}`, { method: 'get', headers: { Accept: "application/vnd.github.raw", authorization: `token ${process.env.GH_TOKEN}`, "X-GitHub-Api-Version": "2022-11-28" } })
 
     var file = fs.createWriteStream('single-content/' + filepath);
-
+debugger
     //     const data = await response.json()
 
     //     const content = data.content
