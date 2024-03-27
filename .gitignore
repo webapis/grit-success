@@ -37,4 +37,4 @@ next-env.d.ts
 .env
 unzipped-data
 zipped-files
-srс/app/sponsor-kiyafeti/data/
+srс/**/**/data/
