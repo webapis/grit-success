@@ -44,10 +44,6 @@ export default async function DiziPage({ params }) {
 
     }
 
-    console.log('slug', slug)
-    console.log("gener", gender)
-    console.log("category", category)
-    console.log("page", page)
 
 
 

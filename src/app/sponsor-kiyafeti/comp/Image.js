@@ -32,14 +32,14 @@ export default function Image({ content }) {
     return <Box container sx={{ xs: 150, md: 300 }}>
         <Box item xs={12} component={Link} href={link} target="_blank">
             <img    ref={imageEl}
-        data-src={image[0]} src={placeholder} style={{ maxWidth: '100%', height: 'auto' }}  loading="lazy"  />
+        data-src={image[0]} src={placeholder} style={{ maxWidth: '100%', height: 'auto' }}  />
         </Box>
         <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Typography>{marka}</Typography>
-            <Typography>{price} {currency}</Typography>
+            <Typography sx={{fontSize:14,fontFamily:'inherit'}}>{marka}</Typography>
+            <Typography sx={{fontSize:12,fontFamily:'inherit'}}>{price} {currency}</Typography>
         </Box>
         <Box>
-            <Typography  component={Link} href={link} target="_blank" variant="caption" style={{ width: '100%', wordWrap: 'break-word', textDecoration: 'none' }}>{title}</Typography>
+            <Typography  component={Link} href={link} target="_blank" variant="caption" style={{ width: '100%', wordWrap: 'break-word', textDecoration: 'none', color:'inherit',fontFamily:'inherit' }}>{title}</Typography>
         </Box>
     </Box>
 }
