@@ -199,6 +199,14 @@
     ,
 
     
+    {
+        "slug": "yargi-mobilya-sponsoru",
+        "pageTitle":"Yargı Dizi Mobilya Sponsoru",
+        "description":"Yargı Dizi Mobilya Sponsoru: Kaliteli ve uygun fiyatlı mobilyalarla tanışın.",
+       
+        "search":{ "$and": [{ "TVSeriesTitle": "Yargı",   "ServiceName": "Mobilya" }]}
+ 
+    },
 
     {
         "slug": "sandik-kokusu-dizi-sponsorlari",

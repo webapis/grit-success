@@ -28,14 +28,14 @@
     "fuse.js": "^7.0.0",
     "instantsearch.css": "^8.1.0",
     "minisearch": "^6.3.0",
+
     "mssql": "^10.0.2",
     "next": "^14.1.0",
     "react": "^18",
     "react-dom": "^18",
     "react-instantsearch": "7.5.5",
     "react-instantsearch-dom": "6.40.4",
-    "react-instantsearch-nextjs": "0.1.12",
-    "save-dev": "^0.0.1-security"
+    "react-instantsearch-nextjs": "0.1.12"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.6.10",
@@ -47,7 +47,6 @@
     "@storybook/react": "^7.6.10",
     "@storybook/test": "^7.6.10",
     "css-loader": "^6.10.0",
-
     "storybook": "^7.6.10",
     "style-loader": "^3.3.4"
   }
