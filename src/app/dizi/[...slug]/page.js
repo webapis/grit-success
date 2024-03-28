@@ -24,19 +24,14 @@ export async function generateMetadata({ params }) {
         return match
     })
 
-    if(result){
+
         const { pageTitle } = result
         return {
+            
             title: pageTitle
 
         }
-    }else{
-     
-        return {
-            title: ''
-
-        }  
-    }
+    
 
        
     
