@@ -71,8 +71,8 @@ export default async function DiziPage({ params }) {
         const { pageTitle, search } = result
         let results = fuse.search(search)
 
-        const paginatedData = paginate(results, page, 100)
-        const pageCount = Math.ceil(results.length / 100)
+        const paginatedData = paginate(results, page, 50)
+        const pageCount = Math.ceil(results.length / 50)
         return <> <SearchResultContainer data={paginatedData} pageTitle={pageTitle} />
             <PaginationContainer count={pageCount} page={page} url={`/dizi/${params.slug[0]}/page/`} />
         </>
