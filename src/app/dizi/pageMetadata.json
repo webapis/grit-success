@@ -215,4 +215,13 @@
        
         "search":{ "$and": [{ "TVSeriesTitle": "Sandık Kokusu" }]}
     }
+    ,
+
+    {
+        "slug": "yasak-elma-dizi-sponsorlari",
+        "pageTitle":"Yasak Elma Dizi Sponsorları",
+        "description":"",
+       
+        "search":{ "$and": [{ "TVSeriesTitle": "Yasak Elma" }]}
+    }
 ]

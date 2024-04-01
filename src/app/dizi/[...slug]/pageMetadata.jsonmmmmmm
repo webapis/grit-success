@@ -89,6 +89,14 @@
         "search": "mücevher Taş Kağıt Makas",
         "index":"dizisponsoru",
         "coverimage":"tas-kagit-makas.jpg"
+    },
+    {
+        "slug": "yasak-elma-dizi-sponsorlari",
+        "pageTitle":"Yasak Elma Dizi Sponsorları",
+        "description":"",
+       
+        "search": "mobilya Yalı Çapkını",
+        "index":"dizisponsoru",
+        "coverimage":"yali-capkini.jpg"
     }
-    
 ]
