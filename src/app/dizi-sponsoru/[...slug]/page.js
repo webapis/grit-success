@@ -2,11 +2,11 @@
 import { promises as fs } from 'fs';
 
 import SearchResultContainer from '@/app/dizi-sponsoru/comp/SearchResultContainer';
-import { Container, Grid } from '@mui/material';
+
 import PaginationContainer from '@/app/dizi-sponsoru/comp/PaginationContainer';
 import path from 'path'
 import Fuse from 'fuse.js'
-import keywordMetaData from './keywordMetadata.json'
+import keywordMetaData from '@/app/dizi-sponsoru/[...slug]/keywordMetadata.json'
 import deaccent from './deaccent';
 
 debugger
