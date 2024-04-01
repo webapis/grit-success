@@ -1,0 +1,80 @@
+[{
+    "or": {
+        "$or": [
+           
+            {
+                "ServiceName": "takı"
+            },
+            {
+                "ServiceName": "müjevher"
+            },
+            {
+                "Acyklama": "müjevher"
+            }
+        ]
+    },
+    "keyword": "taki-mujevher",
+    "keywordTitle":"Taki ve Müjevher"
+},
+    {
+        "or": {
+            "$or": [
+               
+                {
+                    "ServiceName": "mobilya"
+                }
+            ]
+        },
+        "keyword": "mobilya",
+        "keywordTitle":"Mobilya"
+    },
+    {
+        "or": {
+            "$or": [
+                {
+                    "Acyklama": "kadın"
+                },
+                {
+                    "ServiceName": "kadın"
+                }
+            ]
+        },
+        "keyword": "kadin-kiyafeti",
+        "keywordTitle":"Kadın Kıyafeti"
+    },
+    {
+        "or": {
+            "$or": [
+                {
+                    "Acyklama": "erkek"
+                },
+                {
+                    "ServiceName": "erkek"
+                }
+            ]
+        },
+        "keyword": "erkek-kiyafeti",
+        "keywordTitle":"Erkek Kıyafeti"
+    },
+    {
+        "or": {
+            "$or": [
+                {
+                    "Acyklama": "giyim"
+                },
+                {
+                    "Acyklama": "ayakkabı"
+                },
+                {
+                    "Acyklama": "çanta"
+                },
+                {
+                    "ServiceName": "kıyafet"
+                }
+            ]
+        },
+        "keyword": "kiyafet",
+        "keywordTitle":"Kıyafet"
+    }
+
+]

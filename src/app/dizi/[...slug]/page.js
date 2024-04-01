@@ -7,6 +7,7 @@ import PaginationContainer from '@/app/dizi-sponsoru/comp/PaginationContainer';
 import path from 'path'
 import Fuse from 'fuse.js'
 import pagesData from '@/app/dizi/pageMetadata.json'
+import deaccent from '@/app/dizi-sponsoru/[...slug]/deaccent';
 
 
 
@@ -50,7 +51,7 @@ export default async function DiziPage({ params }) {
     const pagesData = JSON.parse(data);
 
 
-    console.log('page', page)
+    console.log('params', params)
 
 
     const result = pagesMetaData.find(f => {
@@ -73,7 +74,7 @@ export default async function DiziPage({ params }) {
 
         const paginatedData = paginate(results, page, 50)
         const pageCount = Math.ceil(results.length / 50)
-        return <> <SearchResultContainer data={paginatedData} pageTitle={pageTitle} />
+        return <> <SearchResultContainer data={paginatedData} pageTitle={pageTitle} dizi={deaccent(result.dizi).replaceAll(' ','-').toLowerCase()} />
             <PaginationContainer count={pageCount} page={page} url={`/dizi/${params.slug[0]}/page/`} />
         </>
 
