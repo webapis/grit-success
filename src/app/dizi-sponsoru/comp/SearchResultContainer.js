@@ -2,7 +2,7 @@ import { Grid, Container, Typography } from "@mui/material"
 import SearchResultItem from "./SearchResultItem"
 import Drawer from './drawer'
 import Chip from '@mui/material/Chip';
-import Stack from '@mui/material/Stack';
+
 import Link from "next/link";
 export default function SearchResultContainer({ data, pageTitle,dizi,page,keyword }) {
 
