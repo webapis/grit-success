@@ -6,7 +6,7 @@ import SearchResultContainer from '@/app/dizi-sponsoru/comp/SearchResultContaine
 import PaginationContainer from '@/app/dizi-sponsoru/comp/PaginationContainer';
 import path from 'path'
 import Fuse from 'fuse.js'
-import keywordMetaData from '@/app/dizi-sponsoru/[...slug]/keywordMetadata.json'
+import keywordMetaData from '@/app/dizi-sponsoru/keywordMetadata.json'
 import deaccent from './deaccent';
 
 debugger
