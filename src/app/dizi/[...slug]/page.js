@@ -1,13 +1,13 @@
 
 import { promises as fs } from 'fs';
 
-import SearchResultContainer from '../../dizi-sponsoru/comp/SearchResultContainer';
-import { Container, Grid } from '@mui/material';
-import PaginationContainer from '@/app/dizi-sponsoru/comp/PaginationContainer';
+import SearchResultContainer from '../../dizisponsoru/comp/SearchResultContainer';
+
+import PaginationContainer from '@/app/dizisponsoru/comp/PaginationContainer';
 import path from 'path'
 import Fuse from 'fuse.js'
 import pagesData from '@/app/dizi/pageMetadata.json'
-import deaccent from '@/app/dizi-sponsoru/[...slug]/deaccent';
+import deaccent from '@/app/dizisponsoru/[...slug]/deaccent';
 
 
 

@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import { Typography, Grid, Container } from '@mui/material';
-import SponsorView from '@/app/dizi-sponsoru/comp/SponsorView';
+import SponsorView from '@/app/dizisponsoru/comp/SponsorView';
 import data from '@/app/dizi/dizisponsoruMenu.json'
 import Drawer from './comp/drawer'
 const arrayData = Object.entries(data)

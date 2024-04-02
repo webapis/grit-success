@@ -1,9 +1,9 @@
 
 import { promises as fs } from 'fs';
 
-import SearchResultContainer from '@/app/dizi-sponsoru/comp/SearchResultContainer';
+import SearchResultContainer from '@/app/dizisponsoru/comp/SearchResultContainer';
 
-import PaginationContainer from '@/app/dizi-sponsoru/comp/PaginationContainer';
+import PaginationContainer from '@/app/dizisponsoru/comp/PaginationContainer';
 import path from 'path'
 import Fuse from 'fuse.js'
 
@@ -18,7 +18,7 @@ export async function generateMetadata({ params }) {
 
     const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/pageMetadata.json'), 'utf8');
     const pagesMetaData = JSON.parse(pages);
-    const keyWords = await fs.readFile(path.join(process.cwd(), 'src/app/dizi-sponsoru/keywordMetadata.json'), 'utf8');
+    const keyWords = await fs.readFile(path.join(process.cwd(), 'src/app/dizisponsoru/keywordMetadata.json'), 'utf8');
     const keywordMetaData = JSON.parse(keyWords);
     const keywordObj = keywordMetaData.find(f => f.keyword === keyword)
     debugger
@@ -59,7 +59,7 @@ export default async function DiziSponsoru({ params }) {
     const pagesMetaData = JSON.parse(pages);
     const data = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/dizisponsoru.json'), 'utf8');
     const pagesData = JSON.parse(data);
-    const keyWords = await fs.readFile(path.join(process.cwd(), 'src/app/dizi-sponsoru/keywordMetadata.json'), 'utf8');
+    const keyWords = await fs.readFile(path.join(process.cwd(), 'src/app/dizisponsoru/keywordMetadata.json'), 'utf8');
     const keywordMetaData = JSON.parse(keyWords);
   
 
@@ -91,7 +91,7 @@ export default async function DiziSponsoru({ params }) {
     const pageCount = Math.ceil(results.length / 50)
     return <>
         <SearchResultContainer data={paginatedData} pageTitle={`${pageObj.dizi} Dizisi ${keywordObj.keywordTitle} Sponsorları`} dizi={dizi} page={page} keyword={keyword} />
-        <PaginationContainer count={pageCount} page={page} url={`/dizi-sponsoru/${dizi}/${keyword}/page/`} />
+        <PaginationContainer count={pageCount} page={page} url={`/dizisponsoru/${dizi}/${keyword}/page/`} />
     </>
 
 
