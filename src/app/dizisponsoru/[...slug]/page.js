@@ -7,6 +7,7 @@ import PaginationContainer from '@/app/dizisponsoru/comp/PaginationContainer';
 import path from 'path'
 import Fuse from 'fuse.js'
 import keywordMetaData from '@/app/dizisponsoru/keywordMetaData.json';
+import pagesMetaData from '@/app/dizi/pageMetadata.json';
 import deaccent from './deaccent';
 
 debugger
@@ -16,8 +17,7 @@ export async function generateMetadata({ params }) {
     const keyword = params.slug[1]
     const page = parseInt(params.slug[3])
 
-    const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/pageMetadata.json'), 'utf8');
-    const pagesMetaData = JSON.parse(pages);
+
 
     const keywordObj = keywordMetaData.find(f => f.keyword === keyword)
     debugger
@@ -54,8 +54,7 @@ export default async function DiziSponsoru({ params }) {
     const keyword = params.slug[1]
     const page = parseInt(params.slug[3])
 
-    const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/pageMetadata.json'), 'utf8');
-    const pagesMetaData = JSON.parse(pages);
+
     const data = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/dizisponsoru.json'), 'utf8');
     const pagesData = JSON.parse(data);
 
