@@ -74,7 +74,7 @@ export default async function DiziPage({ params }) {
 
         const paginatedData = paginate(results, page, 50)
         const pageCount = Math.ceil(results.length / 50)
-        return <> <SearchResultContainer data={paginatedData} pageTitle={pageTitle} dizi={deaccent(result.dizi).replaceAll(' ','-').toLowerCase()} />
+        return <> <SearchResultContainer data={paginatedData} pageTitle={pageTitle} dizi={deaccent(result.dizi).replaceAll(' ','-').toLowerCase()} keyword="tum"/>
             <PaginationContainer count={pageCount} page={page} url={`/dizi/${params.slug[0]}/page/`} />
         </>
 
