@@ -75,6 +75,11 @@
         },
         "keyword": "kiyafet",
         "keywordTitle":"Kıyafet"
+    },
+    {
+        "or":null ,
+        "keyword": "tum",
+        "keywordTitle":"Tüm"
     }
 
 ]

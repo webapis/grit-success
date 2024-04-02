@@ -10,6 +10,7 @@ export default function ChipContainer({ dizi, keyword }) {
     return <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center' }}>
 
         <Grid container gap={1} sx={{ display: 'flex', justifyContent: 'center' }}>
+        <CustomLink href={`/dizisponsoru/${dizi}/tum/page/1`} isSelected={keyword==='tum'}>tümü</CustomLink>
             <CustomLink href={`/dizisponsoru/${dizi}/kiyafet/page/1`} isSelected={keyword==='kiyafet'}>kıyafet</CustomLink>
             <CustomLink href={`/dizisponsoru/${dizi}/kadin-kiyafeti/page/1`} isSelected={keyword==='kadin-kiyafeti'}>kadın kıyafeti</CustomLink>
             <CustomLink href={`/dizisponsoru/${dizi}/erkek-kiyafeti/page/1`} isSelected={keyword==='erkek-kiyafeti'}>erkek kıyafeti</CustomLink>

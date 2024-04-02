@@ -15,7 +15,7 @@ debugger
 export async function generateMetadata({ params }) {
     const dizi = params.slug[0]
     const keyword = params.slug[1]
-    const page = parseInt(params.slug[3])
+
 
 
 
@@ -81,8 +81,8 @@ export default async function DiziSponsoru({ params }) {
  
     
    
-    let results = fuse.search({ "$and": [{ "TVSeriesTitle": pageObj.dizi },keywordObj.or ] })
- 
+    let results =keywordObj.or? fuse.search({ "$and": [{ "TVSeriesTitle": pageObj.dizi },keywordObj.or ] }): fuse.search({ "$and": [{ "TVSeriesTitle": pageObj.dizi } ] })
+
     debugger
     const paginatedData = paginate(results, page, 50)
     const pageCount = Math.ceil(results.length / 50)
