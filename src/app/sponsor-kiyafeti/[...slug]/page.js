@@ -73,11 +73,11 @@ export default async function DiziPage({ params }) {
             <div style={{ marginTop: 70, display: 'flex', justifyContent: 'center',marginBottom:3 }}>
                 <Tabs value={2}>
                     <Tab label="Dizi Kıyafeti" component={Link} href="/" />
-                    <Tab label="Dizi Sponsoru" href="/dizi-sponsoru" />
+                    <Tab label="Dizi Sponsoru" href="/dizisponsoru" />
                     <Tab label="Sponsor Kıyafeti" />
                 </Tabs>
             </div>
-            <Typography variant='h4' textAlign='center' sx={{ marginTop: 0 }}>Sponsor Kıyafeti <ProductCategoryChip category={category}/></Typography>
+          <ProductCategoryChip category={category}/>
             {/* <GenderTabContainer value={genderIndex} /> */}
             <Grid container gap={1} sx={{ display: 'flex', justifyContent: 'center' }}> {pagesData.map((m, i) => <Grid item key={i} xs={5} sm={3} md={2}> <Image content={m} pageTitle={''} /></Grid>)}</Grid>
             <PaginationContainer count={pageCount} page={page} url={`/sponsor-kiyafeti/${gender}/${category}/page/`} />

@@ -36,7 +36,7 @@ export default function SponsorView({title ,content }) {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button endIcon={  <OpenInNewIcon/>} component={Link} href={`/dizi/${tag}-dizi-sponsorlari`} target='_blank'>
+                <Button endIcon={  <OpenInNewIcon/>} component={Link} href={`/dizi/${tag}-dizi-sponsorlari`} >
                 sayfaya git
                   
                 </Button>

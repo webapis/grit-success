@@ -1,7 +1,7 @@
 'use client';
-import { Chip } from "@mui/material";
+import { Chip,Box } from "@mui/material";
 
 export default function ProductCategoryChip({category}){
 
-    return <Chip label={category} onDelete={()=>{window.location.replace('/sponsor-kiyafeti') }}/>
+    return <Box sx={{display:'flex',justifyContent:'center',width:'100%', margin:2}}><Chip component="h1" color="primary" variant="outlined" label={category} onDelete={()=>{window.location.replace('/sponsor-kiyafeti') }}/></Box> 
 }
