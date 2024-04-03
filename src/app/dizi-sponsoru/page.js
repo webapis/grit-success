@@ -23,7 +23,7 @@ export default async function Home(props) {
     <Tabs value={1}>
       <Tab label="Dizi Kıyafeti"  component ={Link} href="/"/>
       <Tab label="Dizi Sponsoru"/>
-      <Tab label="Kıyafet" component ={Link} href="/sponsor-kiyafeti"/>
+      <Tab label="Sponsor Kıyafeti" component ={Link} href="/sponsor-kiyafeti"/>
     </Tabs>
     </div>
     <Application {...props}/>

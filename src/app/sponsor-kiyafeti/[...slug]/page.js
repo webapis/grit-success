@@ -2,15 +2,17 @@ import Application from "../Application"
 import { promises as fs } from 'fs';
 import Link from 'next/link';
 import Image from "../comp/Image";
-import { Grid } from "@mui/material";
+import { Grid,Chip } from "@mui/material";
 import { Container } from '@mui/material';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import path from 'path'
-import Fuse from 'fuse.js'
-import Pagination from '@mui/material/Pagination'
+
 import orderData from "./orderData";
 import PaginationContainer from "../comp/PaginationContainer";
+import Drawer from '../comp/drawer'
+import Typography from "@mui/material/Typography";
+import ProductCategoryChip from "./ProductCategoryChip";
 export default async function DiziPage({ params }) {
 
     const { slug } = params
@@ -66,21 +68,21 @@ export default async function DiziPage({ params }) {
 
         const pagesData = paginate(rawData, page, 100)
         const pageCount = Math.ceil(rawData.length / 100)
-        console.log('pageCount', pageCount)
-        console.log("pageDataLength", JSON.parse(data).length)
-        return <Container>
-            <div style={{ marginTop: 70, display: 'flex', justifyContent: 'center' }}>
+  
+        return <Drawer> <Container>
+            <div style={{ marginTop: 70, display: 'flex', justifyContent: 'center',marginBottom:3 }}>
                 <Tabs value={2}>
                     <Tab label="Dizi Kıyafeti" component={Link} href="/" />
                     <Tab label="Dizi Sponsoru" href="/dizi-sponsoru" />
                     <Tab label="Sponsor Kıyafeti" />
                 </Tabs>
             </div>
-            <GenderTabContainer value={genderIndex} />
-            <Grid container="true" gap={1} sx={{ display: 'flex', justifyContent: 'center' }}> {pagesData.map((m, i) => <Grid item key={i} xs={5} sm={3} md={2}> <Image content={m} pageTitle={''} /></Grid>)}</Grid>
+            <Typography variant='h4' textAlign='center' sx={{ marginTop: 0 }}>Sponsor Kıyafeti <ProductCategoryChip category={category}/></Typography>
+            {/* <GenderTabContainer value={genderIndex} /> */}
+            <Grid container gap={1} sx={{ display: 'flex', justifyContent: 'center' }}> {pagesData.map((m, i) => <Grid item key={i} xs={5} sm={3} md={2}> <Image content={m} pageTitle={''} /></Grid>)}</Grid>
             <PaginationContainer count={pageCount} page={page} url={`/sponsor-kiyafeti/${gender}/${category}/page/`} />
         </Container>
-
+        </Drawer>
 
     }
 
@@ -115,80 +117,6 @@ function paginate(array, page, pageSize) {
 
 
 
-/*
-
-import { promises as fs } from 'fs';
-
-import Image from "../comp/Image";
-import { Grid } from "@mui/material";
-import { Container } from '@mui/material';
-import path from 'path'
-import Fuse from 'fuse.js'
-import { createRequire } from "module";
-//import Drawer from '../../home/components/drawer'
-const require = createRequire(import.meta.url);
-
-
-export async function generateMetadata({ params, searchParams }, parent) {
-
-    const pages = await fs.readFile(path.join(process.cwd(), 'src/app/sponsor-kiyafeti/pageMetaData.json'), 'utf8');
-    const pagesMetaData = JSON.parse(pages);
-    debugger
-    const { pageTitle } = pagesMetaData.find(f => {
-        const current = f.slug
-        const slug = params.slug[0]
-        const match = current === slug
-
-        return match
-    })
-
-
-    return {
-        title: pageTitle
-
-    }
-}
-
-
-
-export default async function DiziPage({ params }) {
-
-    const pages = await fs.readFile(path.join(process.cwd(), 'src/app/sponsor-kiyafeti/pageMetaData.json'), 'utf8');
-    const pagesMetaData = JSON.parse(pages);
-
-    const data = await fs.readFile(path.join(process.cwd(), 'src/app/sponsor-kiyafeti/sponsorkiyafeti.json'), 'utf8');
-    const pagesData = JSON.parse(data);
-    debugger
-    const metasearchResult = pagesMetaData.find(f => {
-        const current = f.slug
-        const slug = params.slug[1]
-        const match = current === slug
-        debugger
-        return match
-    })
-
-    debugger
-
-    if (metasearchResult) {
-
-        const { pageTitle, search } = metasearchResult
-
-        const fuse = new Fuse(pagesData, { keys: ['image', 'title', 'price', 'link', 'currency', 'color', 'gender', 'category', 'marka'], minMatchCharLength: 6 })
-        debugger
-
-        let results = fuse.search(search)
-
-
-        return <Container><Grid container gap={1}> {results.map((m, i) => <Grid item key={i} xs={5} sm={3} md={2}> <Image item={m.item} pageTitle={pageTitle} /></Grid>)}</Grid></Container>
-
-    } else {
-
-        return <div>Loading...</div>
-    }
-
-
-
-}
 
 
 
@@ -199,6 +127,3 @@ export default async function DiziPage({ params }) {
 
 
 
-
-
-*/

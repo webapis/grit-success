@@ -5,7 +5,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import Link from 'next/link';
 
 export default function Diziview({ title, content }) {
-    const { ImageUrl, Date, tag } = content;
+    const {image,category,gender}=content
 
     return (
         <List sx={{ maxWidth: 345 }}>
@@ -15,7 +15,7 @@ export default function Diziview({ title, content }) {
 
             >
                 <ListItemButton component={Link}
-                    href={`/dizikiyafeti/${tag}-dizi-kiyafetleri`}
+                    href={`/sponsor-kiyafeti/${gender}/${category}/sayfa/1`}
                     target="_blank">
                     {title}
                 </ListItemButton>

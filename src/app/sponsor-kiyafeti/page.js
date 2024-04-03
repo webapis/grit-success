@@ -3,7 +3,7 @@
 import Application from "./Application"
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import { Suspense } from 'react'
+
 import Link from "next/link";
 export async function generateMetadata() {
 
@@ -20,12 +20,10 @@ export default async function Home(props) {
     <Tabs value={2}  variant="scrollable"   scrollButtons allowScrollButtonsMobile>
       <Tab label="Dizi Kıyafeti"  component ={Link} href="/"/>
       <Tab label="Dizi Sponsoru"  href="/dizi-sponsoru"/>
-      <Tab label="Kıyafet" />
+      <Tab label="Sponsor Kıyafeti" />
     </Tabs>
     </div>
     <Application {...props} gender="kadın"/>
-  
-
 </>
 
 }

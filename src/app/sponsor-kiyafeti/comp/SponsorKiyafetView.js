@@ -16,7 +16,7 @@ export default function SponsorKiyafetView({title ,content,group }) {
     return (
         <Card sx={{ maxWidth: 345 }}>
             <CardMedia
-                sx={{ height: 170 }}
+                sx={{ height: 400, width:'auto',objectFit:'contain' }}
                 image={image[0]}
                 title={`${title} Dizi Sponsorları.`}
             />

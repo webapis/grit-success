@@ -13,10 +13,12 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Divider from '@mui/material/Divider';
 import DizivliewListItem from './DiziviewListItem';
-import data from '@/app/dizikiyafeti/page-data/dizikiyafetiMenu.json';
+import data from '@/app/sponsor-kiyafeti/data/kadın/sponsorkiyafetiMenu.json';
 import Link from 'next/link';
 const arrayData = Object.entries(data);
 const drawerWidth = 240;
+
+
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
     ({ theme, open }) => ({
@@ -78,36 +80,36 @@ export default function PersistentDrawerLeft({ children }) {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar position="fixed" open={open} style={{ backgroundColor: 'white',zIndex:500 }} >
-    <Toolbar>
-        <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{ mr: 2, ...(open && { display: 'none' }) }}
-        >
-            <MenuIcon sx={{ color: 'black' }} />
-        </IconButton>
-        <Typography
-            variant="h6"
-            noWrap
-            component={Link}
-            sx={{
-                color: 'black',
-                fontFamily: 'Arial, sans-serif',
-                fontWeight: 600,
-                fontSize: '1.5rem',
-                letterSpacing: '0.05em',
-                textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
-                textDecoration:'none'
-            }}
-            href={'/'}
-        >
-            Glumzi
-        </Typography>
-    </Toolbar>
-</AppBar>
+            <AppBar position="fixed" open={open} style={{ backgroundColor: 'white', zIndex: 500 }} >
+                <Toolbar>
+                    <IconButton
+                        color="inherit"
+                        aria-label="open drawer"
+                        onClick={handleDrawerOpen}
+                        edge="start"
+                        sx={{ mr: 2, ...(open && { display: 'none' }) }}
+                    >
+                        <MenuIcon sx={{ color: 'black' }} />
+                    </IconButton>
+                    <Typography
+                        variant="h6"
+                        noWrap
+                        component={Link}
+                        sx={{
+                            color: 'black',
+                            fontFamily: 'Arial, sans-serif',
+                            fontWeight: 600,
+                            fontSize: '1.5rem',
+                            letterSpacing: '0.05em',
+                            textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
+                            textDecoration: 'none'
+                        }}
+                        href={'/'}
+                    >
+                        Glumzi
+                    </Typography>
+                </Toolbar>
+            </AppBar>
             <Drawer
                 sx={{
                     width: drawerWidth,
@@ -128,16 +130,23 @@ export default function PersistentDrawerLeft({ children }) {
                 </DrawerHeader>
                 <Divider />
                 <Box sx={{ padding: 2 }}>
-                    <Typography variant="h5" gutterBottom>Diziler</Typography>
-                    {arrayData.sort((a, b) => b[1].Time - a[1].Time).map((m, i) => {
-                        const title = m[0];
-                        const content = m[1];
-                        return <DizivliewListItem key={title} title={title} content={content} />;
+                    <Typography variant="h5" gutterBottom>Kategori</Typography>
+
+
+                    {arrayData.map((m, i) => {
+                        const topGroup = m[0]
+                        const categories = Object.entries(m[1])
+                        return categories.filter(f=>f[0]!=='diğer').map(m => {
+                            const title = m[0]
+                            const content = m[1]
+                            debugger
+                            return <DizivliewListItem key={title} title={title} content={content} />;
+                        })
                     })}
                 </Box>
             </Drawer>
             <Main open={open}>
-            
+
                 {children}
             </Main>
         </Box>
