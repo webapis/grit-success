@@ -1,8 +1,9 @@
 
+import Link from 'next/link';
 import { promises as fs } from 'fs';
 
 import ImageContainer from '../comps/ImageContainer';
-import { Container } from '@mui/material';
+import { Tab,Tabs } from '@mui/material';
 import path from 'path'
 import Fuse from 'fuse.js'
 import { createRequire } from "module";
@@ -52,11 +53,20 @@ debugger
     debugger
 
     debugger
-    return <Drawer> <Container >
+    return<>
+    <div style={{ marginTop: 70,display:'flex',justifyContent:'center'}}>
+    <Tabs value={0}  variant="scrollable"   scrollButtons allowScrollButtonsMobile style={{width:'90%'}}>
+      <Tab label="Dizi Kıyafeti"  />
+      <Tab label="Dizi Sponsoru" component ={Link} href="/dizisponsoru"/>
+      <Tab label="Sponsor Kıyafeti" component ={Link} href="/sponsor-kiyafeti"/>
+    </Tabs>
+    </div>
+    <Drawer> 
             <ImageContainer filteredData={results} pageTitle={title} />
          
-        </Container>
+  
         </Drawer>
+    </> 
 
 }
 

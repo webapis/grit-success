@@ -7,14 +7,10 @@ import SelectedDiziChip from './SelectedDiziChip';
 
 export default function ImageContainer({ filteredData, pageTitle }) {
    debugger
-  return   <Container>
-      <div style={{ marginTop: 70,display:'flex',justifyContent:'center'}}>
-    <Tabs value={0}  variant="scrollable"   scrollButtons allowScrollButtonsMobile>
-      <Tab label="Dizi Kıyafeti"  />
-      <Tab label="Dizi Sponsoru" component ={Link} href="/dizisponsoru"/>
-      <Tab label="Sponsor Kıyafeti" component ={Link} href="/sponsor-kiyafeti"/>
-    </Tabs>
-    </div>
+  return  <>
+   
+ <Container>
+ 
     <SelectedDiziChip category={pageTitle}/>
         <Grid container gap={2} justifyContent="center"
         
@@ -46,7 +42,7 @@ export default function ImageContainer({ filteredData, pageTitle }) {
     
 
     </Container>
-  
+    </>
 }
 
 
