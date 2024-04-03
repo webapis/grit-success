@@ -38,7 +38,7 @@ export default function SponsorKiyafetView({title ,content,group }) {
              
             </CardContent>
             <CardActions>
-                <Button endIcon={  <OpenInNewIcon/>} component={Link} href={`/sponsor-kiyafeti/${gender}/${category.toLowerCase()}/sayfa/1`} >
+                <Button endIcon={  <OpenInNewIcon/>} component={Link} href={`/sponsor-kiyafeti/${gender}/${category}/sayfa/1`} >
                 sayfaya git
                   
                 </Button>
