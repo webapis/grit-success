@@ -22,8 +22,7 @@ export default async function Home(props) {
     <div style={{marginTop:70,display:'flex',justifyContent:'center'}}>
     <Tabs value={0}>
       <Tab label="Dizi Kıyafeti"/>
-      <Tab label="Dizi Sponsoru" component ={Link} href="/dizi-sponsoru"/>
-      <Tab label="Sponsor Kıyafeti" component ={Link} href="/sponsor-kiyafeti"/>
+      <Tab label="Dizi Sponsoru" component ={Link} href="/dizisponsoru"/>
     </Tabs>
     </div>
     <Application {...props}/>

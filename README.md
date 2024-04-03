@@ -36,11 +36,10 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 kadın kıyafet markaları
-
+..
 https://dizioyuncu.com/inci-taneleri-dizi-kiyafetleri-ve-elbise-markalari/ 
 https://dizikiyafetleri.com/inci-taneleri-oyuncu-kiyafetleri-elbiseleri-ve-kombinlerin-markasi/
 https://www.tvblogum.com/inci-taneleri-dizi-kiyafetleri/
 
 https://www.trendyol.com/en/trendyol-collection/black-piping-detailed-blouse-tpraw23bz00028-p-286137518
-
-git filter-branch --index-filter 'git rm --cached --ignore-unmatch .env' -- --all
+...ç
