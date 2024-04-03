@@ -23,7 +23,7 @@ const drawerWidth = 240;
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
     ({ theme, open }) => ({
         flexGrow: 1,
-        padding: theme.spacing(3),
+        paddingTop:2,// theme.spacing(3),
         transition: theme.transitions.create('margin', {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
@@ -139,7 +139,7 @@ export default function PersistentDrawerLeft({ children }) {
                         return categories.filter(f=>f[0]!=='diğer').map(m => {
                             const title = m[0]
                             const content = m[1]
-                            debugger
+                    
                             return <DizivliewListItem key={title} title={title} content={content} />;
                         })
                     })}

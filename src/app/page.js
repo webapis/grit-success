@@ -20,9 +20,10 @@ export default async function Home(props) {
 
   return <Suspense fallback={<p style={{height:'100vh'}}>Loading....</p>}>
     <div style={{marginTop:70,display:'flex',justifyContent:'center'}}>
-    <Tabs value={0}>
+    <Tabs value={0} variant="scrollable"   scrollButtons allowScrollButtonsMobile>
       <Tab label="Dizi Kıyafeti"/>
       <Tab label="Dizi Sponsoru" component ={Link} href="/dizisponsoru"/>
+      <Tab label="Sponsor Kıyafeti" component ={Link} href="/sponsor-kiyafeti"/>
     </Tabs>
     </div>
     <Application {...props}/>

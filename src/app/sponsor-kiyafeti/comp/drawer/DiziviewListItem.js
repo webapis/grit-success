@@ -15,7 +15,7 @@ export default function Diziview({ title, content }) {
 
             >
                 <ListItemButton component={Link}
-                    href={`/sponsor-kiyafeti/${gender}/${category}/sayfa/1`}
+                    href={`/sponsor-kiyafeti/${gender}/${category.toLowerCase()}/sayfa/1`}
                     target="_blank">
                     {title}
                 </ListItemButton>
