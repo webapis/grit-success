@@ -55,7 +55,7 @@ export default async function DiziPage({ params }) {
             <div style={{ marginTop: 70, display: 'flex', justifyContent: 'center' }}>
                 <Tabs value={2}>
                     <Tab label="Dizi Kıyafeti" component={Link} href="/" />
-                    <Tab label="Dizi Sponsoru" href="/dizi-sponsoru" />
+                    <Tab label="Dizi Sponsoru" href="/dizisponsoru" />
                     <Tab label="Sponsor Kıyafeti" />
                 </Tabs>
             </div>
