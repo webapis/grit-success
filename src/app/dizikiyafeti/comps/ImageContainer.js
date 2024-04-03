@@ -30,7 +30,7 @@ export default function ImageContainer({ filteredData, pageTitle }) {
           
                 <div style={{marginTop:3, width:"100%"}}><Image fotografUrl={m.ImageUrl} alt={m.alt}  /></div>
                 <div style={{ width:'100%' }}>
-                    { <div  style={{ margin: 5 }}><span style={{ textTransform: "uppercase", fontWeight: 700 }}>{m.BrandTitle}</span> <a href={`${links}`} target='_blank' style={{ textTransform: 'capitalize',fontSize:16 }} rel="nofollow"> {title.toLowerCase()}</a> </div>}
+                    { <div  style={{ margin: 5 }}><span style={{ textTransform: "uppercase", fontWeight: 700 }}>{m.BrandTitle}</span> <a href={`${links}`}  style={{ textTransform: 'capitalize',fontSize:16 }} rel="nofollow"> {title.toLowerCase()}</a> </div>}
                 </div>
 
             </Grid>
