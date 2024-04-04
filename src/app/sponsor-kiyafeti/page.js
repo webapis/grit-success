@@ -8,7 +8,7 @@ import Link from "next/link";
 export async function generateMetadata() {
 
   return {
-    title: 'Dizi Sponsoru',
+    title: 'Sponsor Kiyafeti',
 
   }
 }

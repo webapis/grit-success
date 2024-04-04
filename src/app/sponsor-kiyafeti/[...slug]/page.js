@@ -11,8 +11,31 @@ import path from 'path'
 import orderData from "./orderData";
 import PaginationContainer from "../comp/PaginationContainer";
 import Drawer from '../comp/drawer'
-import Typography from "@mui/material/Typography";
+
 import ProductCategoryChip from "./ProductCategoryChip";
+
+
+export async function generateMetadata({ params }) {
+
+    const { slug } = params
+
+    let gender = decodeURI(slug[0])
+    let category = decodeURI(slug[1])
+
+
+    return {
+
+        title: 'Sponsor Kıyafeti-'+ gender+' '+ category
+
+    }
+
+
+
+
+
+
+}
+
 export default async function DiziPage({ params }) {
 
     const { slug } = params
