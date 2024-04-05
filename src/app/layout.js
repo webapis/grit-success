@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
 
 
         <Footer />
-        <script src="https://alwingulla.com/88/tag.min.js" data-zone="56455" async data-cfasync="false"></script>
+
         <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9521301536686282" crossorigin="anonymous" />
 
         <GoogleTagManager gtmId="GTM-WVW74LTW" />
