@@ -74,7 +74,7 @@ export default async function DiziSponsoru({ params }) {
     const keywordObj = keywordMetaData.find(f => f.keyword === keyword)
 
     debugger
-    const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name','Acyklama'], minMatchCharLength: 3 })
+    const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name','Acyklama'], minMatchCharLength: 4 })
 
 
 
