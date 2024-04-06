@@ -1,0 +1,31 @@
+[
+    {
+        "keywords": [
+            "şal"
+        ],
+        "name": "şal",
+        "group":"aksesuar"
+    },
+    {
+        "keywords": [
+            "kravat"
+        ],
+        "name": "kravat",
+        "group":"aksesuar"
+    },
+    {
+        "keywords": [
+            "bağcık"
+        ],
+        "name": "bağcık",
+        "group":"aksesuar"
+    },
+    {
+        "keywords": [
+            "anahtarlık"
+        ],
+        "name": "anahtarlık",
+        "group":"aksesuar"
+    }
+]
+

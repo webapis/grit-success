@@ -21,11 +21,11 @@ export default async function Application({gender,value}) {
             {pagesData.map((m, i) => {
                 const topGroup = m[0]
                 const categories = Object.entries(m[1])
-                return categories.filter(f=>f[0]!=='diğer').map(m => {
+                return categories.filter(f=>f[0]!=='diğer').filter(f=>f[1].total>20).sort((a,b)=>b[1].total-a[1].total).map(m => {
       
                     const catName = m[0]
                     const content = m[1]
-                    return <Grid key={i} item xs={12} md={3}> <SponsorKiyafetView group={topGroup} title={catName} content={content} /></Grid>
+                    return <Grid key={i} item xs={5} sm={3} md={2}> <SponsorKiyafetView group={topGroup} title={catName} content={content} /></Grid>
                 })
             })}
         </Grid>

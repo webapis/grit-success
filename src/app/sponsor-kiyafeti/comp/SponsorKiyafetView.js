@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
+import Grid from '@mui/material/Grid'
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
@@ -11,25 +12,40 @@ import Link from 'next/link';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 export default function SponsorKiyafetView({title ,content,group }) {
     debugger
-    const {image,category,gender}=content
+    const {image,category,gender,total}=content
 
     return (
         <Card sx={{ maxWidth: 345 }}>
             <CardMedia
-                sx={{ height: 400, width:'auto',objectFit:'contain' }}
+                sx={{ height: {xs:200,sm:250,md:300}, width:'auto',objectFit:'contain' }}
                 image={image[0]}
                 title={`${title} Dizi Sponsorları.`}
             />
 
             <CardContent>
                 <Box  style={{display:'flex', alignItems:'baseline', justifyContent:'space-between'}}>
-           
-                <Typography  variant="h5" component="div" style={{ textTransform: 'capitalize' }}>
-                    {title}
-                </Typography>
-                <Typography  variant="caption" component="div" style={{ textTransform: 'capitalize', opacity:0.5 }}>
+           <Grid container>
+            <Grid item xs={12}>
+            <Typography  variant="caption" component="div" style={{ textTransform: 'capitalize', opacity:0.5,textAlign:'end' }}>
                     {group}
+                </Typography>   
+            <Typography  variant="h5" component="div" sx={{ textTransform: 'capitalize',fontSize:{xs:16,md:16} }}>
+                    {title} 
                 </Typography>
+            </Grid>
+            <Grid item xs={12}>
+            <Typography  variant="caption" component="div" style={{ textTransform: 'capitalize', opacity:0.5,textAlign:'end' }}>
+                {total} adet
+                </Typography> 
+            </Grid>
+            <Grid item xs={12}>
+         
+            </Grid>
+         
+               
+               
+           </Grid>
+             
                 </Box>
 {/*          
                 <Typography variant="body2" color="text.secondary" style={{ textTransform: 'capitalize' }}>

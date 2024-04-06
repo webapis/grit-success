@@ -1,0 +1,42 @@
+[
+    {
+        "keywords": [
+            "pantolon","trousers"
+        ],
+        "name": "pantolon",
+        "group":"alt giyim"
+    },
+    {
+        "keywords": [
+            "şort"
+        ],
+        "name": "şort",
+        "group":"alt giyim"
+    },
+    {
+        "keywords": [
+            "eşofman"
+        ],
+        "name": "eşofman",
+        "group":"alt giyim"
+    }
+    ,   {
+        "keywords": [
+            "tulum"
+        ],
+        "name": "tulum",
+        "group":"alt giyim"
+    } ,   {
+        "keywords": [
+            "etek"
+        ],
+        "name": "etek",
+        "group":"alt giyim"
+    },   {
+        "keywords": [
+            "tayt"
+        ],
+        "name": "tayt",
+        "group":"alt giyim"
+    }
+]

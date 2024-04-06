@@ -3,6 +3,7 @@ import path from 'path'
 import 'dotenv/config'
 import makeDir from 'make-dir'
 import { deaccent } from './deaccent.mjs'
+import categorizedProducts from './categorizeData.mjs'
 debugger
 import fs from "fs"
 
@@ -13,12 +14,13 @@ walkSync(path.join(process.cwd(), `/unzipped-data`), async (filepath) => {
 
 })
 
-debugger
+
 const data = []
 for (let file of files) {
 
   const rowData = fs.readFileSync(file)
-  data.push(...JSON.parse(rowData))
+  const catData = categorizedProducts(JSON.parse(rowData))
+  data.push(...catData)
 
 
 }
@@ -26,24 +28,28 @@ for (let file of files) {
 const genderData = groupBy(data, 'gender')
 
 for (let gnd in genderData) {
-
+  debugger
   await makeDir(`${process.cwd()}/src/app/sponsor-kiyafeti/data/${gnd}`)
   const currentData = genderData[gnd]
   const groupedData = groupBy(currentData, 'group')
   for (let group in groupedData) {
-    const current = groupBy(groupedData[group], 'category')
+    const categories = groupBy(groupedData[group], 'category')
 
-    for (let category in current) {
-      const data = current[category]
-      const carr = current[category][0]
-      current[category] = carr
-      debugger
+    for (let category in categories) {
+      const data = categories[category]
+      const carr = categories[category][0]
+      categories[category] = { ...carr, total: data.length }
+
+      if (category === 'diğer') {
+
+
+      }
 
       fs.writeFileSync(`${process.cwd()}/src/app/sponsor-kiyafeti/data/${gnd}/${category}-sponsorkiyafeti.json`, JSON.stringify(data), { encoding: 'utf8' })
 
     }
-    
-    groupedData[group] = current
+
+    groupedData[group] = categories
 
   }
   fs.writeFileSync(`${process.cwd()}/src/app/sponsor-kiyafeti/data/${gnd}/sponsorkiyafetiMenu.json`, JSON.stringify(groupedData), { encoding: 'utf8' })

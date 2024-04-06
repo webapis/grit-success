@@ -1,0 +1,69 @@
+[
+    {
+        "keywords": [
+            "kaban"
+        ],
+        "name": "kaban",
+        "group":"dış giyim"
+    },
+    {
+        "keywords": [
+            "mont","сoat"
+        ],
+        "name": "mont",
+        "group":"dış giyim"
+    },
+    {
+        "keywords": [
+            "palto"
+        ],
+        "name": "palto",
+        "group":"dış giyim"
+    }
+    ,   {
+        "keywords": [
+            "pardösü"
+        ],
+        "name": "pardösü",
+        "group":"dış giyim"
+    }
+    ,   {
+        "keywords": [
+            "blazer"
+        ],
+        "name": "blazer",
+        "group":"dış giyim"
+    },
+      {
+        "keywords": [
+            "ceket","Jacket"
+        ],
+        "name": "ceket",
+        "group":"dış giyim"
+    } ,   {
+        "keywords": [
+            "yelek"
+        ],
+        "name": "yelek",
+        "group":"dış giyim"
+    },   {
+        "keywords": [
+            "trençkot","Trench Coat"
+        ],
+        "name": "trençkot",
+        "group":"dış giyim"
+    },   {
+        "keywords": [
+            "smokin"
+        ],
+        "name": "smokin",
+        "group":"dış giyim"
+    },   {
+        "keywords": [
+            "manto"
+        ],
+        "name": "manto",
+        "group":"dış giyim"
+    }
+]
+
