@@ -8,20 +8,20 @@ import searchObject from './searchObject.mjs';
 const require = createRequire(import.meta.url);
 require("dotenv").config();
 
-const top = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/data/top.json'))
-const bottom = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/data/bottom.json'))
-const dis = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/data/dis.json'))
-const bag = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/data/bag.json'))
-const ayakkabi = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/data/ayakkabi.json'))
-const gender = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/data/gender.json'))
-const color = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/data/color.json'))
-const aksesuar = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/data/aksesuar.json'))
-const plaj = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/data/plaj.json'))
-const ev = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/data/ev.json'))
-const icgiyim = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/data/ic-giyim.json'))
-const triko = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/data/triko.json'))
-const kozmetik = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/data/kozmetik.json'))
-const hamile = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/data/hamile.json'))
+const top = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/meta-data/top.json'))
+const bottom = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/meta-data/bottom.json'))
+const dis = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/meta-data/dis.json'))
+const bag = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/meta-data/bag.json'))
+const ayakkabi = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/meta-data/ayakkabi.json'))
+const gender = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/meta-data/gender.json'))
+const color = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/meta-data/color.json'))
+const aksesuar = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/meta-data/aksesuar.json'))
+const plaj = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/meta-data/plaj.json'))
+const ev = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/meta-data/ev.json'))
+const icgiyim = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/meta-data/ic-giyim.json'))
+const triko = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/meta-data/triko.json'))
+const kozmetik = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/meta-data/kozmetik.json'))
+const hamile = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/meta-data/hamile.json'))
 export default function categorizedProducts(items) {
 
 

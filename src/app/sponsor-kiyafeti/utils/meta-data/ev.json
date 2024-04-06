@@ -1,0 +1,24 @@
+[
+    {
+        "keywords": [
+            "pijama"
+        ],
+        "name": "pijama",
+        "group":"ev"
+    },
+    {
+        "keywords": [
+            "gecelik"
+        ],
+        "name": "gecelik",
+        "group":"ev"
+    }
+    ,
+    {
+        "keywords": [
+            "sabahlık"
+        ],
+        "name": "sabahlık",
+        "group":"ev"
+    }
+]
