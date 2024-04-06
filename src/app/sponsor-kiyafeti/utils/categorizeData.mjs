@@ -25,7 +25,7 @@ const hamile = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/d
 export default function categorizedProducts(items) {
 
 
-  const filterArray = ['Katlanabilir Kasa', 'LAPTOP KILIFI', 'Katlanabilir Kasa'];
+
   const data = items.map(m => {
 
     //gender
