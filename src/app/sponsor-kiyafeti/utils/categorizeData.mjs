@@ -2,26 +2,26 @@
 import { createRequire } from 'module';
 
 import fs from 'fs'
-
+import path from 'path';
 import searchObject from './searchObject.mjs';
 
 const require = createRequire(import.meta.url);
 require("dotenv").config();
 
-const top = require('./data/top.json')
-const bottom = require('./data/bottom.json')
-const dis = require('./data/dis.json')
-const bag = require('./data/bag.json')
-const ayakkabi = require('./data/ayakkabi.json')
-const gender = require('./data/gender.json')
-const color = require('./data/color.json')
-const aksesuar = require('./data/aksesuar.json')
-const plaj = require('./data/plaj.json')
-const ev = require('./data/ev.json')
-const icgiyim = require('./data/ic-giyim.json')
-const triko = require('./data/triko.json')
-const kozmetik = require('./data/kozmetik.json')
-const hamile = require('./data/hamile.json')
+const top = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/data/top.json'))
+const bottom = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/data/bottom.json'))
+const dis = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/data/dis.json'))
+const bag = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/data/bag.json'))
+const ayakkabi = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/data/ayakkabi.json'))
+const gender = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/data/gender.json'))
+const color = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/data/color.json'))
+const aksesuar = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/data/aksesuar.json'))
+const plaj = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/data/plaj.json'))
+const ev = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/data/ev.json'))
+const icgiyim = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/data/ic-giyim.json'))
+const triko = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/data/triko.json'))
+const kozmetik = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/data/kozmetik.json'))
+const hamile = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/data/hamile.json'))
 export default function categorizedProducts(items) {
 
 
