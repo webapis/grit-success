@@ -15,7 +15,7 @@ export default async function Application({gender,value}) {
      const pagesData = Object.entries(JSON.parse(data));
     return <Drawer> <Container>
 
-        <Typography variant='h4' textAlign='center' sx={{ marginTop: 0 }}>Sponsor Kıyafeti</Typography>
+        <Typography variant='h4' textAlign='center' sx={{ marginBottom:2,marginTop:1 , fontSize:{ xs:20,sm:30} }}>Sponsor Kıyafeti- Kategori</Typography>
         {/* <GenderTabContainer value={value} /> */}
         <Grid container gap={1} style={{ display: 'flex', justifyContent: 'center' }}>
             {pagesData.map((m, i) => {
