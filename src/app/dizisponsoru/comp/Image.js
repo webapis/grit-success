@@ -30,7 +30,7 @@ export default function Image({ alt, height, src,width }) {
         }
     }, [src]);
     return <img ref={imageEl} alt={alt} height={height}
-        data-src={src} src={placeholder} style={{ maxWidth: '100%', objectFit: 'contain', margin: 2 }} />
+        data-src={src} src={placeholder} style={{ maxWidth: '50%', objectFit: 'contain', margin: 0 }} />
 
 
 

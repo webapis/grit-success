@@ -16,22 +16,22 @@ export default function SearchResultItem({ item }) {
 
     return <Card sx={{ width: '100%', border:'1px solid #bdbdbd', borderRadius:4 }} elevation={0}>
     
-<Grid container gap={1} style={{display:'flex',justifyContent:'space-between'}}>
-<Grid item xs={4}>
+<div container gap={0} style={{display:'flex',justifyContent:'space-between',width:'100%'}}>
+
 <Image
             component="img"
             alt={`${imageName} marka resmi`}
            
             height="100"
-            style={{objectFit:'contain', borderRadius:5,width:'100%'}}
+         
             src={`/dizi/cover-image/${tag}.jpg`}
             loading="lazy"
             
         />
 
       
-</Grid>
-<Grid item xs={4}>
+
+
 <Image
             component="img"
             alt={`${imageName} marka resmi`}
@@ -41,8 +41,8 @@ export default function SearchResultItem({ item }) {
             src={`/dizi/marka/${imageName}.jpg`}
             loading="lazy"
         />
-</Grid>
-</Grid>
+
+</div>
       
     
 <CardContent>
