@@ -22,7 +22,7 @@ export default function SearchResultItem({ item }) {
             component="img"
             alt={`${imageName} marka resmi`}
            
-            height="80"
+            height="100"
             style={{objectFit:'contain', borderRadius:5,width:'100%'}}
             src={`/dizi/cover-image/${tag}.jpg`}
             loading="lazy"
@@ -31,12 +31,12 @@ export default function SearchResultItem({ item }) {
 
       
 </Grid>
-<Grid item xs={7}>
+<Grid item xs={4}>
 <Image
             component="img"
             alt={`${imageName} marka resmi`}
         
-            height="80"
+            height="100"
           
             src={`/dizi/marka/${imageName}.jpg`}
             loading="lazy"
