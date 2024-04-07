@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from "react";
 
 
 import placeholder from "./placeholder.js";
-export default function Image({ alt, height, src }) {
+export default function Image({ alt, height, src,width }) {
     const imageEl = useRef(null);
 
 
@@ -29,8 +29,8 @@ export default function Image({ alt, height, src }) {
             observer.observe(imageEl.current);
         }
     }, [src]);
-    return <img ref={imageEl} alt={alt} height='100'
-        data-src={src} src={placeholder} style={{ width: '100%', objectFit: 'contain', margin: 2 }} />
+    return <img ref={imageEl} alt={alt} height={height}
+        data-src={src} src={placeholder} style={{ maxWidth: '100%', objectFit: 'contain', margin: 2 }} />
 
 
 

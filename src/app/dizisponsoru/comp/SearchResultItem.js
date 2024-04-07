@@ -36,8 +36,8 @@ export default function SearchResultItem({ item }) {
             component="img"
             alt={`${imageName} marka resmi`}
         
-            height="100"
-            style={{objectFit:'contain',width:'100%'}}
+            height="80"
+          
             src={`/dizi/marka/${imageName}.jpg`}
             loading="lazy"
         />
