@@ -10,12 +10,12 @@ export default function ChipContainer({ dizi, keyword }) {
     return <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center' }}>
 
         <Grid container gap={1} sx={{ display: 'flex', justifyContent: 'center' }}>
-        <CustomLink href={`/dizisponsoru/${dizi}/tum/page/1`} isSelected={keyword==='tum'}>tümü</CustomLink>
-            <CustomLink href={`/dizisponsoru/${dizi}/kiyafet/page/1`} isSelected={keyword==='kiyafet'}>kıyafet</CustomLink>
-            <CustomLink href={`/dizisponsoru/${dizi}/kadin-kiyafeti/page/1`} isSelected={keyword==='kadin-kiyafeti'}>kadın kıyafeti</CustomLink>
-            <CustomLink href={`/dizisponsoru/${dizi}/erkek-kiyafeti/page/1`} isSelected={keyword==='erkek-kiyafeti'}>erkek kıyafeti</CustomLink>
-            <CustomLink href={`/dizisponsoru/${dizi}/taki-mujevher/page/1`} isSelected={keyword==='taki-mujevher'}>takı,mücevher</CustomLink>
-            <CustomLink href={`/dizisponsoru/${dizi}/mobilya/page/1`} isSelected={keyword==='mobilya'}>mobilya</CustomLink>
+        <CustomLink href={`/dizisponsoru/${dizi}/tum/sayfa/1`} isSelected={keyword==='tum'}>tümü</CustomLink>
+            <CustomLink href={`/dizisponsoru/${dizi}/kiyafet/sayfa/1`} isSelected={keyword==='kiyafet'}>kıyafet</CustomLink>
+            <CustomLink href={`/dizisponsoru/${dizi}/kadin-kiyafeti/sayfa/1`} isSelected={keyword==='kadin-kiyafeti'}>kadın kıyafeti</CustomLink>
+            <CustomLink href={`/dizisponsoru/${dizi}/erkek-kiyafeti/sayfa/1`} isSelected={keyword==='erkek-kiyafeti'}>erkek kıyafeti</CustomLink>
+            <CustomLink href={`/dizisponsoru/${dizi}/taki-mujevher/sayfa/1`} isSelected={keyword==='taki-mujevher'}>takı,mücevher</CustomLink>
+            <CustomLink href={`/dizisponsoru/${dizi}/mobilya/sayfa/1`} isSelected={keyword==='mobilya'}>mobilya</CustomLink>
         </Grid>
     </Grid>
 }
