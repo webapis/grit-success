@@ -1,10 +1,10 @@
 
- import { promises as fs } from 'fs';
+ //import { promises as fs } from 'fs';
 
 import SearchResultContainer from '../../dizisponsoru/comp/SearchResultContainer';
 
 import PaginationContainer from '@/app/dizisponsoru/comp/PaginationContainer';
-import path from 'path'
+//import path from 'path'
 import Fuse from 'fuse.js'
 import pagesMetaData from '@/app/dizi/pageMetadata.json'
 import pagesData from '@/app/dizi/dizisponsoru.json'
@@ -112,14 +112,14 @@ function paginate(array, page, pageSize) {
 
 
 export async function generateStaticParams() {
-   const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/pageMetadata.json'), 'utf8');
-    const pagesMetaData = JSON.parse(pages);
+ //  const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/pageMetadata.json'), 'utf8');
+  //  const pagesMetaData = JSON.parse(pages);
 
     return pagesMetaData.map((post) => {
       const {slug}= post
   
       return {
-        slug: [slug,'sayfa',1]
+        slug: [slug,'sayfa','1']
       }
       
     })
