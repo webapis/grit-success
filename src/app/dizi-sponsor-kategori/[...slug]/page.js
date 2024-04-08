@@ -1,0 +1,111 @@
+
+// import { promises as fs } from 'fs';
+
+ import SearchResultContainer from '@/app/dizi-sponsor-kategori/comp/SearchResultContainer';
+
+// import PaginationContainer from '@/app/dizi-sponsor-kategori/comp/PaginationContainer';
+// import path from 'path'
+import Fuse from 'fuse.js'
+import keywordMetaData from '@/app/dizi-sponsor-kategori/page-data/keywordMetaData.json';
+import pagesData from '@/app/dizi-sponsor-kategori/page-data/sponsor-kategori.json';
+
+import deaccent from './deaccent';
+
+debugger
+
+// export async function generateMetadata({ params }) {
+//     const dizi = params.slug[0]
+//     const keyword = params.slug[1]
+
+//     const keywordObj = keywordMetaData.find(f => f.keyword === keyword)
+//     debugger
+//     const pageObj = pagesMetaData.find(f => {
+
+//         const current = deaccent(f.dizi).replaceAll(' ', '-').toLowerCase()
+
+//         const slug = dizi
+//         const match = current === slug
+
+//         return match
+//     })
+
+
+
+//     return {
+
+//         title: pageObj.dizi + ' Dizisi ' +keywordObj.keywordTitle +' Sponsorları'
+
+//     }
+
+
+
+
+
+
+// }
+
+
+
+export default async function DiziSponsorKategori({ params }) {
+    debugger
+    const kategori = params.slug[0]
+
+    const page = parseInt(params.slug[2])
+
+    console.log('page',page)
+
+    // const data = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/dizisponsoru.json'), 'utf8');
+    // const pagesData = JSON.parse(data);
+
+    debugger
+
+
+    const keywordObj = keywordMetaData.find(f => {
+
+        const current = f.keyword
+
+        const slug = kategori
+        const match = current === slug
+
+        return match
+    })
+
+
+
+    debugger
+    const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'Acyklama'], minMatchCharLength: 4 })
+
+
+
+
+
+
+    let results = fuse.search(keywordObj.or )
+
+    debugger
+    const paginatedData = paginate(results, page, 50)
+    const pageCount = Math.ceil(results.length / 50)
+    console.log('paginatedData',paginatedData.length)
+    return <>
+        <SearchResultContainer data={paginatedData} pageTitle={` Dizisi ${keywordObj.keywordTitle} Sponsorları`} dizi={''} page={page} keyword={'keyword'} />
+        {/* <PaginationContainer count={pageCount} page={page} url={`/dizisponsoru/${dizi}/${keyword}/sayfa/`} /> */}
+    </>
+
+
+
+
+
+
+
+
+}
+
+
+function paginate(array, page, pageSize) {
+    --page; // Adjusting to zero-based index
+
+    const startIndex = page * pageSize;
+    const endIndex = startIndex + pageSize;
+
+    return array.slice(startIndex, endIndex);
+}
