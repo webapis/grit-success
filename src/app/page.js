@@ -3,7 +3,7 @@
 import Application from "../app/home/components/Application"
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import { Suspense } from 'react'
+
 import Link from "next/link";
 export async function generateMetadata() {
 
