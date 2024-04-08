@@ -112,12 +112,11 @@ function paginate(array, page, pageSize) {
 
 
 export async function generateStaticParams() {
- //  const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/pageMetadata.json'), 'utf8');
-  //  const pagesMetaData = JSON.parse(pages);
+
 
     return pagesMetaData.map((post) => {
       const {slug}= post
-  
+  debugger
       return {
         slug: [slug,'sayfa','1']
       }
