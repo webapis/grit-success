@@ -5,6 +5,25 @@ import Grid from '@mui/material/Grid'
 import Drawer from './comp/drawer'
 import Typography from '@mui/material/Typography'
 import TopNavigation from '../components/TopNavigation';
+
+export async function generateMetadata({ params }) {
+
+
+
+
+    return {
+
+        title: 'Dizi Sponsor Kategori'
+
+    }
+
+
+
+
+
+
+}
+
 export default function SponsorKategori() {
 
     return <>

@@ -13,36 +13,33 @@ import deaccent from './deaccent';
 
 debugger
 
-// export async function generateMetadata({ params }) {
-//     const dizi = params.slug[0]
-//     const keyword = params.slug[1]
+export async function generateMetadata({ params }) {
+    const kategori = params.slug[0]
 
-//     const keywordObj = keywordMetaData.find(f => f.keyword === keyword)
-//     debugger
-//     const pageObj = pagesMetaData.find(f => {
+    const keywordObj = keywordMetaData.find(f => {
 
-//         const current = deaccent(f.dizi).replaceAll(' ', '-').toLowerCase()
+        const current = f.keyword
 
-//         const slug = dizi
-//         const match = current === slug
+        const slug = kategori
+        const match = current === slug
 
-//         return match
-//     })
+        return match
+    })
 
 
 
-//     return {
+    return {
 
-//         title: pageObj.dizi + ' Dizisi ' +keywordObj.keywordTitle +' Sponsorları'
+        title: keywordObj.keywordTitle +' Dizi Sponsorları'
 
-//     }
+    }
 
 
 
 
 
 
-// }
+}
 
 
 
