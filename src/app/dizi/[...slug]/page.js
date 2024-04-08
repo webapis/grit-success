@@ -4,7 +4,7 @@
 import SearchResultContainer from '../../dizisponsoru/comp/SearchResultContainer';
 
 import PaginationContainer from '@/app/dizisponsoru/comp/PaginationContainer';
-// import path from 'path'
+import path from 'path'
 import Fuse from 'fuse.js'
 import pagesMetaData from '@/app/dizi/pageMetadata.json'
 import pagesData from '@/app/dizi/dizisponsoru.json'
