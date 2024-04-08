@@ -16,10 +16,7 @@ debugger
 export async function generateMetadata({ params }) {
     const dizi = params.slug[0]
     const keyword = params.slug[1]
-
-
-
-
+    
     const keywordObj = keywordMetaData.find(f => f.keyword === keyword)
     debugger
     const pageObj = pagesMetaData.find(f => {
