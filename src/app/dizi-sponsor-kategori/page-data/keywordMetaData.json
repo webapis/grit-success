@@ -75,6 +75,45 @@
         },
         "keyword": "kiyafet",
         "keywordTitle":"Kıyafet"
+    },
+    {
+        "or": {
+            "$or": [
+             
+                {
+                    "ServiceName": "halı"
+                }
+            ]
+        },
+        "keyword": "hali",
+        "keywordTitle":"Halı"
+    },
+    {
+        "or": {
+            "$or": [
+             
+                {
+                    "ServiceName": "aydinlatma"
+                }
+            ]
+        },
+        "keyword": "aydinlatma",
+        "keywordTitle":"Aydınlatma"
+    },
+    {
+        "or": {
+            "$or": [
+              
+                {
+                    "Acyklama": "çanta"
+                }, {
+                    "ServiceName": "çanta"
+                }
+              
+            ]
+        },
+        "keyword": "canta",
+        "keywordTitle":"Çanta"
     }
 
 ]

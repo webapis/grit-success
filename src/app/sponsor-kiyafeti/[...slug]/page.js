@@ -11,7 +11,7 @@ import path from 'path'
 import orderData from "./orderData";
 import PaginationContainer from "../comp/PaginationContainer";
 import Drawer from '../comp/drawer'
-
+import TopNavigation from "@/app/components/TopNavigation";
 import ProductCategoryChip from "./ProductCategoryChip";
 
 
@@ -75,13 +75,7 @@ export default async function DiziPage({ params }) {
     if (category === "undefined") {
 
         return <>
-            <div style={{ marginTop: 70, display: 'flex', justifyContent: 'center' }}>
-                <Tabs value={2}>
-                    <Tab label="Dizi Kıyafeti" component={Link} href="/" />
-                    <Tab label="Dizi Sponsoru" href="/dizisponsoru" />
-                    <Tab label="Sponsor Kıyafeti" />
-                </Tabs>
-            </div>
+            <TopNavigation selected={3}/>
             <Application gender={gender} value={genderIndex} />
         </>
     } else {
@@ -93,13 +87,7 @@ export default async function DiziPage({ params }) {
         const pageCount = Math.ceil(rawData.length / 100)
   
         return <Drawer> <Container>
-            <div style={{ marginTop: 70, display: 'flex', justifyContent: 'center',marginBottom:3 }}>
-                <Tabs value={2}>
-                    <Tab label="Dizi Kıyafeti" component={Link} href="/" />
-                    <Tab label="Dizi Sponsoru" href="/dizisponsoru" />
-                    <Tab label="Sponsor Kıyafeti" />
-                </Tabs>
-            </div>
+          <TopNavigation selected={3}/>
           <ProductCategoryChip category={category}/>
             {/* <GenderTabContainer value={genderIndex} /> */}
             <Grid container gap={1} sx={{ display: 'flex', justifyContent: 'center' }}> {pagesData.map((m, i) => <Grid item key={i} xs={5} sm={3} md={2}> <Image content={m} pageTitle={''} /></Grid>)}</Grid>

@@ -13,9 +13,9 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Divider from '@mui/material/Divider';
 import DizivliewListItem from './DiziviewListItem';
-import data from '@/app/dizi/dizisponsoruMenu.json'
+import arrayData from '@/app/dizi-sponsor-kategori/page-data/keywordMetaData.json';
 import Link from 'next/link';
-const arrayData = Object.entries(data);
+
 const drawerWidth = 240;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
@@ -128,11 +128,10 @@ export default function PersistentDrawerLeft({ children }) {
                 </DrawerHeader>
                 <Divider />
                 <Box sx={{ padding: 2 }}>
-                    <Typography variant="h5" gutterBottom>Diziler</Typography>
-                    {arrayData.sort((a, b) => b[1].Time - a[1].Time).map((m, i) => {
-                        const title = m[0];
-                        const content = m[1];
-                        return <DizivliewListItem key={title} title={title} content={content} />;
+                    <Typography variant="h5" gutterBottom>Sponsor Kategori</Typography>
+                    {arrayData.map((m, i) => {
+                 
+                        return <DizivliewListItem key={i} title={m.keywordTitle} keyword={m.keyword} />;
                     })}
                 </Box>
             </Drawer>

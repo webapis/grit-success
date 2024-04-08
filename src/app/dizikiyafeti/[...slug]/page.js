@@ -10,7 +10,7 @@ import Fuse from 'fuse.js'
 import Drawer from '../../home/components/drawer'
 import pagesMetaData from '@/app/dizikiyafeti/meta/pageMetaData.json';
 import pagesData from '@/app/dizikiyafeti/page-data/dizikiyafeti.json';
-
+import TopNavigation from '@/app/components/TopNavigation';
 export async function generateMetadata({ params, searchParams }, parent) {
 
     // const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizikiyafeti/meta/pageMetaData.json'), 'utf8');
@@ -54,13 +54,7 @@ debugger
 
     debugger
     return<>
-    <div style={{ marginTop: 70,display:'flex',justifyContent:'center'}}>
-    <Tabs value={0}  variant="scrollable"   scrollButtons allowScrollButtonsMobile style={{width:'90%'}}>
-      <Tab label="Dizi Kıyafeti"  />
-      <Tab label="Dizi Sponsoru" component ={Link} href="/dizisponsoru"/>
-      <Tab label="Sponsor Kıyafeti" component ={Link} href="/sponsor-kiyafeti"/>
-    </Tabs>
-    </div>
+    <TopNavigation selected={0}/>
     <Drawer> 
             <ImageContainer filteredData={results} pageTitle={title} />
          

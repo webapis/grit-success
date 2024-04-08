@@ -3,7 +3,7 @@
 
  import SearchResultContainer from '@/app/dizi-sponsor-kategori/comp/SearchResultContainer';
 
-// import PaginationContainer from '@/app/dizi-sponsor-kategori/comp/PaginationContainer';
+ import PaginationContainer from '@/app/dizi-sponsor-kategori/comp/PaginationContainer';
 // import path from 'path'
 import Fuse from 'fuse.js'
 import keywordMetaData from '@/app/dizi-sponsor-kategori/page-data/keywordMetaData.json';
@@ -73,11 +73,7 @@ export default async function DiziSponsorKategori({ params }) {
 
 
     debugger
-    const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'Acyklama'], minMatchCharLength: 4 })
-
-
-
-
+    const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'Acyklama'], minMatchCharLength: 5 })
 
 
     let results = fuse.search(keywordObj.or )
@@ -85,19 +81,11 @@ export default async function DiziSponsorKategori({ params }) {
     debugger
     const paginatedData = paginate(results, page, 50)
     const pageCount = Math.ceil(results.length / 50)
-    console.log('paginatedData',paginatedData.length)
+
     return <>
-        <SearchResultContainer data={paginatedData} pageTitle={` Dizisi ${keywordObj.keywordTitle} Sponsorları`} dizi={''} page={page} keyword={'keyword'} />
-        {/* <PaginationContainer count={pageCount} page={page} url={`/dizisponsoru/${dizi}/${keyword}/sayfa/`} /> */}
+        <SearchResultContainer data={paginatedData} pageTitle={` Dizilerde ${keywordObj.keywordTitle} Sponsorları`} dizi={''} page={page} keyword={'keyword'} />
+        <PaginationContainer count={pageCount} page={page} url={`/dizi-sponsor-kategori/${keywordObj.keyword}/sayfa/`} />
     </>
-
-
-
-
-
-
-
-
 }
 
 
