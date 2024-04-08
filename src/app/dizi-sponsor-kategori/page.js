@@ -8,7 +8,7 @@ import TopNavigation from '../components/TopNavigation';
 export default function SponsorKategori() {
 
     return <>
-         <TopNavigation selected={2} />
+         <TopNavigation selected={3} />
     <Drawer> <Container>
    
         <Typography variant='h4' textAlign='center' sx={{ marginTop: 0 }}>Dizi Sponsor Kategoriler</Typography>

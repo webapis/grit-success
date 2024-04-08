@@ -10,7 +10,7 @@ export default function SearchResultContainer({ data, pageTitle,dizi,keyword }) 
 
 
     return <Drawer><Container>
-       <TopNavigation selected={1}/>
+       <TopNavigation selected={2}/>
         <SelectedDiziChip category={pageTitle}/>
         <Grid container gap={1} justifyContent="center">
           <ChipContainer dizi={dizi} keyword={keyword}/>

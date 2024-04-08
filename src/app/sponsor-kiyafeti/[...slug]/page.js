@@ -87,7 +87,7 @@ export default async function DiziPage({ params }) {
         const pageCount = Math.ceil(rawData.length / 100)
   
         return <Drawer> <Container>
-          <TopNavigation selected={3}/>
+          <TopNavigation selected={0}/>
           <ProductCategoryChip category={category}/>
             {/* <GenderTabContainer value={genderIndex} /> */}
             <Grid container gap={1} sx={{ display: 'flex', justifyContent: 'center' }}> {pagesData.map((m, i) => <Grid item key={i} xs={5} sm={3} md={2}> <Image content={m} pageTitle={''} /></Grid>)}</Grid>

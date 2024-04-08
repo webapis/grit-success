@@ -13,7 +13,7 @@ export async function generateMetadata() {
 export default async function Home(props) {
 
 
-  return <>    <TopNavigation selected={3}/>
+  return <>    <TopNavigation selected={0}/>
     <Application {...props} gender="kadın"/>
 </>
 

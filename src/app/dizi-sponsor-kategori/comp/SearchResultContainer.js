@@ -12,7 +12,7 @@ export default function SearchResultContainer({ data, pageTitle,dizi,keyword }) 
     return <Drawer><Container>
     
 
-       <TopNavigation selected={2}/>
+       <TopNavigation selected={3}/>
            
   
         <SelectedSponsorKategoriChip category={pageTitle}/>

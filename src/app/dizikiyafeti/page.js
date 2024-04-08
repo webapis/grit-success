@@ -16,7 +16,7 @@ export async function generateMetadata() {
 export default async function Home(props) {
 
   return <>
-    <TopNavigation selected={0} />
+    <TopNavigation selected={1} />
   <Application/>
   
   </>
