@@ -111,3 +111,15 @@ function paginate(array, page, pageSize) {
 }
 
 
+export async function generateStaticParams() {
+
+
+    return pagesMetaData.map((post) => {
+      const {slug}= post
+  
+      return {
+        slug: [slug,'sayfa',1]
+      }
+      
+    })
+}

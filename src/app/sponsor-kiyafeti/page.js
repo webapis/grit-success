@@ -26,7 +26,7 @@ export async function generateStaticParams() {
     const data = JSON.parse(file);
     return data.filter(f=>f.gender==='kadın').map((post) => {
       const {category,gender}= post
-      console.log('post--',post)
+  
       return {
         slug: [gender,category,'sayfa',1]
       }
