@@ -1,5 +1,5 @@
 
-// import { promises as fs } from 'fs';
+ import { promises as fs } from 'fs';
 
 import SearchResultContainer from '../../dizisponsoru/comp/SearchResultContainer';
 
