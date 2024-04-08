@@ -18,7 +18,7 @@ export default async function Home(props) {
 
 
 
-  return <Suspense fallback={<p style={{height:'100vh'}}>Loading....</p>}>
+  return <>
     <div style={{marginTop:70,display:'flex',justifyContent:'center'}}>
     <Tabs value={0} variant="scrollable"   scrollButtons allowScrollButtonsMobile>
       <Tab label="Dizi Kıyafeti"/>
@@ -29,7 +29,7 @@ export default async function Home(props) {
     <Application {...props}/>
   
 
-  </Suspense>
+  </>
 
 }
 

@@ -1,12 +1,13 @@
 
-import { promises as fs } from 'fs';
+// import { promises as fs } from 'fs';
 
 import SearchResultContainer from '../../dizisponsoru/comp/SearchResultContainer';
 
 import PaginationContainer from '@/app/dizisponsoru/comp/PaginationContainer';
-import path from 'path'
+// import path from 'path'
 import Fuse from 'fuse.js'
-import pagesData from '@/app/dizi/pageMetadata.json'
+import pagesMetaData from '@/app/dizi/pageMetadata.json'
+import pagesData from '@/app/dizi/dizisponsoru.json'
 import deaccent from '@/app/dizisponsoru/[...slug]/deaccent';
 
 
@@ -18,7 +19,7 @@ export async function generateMetadata({ params }) {
     // const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/pageMetadata.json'), 'utf8');
     // const pagesData = JSON.parse(pages);
     debugger
-    const result = pagesData.find(f => {
+    const result = pagesMetaData.find(f => {
         const current = f.slug
         const slug = params.slug[0]
         const match = current === slug
@@ -45,10 +46,10 @@ export async function generateMetadata({ params }) {
 
 export default async function DiziPage({ params }) {
     const page = params.slug[2] ? parseInt(params.slug[2]) : 1
-    const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/pageMetadata.json'), 'utf8');
-    const pagesMetaData = JSON.parse(pages);
-    const data = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/dizisponsoru.json'), 'utf8');
-    const pagesData = JSON.parse(data);
+    // const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/pageMetadata.json'), 'utf8');
+    // const pagesMetaData = JSON.parse(pages);
+    // const data = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/dizisponsoru.json'), 'utf8');
+    // const pagesData = JSON.parse(data);
 
 
     console.log('params', params)

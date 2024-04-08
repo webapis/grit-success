@@ -1,13 +1,14 @@
 
-import { promises as fs } from 'fs';
+// import { promises as fs } from 'fs';
 
 import SearchResultContainer from '@/app/dizisponsoru/comp/SearchResultContainer';
 
 import PaginationContainer from '@/app/dizisponsoru/comp/PaginationContainer';
-import path from 'path'
+// import path from 'path'
 import Fuse from 'fuse.js'
 import keywordMetaData from '@/app/dizisponsoru/keywordMetaData.json';
 import pagesMetaData from '@/app/dizi/pageMetadata.json';
+import pagesData from '@/app/dizi/dizisponsoru.json';
 import deaccent from './deaccent';
 
 debugger
@@ -55,8 +56,8 @@ export default async function DiziSponsoru({ params }) {
     const page = parseInt(params.slug[3])
 
 
-    const data = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/dizisponsoru.json'), 'utf8');
-    const pagesData = JSON.parse(data);
+    // const data = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/dizisponsoru.json'), 'utf8');
+    // const pagesData = JSON.parse(data);
 
   
 

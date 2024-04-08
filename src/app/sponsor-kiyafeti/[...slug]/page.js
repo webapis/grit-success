@@ -2,7 +2,7 @@ import Application from "../Application"
 import { promises as fs } from 'fs';
 import Link from 'next/link';
 import Image from "../comp/Image";
-import { Grid,Chip } from "@mui/material";
+import { Grid } from "@mui/material";
 import { Container } from '@mui/material';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';

@@ -1,22 +1,22 @@
 
 import Link from 'next/link';
-import { promises as fs } from 'fs';
+// import { promises as fs } from 'fs';
 
 import ImageContainer from '../comps/ImageContainer';
 import { Tab,Tabs } from '@mui/material';
-import path from 'path'
+// import path from 'path'
 import Fuse from 'fuse.js'
-import { createRequire } from "module";
-import Drawer from '../../home/components/drawer'
-const require = createRequire(import.meta.url);
 
+import Drawer from '../../home/components/drawer'
+import pagesMetaData from '@/app/dizikiyafeti/meta/pageMetaData.json';
+import pagesData from '@/app/dizikiyafeti/page-data/dizikiyafeti.json';
 
 export async function generateMetadata({ params, searchParams }, parent) {
 
-    const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizikiyafeti/meta/pageMetaData.json'), 'utf8');
-    const pagesData = JSON.parse(pages);
+    // const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizikiyafeti/meta/pageMetaData.json'), 'utf8');
+    // const pagesData = JSON.parse(pages);
     debugger
-    const { title } = pagesData.find(f => {
+    const { title } = pagesMetaData.find(f => {
         const current = f.slug[0]
         const slug = params.slug[0]
         const match = current === slug
@@ -33,11 +33,11 @@ export async function generateMetadata({ params, searchParams }, parent) {
 
 export default async function DiziPage({ params }) {
 
-    const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizikiyafeti/meta/pageMetaData.json'),'utf8');
-    const pagesMetaData = JSON.parse(pages);
+    // const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizikiyafeti/meta/pageMetaData.json'),'utf8');
+    // const pagesMetaData = JSON.parse(pages);
 
-    const data = await fs.readFile(path.join(process.cwd(), 'src/app/dizikiyafeti/page-data/dizikiyafeti.json'),'utf8');
-    const pagesData = JSON.parse(data);
+    // const data = await fs.readFile(path.join(process.cwd(), 'src/app/dizikiyafeti/page-data/dizikiyafeti.json'),'utf8');
+    // const pagesData = JSON.parse(data);
 debugger
     const {  title, algoliaQuery } = pagesMetaData.find(f => {
         const current = f.slug[0]
