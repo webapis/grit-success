@@ -21,3 +21,13 @@ export default function SponsorKategori() {
         })}</Grid></Container></Drawer>
         </> 
 }
+
+
+// export async function generateStaticParams() {
+//     const file = await fs.readFile(process.cwd() + '/src/app/dizikiyafeti/meta/pageMetaData.json', 'utf8');
+//     const data = JSON.parse(file);
+
+//     return data.map((post) => ({
+//         slug: post.slug,
+//     }))
+// }
