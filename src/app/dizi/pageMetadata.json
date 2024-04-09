@@ -301,5 +301,31 @@
                 }
             ]
         }
+    },
+    {
+        "slug": "safir-dizi-sponsorlari",
+        "pageTitle": "Safir Dizi Sponsorları",
+        "description": "",
+        "dizi": "Safir",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Safir"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "sahane-hayatim-dizi-sponsorlari",
+        "pageTitle": "Şahane hayatım Sponsorları",
+        "description": "",
+        "dizi": "Şahane hayatım",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Şahane hayatım"
+                }
+            ]
+        }
     }
 ]
