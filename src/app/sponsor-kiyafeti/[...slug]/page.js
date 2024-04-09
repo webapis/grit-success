@@ -25,7 +25,7 @@ export async function generateMetadata({ params }) {
 
     return {
 
-        title: 'Sponsor Kıyafeti-'+ gender+' '+ category
+        title: 'Sponsor Kıyafeti-' + gender + ' ' + category
 
     }
 
@@ -42,7 +42,7 @@ export default async function DiziPage({ params }) {
 
     let gender = decodeURI(slug[0])
     let category = decodeURI(slug[1])
-    let page = parseInt( decodeURI(slug[3]))
+    let page = parseInt(decodeURI(slug[3]))
     let genderIndex = 0
     switch (gender) {
         case 'kadın':
@@ -75,7 +75,7 @@ export default async function DiziPage({ params }) {
     if (category === "undefined") {
 
         return <>
-            <TopNavigation selected={3}/>
+            <TopNavigation selected={3} />
             <Application gender={gender} value={genderIndex} />
         </>
     } else {
@@ -85,16 +85,18 @@ export default async function DiziPage({ params }) {
 
         const pagesData = paginate(rawData, page, 100)
         const pageCount = Math.ceil(rawData.length / 100)
-  
-        return <Drawer> <Container>
-          <TopNavigation selected={0}/>
-          <ProductCategoryChip category={category}/>
-            {/* <GenderTabContainer value={genderIndex} /> */}
-            <Grid container gap={1} sx={{ display: 'flex', justifyContent: 'center' }}> {pagesData.map((m, i) => <Grid item key={i} xs={5} sm={3} md={2}> <Image content={m} pageTitle={''} /></Grid>)}</Grid>
-            <PaginationContainer count={pageCount} page={page} url={`/sponsor-kiyafeti/${gender}/${category}/sayfa/`} />
-        </Container>
-        </Drawer>
 
+        return <>
+            <TopNavigation selected={0} />
+            <Drawer> <Container>
+
+                <ProductCategoryChip category={category} />
+                {/* <GenderTabContainer value={genderIndex} /> */}
+                <Grid container gap={1} sx={{ display: 'flex', justifyContent: 'center' }}> {pagesData.map((m, i) => <Grid item key={i} xs={5} sm={3} md={2}> <Image content={m} pageTitle={''} /></Grid>)}</Grid>
+                <PaginationContainer count={pageCount} page={page} url={`/sponsor-kiyafeti/${gender}/${category}/sayfa/`} />
+            </Container>
+            </Drawer>
+        </>
     }
 
 }
