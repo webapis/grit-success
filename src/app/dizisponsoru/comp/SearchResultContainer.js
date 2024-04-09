@@ -9,8 +9,10 @@ import TopNavigation from "@/app/components/TopNavigation";
 export default function SearchResultContainer({ data, pageTitle,dizi,keyword }) {
 
 
-    return <Drawer><Container>
-       <TopNavigation selected={2}/>
+    return <>
+      <TopNavigation selected={2}/>
+  <Drawer><Container>
+     
         <SelectedDiziChip category={pageTitle}/>
         <Grid container gap={1} justifyContent="center">
           <ChipContainer dizi={dizi} keyword={keyword}/>
@@ -20,5 +22,6 @@ export default function SearchResultContainer({ data, pageTitle,dizi,keyword }) 
         <ChipContainer dizi={dizi} keyword={keyword}/>
             </Grid>
     </Container></Drawer>
+    </>
 }
 //

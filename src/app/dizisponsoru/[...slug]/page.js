@@ -85,7 +85,12 @@ export default async function DiziSponsoru({ params }) {
     const paginatedData = paginate(results, page, 50)
     const pageCount = Math.ceil(results.length / 50)
     return <>
+
+
+ 
+
         <SearchResultContainer data={paginatedData} pageTitle={`${pageObj.dizi} Dizisi ${keywordObj.keywordTitle} Sponsorları`} dizi={dizi} page={page} keyword={keyword} />
+       
         <PaginationContainer count={pageCount} page={page} url={`/dizisponsoru/${dizi}/${keyword}/sayfa/`} />
     </>
 

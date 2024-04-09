@@ -9,7 +9,7 @@ import Fuse from 'fuse.js'
 import keywordMetaData from '@/app/dizi-sponsor-kategori/page-data/keywordMetaData.json';
 import pagesData from '@/app/dizi-sponsor-kategori/page-data/sponsor-kategori.json';
 
-import deaccent from './deaccent';
+
 
 debugger
 
