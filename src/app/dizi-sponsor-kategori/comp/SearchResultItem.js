@@ -25,7 +25,7 @@ export default function SearchResultItem({ item }) {
             alt={`${imageName} marka resmi`}
         
             height="100"
-          
+            style={{maxWidth:250}}
             src={`/dizi/marka/${imageName}.jpg`}
             loading="lazy"
         />
