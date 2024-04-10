@@ -41,7 +41,7 @@ export default function SearchResultItem({ item }) {
            <span style={{opacity:0.5}}></span>  {name}
             </Typography>
             <Typography gutterBottom variant="body" component='div' style={{textTransform:'lowercase'}}>
-             {ServiceName&& ServiceName.trim().replaceAll(',',' ').split(' ').filter(f=>f).map((m,i)=>{return <Chip key={i} size='small' label={m} style={{marginLeft:1}}/>})}
+             {ServiceName&& ServiceName.trim().replaceAll(',',' ').split(' ').filter(f=>f).map((m,i)=>{return <Chip key={i} size='small' label={m} style={{marginLeft:1,textTransform:'capitalize'}}/>})}
             </Typography>
             <Typography gutterBottom variant="caption" component='div' style={{fontWeight:700}}>
              {h3}
@@ -54,7 +54,7 @@ export default function SearchResultItem({ item }) {
         </CardContent>
         <CardContent >
         <Typography variant="body"  color="text.secondary" sx={{textAlign:'end',width:'100%'}}>Sponsor olduğu diziler: {' '}</Typography>
-        <Typography variant="body"  color="text.secondary"sx={{textAlign:'end'}}> {duplicateTitles? duplicateTitles.filter(f=>f).map((m,i)=>{return <Chip key={i} size='small' label={m} style={{marginLeft:1}}/>}): <Chip  size='small' label={TVSeriesTitle} style={{marginLeft:1}}/>} </Typography>
+        <Typography variant="body"  color="text.secondary"sx={{textAlign:'end'}}> {duplicateTitles? duplicateTitles.filter(f=>f).map((m,i)=>{return <Chip key={i} size='small' label={m} style={{marginLeft:1}}/>}): <Chip  size='small' label={TVSeriesTitle} sx={{marginLeft:1,textTransform:'capitalize'}}/>} </Typography>
         
         </CardContent>
         <CardActions>

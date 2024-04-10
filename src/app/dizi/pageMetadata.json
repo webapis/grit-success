@@ -366,5 +366,18 @@
                 }
             ]
         }
+    },
+    {
+        "slug": "kopuk-dizi-sponsorlari",
+        "pageTitle": "Kopuk Dizi Sponsorları",
+        "description": "",
+        "dizi": "Kopuk",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Kopuk"
+                }
+            ]
+        }
     }
 ]
