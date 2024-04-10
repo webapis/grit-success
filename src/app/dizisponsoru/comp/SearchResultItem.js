@@ -10,7 +10,7 @@ import Link from 'next/link';
 import { Grid,Chip } from '@mui/material';
 export default function SearchResultItem({ item }) {
     debugger
-    const { Name:name, Website, Acyklama,TOTAL:count,TVSeriesTitle,tag,brandTag,ServiceName,h3 } = item
+    const { Name:name, Website, Acyklama,TVSeriesTitle,tag,brandTag,ServiceName,h3 } = item
 
     const imageName = brandTag ?brandTag: extractSubdomain(Website) 
 
@@ -20,7 +20,7 @@ export default function SearchResultItem({ item }) {
 
 <Image
             component="img"
-            alt={`${imageName} marka resmi`}
+            alt={`${TVSeriesTitle} dizi resmi`}
            
             height="100"
          
@@ -34,7 +34,7 @@ export default function SearchResultItem({ item }) {
 
 <Image
             component="img"
-            alt={`${imageName} marka resmi`}
+            alt={`${name} marka resmi`}
         
             height="100"
           

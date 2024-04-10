@@ -327,5 +327,18 @@
                 }
             ]
         }
+    },
+    {
+        "slug": "bir-derdim-var-dizi-sponsorlari",
+        "pageTitle": "Bir Derdim Var Dizi Sponsorları",
+        "description": "",
+        "dizi": "Bir Derdim Var",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Bir Derdim Var"
+                }
+            ]
+        }
     }
 ]
