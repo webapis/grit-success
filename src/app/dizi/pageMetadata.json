@@ -379,5 +379,18 @@
                 }
             ]
         }
+    },
+    {
+        "slug": "sakla-beni-dizi-sponsorlari",
+        "pageTitle": "Sakla Beni Dizi Sponsorları",
+        "description": "",
+        "dizi": "Sakla Beni",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Sakla Beni"
+                }
+            ]
+        }
     }
 ]
