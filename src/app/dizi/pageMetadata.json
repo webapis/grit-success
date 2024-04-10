@@ -340,5 +340,18 @@
                 }
             ]
         }
+    },
+    {
+        "slug": "altin-kafes-dizi-sponsorlari",
+        "pageTitle": "Altın Kafes Dizi Sponsorları",
+        "description": "",
+        "dizi": "Altın Kafes",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Altın Kafesr"
+                }
+            ]
+        }
     }
 ]
