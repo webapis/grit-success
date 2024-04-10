@@ -15,7 +15,7 @@ export default function SearchResultContainer({ data, pageTitle }) {
             <SelectedSponsorKategoriChip category={pageTitle} />
             <Grid container gap={1} justifyContent="center">
 
-                {data.map(m=>{return{...m.item,duplicateTitles:m.item.duplicateTitles?m.item.duplicateTitles:[m.item.TVSeriesTitle]}}).sort((a,b)=>b.duplicateTitles.length-a.duplicateTitles.length).map((m, i) => <Grid item key={i} xs={12} md={5} > <SearchResultItem item={m} /></Grid>)}
+                {data.map((m, i) => <Grid item key={i} xs={12} md={5} > <SearchResultItem item={m} /></Grid>)}
             </Grid>
             <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center', marginTop: 3 }}>
 
