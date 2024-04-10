@@ -353,5 +353,18 @@
                 }
             ]
         }
+    },
+    {
+        "slug": "kara-dizi-sponsorlari",
+        "pageTitle": "Kara Dizi Sponsorları",
+        "description": "",
+        "dizi": "Kara",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Kara"
+                }
+            ]
+        }
     }
 ]
