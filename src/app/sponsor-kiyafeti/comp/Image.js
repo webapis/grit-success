@@ -4,9 +4,9 @@ import React, { useEffect, useState,useRef } from "react";
 import Link from "next/link"
 import {  Typography, Box } from "@mui/material"
 import placeholder from "./placeholders.js";
-export default function Image({ content }) {
+export default function Image({ image, title, link, marka, price, currency }) {
     const imageEl = useRef(null);
-    const { image, title, link, marka, price, currency } = content
+
 
 
     useEffect(() => {
