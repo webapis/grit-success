@@ -2,8 +2,8 @@
 import { promises as fs } from 'fs';
 import Link from 'next/link';
 import Image from "../comp/Image";
-import { Grid } from "@mui/material";
-import { Container } from '@mui/material';
+import  Grid  from "@mui/material/Grid";
+import  Container  from '@mui/material/Container';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import path from 'path'
@@ -84,7 +84,7 @@ export default async function DiziPage({ params }) {
 
                 <ProductCategoryChip category={rawData[0].category} />
                 {/* <GenderTabContainer value={genderIndex} /> */}
-                <Grid container gap={1} sx={{ display: 'flex', justifyContent: 'center' }}> {pagesData.map((m, i) => <Grid item key={i} xs={5} sm={3} md={2}></Grid>)}</Grid>
+                <Grid container gap={1} sx={{ display: 'flex', justifyContent: 'center' }}> {pagesData.map((m, i) => {<div>i</div>})}</Grid>
                 <PaginationContainer count={pageCount} page={page} url={`/sponsor-kiyafeti/${gender}/${category}/sayfa/`} />
             </Container>
             </Drawer>
