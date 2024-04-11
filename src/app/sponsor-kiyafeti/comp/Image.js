@@ -5,7 +5,7 @@ import {  Typography, Box } from "@mui/material"
 import placeholder from "./placeholders.js";
 export default function Image({ content }) {
     const imageEl = useRef(null);
-    const { image, title, link, marka, price, currency } = content
+    // const { image, title, link, marka, price, currency } = content
 
 //const imageURL =(image&& image[0])? 'https://ik.imagekit.io/mumrjdehaou/'+image[0]:''
     // useEffect(() => {
@@ -30,13 +30,13 @@ export default function Image({ content }) {
     //     }
     //   }, []);
     return <Box container sx={{ xs: 150, md: 300 }}>
-        <Box item xs={12} component={Link} href={link} target="_blank">
+        <Box item xs={12}  target="_blank">
             {/* <img    ref={imageEl}
         data-src={imageURL} src={placeholder} style={{ maxWidth: '100%', height: 'auto' }}  /> */}
         </Box>
         <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Typography sx={{fontSize:14,fontFamily:'inherit'}}>{marka}</Typography>
-            <Typography sx={{fontSize:12,fontFamily:'inherit'}}>{price} {currency}</Typography>
+            {/* <Typography sx={{fontSize:14,fontFamily:'inherit'}}>{marka}</Typography>
+            <Typography sx={{fontSize:12,fontFamily:'inherit'}}>{price} {currency}</Typography> */}
         </Box>
         <Box>
             {/* <Typography  component={Link} href={link} target="_blank" variant="caption" style={{ width: '100%', wordWrap: 'break-word', textDecoration: 'none', color:'inherit',fontFamily:'inherit' }}>{title}</Typography> */}
