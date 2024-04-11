@@ -45,7 +45,7 @@ export default async function DiziPage({ params }) {
     let page = parseInt(decodeURI(slug[3]))
     let genderIndex = 0
     switch (gender) {
-        case 'kadın':
+        case 'kadin':
             genderIndex = 0;
             break;
         case 'erkek':
