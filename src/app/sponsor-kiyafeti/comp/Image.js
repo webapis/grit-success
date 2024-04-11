@@ -32,8 +32,8 @@ export default function Image({ image, title, link, marka, price, currency }) {
       }, []);
     return <Box container >
         <Box item xs={12}  target="_blank">
-          {image && image[0] &&             <img    ref={imageEl}
-        data-src={'https://ik.imagekit.io/mumrjdehaou/'+image[0]} src={placeholder} style={{ maxWidth: '100%', height: 'auto' }}  />}
+          {/* {image && image[0] &&             <img    ref={imageEl}
+        data-src={'https://ik.imagekit.io/mumrjdehaou/'+image[0]} src={placeholder} style={{ maxWidth: '100%', height: 'auto' }}  />} */}
 
         </Box>
         <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
