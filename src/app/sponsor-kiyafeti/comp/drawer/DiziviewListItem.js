@@ -3,7 +3,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import Link from 'next/link';
-
+import deaccent from '../deaccent';
 export default function Diziview({ title, content }) {
     const {image,category,gender}=content
 
@@ -15,7 +15,7 @@ export default function Diziview({ title, content }) {
 
             >
                 <ListItemButton component={Link}
-                    href={`/sponsor-kiyafeti/${gender}/${category}/sayfa/1`}
+                    href={`/sponsor-kiyafeti/${deaccent(gender).toLowerCase().replaceAll(' ','-')}/${deaccent( category).toLowerCase().replaceAll(' ','-')}/sayfa/1`}
                    >
                     {title}
                 </ListItemButton>

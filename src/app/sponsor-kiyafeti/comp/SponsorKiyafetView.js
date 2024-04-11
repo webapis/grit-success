@@ -1,21 +1,20 @@
 import * as React from 'react';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import Grid from '@mui/material/Grid'
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Link from 'next/link';
 
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import deaccent from './deaccent';
+
 export default function SponsorKiyafetView({title ,content,group }) {
     debugger
     const {image,category,gender,total}=content
 
     return (
-        <Card sx={{ maxWidth: 345,textDecoration:'none' }} component={Link} href={`/sponsor-kiyafeti/${gender}/${category}/sayfa/1`} >
+        <Card sx={{ maxWidth: 345,textDecoration:'none' }} component={Link} href={`/sponsor-kiyafeti/${deaccent( gender).toLowerCase().replaceAll(' ','-')}/${deaccent(category).toLowerCase().replaceAll(' ','-')}/sayfa/1`} >
             <CardMedia
                 sx={{ height: {xs:200,sm:250,md:300}, width:'auto',objectFit:'contain' }}
                 image={image[0]}

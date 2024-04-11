@@ -14,7 +14,7 @@ export default async function Home(props) {
 
 
   return <>    <TopNavigation selected={0}/>
-    <Application {...props} gender="kadın"/>
+    <Application {...props} gender="kadin"/>
 </>
 
 }

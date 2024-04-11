@@ -1,12 +1,6 @@
 [
     {
         "keywords": [
-            "erkek"
-        ],
-        "name": "erkek"
-    },
-    {
-        "keywords": [
             "kadin",
             "kadın",
             "gelin",
@@ -31,7 +25,9 @@
             "ekolonline",
             "wheneverco",
             "https://www.yargici.com/outlet",
-            "Women's"
+            "Women's",
+            "mayokini",
+            "mayo"
         ],
         "name": "kadın"
     },
@@ -88,5 +84,11 @@
             "kiz bebek"
         ],
         "name": "kız bebek"
+    },
+    {
+        "keywords": [
+            "erkek"
+        ],
+        "name": "erkek"
     }
 ]

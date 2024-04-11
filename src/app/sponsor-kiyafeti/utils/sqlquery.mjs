@@ -29,7 +29,7 @@ const genderData = groupBy(data, 'gender')
 
 for (let gnd in genderData) {
   debugger
-  await makeDir(`${process.cwd()}/src/app/sponsor-kiyafeti/data/${gnd}`)
+  await makeDir(`${process.cwd()}/src/app/sponsor-kiyafeti/data/${deaccent(gnd).toLowerCase().replaceAll(' ','-')}`)
   const currentData = genderData[gnd]
   const groupedData = groupBy(currentData, 'group')
   for (let group in groupedData) {
@@ -45,14 +45,14 @@ for (let gnd in genderData) {
 
       }
 
-      fs.writeFileSync(`${process.cwd()}/src/app/sponsor-kiyafeti/data/${gnd}/${category}-sponsorkiyafeti.json`, JSON.stringify(data), { encoding: 'utf8' })
+      fs.writeFileSync(`${process.cwd()}/src/app/sponsor-kiyafeti/data/${deaccent(gnd).toLowerCase().replaceAll(' ','-')}/${deaccent(category).toLowerCase().replaceAll(' ','-')}-sponsorkiyafeti.json`, JSON.stringify(data), { encoding: 'utf8' })
 
     }
 
     groupedData[group] = categories
 
   }
-  fs.writeFileSync(`${process.cwd()}/src/app/sponsor-kiyafeti/data/${gnd}/sponsorkiyafetiMenu.json`, JSON.stringify(groupedData), { encoding: 'utf8' })
+  fs.writeFileSync(`${process.cwd()}/src/app/sponsor-kiyafeti/data/${deaccent(gnd).toLowerCase().replaceAll(' ','-')}/sponsorkiyafetiMenu.json`, JSON.stringify(groupedData), { encoding: 'utf8' })
 
   debugger
 }
