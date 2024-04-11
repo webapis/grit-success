@@ -7,7 +7,7 @@ export default function Image({ content }) {
     const imageEl = useRef(null);
     const { image, title, link, marka, price, currency } = content
 
-const imageURL =(image&& image[0])? 'https://ik.imagekit.io/mumrjdehaou/'+image[0]:''
+//const imageURL =(image&& image[0])? 'https://ik.imagekit.io/mumrjdehaou/'+image[0]:''
     // useEffect(() => {
     //     imageEl.current.src = placeholder;
     //     if (window.IntersectionObserver) {
