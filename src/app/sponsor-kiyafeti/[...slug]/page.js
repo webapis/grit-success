@@ -1,4 +1,4 @@
-import Application from "../Application"
+//import Application from "../Application"
 import { promises as fs } from 'fs';
 import Link from 'next/link';
 import Image from "../comp/Image";
@@ -92,7 +92,7 @@ export default async function DiziPage({ params }) {
 
                 <ProductCategoryChip category={rawData[0].category} />
                 {/* <GenderTabContainer value={genderIndex} /> */}
-                <Grid container gap={1} sx={{ display: 'flex', justifyContent: 'center' }}> {pagesData.map((m, i) => <Grid item key={i} xs={5} sm={3} md={2}> <Image content={m} pageTitle={''} /></Grid>)}</Grid>
+                <Grid container gap={1} sx={{ display: 'flex', justifyContent: 'center' }}> {pagesData.map((m, i) => <Grid item key={m.link} xs={5} sm={3} md={2}> <Image content={m} pageTitle={''} /></Grid>)}</Grid>
                 <PaginationContainer count={pageCount} page={page} url={`/sponsor-kiyafeti/${gender}/${category}/sayfa/`} />
             </Container>
             </Drawer>
