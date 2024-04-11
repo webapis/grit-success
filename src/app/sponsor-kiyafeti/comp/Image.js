@@ -29,7 +29,7 @@ export default function Image({ image, title, link, marka, price, currency }) {
           );
           observer.observe(imageEl.current);
         }
-      }, [marka,image]);
+      }, []);
     return <Box container >
         <Box item xs={12} component={Link} href={link} target="_blank">
           {image && image[0] &&             <img    ref={imageEl}
