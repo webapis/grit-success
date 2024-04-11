@@ -127,7 +127,19 @@ function paginate(array, page, pageSize) {
 
 
 
+// export async function generateStaticParams() {
+//     const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/kadin/elbise-sponsorkiyafeti.json`), 'utf8');
+//     const rawData = orderData(JSON.parse(data))
 
+//     return rawData.map((post) => {
+//       const {slug}= post
+//   debugger
+//       return {
+//         slug: ['kadin','elbise','sayfa','1']
+//       }
+      
+//     })
+// }
 
 
 
