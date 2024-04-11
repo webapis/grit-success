@@ -13,7 +13,7 @@ import PaginationContainer from "../comp/PaginationContainer";
 import Drawer from '../comp/drawer'
 import TopNavigation from "@/app/components/TopNavigation";
 import ProductCategoryChip from "./ProductCategoryChip";
-
+import deaccent from '../comp/deaccent';
 
 export async function generateMetadata({ params }) {
 
@@ -127,19 +127,21 @@ function paginate(array, page, pageSize) {
 
 
 
-// export async function generateStaticParams() {
-//     const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/kadin/elbise-sponsorkiyafeti.json`), 'utf8');
-//     const rawData = orderData(JSON.parse(data))
+export async function generateStaticParams() {
+    const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/kadin/sponsorkiyafetiMenu.json`), 'utf8');
 
-//     return rawData.map((post) => {
-//       const {slug}= post
-//   debugger
-//       return {
-//         slug: ['kadin','elbise','sayfa','1']
-//       }
+    const objData = Object.values(JSON.parse(data)).map(m=>Object.keys(m)).flat().map(d=>deaccent(d).toLowerCase().replaceAll(' ','-'))
+
+debugger
+    return objData.map((category) => {
+     
+  debugger
+      return {
+        slug: ['kadin',category,'sayfa','1']
+      }
       
-//     })
-// }
+    })
+}
 
 
 

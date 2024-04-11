@@ -10,7 +10,7 @@ import Link from 'next/link';
 import deaccent from './deaccent';
 
 export default function SponsorKiyafetView({title ,content,group }) {
-    debugger
+    
     const {image,category,gender,total}=content
 
     return (

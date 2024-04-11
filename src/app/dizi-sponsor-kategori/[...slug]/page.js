@@ -94,3 +94,18 @@ function paginate(array, page, pageSize) {
 
     return array.slice(startIndex, endIndex);
 }
+
+
+
+export async function generateStaticParams() {
+
+
+    return keywordMetaData.map((post) => {
+      const {keyword}= post
+  debugger
+      return {
+        slug: [keyword,'sayfa','1']
+      }
+      
+    })
+}
