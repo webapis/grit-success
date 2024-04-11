@@ -39,7 +39,7 @@ const imageURL =(image&& image[0])? 'https://ik.imagekit.io/mumrjdehaou/'+image[
             <Typography sx={{fontSize:12,fontFamily:'inherit'}}>{price} {currency}</Typography>
         </Box>
         <Box>
-            <Typography  component={Link} href={link} target="_blank" variant="caption" style={{ width: '100%', wordWrap: 'break-word', textDecoration: 'none', color:'inherit',fontFamily:'inherit' }}>{title}</Typography>
+            {/* <Typography  component={Link} href={link} target="_blank" variant="caption" style={{ width: '100%', wordWrap: 'break-word', textDecoration: 'none', color:'inherit',fontFamily:'inherit' }}>{title}</Typography> */}
         </Box>
     </Box>
 }
