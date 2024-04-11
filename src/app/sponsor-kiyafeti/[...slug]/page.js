@@ -72,13 +72,13 @@ export default async function DiziPage({ params }) {
 
 
 
-    if (category === "undefined") {
+    // if (category === "undefined") {
 
-        return <>
-            <TopNavigation selected={3} />
-            <Application gender={gender} value={genderIndex} />
-        </>
-    } else {
+    //     return <>
+    //         <TopNavigation selected={3} />
+    //         <Application gender={gender} value={genderIndex} />
+    //     </>
+    // } else {
 
         const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/${gender}/${category}-sponsorkiyafeti.json`), 'utf8');
         const rawData = orderData(JSON.parse(data))
@@ -97,7 +97,7 @@ export default async function DiziPage({ params }) {
             </Container>
             </Drawer>
         </>
-    }
+ //   }
 
 }
 
