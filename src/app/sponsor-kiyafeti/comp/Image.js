@@ -28,7 +28,7 @@ const imageURL =(image&& image[0])? 'https://ik.imagekit.io/mumrjdehaou/'+image[
           );
           observer.observe(imageEl.current);
         }
-      }, [marka,image]);
+      }, []);
     return <Box container sx={{ xs: 150, md: 300 }}>
         <Box item xs={12} component={Link} href={link} target="_blank">
             <img    ref={imageEl}
