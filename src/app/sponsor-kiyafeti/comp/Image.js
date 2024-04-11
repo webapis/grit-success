@@ -8,31 +8,31 @@ export default function Image({ content }) {
     const { image, title, link, marka, price, currency } = content
 
 const imageURL =(image&& image[0])? 'https://ik.imagekit.io/mumrjdehaou/'+image[0]:''
-    useEffect(() => {
-        imageEl.current.src = placeholder;
-        if (window.IntersectionObserver) {
-          let observer = new IntersectionObserver(
-            (entries, observer) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                  entry.target.src = entry.target.dataset.src;
-                  observer.unobserve(entry.target);
-                }
-              });
-            },
-            {
-              root: null,
-              rootMargin: "0px",
-              threshold: 0.5,
-            }
-          );
-          observer.observe(imageEl.current);
-        }
-      }, []);
+    // useEffect(() => {
+    //     imageEl.current.src = placeholder;
+    //     if (window.IntersectionObserver) {
+    //       let observer = new IntersectionObserver(
+    //         (entries, observer) => {
+    //           entries.forEach((entry) => {
+    //             if (entry.isIntersecting) {
+    //               entry.target.src = entry.target.dataset.src;
+    //               observer.unobserve(entry.target);
+    //             }
+    //           });
+    //         },
+    //         {
+    //           root: null,
+    //           rootMargin: "0px",
+    //           threshold: 0.5,
+    //         }
+    //       );
+    //       observer.observe(imageEl.current);
+    //     }
+    //   }, []);
     return <Box container sx={{ xs: 150, md: 300 }}>
         <Box item xs={12} component={Link} href={link} target="_blank">
-            <img    ref={imageEl}
-        data-src={imageURL} src={placeholder} style={{ maxWidth: '100%', height: 'auto' }}  />
+            {/* <img    ref={imageEl}
+        data-src={imageURL} src={placeholder} style={{ maxWidth: '100%', height: 'auto' }}  /> */}
         </Box>
         <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <Typography sx={{fontSize:14,fontFamily:'inherit'}}>{marka}</Typography>
