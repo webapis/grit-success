@@ -80,13 +80,13 @@ export default async function DiziPage({ params }) {
 
         return <>
             <TopNavigation selected={0} />
-            <Drawer> <Container>
+            <Drawer> <>
 
                 <ProductCategoryChip category={rawData[0].category} />
                 {/* <GenderTabContainer value={genderIndex} /> */}
                 <Grid container gap={1} sx={{ display: 'flex', justifyContent: 'center' }}> {pagesData.map((m, i) => <Grid item key={i} xs={5} sm={3} md={2}> {m.title}</Grid>)}</Grid>
                 <PaginationContainer count={pageCount} page={page} url={`/sponsor-kiyafeti/${gender}/${category}/sayfa/`} />
-            </Container>
+            </>
             </Drawer>
         </>
 
