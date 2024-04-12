@@ -130,7 +130,7 @@ function paginate(array, page, pageSize) {
 export async function generateStaticParams() {
     const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/kadin/sponsorkiyafetiMenu.json`), 'utf8');
 
-    const objData = Object.values(JSON.parse(data)).map(m=>Object.keys(m)).flat().map(d=>deaccent(d).toLowerCase().replaceAll(' ','-'))
+    const objData = Object.values(JSON.parse(data)).map(m=>Object.keys(m)).flat().map(d=>deaccent(d).toLowerCase().replaceAll(' ','-').replaceAll(',',''))
 
 debugger
     return objData.map((category) => {

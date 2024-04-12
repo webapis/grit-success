@@ -1,24 +1,11 @@
 [
+   
+    
     {
         "keywords": [
-            "pijama"
+            "sabahlık","gecelik",  "pijama"
         ],
-        "name": "pijama",
-        "group":"ev"
-    },
-    {
-        "keywords": [
-            "gecelik"
-        ],
-        "name": "gecelik",
-        "group":"ev"
-    }
-    ,
-    {
-        "keywords": [
-            "sabahlık"
-        ],
-        "name": "sabahlık",
+        "name": "gecelik, sabahlık,pijama",
         "group":"ev"
     }
 ]

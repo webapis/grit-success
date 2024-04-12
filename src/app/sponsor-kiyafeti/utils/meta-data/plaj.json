@@ -1,34 +1,19 @@
 [
-    {
-        "keywords": [
-            "bikini"
-        ],
-        "name": "bikini",
-        "group": "plaj"
-    },
-    {
-        "keywords": [
-            "mayokini"
-        ],
-        "name": "mayokini",
-        "group": "plaj"
-    },
-    {
-        "keywords": [
-            "mayo"
-        ],
-        "name": "mayo",
-        "group": "plaj"
-    },
+ 
+
+  
     {
         "keywords": [
             "Kulak Tıkacı",
             "Yüzücü Bonesi",
             "havuz Bonesi",
             "Burun Tıkacı",
-            "Plaj Havlusu"
+            "Plaj Havlusu",
+            "mayo",
+            "mayokini",
+            "bikini"
         ],
-        "name": "plaj aksesuar",
+        "name": "plaj",
         "group": "plaj"
     }
 ]
