@@ -3,26 +3,22 @@
         "keywords": [
             "elbise",
             "dresses",
-            "dress"
+            "dress",
+            "abiye elbise"
         ],
-        "name": "elbise",
-        "group":"üst giyim"
+        "name": "elbise, abiye elbise",
+        "group": "üst giyim"
     },
+ 
     {
         "keywords": [
-            "abiye elbise","nihanpeker","alfa-beta"
-        ],
-        "name": "abiye",
-        "group":"üst giyim"
-    },
-    {
-        "keywords": [
-            "sweatshirt","Sweat"
+            "sweatshirt",
+            "Sweat"
         ],
         "name": "Sweatshirt",
-        "group":"üst giyim"
-    }
-    ,   {
+        "group": "üst giyim"
+    },
+    {
         "keywords": [
             "t-Shirt",
             "tişört",
@@ -34,101 +30,68 @@
             "T-SHİRT"
         ],
         "name": "T-Shirt",
-        "group":"üst giyim"
-    },   {
+        "group": "üst giyim"
+    },
+    {
         "keywords": [
             "atlet"
         ],
         "name": "atlet",
-        "group":"üst giyim"
-    },   {
-        "keywords": [
-            "gömlek"
-        ],
-        "name": "gömlek",
-        "group":"üst giyim"
+        "group": "üst giyim"
     },
     {
         "keywords": [
-            "bluz","Blouse"
+            "gömlek",
+            "bluz",
+            "Blouse",
+            "tunik"
         ],
-        "name": "bluz",
-        "group":"üst giyim"
-    } ,  {
+        "name": "gömlek, bluz, tunik",
+        "group": "üst giyim"
+    },
+    {
         "keywords": [
-            "kazak"
+            "kazak","hırka", "suveter"
         ],
-        "name": "kazak",
-        "group":"üst giyim"
-    },   {
-        "keywords": [
-            "hırka"
-        ],
-        "name": "hırka",
-        "group":"üst giyim"
-    },   {
+        "name": "kazak, hırka, süveter",
+        "group": "üst giyim"
+    },
+    {
         "keywords": [
             "body"
         ],
         "name": "body",
-        "group":"üst giyim"
-    },   {
-        "keywords": [
-            "tunik"
-        ],
-        "name": "tunik",
-        "group":"üst giyim"
-    },   {
+        "group": "üst giyim"
+    },
+  
+    {
         "keywords": [
             "kimono"
         ],
         "name": "kimono",
-        "group":"üst giyim"
-    },   {
-        "keywords": [
-            "pareo"
-        ],
-        "name": "pareo",
-        "group":"üst giyim"
-    },   {
+        "group": "üst giyim"
+    },
+
+    {
         "keywords": [
             "pelerin"
         ],
         "name": "pelerin",
-        "group":"üst giyim"
-    },   {
+        "group": "üst giyim"
+    },
+    {
         "keywords": [
             "büstiyer"
         ],
         "name": "büstiyer",
-        "group":"üst giyim"
-    },   {
+        "group": "üst giyim"
+    },
+    {
         "keywords": [
-            "crop"
+            "crop", "üst"
         ],
-        "name": "crop",
-        "group":"üst giyim"
-    },   {
-        "keywords": [
-            "suveter","süveter"
-        ],
-        "name": "süveter",
-        "group":"üst giyim"
-    },   {
-        "keywords": [
-            "basic"
-        ],
-        "name": "basic",
-        "group":"üst giyim"
-    },   {
-        "keywords": [
-            "üst"
-        ],
-        "name": "üst",
-        "group":"üst giyim"
+        "name": "crop, üst",
+        "group": "üst giyim"
     }
+  
 ]
-
-
-
-

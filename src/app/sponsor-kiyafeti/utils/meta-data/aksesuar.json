@@ -1,93 +1,71 @@
 [
     {
         "keywords": [
-            "şal"
+            "şal",
+            "scarf",
+            "atkı",
+            "EŞARP",
+            "Eşarp",
+            "fular",
+            "boyunluk"
         ],
-        "name": "şal",
-        "group":"aksesuar"
-    },   {
-        "keywords": [
-            "scarf","atkı","EŞARP","Eşarp"
-        ],
-        "name": "atkı",
-        "group":"aksesuar"
+        "name": "şal, atkı, fular, boyunluk",
+        "group": "aksesuar"
     },
     {
         "keywords": [
             "kravat"
         ],
         "name": "kravat",
-        "group":"aksesuar"
+        "group": "aksesuar"
     },
     {
         "keywords": [
-            "bağcık"
-        ],
-        "name": "bağcık",
-        "group":"aksesuar"
-    },
-    {
-        "keywords": [
-            "anahtarlık"
-        ],
-        "name": "anahtarlık",
-        "group":"aksesuar"
-    },
-    {
-        "keywords": [
-            "corap","Socks"
-        ],
-        "name": "corap",
-        "group":"aksesuar"
-    },
-    {
-        "keywords": [
+            "corap",
+            "Socks",
             "eldiven"
         ],
-        "name": "eldiven",
-        "group":"aksesuar"
+        "name": "corap, eldiven",
+        "group": "aksesuar"
     },
     {
         "keywords": [
-            "omuzluk","Omuz Aksesuarı"
+            "omuzluk",
+            "Omuz Aksesuarı"
         ],
         "name": "omuzluk",
-        "group":"aksesuar"
+        "group": "aksesuar"
     },
     {
         "keywords": [
             "fular"
         ],
         "name": "fular",
-        "group":"aksesuar"
+        "group": "aksesuar"
     },
-    {
-        "keywords": [
-            "boyunluk"
-        ],
-        "name": "boyunluk",
-        "group":"aksesuar"
-    },
+
     {
         "keywords": [
             "Panço"
         ],
         "name": "Panço",
-        "group":"aksesuar"
+        "group": "aksesuar"
     },
     {
         "keywords": [
-            "şapka","bere","kasket"
+            "şapka",
+            "bere",
+            "kasket"
         ],
-        "name": "şapka",
-        "group":"aksesuar"
+        "name": "şapka, bere, kasket",
+        "group": "aksesuar"
     },
     {
         "keywords": [
-            "kemer","belt"
+            "kemer",
+            "belt"
         ],
         "name": "kemer",
-        "group":"aksesuar"
+        "group": "aksesuar"
     }
 ]
-

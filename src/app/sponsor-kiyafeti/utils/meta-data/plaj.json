@@ -11,9 +11,10 @@
             "Plaj Havlusu",
             "mayo",
             "mayokini",
-            "bikini"
+            "bikini",
+            "pareo"
         ],
-        "name": "plaj",
+        "name": "plaj, pareo, mayo, bikini",
         "group": "plaj"
     }
 ]

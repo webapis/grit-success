@@ -1,28 +1,12 @@
 [
-    {
-        "keywords": [
-            "bot"
-        ],
-        "name": "bot",
-        "group":"ayakkabı"
-    }
-   
  
-    ,
-  
-    {
-        "keywords": [
-            "platform"
-        ],
-        "name": "platform",
-        "group":"ayakkabı"
-    },
+
     
     {
         "keywords": [
-           "slippers", "sandals","shoes","Boot","terlik","ayakkabı","espardenya","espadril","sandalet","stiletto","sneaker","loafer","makosen",  "Heeled Sandal","topuklu","Heeled Slide","çizme",   "babet","Ballerina"
+             "bot","platform", "slippers", "sandals","shoes","Boot","terlik","ayakkabı","espardenya","espadril","sandalet","stiletto","sneaker","loafer","makosen",  "Heeled Sandal","topuklu","Heeled Slide","çizme",   "babet","Ballerina"
         ],
-        "name": "ayakkabı",
+        "name": "ayakkabı, platform, bot, çizme, terlik, sneaker",
         "group":"ayakkabı"
     }
     

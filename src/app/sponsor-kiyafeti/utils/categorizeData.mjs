@@ -39,9 +39,9 @@ export default function categorizedProducts(items) {
     const genderKeyword = m['duplicateTitles'] ? searchObject({ ...m, duplicateTitles: m['duplicateTitles'].join(' ') }, genderArray) : searchObject(m, genderArray)
     const genderName = gender.find(f => f.keywords.includes(genderKeyword))
     //kategori
-    const kategoryArray = [...top, ...bottom, ...dis, ...bag, ...ayakkabi, ...plaj, ...ev, ...icgiyim, ...triko, ...kozmetik,...hamile,...taki, ...aksesuar].map(m => m.keywords).flat()
+    const kategoryArray = [...icgiyim,...top, ...bottom, ...dis, ...bag, ...ayakkabi, ...plaj, ...ev, ...kozmetik,...hamile,...taki, ...aksesuar].map(m => m.keywords).flat()
     const kategoryKeyword = searchObject(m, kategoryArray)
-    const kategoryName = [...top, ...bottom, ...dis, ...bag, ...ayakkabi, ...plaj, ...ev, ...icgiyim, ...triko, ...kozmetik,...hamile,...taki, ...aksesuar].find(f => f.keywords.includes(kategoryKeyword))
+    const kategoryName = [...icgiyim,...top, ...bottom, ...dis, ...bag, ...ayakkabi, ...plaj, ...ev, ...kozmetik,...hamile,...taki, ...aksesuar].find(f => f.keywords.includes(kategoryKeyword))
     if (!genderKeyword) {
 debugger
    

@@ -73,11 +73,11 @@ export default async function DiziPage({ params }) {
 
 
         const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/${gender}/${category}-sponsorkiyafeti.json`), 'utf8');
-        const rawData = orderData(JSON.parse(data))
-
+        const rawData = orderData(JSON.parse(data)).filter(f=>!f.error)
+debugger
         const pagesData = paginate(rawData, page, 100)
         const pageCount = Math.ceil(rawData.length / 100)
-
+debugger
         return <>
             <TopNavigation selected={0} />
             <Drawer> <Container>
@@ -127,21 +127,21 @@ function paginate(array, page, pageSize) {
 
 
 
-// export async function generateStaticParams() {
-//     const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/kadin/sponsorkiyafetiMenu.json`), 'utf8');
+export async function generateStaticParams() {
+    const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/kadin/sponsorkiyafetiMenu.json`), 'utf8');
 
-//     const objData = Object.values(JSON.parse(data)).map(m=>Object.keys(m)).flat().map(d=>deaccent(d).toLowerCase().replaceAll(' ','-').replaceAll(',',''))
+    const objData = Object.values(JSON.parse(data)).map(m=>Object.keys(m)).flat().map(d=>deaccent(d).toLowerCase().replaceAll(' ','-').replaceAll(',',''))
 
-// debugger
-//     return objData.map((category) => {
+
+    return objData.map((category) => {
      
-//   debugger
-//       return {
-//         slug: ['kadin',category,'sayfa','1']
-//       }
+ 
+      return {
+        slug: ['kadin',category,'sayfa','1']
+      }
       
-//     })
-// }
+    })
+}
 
 
 

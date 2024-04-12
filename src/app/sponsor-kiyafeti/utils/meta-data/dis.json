@@ -1,49 +1,52 @@
 [
     {
         "keywords": [
-            "kaban","mont","сoat",  "palto",  "pardösü",   "manto"
+            "kaban",
+            "mont",
+            "сoat",
+            "palto",
+            "pardösü",
+            "manto"
         ],
         "name": "kaban, mont, palto, manto, pardösü",
-        "group":"dış giyim"
-    }
-    
-    ,   {
-        "keywords": [
-            "blazer"
-        ],
-        "name": "blazer",
-        "group":"dış giyim"
+        "group": "dış giyim"
     },
-      {
+    {
         "keywords": [
-            "ceket","Jacket"
+            "blazer",
+            "ceket",
+            "Jacket"
         ],
-        "name": "ceket",
-        "group":"dış giyim"
-    } ,   {
+        "name": "blazer, сeket",
+        "group": "dış giyim"
+    },
+    {
         "keywords": [
             "yelek"
         ],
         "name": "yelek",
-        "group":"dış giyim"
-    },   {
+        "group": "dış giyim"
+    },
+    {
         "keywords": [
-            "trençkot","Trench Coat"
+            "trençkot",
+            "Trench Coat"
         ],
         "name": "trençkot",
-        "group":"dış giyim"
-    },   {
+        "group": "dış giyim"
+    },
+    {
         "keywords": [
             "smokin"
         ],
         "name": "smokin",
-        "group":"dış giyim"
-    },   {
+        "group": "dış giyim"
+    },
+    {
         "keywords": [
             "yağmurluk"
         ],
         "name": "yağmurluk",
-        "group":"dış giyim"
+        "group": "dış giyim"
     }
 ]
-

@@ -8,16 +8,16 @@
     },
     {
         "keywords": [
-            "şort","bermuda"
+            "şort","bermuda",  "etek","skirt"
         ],
-        "name": "şort",
+        "name": "şort, etek",
         "group":"alt giyim"
     },
     {
         "keywords": [
-            "eşofman"
+            "eşofman", "tayt","jogger"
         ],
-        "name": "eşofman",
+        "name": "eşofman, tayt, jogger",
         "group":"alt giyim"
     }
     ,   {
@@ -26,23 +26,5 @@
         ],
         "name": "tulum",
         "group":"alt giyim"
-    } ,   {
-        "keywords": [
-            "etek","skirt"
-        ],
-        "name": "etek",
-        "group":"alt giyim"
-    },   {
-        "keywords": [
-            "tayt"
-        ],
-        "name": "tayt",
-        "group":"alt giyim"
-    },   {
-        "keywords": [
-            "jogger"
-        ],
-        "name": "jogger",
-        "group":"alt giyim"
-    }
+    } 
 ]
