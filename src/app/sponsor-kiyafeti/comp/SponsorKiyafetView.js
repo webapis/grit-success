@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Card from '@mui/material/Card';
-import Grid from '@mui/material/Grid'
+
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
@@ -14,7 +14,7 @@ export default function SponsorKiyafetView({title ,content,group }) {
     const {image,category,gender,total}=content
 
     return (
-        <Card sx={{ maxWidth: 345,textDecoration:'none' }} component={Link} href={`/sponsor-kiyafeti/${deaccent( gender).toLowerCase().replaceAll(' ','-')}/${deaccent(category).toLowerCase().replaceAll(' ','-')}/sayfa/1`} >
+        <Card sx={{ maxWidth: 345,textDecoration:'none' }} component={Link} href={`/sponsor-kiyafeti/${deaccent( gender).toLowerCase().replaceAll(' ','-').replaceAll(',','')}/${deaccent(category).toLowerCase().replaceAll(' ','-').replaceAll(',','')}/sayfa/1`} >
             <CardMedia
                 sx={{ height: {xs:200,sm:250,md:300}, width:'auto',objectFit:'contain' }}
                 image={image[0]}
@@ -23,28 +23,22 @@ export default function SponsorKiyafetView({title ,content,group }) {
 
             <CardContent>
                 <Box  style={{display:'flex', alignItems:'baseline', justifyContent:'space-between'}}>
-           <Grid container>
-            <Grid item xs={6}>
+       
+    
            
-            <Typography  variant="h5" component="div" sx={{ textTransform: 'capitalize',fontSize:{xs:16,md:16} }}>
+            <Typography  variant="h5" component="div" sx={{ textTransform: 'capitalize',fontSize:{xs:16,md:16},width: {xs:200,sm:250,md:300} }}>
                     {title} 
                 </Typography>
-            </Grid>
-            <Grid item xs={4}>
+       
+        
             <Typography  variant="caption" component="div" style={{ textTransform: 'capitalize', opacity:0.5,textAlign:'end' }}>
                 {total} adet
                 </Typography> 
-            </Grid>
-           </Grid>
+         
+         
                 </Box>
             </CardContent>
-            {/* <CardActions>
-                <Button endIcon={  <OpenInNewIcon/>} component={Link} href={`/sponsor-kiyafeti/${gender}/${category}/sayfa/1`} >
-                sayfaya git
-                  
-                </Button>
-               
-            </CardActions> */}
+      
         </Card>
     );
 }

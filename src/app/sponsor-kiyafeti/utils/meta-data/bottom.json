@@ -8,7 +8,7 @@
     },
     {
         "keywords": [
-            "şort"
+            "şort","bermuda"
         ],
         "name": "şort",
         "group":"alt giyim"
@@ -28,7 +28,7 @@
         "group":"alt giyim"
     } ,   {
         "keywords": [
-            "etek"
+            "etek","skirt"
         ],
         "name": "etek",
         "group":"alt giyim"
@@ -37,6 +37,12 @@
             "tayt"
         ],
         "name": "tayt",
+        "group":"alt giyim"
+    },   {
+        "keywords": [
+            "jogger"
+        ],
+        "name": "jogger",
         "group":"alt giyim"
     }
 ]

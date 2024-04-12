@@ -5,6 +5,12 @@
         ],
         "name": "şal",
         "group":"aksesuar"
+    },   {
+        "keywords": [
+            "scarf","atkı","EŞARP","Eşarp"
+        ],
+        "name": "atkı",
+        "group":"aksesuar"
     },
     {
         "keywords": [
@@ -25,6 +31,62 @@
             "anahtarlık"
         ],
         "name": "anahtarlık",
+        "group":"aksesuar"
+    },
+    {
+        "keywords": [
+            "corap","Socks"
+        ],
+        "name": "corap",
+        "group":"aksesuar"
+    },
+    {
+        "keywords": [
+            "eldiven"
+        ],
+        "name": "eldiven",
+        "group":"aksesuar"
+    },
+    {
+        "keywords": [
+            "omuzluk","Omuz Aksesuarı"
+        ],
+        "name": "omuzluk",
+        "group":"aksesuar"
+    },
+    {
+        "keywords": [
+            "fular"
+        ],
+        "name": "fular",
+        "group":"aksesuar"
+    },
+    {
+        "keywords": [
+            "boyunluk"
+        ],
+        "name": "boyunluk",
+        "group":"aksesuar"
+    },
+    {
+        "keywords": [
+            "Panço"
+        ],
+        "name": "Panço",
+        "group":"aksesuar"
+    },
+    {
+        "keywords": [
+            "şapka","bere","kasket"
+        ],
+        "name": "şapka",
+        "group":"aksesuar"
+    },
+    {
+        "keywords": [
+            "kemer","belt"
+        ],
+        "name": "kemer",
         "group":"aksesuar"
     }
 ]

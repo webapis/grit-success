@@ -22,6 +22,7 @@ const icgiyim = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/
 const triko = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/meta-data/triko.json'))
 const kozmetik = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/meta-data/kozmetik.json'))
 const hamile = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/meta-data/hamile.json'))
+const taki = require(path.join(process.cwd(),'src/app/sponsor-kiyafeti/utils/meta-data/taki-mucevher.json'))
 export default function categorizedProducts(items) {
 
 
@@ -38,9 +39,9 @@ export default function categorizedProducts(items) {
     const genderKeyword = m['duplicateTitles'] ? searchObject({ ...m, duplicateTitles: m['duplicateTitles'].join(' ') }, genderArray) : searchObject(m, genderArray)
     const genderName = gender.find(f => f.keywords.includes(genderKeyword))
     //kategori
-    const kategoryArray = [...top, ...bottom, ...dis, ...bag, ...ayakkabi, ...aksesuar, ...plaj, ...ev, ...icgiyim, ...triko, ...kozmetik,...hamile].map(m => m.keywords).flat()
+    const kategoryArray = [...top, ...bottom, ...dis, ...bag, ...ayakkabi, ...plaj, ...ev, ...icgiyim, ...triko, ...kozmetik,...hamile,...taki, ...aksesuar].map(m => m.keywords).flat()
     const kategoryKeyword = searchObject(m, kategoryArray)
-    const kategoryName = [...top, ...bottom, ...dis, ...bag, ...ayakkabi, ...aksesuar, ...plaj, ...ev, ...icgiyim, ...triko, ...kozmetik,...hamile].find(f => f.keywords.includes(kategoryKeyword))
+    const kategoryName = [...top, ...bottom, ...dis, ...bag, ...ayakkabi, ...plaj, ...ev, ...icgiyim, ...triko, ...kozmetik,...hamile,...taki, ...aksesuar].find(f => f.keywords.includes(kategoryKeyword))
     if (!genderKeyword) {
 debugger
    

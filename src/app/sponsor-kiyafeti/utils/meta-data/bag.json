@@ -1,17 +1,14 @@
 [
     {
         "keywords": [
-            "çanta"
+            "çanta","bags","backpacks",  "bez Torba","Wallet","cüzdan","valiz"
         ],
         "name": "çanta",
         "group":"çanta"
-    },
-    {
-        "keywords": [
-            "valiz"
-        ],
-        "name": "valiz",
-        "group":"çanta"
     }
+    
+    
+    
 
 ]
+

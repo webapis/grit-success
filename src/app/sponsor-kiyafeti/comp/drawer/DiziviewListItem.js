@@ -15,7 +15,7 @@ export default function Diziview({ title, content }) {
 
             >
                 <ListItemButton component={Link}
-                    href={`/sponsor-kiyafeti/${deaccent(gender).toLowerCase().replaceAll(' ','-')}/${deaccent( category).toLowerCase().replaceAll(' ','-')}/sayfa/1`}
+                    href={`/sponsor-kiyafeti/${deaccent(gender).toLowerCase().replaceAll(' ','-')}/${deaccent( category).toLowerCase().replaceAll(' ','-').replaceAll(',','')}/sayfa/1`}
                    >
                     {title}
                 </ListItemButton>

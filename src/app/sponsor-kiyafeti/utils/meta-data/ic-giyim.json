@@ -1,23 +1,9 @@
 [
     {
         "keywords": [
-            "külodu",  "kulodu","külot"
+            "külodu",  "kulodu","külot","kulot","İç giyim",  "sütyeni",  "sütyen","jartiyer"
         ],
-        "name": "külot",
-        "group":"iç giyim"
-    },
-    {
-        "keywords": [
-            "sütyeni",  "sütyen"
-        ],
-        "name": "sütyen",
-        "group":"iç giyim"
-    },
-    {
-        "keywords": [
-            "jartiyer"
-        ],
-        "name": "jartiyer",
+        "name": "iç giyim",
         "group":"iç giyim"
     }
 ]

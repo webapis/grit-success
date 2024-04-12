@@ -1,32 +1,12 @@
 [
     {
         "keywords": [
-            "kaban"
+            "kaban","mont","сoat",  "palto",  "pardösü",   "manto"
         ],
-        "name": "kaban",
-        "group":"dış giyim"
-    },
-    {
-        "keywords": [
-            "mont","сoat"
-        ],
-        "name": "mont",
-        "group":"dış giyim"
-    },
-    {
-        "keywords": [
-            "palto"
-        ],
-        "name": "palto",
+        "name": "kaban, mont, palto, manto, pardösü",
         "group":"dış giyim"
     }
-    ,   {
-        "keywords": [
-            "pardösü"
-        ],
-        "name": "pardösü",
-        "group":"dış giyim"
-    }
+    
     ,   {
         "keywords": [
             "blazer"
@@ -60,9 +40,9 @@
         "group":"dış giyim"
     },   {
         "keywords": [
-            "manto"
+            "yağmurluk"
         ],
-        "name": "manto",
+        "name": "yağmurluk",
         "group":"dış giyim"
     }
 ]

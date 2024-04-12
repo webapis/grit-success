@@ -8,7 +8,8 @@ export default function Image({ image, title, link, marka, price, currency }) {
 
 
 
-  return <Box  >
+  return <Link href={link} target="_blank" style={{textDecoration:'none',color:'#757575'}} >
+
     <Box sx={{ width: { xs: 150, md: 200 }, height: { xs: 200, md: 300 } }}>
       {
         image && image[0] && <img
@@ -16,12 +17,13 @@ export default function Image({ image, title, link, marka, price, currency }) {
       }
 
     </Box>
-    <Box sx={{ display: 'flex', justifyContent: 'space-between',width: { xs: 140, md: 200 } }}>
+  
+    <Box   sx={{ display: 'flex', justifyContent: 'space-between',width: { xs: 140, md: 200 } }}>
       <Typography sx={{ fontSize: 14, fontFamily: 'inherit' }}>{marka}</Typography>
       <Typography sx={{ fontSize: 11, fontFamily: 'inherit' }}>{price} {currency}</Typography>
     </Box>
     <Box sx={{width: { xs: 140, md: 200 }}}>
       <Typography variant="caption" style={{ width: '100%', wordWrap: 'break-word', textDecoration: 'none', color: 'inherit', fontFamily: 'inherit' }}>{title}</Typography>
     </Box>
-  </Box>
+  </Link>
 }

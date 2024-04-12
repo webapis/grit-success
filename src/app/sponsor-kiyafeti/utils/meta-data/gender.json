@@ -24,15 +24,29 @@
             "nisantriko",
             "ekolonline",
             "wheneverco",
-            "https://www.yargici.com/outlet",
             "https://www.dahliabianca.com/spring summer 22",
+            "Kad%C4%B1n",
             "kadin",
             "Women's",
             "mayokini",
             "mayo",
             "sutyen",
             "plaj Çantası",
-            "bayan"
+            "bayan",
+            "bikini",
+            "Party Wear",
+            "https://www.yargici.com/bermuda sort",
+            "https://www.yargici.com/pe bermuda sort",
+            "https://www.yargici.com/eldiven 2 2",
+            "https://www.yargici.com/sapka-bere",
+            "https://www.yargici.com/corap",
+            "https://www.yargici.com/sac-aksesuari",
+            "https://www.yargici.com/bileklik",
+            "https://www.yargici.com/kolye",
+            "https://www.yargici.com/yuzuk",
+            "https://www.yargici.com/bros",
+            "https://www.yargici.com/gunes-gozlugu",
+            "https://www.yargici.com/kupe"
         ],
         "name": "kadın"
     },
@@ -92,7 +106,7 @@
     },
     {
         "keywords": [
-            "erkek"
+            "erkek","Men","Men's"
         ],
         "name": "erkek"
     },  {
@@ -101,5 +115,12 @@
             "ayyildiz"
         ],
         "name": "kadın"
+    },  {
+        "keywords": [
+            
+            "unisex"
+        ],
+        "name": "unisex"
     }
 ]
+

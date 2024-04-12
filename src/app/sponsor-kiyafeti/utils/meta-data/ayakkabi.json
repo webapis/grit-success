@@ -5,58 +5,11 @@
         ],
         "name": "bot",
         "group":"ayakkabı"
-    },
-    {
-        "keywords": [
-            "çizme"
-        ],
-        "name": "çizme",
-        "group":"ayakkabı"
-    },
-    {
-        "keywords": [
-            "sneaker"
-        ],
-        "name": "sneaker",
-        "group":"ayakkabı"
-    },
-    {
-        "keywords": [
-            "stiletto"
-        ],
-        "name": "stiletto",
-        "group":"ayakkabı"
-    },
-    {
-        "keywords": [
-            "deri ayakkabı"
-        ],
-        "name": "deri ayakkabı",
-        "group":"ayakkabı"
     }
+   
+ 
     ,
-    {
-        "keywords": [
-            " loafer"
-        ],
-        "name": "loafer",
-        "group":"ayakkabı"
-    } ,
-    {
-        "keywords": [
-            "babet","Ballerina"
-        ],
-        "name": "babet",
-        "group":"ayakkabı"
-    }
-    ,
-    {
-        "keywords": [
-            " makosen"
-        ],
-        "name": "makosen",
-        "group":"ayakkabı"
-    }  ,
+  
     {
         "keywords": [
             "platform"
@@ -64,19 +17,14 @@
         "name": "platform",
         "group":"ayakkabı"
     },
+    
     {
         "keywords": [
-            "Heeled Sandal","topuklu","Heeled Slide"
+           "slippers", "sandals","shoes","Boot","terlik","ayakkabı","espardenya","espadril","sandalet","stiletto","sneaker","loafer","makosen",  "Heeled Sandal","topuklu","Heeled Slide","çizme",   "babet","Ballerina"
         ],
-        "name": "topuklu ayakkabı",
-        "group":"ayakkabı"
-    },
-    {
-        "keywords": [
-            "sandal","sandalet"
-        ],
-        "name": "sandalet",
+        "name": "ayakkabı",
         "group":"ayakkabı"
     }
-   
+    
 ]
+
