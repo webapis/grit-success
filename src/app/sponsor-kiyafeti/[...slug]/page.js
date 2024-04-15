@@ -14,6 +14,8 @@ import Drawer from '../comp/drawer'
 import TopNavigation from "@/app/components/TopNavigation";
 import ProductCategoryChip from "./ProductCategoryChip";
 import deaccent from '../comp/deaccent';
+//import searchObject from '../utils/searchObject';
+
 
 export async function generateMetadata({ params }) {
 
@@ -72,23 +74,52 @@ export default async function DiziPage({ params }) {
 
 
 
-        const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/${gender}/${category}-sponsorkiyafeti.json`), 'utf8');
-        const rawData = orderData(JSON.parse(data)).filter(f=>!f.error)
-debugger
-        const pagesData = paginate(rawData, page, 100)
-        const pageCount = Math.ceil(rawData.length / 100)
-debugger
-        return <>
-            <TopNavigation selected={0} />
-            <Drawer> <Container>
+    const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/${gender}/${category}-sponsorkiyafeti.json`), 'utf8');
+    const rawData = orderData(JSON.parse(data)).filter(f => !f.error)
 
-                <ProductCategoryChip category={rawData[0].category} />
-                {/* <GenderTabContainer value={genderIndex} /> */}
-                <Grid container gap={1} sx={{ display: 'flex', justifyContent: 'center' }}> {pagesData.map((m, i) => <Grid item key={i} > <Image {...m} pageTitle={''} /></Grid>)}</Grid>
-                <PaginationContainer count={pageCount} page={page} url={`/sponsor-kiyafeti/${gender}/${category}/sayfa/`} />
-            </Container>
-            </Drawer>
-        </>
+
+
+
+
+//     let obj = rawData.reduce((total, currentValue, currentIndex, arr) => {
+
+//         for (let facet in total) {
+
+//             const currentFacet=total[facet]
+   
+//             const exists = searchObject(currentValue, [facet])
+       
+//             if (exists) {
+    
+//                   const next =currentFacet.total+1
+                 
+//                 return { ...total, [facet]: {...currentFacet,total:next} }
+//             } else {
+             
+//                // return {...total}
+//             }
+          
+//         }
+// return total
+       
+//     },{midi:{group:'boyu',total:0},beyaz:{group:'renk',total:0},siyah:{group:'renk',total:0}  } )
+    
+  
+    debugger
+    const pagesData = paginate(rawData, page, 100)
+    const pageCount = Math.ceil(rawData.length / 100)
+    debugger
+    return <>
+        <TopNavigation selected={0} />
+        <Drawer> <Container>
+
+            <ProductCategoryChip category={rawData[0].category} />
+            {/* <GenderTabContainer value={genderIndex} /> */}
+            <Grid container gap={1} sx={{ display: 'flex', justifyContent: 'center' }}> {pagesData.map((m, i) => <Grid item key={i} > <Image {...m} pageTitle={''} /></Grid>)}</Grid>
+            <PaginationContainer count={pageCount} page={page} url={`/sponsor-kiyafeti/${gender}/${category}/sayfa/`} />
+        </Container>
+        </Drawer>
+    </>
 
 
 }
@@ -130,16 +161,16 @@ function paginate(array, page, pageSize) {
 export async function generateStaticParams() {
     const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/kadin/sponsorkiyafetiMenu.json`), 'utf8');
 
-    const objData = Object.values(JSON.parse(data)).map(m=>Object.keys(m)).flat().map(d=>deaccent(d).toLowerCase().replaceAll(' ','-').replaceAll(',',''))
+    const objData = Object.values(JSON.parse(data)).map(m => Object.keys(m)).flat().map(d => deaccent(d).toLowerCase().replaceAll(' ', '-').replaceAll(',', ''))
 
 
     return objData.map((category) => {
-     
- 
-      return {
-        slug: ['kadin',category,'sayfa','1']
-      }
-      
+
+
+        return {
+            slug: ['kadin', category, 'sayfa', '1']
+        }
+
     })
 }
 
