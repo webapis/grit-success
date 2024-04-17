@@ -15,7 +15,7 @@ import Divider from '@mui/material/Divider';
 import DizivliewListItem from './DiziviewListItem';
 import data from '@/app/sponsor-kiyafeti/data/kadin/sponsorkiyafetiMenu.json';
 import Link from 'next/link';
-
+import KeywordMenu from '../KeywordMenu'
 const arrayData = Object.entries(data);
 const drawerWidth = 240;
 
@@ -66,7 +66,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
     justifyContent: 'flex-end',
 }));
 
-export default function PersistentDrawerLeft({ children }) {
+export default function PersistentDrawerLeft({ children,colors,slug }) {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
@@ -109,6 +109,7 @@ export default function PersistentDrawerLeft({ children }) {
                     >
                         Glumzi
                     </Typography>
+                    <KeywordMenu obj={colors} slug={slug}/>
                 </Toolbar>
             </AppBar>
             <Drawer

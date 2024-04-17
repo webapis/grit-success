@@ -14,7 +14,9 @@ import Drawer from '../comp/drawer'
 import TopNavigation from "@/app/components/TopNavigation";
 import ProductCategoryChip from "./ProductCategoryChip";
 import deaccent from '../comp/deaccent';
-//import searchObject from '../utils/searchObject';
+import colors from './keywords/color';
+import searchObject from '../utils/searchObject';
+
 
 
 export async function generateMetadata({ params }) {
@@ -38,13 +40,13 @@ export async function generateMetadata({ params }) {
 
 }
 
-export default async function DiziPage({ params }) {
+export default async function SponsorKiyafetiPage({ params }) {
 
     const { slug } = params
-
+debugger
     let gender = decodeURI(slug[0])
     let category = decodeURI(slug[1])
-    let page = parseInt(decodeURI(slug[3]))
+    let page = parseInt(decodeURI([...slug].reverse()[0]))
     let genderIndex = 0
     switch (gender) {
         case 'kadin':
@@ -79,41 +81,39 @@ export default async function DiziPage({ params }) {
 
 
 
+    let obj = rawData.reduce((total, currentValue, currentIndex, arr) => {
 
+        for (let facet in total) {
 
-//     let obj = rawData.reduce((total, currentValue, currentIndex, arr) => {
-
-//         for (let facet in total) {
-
-//             const currentFacet=total[facet]
+            const currentFacet=total[facet]
    
-//             const exists = searchObject(currentValue, [facet])
+            const exists = searchObject(currentValue, [facet])
        
-//             if (exists) {
+            if (exists) {
     
-//                   const next =currentFacet.total+1
+                  const next =currentFacet.total+1
                  
-//                 return { ...total, [facet]: {...currentFacet,total:next} }
-//             } else {
+                return { ...total, [facet]: {...currentFacet,total:next} }
+            } else {
              
-//                // return {...total}
-//             }
+               // return {...total}
+            }
           
-//         }
-// return total
+        }
+return total
        
-//     },{midi:{group:'boyu',total:0},beyaz:{group:'renk',total:0},siyah:{group:'renk',total:0}  } )
+    },colors )
     
-  
+
     debugger
     const pagesData = paginate(rawData, page, 100)
     const pageCount = Math.ceil(rawData.length / 100)
     debugger
     return <>
         <TopNavigation selected={0} />
-        <Drawer> <Container>
+        <Drawer colors={obj} slug={slug}> <Container>
 
-            <ProductCategoryChip category={rawData[0].category} />
+            <ProductCategoryChip category={rawData[0].category}  />
             {/* <GenderTabContainer value={genderIndex} /> */}
             <Grid container gap={1} sx={{ display: 'flex', justifyContent: 'center' }}> {pagesData.map((m, i) => <Grid item key={i} > <Image {...m} pageTitle={''} /></Grid>)}</Grid>
             <PaginationContainer count={pageCount} page={page} url={`/sponsor-kiyafeti/${gender}/${category}/sayfa/`} />
