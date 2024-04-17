@@ -17,6 +17,12 @@ import deaccent from '../comp/deaccent';
 import colors from './keywords/color';
 import searchObject from '../utils/searchObject';
 
+function findMatchingColors(primaryArray, colorsArray) {
+    // Filter the colorsArray to find colors that exist in the primaryArray
+    const matchingColors = colorsArray.filter(color => primaryArray.includes(color));
+
+    return matchingColors;
+}
 
 
 export async function generateMetadata({ params }) {
@@ -27,26 +33,27 @@ export async function generateMetadata({ params }) {
     let category = decodeURI(slug[1])
 
 
+
     return {
 
         title: 'Sponsor Kıyafeti-' + gender + ' ' + category
 
     }
-
-
-
-
-
-
 }
 
 export default async function SponsorKiyafetiPage({ params }) {
 
     const { slug } = params
-debugger
+    debugger
     let gender = decodeURI(slug[0])
     let category = decodeURI(slug[1])
     let page = parseInt(decodeURI([...slug].reverse()[0]))
+    let urlColors = Object.keys(colors)
+    console.log('urlColors', urlColors)
+    console.log('slug', slug.map(m => decodeURI(m)))
+    const matchingColors = findMatchingColors(slug.map(m => decodeURI(m)), urlColors)
+
+    console.log('matchingColors', matchingColors)
     let genderIndex = 0
     switch (gender) {
         case 'kadin':
@@ -78,42 +85,41 @@ debugger
 
     const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/${gender}/${category}-sponsorkiyafeti.json`), 'utf8');
     const rawData = orderData(JSON.parse(data)).filter(f => !f.error)
-
-
-
+    const filteredByUrlData = rawData.filter(f => matchingColors.length > 0 ? searchObject(f,matchingColors) : true)
+console.log('filteredByUrlData',filteredByUrlData.length)
+console.log('rawData',rawData.length)
     let obj = rawData.reduce((total, currentValue, currentIndex, arr) => {
 
         for (let facet in total) {
 
-            const currentFacet=total[facet]
-   
+            const currentFacet = total[facet]
+
             const exists = searchObject(currentValue, [facet])
-       
+
             if (exists) {
-    
-                  const next =currentFacet.total+1
-                 
-                return { ...total, [facet]: {...currentFacet,total:next} }
+
+                const next = currentFacet.total + 1
+
+                return { ...total, [facet]: { ...currentFacet, total: next } }
             } else {
-             
-               // return {...total}
+
+                // return {...total}
             }
-          
+
         }
-return total
-       
-    },colors )
-    
+        return total
+
+    }, colors)
+
 
     debugger
-    const pagesData = paginate(rawData, page, 100)
-    const pageCount = Math.ceil(rawData.length / 100)
+    const pagesData = paginate(filteredByUrlData, page, 100)
+    const pageCount = Math.ceil(filteredByUrlData.length / 100)
     debugger
     return <>
         <TopNavigation selected={0} />
         <Drawer colors={obj} slug={slug}> <Container>
-
-            <ProductCategoryChip category={rawData[0].category}  />
+            <ProductCategoryChip category={rawData[0].category} />
             {/* <GenderTabContainer value={genderIndex} /> */}
             <Grid container gap={1} sx={{ display: 'flex', justifyContent: 'center' }}> {pagesData.map((m, i) => <Grid item key={i} > <Image {...m} pageTitle={''} /></Grid>)}</Grid>
             <PaginationContainer count={pageCount} page={page} url={`/sponsor-kiyafeti/${gender}/${category}/sayfa/`} />

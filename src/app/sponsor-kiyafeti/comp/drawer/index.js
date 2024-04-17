@@ -109,7 +109,8 @@ export default function PersistentDrawerLeft({ children,colors,slug }) {
                     >
                         Glumzi
                     </Typography>
-                    <KeywordMenu obj={colors} slug={slug}/>
+                    {slug.length>3 &&    <KeywordMenu obj={colors} slug={slug}/> }
+                 
                 </Toolbar>
             </AppBar>
             <Drawer
