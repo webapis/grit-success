@@ -29,7 +29,7 @@
             "Tshirt",
             "T-SHİRT"
         ],
-        "name": "T-Shirt",
+        "name": "tişört",
         "group": "üst giyim"
     },
     {
@@ -41,19 +41,53 @@
     },
     {
         "keywords": [
-            "gömlek",
+            "gömlek"
+        
+        ],
+        "name": "gömlek",
+        "group": "üst giyim"
+    }
+    ,
+    {
+        "keywords": [
+          
             "bluz",
-            "Blouse",
+            "Blouse"
+           
+        ],
+        "name": "bluz",
+        "group": "üst giyim"
+    }
+    ,
+    {
+        "keywords": [
             "tunik"
         ],
-        "name": "gömlek, bluz, tunik",
+        "name": "tunik",
         "group": "üst giyim"
     },
     {
         "keywords": [
-            "kazak","hırka", "suveter"
+            "kazak"
         ],
-        "name": "kazak, hırka, süveter",
+        "name": "kazak",
+        "group": "üst giyim"
+    }
+    ,
+    {
+        "keywords": [
+            "hırka"
+        ],
+        "name": "hırka",
+        "group": "üst giyim"
+    }
+    ,
+    {
+        "keywords": [
+            "suveter",
+            "süveter"
+        ],
+        "name": "süveter",
         "group": "üst giyim"
     },
     {
