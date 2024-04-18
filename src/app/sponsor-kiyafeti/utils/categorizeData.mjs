@@ -4,7 +4,7 @@ import { createRequire } from 'module';
 import fs from 'fs'
 import path from 'path';
 import searchObject from './searchObject.mjs';
-
+import mapPrice from './mapPrice.mjs'
 const require = createRequire(import.meta.url);
 require("dotenv").config();
 
@@ -27,7 +27,7 @@ export default function categorizedProducts(items) {
 
 
 
-  const data = items.map(m => {
+  const data = items.map(m=>{return {...m,price:mapPrice(m.price)}}).map(m => {
 
     //gender
     const colorArray = color.map(m => m.keywords).flat()

@@ -6,13 +6,14 @@ import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 
+import Check from '@mui/icons-material/Check';
 import Link from 'next/link';
 
 
 
 const ITEM_HEIGHT = 48;
 
-export default function AccountMenu({ obj, slug }) {
+export default function AccountMenu({ obj, slug, id, letter, tooltipTitle, backgroundC }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const open = Boolean(anchorEl);
@@ -24,14 +25,14 @@ export default function AccountMenu({ obj, slug }) {
 
     setAnchorEl(null);
   };
-  const currentSlugState =slug.slice(0, slug.length - 2)
+  const currentSlugState = slug.slice(0, slug.length - 2)
 
 
   return (
     <React.Fragment>
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
 
-        <Tooltip title="Account settings">
+        <Tooltip title={tooltipTitle}>
           <IconButton
             onClick={handleClick}
             size="small"
@@ -40,13 +41,13 @@ export default function AccountMenu({ obj, slug }) {
             aria-haspopup="true"
             aria-expanded={open ? 'true' : undefined}
           >
-            <Avatar sx={{ width: 32, height: 32 }}>R</Avatar>
+            <Avatar sx={{ width: 32, height: 32, bgcolor: backgroundC }}>{letter}</Avatar>
           </IconButton>
         </Tooltip>
       </Box>
       <Menu
         anchorEl={anchorEl}
-        id="account-menu"
+        id={id}
         open={open}
         onClose={handleClose}
         onClick={handleClose}
@@ -82,13 +83,19 @@ export default function AccountMenu({ obj, slug }) {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
         {Object.entries(obj).map((option) => {
-            const nextcurrentSlugState=[...currentSlugState.map(m=>decodeURI(m))]
-            nextcurrentSlugState.indexOf(option[0]) === -1 ? nextcurrentSlugState.push(option[0]) : nextcurrentSlugState.splice(nextcurrentSlugState.indexOf(option[0]), 1)
-          const nextSlugState ='/sponsor-kiyafeti/'+ [...nextcurrentSlugState].join('/').toString()
-console.log('nextSlugState',nextSlugState)
-          return <MenuItem component={Link} href={nextSlugState+'/sayfa/1'} key={option[0]} selected={option[0] === 'Pyxis'} >
-            {option[0]} {option[1].total}
-           </MenuItem>
+
+          const nextcurrentSlugState = [...currentSlugState.map(m => decodeURI(m))]
+          nextcurrentSlugState.indexOf(option[0]) === -1 ? nextcurrentSlugState.push(option[0]) : nextcurrentSlugState.splice(nextcurrentSlugState.indexOf(option[0]), 1)
+          const nextSlugState = '/sponsor-kiyafeti/' + [...nextcurrentSlugState].join('/').toString()
+
+          return <MenuItem component={Link} href={nextSlugState + '/sayfa/1'} key={option[0]} selected={decodeURI(slug).includes(option[0])} >
+            <>
+            {decodeURI(slug).includes(option[0])?  <IconButton color="primary"><Check/></IconButton>:    <IconButton color="white">{"  "}  </IconButton>}
+        
+            <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}><span>{option[0]}</span> <span>{option[1].total}</span></div>
+            </>
+      
+          </MenuItem>
         })}
       </Menu>
     </React.Fragment>

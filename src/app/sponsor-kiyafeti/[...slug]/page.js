@@ -15,13 +15,27 @@ import TopNavigation from "@/app/components/TopNavigation";
 import ProductCategoryChip from "./ProductCategoryChip";
 import deaccent from '../comp/deaccent';
 import colors from './keywords/color';
+import brands from './keywords/marka'
+import prices from './keywords/price'
 import searchObject from '../utils/searchObject';
 
-function findMatchingColors(primaryArray, colorsArray) {
+function findMatching(primaryArray, colorsArray) {
     // Filter the colorsArray to find colors that exist in the primaryArray
     const matchingColors = colorsArray.filter(color => primaryArray.includes(color));
 
     return matchingColors;
+}
+
+function findMatchingPrice(price, priceRange) {
+    return priceRange.some(cv => {
+        const start = parseInt(cv.split('-')[0])
+        const end = parseInt(cv.split('-')[1])
+        if (price >= start && price <= end) {
+            return true
+        }
+        return false
+
+    })
 }
 
 
@@ -48,12 +62,21 @@ export default async function SponsorKiyafetiPage({ params }) {
     let gender = decodeURI(slug[0])
     let category = decodeURI(slug[1])
     let page = parseInt(decodeURI([...slug].reverse()[0]))
-    let urlColors = Object.keys(colors)
-    console.log('urlColors', urlColors)
-    console.log('slug', slug.map(m => decodeURI(m)))
-    const matchingColors = findMatchingColors(slug.map(m => decodeURI(m)), urlColors)
 
-    console.log('matchingColors', matchingColors)
+    //colors
+    let urlColors = Object.keys(colors)
+
+    console.log('slug', slug.map(m => decodeURI(m)))
+    const matchingColors = findMatching(slug.map(m => decodeURI(m)), urlColors)
+    //marka 
+    let urlBrands = Object.keys(brands)
+    const matchingBrands = findMatching(slug.map(m => decodeURI(m)), urlBrands)
+    //price
+    let urlPrice = Object.keys(prices)
+    const matchingPrices = findMatching(slug.map(m => decodeURI(m)), urlPrice)
+
+    console.log('matchingColors', matchingPrices)
+    console.log('urlBrands', urlPrice)
     let genderIndex = 0
     switch (gender) {
         case 'kadin':
@@ -80,45 +103,23 @@ export default async function SponsorKiyafetiPage({ params }) {
 
     }
 
-
-
-
     const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/${gender}/${category}-sponsorkiyafeti.json`), 'utf8');
     const rawData = orderData(JSON.parse(data)).filter(f => !f.error)
-    const filteredByUrlData = rawData.filter(f => matchingColors.length > 0 ? searchObject(f,matchingColors) : true)
-console.log('filteredByUrlData',filteredByUrlData.length)
-console.log('rawData',rawData.length)
-    let obj = rawData.reduce((total, currentValue, currentIndex, arr) => {
-
-        for (let facet in total) {
-
-            const currentFacet = total[facet]
-
-            const exists = searchObject(currentValue, [facet])
-
-            if (exists) {
-
-                const next = currentFacet.total + 1
-
-                return { ...total, [facet]: { ...currentFacet, total: next } }
-            } else {
-
-                // return {...total}
-            }
-
-        }
-        return total
-
-    }, colors)
-
+    const filteredByUrlData = rawData.filter(f => matchingColors.length > 0 ? searchObject(f, matchingColors) : true).filter(f => matchingBrands.length > 0 ? searchObject(f, matchingBrands) : true).filter(f => matchingPrices.length > 0 ? findMatchingPrice(f.price, matchingPrices) : true)
+    console.log('filteredByUrlData', filteredByUrlData.length)
+    console.log('rawData', rawData.length)
+    let colorFacet = extractFacet(rawData, colors)
+    let brandFacet = extractFacet(rawData, brands)
+    let priceFacet = extractPriceFacet(rawData, prices)
 
     debugger
-    const pagesData = paginate(filteredByUrlData, page, 100)
+    const pagesData = paginate(orderData(filteredByUrlData), page, 100)
     const pageCount = Math.ceil(filteredByUrlData.length / 100)
     debugger
+    console.log('priceFacet', priceFacet)
     return <>
         <TopNavigation selected={0} />
-        <Drawer colors={obj} slug={slug}> <Container>
+        <Drawer colors={colorFacet} slug={slug} brands={brandFacet} prices ={priceFacet}> <Container>
             <ProductCategoryChip category={rawData[0].category} />
             {/* <GenderTabContainer value={genderIndex} /> */}
             <Grid container gap={1} sx={{ display: 'flex', justifyContent: 'center' }}> {pagesData.map((m, i) => <Grid item key={i} > <Image {...m} pageTitle={''} /></Grid>)}</Grid>
@@ -158,9 +159,59 @@ function paginate(array, page, pageSize) {
 
 
 
+function extractFacet(rawData, facetCandidate) {
+    return rawData.reduce((total, currentValue, currentIndex, arr) => {
 
+        for (let facet in total) {
 
+            const currentFacet = total[facet]
 
+            const exists = searchObject(currentValue, [facet])
+
+            if (exists) {
+
+                const next = currentFacet.total + 1
+
+                return { ...total, [facet]: { ...currentFacet, total: next } }
+            } else {
+
+                // return {...total}
+            }
+
+        }
+        return total
+
+    }, facetCandidate)
+
+}
+
+function extractPriceFacet(rawData, facetCandidate) {
+    return rawData.reduce((total, currentValue, currentIndex, arr) => {
+
+        for (let facet in total) {
+            const start = facet.split('-')[0]
+            const end = facet.split('-')[1]
+
+            const currentFacet = total[facet]
+            const price = currentValue.price
+            const exists = (price >= start && price <= end)
+
+            if (exists) {
+
+                const next = currentFacet.total + 1
+
+                return { ...total, [facet]: { ...currentFacet, total: next } }
+            } else {
+
+                // return {...total}
+            }
+
+        }
+        return total
+
+    }, facetCandidate)
+
+}
 
 
 
