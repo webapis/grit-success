@@ -18,7 +18,7 @@ import colors from './keywords/color';
 import brands from './keywords/marka'
 import prices from './keywords/price'
 import searchObject from '../utils/searchObject';
-
+import KeywordItem from '../comp/KeywordItem';
 function findMatching(primaryArray, colorsArray) {
     // Filter the colorsArray to find colors that exist in the primaryArray
     const matchingColors = colorsArray.filter(color => primaryArray.includes(color));
@@ -62,7 +62,7 @@ export default async function SponsorKiyafetiPage({ params }) {
     let gender = decodeURI(slug[0])
     let category = decodeURI(slug[1])
     let page = parseInt(decodeURI([...slug].reverse()[0]))
-
+console.log('category',category)
     //colors
     let urlColors = Object.keys(colors)
 
@@ -75,8 +75,7 @@ export default async function SponsorKiyafetiPage({ params }) {
     let urlPrice = Object.keys(prices)
     const matchingPrices = findMatching(slug.map(m => decodeURI(m)), urlPrice)
 
-    console.log('matchingColors', matchingPrices)
-    console.log('urlBrands', urlPrice)
+
     let genderIndex = 0
     switch (gender) {
         case 'kadin':
@@ -106,8 +105,7 @@ export default async function SponsorKiyafetiPage({ params }) {
     const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/${gender}/${category}-sponsorkiyafeti.json`), 'utf8');
     const rawData = orderData(JSON.parse(data)).filter(f => !f.error)
     const filteredByUrlData = rawData.filter(f => matchingColors.length > 0 ? searchObject(f, matchingColors) : true).filter(f => matchingBrands.length > 0 ? searchObject(f, matchingBrands.map(m=>m.replaceAll('-',' '))) : true).filter(f => matchingPrices.length > 0 ? findMatchingPrice(f.price, matchingPrices) : true)
-    console.log('filteredByUrlData', filteredByUrlData.length)
-    console.log('rawData', rawData.length)
+ 
     let colorFacet = extractFacet(rawData, colors)
     let brandFacet = extractFacet(rawData, brands)
     let priceFacet = extractPriceFacet(rawData, prices)
@@ -116,12 +114,13 @@ export default async function SponsorKiyafetiPage({ params }) {
     const pagesData = paginate(orderData(filteredByUrlData), page, 100)
     const pageCount = Math.ceil(filteredByUrlData.length / 100)
     debugger
-    console.log('priceFacet', priceFacet)
+  
     return <>
         <TopNavigation selected={0} />
         <Drawer colors={colorFacet} slug={slug} brands={brandFacet} prices ={priceFacet}> <Container>
             <ProductCategoryChip category={rawData[0].category} />
             {/* <GenderTabContainer value={genderIndex} /> */}
+        <KeywordsTabContainer category={category} rawData={rawData}/>
             <Grid container gap={1} sx={{ display: 'flex', justifyContent: 'center' }}> {pagesData.map((m, i) => <Grid item key={i} > <Image {...m} pageTitle={''} /></Grid>)}</Grid>
             <PaginationContainer count={pageCount} page={page} url={`/sponsor-kiyafeti/${gender}/${category}/1/sayfa/`} />
         </Container>
@@ -146,7 +145,24 @@ export function GenderTabContainer({ value = 0 }) {
     </Tabs></Container>
 }
 
+export function KeywordsTabContainer({ value = 1000, category,rawData }) {
 
+    return <Container sx={{ display: 'flex', justifyContent: "center" }}> <Tabs value={value} sx={{ marginBottom: 1 }} variant="scrollable" scrollButtons allowScrollButtonsMobile>
+        
+        {category.split('-').map(m=>{
+        
+            
+            const imageUrl = rawData.find(r=>{
+                const obj = {...r,category:''}
+                return searchObject(obj,[m])} )
+     console.log('imageUrl',imageUrl.image)
+            return <Tab key={m} label={<KeywordItem image={imageUrl.image[0]} label={m}/>}  href="/" />
+        
+        })
+            }
+
+    </Tabs></Container>
+}
 
 function paginate(array, page, pageSize) {
     --page; // Adjusting to zero-based index
