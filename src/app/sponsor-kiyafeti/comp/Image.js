@@ -24,7 +24,7 @@ export default function Image({ image, title, link, marka, price, currency }) {
           <Typography sx={{ fontSize: 14, fontFamily: 'inherit' }}>{marka}</Typography>
         </Grid>
         <Grid item>
-          <Typography sx={{ fontSize: 12, fontFamily: 'inherit', textAlign:'end',width:'100%'}}>{price} {currency}</Typography>
+          <Typography sx={{ fontSize: 12, fontFamily: 'inherit', textAlign:'end',width:'100%'}}>{price>0 ? price:''} {price>0 ?currency:""}</Typography>
         </Grid>
       </Grid>
 
