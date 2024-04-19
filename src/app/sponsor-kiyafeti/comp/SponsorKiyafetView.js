@@ -14,7 +14,7 @@ export default function SponsorKiyafetView({title ,content,group }) {
     const {image,category,gender,total}=content
 
     return (
-        <Card sx={{ maxWidth: 345,textDecoration:'none' }} component={Link} href={`/sponsor-kiyafeti/${deaccent( gender).toLowerCase().replaceAll(' ','-').replaceAll(',','')}/${deaccent(category).toLowerCase().replaceAll(' ','-').replaceAll(',','')}/sayfa/1`} >
+        <Card sx={{ maxWidth: 345,textDecoration:'none' }} component={Link} href={`/sponsor-kiyafeti/${deaccent( gender).toLowerCase().replaceAll(' ','-').replaceAll(',','')}/${deaccent(category).toLowerCase().replaceAll(' ','-').replaceAll(',','')}/1/sayfa/1`} >
             <CardMedia
                 sx={{ height: {xs:200,sm:250,md:300}, width:'auto',objectFit:'contain' }}
                 image={image[0]}
