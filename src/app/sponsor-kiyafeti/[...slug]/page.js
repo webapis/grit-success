@@ -105,7 +105,7 @@ export default async function SponsorKiyafetiPage({ params }) {
 
     const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/${gender}/${category}-sponsorkiyafeti.json`), 'utf8');
     const rawData = orderData(JSON.parse(data)).filter(f => !f.error)
-    const filteredByUrlData = rawData.filter(f => matchingColors.length > 0 ? searchObject(f, matchingColors) : true).filter(f => matchingBrands.length > 0 ? searchObject(f, matchingBrands) : true).filter(f => matchingPrices.length > 0 ? findMatchingPrice(f.price, matchingPrices) : true)
+    const filteredByUrlData = rawData.filter(f => matchingColors.length > 0 ? searchObject(f, matchingColors) : true).filter(f => matchingBrands.length > 0 ? searchObject(f, matchingBrands.map(m=>m.replaceAll('-',' '))) : true).filter(f => matchingPrices.length > 0 ? findMatchingPrice(f.price, matchingPrices) : true)
     console.log('filteredByUrlData', filteredByUrlData.length)
     console.log('rawData', rawData.length)
     let colorFacet = extractFacet(rawData, colors)
@@ -166,7 +166,7 @@ function extractFacet(rawData, facetCandidate) {
 
             const currentFacet = total[facet]
 
-            const exists = searchObject(currentValue, [facet])
+            const exists = searchObject(currentValue, [facet.replaceAll('-',' ')])
 
             if (exists) {
 
