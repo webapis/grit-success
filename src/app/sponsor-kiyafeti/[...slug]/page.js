@@ -62,7 +62,7 @@ export default async function SponsorKiyafetiPage({ params }) {
     let gender = decodeURI(slug[0])
     let category = decodeURI(slug[1])
     let page = parseInt(decodeURI([...slug].reverse()[0]))
-console.log('category',category)
+    console.log('category', category)
     //colors
     let urlColors = Object.keys(colors)
 
@@ -104,8 +104,8 @@ console.log('category',category)
 
     const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/${gender}/${category}-sponsorkiyafeti.json`), 'utf8');
     const rawData = orderData(JSON.parse(data)).filter(f => !f.error)
-    const filteredByUrlData = rawData.filter(f => matchingColors.length > 0 ? searchObject(f, matchingColors) : true).filter(f => matchingBrands.length > 0 ? searchObject(f, matchingBrands.map(m=>m.replaceAll('-',' '))) : true).filter(f => matchingPrices.length > 0 ? findMatchingPrice(f.price, matchingPrices) : true)
- 
+    const filteredByUrlData = rawData.filter(f => matchingColors.length > 0 ? searchObject(f, matchingColors) : true).filter(f => matchingBrands.length > 0 ? searchObject(f, matchingBrands.map(m => m.replaceAll('-', ' '))) : true).filter(f => matchingPrices.length > 0 ? findMatchingPrice(f.price, matchingPrices) : true)
+
     let colorFacet = extractFacet(rawData, colors)
     let brandFacet = extractFacet(rawData, brands)
     let priceFacet = extractPriceFacet(rawData, prices)
@@ -114,13 +114,13 @@ console.log('category',category)
     const pagesData = paginate(orderData(filteredByUrlData), page, 100)
     const pageCount = Math.ceil(filteredByUrlData.length / 100)
     debugger
-  
+
     return <>
         <TopNavigation selected={0} />
-        <Drawer colors={colorFacet} slug={slug} brands={brandFacet} prices ={priceFacet}> <Container>
+        <Drawer colors={colorFacet} slug={slug} brands={brandFacet} prices={priceFacet}> <Container>
             <ProductCategoryChip category={rawData[0].category} />
             {/* <GenderTabContainer value={genderIndex} /> */}
-        <KeywordsTabContainer category={category} rawData={rawData}/>
+            <KeywordsTabContainer category={category} rawData={rawData} />
             <Grid container gap={1} sx={{ display: 'flex', justifyContent: 'center' }}> {pagesData.map((m, i) => <Grid item key={i} > <Image {...m} pageTitle={''} /></Grid>)}</Grid>
             <PaginationContainer count={pageCount} page={page} url={`/sponsor-kiyafeti/${gender}/${category}/1/sayfa/`} />
         </Container>
@@ -145,21 +145,25 @@ export function GenderTabContainer({ value = 0 }) {
     </Tabs></Container>
 }
 
-export function KeywordsTabContainer({ value = 1000, category,rawData }) {
+export function KeywordsTabContainer({ value = 1000, category, rawData }) {
 
     return <Container sx={{ display: 'flex', justifyContent: "center" }}> <Tabs value={value} sx={{ marginBottom: 1 }} variant="scrollable" scrollButtons allowScrollButtonsMobile>
-        
-        {category.split('-').map(m=>{
-        
-            
-            const imageUrl = rawData.find(r=>{
-                const obj = {...r,category:''}
-                return searchObject(obj,[m])} )
-     console.log('imageUrl',imageUrl.image)
-            return <Tab key={m} label={<KeywordItem image={imageUrl.image[0]} label={m}/>}  href="/" />
-        
-        })
+
+        {category.split('-').map(m => {
+
+
+            const imageUrl = rawData.find(r => {
+                const obj = { ...r, category: '' }
+                return searchObject(obj, [m])
+            })
+            if (imageUrl) {
+                return { image: imageUrl.image[0], label: m }
             }
+            return null
+
+
+        }).filter(f => f).map(m => <Tab key={m} label={<KeywordItem image={m.image} label={m.label} />} href="/" />)
+        }
 
     </Tabs></Container>
 }
@@ -182,7 +186,7 @@ function extractFacet(rawData, facetCandidate) {
 
             const currentFacet = total[facet]
 
-            const exists = searchObject(currentValue, [facet.replaceAll('-',' ')])
+            const exists = searchObject(currentValue, [facet.replaceAll('-', ' ')])
 
             if (exists) {
 
