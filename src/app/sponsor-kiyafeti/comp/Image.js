@@ -6,9 +6,9 @@ import { Typography, Box, Grid } from "@mui/material"
 import deaccent from "./deaccent"
 export default function Image({ image, title, link, marka, price, currency,matchingCategories }) {
 const selectedCategories = matchingCategories.map(m=>m.category)
-console.log("selectedCategories",selectedCategories)
+
 const matchingWords = title.split(' ').map((m)=>{
-console.log("selectedCategories.includes(deaccent(m.toLowerCase())",selectedCategories.includes(deaccent(m.toLowerCase())))
+
   if(selectedCategories.includes(deaccent(m.toLowerCase())) ){
     return <span key={m} style={{color:"#1A73E8", textTransform:"capitalize", fontSize:14, fontWeight:700}}>{m.toLowerCase()} {" "}</span>
   }else{

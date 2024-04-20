@@ -148,7 +148,7 @@ export default async function SponsorKiyafetiPage({ params }) {
             {/* <GenderTabContainer value={genderIndex} /> */}
         
             <Grid container gap={1} sx={{ display: 'flex', justifyContent: 'center' }}> {pagesData.map((m, i) => <Grid item key={i} > <Image matchingCategories={matchingCategories} {...m} pageTitle={''} /></Grid>)}</Grid>
-            <PaginationContainer count={pageCount} page={page} url={`/sponsor-kiyafeti/${gender}/${category}/1/sayfa/`} />
+            <PaginationContainer count={pageCount} page={page} url={`/sponsor-kiyafeti/${gender}/${category}/${selectedKeywords}/sayfa/`} />
         </Container>
         </Drawer>
     </>
@@ -176,7 +176,7 @@ export function KeywordsTabContainer({ value = 1000, category, rawData, slug }) 
     const categoryIndex = category.split('-').map((m, i) => i.toString()).join('')
     const initialAllSelection = selectedKeywords === categoryIndex
 
-    return <Container sx={{ display: 'flex', justifyContent: "center" }}> <Tabs value={value} sx={{ marginBottom: 1 }} variant="scrollable" scrollButtons allowScrollButtonsMobile>
+    return <Box sx={{ display: 'flex', justifyContent: "center" }}> <Tabs value={value} sx={{ marginBottom: 1 }} variant="scrollable" scrollButtons allowScrollButtonsMobile>
 
         {category.split('-').map(m => {
 
@@ -199,13 +199,14 @@ export function KeywordsTabContainer({ value = 1000, category, rawData, slug }) 
             const removeUrl = keywordIndex === i.toString() ? categoryIndex : i.toString()
             const reversedUrl = [...slug].reverse()
             reversedUrl[2] = removeUrl
+            reversedUrl[0]='1'
             const nextUrl = '/sponsor-kiyafeti/' + reversedUrl.reverse().join('/')
-
-            return <Tab key={m} label={<KeywordItem selected={selectedKeywords === i.toString()} nextUrl={nextUrl} initialAllSelection={initialAllSelection} image={m.image} label={m.label} slug={slug} category={category} />} />
+            console.log('')
+            return <Tab key={i} label={<KeywordItem selected={selectedKeywords === i.toString()} nextUrl={nextUrl} initialAllSelection={initialAllSelection} image={m.image} label={m.label} slug={slug} category={category} />} />
         })
         }
 
-    </Tabs></Container>
+    </Tabs></Box>
 }
 
 function paginate(array, page, pageSize) {
