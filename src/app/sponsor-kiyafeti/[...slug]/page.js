@@ -135,18 +135,33 @@ export default async function SponsorKiyafetiPage({ params }) {
     debugger
 
     return <>
- <Box sx={{width:"100%"}}>
- <TopNavigation selected={0} />
- </Box>
- <Box sx={{width:"100%"}}>
- <KeywordsTabContainer category={category} rawData={rawData} slug={slug} />
-    </Box>
-    
-       
-        <Drawer colors={colorFacet} slug={slug} brands={brandFacet} prices={priceFacet}> <Container>
-            <ProductCategoryChip category={rawData[0].category} />
-            {/* <GenderTabContainer value={genderIndex} /> */}
+        <Box sx={{ width: "100%" }}>
+            <TopNavigation selected={0} />
+        </Box>
+        <ProductCategoryChip category={rawData[0].category} />
+        <Box sx={{ width: "100%" }}>
+            <KeywordsTabContainer category={category} rawData={rawData} slug={slug} />
+        </Box>
+        <Grid container >
+        <Grid item xs={1}>
+     
+        </Grid>
+        <Grid item>
+            <span style={{color:'#5e5e5e',paddingLeft:10}}>
+            {filteredByUrlData.length} adet
+            </span>
+      
+        </Grid>
+         
+            
         
+        </Grid>
+
+
+        <Drawer colors={colorFacet} slug={slug} brands={brandFacet} prices={priceFacet}> <Container>
+          
+            {/* <GenderTabContainer value={genderIndex} /> */}
+
             <Grid container gap={1} sx={{ display: 'flex', justifyContent: 'center' }}> {pagesData.map((m, i) => <Grid item key={i} > <Image matchingCategories={matchingCategories} {...m} pageTitle={''} /></Grid>)}</Grid>
             <PaginationContainer count={pageCount} page={page} url={`/sponsor-kiyafeti/${gender}/${category}/${selectedKeywords}/sayfa/`} />
         </Container>
@@ -182,11 +197,11 @@ export function KeywordsTabContainer({ value = 1000, category, rawData, slug }) 
 
 
             const imageUrl = rawData.find(r => {
-                const obj = {...r, category: '' }
+                const obj = { ...r, category: '' }
                 return searchObject(obj, [m])
             })
-            if(!imageUrl){
-                console.log('m-',m, imageUrl)
+            if (!imageUrl) {
+                console.log('m-', m, imageUrl)
             }
             if (imageUrl) {
                 return { image: imageUrl.image[0], label: m }
@@ -199,11 +214,11 @@ export function KeywordsTabContainer({ value = 1000, category, rawData, slug }) 
             const removeUrl = keywordIndex === i.toString() ? categoryIndex : i.toString()
             const reversedUrl = [...slug].reverse()
             reversedUrl[2] = removeUrl
-            reversedUrl[0]='1'
+            reversedUrl[0] = '1'
             const nextUrl = '/sponsor-kiyafeti/' + reversedUrl.reverse().join('/')
-            
-            return <Tab key={i} label={<KeywordItem selected={selectedKeywords === i.toString()} nextUrl={nextUrl} initialAllSelection={initialAllSelection} image={m.image} label={m.label} slug={slug} category={category} />} />
-        })
+
+            return { selected: selectedKeywords === i.toString()?1:0, render: <Tab key={i} label={<KeywordItem selected={selectedKeywords === i.toString()} nextUrl={nextUrl} initialAllSelection={initialAllSelection} image={m.image} label={m.label} slug={slug} category={category} />} /> }
+        }).sort((x, y) => y.selected-x.selected).map(m => m.render)
         }
 
     </Tabs></Box>

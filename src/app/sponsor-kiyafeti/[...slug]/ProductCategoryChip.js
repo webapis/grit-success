@@ -1,7 +1,31 @@
 'use client';
-import { Chip,Box } from "@mui/material";
+import { Chip,Box,Container } from "@mui/material";
+import Typography from '@mui/material/Typography';
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import Link from '@mui/material/Link';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import HomeIcon from '@mui/icons-material/Home';
+// export default function ProductCategoryChip({category}){
 
-export default function ProductCategoryChip({category}){
-
-    return <Box sx={{display:'flex',justifyContent:'center',width:'100%', margin:2}}><Chip component="h1" color="primary" variant="outlined" label={category} onDelete={()=>{window.location.replace('/sponsor-kiyafeti') }}/></Box> 
-}
+//     return <Box sx={{display:'flex',justifyContent:'center',width:'100%', margin:2}}><Chip size="small" component="h1" color="primary" variant="outlined" label={category} onDelete={()=>{window.location.replace('/sponsor-kiyafeti') }}/></Box> 
+// }
+export default function BasicBreadcrumbs({category}) {
+    return (
+      <Container role="presentation" >
+        <Breadcrumbs aria-label="breadcrumb"   separator={<NavigateNextIcon fontSize="small" />}>
+          <Link underline="hover" color="inherit" href="/">
+          <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
+            Anasafa
+          </Link>
+          <Link
+            underline="hover"
+            color="inherit"
+            href="/sponsor-kiyafeti"
+          >
+            sponsor kiyafeti
+          </Link>
+          <Typography color="text.primary" style={{textDecoration:'underline'}}>{category.replaceAll(',','-')}</Typography>
+        </Breadcrumbs>
+      </Container>
+    );
+  }
