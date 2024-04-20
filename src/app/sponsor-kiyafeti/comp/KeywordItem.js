@@ -10,14 +10,14 @@ import Typography from '@mui/material/Typography';
 
 export default function KeywordItem({image,label,selected,nextUrl}) {
 
-
+console.log('label',label)
   return (
     <Link href={nextUrl} style={{textDecoration:"none",}}>
     <Card sx={{ display: 'flex',backgroundColor:selected?"#e8f0fe":"white", color:selected?"#1A73E8":"black",padding:0.5,border:selected?"1px solid #1A73E8":"none",borderRadius:1} }>
-      <CardMedia
+      <img
         component="img"
-        sx={{ height:56}}
-        image={image}
+        style={{ height:56}}
+        src={`/dizi/keywords/${label}.jpg`}
         alt=""
       />
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>

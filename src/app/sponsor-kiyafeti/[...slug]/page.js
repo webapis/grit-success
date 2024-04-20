@@ -200,12 +200,10 @@ export function KeywordsTabContainer({ value = 1000, category, rawData, slug }) 
                 const obj = { ...r, category: '' }
                 return searchObject(obj, [m])
             })
-            if (!imageUrl) {
-                console.log('m-', m, imageUrl)
-            }
-            if (imageUrl) {
-                return { image: imageUrl.image[0], label: m }
-            }
+           
+           // if (imageUrl) {
+                return {  label: m }
+           // }
             return null
 
 

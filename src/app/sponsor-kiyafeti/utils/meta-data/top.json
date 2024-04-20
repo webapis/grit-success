@@ -58,9 +58,10 @@
             "body",
             "büstiyer",
             "crop",
-            "üst"
+            "üst",
+            "top"
         ],
-        "name": "atlet, body, büstiyer, crop, üst",
+        "name": "atlet, body, büstiyer, crop, top",
         "group": "üst giyim"
     },
     {
