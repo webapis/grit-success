@@ -2,7 +2,7 @@
 import { promises as fs } from 'fs';
 import Link from 'next/link';
 import Image from "../comp/Image";
-import { Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { Container } from '@mui/material';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -66,9 +66,7 @@ export default async function SponsorKiyafetiPage({ params }) {
     const selectedKeywords = [...slug].reverse()[2]
     const categoryIndex = category.split('-').map((m, i) => { return { index: i.toString(), category: m } })
     const matchingCategories = categoryIndex.filter(f => selectedKeywords.includes(f.index))
-    console.log('selectedKeywords', selectedKeywords)
-    console.log('categoryIndex', categoryIndex)
-    console.log('matchingCategories', matchingCategories)
+
     //colors
     let urlColors = Object.keys(colors)
 
@@ -137,11 +135,18 @@ export default async function SponsorKiyafetiPage({ params }) {
     debugger
 
     return <>
-        <TopNavigation selected={0} />
+ <Box sx={{width:"100%"}}>
+ <TopNavigation selected={0} />
+ </Box>
+ <Box sx={{width:"100%"}}>
+ <KeywordsTabContainer category={category} rawData={rawData} slug={slug} />
+    </Box>
+    
+       
         <Drawer colors={colorFacet} slug={slug} brands={brandFacet} prices={priceFacet}> <Container>
             <ProductCategoryChip category={rawData[0].category} />
             {/* <GenderTabContainer value={genderIndex} /> */}
-            <KeywordsTabContainer category={category} rawData={rawData} slug={slug} />
+        
             <Grid container gap={1} sx={{ display: 'flex', justifyContent: 'center' }}> {pagesData.map((m, i) => <Grid item key={i} > <Image matchingCategories={matchingCategories} {...m} pageTitle={''} /></Grid>)}</Grid>
             <PaginationContainer count={pageCount} page={page} url={`/sponsor-kiyafeti/${gender}/${category}/1/sayfa/`} />
         </Container>
