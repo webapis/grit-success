@@ -8,11 +8,12 @@ import Link from 'next/link';
 import Typography from '@mui/material/Typography';
 
 
-export default function KeywordItem({image,label,slug,category,initialAllSelection,nextUrl}) {
+export default function KeywordItem({image,label,selected,nextUrl}) {
 
 
   return (
-    <Card sx={{ display: 'flex' }} component={Link} href={nextUrl}>
+    <Link href={nextUrl} style={{textDecoration:"none",}}>
+    <Card sx={{ display: 'flex',backgroundColor:selected?"#e8f0fe":"white", color:selected?"#1A73E8":"black",padding:0.5,border:selected?"1px solid #1A73E8":"none",borderRadius:1} }>
       <CardMedia
         component="img"
         sx={{ height:56}}
@@ -21,7 +22,7 @@ export default function KeywordItem({image,label,slug,category,initialAllSelecti
       />
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <CardContent sx={{ flex: '1 0 auto' }}>
-          <Typography component="div" variant="h7">
+          <Typography component="div" variant="h7" >
            {label}
           </Typography>
         
@@ -30,5 +31,6 @@ export default function KeywordItem({image,label,slug,category,initialAllSelecti
       </Box>
   
     </Card>
+    </Link>
   );
 }

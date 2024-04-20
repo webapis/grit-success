@@ -62,7 +62,13 @@ export default async function SponsorKiyafetiPage({ params }) {
     let gender = decodeURI(slug[0])
     let category = decodeURI(slug[1])
     let page = parseInt(decodeURI([...slug].reverse()[0]))
-
+    //categoryIndex
+    const selectedKeywords = [...slug].reverse()[2]
+    const categoryIndex = category.split('-').map((m, i) => { return { index: i.toString(), category: m } })
+    const matchingCategories = categoryIndex.filter(f => selectedKeywords.includes(f.index))
+    console.log('selectedKeywords', selectedKeywords)
+    console.log('categoryIndex', categoryIndex)
+    console.log('matchingCategories', matchingCategories)
     //colors
     let urlColors = Object.keys(colors)
 
@@ -104,7 +110,22 @@ export default async function SponsorKiyafetiPage({ params }) {
 
     const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/${gender}/${category}-sponsorkiyafeti.json`), 'utf8');
     const rawData = orderData(JSON.parse(data)).filter(f => !f.error)
-    const filteredByUrlData = rawData.filter(f => matchingColors.length > 0 ? searchObject(f, matchingColors) : true).filter(f => matchingBrands.length > 0 ? searchObject(f, matchingBrands.map(m => m.replaceAll('-', ' '))) : true).filter(f => matchingPrices.length > 0 ? findMatchingPrice(f.price, matchingPrices) : true)
+    const filteredByUrlData = rawData.filter((obj, i) => {
+        let object = {}
+
+        if (matchingCategories.length === 1) {
+            object = { ...obj, category: "", pageTitle: "", duplicateTitles: "",pageUrl:"" }
+        }else{
+            object=obj
+        }
+
+        if (searchObject(object, matchingCategories.map(m => m.category))) {
+            return true
+        } else {
+            return false
+        }
+
+    }).filter(f => matchingColors.length > 0 ? searchObject(f, matchingColors) : true).filter(f => matchingBrands.length > 0 ? searchObject(f, matchingBrands.map(m => m.replaceAll('-', ' '))) : true).filter(f => matchingPrices.length > 0 ? findMatchingPrice(f.price, matchingPrices) : true)
 
     let colorFacet = extractFacet(rawData, colors)
     let brandFacet = extractFacet(rawData, brands)
@@ -149,7 +170,7 @@ export function KeywordsTabContainer({ value = 1000, category, rawData, slug }) 
     const selectedKeywords = [...slug].reverse()[2]
     const categoryIndex = category.split('-').map((m, i) => i.toString()).join('')
     const initialAllSelection = selectedKeywords === categoryIndex
-    console.log('slug', slug)
+
     return <Container sx={{ display: 'flex', justifyContent: "center" }}> <Tabs value={value} sx={{ marginBottom: 1 }} variant="scrollable" scrollButtons allowScrollButtonsMobile>
 
         {category.split('-').map(m => {
@@ -167,12 +188,12 @@ export function KeywordsTabContainer({ value = 1000, category, rawData, slug }) 
 
         }).filter((f, i) => f).map((m, i) => {
             const keywordIndex = [...slug].reverse()[2]
-            const removeUrl = keywordIndex.includes(i) ? keywordIndex.replace(i, '').split('').sort().join('') : (keywordIndex + i.toString()).split('').sort().join('')
+            const removeUrl = keywordIndex === i.toString() ? categoryIndex : i.toString()
             const reversedUrl = [...slug].reverse()
             reversedUrl[2] = removeUrl
-            const nextUrl= '/sponsor-kiyafeti/'+reversedUrl.reverse().join('/')
-          
-            return <Tab key={m} label={<KeywordItem nextUrl={nextUrl} initialAllSelection={initialAllSelection} image={m.image} label={m.label} slug={slug} category={category} />} />
+            const nextUrl = '/sponsor-kiyafeti/' + reversedUrl.reverse().join('/')
+
+            return <Tab key={m} label={<KeywordItem selected={selectedKeywords===i.toString()} nextUrl={nextUrl} initialAllSelection={initialAllSelection} image={m.image} label={m.label} slug={slug} category={category} />} />
         })
         }
 
