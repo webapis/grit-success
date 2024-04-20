@@ -201,7 +201,7 @@ export function KeywordsTabContainer({ value = 1000, category, rawData, slug }) 
             reversedUrl[2] = removeUrl
             reversedUrl[0]='1'
             const nextUrl = '/sponsor-kiyafeti/' + reversedUrl.reverse().join('/')
-            console.log('')
+            
             return <Tab key={i} label={<KeywordItem selected={selectedKeywords === i.toString()} nextUrl={nextUrl} initialAllSelection={initialAllSelection} image={m.image} label={m.label} slug={slug} category={category} />} />
         })
         }
