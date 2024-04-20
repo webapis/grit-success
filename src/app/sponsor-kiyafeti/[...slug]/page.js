@@ -114,9 +114,9 @@ export default async function SponsorKiyafetiPage({ params }) {
         let object = {}
 
         if (matchingCategories.length === 1) {
-            object = { ...obj, category: "", pageTitle: "", duplicateTitles: "",pageUrl:"" }
-        }else{
-            object=obj
+            object = { ...obj, category: "", pageTitle: "", duplicateTitles: "", pageUrl: "" }
+        } else {
+            object = obj
         }
 
         if (searchObject(object, matchingCategories.map(m => m.category))) {
@@ -127,9 +127,9 @@ export default async function SponsorKiyafetiPage({ params }) {
 
     }).filter(f => matchingColors.length > 0 ? searchObject(f, matchingColors) : true).filter(f => matchingBrands.length > 0 ? searchObject(f, matchingBrands.map(m => m.replaceAll('-', ' '))) : true).filter(f => matchingPrices.length > 0 ? findMatchingPrice(f.price, matchingPrices) : true)
 
-    let colorFacet = extractFacet(rawData, colors)
-    let brandFacet = extractFacet(rawData, brands)
-    let priceFacet = extractPriceFacet(rawData, prices)
+    let colorFacet = extractFacet(filteredByUrlData, colors)
+    let brandFacet = extractFacet(filteredByUrlData, brands)
+    let priceFacet = extractPriceFacet(filteredByUrlData, prices)
 
     debugger
     const pagesData = paginate(orderData(filteredByUrlData), page, 100)
@@ -193,7 +193,7 @@ export function KeywordsTabContainer({ value = 1000, category, rawData, slug }) 
             reversedUrl[2] = removeUrl
             const nextUrl = '/sponsor-kiyafeti/' + reversedUrl.reverse().join('/')
 
-            return <Tab key={m} label={<KeywordItem selected={selectedKeywords===i.toString()} nextUrl={nextUrl} initialAllSelection={initialAllSelection} image={m.image} label={m.label} slug={slug} category={category} />} />
+            return <Tab key={m} label={<KeywordItem selected={selectedKeywords === i.toString()} nextUrl={nextUrl} initialAllSelection={initialAllSelection} image={m.image} label={m.label} slug={slug} category={category} />} />
         })
         }
 
@@ -217,8 +217,8 @@ function extractFacet(rawData, facetCandidate) {
         for (let facet in total) {
 
             const currentFacet = total[facet]
-
-            const exists = searchObject(currentValue, [facet.replaceAll('-', ' ')])
+            const obj = { ...currentValue, category: "" }
+            const exists = searchObject(obj, [facet.replaceAll('-', ' ')])
 
             if (exists) {
 
