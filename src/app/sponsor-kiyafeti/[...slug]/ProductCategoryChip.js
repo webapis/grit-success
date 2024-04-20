@@ -11,19 +11,13 @@ import HomeIcon from '@mui/icons-material/Home';
 // }
 export default function BasicBreadcrumbs({category}) {
     return (
-      <Container role="presentation" >
+      <Container role="presentation" sx={{marginTop:1}}>
         <Breadcrumbs aria-label="breadcrumb"   separator={<NavigateNextIcon fontSize="small" />}>
           <Link underline="hover" color="inherit" href="/">
           <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
             Anasafa
           </Link>
-          <Link
-            underline="hover"
-            color="inherit"
-            href="/sponsor-kiyafeti"
-          >
-            sponsor kiyafeti
-          </Link>
+ 
           <Typography color="text.primary" style={{textDecoration:'underline'}}>{category.replaceAll(',','-')}</Typography>
         </Breadcrumbs>
       </Container>

@@ -12,9 +12,10 @@
             "mayo",
             "mayokini",
             "bikini",
-            "pareo"
+            "pareo",
+            "plaj"
         ],
-        "name": "plaj, pareo, mayo, bikini",
+        "name": "pareo, mayo, bikini",
         "group": "plaj"
     }
 ]

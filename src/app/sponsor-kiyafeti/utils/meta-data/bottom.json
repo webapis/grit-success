@@ -1,10 +1,10 @@
 [
     {
         "keywords": [
-            "pantolon",
+            "pantolon","eşofman","tayt","jogger",
             "trousers"
         ],
-        "name": "pantolon",
+        "name": "pantolon, eşofman, tayt, jogger",
         "group": "alt giyim"
     },
     {
@@ -23,27 +23,9 @@
         "name": "etek",
         "group": "alt giyim"
     },
-    {
-        "keywords": [
-            "eşofman"
-        ],
-        "name": "eşofman",
-        "group": "alt giyim"
-    },
-    {
-        "keywords": [
-            "tayt"
-        ],
-        "name": "tayt",
-        "group": "alt giyim"
-    },
-    {
-        "keywords": [
-            "jogger"
-        ],
-        "name": "jogger",
-        "group": "alt giyim"
-    },
+  
+ 
+   
     {
         "keywords": [
             "tulum"

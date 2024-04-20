@@ -6,10 +6,9 @@
             "dress",
             "abiye elbise"
         ],
-        "name": "elbise",
+        "name": "elbise, abiye",
         "group": "üst giyim"
     },
- 
     {
         "keywords": [
             "sweatshirt",
@@ -32,72 +31,38 @@
         "name": "tişört",
         "group": "üst giyim"
     },
+    
     {
         "keywords": [
-            "atlet"
-        ],
-        "name": "atlet",
-        "group": "üst giyim"
-    },
-    {
-        "keywords": [
-            "gömlek"
-        
-        ],
-        "name": "gömlek",
-        "group": "üst giyim"
-    }
-    ,
-    {
-        "keywords": [
-          
+            "gömlek",
             "bluz",
+            "tunik",
             "Blouse"
-           
         ],
-        "name": "bluz",
-        "group": "üst giyim"
-    }
-    ,
-    {
-        "keywords": [
-            "tunik"
-        ],
-        "name": "tunik",
+        "name": "gömlek, bluz, tunik",
         "group": "üst giyim"
     },
     {
         "keywords": [
-            "kazak"
-        ],
-        "name": "kazak",
-        "group": "üst giyim"
-    }
-    ,
-    {
-        "keywords": [
-            "hırka"
-        ],
-        "name": "hırka",
-        "group": "üst giyim"
-    }
-    ,
-    {
-        "keywords": [
+            "kazak",
+            "hırka",
             "suveter",
             "süveter"
         ],
-        "name": "süveter",
+        "name": "kazak, hırka, süveter",
         "group": "üst giyim"
     },
     {
         "keywords": [
-            "body"
+            "atlet",
+            "body",
+            "büstiyer",
+            "crop",
+            "üst"
         ],
-        "name": "body",
+        "name": "atlet, body, büstiyer, crop, üst",
         "group": "üst giyim"
     },
-  
     {
         "keywords": [
             "kimono"
@@ -105,27 +70,13 @@
         "name": "kimono",
         "group": "üst giyim"
     },
-
     {
         "keywords": [
             "pelerin"
         ],
         "name": "pelerin",
         "group": "üst giyim"
-    },
-    {
-        "keywords": [
-            "büstiyer"
-        ],
-        "name": "büstiyer",
-        "group": "üst giyim"
-    },
-    {
-        "keywords": [
-            "crop", "üst"
-        ],
-        "name": "crop, üst",
-        "group": "üst giyim"
     }
-  
+    
+   
 ]
