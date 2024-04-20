@@ -57,10 +57,9 @@
             "bere",
             "kasket",
             "şapkası",
-            "hat",
-            "kask"
+            "hat"
         ],
-        "name": "şapka, bere, kasket, kask",
+        "name": "şapka, bere, kasket",
         "group": "aksesuar"
     },
     {

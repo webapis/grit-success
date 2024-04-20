@@ -6,35 +6,24 @@
             "сoat",
             "palto",
             "pardösü",
-            "manto"
+            "manto",
+            "trençkot",
+            "Trench Coat"
         ],
-        "name": "kaban, mont, palto, manto, pardösü",
+        "name": "kaban, mont, palto, manto, pardösü, trençkot",
         "group": "dış giyim"
     },
     {
         "keywords": [
             "blazer",
             "ceket",
-            "Jacket"
-        ],
-        "name": "blazer, ceket",
-        "group": "dış giyim"
-    },
-    {
-        "keywords": [
+            "Jacket",
             "yelek"
         ],
-        "name": "yelek",
+        "name": "blazer, ceket, yelek",
         "group": "dış giyim"
     },
-    {
-        "keywords": [
-            "trençkot",
-            "Trench Coat"
-        ],
-        "name": "trençkot",
-        "group": "dış giyim"
-    },
+  
     {
         "keywords": [
             "smokin"
