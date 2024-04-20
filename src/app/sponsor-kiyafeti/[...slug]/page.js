@@ -142,7 +142,7 @@ export default async function SponsorKiyafetiPage({ params }) {
             <ProductCategoryChip category={rawData[0].category} />
             {/* <GenderTabContainer value={genderIndex} /> */}
             <KeywordsTabContainer category={category} rawData={rawData} slug={slug} />
-            <Grid container gap={1} sx={{ display: 'flex', justifyContent: 'center' }}> {pagesData.map((m, i) => <Grid item key={i} > <Image {...m} pageTitle={''} /></Grid>)}</Grid>
+            <Grid container gap={1} sx={{ display: 'flex', justifyContent: 'center' }}> {pagesData.map((m, i) => <Grid item key={i} > <Image matchingCategories={matchingCategories} {...m} pageTitle={''} /></Grid>)}</Grid>
             <PaginationContainer count={pageCount} page={page} url={`/sponsor-kiyafeti/${gender}/${category}/1/sayfa/`} />
         </Container>
         </Drawer>
@@ -177,9 +177,12 @@ export function KeywordsTabContainer({ value = 1000, category, rawData, slug }) 
 
 
             const imageUrl = rawData.find(r => {
-                const obj = { ...r, category: '' }
+                const obj = {...r, category: '' }
                 return searchObject(obj, [m])
             })
+            if(!imageUrl){
+                console.log('m-',m, imageUrl)
+            }
             if (imageUrl) {
                 return { image: imageUrl.image[0], label: m }
             }

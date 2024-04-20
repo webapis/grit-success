@@ -3,10 +3,18 @@
 
 import Link from "next/link"
 import { Typography, Box, Grid } from "@mui/material"
-
-export default function Image({ image, title, link, marka, price, currency }) {
-
-
+import deaccent from "./deaccent"
+export default function Image({ image, title, link, marka, price, currency,matchingCategories }) {
+const selectedCategories = matchingCategories.map(m=>m.category)
+console.log("selectedCategories",selectedCategories)
+const matchingWords = title.split(' ').map((m)=>{
+console.log("selectedCategories.includes(deaccent(m.toLowerCase())",selectedCategories.includes(deaccent(m.toLowerCase())))
+  if(selectedCategories.includes(deaccent(m.toLowerCase())) ){
+    return <span key={m} style={{color:"#1A73E8", textTransform:"capitalize", fontSize:14, fontWeight:700}}>{m.toLowerCase()} {" "}</span>
+  }else{
+    return <span key={m} style={{ textTransform:"capitalize",fontSize:14}}>{m.toLowerCase()}{" "}</span>
+  }
+})
 
   return <Link href={link} target="_blank" style={{ textDecoration: 'none', color: '#757575' }} >
 
@@ -30,7 +38,8 @@ export default function Image({ image, title, link, marka, price, currency }) {
 
     </Box>
     <Box sx={{ width: { xs: 140, md: 200 } }}>
-      <Typography variant="caption" style={{ width: '100%', wordWrap: 'break-word', textDecoration: 'none', color: 'inherit', fontFamily: 'inherit' }}>{title}</Typography>
+      {matchingWords}
+      {/* <Typography variant="caption" style={{ width: '100%', wordWrap: 'break-word', textDecoration: 'none', color: 'inherit', fontFamily: 'inherit' }}>{matchingWords}</Typography> */}
     </Box>
   </Link>
 }
