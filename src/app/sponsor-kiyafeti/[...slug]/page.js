@@ -62,11 +62,11 @@ export default async function SponsorKiyafetiPage({ params }) {
     let gender = decodeURI(slug[0])
     let category = decodeURI(slug[1])
     let page = parseInt(decodeURI([...slug].reverse()[0]))
-    console.log('category', category)
+
     //colors
     let urlColors = Object.keys(colors)
 
-    console.log('slug', slug.map(m => decodeURI(m)))
+
     const matchingColors = findMatching(slug.map(m => decodeURI(m)), urlColors)
     //marka 
     let urlBrands = Object.keys(brands)
@@ -120,7 +120,7 @@ export default async function SponsorKiyafetiPage({ params }) {
         <Drawer colors={colorFacet} slug={slug} brands={brandFacet} prices={priceFacet}> <Container>
             <ProductCategoryChip category={rawData[0].category} />
             {/* <GenderTabContainer value={genderIndex} /> */}
-            <KeywordsTabContainer category={category} rawData={rawData} />
+            <KeywordsTabContainer category={category} rawData={rawData} slug={slug} />
             <Grid container gap={1} sx={{ display: 'flex', justifyContent: 'center' }}> {pagesData.map((m, i) => <Grid item key={i} > <Image {...m} pageTitle={''} /></Grid>)}</Grid>
             <PaginationContainer count={pageCount} page={page} url={`/sponsor-kiyafeti/${gender}/${category}/1/sayfa/`} />
         </Container>
@@ -145,8 +145,11 @@ export function GenderTabContainer({ value = 0 }) {
     </Tabs></Container>
 }
 
-export function KeywordsTabContainer({ value = 1000, category, rawData }) {
-
+export function KeywordsTabContainer({ value = 1000, category, rawData, slug }) {
+    const selectedKeywords = [...slug].reverse()[2]
+    const categoryIndex = category.split('-').map((m, i) => i.toString()).join('')
+    const initialAllSelection = selectedKeywords === categoryIndex
+    console.log('slug', slug)
     return <Container sx={{ display: 'flex', justifyContent: "center" }}> <Tabs value={value} sx={{ marginBottom: 1 }} variant="scrollable" scrollButtons allowScrollButtonsMobile>
 
         {category.split('-').map(m => {
@@ -162,7 +165,15 @@ export function KeywordsTabContainer({ value = 1000, category, rawData }) {
             return null
 
 
-        }).filter(f => f).map(m => <Tab key={m} label={<KeywordItem image={m.image} label={m.label} />} href="/" />)
+        }).filter((f, i) => f).map((m, i) => {
+            const keywordIndex = [...slug].reverse()[2]
+            const removeUrl = keywordIndex.includes(i) ? keywordIndex.replace(i, '').split('').sort().join('') : (keywordIndex + i.toString()).split('').sort().join('')
+            const reversedUrl = [...slug].reverse()
+            reversedUrl[2] = removeUrl
+            const nextUrl= '/sponsor-kiyafeti/'+reversedUrl.reverse().join('/')
+          
+            return <Tab key={m} label={<KeywordItem nextUrl={nextUrl} initialAllSelection={initialAllSelection} image={m.image} label={m.label} slug={slug} category={category} />} />
+        })
         }
 
     </Tabs></Container>
