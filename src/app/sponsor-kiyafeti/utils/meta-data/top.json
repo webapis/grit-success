@@ -5,9 +5,10 @@
             "elb-elbise",
             "dresses=elbise",
             "dress=elbise",
-            "abiye"
+            "abiye",
+            "tulum"
         ],
-        "name": "elbise, abiye",
+        "name": "elbise, abiye, tulum",
         "group": "üst giyim"
     },
     {
@@ -18,20 +19,7 @@
         "name": "Sweatshirt",
         "group": "üst giyim"
     },
-    {
-        "keywords": [
-            "t-Shirt",
-            "tişört",
-            "T-Shirt",
-            "T-Shirt",
-            "Tsihrt",
-            "T-Shırt",
-            "Tshirt",
-            "T-SHİRT"
-        ],
-        "name": "tişört",
-        "group": "üst giyim"
-    },
+
     
     {
         "keywords": [
@@ -55,23 +43,25 @@
     },
     {
         "keywords": [
+            "t-Shirt=tişört",
+            "tişört",
+            "T-Shirt=tişört",
+            "T-Shirt=tişört",
+            "Tsihrt=tişört",
+            "T-Shırt=tişört",
+            "Tshirt=tişört",
+            "T-SHİRT=tişört",
             "atlet",
             "body",
             "büstiyer",
             "crop",
-            "üst",
+            "üst=top",
             "top"
         ],
-        "name": "atlet, body, büstiyer, crop, top",
+        "name": "tişört, atlet, body, büstiyer, crop, top",
         "group": "üst giyim"
     },
-    {
-        "keywords": [
-            "kimono"
-        ],
-        "name": "kimono",
-        "group": "üst giyim"
-    },
+   
     {
         "keywords": [
             "pelerin"
