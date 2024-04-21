@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 
 export default function KeywordItem({image,label,selected,nextUrl,subcat}) {
 
-console.log('label',label)
+
   return (
     <Link href={nextUrl} style={{textDecoration:"none",}}>
     <Card sx={{ display: 'flex',backgroundColor:selected?"#e8f0fe":"white", color:selected?"#1A73E8":"black",padding:0.5,border:selected?"1px solid #1A73E8":"none",borderRadius:1} }>

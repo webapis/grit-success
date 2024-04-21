@@ -7,9 +7,10 @@
             "EŞARP=atkı",
             "Eşarp=atkı",
             "fular=fular",
-            "boyunluk=boyunluk"
+            "boyunluk=boyunluk",
+            "panço"
         ],
-        "name": "şal, atkı, fular, boyunluk",
+        "name": "şal, atkı, fular, boyunluk, panço",
         "group": "aksesuar"
     },
     {

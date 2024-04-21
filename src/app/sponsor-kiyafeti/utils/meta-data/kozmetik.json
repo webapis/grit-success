@@ -2,9 +2,9 @@
 [
     {
         "keywords": [
-            "parfum","parfüm","vücut spreyi", "vücut losyonu","vücut peelingi","Vücut Kremi","Vücut Yağı","El Kremi","Duş Jeli","Vücut Bakım","Dudak Bakımı"
+            "parfum=parfüm","parfüm","sprey", "losyon","peeling","krem","yağ","jel","dudak"
         ],
-        "name": "parfüm, vücut, dudak",
+        "name": "parfüm, krem, sprey, yağ, dudak, losyon, jel, peeling",
         "group":"kozmetik"
     }
   
