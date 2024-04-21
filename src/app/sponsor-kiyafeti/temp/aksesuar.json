@@ -1,13 +1,13 @@
 [
     {
         "keywords": [
-            "şal=şal",
-            "scarf=atkı",
-            "atkı=atkı",
-            "EŞARP=atkı",
-            "Eşarp=atkı",
-            "fular=fular",
-            "boyunluk=boyunluk"
+            "şal",
+            "scarf",
+            "atkı",
+            "EŞARP",
+            "Eşarp",
+            "fular",
+            "boyunluk"
         ],
         "name": "şal, atkı, fular, boyunluk",
         "group": "aksesuar"
@@ -21,11 +21,11 @@
     },
     {
         "keywords": [
-            "çorap",
-            "Socks-çorap",
+            "corap",
+            "Socks",
             "eldiven"
         ],
-        "name": "çorap, eldiven",
+        "name": "corap, eldiven",
         "group": "aksesuar"
     },
     {

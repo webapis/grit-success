@@ -1,6 +1,6 @@
 function mapPrice(price) {
 
-debugger
+
     try {
         const trimPrice = price?price.toString().replace('TL', '').replace('$', '').trim():0//.replace(/[a-z]/gi, '') 
 

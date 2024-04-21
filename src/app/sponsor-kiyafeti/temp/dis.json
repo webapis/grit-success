@@ -1,0 +1,41 @@
+[
+    {
+        "keywords": [
+            "kaban",
+            "mont",
+            "сoat",
+            "palto",
+            "pardösü",
+            "manto",
+            "trençkot",
+            "Trench Coat"
+        ],
+        "name": "kaban, mont, palto, manto, pardösü, trençkot",
+        "group": "dış giyim"
+    },
+    {
+        "keywords": [
+            "blazer",
+            "ceket",
+            "Jacket",
+            "yelek"
+        ],
+        "name": "blazer, ceket, yelek",
+        "group": "dış giyim"
+    },
+  
+    {
+        "keywords": [
+            "smokin"
+        ],
+        "name": "smokin",
+        "group": "dış giyim"
+    },
+    {
+        "keywords": [
+            "yağmurluk"
+        ],
+        "name": "yağmurluk",
+        "group": "dış giyim"
+    }
+]
