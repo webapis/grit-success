@@ -10,27 +10,15 @@
     {
         "keywords": [
             "şort",
-            "bermuda"
-        ],
-        "name": "şort",
-        "group": "alt giyim"
-    },
-    {
-        "keywords": [
+            "bermuda",
             "etek",
-            "skirt"
+            "skirt=etek"
         ],
-        "name": "etek",
+        "name": "şort, etek",
         "group": "alt giyim"
-    },
+    }
   
  
    
-    {
-        "keywords": [
-            "tulum"
-        ],
-        "name": "tulum",
-        "group": "alt giyim"
-    }
+   
 ]
