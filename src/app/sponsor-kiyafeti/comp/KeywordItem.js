@@ -8,7 +8,7 @@ import Link from 'next/link';
 import Typography from '@mui/material/Typography';
 
 
-export default function KeywordItem({image,label,selected,nextUrl}) {
+export default function KeywordItem({image,label,selected,nextUrl,subcat}) {
 
 console.log('label',label)
   return (
@@ -23,7 +23,7 @@ console.log('label',label)
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <CardContent sx={{ flex: '1 0 auto' }}>
           <Typography component="div" variant="h7" >
-           {label}
+           {subcat.split(' ').reverse()[0]}
           </Typography>
         
         </CardContent>
