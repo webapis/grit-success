@@ -3,10 +3,18 @@
 
 import Link from "next/link"
 import { Typography, Box, Grid } from "@mui/material"
+import deaccent from "./deaccent"
+export default function Image({ image, title, link, marka, price, currency,matchingCategories,subcat }) {
+const selectedCategories = matchingCategories.map(m=>m.category)
 
-export default function Image({ image, title, link, marka, price, currency }) {
+const matchingWords = title.split(' ').map((m)=>{
 
-
+  if(selectedCategories.includes(deaccent(m.toLowerCase()))||subcat.toLowerCase().split(' ').includes(m.toLowerCase()) ){
+    return <span key={m} style={{color:"#1A73E8", textTransform:"capitalize", fontSize:14, fontWeight:700}}>{m.toLowerCase()} {" "}</span>
+  }else{
+    return <span key={m} style={{ textTransform:"capitalize",fontSize:14}}>{m.toLowerCase()}{" "}</span>
+  }
+})
 
   return <Link href={link} target="_blank" style={{ textDecoration: 'none', color: '#757575' }} >
 
@@ -24,13 +32,14 @@ export default function Image({ image, title, link, marka, price, currency }) {
           <Typography sx={{ fontSize: 14, fontFamily: 'inherit' }}>{marka}</Typography>
         </Grid>
         <Grid item>
-          <Typography sx={{ fontSize: 12, fontFamily: 'inherit', textAlign:'end',width:'100%'}}>{price} {currency}</Typography>
+          <Typography sx={{ fontSize: 12, fontFamily: 'inherit', textAlign:'end',width:'100%'}}>{price>0 ? price:''} {price>0 ?currency:""}</Typography>
         </Grid>
       </Grid>
 
     </Box>
     <Box sx={{ width: { xs: 140, md: 200 } }}>
-      <Typography variant="caption" style={{ width: '100%', wordWrap: 'break-word', textDecoration: 'none', color: 'inherit', fontFamily: 'inherit' }}>{title}</Typography>
+      {matchingWords}
+      {/* <Typography variant="caption" style={{ width: '100%', wordWrap: 'break-word', textDecoration: 'none', color: 'inherit', fontFamily: 'inherit' }}>{matchingWords}</Typography> */}
     </Box>
   </Link>
 }
