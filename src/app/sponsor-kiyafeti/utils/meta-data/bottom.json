@@ -2,7 +2,7 @@
     {
         "keywords": [
             "pantolon","eşofman","tayt","jogger",
-            "trousers"
+            "trousers=pantolon","pants=pantolon"
         ],
         "name": "pantolon, eşofman, tayt, jogger",
         "group": "alt giyim"

@@ -2,14 +2,14 @@
     {
         "keywords": [
             "bileklik",
-            "necklaces",
+            "necklaces=kolye",
             "bilezik",
-            "bracelet",
+            "bracelet=bilezik",
             "kolye",
             "küpe",
             "yüzük",
             "broş",
-            "earrings","bros"
+            "earrings=küpe","bros=broş"
         ],
         "name": "yüzük, küpe, kolye, bilezik, bileklik, broş",
         "group": "Takı ,Mücevher"
