@@ -2,9 +2,9 @@
     {
         "keywords": [
             "elbise",
-            "dresses",
-            "dress",
-            "abiye elbise"
+            "dresses=elbise",
+            "dress=elbise",
+            "abiye"
         ],
         "name": "elbise, abiye",
         "group": "üst giyim"
