@@ -11,13 +11,14 @@ import deaccent from './deaccent';
 
 export default function SponsorKiyafetView({title ,content,group }) {
     
-    const {image,category,gender,total}=content
+    const {category,gender,total}=content
 const keywordint =category.split(',').map((m,i)=>i.toString()).join('') 
+//console.log('title',deaccent( title.replaceAll(',','-').replaceAll(' ','')).toLowerCase()  )
     return (
         <Card sx={{ maxWidth: 345,textDecoration:'none' }} component={Link} href={`/sponsor-kiyafeti/${deaccent( gender).toLowerCase().replaceAll(' ','-').replaceAll(',','')}/${deaccent(category).toLowerCase().replaceAll(' ','-').replaceAll(',','')}/${keywordint}/sayfa/1`} >
             <CardMedia
                 sx={{ height: {xs:200,sm:250,md:300}, width:'auto',objectFit:'contain' }}
-                image={image[0]}
+                image={`/dizi/sponsor-kiyafet/${deaccent(title.replaceAll(',','-').replaceAll(' ','')).toLowerCase()}.jpg`}
                 title={`${title} Dizi Sponsorları.`}
             />
 
