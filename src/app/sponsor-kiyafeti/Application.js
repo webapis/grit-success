@@ -13,7 +13,7 @@ import Drawer from './comp/drawer'
 export default async function Application({gender,value}) {
      const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/${gender}/sponsorkiyafetiMenu.json`), 'utf8');
      const pagesData = Object.entries(JSON.parse(data));
-    return <Drawer> <Container>
+    return <Drawer slug={[]}> <Container>
 
         <Typography variant='h4' textAlign='center' sx={{ marginBottom:2,marginTop:1 , fontSize:{ xs:20,sm:30} }}>Sponsor Kıyafeti- Kategori</Typography>
         {/* <GenderTabContainer value={value} /> */}

@@ -15,6 +15,7 @@ import Divider from '@mui/material/Divider';
 import DizivliewListItem from './DiziviewListItem';
 import data from '@/app/sponsor-kiyafeti/data/kadin/sponsorkiyafetiMenu.json';
 import Link from 'next/link';
+import KeywordMenu from '../KeywordMenu'
 
 const arrayData = Object.entries(data);
 const drawerWidth = 240;
@@ -66,7 +67,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
     justifyContent: 'flex-end',
 }));
 
-export default function PersistentDrawerLeft({ children }) {
+export default function PersistentDrawerLeft({ children,colors,slug, brands,prices }) {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
@@ -82,7 +83,8 @@ export default function PersistentDrawerLeft({ children }) {
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
             <AppBar position="fixed" open={open} style={{ backgroundColor: 'white', zIndex: 500 }} >
-                <Toolbar>
+                <Toolbar style={{display:'flex',justifyContent:'space-between'}}>
+                    <div>
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
@@ -109,6 +111,17 @@ export default function PersistentDrawerLeft({ children }) {
                     >
                         Glumzi
                     </Typography>
+                    </div>
+                    <div style={{display:"flex",flex:10,justifyContent:'center'}}>
+             
+
+                     
+                    {/* {slug.length>3 &&    <KeywordMenu backgroundC="#1976D2" obj={colors} slug={slug} id="colorsid" letter="R" tooltipTitle="Renkler"/> }
+                    {slug.length>3 &&    <KeywordMenu backgroundC="#1976D2" obj={brands} slug={slug} id="brandsid" letter="M" tooltipTitle="Markalar"/> }
+                    {slug.length>3 &&    <KeywordMenu backgroundC="#1976D2" obj={prices} slug={slug} id="pricesid" letter="F" tooltipTitle="Fiyat"/> }
+                  */}
+                    </div>
+                    <div style={{flex:1}}></div>
                 </Toolbar>
             </AppBar>
             <Drawer
