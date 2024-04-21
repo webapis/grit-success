@@ -31,7 +31,7 @@
     {
         "keywords": [
             "omuzluk",
-            "Omuz Aksesuarı"
+            "Omuz Aksesuarı-omuzluk"
         ],
         "name": "omuzluk",
         "group": "aksesuar"
@@ -56,8 +56,8 @@
             "şapka",
             "bere",
             "kasket",
-            "şapkası",
-            "hat"
+            "şapkası-şapka",
+            "hat-şapka"
         ],
         "name": "şapka, bere, kasket",
         "group": "aksesuar"
@@ -65,7 +65,7 @@
     {
         "keywords": [
             "kemer",
-            "belt"
+            "belt-kemer"
         ],
         "name": "kemer",
         "group": "aksesuar"
