@@ -13,9 +13,10 @@
             "mayokini",
             "bikini",
             "pareo",
-            "plaj"
+            "plaj",
+            "peştemal"
         ],
-        "name": "pareo, mayo, bikini",
+        "name": "pareo, mayo, bikini, peştemal",
         "group": "plaj"
     }
 ]

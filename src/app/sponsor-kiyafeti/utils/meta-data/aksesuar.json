@@ -26,6 +26,7 @@
             "Socks-çorap",
             "eldiven"
         ],
+        "negative":["Çoraplı","Bot"],
         "name": "çorap, eldiven",
         "group": "aksesuar"
     },
@@ -69,6 +70,14 @@
             "belt-kemer"
         ],
         "name": "kemer",
+        "group": "aksesuar"
+    },
+    {
+        "keywords": [
+            "gözlük",
+            "gözlüğü-gözlük"
+        ],
+        "name": "gözlük",
         "group": "aksesuar"
     }
 ]

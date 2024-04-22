@@ -1,14 +1,19 @@
 [
     {
         "keywords": [
-            "pantolon","eşofman","tayt","jogger",
-            "trousers=pantolon","pants=pantolon"
+            "pantolon",
+            "eşofman",
+            "tayt",
+            "jogger",
+            "trousers=pantolon",
+            "pants=pantolon"
         ],
         "name": "pantolon, eşofman, tayt, jogger",
         "group": "alt giyim"
     },
     {
         "keywords": [
+            "shorts=şort",
             "şort",
             "bermuda",
             "etek",
@@ -17,8 +22,4 @@
         "name": "şort, etek",
         "group": "alt giyim"
     }
-  
- 
-   
-   
 ]
