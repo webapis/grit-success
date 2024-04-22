@@ -71,8 +71,8 @@ export default function categorizedProducts(items) {
 
 
     }
-    const subcat = kategoryKeyword ? kategoryArray.find(f => f.keywords.map(m => m.indexOf('=') !== -1 ? m.substring(0, m.indexOf('=')) : m).includes(kategoryKeyword)) : 'diğer'
-    const subkey = kategoryKeyword ? subcat.keywords.find(f => f.indexOf('=') !== -1 ? f.substring(0, f.indexOf('=')).includes(kategoryKeyword) : f.includes(kategoryKeyword)) : 'diğer'
+    const subcat = (!kategoryNegativeExists && kategoryKeyword) ? kategoryArray.find(f => f.keywords.map(m => m.indexOf('=') !== -1 ? m.substring(0, m.indexOf('=')) : m).includes(kategoryKeyword)) : 'diğer'
+    const subkey = (!kategoryNegativeExists && kategoryKeyword) ? subcat.keywords.find(f => f.indexOf('=') !== -1 ? f.substring(0, f.indexOf('=')).includes(kategoryKeyword) : f.includes(kategoryKeyword)) : 'diğer'
 
 
 
@@ -81,9 +81,9 @@ export default function categorizedProducts(items) {
       ...m,
       color: colorKeyword ? colorName.name : "diğer",
       gender: genderKeyword ? genderName.name : "diğer",
-      category: kategoryKeyword ? kategoryName.name : "diğer",
-      subcat: kategoryKeyword ? subkey.replace('=', ' ') : 'diğer',
-      group: kategoryKeyword ? kategoryName.group : "diğer"
+      category: (!kategoryNegativeExists && kategoryKeyword) ? kategoryName.name : "diğer",
+      subcat: (!kategoryNegativeExists && kategoryKeyword) ? subkey.replace('=', ' ') : 'diğer',
+      group: (!kategoryNegativeExists && kategoryKeyword) ? kategoryName.group : "diğer"
 
     }
 

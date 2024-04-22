@@ -21,9 +21,10 @@
             "Heeled Slide=topuklu",
             "çizme",
             "babet",
-            "Ballerina"
+            "Ballerina",
+            "ev patiği"
         ],
-        "negative":["çorap"],
+        "negative":["çorap","jeans","shorts","pantalon","jean"],
         "name": "ayakkabı, platform, stiletto, sandalet, bot, çizme, terlik, sneaker, makosen, babet",
         "group": "ayakkabı"
     }
