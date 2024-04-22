@@ -15,7 +15,7 @@ export default function Diziview({ title, content }) {
 
             >
                 <ListItemButton component={Link}
-                    href={`/dizikiyafeti/${tag}-dizi-kiyafetleri`}
+                    href={`/dizikiyafeti/${tag}-dizi-kiyafetleri`}  target='_blank'
                   >
                     {title}
                 </ListItemButton>

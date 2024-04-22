@@ -34,7 +34,7 @@ export default function Diziview({title ,content }) {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button endIcon={<OpenInNewIcon/>} size="small" component={Link} href={`/dizikiyafeti/${tag}-dizi-kiyafetleri`} >sayfaya git</Button>
+                <Button endIcon={<OpenInNewIcon/>} size="small" component={Link} href={`/dizikiyafeti/${tag}-dizi-kiyafetleri`}  target='_blank'>sayfaya git</Button>
             </CardActions>
         </Card>
     );

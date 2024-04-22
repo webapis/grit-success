@@ -12,7 +12,7 @@ export default function Diziview({ title, keyword }) {
             <ListItem disablePadding
             >
                 <ListItemButton component={Link}
-                    href={`/dizi-sponsor-kategori/${keyword}/sayfa/1`}
+                    href={`/dizi-sponsor-kategori/${keyword}/sayfa/1`}  target='_blank'
                 >
                     {title}
                 </ListItemButton>

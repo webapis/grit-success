@@ -34,7 +34,7 @@ export default function SponsorKategoriView({kategori ,total,keyword }) {
           
             </CardContent>
             <CardActions>
-                <Button endIcon={  <OpenInNewIcon/>} component={Link} href={`/dizi-sponsor-kategori/${keyword}/sayfa/1`} >
+                <Button endIcon={  <OpenInNewIcon/>} component={Link} href={`/dizi-sponsor-kategori/${keyword}/sayfa/1`}  target='_blank'>
                 sayfaya git
                   
                 </Button>
