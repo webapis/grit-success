@@ -23,6 +23,7 @@
             "babet",
             "Ballerina"
         ],
+        "negative":["çorap"],
         "name": "ayakkabı, platform, stiletto, sandalet, bot, çizme, terlik, sneaker, makosen, babet",
         "group": "ayakkabı"
     }

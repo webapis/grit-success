@@ -26,6 +26,7 @@
             "Socks-çorap",
             "eldiven"
         ],
+        "negative":["çizme"],
         "name": "çorap, eldiven",
         "group": "aksesuar"
     },
