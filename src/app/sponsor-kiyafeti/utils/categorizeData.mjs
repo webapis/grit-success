@@ -5,7 +5,7 @@ import fs from 'fs'
 import path from 'path';
 import searchObject from './searchObject.mjs';
 import mapPrice from './mapPrice.mjs'
-import {deaccent} from './deaccent.mjs';
+import { deaccent } from './deaccent.mjs';
 const require = createRequire(import.meta.url);
 require("dotenv").config();
 
@@ -42,31 +42,48 @@ export default function categorizedProducts(items) {
     //kategori
     const kategoryArray = [...aksesuar, ...icgiyim, ...top, ...bottom, ...dis, ...bag, ...ayakkabi, ...plaj, ...ev, ...kozmetik, ...hamile, ...taki]
     const flatkategoryArray = kategoryArray.map(m => m.keywords.map(m => m.split('=')).flat()).flat()
+    const kategoryNegativeArray = kategoryArray.filter((f => f.negative)).flat()
+
     const kategoryKeyword = searchObject(m, flatkategoryArray)
-    debugger
+    if (kategoryKeyword === 'çorap') {
+     
+    }
+    let kategoryNegativeExists = false
+    if (kategoryKeyword) {
+      let hasNegativeWordsToCheck = kategoryNegativeArray.find(f => f.keywords.includes(kategoryKeyword))
+
+      if (hasNegativeWordsToCheck !== undefined) {
+    
+        if (searchObject(m, hasNegativeWordsToCheck.negative)) {
+          debugger
+          kategoryNegativeExists = true
+        }
+      }
+
+    }
+
     const kategoryName = [...aksesuar, ...icgiyim, ...top, ...bottom, ...dis, ...bag, ...ayakkabi, ...plaj, ...ev, ...kozmetik, ...hamile, ...taki].find(f => f.keywords.map(m => m.split('=')).flat().includes(kategoryKeyword))
     if (!genderKeyword) {
-      debugger
+
 
     }
     if (!kategoryKeyword) {
 
-      debugger
 
     }
-const subcat =kategoryKeyword?kategoryArray.find(f=>f.keywords.map(m=>m.indexOf('=')!==-1 ? m.substring(0,m.indexOf('=')):m ).includes(kategoryKeyword) ) :'diğer'
-const subkey = kategoryKeyword?subcat.keywords.find(f=>f.indexOf('=')!==-1? f.substring(0,f.indexOf('=')).includes(kategoryKeyword):f.includes(kategoryKeyword)  ):'diğer'
+    const subcat = (!kategoryNegativeExists && kategoryKeyword) ? kategoryArray.find(f => f.keywords.map(m => m.indexOf('=') !== -1 ? m.substring(0, m.indexOf('=')) : m).includes(kategoryKeyword)) : 'diğer'
+    const subkey = (!kategoryNegativeExists && kategoryKeyword) ? subcat.keywords.find(f => f.indexOf('=') !== -1 ? f.substring(0, f.indexOf('=')).includes(kategoryKeyword) : f.includes(kategoryKeyword)) : 'diğer'
 
 
-debugger
+
 
     return {
       ...m,
       color: colorKeyword ? colorName.name : "diğer",
       gender: genderKeyword ? genderName.name : "diğer",
-      category: kategoryKeyword ? kategoryName.name : "diğer",
-      subcat:kategoryKeyword? subkey.replace('=',' '):'diğer',
-      group: kategoryKeyword ? kategoryName.group : "diğer"
+      category: (!kategoryNegativeExists && kategoryKeyword) ? kategoryName.name : "diğer",
+      subcat: (!kategoryNegativeExists && kategoryKeyword) ? subkey.replace('=', ' ') : 'diğer',
+      group: (!kategoryNegativeExists && kategoryKeyword) ? kategoryName.group : "diğer"
 
     }
 

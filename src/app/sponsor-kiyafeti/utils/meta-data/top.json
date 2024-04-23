@@ -1,6 +1,7 @@
 [
     {
         "keywords": [
+            "elbisesi=elbise",
             "elbise",
             "elb-elbise",
             "dresses=elbise",
@@ -9,6 +10,17 @@
             "tulum"
         ],
         "name": "elbise, abiye, tulum",
+        "negative": [
+            "Strıng",
+            "Bralet",
+            "Bra",
+            "peştemal",
+            "bel alt",
+            "gözlüğü",
+            "ev patiği",
+            "mayo",
+            "Pijama"
+        ],
         "group": "üst giyim"
     },
     {
@@ -19,8 +31,6 @@
         "name": "Sweatshirt",
         "group": "üst giyim"
     },
-
-    
     {
         "keywords": [
             "gömlek=gömlek",
@@ -29,6 +39,9 @@
             "Blouse=bluz"
         ],
         "name": "gömlek, bluz, tunik",
+        "negative": [
+            "Pijama Üstü"
+        ],
         "group": "üst giyim"
     },
     {
@@ -61,7 +74,6 @@
         "name": "tişört, atlet, body, büstiyer, crop, top",
         "group": "üst giyim"
     },
-   
     {
         "keywords": [
             "pelerin"
@@ -69,6 +81,4 @@
         "name": "pelerin",
         "group": "üst giyim"
     }
-    
-   
 ]
