@@ -1,6 +1,11 @@
 [
     {
         "keywords": [
+            "birelin",
+            "fever",
+            "themolc",
+            "jusdepommes",
+            "rueonline",
             "bsl",
             "joinus",
             "batikmoda",
@@ -117,21 +122,22 @@
     },
     {
         "keywords": [
-            "erkek","Men","Men's"
+            "erkek",
+            "Men",
+            "Men's"
         ],
         "name": "erkek"
-    },  {
+    },
+    {
         "keywords": [
-            
             "ayyildiz"
         ],
         "name": "kadın"
-    },  {
+    },
+    {
         "keywords": [
-            
             "unisex"
         ],
         "name": "unisex"
     }
 ]
-
