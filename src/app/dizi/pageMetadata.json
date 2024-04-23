@@ -392,5 +392,19 @@
                 }
             ]
         }
+    },
+    {
+        "slug": "korkma-ben-yanindayim-dizi-sponsorlari",
+        "pageTitle": "Korkma Ben Yanındayım Dizi Sponsorları",
+        "description": "",
+        "dizi": "Korkma Ben Yanındayım",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Korkma Ben Yanındayım"
+                }
+            ]
+        }
     }
 ]
+
