@@ -115,11 +115,11 @@ export default function PersistentDrawerLeft({ children,colors,slug, brands,pric
                     <div style={{display:"flex",flex:10,justifyContent:'center'}}>
              
 
-                     
+{/*                      
                     {slug.length>3 &&    <KeywordMenu backgroundC="#1976D2" obj={colors} slug={slug} id="colorsid" letter="R" tooltipTitle="Renkler"/> }
                     {slug.length>3 &&    <KeywordMenu backgroundC="#1976D2" obj={brands} slug={slug} id="brandsid" letter="M" tooltipTitle="Markalar"/> }
                     {slug.length>3 &&    <KeywordMenu backgroundC="#1976D2" obj={prices} slug={slug} id="pricesid" letter="F" tooltipTitle="Fiyat"/> }
-                 
+                  */}
                     </div>
                     <div style={{flex:1}}></div>
                 </Toolbar>
