@@ -125,9 +125,9 @@ export default async function SponsorKiyafetiPage({ params }) {
 
     }).filter(f => matchingColors.length > 0 ? searchObject(f, matchingColors) : true).filter(f => matchingBrands.length > 0 ? searchObject(f, matchingBrands.map(m => m.replaceAll('-', ' '))) : true).filter(f => matchingPrices.length > 0 ? findMatchingPrice(f.price, matchingPrices) : true)
 
-    let colorFacet = extractFacet(filteredByUrlData, colors)
-    let brandFacet = extractFacet(filteredByUrlData, brands)
-    let priceFacet = extractPriceFacet(filteredByUrlData, prices)
+    let colorFacet = extractFacet(rawData, colors)
+    let brandFacet = extractFacet(rawData, brands)
+    let priceFacet = extractPriceFacet(rawData, prices)
 
     debugger
     const pagesData = paginate(orderData(filteredByUrlData), page, 100)
