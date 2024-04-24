@@ -85,7 +85,10 @@ export default function AccountMenu({ obj, slug, id, letter, tooltipTitle, backg
         {Object.entries(obj).map((option) => {
 
           const nextcurrentSlugState = [...currentSlugState.map(m => decodeURI(m))]
-          nextcurrentSlugState.indexOf(option[0]) === -1 ? nextcurrentSlugState.push(option[0]) : nextcurrentSlugState.splice(nextcurrentSlugState.indexOf(option[0]), 1)
+          const test =[...nextcurrentSlugState]
+     
+    
+          nextcurrentSlugState.indexOf(option[0]) === -1 ? (nextcurrentSlugState.reverse().splice(1,0,option[0]) && nextcurrentSlugState.reverse()): nextcurrentSlugState.splice(nextcurrentSlugState.indexOf(option[0]), 1)
           const nextSlugState = '/sponsor-kiyafeti/' + [...nextcurrentSlugState].join('/').toString()
 
           return <MenuItem component={Link} href={nextSlugState + '/sayfa/1'} key={option[0]} selected={decodeURI(slug).includes(option[0])} >
