@@ -1,11 +1,17 @@
-
 [
     {
         "keywords": [
-            "parfum=parfüm","parfüm","sprey", "losyon","peeling","krem","yağ","jel","dudak"
+            "parfum=parfüm",
+            "parfüm",
+            "sprey",
+            "losyon",
+            "peeling",
+            "krem",
+            "yağ",
+            "jel",
+            "dudak"
         ],
         "name": "parfüm, krem, sprey, yağ, dudak, losyon, jel, peeling",
-        "group":"kozmetik"
+        "group": "kozmetik"
     }
-  
 ]

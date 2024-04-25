@@ -1,6 +1,17 @@
 [
     {
         "keywords": [
+            "erkek",
+            "Men",
+            "Men's"
+        ],
+        "name": "erkek"
+    },
+    {
+        "keywords": [
+            "tubabutik",
+            "tuvanam",
+            "beautyomelette",
             "sorbe",
             "birelin",
             "fever",
@@ -120,14 +131,6 @@
             "kiz bebek"
         ],
         "name": "kız bebek"
-    },
-    {
-        "keywords": [
-            "erkek",
-            "Men",
-            "Men's"
-        ],
-        "name": "erkek"
     },
     {
         "keywords": [

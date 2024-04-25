@@ -1,13 +1,16 @@
 [
     {
         "keywords": [
+            "nihanpeker=abiye",
             "elbisesi=elbise",
             "elbise",
             "elb-elbise",
             "dresses=elbise",
             "dress=elbise",
             "abiye",
-            "tulum"
+            "tulum",
+            "tuvanam=abiye"
+           
         ],
         "name": "elbise, abiye, tulum",
         "negative": [
