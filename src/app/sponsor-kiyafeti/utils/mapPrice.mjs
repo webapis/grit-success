@@ -2,7 +2,7 @@ function mapPrice(price) {
 
 
     try {
-        const trimPrice = price?price.toString().replace('TL', '').replace('$', '').trim():0//.replace(/[a-z]/gi, '') 
+        const trimPrice = price ? price.toString().replace('TL', '').replace('$', '').trim() : 0//.replace(/[a-z]/gi, '') 
 
         switch (true) {
 
@@ -38,6 +38,8 @@ function mapPrice(price) {
                 return parseFloat(trimPrice)
             case /^\d[,]\d\d\d[.]\d\d$/.test(trimPrice)://3,950.00
 
+                return parseFloat(trimPrice.replace(',', ''))
+            case /^\d\d[,]\d\d\d[.]\d\d$/.test(trimPrice)://34,950.00
                 return parseFloat(trimPrice.replace(',', ''))
             case /^\d\d\d$/.test(trimPrice)://999
 
@@ -77,8 +79,8 @@ function mapPrice(price) {
                 return parseFloat(0)
         }
     } catch (error) {
-debugger
-  
+        debugger
+
         throw error
     }
 

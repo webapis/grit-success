@@ -39,6 +39,8 @@ const colors = {
     sorbe: { group: 'marka', total: 0 },
     themolc: { group: 'marka', total: 0 },
     tubaergin: { group: 'marka', total: 0 },
+    tubabutik: { group: 'marka', total: 0 },
+    tuvanam: { group: 'marka', total: 0 },
     twist: { group: 'marka', total: 0 },
     twist: { group: 'marka', total: 0 },
     victoriassecret: { group: 'marka', total: 0 },
