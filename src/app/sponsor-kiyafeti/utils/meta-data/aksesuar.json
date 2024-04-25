@@ -23,8 +23,11 @@
     {
         "keywords": [
             "çorap",
-            "Socks-çorap",
-            "eldiven"
+            "Socks-çorap=çorap",
+            "eldiven",
+            "Çorabı=çorap",
+            "Stripe=çorap",
+            "socks=çorap"
         ],
         "negative":["Çoraplı","Bot"],
         "name": "çorap, eldiven",
@@ -78,6 +81,18 @@
             "gözlüğü-gözlük"
         ],
         "name": "gözlük",
+        "group": "aksesuar"
+    },
+    {
+        "keywords": [
+            "toka",
+            "Saç",
+            "taç",
+            "bandana"
+          
+        ],
+        "name": "toka",
+        "negative":["Toka Detaylı","Tokalı"],
         "group": "aksesuar"
     }
 ]

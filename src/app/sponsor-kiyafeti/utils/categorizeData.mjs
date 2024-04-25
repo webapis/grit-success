@@ -26,9 +26,9 @@ const hamile = require(path.join(process.cwd(), 'src/app/sponsor-kiyafeti/utils/
 const taki = require(path.join(process.cwd(), 'src/app/sponsor-kiyafeti/utils/meta-data/taki-mucevher.json'))
 export default function categorizedProducts(items) {
 
+const unrelatedWords =['Katlanabilir Kasa','Defter',"Göğüs Ucu Kapatıcı","Kulak Isıtıcı","Omuz Aksesuarı"]
 
-
-  const data = items.map(m => { return { ...m, price: mapPrice(m.price) } }).map(m => {
+  const data = items.filter(f=>!searchObject(f,unrelatedWords)).map(m => { return { ...m, price: mapPrice(m.price) } }).map(m => {
 
     //gender
     const colorArray = color.map(m => m.keywords).flat()
@@ -37,17 +37,20 @@ export default function categorizedProducts(items) {
 
     //gender
     const genderArray = gender.map(m => m.keywords).flat()
+   
     const genderKeyword = m['duplicateTitles'] ? searchObject({ ...m, duplicateTitles: m['duplicateTitles'].join(' ') }, genderArray) : searchObject(m, genderArray)
+ 
+
     const genderName = gender.find(f => f.keywords.includes(genderKeyword))
     //kategori
     const kategoryArray = [...aksesuar, ...icgiyim, ...top, ...bottom, ...dis, ...bag, ...ayakkabi, ...plaj, ...ev, ...kozmetik, ...hamile, ...taki]
     const flatkategoryArray = kategoryArray.map(m => m.keywords.map(m => m.split('=')).flat()).flat()
+   
+    const kategoryKeyword = searchObject(m, flatkategoryArray)
+    
     const kategoryNegativeArray = kategoryArray.filter((f => f.negative)).flat()
 
-    const kategoryKeyword = searchObject(m, flatkategoryArray)
-    if (kategoryKeyword === 'çorap') {
-     
-    }
+ debugger
     let kategoryNegativeExists = false
     if (kategoryKeyword) {
       let hasNegativeWordsToCheck = kategoryNegativeArray.find(f => f.keywords.includes(kategoryKeyword))
@@ -55,7 +58,7 @@ export default function categorizedProducts(items) {
       if (hasNegativeWordsToCheck !== undefined) {
     
         if (searchObject(m, hasNegativeWordsToCheck.negative)) {
-          debugger
+       
           kategoryNegativeExists = true
         }
       }
@@ -68,7 +71,9 @@ export default function categorizedProducts(items) {
 
     }
     if (!kategoryKeyword) {
-
+if(genderKeyword==='kadın'){
+  debugger
+}
 
     }
     const subcat = (!kategoryNegativeExists && kategoryKeyword) ? kategoryArray.find(f => f.keywords.map(m => m.indexOf('=') !== -1 ? m.substring(0, m.indexOf('=')) : m).includes(kategoryKeyword)) : 'diğer'

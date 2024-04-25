@@ -10,7 +10,8 @@
             "yüzük",
             "broş",
             "BROOCH=broş",
-            "earrings=küpe","bros=broş"
+            "earrings=küpe","bros=broş",
+            "Vücut Aksesuarı"
         ],
         "name": "yüzük, küpe, kolye, bilezik, bileklik, broş",
         "negative":["cüzdan"],

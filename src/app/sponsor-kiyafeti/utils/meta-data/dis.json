@@ -8,7 +8,9 @@
             "pardösü",
             "manto",
             "trençkot",
-            "Trench Coat"
+            "Trench=trençkot",
+            "TRENCKOT=trençkot",
+            "TRENC=trençkot"
         ],
         "name": "kaban, mont, palto, manto, pardösü, trençkot",
         "group": "dış giyim"
@@ -19,7 +21,9 @@
             "ceket",
             "Jacket",
             "yelek",
-            "vest-yelek"
+            "vest=yelek",
+            "bolero=ceket",
+            "bomber=ceket"
         ],
         "name": "blazer, ceket, yelek",
         "group": "dış giyim"
