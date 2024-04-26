@@ -9,7 +9,10 @@
             "dress=elbise",
             "abiye",
             "tulum",
-            "tuvanam=abiye"
+            "tuvanam=abiye",
+            "gelinlik",
+            "ELBİSE=elbise",
+            "Elbise=elbise"
            
         ],
         "name": "elbise, abiye, tulum",
@@ -29,7 +32,8 @@
     {
         "keywords": [
             "sweatshirt",
-            "Sweat"
+            "Sweat",
+            "Hoodie=sweatshirt"
         ],
         "name": "Sweatshirt",
         "group": "üst giyim"
@@ -37,6 +41,7 @@
     {
         "keywords": [
             "gömlek=gömlek",
+            "shirt=gömlek",
             "bluz=bluz",
             "tunik",
             "Blouse=bluz"
@@ -52,9 +57,12 @@
             "kazak",
             "hırka",
             "suveter",
-            "süveter"
+            "süveter",
+            "Cardigan=hırka",
+            "Knitwear",
+            "Triko=triko"
         ],
-        "name": "kazak, hırka, süveter",
+        "name": "kazak, hırka, süveter, triko",
         "group": "üst giyim"
     },
     {
@@ -72,7 +80,8 @@
             "büstiyer",
             "crop",
             "üst=top",
-            "top"
+            "top",
+            "BUSTİYER=büstiyer"
         ],
         "name": "tişört, atlet, body, büstiyer, crop, top",
         "group": "üst giyim"

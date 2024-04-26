@@ -1,14 +1,21 @@
 [
     {
         "keywords": [
-            "çanta","bags=çanta","backpacks=çanta",  "bez Torba","Wallet=cüzdan","cüzdan","valiz","anahtarlık","anahtarlik"
+            "çanta",
+            "bags=çanta",
+            "backpacks=çanta",
+            "bez Torba",
+            "Wallet=cüzdan",
+            "cüzdan",
+            "valiz",
+            "anahtarlık",
+            "anahtarlik",
+            "portföy",
+            "bag=çanta",
+            "kartlık=çanta",
+            "clutch"
         ],
-        "name": "çanta, cüzdan",
-        "group":"çanta"
+        "name": "çanta, cüzdan, portföy, kartlık, clutch",
+        "group": "çanta"
     }
-    
-    
-    
-
 ]
-

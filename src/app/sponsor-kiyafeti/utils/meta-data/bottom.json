@@ -6,7 +6,16 @@
             "tayt",
             "jogger",
             "trousers=pantolon",
-            "pants=pantolon"
+            "pants=pantolon",
+            "High Waist Jean=pantolon",
+            "Slouchy=pantolon",
+            "Palazzo=pantolon",
+            "Low Waist=pantolon",
+            "Cross Waist=pantolon",
+            "Full Length=pantolon",
+            "Slim Fit=pantolon",
+            "Full Lenght=pantolon",
+            "Fit Jean=pantolon"
         ],
         "name": "pantolon, eşofman, tayt, jogger",
         "group": "alt giyim"
@@ -14,6 +23,7 @@
     {
         "keywords": [
             "shorts=şort",
+            "SHORT=şort",
             "şort",
             "bermuda",
             "etek",
