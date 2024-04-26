@@ -142,7 +142,7 @@ export default async function SponsorKiyafetiPage({ params }) {
         {/* <ProductCategoryChip category={rawData[0].category} /> */}
         <Container maxWidth sx={{display:'flex', justifyContent:'space-between'}}>
         <ProductCategoryChip category={rawData[0].category} /> 
-            <PopupMenuColor />
+            {/* <PopupMenuColor /> */}
         </Container>
         
         <Container maxWidth>
