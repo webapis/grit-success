@@ -165,7 +165,7 @@ export default async function SponsorKiyafetiPage({ params }) {
 
             {/* <GenderTabContainer value={genderIndex} /> */}
 
-            <Grid container gap={1} sx={{ display: 'flex' }}>
+            <Grid container gap={1} sx={{ display: 'flex', justifyContent:{xs:'center',md:'start'} }}>
                 
                  {pagesData.map((m, i) => {return <Grid item key={i} > <Image matchingCategories={matchingCategories} {...m} pageTitle={''} /></Grid> })}</Grid>
             <PaginationContainer count={pageCount} page={page} url={`/sponsor-kiyafeti/${gender}/${category}/${selectedKeywords}/sayfa/`} />
