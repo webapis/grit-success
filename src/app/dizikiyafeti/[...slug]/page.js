@@ -3,7 +3,7 @@ import Link from 'next/link';
 // import { promises as fs } from 'fs';
 
 import ImageContainer from '../comps/ImageContainer';
-import { Tab, Tabs } from '@mui/material';
+//import { Tab, Tabs } from '@mui/material';
 // import path from 'path'
 import Fuse from 'fuse.js'
 

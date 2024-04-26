@@ -1,6 +1,8 @@
 
 import React from 'react';
-import { Typography, Grid, Container } from '@mui/material';
+import Typography from '@mui/material/Typography';
+import  Grid from '@mui/material/Grid';
+import Container  from '@mui/material/Container';
 import Diziview from '@/app/dizikiyafeti/comps/Diziview';
 import data from '@/app/dizikiyafeti/page-data/dizikiyafetiMenu.json'
 import Drawer from './drawer/index'

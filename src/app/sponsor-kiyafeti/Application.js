@@ -2,7 +2,10 @@
 import React from 'react';
 import { promises as fs } from 'fs';
 import path from 'path'
-import { Typography, Grid, Container, Box } from '@mui/material';
+import  Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
+import  Container from '@mui/material/Container';
+//import Box from '@mui/material/Box';
 import SponsorKiyafetView from '@/app/sponsor-kiyafeti/comp/SponsorKiyafetView';
 
 import { GenderTabContainer } from './[...slug]/page';

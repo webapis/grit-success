@@ -1,8 +1,12 @@
 
 import React from 'react';
 import Image from "./Image";
-import Link from 'next/link';
-import { Typography,Grid, Container,Tab,Tabs } from '@mui/material';
+//import Link from 'next/link';
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
+import Container from '@mui/material/Container';
+// import Tab from '@mui/material/Tab';
+// import Tabs from '@mui/material/Tabs';
 import SelectedDiziChip from './SelectedDiziChip';
 
 export default function ImageContainer({ filteredData, pageTitle }) {

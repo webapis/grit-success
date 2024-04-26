@@ -1,5 +1,7 @@
 import React from "react";
-import { Container, Grid, Link, Typography } from "@mui/material";
+import  Container from "@mui/material/Container";
+import Typography  from "@mui/material/Typography";
+
 const domainname=process.env.domainname
 const Footer = () => {
   return (

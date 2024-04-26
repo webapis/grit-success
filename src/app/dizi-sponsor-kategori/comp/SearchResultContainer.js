@@ -1,5 +1,6 @@
 
-import { Grid, Container } from "@mui/material"
+import Container from "@mui/material/Container"
+import Grid from "@mui/material/Grid"
 import SearchResultItem from "./SearchResultItem"
 import Drawer from './drawer'
 import SelectedSponsorKategoriChip from './SelectedSponsorKategoriChip'

@@ -1,7 +1,7 @@
 'use client';
 
 import Pagination from '@mui/material/Pagination';
-import { Box } from '@mui/material';
+import  Box  from '@mui/material/Box';
 export default function PaginationContainer({ count, page, url }) {
 
     const handleChange = (event, value) => {

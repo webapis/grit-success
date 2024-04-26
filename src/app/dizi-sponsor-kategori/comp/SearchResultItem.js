@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import Button from '@mui/material/Button';
 import Link from 'next/link';
-import { Chip } from '@mui/material';
+import  Chip  from '@mui/material/Chip';
 export default function SearchResultItem({ item }) {
 
 

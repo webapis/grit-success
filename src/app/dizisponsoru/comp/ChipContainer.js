@@ -1,5 +1,5 @@
 
-import { Grid } from "@mui/material"
+import Grid  from "@mui/material/Grid"
 
 import Link from "next/link";
 

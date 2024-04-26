@@ -15,8 +15,8 @@ import Divider from '@mui/material/Divider';
 import DizivliewListItem from './DiziviewListItem';
 import data from '@/app/sponsor-kiyafeti/data/kadin/sponsorkiyafetiMenu.json';
 import Link from 'next/link';
-import KeywordMenu from '../KeywordMenu'
-import PopupMenuColor from '../popup-menu-color';
+// import KeywordMenu from '../KeywordMenu'
+// import PopupMenuColor from '../popup-menu-color';
 const arrayData = Object.entries(data);
 const drawerWidth = 240;
 

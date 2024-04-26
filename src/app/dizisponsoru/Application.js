@@ -1,6 +1,8 @@
 
 import React from 'react';
-import { Typography, Grid, Container } from '@mui/material';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
+import Container  from '@mui/material/Container';
 import SponsorView from '@/app/dizisponsoru/comp/SponsorView';
 import data from '@/app/dizi/dizisponsoruMenu.json'
 import Drawer from './comp/drawer'
