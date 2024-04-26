@@ -17,7 +17,7 @@ export default async function Application({gender,value}) {
 
         <Typography variant="body1" gutterBottom  sx={{ marginBottom:2,marginTop:1 }}>Sponsor Kıyafeti- Kategori</Typography>
         {/* <GenderTabContainer value={value} /> */}
-        <Grid container gap={1}  >
+        <Grid container gap={1} sx={{ display: 'flex', justifyContent:{xs:'center',md:'start'} }}>
             {pagesData.map((m, i) => {
                 const topGroup = m[0]
                 const categories = Object.entries(m[1])
