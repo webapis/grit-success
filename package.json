@@ -23,19 +23,14 @@
     "@mui/icons-material": "^5.15.4",
     "@mui/material": "^5.15.4",
     "@next/third-parties": "^14.1.0",
-    "algoliasearch": "^4.22.1",
     "dotenv": "^16.4.4",
     "fuse.js": "^7.0.0",
-    "instantsearch.css": "^8.1.0",
     "make-dir": "^4.0.0",
-    "minisearch": "^6.3.0",
     "mssql": "^10.0.2",
     "next": "^14.1.0",
     "react": "^18",
-    "react-dom": "^18",
-    "react-instantsearch": "7.5.5",
-    "react-instantsearch-dom": "6.40.4",
-    "react-instantsearch-nextjs": "0.1.12"
+    "react-dom": "^18"
+ 
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.6.10",
