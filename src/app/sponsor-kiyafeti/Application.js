@@ -13,9 +13,9 @@ import Drawer from './comp/drawer'
 export default async function Application({gender,value}) {
      const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/${gender}/sponsorkiyafetiMenu.json`), 'utf8');
      const pagesData = Object.entries(JSON.parse(data));
-    return <Drawer slug={[]}><Container maxWidth> <Box sx={{width:'50%'}}>
+    return <Drawer slug={[]}><Container> 
 
-        <Typography variant='h4' textAlign='center' sx={{ marginBottom:2,marginTop:1 , fontSize:{ xs:20,sm:30} }}>Sponsor Kıyafeti- Kategori</Typography>
+        <Typography variant="body1" gutterBottom  sx={{ marginBottom:2,marginTop:1 }}>Sponsor Kıyafeti- Kategori</Typography>
         {/* <GenderTabContainer value={value} /> */}
         <Grid container gap={1}  >
             {pagesData.map((m, i) => {
@@ -29,7 +29,7 @@ export default async function Application({gender,value}) {
                 })
             })}
         </Grid>
-    </Box></Container></Drawer>
+    </Container></Drawer>
 
 }
 

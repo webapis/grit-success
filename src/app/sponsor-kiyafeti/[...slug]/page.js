@@ -140,9 +140,11 @@ export default async function SponsorKiyafetiPage({ params }) {
             <TopNavigation selected={0} />
         
         {/* <ProductCategoryChip category={rawData[0].category} /> */}
-        <Container maxWidth>
+        <Container maxWidth sx={{display:'flex', justifyContent:'space-between'}}>
+        <ProductCategoryChip category={rawData[0].category} /> 
             <PopupMenuColor />
         </Container>
+        
         <Container maxWidth>
             <KeywordsTabContainer category={category} rawData={rawData} slug={slug} />
         </Container>
@@ -163,7 +165,9 @@ export default async function SponsorKiyafetiPage({ params }) {
 
             {/* <GenderTabContainer value={genderIndex} /> */}
 
-            <Grid container gap={1} sx={{ display: 'flex' }}> {pagesData.map((m, i) => <Grid item key={i} > <Image matchingCategories={matchingCategories} {...m} pageTitle={''} /></Grid>)}</Grid>
+            <Grid container gap={1} sx={{ display: 'flex' }}>
+                
+                 {pagesData.map((m, i) => {return <Grid item key={i} > <Image matchingCategories={matchingCategories} {...m} pageTitle={''} /></Grid> })}</Grid>
             <PaginationContainer count={pageCount} page={page} url={`/sponsor-kiyafeti/${gender}/${category}/${selectedKeywords}/sayfa/`} />
         </Container>
         </Drawer>
@@ -192,7 +196,7 @@ export function KeywordsTabContainer({ value = 1000, category, rawData, slug }) 
     const categoryIndex = category.split('-').map((m, i) => i.toString()).join('')
     const initialAllSelection = selectedKeywords === categoryIndex
 
-    return <Box sx={{ display: 'flex'}}> <Tabs value={value} sx={{ marginBottom: 1 }} variant="scrollable" scrollButtons allowScrollButtonsMobile>
+    return  <Tabs value={value} sx={{ marginBottom: 0 }} variant="scrollable" scrollButtons allowScrollButtonsMobile>
 
         {category.split('-').map(m => {
 
@@ -220,7 +224,7 @@ export function KeywordsTabContainer({ value = 1000, category, rawData, slug }) 
         }).sort((x, y) => y.selected - x.selected).map(m => m.render)
         }
 
-    </Tabs></Box>
+    </Tabs>
 }
 
 function paginate(array, page, pageSize) {

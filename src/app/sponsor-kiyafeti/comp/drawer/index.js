@@ -82,49 +82,41 @@ export default function PersistentDrawerLeft({ children, colors, slug, brands, p
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar position="fixed" open={open} style={{ backgroundColor: 'white', zIndex: 500 }} >
-                <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <div>
-                        <IconButton
-                            color="inherit"
-                            aria-label="open drawer"
-                            onClick={handleDrawerOpen}
-                            edge="start"
-                            sx={{ mr: 2, ...(open && { display: 'none' }) }}
-                        >
-                            <MenuIcon sx={{ color: 'black' }} />
-                        </IconButton>
-                        <Typography
-                            variant="h6"
-                            noWrap
-                            component={Link}
-                            sx={{
-                                color: 'black',
-                                fontFamily: 'Arial, sans-serif',
-                                fontWeight: 600,
-                                fontSize: '1.5rem',
-                                letterSpacing: '0.05em',
-                                textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
-                                textDecoration: 'none'
-                            }}
-                            href={'/'}
-                        >
-                            Glumzi
-                        </Typography>
-                    </div>
-                    <div style={{ display: "flex", flex: 10, justifyContent: 'center' }}>
-
-
-                        {/*                      
-                    {slug.length>3 &&    <KeywordMenu backgroundC="#1976D2" obj={colors} slug={slug} id="colorsid" letter="R" tooltipTitle="Renkler"/> }
-                    {slug.length>3 &&    <KeywordMenu backgroundC="#1976D2" obj={brands} slug={slug} id="brandsid" letter="M" tooltipTitle="Markalar"/> }
-                    {slug.length>3 &&    <KeywordMenu backgroundC="#1976D2" obj={prices} slug={slug} id="pricesid" letter="F" tooltipTitle="Fiyat"/> }
-                  */}
-                       
-                    </div>
-                    <div style={{ flex: 1 }}></div>
-                </Toolbar>
-            </AppBar>
+            <AppBar position="fixed" open={open} style={{ backgroundColor: 'white',zIndex:500 }} elevation={1} >
+    <Toolbar>
+        <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleDrawerOpen}
+            edge="start"
+            sx={{ mr: 2, ...(open && { display: 'none' }) }}
+        >
+            <MenuIcon sx={{ color: 'black' }} />
+        </IconButton>
+        <Typography
+            variant="h5"
+            noWrap
+            component={Link}
+            sx={{
+                // border:'1px solid #bdbdbd',
+              
+                 paddingLeft:2,
+                 paddingRight:2,
+                 borderRadius:5,
+                  color: 'black',
+                 fontFamily: 'inherit',
+                  fontWeight: 500,
+                 // fontSize: '1.5rem',
+                 // letterSpacing: '0.05em',
+                 textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
+                  textDecoration: 'none'
+             }}
+            href={'/'}
+        >
+            Glumzi
+        </Typography>
+    </Toolbar>
+</AppBar>
             <Drawer
                 sx={{
                     width: drawerWidth,

@@ -21,7 +21,7 @@ const matchingWords = title.split(' ').map((m)=>{
     <Box sx={{ width: { xs: 150, md: 200 }, height: { xs: 200, md: 300 } }}>
       {
         image && image[0] && <img
-          src={'https://ik.imagekit.io/mumrjdehaou/' + image[0]} loading="lazy" style={{ maxWidth: '100%', height: '100%', objectFit: 'contain', backgroundColor: '#f5f5f5' }} />
+          src={'https://ik.imagekit.io/mumrjdehaou/' + image[0]} loading="lazy" style={{ maxWidth: '100%', height: '100%', objectFit: 'contain', backgroundColor: '#f5f5f5',borderRadius:3 }} />
       }
 
     </Box>

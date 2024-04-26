@@ -5,21 +5,20 @@ import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import HomeIcon from '@mui/icons-material/Home';
+import {Button} from "@mui/material";
 // export default function ProductCategoryChip({category}){
 
 //     return <Box sx={{display:'flex',justifyContent:'center',width:'100%', margin:2}}><Chip size="small" component="h1" color="primary" variant="outlined" label={category} onDelete={()=>{window.location.replace('/sponsor-kiyafeti') }}/></Box> 
 // }
 export default function BasicBreadcrumbs({category}) {
     return (
-      <Container role="presentation" sx={{marginTop:1}}>
-        <Breadcrumbs aria-label="breadcrumb"   separator={<NavigateNextIcon fontSize="small" />}>
-          <Link underline="hover" color="inherit" href="/">
-          <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-            Anasafa
-          </Link>
+      
+        <Breadcrumbs aria-label="breadcrumb"   separator={<NavigateNextIcon fontSize="small" style={{display:'flex',alignItems:"start", marginTop:1}}/>}>
+          <Button component={Link} startIcon={<HomeIcon />} href="/" style={{textDecoration:'none', textTransform:'capitalize', fontFamily:'inherit',fontSize:14}}>  Anasayfa</Button>
+     
  
-          <Typography color="text.primary" style={{textDecoration:'underline'}}>{category.replaceAll(',','-')}</Typography>
+          <Typography   style={{textDecoration:'none', fontFamily:'inherit',fontSize:14}}>{category.replaceAll(',','-').substring(0,category.indexOf(','))} ...</Typography>
         </Breadcrumbs>
-      </Container>
+   
     );
   }

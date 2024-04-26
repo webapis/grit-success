@@ -78,7 +78,7 @@ export default function PersistentDrawerLeft({ children }) {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar position="fixed" open={open} style={{ backgroundColor: 'white', zIndex: 500 }} >
+            <AppBar position="fixed" open={open} style={{ backgroundColor: 'white', zIndex: 500 }} elevation={1} >
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -90,18 +90,23 @@ export default function PersistentDrawerLeft({ children }) {
                         <MenuIcon sx={{ color: 'black' }} />
                     </IconButton>
                     <Typography
-                        variant="h6"
+                        variant="h5"
                         noWrap
                         component={Link}
                         sx={{
-                            color: 'black',
-                            fontFamily: 'Arial, sans-serif',
-                            fontWeight: 600,
-                            fontSize: '1.5rem',
-                            letterSpacing: '0.05em',
-                            textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
-                            textDecoration:'none'
-                        }}
+                            // border:'1px solid #bdbdbd',
+                          
+                             paddingLeft:2,
+                             paddingRight:2,
+                             borderRadius:5,
+                              color: 'black',
+                             fontFamily: 'inherit',
+                              fontWeight: 500,
+                             // fontSize: '1.5rem',
+                             // letterSpacing: '0.05em',
+                             textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
+                              textDecoration: 'none'
+                         }}
                         href={'/'}
                     >
                         Glumzi
