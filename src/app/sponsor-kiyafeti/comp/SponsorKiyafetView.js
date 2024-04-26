@@ -17,7 +17,7 @@ const keywordint =category.split(',').map((m,i)=>i.toString()).join('')
     return (
         <Card sx={{ maxWidth: 345,textDecoration:'none' }} component={Link} href={`/sponsor-kiyafeti/${deaccent( gender).toLowerCase().replaceAll(' ','-').replaceAll(',','')}/${deaccent(category).toLowerCase().replaceAll(' ','-').replaceAll(',','')}/${keywordint}/sayfa/1`} >
             <CardMedia
-                sx={{ height: {xs:200,sm:250,md:300}, width:'auto',objectFit:'contain' }}
+                sx={{ height: {xs:200,sm:250,md:200}, width:'auto',objectFit:'contain' }}
                 image={`/dizi/sponsor-kiyafet/${deaccent(title.replaceAll(',','-').replaceAll(' ','')).toLowerCase()}.jpg`}
                 title={`${title} Dizi Sponsorları.`}
             />
@@ -27,7 +27,7 @@ const keywordint =category.split(',').map((m,i)=>i.toString()).join('')
        
     
            
-            <Typography  variant="h5" component="div" sx={{ textTransform: 'capitalize',fontSize:{xs:16,md:16},width: {xs:200,sm:250,md:300} }}>
+            <Typography  variant="h5" component="div" sx={{ textTransform: 'capitalize',fontSize:{xs:16,md:16},width: {xs:200,sm:250,md:200} }}>
                     {title} 
                 </Typography>
        

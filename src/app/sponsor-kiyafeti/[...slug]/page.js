@@ -19,6 +19,7 @@ import brands from './keywords/marka'
 import prices from './keywords/price'
 import searchObject from '../utils/searchObject';
 import KeywordItem from '../comp/KeywordItem';
+import PopupMenuColor from '../comp/popup-menu-color';
 function findMatching(primaryArray, colorsArray) {
     // Filter the colorsArray to find colors that exist in the primaryArray
     const matchingColors = colorsArray.filter(color => primaryArray.includes(color));
@@ -135,34 +136,34 @@ export default async function SponsorKiyafetiPage({ params }) {
     debugger
 
     return <>
-        <Box sx={{ width: "100%" }}>
+   
             <TopNavigation selected={0} />
-        </Box>
-        <ProductCategoryChip category={rawData[0].category} />
-        <Box sx={{ width: "100%" }}>
-            <KeywordsTabContainer category={category} rawData={rawData} slug={slug} />
-        </Box>
-        <Grid container >
-        <Grid item xs={1}>
-     
-        </Grid>
-        <Grid item>
-            <span style={{color:'#5e5e5e',paddingLeft:10}}>
-            {filteredByUrlData.length} adet
-            </span>
-      
-        </Grid>
-         
-            
         
-        </Grid>
-
-
-        <Drawer colors={colorFacet} slug={slug} brands={brandFacet} prices={priceFacet}> <Container>
+        {/* <ProductCategoryChip category={rawData[0].category} /> */}
+        <Container maxWidth>
+            <PopupMenuColor />
+        </Container>
+        <Container maxWidth>
+            <KeywordsTabContainer category={category} rawData={rawData} slug={slug} />
+        </Container>
+        <Container maxWidth>
           
+                <span style={{ color: '#5e5e5e', paddingLeft: 10 }}>
+                    {filteredByUrlData.length} adet
+                </span>
+
+       
+
+
+
+        </Container>
+
+
+        <Drawer colors={colorFacet} slug={slug} brands={brandFacet} prices={priceFacet}> <Container maxWidth>
+
             {/* <GenderTabContainer value={genderIndex} /> */}
 
-            <Grid container gap={1} sx={{ display: 'flex', justifyContent: 'center' }}> {pagesData.map((m, i) => <Grid item key={i} > <Image matchingCategories={matchingCategories} {...m} pageTitle={''} /></Grid>)}</Grid>
+            <Grid container gap={1} sx={{ display: 'flex' }}> {pagesData.map((m, i) => <Grid item key={i} > <Image matchingCategories={matchingCategories} {...m} pageTitle={''} /></Grid>)}</Grid>
             <PaginationContainer count={pageCount} page={page} url={`/sponsor-kiyafeti/${gender}/${category}/${selectedKeywords}/sayfa/`} />
         </Container>
         </Drawer>
@@ -191,19 +192,19 @@ export function KeywordsTabContainer({ value = 1000, category, rawData, slug }) 
     const categoryIndex = category.split('-').map((m, i) => i.toString()).join('')
     const initialAllSelection = selectedKeywords === categoryIndex
 
-    return <Box sx={{ display: 'flex', justifyContent: "center" }}> <Tabs value={value} sx={{ marginBottom: 1 }} variant="scrollable" scrollButtons allowScrollButtonsMobile>
+    return <Box sx={{ display: 'flex'}}> <Tabs value={value} sx={{ marginBottom: 1 }} variant="scrollable" scrollButtons allowScrollButtonsMobile>
 
         {category.split('-').map(m => {
 
 
             const imageUrl = rawData.find(r => {
                 const obj = { ...r, category: '' }
-                return deaccent( obj.subcat).includes(m)
+                return deaccent(obj.subcat).includes(m)
             })
-      
-           // if (imageUrl) {
-                return {  label: m,imageUrl }
-           // }
+
+            // if (imageUrl) {
+            return { label: m, imageUrl }
+            // }
             return null
 
 
@@ -215,8 +216,8 @@ export function KeywordsTabContainer({ value = 1000, category, rawData, slug }) 
             reversedUrl[0] = '1'
             const nextUrl = '/sponsor-kiyafeti/' + reversedUrl.reverse().join('/')
 
-            return { selected: selectedKeywords === i.toString()?1:0, render: <Tab key={i} label={<KeywordItem subcat={m.imageUrl.subcat} selected={selectedKeywords === i.toString()} nextUrl={nextUrl} initialAllSelection={initialAllSelection} image={m.image} label={m.label} slug={slug} category={category} />} /> }
-        }).sort((x, y) => y.selected-x.selected).map(m => m.render)
+            return { selected: selectedKeywords === i.toString() ? 1 : 0, render: <Tab key={i} label={<KeywordItem subcat={m.imageUrl.subcat} selected={selectedKeywords === i.toString()} nextUrl={nextUrl} initialAllSelection={initialAllSelection} image={m.image} label={m.label} slug={slug} category={category} />} /> }
+        }).sort((x, y) => y.selected - x.selected).map(m => m.render)
         }
 
     </Tabs></Box>

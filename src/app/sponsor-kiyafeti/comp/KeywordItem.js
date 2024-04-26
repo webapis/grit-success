@@ -3,7 +3,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
+
 import Link from 'next/link';
 import Typography from '@mui/material/Typography';
 
@@ -22,7 +22,7 @@ export default function KeywordItem({image,label,selected,nextUrl,subcat}) {
       />
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <CardContent sx={{ flex: '1 0 auto' }}>
-          <Typography component="div" variant="h7" >
+          <Typography component="div" variant="h7"  style={{ textTransform:'capitalize'}}>
            {subcat.split(' ').reverse()[0]}
           </Typography>
         

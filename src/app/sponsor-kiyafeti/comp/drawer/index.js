@@ -16,7 +16,7 @@ import DizivliewListItem from './DiziviewListItem';
 import data from '@/app/sponsor-kiyafeti/data/kadin/sponsorkiyafetiMenu.json';
 import Link from 'next/link';
 import KeywordMenu from '../KeywordMenu'
-
+import PopupMenuColor from '../popup-menu-color';
 const arrayData = Object.entries(data);
 const drawerWidth = 240;
 
@@ -25,7 +25,7 @@ const drawerWidth = 240;
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
     ({ theme, open }) => ({
         flexGrow: 1,
-        paddingTop:2,// theme.spacing(3),
+        paddingTop: 2,// theme.spacing(3),
         transition: theme.transitions.create('margin', {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
@@ -67,7 +67,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
     justifyContent: 'flex-end',
 }));
 
-export default function PersistentDrawerLeft({ children,colors,slug, brands,prices }) {
+export default function PersistentDrawerLeft({ children, colors, slug, brands, prices }) {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
@@ -83,45 +83,46 @@ export default function PersistentDrawerLeft({ children,colors,slug, brands,pric
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
             <AppBar position="fixed" open={open} style={{ backgroundColor: 'white', zIndex: 500 }} >
-                <Toolbar style={{display:'flex',justifyContent:'space-between'}}>
+                <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <div>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        onClick={handleDrawerOpen}
-                        edge="start"
-                        sx={{ mr: 2, ...(open && { display: 'none' }) }}
-                    >
-                        <MenuIcon sx={{ color: 'black' }} />
-                    </IconButton>
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component={Link}
-                        sx={{
-                            color: 'black',
-                            fontFamily: 'Arial, sans-serif',
-                            fontWeight: 600,
-                            fontSize: '1.5rem',
-                            letterSpacing: '0.05em',
-                            textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
-                            textDecoration: 'none'
-                        }}
-                        href={'/'}
-                    >
-                        Glumzi
-                    </Typography>
+                        <IconButton
+                            color="inherit"
+                            aria-label="open drawer"
+                            onClick={handleDrawerOpen}
+                            edge="start"
+                            sx={{ mr: 2, ...(open && { display: 'none' }) }}
+                        >
+                            <MenuIcon sx={{ color: 'black' }} />
+                        </IconButton>
+                        <Typography
+                            variant="h6"
+                            noWrap
+                            component={Link}
+                            sx={{
+                                color: 'black',
+                                fontFamily: 'Arial, sans-serif',
+                                fontWeight: 600,
+                                fontSize: '1.5rem',
+                                letterSpacing: '0.05em',
+                                textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
+                                textDecoration: 'none'
+                            }}
+                            href={'/'}
+                        >
+                            Glumzi
+                        </Typography>
                     </div>
-                    <div style={{display:"flex",flex:10,justifyContent:'center'}}>
-             
+                    <div style={{ display: "flex", flex: 10, justifyContent: 'center' }}>
 
-{/*                      
+
+                        {/*                      
                     {slug.length>3 &&    <KeywordMenu backgroundC="#1976D2" obj={colors} slug={slug} id="colorsid" letter="R" tooltipTitle="Renkler"/> }
                     {slug.length>3 &&    <KeywordMenu backgroundC="#1976D2" obj={brands} slug={slug} id="brandsid" letter="M" tooltipTitle="Markalar"/> }
                     {slug.length>3 &&    <KeywordMenu backgroundC="#1976D2" obj={prices} slug={slug} id="pricesid" letter="F" tooltipTitle="Fiyat"/> }
                   */}
+                       
                     </div>
-                    <div style={{flex:1}}></div>
+                    <div style={{ flex: 1 }}></div>
                 </Toolbar>
             </AppBar>
             <Drawer
@@ -150,10 +151,10 @@ export default function PersistentDrawerLeft({ children,colors,slug, brands,pric
                     {arrayData.map((m, i) => {
                         const topGroup = m[0]
                         const categories = Object.entries(m[1])
-                        return categories.filter(f=>f[0]!=='diğer').map(m => {
+                        return categories.filter(f => f[0] !== 'diğer').map(m => {
                             const title = m[0]
                             const content = m[1]
-                    
+
                             return <DizivliewListItem key={title} title={title} content={content} />;
                         })
                     })}
