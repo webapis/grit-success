@@ -14,7 +14,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Divider from '@mui/material/Divider';
 import DizivliewListItem from './DiziviewListItem';
 import data from '@/app/sponsor-kiyafeti/data/kadin/sponsorkiyafetiMenu.json';
-import Link from 'next/link';
+//import Link from 'next/link';
 // import KeywordMenu from '../KeywordMenu'
 // import PopupMenuColor from '../popup-menu-color';
 const arrayData = Object.entries(data);
@@ -96,7 +96,7 @@ export default function PersistentDrawerLeft({ children, colors, slug, brands, p
         <Typography
             variant="h5"
             noWrap
-            component={Link}
+            component='a'
             sx={{
                 // border:'1px solid #bdbdbd',
               

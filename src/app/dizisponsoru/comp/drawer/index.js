@@ -14,7 +14,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Divider from '@mui/material/Divider';
 import DizivliewListItem from './DiziviewListItem';
 import data from '@/app/dizi/dizisponsoruMenu.json'
-import Link from 'next/link';
+//import Link from 'next/link';
 const arrayData = Object.entries(data);
 const drawerWidth = 240;
 
@@ -92,7 +92,7 @@ export default function PersistentDrawerLeft({ children }) {
                     <Typography
                         variant="h5"
                         noWrap
-                        component={Link}
+                        component='a'
                         sx={{
                             // border:'1px solid #bdbdbd',
                           

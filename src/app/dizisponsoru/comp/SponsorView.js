@@ -6,7 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Link from 'next/link';
+//import Link from 'next/link';
 
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 export default function SponsorView({title ,content }) {
@@ -36,7 +36,7 @@ export default function SponsorView({title ,content }) {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button endIcon={  <OpenInNewIcon/>} component={Link} href={`/dizi/${tag}-dizi-sponsorlari`} target='_blank' >
+                <Button endIcon={  <OpenInNewIcon/>} component='a' href={`/dizi/${tag}-dizi-sponsorlari`} target='_blank' >
                 sayfaya git
                   
                 </Button>

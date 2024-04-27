@@ -6,7 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Link from 'next/link';
+//import Link from 'next/link';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 export default function RootComponent({title , url}) {
   
@@ -32,7 +32,7 @@ export default function RootComponent({title , url}) {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button endIcon={<OpenInNewIcon/>} size="small" component={Link} href={url} >sayfaya git</Button>
+                <Button endIcon={<OpenInNewIcon/>} size="small" component='a' href={url} >sayfaya git</Button>
             </CardActions>
         </Card>
     );

@@ -2,7 +2,7 @@ import * as React from 'react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import Link from 'next/link';
+//import Link from 'next/link';
 import deaccent from '../deaccent';
 export default function Diziview({ title, content }) {
     const {image,category,gender}=content
@@ -12,7 +12,7 @@ export default function Diziview({ title, content }) {
 
 
             <ListItem disablePadding>
-                <ListItemButton component={Link}
+                <ListItemButton component='a'
     
                     href={`/sponsor-kiyafeti/${deaccent(gender).toLowerCase().replaceAll(' ','-')}/${deaccent( category).toLowerCase().replaceAll(' ','-').replaceAll(',','')}/${keywordint}/sayfa/1`}
                    >

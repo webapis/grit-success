@@ -1,7 +1,7 @@
 
 import Grid  from "@mui/material/Grid"
 
-import Link from "next/link";
+//import Link from "next/link";
 
 export default function ChipContainer({ dizi, keyword }) {
 
@@ -30,6 +30,6 @@ const CustomLink = ({ href, children,isSelected }) => (
     color: isSelected ? '#fff' : '#333',
     cursor: 'pointer'
    }}>
-        <Link href={href} style={{ backgroundColor: isSelected ? '#1976D2' : '#f0f0f0',color: isSelected ? '#fff' : '#333',textDecoration:'none'}}>{children}</Link>
+        <a href={href} style={{ backgroundColor: isSelected ? '#1976D2' : '#f0f0f0',color: isSelected ? '#fff' : '#333',textDecoration:'none'}}>{children}</a>
     </div>
 );

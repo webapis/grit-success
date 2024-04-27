@@ -6,13 +6,13 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import Button from '@mui/material/Button';
-import Link from 'next/link';
+//import Link from 'next/link';
 import  Chip  from '@mui/material/Chip';
 export default function SearchResultItem({ item }) {
 
 
     debugger
-    const { Name:name, Website, Acyklama,TOTAL:count,TVSeriesTitle,tag,brandTag,ServiceName,h3,duplicateTitles } = item
+    const { Name:name, Website, Acyklama,TOTAL:count,TVSeriesTitle,tag,brandTag,ServiceName,h3,duplicateTitles,Tag } = item
 
     const imageName = brandTag ?brandTag: extractSubdomain(Website) 
 
@@ -26,7 +26,7 @@ export default function SearchResultItem({ item }) {
         
             height="100"
             style={{maxWidth:250}}
-            src={`/dizi/marka/${imageName}.jpg`}
+            src={Tag}
             loading="lazy"
         />
 
@@ -58,7 +58,7 @@ export default function SearchResultItem({ item }) {
         
         </CardContent>
         <CardActions>
-            <Button  endIcon={<OpenInNewIcon/>}  component={Link}   href={Website}  target='_blank'>
+            <Button  endIcon={<OpenInNewIcon/>}  component='a'   href={Website}  target='_blank'>
                sponsor web sitesine git
            
             </Button>

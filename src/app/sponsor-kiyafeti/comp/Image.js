@@ -1,7 +1,7 @@
 
 
 
-import Link from "next/link"
+//import Link from "next/link"
 import { Typography, Box, Grid } from "@mui/material"
 import deaccent from "./deaccent"
 export default function Image({ image, title, link, marka, price, currency,matchingCategories,subcat }) {
@@ -16,7 +16,7 @@ const matchingWords = title.split(' ').map((m)=>{
   }
 })
 
-  return <Link href={link} target="_blank" style={{ textDecoration: 'none', color: '#757575' }} >
+  return <a href={link} target="_blank" style={{ textDecoration: 'none', color: '#757575' }} >
 
     <Box sx={{ width: { xs: 150, md: 200 }, height: { xs: 200, md: 300 } }}>
       {
@@ -41,5 +41,5 @@ const matchingWords = title.split(' ').map((m)=>{
       {matchingWords}
       {/* <Typography variant="caption" style={{ width: '100%', wordWrap: 'break-word', textDecoration: 'none', color: 'inherit', fontFamily: 'inherit' }}>{matchingWords}</Typography> */}
     </Box>
-  </Link>
+  </a>
 }

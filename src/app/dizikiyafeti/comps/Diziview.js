@@ -6,7 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Link from 'next/link';
+//import Link from 'next/link';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 export default function Diziview({title ,content }) {
     const {ImageUrl,Date,tag}=content
@@ -34,7 +34,7 @@ export default function Diziview({title ,content }) {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button endIcon={<OpenInNewIcon/>} size="small" component={Link} href={`/dizikiyafeti/${tag}-dizi-kiyafetleri`}  target='_blank'>sayfaya git</Button>
+                <Button endIcon={<OpenInNewIcon/>} size="small" component='a' href={`/dizikiyafeti/${tag}-dizi-kiyafetleri`}  target='_blank'>sayfaya git</Button>
             </CardActions>
         </Card>
     );
