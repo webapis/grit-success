@@ -10,13 +10,13 @@ import Link from 'next/link';
 
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 export default function SponsorView({title ,content }) {
-    const {tag,toplamSponsor}=content
+    const {tag,toplamSponsor,Tag}=content
 
     return (
         <Card sx={{ maxWidth: 345 }}>
             <CardMedia
                 sx={{ height: 170 }}
-                image={`/dizi/cover-image/${tag}.jpg`}
+                image={'https://ik.imagekit.io/mumrjdehaou/'+Tag}
                 title={`${title} Dizi Sponsorları.`}
             />
 
