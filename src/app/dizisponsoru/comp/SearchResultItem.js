@@ -9,6 +9,7 @@ import Button from '@mui/material/Button';
 //import Link from 'next/link';
 import  Chip  from '@mui/material/Chip';
 export default function SearchResultItem({ item }) {
+  
     debugger
     const { Name:name, Website, Acyklama,TVSeriesTitle,tag,brandTag,ServiceName,h3 } = item
 
@@ -24,7 +25,7 @@ export default function SearchResultItem({ item }) {
            
             height="100"
          
-            src={`/dizi/cover-image/${tag}.jpg`}
+            src={'https://ik.imagekit.io/mumrjdehaou/' +item.Tag}
             loading="lazy"
             
         />
