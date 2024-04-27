@@ -67,7 +67,7 @@ export default function SearchResultItem({ item }) {
       
         </CardContent>
         <CardActions>
-            <Button  endIcon={<OpenInNewIcon/>}  component='a'   href={Website}>
+            <Button  endIcon={<OpenInNewIcon/>}  component='a'   href={Website} target='_blank'>
                sponsor web sitesine git
            
             </Button>
