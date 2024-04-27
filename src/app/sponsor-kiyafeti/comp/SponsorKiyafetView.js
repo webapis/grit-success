@@ -16,7 +16,7 @@ export default function SponsorKiyafetView({title ,content,group, imageUrl }) {
 const keywordint =category.split(',').map((m,i)=>i.toString()).join('') 
 
     return (
-        <Card sx={{ maxWidth: 345,textDecoration:'none' }} component={Link} href={`/sponsor-kiyafeti/${deaccent( gender).toLowerCase().replaceAll(' ','-').replaceAll(',','')}/${deaccent(category).toLowerCase().replaceAll(' ','-').replaceAll(',','')}/${keywordint}/sayfa/1`} >
+        <Card sx={{ maxWidth: 345,textDecoration:'none' }} component={Link} href={`/sponsor-kiyafeti/${deaccent( gender).toLowerCase().replaceAll(' ','-').replaceAll(',','')}/${deaccent(category).toLowerCase().replaceAll(' ','-').replaceAll(',','')}/${keywordint}/sayfa/1`}  prefetch={true}>
             <CardMedia
                 sx={{ height: {xs:200,sm:250,md:250}, width:'auto',objectFit:'contain', borderRadius:2 }}
                 image={'https://ik.imagekit.io/mumrjdehaou/' +imageUrl}
