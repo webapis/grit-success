@@ -7,7 +7,7 @@ import Link from 'next/link';
 import Typography from '@mui/material/Typography';
 
 
-export default function KeywordItem({image,label,selected,nextUrl,subcat}) {
+export default function KeywordItem({imageUrl,label,selected,nextUrl,subcat}) {
 
 
   return (
@@ -16,7 +16,7 @@ export default function KeywordItem({image,label,selected,nextUrl,subcat}) {
       <img
         component="img"
         style={{ height:50, borderRadius:3, width:30,objectFit:'fill'}}
-        src={`/dizi/keywords/${label}.jpg`}
+        src={imageUrl}
         alt=""
       />
     

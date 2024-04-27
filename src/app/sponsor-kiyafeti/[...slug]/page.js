@@ -207,7 +207,7 @@ export function KeywordsTabContainer({ value = 1000, category, rawData, slug }) 
             })
 
             // if (imageUrl) {
-            return { label: m, imageUrl }
+            return { label: m, imageUrl,keywordImage:imageUrl.image[0] }
             // }
             return null
 
@@ -220,7 +220,7 @@ export function KeywordsTabContainer({ value = 1000, category, rawData, slug }) 
             reversedUrl[0] = '1'
             const nextUrl = '/sponsor-kiyafeti/' + reversedUrl.reverse().join('/')
 
-            return { selected: selectedKeywords === i.toString() ? 1 : 0, render: <Tab key={i} label={<KeywordItem subcat={m.imageUrl.subcat} selected={selectedKeywords === i.toString()} nextUrl={nextUrl} initialAllSelection={initialAllSelection} image={m.image} label={m.label} slug={slug} category={category} />} /> }
+            return { selected: selectedKeywords === i.toString() ? 1 : 0, render: <Tab key={i} label={<KeywordItem imageUrl={'https://ik.imagekit.io/mumrjdehaou/'+ m.keywordImage} subcat={m.imageUrl.subcat} selected={selectedKeywords === i.toString()} nextUrl={nextUrl} initialAllSelection={initialAllSelection} image={m.image} label={m.label} slug={slug} category={category} />} /> }
         }).sort((x, y) => y.selected - x.selected).map(m => m.render)
         }
 

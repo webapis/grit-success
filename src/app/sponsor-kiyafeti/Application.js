@@ -5,10 +5,12 @@ import path from 'path'
 import  Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import  Container from '@mui/material/Container';
+import category from '@/app/sponsor-kiyafeti/comp/category'
+import deaccent from '@/app/sponsor-kiyafeti/comp/deaccent'
 //import Box from '@mui/material/Box';
 import SponsorKiyafetView from '@/app/sponsor-kiyafeti/comp/SponsorKiyafetView';
 
-import { GenderTabContainer } from './[...slug]/page';
+//import { GenderTabContainer } from './[...slug]/page';
 import Drawer from './comp/drawer'
 
 
@@ -28,7 +30,10 @@ export default async function Application({gender,value}) {
       
                     const catName = m[0]
                     const content = m[1]
-                    return <Grid key={i} item xs={5} sm={3} md={2}> <SponsorKiyafetView group={topGroup} title={catName} content={content} /></Grid>
+              
+                    const imageUrl = category[deaccent(catName.replaceAll(',','-').replaceAll(' ','')).toLowerCase()]
+                    debugger
+                    return <Grid key={i} item xs={5} sm={3} md={2}> <SponsorKiyafetView group={topGroup} title={catName} content={content} imageUrl={imageUrl} /></Grid>
                 })
             })}
         </Grid>
