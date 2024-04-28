@@ -2,7 +2,7 @@ import * as React from 'react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import Link from 'next/link';
+//import Link from 'next/link';
 
 export default function Diziview({ title, content }) {
     const { ImageUrl, Date, tag } = content;
@@ -14,7 +14,7 @@ export default function Diziview({ title, content }) {
             <ListItem disablePadding
 
             >
-                <ListItemButton component={Link}
+                <ListItemButton component='a'
                     href={`/dizikiyafeti/${tag}-dizi-kiyafetleri`}  target='_blank'
                   >
                     {title}

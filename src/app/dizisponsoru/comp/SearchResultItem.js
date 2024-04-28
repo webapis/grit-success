@@ -6,9 +6,10 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import Button from '@mui/material/Button';
-import Link from 'next/link';
+//import Link from 'next/link';
 import  Chip  from '@mui/material/Chip';
 export default function SearchResultItem({ item }) {
+  
     debugger
     const { Name:name, Website, Acyklama,TVSeriesTitle,tag,brandTag,ServiceName,h3 } = item
 
@@ -24,7 +25,7 @@ export default function SearchResultItem({ item }) {
            
             height="100"
          
-            src={`/dizi/cover-image/${tag}.jpg`}
+            src={'https://ik.imagekit.io/mumrjdehaou/' +item.Tag}
             loading="lazy"
             
         />
@@ -66,7 +67,7 @@ export default function SearchResultItem({ item }) {
       
         </CardContent>
         <CardActions>
-            <Button  endIcon={<OpenInNewIcon/>}  component={Link}   href={Website}>
+            <Button  endIcon={<OpenInNewIcon/>}  component='a'   href={Website} target='_blank'>
                sponsor web sitesine git
            
             </Button>

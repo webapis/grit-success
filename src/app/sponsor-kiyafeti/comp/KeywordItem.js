@@ -3,20 +3,20 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 
 
-import Link from 'next/link';
+//import Link from 'next/link';
 import Typography from '@mui/material/Typography';
 
 
-export default function KeywordItem({image,label,selected,nextUrl,subcat}) {
+export default function KeywordItem({imageUrl,label,selected,nextUrl,subcat}) {
 
 
   return (
-    <Link href={nextUrl} style={{textDecoration:"none"}}>
+    <a href={nextUrl} style={{textDecoration:"none"}}>
     <Box sx={{  display: 'flex',backgroundColor:selected?"#e8f0fe":"white", color:selected?"#1A73E8":"black",border:selected?"1px solid #1A73E8":'1px solid #bdbdbd',borderRadius:1} }>
       <img
         component="img"
         style={{ height:50, borderRadius:3, width:30,objectFit:'fill'}}
-        src={`/dizi/keywords/${label}.jpg`}
+        src={imageUrl}
         alt=""
       />
     
@@ -30,6 +30,6 @@ export default function KeywordItem({image,label,selected,nextUrl,subcat}) {
       </Box>
   
     </Box>
-    </Link>
+    </a>
   );
 }

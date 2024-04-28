@@ -1,6 +1,6 @@
 //import Application from "../Application"
 import { promises as fs } from 'fs';
-import Link from 'next/link';
+//import Link from 'next/link';
 import Image from "../comp/Image";
 import { Box, Grid } from "@mui/material";
 import { Container } from '@mui/material';
@@ -183,8 +183,8 @@ export default async function SponsorKiyafetiPage({ params }) {
 export function GenderTabContainer({ value = 0 }) {
 
     return <Container sx={{ display: 'flex', justifyContent: "center" }}> <Tabs value={value} sx={{ marginBottom: 1 }} variant="scrollable" scrollButtons allowScrollButtonsMobile>
-        <Tab label="Kadın" component={Link} href="/sponsor-kiyafeti" />
-        <Tab label="Erkek" component={Link} href="/sponsor-kiyafeti/erkek" />
+        <Tab label="Kadın" component='a' href="/sponsor-kiyafeti" />
+        <Tab label="Erkek" component='a' href="/sponsor-kiyafeti/erkek" />
         {/* <Tab label="Kız Çocuk" component={Link} href="/sponsor-kiyafeti/kiz-cocuk" />
         <Tab label="Erkek Çocuk" href="/dizi-sponsoru/erkek-cocuk" />
         <Tab label="Diğer" component={Link} href="/sponsor-kiyafeti/diğer" /> */}
@@ -207,7 +207,7 @@ export function KeywordsTabContainer({ value = 1000, category, rawData, slug }) 
             })
 
             // if (imageUrl) {
-            return { label: m, imageUrl }
+            return { label: m, imageUrl,keywordImage:imageUrl.image[0] }
             // }
             return null
 
@@ -220,7 +220,7 @@ export function KeywordsTabContainer({ value = 1000, category, rawData, slug }) 
             reversedUrl[0] = '1'
             const nextUrl = '/sponsor-kiyafeti/' + reversedUrl.reverse().join('/')
 
-            return { selected: selectedKeywords === i.toString() ? 1 : 0, render: <Tab key={i} label={<KeywordItem subcat={m.imageUrl.subcat} selected={selectedKeywords === i.toString()} nextUrl={nextUrl} initialAllSelection={initialAllSelection} image={m.image} label={m.label} slug={slug} category={category} />} /> }
+            return { selected: selectedKeywords === i.toString() ? 1 : 0, render: <Tab key={i} label={<KeywordItem imageUrl={'https://ik.imagekit.io/mumrjdehaou/'+ m.keywordImage} subcat={m.imageUrl.subcat} selected={selectedKeywords === i.toString()} nextUrl={nextUrl} initialAllSelection={initialAllSelection} image={m.image} label={m.label} slug={slug} category={category} />} /> }
         }).sort((x, y) => y.selected - x.selected).map(m => m.render)
         }
 

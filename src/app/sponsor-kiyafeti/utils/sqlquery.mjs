@@ -29,7 +29,7 @@ const genderData = groupBy(data, 'gender')
 
 for (let gnd in genderData) {
   debugger
-  await makeDir(`${process.cwd()}/src/app/sponsor-kiyafeti/data/${deaccent(gnd).toLowerCase().replaceAll(' ','-').replaceAll(',','')}`)
+  await makeDir(`${process.cwd()}/src/app/sponsor-kiyafeti/data/${deaccent(gnd).toLowerCase().replaceAll(' ', '-').replaceAll(',', '')}`)
   const currentData = genderData[gnd]
   const groupedData = groupBy(currentData, 'group')
   for (let group in groupedData) {
@@ -44,15 +44,20 @@ for (let gnd in genderData) {
 
 
       }
+      if (gnd === 'kadın') {
+        fs.writeFileSync(`${process.cwd()}/src/app/sponsor-kiyafeti/data/${deaccent(gnd).toLowerCase().replaceAll(' ', '-')}/${deaccent(category).toLowerCase().replaceAll(' ', '-').replaceAll(',', '')}-sponsorkiyafeti.json`, JSON.stringify(data), { encoding: 'utf8' })
 
-      fs.writeFileSync(`${process.cwd()}/src/app/sponsor-kiyafeti/data/${deaccent(gnd).toLowerCase().replaceAll(' ','-')}/${deaccent(category).toLowerCase().replaceAll(' ','-').replaceAll(',','')}-sponsorkiyafeti.json`, JSON.stringify(data), { encoding: 'utf8' })
+      }
 
     }
 
     groupedData[group] = categories
 
   }
-  fs.writeFileSync(`${process.cwd()}/src/app/sponsor-kiyafeti/data/${deaccent(gnd).toLowerCase().replaceAll(' ','-').replaceAll(',','')}/sponsorkiyafetiMenu.json`, JSON.stringify(groupedData), { encoding: 'utf8' })
+  if (gnd === 'kadın') {
+    fs.writeFileSync(`${process.cwd()}/src/app/sponsor-kiyafeti/data/${deaccent(gnd).toLowerCase().replaceAll(' ', '-').replaceAll(',', '')}/sponsorkiyafetiMenu.json`, JSON.stringify(groupedData), { encoding: 'utf8' })
+
+  }
 
   debugger
 }

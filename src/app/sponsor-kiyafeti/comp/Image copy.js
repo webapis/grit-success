@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useState,useRef } from "react";
-import Link from "next/link"
+//import Link from "next/link"
 import {  Typography, Box } from "@mui/material"
 import placeholder from "./placeholders.js";
 export default function Image({ content }) {
@@ -39,7 +39,7 @@ export default function Image({ content }) {
             <Typography sx={{fontSize:12,fontFamily:'inherit'}}>{price} {currency}</Typography>
         </Box>
         <Box>
-            <Typography  component={Link} href={link} target="_blank" variant="caption" style={{ width: '100%', wordWrap: 'break-word', textDecoration: 'none', color:'inherit',fontFamily:'inherit' }}>{title}</Typography>
+            <Typography  component='a' href={link} target="_blank" variant="caption" style={{ width: '100%', wordWrap: 'break-word', textDecoration: 'none', color:'inherit',fontFamily:'inherit' }}>{title}</Typography>
         </Box>
     </Box>
 }

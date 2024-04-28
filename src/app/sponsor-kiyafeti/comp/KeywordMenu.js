@@ -7,7 +7,7 @@ import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 
 import Check from '@mui/icons-material/Check';
-import Link from 'next/link';
+//import Link from 'next/link';
 
 
 
@@ -91,7 +91,7 @@ export default function AccountMenu({ obj, slug, id, letter, tooltipTitle, backg
           nextcurrentSlugState.indexOf(option[0]) === -1 ? (nextcurrentSlugState.reverse().splice(1,0,option[0]) && nextcurrentSlugState.reverse()): nextcurrentSlugState.splice(nextcurrentSlugState.indexOf(option[0]), 1)
           const nextSlugState = '/sponsor-kiyafeti/' + [...nextcurrentSlugState].join('/').toString()
 
-          return <MenuItem component={Link} href={nextSlugState + '/sayfa/1'} key={option[0]} selected={decodeURI(slug).includes(option[0])} >
+          return <MenuItem component='a' href={nextSlugState + '/sayfa/1'} key={option[0]} selected={decodeURI(slug).includes(option[0])} >
             <>
             {decodeURI(slug).includes(option[0])?  <IconButton color="primary"><Check/></IconButton>:    <IconButton color="white">{"  "}  </IconButton>}
         
