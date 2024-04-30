@@ -172,7 +172,7 @@ export default async function SponsorKiyafetiPage({ params }) {
         </Container>
         </Drawer>
     </>
-
+//
 
 }
 
