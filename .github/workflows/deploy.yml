@@ -38,5 +38,5 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "webapis-grit-succes-39"
-          entrypoint: ""
+          entrypoint: "app"
           root: ""
