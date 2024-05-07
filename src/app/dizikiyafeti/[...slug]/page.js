@@ -29,7 +29,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
     }
 }
 
-
+export const runtime = 'edge';
 
 export default async function DiziPage({ params }) {
 

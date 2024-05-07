@@ -41,7 +41,7 @@ export async function generateMetadata({ params }) {
 
 }
 
-
+export const runtime = 'edge';
 
 export default async function DiziSponsorKategori({ params }) {
     debugger

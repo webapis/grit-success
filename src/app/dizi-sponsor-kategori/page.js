@@ -16,7 +16,7 @@ export async function generateMetadata({ params }) {
     }
 
 }
-
+export const runtime = 'edge';
 export default function SponsorKategori() {
 
     return <>

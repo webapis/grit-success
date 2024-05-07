@@ -55,7 +55,7 @@ export async function generateMetadata({ params }) {
 
     }
 }
-
+export const runtime = 'edge';
 export default async function SponsorKiyafetiPage({ params }) {
 
     const { slug } = params

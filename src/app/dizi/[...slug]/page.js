@@ -51,7 +51,7 @@ export async function generateMetadata({ params }) {
 
 }
 
-
+export const runtime = 'edge';
 
 export default async function DiziPage({ params }) {
     const page = params.slug[2] ? parseInt(params.slug[2]) : 1
