@@ -14,7 +14,7 @@ const inter = Poppins({ subsets: ['latin'], weight: ['400', '700'], })
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
- 
+ <meta name="fo-verify" content="8de09664-17ab-4040-a646-0c5652e5e37d" />
       <body className={inter.className}>
    
 
