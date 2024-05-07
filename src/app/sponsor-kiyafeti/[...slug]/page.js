@@ -106,7 +106,7 @@ export default async function SponsorKiyafetiPage({ params }) {
             genderIndex = 1;
 
     }
-//
+////
     const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/${gender}/${category}-sponsorkiyafeti.json`), 'utf8');
     const rawData = orderData(JSON.parse(data)).filter(f => !f.error)
     const filteredByUrlData = rawData.filter((obj, i) => {
