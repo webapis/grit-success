@@ -9,18 +9,11 @@ import TopNavigation from '../components/TopNavigation';
 export async function generateMetadata({ params }) {
 
 
-
-
     return {
 
         title: 'Dizi Sponsor Kategori'
 
     }
-
-
-
-
-
 
 }
 
