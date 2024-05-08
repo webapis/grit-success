@@ -32,7 +32,7 @@ export default async function Application({gender,value}) {
                     const content = m[1]
               
                     const imageUrl = category[deaccent(catName.replaceAll(',','-').replaceAll(' ','')).toLowerCase()]
-                    debugger
+                
                     return <Grid key={i} item xs={5} sm={3} md={2}> <SponsorKiyafetView group={topGroup} title={catName} content={content} imageUrl={imageUrl} /></Grid>
                 })
             })}

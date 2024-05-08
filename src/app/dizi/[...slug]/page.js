@@ -18,7 +18,7 @@ export async function generateMetadata({ params }) {
 
     // const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/pageMetadata.json'), 'utf8');
     // const pagesData = JSON.parse(pages);
-    debugger
+
     const result = pagesMetaData.find(f => {
         const current = f.slug
         const slug = params.slug[0]
@@ -116,9 +116,9 @@ export async function generateStaticParams() {
 
     return pagesMetaData.map((post) => {
       const {slug}= post
-  debugger
+
       return {
-        slug: [slug,'sayfa','1']
+        slug: [slug]
       }
       
     })

@@ -10,7 +10,7 @@ import Button from '@mui/material/Button';
 import  Chip  from '@mui/material/Chip';
 export default function SearchResultItem({ item }) {
   
-    debugger
+
     const { Name:name, Website, Acyklama,TVSeriesTitle,tag,brandTag,ServiceName,h3 } = item
 
     const imageName = brandTag ?brandTag: extractSubdomain(Website) 

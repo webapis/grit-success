@@ -104,6 +104,22 @@ export default async function DiziSponsoru({ params }) {
 }
 
 
+export async function generateStaticParams(props) {
+   const keywords =keywordMetaData.map(m=>m.keyword)
+    const diziler = pagesMetaData.map(m=>{return {...m,keywords}})
+const pageCantidates =flattenArrayByProperty(diziler,'keywords')
+debugger
+    return pageCantidates.map((post) => {
+        debugger
+      const { dizi,keywords}= post
+debugger
+      return {
+        slug: [deaccent(dizi).toLowerCase().replaceAll(' ','-'),keywords,'sayfa','1']
+      }
+      
+    })
+}
+
 function paginate(array, page, pageSize) {
     --page; // Adjusting to zero-based index
 
@@ -111,4 +127,14 @@ function paginate(array, page, pageSize) {
     const endIndex = startIndex + pageSize;
 
     return array.slice(startIndex, endIndex);
+}
+
+
+function flattenArrayByProperty(arrayOfObjects, property) {
+    return arrayOfObjects.flatMap(obj => {
+        return obj[property].map(value => ({
+            ...obj,
+            [property]: value
+        }));
+    });
 }

@@ -72,7 +72,7 @@ export async function generateStaticParams() {
         const { slug } = obj
         debugger
         return {
-            slug: [slug[0], 'sayfa', '1']
+            slug: [slug[0]]
         }
 
     })
