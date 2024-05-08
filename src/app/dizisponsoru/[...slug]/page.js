@@ -10,13 +10,14 @@ import keywordMetaData from '@/app/dizisponsoru/keywordMetaData.json';
 import pagesMetaData from '@/app/dizi/pageMetadata.json';
 import pagesData from '@/app/dizi/dizisponsoru.json';
 import deaccent from './deaccent';
+import keywords from '@/app/sponsor-kiyafeti/comp/keywords';
 
 debugger
 
 export async function generateMetadata({ params }) {
     const dizi = params.slug[0]
     const keyword = params.slug[1]
-    
+
     const keywordObj = keywordMetaData.find(f => f.keyword === keyword)
     debugger
     const pageObj = pagesMetaData.find(f => {
@@ -30,10 +31,10 @@ export async function generateMetadata({ params }) {
     })
 
 
-   
+
     return {
 
-        title: pageObj.dizi + ' Dizisi ' +keywordObj.keywordTitle +' Sponsorları'
+        title: pageObj.dizi + ' Dizisi ' + keywordObj.keywordTitle + ' Sponsorları'
 
     }
 
@@ -56,7 +57,7 @@ export default async function DiziSponsoru({ params }) {
     // const data = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/dizisponsoru.json'), 'utf8');
     // const pagesData = JSON.parse(data);
 
-  
+
 
 
     const pageObj = pagesMetaData.find(f => {
@@ -72,14 +73,14 @@ export default async function DiziSponsoru({ params }) {
     const keywordObj = keywordMetaData.find(f => f.keyword === keyword)
 
     debugger
-    const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name','Acyklama'], minMatchCharLength: 4 })
+    const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'Acyklama'], minMatchCharLength: 4 })
 
 
 
- 
-    
-   
-    let results =keywordObj.or? fuse.search({ "$and": [{ "TVSeriesTitle": pageObj.dizi },keywordObj.or ] }): fuse.search({ "$and": [{ "TVSeriesTitle": pageObj.dizi } ] })
+
+
+
+    let results = keywordObj.or ? fuse.search({ "$and": [{ "TVSeriesTitle": pageObj.dizi }, keywordObj.or] }) : fuse.search({ "$and": [{ "TVSeriesTitle": pageObj.dizi }] })
 
     debugger
     const paginatedData = paginate(results, page, 50)
@@ -87,10 +88,10 @@ export default async function DiziSponsoru({ params }) {
     return <>
 
 
- 
+
 
         <SearchResultContainer data={paginatedData} pageTitle={`${pageObj.dizi} Dizisi ${keywordObj.keywordTitle} Sponsorları`} dizi={dizi} page={page} keyword={keyword} />
-       
+
         <PaginationContainer count={pageCount} page={page} url={`/dizisponsoru/${dizi}/${keyword}/sayfa/`} />
     </>
 
@@ -105,18 +106,39 @@ export default async function DiziSponsoru({ params }) {
 
 
 export async function generateStaticParams(props) {
-   const keywords =keywordMetaData.map(m=>m.keyword)
-    const diziler = pagesMetaData.map(m=>{return {...m,keywords}})
-const pageCantidates =flattenArrayByProperty(diziler,'keywords')
+
+    const pageCantidates = []
 debugger
-    return pageCantidates.map((post) => {
+
+const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'Acyklama'], minMatchCharLength: 4 })
+
+
+    for (let pageObj of pagesMetaData) {
+   
+        for (let keywordObj of keywordMetaData) {
+
+            let results = keywordObj.or ? fuse.search({ "$and": [{ "TVSeriesTitle": pageObj.dizi }, keywordObj.or] }) : fuse.search({ "$and": [{ "TVSeriesTitle": pageObj.dizi }] })
+
+        
+        
+            const pageCount = Math.ceil(results.length / 50)
+
+            pageCantidates.push({dizi:pageObj.dizi,keyword:keywordObj.keyword,pageCount})
+       
+
+        }
+
+    }
+const pages = flattenArrayByPageCount(pageCantidates)
+    debugger
+    return pages.map((post) => {
         debugger
-      const { dizi,keywords}= post
-debugger
-      return {
-        slug: [deaccent(dizi).toLowerCase().replaceAll(' ','-'),keywords,'sayfa','1']
-      }
-      
+        const { dizi, keyword,page } = post
+        debugger
+        return {
+            slug: [deaccent(dizi).toLowerCase().replaceAll(' ', '-'), keyword, 'sayfa', page.toString()]
+        }
+
     })
 }
 
@@ -130,11 +152,13 @@ function paginate(array, page, pageSize) {
 }
 
 
-function flattenArrayByProperty(arrayOfObjects, property) {
+function flattenArrayByPageCount(arrayOfObjects) {
     return arrayOfObjects.flatMap(obj => {
-        return obj[property].map(value => ({
-            ...obj,
-            [property]: value
+        const { dizi, pageCount, keyword } = obj;
+        return Array.from({ length: pageCount }, (_, index) => ({
+            dizi,
+            keyword,
+            page: index + 1
         }));
     });
 }
