@@ -7,17 +7,9 @@
             "EŞARP=atkı",
             "Eşarp=atkı",
             "fular=fular",
-            "boyunluk=boyunluk",
-            "panço"
+            "boyunluk=boyunluk"
         ],
-        "name": "şal, atkı, fular, boyunluk, panço",
-        "group": "aksesuar"
-    },
-    {
-        "keywords": [
-            "kravat"
-        ],
-        "name": "kravat",
+        "name": "şal, atkı, fular, boyunluk",
         "group": "aksesuar"
     },
     {
@@ -26,36 +18,15 @@
             "Socks=çorap",
             "eldiven",
             "Çorabı=çorap",
-            "socks=çorap",
-            "külotlu"
+            "socks=çorap"
+           
         ],
         "negative":["Çoraplı","Bot","bere","şapka","jartiyer","bodysuit"],
-        "name": "çorap, külotlu, eldiven",
-        "group": "aksesuar"
-    },
-    {
-        "keywords": [
-            "omuzluk",
-            "Omuz Aksesuarı-omuzluk"
-        ],
-        "name": "omuzluk",
-        "group": "aksesuar"
-    },
-    {
-        "keywords": [
-            "fular"
-        ],
-        "name": "fular",
+        "exceptions":["külotlu"],
+        "name": "çorap, eldiven",
         "group": "aksesuar"
     },
 
-    {
-        "keywords": [
-            "Panço"
-        ],
-        "name": "Panço",
-        "group": "aksesuar"
-    },
     {
         "keywords": [
             "vizör",
@@ -77,16 +48,10 @@
         ],
         "name": "kemer",
         "negative":["elbise","tulum","kemerli","jartiyer","trousers","çanta","kemer detaylı","kemer detayli","pants","skirt","pantolon","bikini","short","shorts","belted","belt detail","patik","gömlek","dress","etek","kaban","shirt","trenchcoat","blazer","blouse"],
+       "exceptions":["tokalı","Cüzdan Detaylı"],
         "group": "aksesuar"
     },
-    {
-        "keywords": [
-            "gözlük",
-            "gözlüğü=gözlük"
-        ],
-        "name": "gözlük",
-        "group": "aksesuar"
-    },
+ 
     {
         "keywords": [
             "toka",

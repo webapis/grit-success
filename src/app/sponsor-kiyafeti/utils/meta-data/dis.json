@@ -26,6 +26,7 @@
             "bomber=ceket"
         ],
         "name": "blazer, ceket, yelek",
+        "exceptions":["Kemer Detaylı"],
         "group": "dış giyim"
     },
   

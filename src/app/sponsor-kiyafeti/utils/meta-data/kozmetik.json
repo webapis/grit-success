@@ -10,9 +10,11 @@
             "yağ",
             "jel",
             "dudak",
-            "mist"
+            "body mist=sprey"
+        
         ],
-        "name": "parfüm, krem, sprey, yağ, dudak, losyon, jel, peeling, mist",
+        "name": "parfüm, krem, sprey, yağ, dudak, losyon, jel, peeling",
+        "negative":["elbise","şapka","Sweatshirt","pantolon","tunik","yağmurluk","сeket","yelek","etek","tişört","terlik","dress","Top","atlet","atkı","gömlek","şort","sneaker","Bustiyer","kürk","bluz","pijama","kazayağı","t-shirt","hirka","kazak","şal","tote","sweat","kasket","pareo","kaban","kazayaği","süveter","taç","büstiyer","uzun","ayağı","blazer","keten","straplez","vazo","taş","dekoratif","demlik","el yapımı","drapel","kolye","sandalet","kemer","elbi̇se","koltuk","çizme","bot"],
         "group": "kozmetik"
     }
 ]

@@ -18,12 +18,13 @@ walkSync(path.join(process.cwd(), `/unzipped-data`), async (filepath) => {
     files.push(filepath)
 })
 const data = []
+const unusedData = []
 for (let file of files) {
 
     const rowData = fs.readFileSync(file)
     const objData = JSON.parse(rowData)
     data.push(...objData)
-
+    unusedData.push(...objData)
 
 }
 let menuData = {}
@@ -31,31 +32,42 @@ for (let category of mergedCategories) {
     const keywords = category.keywords.map(m => m.split('=')[0])
     const catName = category.name
     const negative = category.negative
-    const genders = gender.filter(f=>f.name !=='kadın').map(m=>m.keywords).flat()
-    debugger
+    const exceptions = category.exceptions
+
+    const otherNegatives = mergedCategories.filter(f => f.name !== catName).map(m => m.keywords).flat().filter(item => exceptions ? !exceptions.includes(item.toLowerCase()) : true);
+
+    const genders = gender.filter(f => f.name !== 'kadın').map(m => m.keywords).flat()
+
     const colors = color.map(m => m.keywords).flat()
 
-    const candiateData = data.filter((f) => !searchObject(f, genders)).filter((f) => negative ? !searchObject(f, negative) : true).filter(f => {
-        const result = searchObject(f, keywords)
+    const candiateData = data.filter(f => {
+        const result = searchObject({ ...f, duplicateTitles: [], pageTitle: '',image:[],pageUrl:'',marka:'' }, keywords)
 
         return result
-    })
+    }).filter((f) => !searchObject(f, genders)).filter((f) => negative ? !searchObject({ ...f, duplicateTitles: [], pageTitle: '', link: '',image:[],pageUrl:'',marka:'' }, [...otherNegatives, ...negative]) : !searchObject({ ...f, duplicateTitles: [], pageTitle: '', link: '',image:[],pageUrl:'',marka:'' }, otherNegatives))
+
+    for (let item of candiateData) {
+        const index = unusedData.findIndex(obj => obj.link === item.link);
+        if (index !== -1) {
+            unusedData.splice(index, 1);
+        }
+    }
 
     const mapedPrice = candiateData.map((m) => {
         const subcatKeyword = searchObject(m, keywords)
         const subcat = category.keywords.find(f => f.includes(subcatKeyword))
-        const deaccentedSubCat =deaccent(subcat).toLowerCase()//.split("=")[0]
-        debugger
+        const deaccentedSubCat = deaccent(subcat).toLowerCase()//.split("=")[0]
+
         const colorkeyword = searchObject(m, colors)
         const colorName = color.find(f => f.keywords.indexOf(colorkeyword)).name
         if (!subcat) {
-            debugger
+
         }
         return {
             ...m,
             price: mapPrice(m.price),
             category: deaccent(catName).toLocaleLowerCase(),
-            subcat:deaccentedSubCat ,
+            subcat: deaccentedSubCat,
             gender: 'kadın',
             color: colorName,
             group: category.group
@@ -89,8 +101,13 @@ for (let category of mergedCategories) {
 }
 
 debugger
+const genders = gender.filter(f => f.name !== 'kadın').map(m => m.keywords).flat()
+debugger
+const removeUnrelated = unusedData.filter(obj => !searchObject(obj, [...genders, 'Ev Dekorasyon', 'mutfak', 'Homeworks','Maske']));
+debugger
 
 fs.writeFileSync(`${process.cwd()}/src/app/sponsor-kiyafeti/data/kadin/sponsorkiyafetiMenu.json`, JSON.stringify(menuData), { encoding: 'utf8' })
+fs.writeFileSync(`${process.cwd()}/src/app/sponsor-kiyafeti/data/kadin/02-unusedData.json`, JSON.stringify(removeUnrelated), { encoding: 'utf8' })
 
 
 

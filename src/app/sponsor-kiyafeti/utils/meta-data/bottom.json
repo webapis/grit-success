@@ -30,6 +30,7 @@
             "skirt=etek"
         ],
         "name": "şort, etek",
+        "exceptions":["Kemer Detaylı"],
         "group": "alt giyim"
     }
 ]

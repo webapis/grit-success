@@ -20,6 +20,7 @@ import prices from './keywords/price'
 import searchObject from '../utils/searchObject';
 import KeywordItem from '../comp/KeywordItem';
 import PopupMenuColor from '../comp/popup-menu-color';
+
 function findMatching(primaryArray, colorsArray) {
     // Filter the colorsArray to find colors that exist in the primaryArray
     const matchingColors = colorsArray.filter(color => primaryArray.includes(color));

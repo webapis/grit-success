@@ -14,7 +14,8 @@
             "gelinlik",
             "ELBİSE=elbise",
             "Elbise=elbise",
-            "bodyсon=elbise"
+            "bodyсon=elbise",
+            "elb=elbise"
            
         ],
         "name": "elbise, abiye, tulum",
@@ -30,6 +31,7 @@
             "Pijama",
             "Kurabiye"
         ],
+        "exceptions":["gömlek","gomlek","üst","kemer"],
         "group": "üst giyim"
     },
     {
@@ -44,9 +46,9 @@
     },
     {
         "keywords": [
-            "gömlek=gömlek",
+            "gömlek",
             "shirt=gömlek",
-            "bluz=bluz",
+            "bluz",
             "tunik",
             "Blouse=bluz"
         ],
@@ -54,6 +56,7 @@
         "negative": [
             "Pijama Üstü"
         ],
+        "exceptions":["Crop","kolye detaylı"],
         "group": "üst giyim"
     },
     {
@@ -67,6 +70,7 @@
             "Triko=triko"
         ],
         "name": "kazak, hırka, süveter, triko",
+        "exceptions":["triko"],
         "group": "üst giyim"
     },
     {

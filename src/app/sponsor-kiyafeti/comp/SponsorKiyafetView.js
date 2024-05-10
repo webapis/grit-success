@@ -5,13 +5,15 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import categoryLabels from './categoryLabels';
 //import Link from 'next/link';
 
 import deaccent from './deaccent';
 
 export default function SponsorKiyafetView({title ,content,group, imageUrl }) {
 
-    
+    const dashTitle =title.split(',').filter(f=>f).map(m=>m.trim()).join('-')
+
     const {category,gender,total}=content
 const keywordint =category.split(',').map((m,i)=>i.toString()).join('') 
 
@@ -29,7 +31,7 @@ const keywordint =category.split(',').map((m,i)=>i.toString()).join('')
     
            
             <Typography  variant="body2" gutterBottom component="div" sx={{ textTransform: 'capitalize', fontFamily:'inherit',width: {xs:200,sm:250,md:200} }}>
-                    {title} 
+                    {categoryLabels[dashTitle]?categoryLabels[dashTitle]:title}
                 </Typography>
        
         

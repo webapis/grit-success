@@ -16,6 +16,7 @@
             "clutch"
         ],
         "name": "çanta, cüzdan, portföy, kartlık, clutch",
+        "negative":["gömlek","bluz","triko","elb","büstiyer"],
         "group": "çanta"
     }
 ]
