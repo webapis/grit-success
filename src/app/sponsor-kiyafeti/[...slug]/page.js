@@ -59,13 +59,14 @@ export async function generateMetadata({ params }) {
 export default async function SponsorKiyafetiPage({ params }) {
 
     const { slug } = params
-    debugger
+
     let gender = decodeURI(slug[0])
     let category = decodeURI(slug[1])
     let page = parseInt(decodeURI([...slug].reverse()[0]))
     //categoryIndex
     const selectedKeywords = [...slug].reverse()[2]
     const categoryIndex = category.split('-').map((m, i) => { return { index: i.toString(), category: m } })
+    //const categoryIndex = category.split('-').map((m, i) => { return { index: i.toString(), category: m } })
     const matchingCategories = categoryIndex.filter(f => selectedKeywords.includes(f.index))
 
     //colors
@@ -119,21 +120,23 @@ export default async function SponsorKiyafetiPage({ params }) {
         }
 
         if (searchObject(object, matchingCategories.map(m => m.category))) {
+        
             return true
         } else {
+            debugger
             return false
         }
 
     }).filter(f => matchingColors.length > 0 ? searchObject(f, matchingColors) : true).filter(f => matchingBrands.length > 0 ? searchObject(f, matchingBrands.map(m => m.replaceAll('-', ' '))) : true).filter(f => matchingPrices.length > 0 ? findMatchingPrice(f.price, matchingPrices) : true)
-
+debugger
     let colorFacet = extractFacet(rawData, colors)
     let brandFacet = extractFacet(rawData, brands)
     let priceFacet = extractPriceFacet(rawData, prices)
 
-    debugger
+ 
     const pagesData = paginate(orderData(filteredByUrlData), page, 100)
     const pageCount = Math.ceil(filteredByUrlData.length / 100)
-    debugger
+
 
     return <>
 
@@ -192,27 +195,35 @@ export function GenderTabContainer({ value = 0 }) {
 }
 
 export function KeywordsTabContainer({ value = 1000, category, rawData, slug }) {
+    
     const selectedKeywords = [...slug].reverse()[2]
     const categoryIndex = category.split('-').map((m, i) => i.toString()).join('')
     const initialAllSelection = selectedKeywords === categoryIndex
+    const filteredData =category.split('-').map(m => {
 
+
+        const imageUrl = rawData.filter(f=>f).find(r => {
+           
+                const obj = { ...r, category: '' }
+                return obj.subcat.includes(m)
+           
+    
+        })
+      
+        if(!imageUrl){
+            debugger
+        }
+        // if (imageUrl) {
+        return { label: m, imageUrl, keywordImage: imageUrl.image[0] }
+        // }
+        return null
+
+
+    })
+    const withoutdublicate = filteredData
     return <Tabs value={value} sx={{ marginBottom: 0 }} variant="scrollable" scrollButtons allowScrollButtonsMobile>
 
-        {category.split('-').map(m => {
-
-
-            const imageUrl = rawData.find(r => {
-                const obj = { ...r, category: '' }
-                return deaccent(obj.subcat).includes(m)
-            })
-
-            // if (imageUrl) {
-            return { label: m, imageUrl, keywordImage: imageUrl.image[0] }
-            // }
-            return null
-
-
-        }).filter((f, i) => f).map((m, i) => {
+        {withoutdublicate.filter((f, i) => f).map((m, i) => {
             const keywordIndex = [...slug].reverse()[2]
             const removeUrl = keywordIndex === i.toString() ? categoryIndex : i.toString()
             const reversedUrl = [...slug].reverse()
@@ -299,7 +310,7 @@ export async function generateStaticParams() {
 
     const objData = Object.values(JSON.parse(sponsorkiyafetiMenuRaw)).map(m => Object.keys(m)).flat().map(d => deaccent(d).toLowerCase().replaceAll(' ', '-').replaceAll(',', ''))
     const pageCandidates =[]
-    debugger
+
     for(let category of objData){
         const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/kadin/${category}-sponsorkiyafeti.json`), 'utf8');
         const rawData = orderData(JSON.parse(data)).filter(f => !f.error)
@@ -325,7 +336,7 @@ for(let matchingCategories of categories){
     })
     const pageCount = Math.ceil(filteredByUrlData.length / 100)
 pageCandidates.push({category,pageCount,keInit: category.split('-').length===matchingCategories.length? matchingCategories.map((m, i) => i.toString()).join(''):category.split('-').indexOf(matchingCategories[0]).toString() })
-debugger
+
 
 }
      
@@ -333,10 +344,10 @@ debugger
     }
     const pages =flattenArrayByPageCount(pageCandidates)
 
-    debugger
+  
     return pages.map((content) => {
      const {category,keInit,page}=content
-        debugger
+      
         return {
             slug: ['kadin', category, keInit, 'sayfa', page.toString()]
         }

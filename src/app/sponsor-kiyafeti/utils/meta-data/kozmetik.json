@@ -9,9 +9,10 @@
             "krem",
             "yağ",
             "jel",
-            "dudak"
+            "dudak",
+            "mist"
         ],
-        "name": "parfüm, krem, sprey, yağ, dudak, losyon, jel, peeling",
+        "name": "parfüm, krem, sprey, yağ, dudak, losyon, jel, peeling, mist",
         "group": "kozmetik"
     }
 ]

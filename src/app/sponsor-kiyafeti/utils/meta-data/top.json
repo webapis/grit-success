@@ -9,10 +9,12 @@
             "dress=elbise",
             "abiye",
             "tulum",
+            "jumpsuit=tulum",
             "tuvanam=abiye",
             "gelinlik",
             "ELBİSE=elbise",
-            "Elbise=elbise"
+            "Elbise=elbise",
+            "bodyсon=elbise"
            
         ],
         "name": "elbise, abiye, tulum",
@@ -33,10 +35,11 @@
     {
         "keywords": [
             "sweatshirt",
-            "Sweat",
-            "Hoodie=sweatshirt"
+            "sweat=sweatshirt",
+            "hoodie"
         ],
-        "name": "Sweatshirt",
+        "name": "sweatshirt, hoodie",
+        "negative":["bluz","tişört","atlet","tulum","pijama","T-Shirt","unisex"],
         "group": "üst giyim"
     },
     {
@@ -85,6 +88,15 @@
             "BUSTİYER=büstiyer"
         ],
         "name": "tişört, atlet, body, büstiyer, crop, top",
+        "negative":["mayo","tayt","topuklu","ceket","elbise","bodysuit","bikini","bluz","gömlek","sütyen","süveter","blouse","şort","bodyсon","kazak","yelek","sweatshirt","hırka","pantolon","erkek","trençkot"],
+        "group": "üst giyim"
+    },
+    {
+        "keywords": [
+            "bodysuit"
+        ],
+        "name": "bodysuit",
+        "negative":["jumpsuit"],
         "group": "üst giyim"
     },
     {

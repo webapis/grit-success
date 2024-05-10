@@ -9,10 +9,11 @@
     "lint": "next lint",
     "snap": "node snap.js",
     "storybook": "storybook dev -p 6006",
+    "getUniquePageTitles":"node src/app/sponsor-kiyafeti/utils/getUniquePageTitles.mjs",
     "build-storybook": "storybook build",
     "downloadProds": "node src/app/utils/downloadData.mjs",
     "extDizikiyafetiPageData": "node src/app/dizikiyafeti/utils/extractPageData.mjs",
-    "sponsorkiyafeti": "node src/app/sponsor-kiyafeti/utils/sqlquery.mjs",
+    "sponsorkiyafeti": "node src/app/sponsor-kiyafeti/utils/sqlquery2.mjs",
     "dizisponsoru": "node src/app/dizisponsoru/utils/sqlquery1.js",
     "dizikiyafeti": "node src/app/dizikiyafeti/utils/sqlquery1.js",
     "sponsor-kategori": "node src/app/dizi-sponsor-kategori/utils/sqlquery.js"

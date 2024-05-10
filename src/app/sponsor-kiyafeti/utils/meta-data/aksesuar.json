@@ -23,14 +23,14 @@
     {
         "keywords": [
             "çorap",
-            "Socks-çorap=çorap",
+            "Socks=çorap",
             "eldiven",
             "Çorabı=çorap",
-            "Stripe=çorap",
-            "socks=çorap"
+            "socks=çorap",
+            "külotlu"
         ],
-        "negative":["Çoraplı","Bot"],
-        "name": "çorap, eldiven",
+        "negative":["Çoraplı","Bot","bere","şapka","jartiyer","bodysuit"],
+        "name": "çorap, külotlu, eldiven",
         "group": "aksesuar"
     },
     {
@@ -58,27 +58,31 @@
     },
     {
         "keywords": [
+            "vizör",
             "şapka",
             "bere",
             "kasket",
-            "şapkası-şapka",
+            "şapkası=şapka",
             "hat-şapka"
+          
         ],
-        "name": "şapka, bere, kasket",
+        "name": "şapka, bere, kasket, vizör",
+        "negative":["çanta"],
         "group": "aksesuar"
     },
     {
         "keywords": [
             "kemer",
-            "belt-kemer"
+            "belt=kemer"
         ],
         "name": "kemer",
+        "negative":["elbise","tulum","kemerli","jartiyer","trousers","çanta","kemer detaylı","kemer detayli","pants","skirt","pantolon","bikini","short","shorts","belted","belt detail","patik","gömlek","dress","etek","kaban","shirt","trenchcoat","blazer","blouse"],
         "group": "aksesuar"
     },
     {
         "keywords": [
             "gözlük",
-            "gözlüğü-gözlük"
+            "gözlüğü=gözlük"
         ],
         "name": "gözlük",
         "group": "aksesuar"

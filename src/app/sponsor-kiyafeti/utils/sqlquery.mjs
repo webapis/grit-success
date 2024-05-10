@@ -46,7 +46,6 @@ for (let gnd in genderData) {
       }
       if (gnd === 'kadın') {
         fs.writeFileSync(`${process.cwd()}/src/app/sponsor-kiyafeti/data/${deaccent(gnd).toLowerCase().replaceAll(' ', '-')}/${deaccent(category).toLowerCase().replaceAll(' ', '-').replaceAll(',', '')}-sponsorkiyafeti.json`, JSON.stringify(data), { encoding: 'utf8' })
-
       }
 
     }

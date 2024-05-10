@@ -22,7 +22,7 @@ export default function KeywordItem({imageUrl,label,selected,nextUrl,subcat}) {
     
         <Box sx={{minWidth:70, display:'flex',alignItems:'center', justifyContent:'center' }}>
           <Typography component="div" variant="h7"  style={{ textTransform:'capitalize',fontFamily:'inherit'}}>
-           {subcat.split(' ').reverse()[0]}
+           {subcat.split('=').reverse()[0]}
           </Typography>
         
        
