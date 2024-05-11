@@ -10,6 +10,7 @@
             "boyunluk=boyunluk"
         ],
         "name": "şal, atkı, fular, boyunluk",
+        "negative":["elb"],
         "group": "aksesuar"
     },
     {
@@ -18,11 +19,12 @@
             "Socks=çorap",
             "eldiven",
             "Çorabı=çorap",
-            "socks=çorap"
+            "socks=çorap",
+            "çorabı=çorap"
            
         ],
         "negative":["Çoraplı","Bot","bere","şapka","jartiyer","bodysuit"],
-        "exceptions":["külotlu"],
+        "exceptions":["külotlu","babet","külot","sneaker"],
         "name": "çorap, eldiven",
         "group": "aksesuar"
     },
@@ -39,6 +41,7 @@
         ],
         "name": "şapka, bere, kasket, vizör",
         "negative":["çanta"],
+        "exceptions":["plaj"],
         "group": "aksesuar"
     },
     {
@@ -48,7 +51,7 @@
         ],
         "name": "kemer",
         "negative":["elbise","tulum","kemerli","jartiyer","trousers","çanta","kemer detaylı","kemer detayli","pants","skirt","pantolon","bikini","short","shorts","belted","belt detail","patik","gömlek","dress","etek","kaban","shirt","trenchcoat","blazer","blouse"],
-       "exceptions":["tokalı","Cüzdan Detaylı"],
+       "exceptions":["toka","Cüzdan Detaylı"],
         "group": "aksesuar"
     },
  

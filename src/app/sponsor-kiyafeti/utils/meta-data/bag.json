@@ -1,6 +1,10 @@
 [
     {
         "keywords": [
+            "omuz",
+            "telefon",
+            "sırt",
+            "tote",
             "çanta",
             "bags=çanta",
             "backpacks=çanta",
@@ -14,9 +18,11 @@
             "bag=çanta",
             "kartlık",
             "clutch"
+       
         ],
-        "name": "çanta, cüzdan, portföy, kartlık, clutch",
-        "negative":["gömlek","bluz","triko","elb","büstiyer"],
+        "name": "çanta, cüzdan, portföy, kartlık, clutch, tote, omuz, telefon, sırt",
+        "negative":["gömlek","bluz","triko","elb","büstiyer","bağlama","triko","ayakkabi","tanga","Tshi̇rt","T-shi̇rt","yaka"],
+        "exceptions":["toka"],
         "group": "çanta"
     }
 ]

@@ -25,6 +25,9 @@ sapka:'şapka',
 ayakkabi:'ayakkabı',
 cizme:'çizme',
 sapka:'şapka',
+yag:'yağ',
+parfum:'parfüm',
+sirt:'sırt'
 }
 
 export default keywordLabels

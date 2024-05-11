@@ -29,9 +29,10 @@
             "ev patiği",
             "mayo",
             "Pijama",
-            "Kurabiye"
+            "Kurabiye",
+            "takım elbise"
         ],
-        "exceptions":["gömlek","gomlek","üst","kemer"],
+        "exceptions":["gömlek","gomlek","üst","kemer","pareo","omuz","broş"],
         "group": "üst giyim"
     },
     {
@@ -41,7 +42,7 @@
             "hoodie"
         ],
         "name": "sweatshirt, hoodie",
-        "negative":["bluz","tişört","atlet","tulum","pijama","T-Shirt","unisex"],
+        "negative":["bluz","tişört","atlet","tulum","pijama","T-Shirt","unisex","Sweatpants"],
         "group": "üst giyim"
     },
     {
@@ -54,9 +55,10 @@
         ],
         "name": "gömlek, bluz, tunik",
         "negative": [
-            "Pijama Üstü"
+            "Pijama Üstü",
+            "triko","t-shirt","tshirt"
         ],
-        "exceptions":["Crop","kolye detaylı"],
+        "exceptions":["Crop","kolye detaylı","Crop Bluz","triko"],
         "group": "üst giyim"
     },
     {
@@ -70,7 +72,8 @@
             "Triko=triko"
         ],
         "name": "kazak, hırka, süveter, triko",
-        "exceptions":["triko"],
+        "exceptions":["triko","kimono","broş","triko"],
+        "negative":["elb"],
         "group": "üst giyim"
     },
     {
@@ -92,7 +95,7 @@
             "BUSTİYER=büstiyer"
         ],
         "name": "tişört, atlet, body, büstiyer, crop, top",
-        "negative":["mayo","tayt","topuklu","ceket","elbise","bodysuit","bikini","bluz","gömlek","sütyen","süveter","blouse","şort","bodyсon","kazak","yelek","sweatshirt","hırka","pantolon","erkek","trençkot"],
+        "exceptions":["gömlek"],
         "group": "üst giyim"
     },
     {

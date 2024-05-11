@@ -103,7 +103,7 @@ for (let category of mergedCategories) {
 debugger
 const genders = gender.filter(f => f.name !== 'kadın').map(m => m.keywords).flat()
 debugger
-const removeUnrelated = unusedData.filter(obj => !searchObject(obj, [...genders, 'Ev Dekorasyon', 'mutfak', 'Homeworks','Maske']));
+const removeUnrelated = unusedData.filter(obj => !searchObject(obj, [...genders, 'Ev Dekorasyon', 'mutfak', 'Homeworks','Maske','Gözlüğü','fener']));
 debugger
 
 fs.writeFileSync(`${process.cwd()}/src/app/sponsor-kiyafeti/data/kadin/sponsorkiyafetiMenu.json`, JSON.stringify(menuData), { encoding: 'utf8' })

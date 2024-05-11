@@ -13,6 +13,7 @@
             "TRENC=trençkot"
         ],
         "name": "kaban, mont, palto, manto, pardösü, trençkot",
+        "exceptions":["triko","сeket"],
         "group": "dış giyim"
     },
     {
@@ -26,7 +27,7 @@
             "bomber=ceket"
         ],
         "name": "blazer, ceket, yelek",
-        "exceptions":["Kemer Detaylı"],
+        "exceptions":["Kemer Detaylı","gömlek","triko","kemer","smokin","broş","etek"],
         "group": "dış giyim"
     },
   

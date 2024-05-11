@@ -4,7 +4,8 @@
             "hamile"
         ],
         "name": "hamile",
-        "group":"hamile"
+        "group":"hamile",
+        "exceptions":["tişört"]
     }
    
 

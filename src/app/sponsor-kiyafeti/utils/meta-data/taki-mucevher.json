@@ -15,7 +15,7 @@
         ],
         "name": "yüzük, küpe, kolye, bilezik, bileklik, broş",
         "negative":["cüzdan"],
-        "exceptions":["Top"],
+        "exceptions":["top","Toplu"],
         "group": "Takı ,Mücevher"
     }
 ]

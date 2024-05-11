@@ -18,6 +18,7 @@
             "Fit Jean=pantolon"
         ],
         "name": "pantolon, eşofman, tayt, jogger",
+        "exceptions":["kemer","triko"],
         "group": "alt giyim"
     },
     {
@@ -31,6 +32,7 @@
         ],
         "name": "şort, etek",
         "exceptions":["Kemer Detaylı"],
+        "negative":["dress","babydoll","Sweater"],
         "group": "alt giyim"
     }
 ]

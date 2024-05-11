@@ -13,12 +13,16 @@
             "string",
             "boxer",
             "bra",
-            "Loungewear"
+            "Loungewear",
+            "babydoll",
+            "teddy",
+            "tanga"
         ],
         "negative": [
-            "Bot"
+            "Bot","spor"
         ],
-        "name": "sütyen, külot, jartiyer, bra",
+        "exceptions":["bikini"],
+        "name": "sütyen, külot, jartiyer, bra, babydoll, teddy, tanga",
         "group": "iç giyimm"
     }
 ]
