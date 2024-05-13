@@ -32,7 +32,7 @@
             "Kurabiye",
             "takım elbise"
         ],
-        "exceptions":["gömlek","gomlek","üst","kemer","pareo","omuz","broş"],
+        "exceptions":["gömlek","gomlek","üst","kemer","pareo","omuz","broş","sırt","etek"],
         "group": "üst giyim"
     },
     {
@@ -58,7 +58,7 @@
             "Pijama Üstü",
             "triko","t-shirt","tshirt"
         ],
-        "exceptions":["Crop","kolye detaylı","Crop Bluz","triko"],
+        "exceptions":["Crop","kolye detaylı","Crop","triko","plaj","kemer"],
         "group": "üst giyim"
     },
     {
@@ -95,7 +95,7 @@
             "BUSTİYER=büstiyer"
         ],
         "name": "tişört, atlet, body, büstiyer, crop, top",
-        "exceptions":["gömlek"],
+        "exceptions":["gömlek","bluz","triko","omuz","toka"],
         "group": "üst giyim"
     },
     {

@@ -40,7 +40,7 @@ for (let category of mergedCategories) {
 
     const colors = color.map(m => m.keywords).flat()
 
-    const candiateData = data.filter(f => {
+    const candiateData = data.filter(f=>!f.error).filter(f => {
         const result = searchObject({ ...f, duplicateTitles: [], pageTitle: '',image:[],pageUrl:'',marka:'' }, keywords)
 
         return result
@@ -103,7 +103,7 @@ for (let category of mergedCategories) {
 debugger
 const genders = gender.filter(f => f.name !== 'kadın').map(m => m.keywords).flat()
 debugger
-const removeUnrelated = unusedData.filter(obj => !searchObject(obj, [...genders, 'Ev Dekorasyon', 'mutfak', 'Homeworks','Maske','Gözlüğü','fener']));
+const removeUnrelated = unusedData.filter(obj => !searchObject(obj, [...genders, 'Ev Dekorasyon', 'mutfak', 'Homeworks','Maske','Gözlüğü','fener','Katlanabilir Kasa']));
 debugger
 
 fs.writeFileSync(`${process.cwd()}/src/app/sponsor-kiyafeti/data/kadin/sponsorkiyafetiMenu.json`, JSON.stringify(menuData), { encoding: 'utf8' })

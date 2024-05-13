@@ -14,7 +14,7 @@ const category ={
     "pareo-mayo-bikini-pestemal":"https://i.pinimg.com/originals/c3/b5/03/c3b5037952de3ebbed431338eee60edf.webp",
     "parfum-krem-sprey-yag-dudak-losyon-jel-peeling":"https://i.pinimg.com/originals/0c/af/7f/0caf7f40463c6de8210bd2a6176f5f37.webp",
     "sal-atki-fular-boyunluk":"https://i.pinimg.com/originals/c9/78/2e/c9782e7b3c8fdb065d79b6b35386ec32.webp",
-    "sapka-bere-kasket-vizor":"https://i.pinimg.com/originals/bd/aa/c3/bdaac3f5a2ea64f09522e389eaf66fab.jpg",
+    "sapka-bere-kasket-vizor-fotr":"https://i.pinimg.com/originals/bd/aa/c3/bdaac3f5a2ea64f09522e389eaf66fab.jpg",
     "sort-etek":"https://i.pinimg.com/originals/a4/30/cf/a430cfb50d5f82151a6f06c9eb386385.jpg",
     "sutyen-kulot-jartiyer-bra-babydoll-teddy-tanga":"https://i.pinimg.com/originals/e1/cd/3d/e1cd3d754d94ab39c4eeeaf97860cce1.webp",
     "sweatshirt-hoodie":"https://i.pinimg.com/originals/cd/1e/3e/cd1e3ef5be96387532470bd08f9b239c.webp",

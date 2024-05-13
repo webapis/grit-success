@@ -21,7 +21,7 @@
         "negative": [
             "Bot","spor"
         ],
-        "exceptions":["bikini"],
+        "exceptions":["bikini","sırt"],
         "name": "sütyen, külot, jartiyer, bra, babydoll, teddy, tanga",
         "group": "iç giyimm"
     }

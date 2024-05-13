@@ -36,12 +36,13 @@
             "bere",
             "kasket",
             "şapkası=şapka",
-            "hat-şapka"
+            "hat=şapka",
+            "fötr"
           
         ],
-        "name": "şapka, bere, kasket, vizör",
+        "name": "şapka, bere, kasket, vizör, fötr",
         "negative":["çanta"],
-        "exceptions":["plaj"],
+        "exceptions":["plaj","hat"],
         "group": "aksesuar"
     },
     {

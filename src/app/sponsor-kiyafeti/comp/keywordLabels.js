@@ -27,7 +27,9 @@ cizme:'çizme',
 sapka:'şapka',
 yag:'yağ',
 parfum:'parfüm',
-sirt:'sırt'
+sirt:'sırt',
+fotr:'fötr',
+vizor:'vizör'
 }
 
 export default keywordLabels

@@ -21,7 +21,7 @@
        
         ],
         "name": "çanta, cüzdan, portföy, kartlık, clutch, tote, omuz, telefon, sırt",
-        "negative":["gömlek","bluz","triko","elb","büstiyer","bağlama","triko","ayakkabi","tanga","Tshi̇rt","T-shi̇rt","yaka"],
+        "negative":["gömlek","bluz","triko","elb","büstiyer","bağlama","triko","ayakkabi","tanga","Tshi̇rt","T-shi̇rt","yaka","sırt dekolteli","sırt detaylı"],
         "exceptions":["toka"],
         "group": "çanta"
     }

@@ -27,7 +27,7 @@
         ],
         "negative":["çorap","jeans","shorts","pantalon","jean","çorabı"],
         "name": "ayakkabı, platform, stiletto, sandalet, bot, çizme, terlik, sneaker, makosen, babet",
-        "exceptions":["topuklu","ayakkab"],
+        "exceptions":["topuklu","ayakkab","Jel"],
         "group": "ayakkabı"
     }
 ]

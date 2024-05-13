@@ -4,7 +4,6 @@
   
     {
         "keywords": [
-           
             "Kulak Tıkacı",
             "Yüzücü Bonesi",
             "havuz Bonesi",
@@ -13,11 +12,11 @@
             "mayo",
             "bikini",
             "pareo",
-            "plaj",
             "peştemal"
+            
         ],
         "name": "pareo, mayo, bikini, peştemal",
-        "exceptions":["elb","şapka","Omuz","üst","sırt","etek","top"],
+        "exceptions":["elb","şapka","Omuz","üst","sırt","etek","top","bluz","triko","pantolon"],
         "group": "plaj"
     }
 ]

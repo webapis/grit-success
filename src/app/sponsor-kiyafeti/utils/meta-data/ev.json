@@ -3,10 +3,10 @@
     
     {
         "keywords": [
-            "sabahlık","gecelik",  "pijama","kimono","uyku gözlüğü"
+            "sabahlık","gecelik", "pijama","kimono","uyku gözlüğü"
         ],
         "name": "gecelik, sabahlık, pijama, kimono",
-        "exceptions":["Gömlek","Pantolon","Pantolon","üst","Atlet","Şort"],
+        "exceptions":["Gömlek","Pantolon","Pantolon","üst","Atlet","Şort","sweatshirt"],
         "group":"ev"
     }
 ]

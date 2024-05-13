@@ -9,7 +9,7 @@ const categoryLabels = {
     'pantolon-esofman-tayt-jogger': 'pantolon, eşofman, tayt, jogger',
     'sutyen-kulot-jartiyer-bra-babydoll-teddy-tanga': 'sütyen, külot, jartiyer, bra, babydoll, teddy, tanga',
     'kazak-hirka-suveter-triko': 'kazak, hırka, süveter, triko',
-    'sapka-bere-kasket-vizor': 'şapka, bere, kasket, vizor',
+    'sapka-bere-kasket-vizor-fotr': 'şapka, bere, kasket, vizör, fötr',
     'gecelik-sabahlik-pijama-kimono':'gecelik, sabahlık, pijama, kimono',
     'parfum-krem-sprey-yag-dudak-losyon-jel-peeling': 'parfüm, krem, sprey, yağ, dudak, losyon, jel, peeling',
     'yuzuk-kupe-kolye-bilezik-bileklik-bros': 'yüzük, küpe, kolye, bilezik, bileklik, broş',

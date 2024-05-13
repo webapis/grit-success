@@ -13,7 +13,7 @@
             "TRENC=trençkot"
         ],
         "name": "kaban, mont, palto, manto, pardösü, trençkot",
-        "exceptions":["triko","сeket"],
+        "exceptions":["triko","сeket","kemer","gömlek"],
         "group": "dış giyim"
     },
     {
