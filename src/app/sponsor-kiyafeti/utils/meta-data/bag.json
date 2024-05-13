@@ -3,7 +3,6 @@
         "keywords": [
             "omuz",
             "telefon",
-            "sırt",
             "tote",
             "çanta",
             "bags=çanta",
@@ -20,7 +19,7 @@
             "clutch"
        
         ],
-        "name": "çanta, cüzdan, portföy, kartlık, clutch, tote, omuz, telefon, sırt",
+        "name": "çanta, cüzdan, portföy, kartlık, clutch, tote, omuz, telefon",
         "negative":["gömlek","bluz","triko","elb","büstiyer","bağlama","triko","ayakkabi","tanga","Tshi̇rt","T-shi̇rt","yaka","sırt dekolteli","sırt detaylı"],
         "exceptions":["toka"],
         "group": "çanta"

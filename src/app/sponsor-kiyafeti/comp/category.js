@@ -1,7 +1,7 @@
 const category ={
     "ayakkabi-platform-stiletto-sandalet-bot-cizme-terlik-sneaker-makosen-babet":"https://i.pinimg.com/originals/67/1e/d7/671ed7f7f8496c17285e05749d2cffd1.jpg",
     "blazer-ceket-yelek":"https://i.pinimg.com/originals/27/10/7d/27107d43fd3d3a1399cf8f6b856e7704.jpg",
-    "canta-cuzdan-portfoy-kartlik-clutch-tote-omuz-telefon-sirt":"https://i.pinimg.com/originals/26/0b/7a/260b7a4e7204480335563786e05061c5.webp",
+    "canta-cuzdan-portfoy-kartlik-clutch-tote-omuz-telefon":"https://i.pinimg.com/originals/26/0b/7a/260b7a4e7204480335563786e05061c5.webp",
     "corap-eldiven":"https://i.pinimg.com/originals/14/fc/09/14fc09b72659fe03e074b6233fbfcb25.webp",
     "elbise-abiye-tulum":"https://i.pinimg.com/originals/30/a6/12/30a612ed9b4fdf8e14caddbea6c7f878.webp",
     "gecelik-sabahlik-pijama-kimono":"https://i.pinimg.com/originals/39/b8/80/39b880d1975334810d2bbee33a13b4c2.webp",

@@ -5,7 +5,7 @@ const categoryLabels = {
     'tisort-atlet-body-bustiyer-crop-top': 'tişort, atlet, body, büstiyer, crop, top',
     'sort-etek': 'şort, etek',
     'kaban-mont-palto-manto-pardosu-trenckot': 'kaban, mont, palto, manto, pardösü, trençkot',
-    'canta-cuzdan-portfoy-kartlik-clutch-tote-omuz-telefon-sirt': 'çanta, cüzdan, portföy, kartlık, clutch, tote, omuz, telefon, sırt',
+    'canta-cuzdan-portfoy-kartlik-clutch-tote-omuz-telefon': 'çanta, cüzdan, portföy, kartlık, clutch, tote, omuz, telefon',
     'pantolon-esofman-tayt-jogger': 'pantolon, eşofman, tayt, jogger',
     'sutyen-kulot-jartiyer-bra-babydoll-teddy-tanga': 'sütyen, külot, jartiyer, bra, babydoll, teddy, tanga',
     'kazak-hirka-suveter-triko': 'kazak, hırka, süveter, triko',
