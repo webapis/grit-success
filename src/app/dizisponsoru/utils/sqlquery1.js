@@ -26,12 +26,8 @@ pool.connect().then(() => {
     const groubByDizi = groupBy(objectsWithTags, 'TVSeriesTitle')
     for (let currentGroup in groubByDizi) {
       const toplamSponsor = groubByDizi[currentGroup].length
-      
-  
       groubByDizi[currentGroup] = {...groubByDizi[currentGroup][0],toplamSponsor}
-
-      
-
+  
     }
     debugger
     fs.writeFileSync(`${process.cwd()}/src/app/dizi/dizisponsoru.json`, JSON.stringify(objectsWithTags), { encoding: 'utf8' })
