@@ -405,6 +405,46 @@
                 }
             ]
         }
+    },
+    {
+        "slug": "veda-mektubu-dizi-sponsorlari",
+        "pageTitle": "Veda Mektubu Dizi Sponsorları",
+        "description": "",
+        "dizi": "Veda Mektubu",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Veda Mektubu"
+                }
+            ]
+        }
+    }
+    ,
+    {
+        "slug": "kirli-sepeti-dizi-sponsorlari",
+        "pageTitle": "Kirli Sepeti Dizi Sponsorları",
+        "description": "",
+        "dizi": "Kirli Sepeti",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Kirli Sepeti"
+                }
+            ]
+        }
+    }  ,
+    {
+        "slug": "hudutsuz-sevda-dizi-sponsorlari",
+        "pageTitle": "Hudutsuz Sevda Dizi Sponsorları",
+        "description": "",
+        "dizi": "Hudutsuz Sevda",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Hudutsuz Sevda"
+                }
+            ]
+        }
     }
 ]
 
