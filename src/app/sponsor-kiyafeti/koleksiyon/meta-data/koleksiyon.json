@@ -1,0 +1,161 @@
+[
+    {
+        "koleksiyon": [],
+        "positives": [
+            "düğün",
+            "davet",
+            "nışan",
+            "gece",
+            "night",
+            "nikah",
+            "parti"
+        ],
+        "negatives": [],
+        "name": "davet, nışan, gece, nikah, parti...",
+        "slug": "davet-nisan-gece-nikah-parti"
+    },
+    {
+        "koleksiyon": [],
+        "positives": [
+            "hamile",
+            "emzirme"
+        ],
+        "negatives": [],
+        "name": "hamile, emzirme",
+        "slug": "hamile"
+    },
+    {
+        "koleksiyon": [],
+        "positives": [
+          
+            "spring summer"
+         
+            
+      
+        ],
+        "negatives": [],
+        "name": "spring summer",
+        "slug": "spring-summer"
+    },
+    {
+        "koleksiyon": [
+            ""
+        ],
+        "positives": [
+            "night zoom",
+            "mert aslan",
+            "konformist tavır",
+            "anime",
+            "aysu türkoğlu",
+            "powerpuff",
+            "snoopy",
+            "seren ay çetin",
+            "özgür masur",
+            "unique",
+            "gamze erçel"
+        ],
+        "negatives": [],
+        "name": "özel koleksiyonlar",
+        "slug": "ozel-koleksiyonlar"
+    },
+    {
+        "koleksiyon": [],
+        "positives": [
+            "90'lar"
+        ],
+        "negatives": [],
+        "name": "90'lar giyim koleksiyonu",
+        "slug": "90-lar"
+    },
+    {
+        "koleksiyon": [],
+        "positives": [
+            "harry potter"
+        ],
+        "negatives": [],
+        "name": "harry potter",
+        "slug": "harry-potter"
+    },
+    {
+        "koleksiyon": [],
+        "positives": [
+            "günlük"
+        ],
+        "negatives": [],
+        "name": "günlük",
+        "slug": "gunluk"
+    },
+    {
+        "koleksiyon": [],
+        "positives": [
+            "büyük beden"
+        ],
+        "negatives": [],
+        "name": "büyük beden",
+        "slug": "buyuk-beden"
+    },
+    {
+        "koleksiyon": [],
+        "positives": [
+            "yazlık"
+        ],
+        "negatives": [],
+        "name": "yazlık",
+        "slug": "yazlik"
+    },
+    {
+        "koleksiyon": [],
+        "positives": [
+            "kışlık"
+        ],
+        "negatives": [],
+        "name": "kışlık",
+        "slug": "kislik"
+    },
+    {
+        "koleksiyon": [],
+        "positives": [
+            "spor"
+        ],
+        "negatives": [],
+        "name": "spor",
+        "slug": "spor"
+    },
+    {
+        "koleksiyon": [],
+        "positives": [
+            "ofis"
+        ],
+        "negatives": [],
+        "name": "ofis",
+        "slug": "ofis"
+    },
+    {
+        "koleksiyon": [],
+        "positives": [
+            "takım elbise"
+        ],
+        "negatives": [],
+        "name": "takım elbise",
+        "slug": "takim-elbise"
+    },
+    {
+        "koleksiyon": [],
+        "positives": [
+            "gelinlik",
+            "nedime"
+        ],
+        "negatives": [],
+        "name": "gelinlik, nedime",
+        "slug": "gelinlik"
+    },
+    {
+        "koleksiyon": [],
+        "positives": [
+            "mezuniyet"
+        ],
+        "negatives": [],
+        "name": "mezuniyet",
+        "slug": "mezuniyet"
+    }
+]
