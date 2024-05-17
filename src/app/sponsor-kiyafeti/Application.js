@@ -13,8 +13,6 @@ import SponsorKiyafetView from '@/app/sponsor-kiyafeti/comp/SponsorKiyafetView';
 //import { GenderTabContainer } from './[...slug]/page';
 import Drawer from './comp/drawer'
 
-
-
 export default async function Application({gender,value}) {
      const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/${gender}/sponsorkiyafetiMenu.json`), 'utf8');
      const pagesData = Object.entries(JSON.parse(data));
@@ -30,7 +28,6 @@ export default async function Application({gender,value}) {
       
                     const catName = m[0]
                     const content = m[1]
-              
                     const imageUrl = category[deaccent(catName.replaceAll(',','-').replaceAll(' ','')).toLowerCase()]
                 
                     return <Grid key={i} item xs={5} sm={3} md={2}> <SponsorKiyafetView group={topGroup} title={catName} content={content} imageUrl={imageUrl} /></Grid>

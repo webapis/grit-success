@@ -29,7 +29,7 @@ const matchingWords = title.split(' ').map((m)=>{
     <Box sx={{ display: 'flex', justifyContent: 'space-between', width: { xs: 140, md: 200 } }}>
       <Grid container sx={{display:'flex',justifyContent:'space-between'}}>
         <Grid item>
-          <Typography sx={{ fontSize: 14, fontFamily: 'inherit' }}>{marka}</Typography>
+          <Typography sx={{ fontSize: 14, fontFamily: 'inherit' }}>{marka.replace('clothing.','')}</Typography>
         </Grid>
         <Grid item>
           <Typography sx={{ fontSize: 12, fontFamily: 'inherit', textAlign:'end',width:'100%'}}>{price>0 ? price:''} {price>0 ?currency:""}</Typography>
