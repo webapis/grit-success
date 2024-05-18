@@ -10,7 +10,7 @@ export default function SlugForKoleksiyon(props) {
     const { params: { slug } } = props
     const slugObj = koleksiyon.find(f => f.slug === slug[0])
     const data = getData()
-    const result = data.filter(f => searchObject(f, slugObj.positives))
+    const result = data.filter(f => searchObject(f, slugObj.positives).length>0 && searchObject(f,slugObj.negatives).length===0) .map(m => {return {...m,keywords:searchObject(m, slugObj.positives) }}) 
     const page = slug[slug.length - 1]
 
     const pagesData = paginate(orderData(result), page, 100)
@@ -20,7 +20,7 @@ export default function SlugForKoleksiyon(props) {
         <Grid item xs={12}>{result.length}</Grid>
         {pagesData.map((m, i) => { return <Grid item key={i} > <Image matchingCategories={[]} {...m} subcat={''} /></Grid> })}
         <Grid item xs={12}>
-            <PaginationContainer count={pageCount} page={page} url={`/sponsor-kiyafeti/sponsor-kiyafeti/koleksiyon/${slug[0]}/sayfa/`} />
+            <PaginationContainer count={pageCount} page={page} url={`/sponsor-kiyafeti/koleksiyon/${slug[0]}/sayfa/`} />
         </Grid>
     </Grid>
 }

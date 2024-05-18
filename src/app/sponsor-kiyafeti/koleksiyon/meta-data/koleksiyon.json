@@ -8,9 +8,10 @@
             "gece",
             "night",
             "nikah",
-            "parti"
+            "parti",
+            "after party"
         ],
-        "negatives": [],
+        "negatives": ["bodysuit","The Day To Night","Gecelik","sütyen","midnight","losyon","deniz şortu","boyunluk","sprey","parfum","hediye seti"],
         "name": "davet, nışan, gece, nikah, parti...",
         "slug": "davet-nisan-gece-nikah-parti"
     },
@@ -24,18 +25,34 @@
         "name": "hamile, emzirme",
         "slug": "hamile"
     },
+
     {
         "koleksiyon": [],
         "positives": [
-          
-            "spring summer"
+            "spring",
+            "summer",
+            "ilkbahar",
+            "yaz"
          
             
       
         ],
         "negatives": [],
-        "name": "spring summer",
-        "slug": "spring-summer"
+        "name": "ilkbahar yaz",
+        "slug": "ilkbahar-yaz"
+    },
+    {
+        "koleksiyon": [],
+        "positives": [
+            "sonbahar",
+            "kış"
+         
+            
+      
+        ],
+        "negatives": ["kışlık"],
+        "name": "sonbahar kış",
+        "slug": "sonbahar-kis"
     },
     {
         "koleksiyon": [
@@ -87,9 +104,7 @@
     },
     {
         "koleksiyon": [],
-        "positives": [
-            "büyük beden"
-        ],
+        "positives": ["büyük beden"],
         "negatives": [],
         "name": "büyük beden",
         "slug": "buyuk-beden"
@@ -145,7 +160,7 @@
             "gelinlik",
             "nedime"
         ],
-        "negatives": [],
+        "negatives": ["külot"],
         "name": "gelinlik, nedime",
         "slug": "gelinlik"
     },

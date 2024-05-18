@@ -16,5 +16,5 @@ let data =[]
         data.push(...objData)
     }
     
-    return data
+    return data.filter(f=>!f.error)
 }
