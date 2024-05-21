@@ -7,11 +7,11 @@ import deaccent from "./deaccent"
 export default function Image({ image, title, link, marka, price, currency, matchingCategories, subcat, pageTitle, duplicateTitles, pageUrl, keywords }) {
 
 
-  const selectedCategories = matchingCategories.map(m => m.category)
+
 
   const matchingWords = title.split(' ').map((m) => {
 
-    if (selectedCategories.includes(deaccent(m.toLowerCase())) || subcat.toLowerCase().split(' ').includes(m.toLowerCase())) {
+    if (matchingCategories.includes(m.toLowerCase())) {
       return <span key={m} style={{ color: "#1A73E8", textTransform: "capitalize", fontSize: 14, fontWeight: 700 }}>{m.toLowerCase()} {" "}</span>
     } else {
       return <span key={m} style={{ textTransform: "capitalize", fontSize: 14 }}>{m.toLowerCase()}{" "}</span>
@@ -45,11 +45,12 @@ export default function Image({ image, title, link, marka, price, currency, matc
     </Box>
     <Box sx={{ width: { xs: 140, md: 200, fontSize: 8 } }}>
       <div>{keywords.join(' ')}</div>
-      <div>pageTitle:{pageTitle}</div>
+      <div>{pageTitle}</div>
+      {/* <div>pageTitle:{pageTitle}</div>
       <div>duplicateTitles</div>
       <div>{duplicateTitles && duplicateTitles.join(' ')}</div>
       <div>pageUrl:  {pageUrl}</div>
-      <div>link:  {link}</div>
+      <div>link:  {link}</div> */}
       {/* <Typography variant="caption" style={{ width: '100%', wordWrap: 'break-word', textDecoration: 'none', color: 'inherit', fontFamily: 'inherit' }}>{matchingWords}</Typography> */}
     </Box>
   </a>

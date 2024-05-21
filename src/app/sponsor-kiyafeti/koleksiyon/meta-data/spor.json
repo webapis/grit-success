@@ -1,0 +1,35 @@
+[ {
+    "keywords": [
+        "eşofman",
+        "sweatshirt",
+        "sütyen",
+        "pantolon",
+        "gömlek",
+        "sneaker",
+        "elbise",
+        "tayt",
+        "büstiyer",
+        "mayo",
+        "ceket"
+    ],
+    "words": [
+        "spor",
+        "elbisesi",
+        "şapka",
+        "Sporcu",
+        "sport",
+        "sports",
+        "sweatshırt",
+        "hoodıe",
+        "sporcu"
+    ],
+    "positives": [
+        "spor"
+    ],
+    "negatives": ["erkek"],
+    "name": "spor",
+    "slug": "spor",
+    "exclude": {
+     
+    }
+}]

@@ -1,8 +1,9 @@
-
+import searchObject from './searchObject.mjs'
 import  walkSync  from './walkSync.js'
 import path from 'path'
 import fs from "fs"
-export default function getData() {
+export default function getData({positives,exclude}) {
+   
 let data =[]
     const files = []
     walkSync(path.join(process.cwd(), `/unzipped-data`), async (filepath) => {
@@ -16,5 +17,5 @@ let data =[]
         data.push(...objData)
     }
     
-    return data.filter(f=>!f.error)
+    return data.filter(f=>!f.error).filter(f=> searchObject({...f,...exclude}, positives).length > 0)
 }

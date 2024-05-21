@@ -2,7 +2,7 @@
 function searchObject(obj, searchTerms) {
     let result = []
     const sortedSearchTerms = searchTerms.sort((a, b) => b.length - a.length);
-    debugger
+
     // Iterate through each property of the object
     for (let key in obj) {
 
@@ -14,29 +14,29 @@ function searchObject(obj, searchTerms) {
                 const substring = sTerm.replaceAll('-', ' ')
 
                
-                debugger
-                const regex = new RegExp(substring, 'gi');
+              
+                const regex = new RegExp(`\\b(\\S*${substring}\\S*)\\b`, 'i');
 
-                debugger
+             
 
 
                 const match = stringTocheck.match(regex);
-                debugger
+              
 
                 if (match) {
-                    if(substring==='yaz'){
-                    
-                      
-                            console.log('match[0].toLowerCase()',stringTocheck.find(f=>f.includes(substring)))
-                       
+             //   console.log('match[1]',match[1], substring)
+                    if(match[0].toLowerCase()==='beyaz'){
+                   
                     }
-            
-                    if (match[0].toLowerCase() === substring.toLowerCase()) {
+                    if (match[0].toLowerCase() === substring.toLowerCase() &&match[0].length===substring.length ) 
+                      {
                         result.push(substring)
-                    } else {
+                      }
+                      
+                     else {
                         const foundString = stringTocheck.split(' ').find(f => f === match[0])
-                        if (foundString && foundString === match[0]) {
-                            result.push(substring)
+                        if (foundString && foundString === match[0]  && match[0].length===foundString.length) {
+                          //  result.push(substring)
                         }
                     }
 

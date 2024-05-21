@@ -1,16 +1,15 @@
 import  Grid  from "@mui/material/Grid";
-import koleksiyon from "@/app/sponsor-kiyafeti/koleksiyon/meta-data/koleksiyon.json";
+import mergedCategories from './utils/mergedCategories.mjs'
 export default function KoleksiyonPage (){
 return <div>
 <Grid container>
-    {koleksiyon.map(m=>{
+    {mergedCategories.map(m=>{
         debugger
-        return <Grid item xs={12}> <a href={`/sponsor-kiyafeti/koleksiyon/${m.slug}/sayfa/1`}>{m.name}</a></Grid> })}
+        const keywordint =m.keywords.map((m,i)=>m).join('-') 
+        return <Grid item xs={12}> <a href={`/sponsor-kiyafeti/koleksiyon/${m.slug}/${keywordint}/sayfa/1`}>{m.name}</a></Grid> })}
         </Grid>
 </div>
 }
-
-
 
 function paginate(array, page, pageSize) {
     --page; // Adjusting to zero-based index

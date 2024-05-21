@@ -4,13 +4,14 @@ import 'dotenv/config'
 import makeDir from 'make-dir'
 import { deaccent } from '../../utils/deaccent.mjs'
 import mergedCategories from './mergedCategories.mjs'
-import searchObject from '../../utils/searchObject.mjs'
-
+import searchObject from './searchObject.mjs'
+import gender from '../../utils/meta-data/gender.json'  assert { type: 'json' };
+import fs from 'fs'
 import mapPrice from '../../utils/mapPrice.mjs'
-
+const genders = gender.filter(f => f.name !== 'kadın').map(m => m.keywords).flat()
 //import categorizedProducts from './categorizeData.mjs'
 debugger
-import fs from "fs"
+
 
 const files = []
 walkSync(path.join(process.cwd(), `/unzipped-data`), async (filepath) => {
@@ -28,14 +29,20 @@ for (let file of files) {
 }
 let menuData = {}
 for (let category of mergedCategories) {
+    await makeDir(`${process.cwd()}/src/app/sponsor-kiyafeti/koleksiyon/data/kadin`)
 
-    const keywords = category.keywords
     const positives = category.positives
-    const name = category.name
-    const candiateData = data.filter(f => !f.error).filter(f=>searchObject(f,positives))
-debugger
+    const negatives = category.negatives
+    const exclude=category.exclude
+    const slug = category.slug
+    const candiateData = data.filter(f => !f.error).filter(f => searchObject(f, genders).length === 0).filter(f => searchObject({...f,...exclude}, positives).length > 0 && searchObject({...f,...exclude}, negatives).length === 0).map(m => { return { ...m, keywords: searchObject(m, positives) } })
+    debugger
+
+    fs.writeFileSync(`${process.cwd()}/src/app/sponsor-kiyafeti/koleksiyon/data/kadin/${slug}.json`, JSON.stringify(candiateData), { encoding: 'utf8' })
 
 }
+
+
 
 
 

@@ -1,0 +1,17 @@
+[
+    {
+        "keywords": [
+            "elbise",
+            "tulum",
+            "pantolon"
+        ],
+        "words": [],
+        "positives": [
+            "mezuniyet"
+        ],
+        "negatives": [],
+        "name": "mezuniyet",
+        "slug": "mezuniyet",
+        "exclude": {}
+    }
+]

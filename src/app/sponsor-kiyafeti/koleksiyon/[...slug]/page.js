@@ -1,26 +1,48 @@
 
+import { promises as fs } from 'fs';
 import Grid from "@mui/material/Grid";
-import koleksiyon from "@/app/sponsor-kiyafeti/koleksiyon/meta-data/koleksiyon.json";
-import getData from "../utils/getData";
-import searchObject from "../utils/searchObject";
+//import koleksiyon from "@/app/sponsor-kiyafeti/koleksiyon/meta-data/koleksiyon.json";
+import mergedCategories from '../utils/mergedCategories.mjs'
+import searchObject from "../utils/searchObject.mjs";
 import Image from "./comp/Image";
 import orderData from "../../[...slug]/orderData";
 import PaginationContainer from "../../comp/PaginationContainer";
-export default function SlugForKoleksiyon(props) {
+import getData from '../utils/getData';
+export default async function SlugForKoleksiyon(props) {
     const { params: { slug } } = props
-    const slugObj = koleksiyon.find(f => f.slug === slug[0])
-    const data = getData()
-    const result = data.filter(f => searchObject(f, slugObj.positives).length>0 && searchObject(f,slugObj.negatives).length===0) .map(m => {return {...m,keywords:searchObject(m, slugObj.positives) }}) 
+    const slugObj = mergedCategories.find(f => f.slug === slug[0])
+    //  const rawData = await fs.readFile(process.cwd() + `/src/app/sponsor-kiyafeti/koleksiyon/data/kadin/${slug[0]}.json`, 'utf8');
+    //const data =JSON.parse(rawData)
+    debugger
     const page = slug[slug.length - 1]
 
+    const selectedKeyword = decodeURI(slug[slug.length - 3])
+    const initLoad = selectedKeyword.split('-').length === slugObj.keywords.length
+    const positives = slugObj.positives.flat()
+    const selectedPositives = initLoad ? positives : slugObj.positives.find(f => f.includes(selectedKeyword))
+    console.log('selectedPositives', selectedPositives)
+    debugger
+    //const selectedPositives = slugObj.positives.filter(f=> )
+
+    const data = getData({ positives: positives, exclude: slugObj.exclude })
+    debugger
+    const result = data.filter(f => searchObject({ ...f, ...slugObj.exclude }, selectedPositives).length > 0 && searchObject({
+        ...f, "duplicateTitles": "",
+        "pageTitle": "",
+        "pageUrl": ""
+    }, slugObj.negatives).length === 0).map(m => { return { ...m, keywords: searchObject(m, slugObj.positives.flat()) } })
     const pagesData = paginate(orderData(result), page, 100)
     const pageCount = Math.ceil(result.length / 100)
     debugger
     return <Grid container gap={1} sx={{ display: 'flex', justifyContent: { xs: 'center', md: 'start' } }}>
-        <Grid item xs={12}>{result.length}</Grid>
-        {pagesData.map((m, i) => { return <Grid item key={i} > <Image matchingCategories={[]} {...m} subcat={''} /></Grid> })}
+
         <Grid item xs={12}>
-            <PaginationContainer count={pageCount} page={page} url={`/sponsor-kiyafeti/koleksiyon/${slug[0]}/sayfa/`} />
+            {slugObj.keywords.map((m, i) => <a href={`/sponsor-kiyafeti/koleksiyon/${slug[0]}/${m}/sayfa/1`} style={{ marginRight: 5 }}>{m}</a>)}
+        </Grid>
+        <Grid item xs={12}>{result.length}</Grid>
+        {pagesData.map((m, i) => { return <Grid item key={i} > <Image matchingCategories={[...slugObj.keywords, ...slugObj.positives.flat()]} {...m} subcat={''} /></Grid> })}
+        <Grid item xs={12}>
+            <PaginationContainer count={pageCount} page={page} url={`/sponsor-kiyafeti/koleksiyon/${slug[0]}/${selectedKeyword}/sayfa/`} />
         </Grid>
     </Grid>
 }

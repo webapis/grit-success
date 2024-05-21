@@ -1,0 +1,24 @@
+[ {
+    "keywords": [
+        "bluz",
+        "pantolon",
+        "blazer",
+        "elbise",
+        "yelek",
+        "gömlek",
+        "etek"
+    ],
+    "words": [],
+    "positives": [
+        "ofis"
+    ],
+    "negatives": [
+        "obje",
+        "kutu"
+    ],
+    "name": "ofis",
+    "slug": "ofis",
+    "exclude": {
+ 
+    }
+}]

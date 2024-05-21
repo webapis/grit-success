@@ -1,0 +1,25 @@
+[{
+    "keywords": [
+        "gelinlik",
+        "nedime",
+        "uzun",
+        "kısa",
+        "midi",
+        "mini"
+    ],
+    "words": [
+        "elbise"
+    ],
+    "positives": [
+        "gelinlik",
+        "nedime"
+    ],
+    "negatives": [
+        "külot"
+    ],
+    "name": "gelinlik, nedime",
+    "slug": "gn",
+    "exclude": {
+     
+    }
+}]

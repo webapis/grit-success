@@ -1,0 +1,30 @@
+[
+    {
+        "keywords": [
+            "geсelik",
+            "sabahlık",
+            "sütyen",
+            "pijama",
+            "tankini",
+            "mayo",
+            "külot"
+        ],
+        "words": [
+            "hamile"
+        ],
+        "positives": [
+            "hamile",
+            "emzirme"
+        ],
+        "negatives": [
+            "erkek"
+        ],
+        "name": "hamile, emzirme",
+        "slug": "hamile",
+        "exclude": {
+            "duplicateTitles": "",
+            "pageTitle": "",
+            "pageUrl": ""
+        }
+    }
+]

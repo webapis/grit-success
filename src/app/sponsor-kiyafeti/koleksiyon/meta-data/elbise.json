@@ -1,0 +1,55 @@
+[
+    {
+        "keywords": [
+            "elbise",
+            "abiye",
+            "tulum"
+        ],
+        "positives": [
+            [
+                "elbise",
+                "elbisesi",
+                "ELBİSE",
+                "bodyсon",
+                "tuvanam",
+                "Ebise",
+                "dressweden",
+                "dresses",
+                "dress"
+            ],
+            [
+                "abiye",
+                "nihanpeker"
+            ],
+            [
+                "tulum",
+                "jumpsuit"
+            ]
+        ],
+        "negatives": [
+            "pantolon",
+            "victoriassecret",
+            "plaj",
+            "spor",
+            "ceket",
+            "yelek",
+            "gecelik",
+            "crop top",
+            "etek",
+            "bluz",
+            "Unısex",
+            "Pijama",
+            "Pareo",
+            "atlet"
+        ],
+        "words": [
+            "elbisesi",
+            "dress",
+            "elbi̇se",
+            "ebi̇se"
+        ],
+        "name": "Elbise, Abiye, Tulum",
+        "slug": "1",
+        "exclude": {}
+    }
+]
