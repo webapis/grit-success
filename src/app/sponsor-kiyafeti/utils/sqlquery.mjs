@@ -30,7 +30,7 @@ for (let file of files) {
 }
 let menuData = []
 for (let category of mergedCategories) {
-    await makeDir(`${process.cwd()}/src/app/sponsor-kiyafeti/koleksiyon/data/kadin`)
+    await makeDir(`${process.cwd()}/src/app/sponsor-kiyafeti/data/kadin`)
 
     const negatives = category.negatives
     const exclude=category.exclude
