@@ -146,10 +146,10 @@ export function KeywordsTabContainer({ value = 1000, keywords, rawData, slug }) 
             keywordsWithImg.push({ imageUrl: obj.image[0], keyword: k })
         }
     }
-    // keywords.map((m,i)=>m).join('-') 
+
 
     return <Tabs value={value} sx={{ marginBottom: 0 }} variant="scrollable" scrollButtons allowScrollButtonsMobile>
-        {keywordsWithImg.map((m, i) => <Tab key={i} label={<KeywordItem imageUrl={m.imageUrl} keyword={m.keyword} selected={decodeURI(slug[2]) === m.keyword} href={`/sponsor-kiyafeti/kadin/${slug[1]}/${decodeURI(slug[2]) === m.keyword ? keywords.sort().map((m, i) => m).join('-') : m.keyword}/sayfa/1`} />} />)}
+        {keywordsWithImg.map((m, i) => { return { ...m, id: decodeURI(slug[2]) === m.keyword ? 0 : i + 1 } }).sort((a,b)=>a.id-b.id).map((m, i) => <Tab key={i} label={<KeywordItem imageUrl={m.imageUrl} keyword={m.keyword} selected={decodeURI(slug[2]) === m.keyword} href={`/sponsor-kiyafeti/kadin/${slug[1]}/${decodeURI(slug[2]) === m.keyword ? keywords.sort().map((m, i) => m).join('-') : m.keyword}/sayfa/1`} />} />)}
     </Tabs>
 }
 
@@ -230,7 +230,7 @@ export async function generateStaticParams() {
         const exclude = category.exclude
         const slug = category.slug
         const keywords = category.keywords
-  
+
         const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/kadin/${slug}-sponsorkiyafeti.json`), 'utf8');
         const rawData = orderData(JSON.parse(data)).filter(f => !f.error)
 
@@ -240,9 +240,9 @@ export async function generateStaticParams() {
         for (let matchingKeywords of categories) {
 
             const filteredData = rawData.filter(f => searchObject({ ...f, exclude }, matchingKeywords).length > 0)
-            
+
             const pageCount = Math.ceil(filteredData.length / 100)
-            
+
             pageCandidates.push({ category: slug, pageCount, keInit: matchingKeywords.sort().map((m, i) => m).join('-') })
 
         }
@@ -251,7 +251,7 @@ export async function generateStaticParams() {
     }
     const pages = flattenArrayByPageCount(pageCandidates)
 
-debugger
+    debugger
     return pages.map((content) => {
         const { category, keInit, page } = content
         debugger
