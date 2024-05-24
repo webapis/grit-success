@@ -1,0 +1,45 @@
+[
+    {
+        "keywords": [
+            "pantolon",
+            "eşofman",
+            "tayt",
+            "jogger"
+        ],
+        "words": [],
+        "positives": [
+            [
+                "pantolon",
+                "trousers",
+                "pants",
+                "High Waist Jean",
+                "Slouchy",
+                "Palazzo",
+                "Low Waist",
+                "Cross Waist",
+                "Full Length",
+                "Slim Fit",
+                "Full Lenght",
+                "Fit Jea"
+            ],
+            [
+                "eşofman"
+            ],
+            [
+                "tayt"
+            ],
+            [
+                "jogger"
+            ]
+        ],
+        "db": [],
+        "negatives": ["erkek"],
+        "name": "pantolon, eşofman, tayt, jogger",
+        "slug": "alt-giyim",
+        "exclude": {
+            "duplicateTitles": "",
+            "pageTitle": "",
+            "pageUrl": ""
+        }
+    }
+]

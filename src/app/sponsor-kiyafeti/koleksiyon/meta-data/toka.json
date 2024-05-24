@@ -1,0 +1,52 @@
+[
+    {
+        "keywords": [
+            "toka",
+            "saç",
+            "taç",
+            "bandana"
+        ],
+        "words": [],
+        "positives": [
+            [
+                "toka"
+            ],
+            [
+                "saç"
+            ],
+            [
+                "taç"
+            ],
+            [
+                "bandana"
+            ]
+        ],
+        "db": [],
+        "negatives": [
+            "Toka Detaylı",
+            "Tokalı",
+            "Tokali",
+            "elbise",
+            "tişört",
+            "hırka",
+            "gömlek",
+            "kaban",
+            "hirka",
+            "sunhat",
+            "panço",
+            "kazak",
+            "pantolon",
+            "şort",
+            "etek",
+            "bileklik",
+            "triko",
+            "Şapkası",
+            "yüzük",
+            "bere",
+            "vizör"
+        ],
+        "name": "toka",
+        "slug": "saç-aksesuar",
+        "exclude": {}
+    }
+]

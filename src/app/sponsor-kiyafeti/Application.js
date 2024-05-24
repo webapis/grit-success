@@ -15,23 +15,22 @@ import Drawer from './comp/drawer'
 
 export default async function Application({gender,value}) {
      const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/${gender}/sponsorkiyafetiMenu.json`), 'utf8');
-     const pagesData = Object.entries(JSON.parse(data));
+     const pagesData = Object.values(JSON.parse(data));
+     debugger
     return <Drawer slug={[]}><Container> 
 
         <Typography variant="body1" gutterBottom  sx={{ marginBottom:2,marginTop:1 }}>Sponsor Kıyafeti- Kategori</Typography>
         {/* <GenderTabContainer value={value} /> */}
         <Grid container gap={1} sx={{ display: 'flex', justifyContent:{xs:'center',md:'start'} }}>
-            {pagesData.map((m, i) => {
-                const topGroup = m[0]
-                const categories = Object.entries(m[1])
-                return categories.filter(f=>f[0]!=='diğer').filter(f=>f[1].total>20).sort((a,b)=>b[1].total-a[1].total).map(m => {
-      
-                    const catName = m[0]
-                    const content = m[1]
+            {pagesData.filter(f=>f.total>50).map((m, i) => {
+                    const catName = m.name
+                 
                     const imageUrl = category[deaccent(catName.replaceAll(',','-').replaceAll(' ','')).toLowerCase()]
+                    const total=m.total
+                    const slug=m.slug
+           
+                return <Grid key={i} item xs={5} sm={3} md={2}> <SponsorKiyafetView slug={slug} keywords={m.keywords}  title={catName} total={total} imageUrl={imageUrl} /></Grid>
                 
-                    return <Grid key={i} item xs={5} sm={3} md={2}> <SponsorKiyafetView group={topGroup} title={catName} content={content} imageUrl={imageUrl} /></Grid>
-                })
             })}
         </Grid>
     </Container></Drawer>

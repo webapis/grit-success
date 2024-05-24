@@ -10,15 +10,15 @@ import categoryLabels from './categoryLabels';
 
 import deaccent from './deaccent';
 
-export default function SponsorKiyafetView({title ,content,group, imageUrl }) {
+export default function SponsorKiyafetView({title , imageUrl,slug,gender="kadin",total, keywords }) {
 
     const dashTitle =title.split(',').filter(f=>f).map(m=>m.trim()).join('-')
 
-    const {category,gender,total}=content
-const keywordint =category.split(',').map((m,i)=>i.toString()).join('') 
+
+const keywordint = keywords.map((m,i)=>m).join('-') 
 
     return (
-        <Card sx={{ maxWidth: 345,textDecoration:'none' }} component='a' href={`/sponsor-kiyafeti/${deaccent( gender).toLowerCase().replaceAll(' ','-').replaceAll(',','')}/${deaccent(category).toLowerCase().replaceAll(' ','-').replaceAll(',','')}/${keywordint}/sayfa/1`} >
+        <Card sx={{ maxWidth: 345,textDecoration:'none' }} component='a' href={`/sponsor-kiyafeti/${deaccent(gender).toLowerCase().replaceAll(' ','-').replaceAll(',','')}/${slug}/${keywordint}/sayfa/1`} >
             <CardMedia
                 sx={{ height: {xs:200,sm:250,md:250}, width:'auto',objectFit:'contain', borderRadius:2 }}
                 image={'https://ik.imagekit.io/mumrjdehaou/' +imageUrl}

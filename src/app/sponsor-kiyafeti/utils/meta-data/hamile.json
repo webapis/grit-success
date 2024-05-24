@@ -1,12 +1,53 @@
 [
     {
         "keywords": [
+            "geсelik",
+            "sabahlık",
+            "sütyen",
+            "pijama",
+            "tankini",
+            "mayo",
+            "külot"
+        ],
+        "words": [
             "hamile"
         ],
-        "name": "hamile",
-        "group":"hamile",
-        "exceptions":["tişört"]
+        "positives": [
+            [
+                "geсelik"
+            ],
+            [
+                "sabahlık"
+            ],
+            [
+                "sütyen"
+            ],
+            [
+                "pijama"
+            ],
+            [
+                "tankini"
+            ],
+            [
+                "mayo"
+            ],
+            [
+                "külot"
+            ]
+        ],
+        "db": [
+            "hamile",
+            "emzirme"
+        ],
+        "negatives": [
+            "erkek"
+        ],
+        "name": "hamile, emzirme",
+        "slug": "hamile",
+        "exclude": {
+            "duplicateTitles": "",
+            "pageTitle": "",
+            "pageUrl": ""
+        }
     }
-   
-
 ]

@@ -1,0 +1,35 @@
+[
+    {
+        "keywords": [
+            "bileklik",
+            "kolye",
+            "bilezik",
+            "küpe",
+            "yüzük",
+            "broş"
+        ],
+        "words": [],
+        "positives": [
+            ["bileklik"],
+            ["kolye", "necklaces","necklace"],
+            ["bilezik","bracelet"],
+            ["küpe","earrings"],
+            ["yüzük"],
+            ["broş","BROOCH","bros"],
+            ["Vücut Aksesuarı"]
+        ],
+        "db": [
+           
+        ],
+        "negatives": [
+    "bluz","kazak","сeket","Ceket","dress"
+        ],
+        "name": "yüzük, küpe, kolye, bilezik, bileklik, broş",
+        "slug": "takı",
+        "exclude": {
+            "duplicateTitles": "",
+            "pageTitle": "",
+            "pageUrl": ""
+        }
+    }
+]

@@ -17,10 +17,11 @@ import deaccent from '../comp/deaccent';
 import colors from './keywords/color';
 import brands from './keywords/marka'
 import prices from './keywords/price'
-import searchObject from '../utils/searchObject';
+
 import KeywordItem from '../comp/KeywordItem';
 import PopupMenuColor from '../comp/popup-menu-color';
-
+import mergedCategories from '../utils/mergedCategories.mjs'
+import searchObject from "../utils/searchObject.mjs";
 function findMatching(primaryArray, colorsArray) {
     // Filter the colorsArray to find colors that exist in the primaryArray
     const matchingColors = colorsArray.filter(color => primaryArray.includes(color));
@@ -58,121 +59,61 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function SponsorKiyafetiPage({ params }) {
-
+    debugger
     const { slug } = params
 
-    let gender = decodeURI(slug[0])
-    let category = decodeURI(slug[1])
-    let page = parseInt(decodeURI([...slug].reverse()[0]))
-    //categoryIndex
-    const selectedKeywords = [...slug].reverse()[2]
-    const categoryIndex = category.split('-').map((m, i) => { return { index: i.toString(), category: m } })
-    //const categoryIndex = category.split('-').map((m, i) => { return { index: i.toString(), category: m } })
-    const matchingCategories = categoryIndex.filter(f => selectedKeywords.includes(f.index))
+    const slugObj = mergedCategories.find(f => f.slug === decodeURI(slug[1]))
+    debugger
+    const rawData = await fs.readFile(process.cwd() + `/src/app/sponsor-kiyafeti/data/kadin/${decodeURI(slug[1])}-sponsorkiyafeti.json`, 'utf8');
+    const data = JSON.parse(rawData)
+    debugger
+    const page = slug[slug.length - 1]
 
-    //colors
-    let urlColors = Object.keys(colors)
+    const selectedKeyword = decodeURI(slug[slug.length - 3])
+    debugger
+    const initLoad = selectedKeyword.split('-').length === slugObj.keywords.length
+    const positives = slugObj.db.length > 0 ? slugObj.db : slugObj.positives.flat()
+    const selectedPositives = initLoad ? positives : slugObj.positives.find(f => f.includes(selectedKeyword))
+   //console.log("slugObj",slugObj)
+    debugger
+    //const selectedPositives = slugObj.positives.filter(f=> )
 
-
-    const matchingColors = findMatching(slug.map(m => decodeURI(m)), urlColors)
-    //marka
-    let urlBrands = Object.keys(brands)
-    const matchingBrands = findMatching(slug.map(m => decodeURI(m)), urlBrands)
-    //price
-    let urlPrice = Object.keys(prices)
-    const matchingPrices = findMatching(slug.map(m => decodeURI(m)), urlPrice)
-
-
-    let genderIndex = 0
-    switch (gender) {
-        case 'kadin':
-            genderIndex = 0;
-            break;
-        case 'erkek':
-            genderIndex = 1;
-            break;
-        case 'kiz-cocuk':
-            genderIndex = 2;
-            break;
-        case 'erkek-cocuk':
-            genderIndex = 3;
-            break;
-        case 'diğer':
-            genderIndex = 4;
-            break;
-        case 'bebek':
-            genderIndex = 5;
-            break;
-
-        default:
-            genderIndex = 1;
-
-    }
-
-    const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/${gender}/${category}-sponsorkiyafeti.json`), 'utf8');
-    const rawData = orderData(JSON.parse(data)).filter(f => !f.error)
-    const filteredByUrlData = rawData.filter((obj, i) => {
-        let object = {}
-
-        if (matchingCategories.length === 1) {
-            object = { ...obj, category: "", pageTitle: "", duplicateTitles: "", pageUrl: "" }
-        } else {
-            object = obj
-        }
-
-        if (searchObject(object, matchingCategories.map(m => m.category))) {
-        
-            return true
-        } else {
-            debugger
-            return false
-        }
-
-    }).filter(f => matchingColors.length > 0 ? searchObject(f, matchingColors) : true).filter(f => matchingBrands.length > 0 ? searchObject(f, matchingBrands.map(m => m.replaceAll('-', ' '))) : true).filter(f => matchingPrices.length > 0 ? findMatchingPrice(f.price, matchingPrices) : true)
-debugger
-    let colorFacet = extractFacet(rawData, colors)
-    let brandFacet = extractFacet(rawData, brands)
-    let priceFacet = extractPriceFacet(rawData, prices)
-
- 
-    const pagesData = paginate(orderData(filteredByUrlData), page, 100)
-    const pageCount = Math.ceil(filteredByUrlData.length / 100)
-
+    //const data = getData({ positives: positives,negatives:slugObj.negatives, exclude: slugObj.exclude })
+    debugger
+    const result = data.filter(f => searchObject({ ...f, ...slugObj.exclude }, positives).length > 0)//.map(m => { return { ...m, keywords: searchObject(m, slugObj.positives.flat()) } })
+    const filteredData = result.filter(f => searchObject({ ...f, ...slugObj.exclude }, selectedPositives).length > 0)//.map(m => { return { ...m, keywords: searchObject(m, slugObj.positives.flat()) } })
+    const pagesData = paginate(orderData(filteredData), page, 100)
+    const pageCount = Math.ceil(filteredData.length / 100)
 
     return <>
 
         <TopNavigation selected={0} />
 
-        {/* <ProductCategoryChip category={rawData[0].category} /> */}
+        <ProductCategoryChip category={slugObj.name} />
         <Container maxWidth sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <ProductCategoryChip category={rawData[0].category} />
+            {/* <ProductCategoryChip category={pagesData[0].category} /> */}
             {/* <PopupMenuColor /> */}
         </Container>
 
         <Container maxWidth>
-            <KeywordsTabContainer category={category} rawData={rawData} slug={slug} />
+            <KeywordsTabContainer keywords={slugObj.keywords} rawData={result} slug={slug} />
         </Container>
         <Container maxWidth>
 
             <span style={{ color: '#5e5e5e', paddingLeft: 10 }}>
-                {filteredByUrlData.length} adet
+                {filteredData.length} adet
             </span>
-
-
-
-
 
         </Container>
 
 
-        <Drawer colors={colorFacet} slug={slug} brands={brandFacet} prices={priceFacet}> <Container maxWidth>
+        <Drawer slug={slug} > <Container maxWidth>
 
             {/* <GenderTabContainer value={genderIndex} /> */}
 
             <Grid container gap={1} sx={{ display: 'flex', justifyContent: { xs: 'center', md: 'start' } }}>
-
-                {pagesData.map((m, i) => { return <Grid item key={i} > <Image matchingCategories={matchingCategories} {...m} pageTitle={''} /></Grid> })}</Grid>
-            <PaginationContainer count={pageCount} page={page} url={`/sponsor-kiyafeti/${gender}/${category}/${selectedKeywords}/sayfa/`} />
+                {pagesData.map((m, i) => { return <Grid item key={i} > <Image matchingCategories={[...slugObj.keywords, ...slugObj.positives.flat(), ...slugObj.words]} {...m} subcat={''} /></Grid> })}</Grid>
+            <PaginationContainer count={pageCount} page={parseInt(page)} url={`/sponsor-kiyafeti/kadin/${slug[1]}/${selectedKeyword}/sayfa/`} />
         </Container>
         </Drawer>
     </>
@@ -195,56 +136,26 @@ export function GenderTabContainer({ value = 0 }) {
     </Tabs></Container>
 }
 
-export function KeywordsTabContainer({ value = 1000, category, rawData, slug }) {
-    
-    const selectedKeywords = [...slug].reverse()[2]
-    const categoryIndex = category.split('-').map((m, i) => i.toString()).join('')
-    const initialAllSelection = selectedKeywords === categoryIndex
-    const filteredData =category.split('-').map(m => {
-
-
-        const imageUrl = rawData.filter(f=>f).find(r => {
-           
-                const obj = { ...r, category: '' }
-                return obj.subcat.includes(m)
-           
-    
-        })
-      
-        if(!imageUrl){
-            debugger
+export function KeywordsTabContainer({ value = 1000, keywords, rawData, slug }) {
+console.log("keywords",keywords)
+    const keywordsWithImg =[]
+    for (let k of keywords){
+        const obj = rawData.find(f=> f.subcat===k)
+        if(obj){
+            keywordsWithImg.push({imageUrl:obj.image[0],keyword:k})
         }
-        // if (imageUrl) {
-        return { label: m, imageUrl, keywordImage: imageUrl.image[0] }
-        // }
-        return null
-
-
-    })
-    const withoutdublicate = filteredData
+    }
+    // keywords.map((m,i)=>m).join('-') 
+   
     return <Tabs value={value} sx={{ marginBottom: 0 }} variant="scrollable" scrollButtons allowScrollButtonsMobile>
-
-        {withoutdublicate.filter((f, i) => f).map((m, i) => {
-            const keywordIndex = [...slug].reverse()[2]
-            const removeUrl = keywordIndex === i.toString() ? categoryIndex : i.toString()
-            const reversedUrl = [...slug].reverse()
-            reversedUrl[2] = removeUrl
-            reversedUrl[0] = '1'
-            const nextUrl = '/sponsor-kiyafeti/' + reversedUrl.reverse().join('/')
-
-            return { selected: selectedKeywords === i.toString() ? 1 : 0, render: <Tab key={i} label={<KeywordItem imageUrl={'https://ik.imagekit.io/mumrjdehaou/' + m.keywordImage} subcat={m.imageUrl.subcat} selected={selectedKeywords === i.toString()} nextUrl={nextUrl} initialAllSelection={initialAllSelection} image={m.image} label={m.label} slug={slug} category={category} />} /> }
-        }).sort((x, y) => y.selected - x.selected).map(m => m.render)
-        }
-
+        {keywordsWithImg.map((m, i) => <Tab key={i} label={<KeywordItem imageUrl={m.imageUrl} keyword={m.keyword} selected={decodeURI(slug[2]) ===m.keyword} href={`/sponsor-kiyafeti/kadin/${slug[1]}/${decodeURI(slug[2]) ===m.keyword?keywords.map((m,i)=>m).join('-') :  m.keyword}/sayfa/1`} />} />)}
     </Tabs>
 }
 
 function paginate(array, page, pageSize) {
     --page; // Adjusting to zero-based index
-
     const startIndex = page * pageSize;
     const endIndex = startIndex + pageSize;
-
     return array.slice(startIndex, endIndex);
 }
 
@@ -306,59 +217,59 @@ function extractPriceFacet(rawData, facetCandidate) {
 
 
 
-export async function generateStaticParams() {
-    const sponsorkiyafetiMenuRaw = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/kadin/sponsorkiyafetiMenu.json`), 'utf8');
+// export async function generateStaticParams() {
+//     const sponsorkiyafetiMenuRaw = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/kadin/sponsorkiyafetiMenu.json`), 'utf8');
 
-    const objData = Object.values(JSON.parse(sponsorkiyafetiMenuRaw)).map(m => Object.keys(m)).flat().map(d => deaccent(d).toLowerCase().replaceAll(' ', '-').replaceAll(',', ''))
-    const pageCandidates =[]
+//     const objData = Object.values(JSON.parse(sponsorkiyafetiMenuRaw)).map(m => Object.keys(m)).flat().map(d => deaccent(d).toLowerCase().replaceAll(' ', '-').replaceAll(',', ''))
+//     const pageCandidates =[]
 
-    for(let category of objData){
-        const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/kadin/${category}-sponsorkiyafeti.json`), 'utf8');
-        const rawData = orderData(JSON.parse(data)).filter(f => !f.error)
-      const  categories = [category.split('-'),...category.split('-').map(m=>[m])]
+//     for(let category of objData){
+//         const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/kadin/${category}-sponsorkiyafeti.json`), 'utf8');
+//         const rawData = orderData(JSON.parse(data)).filter(f => !f.error)
+//       const  categories = [category.split('-'),...category.split('-').map(m=>[m])]
 
-for(let matchingCategories of categories){
+// for(let matchingCategories of categories){
 
-    const filteredByUrlData = rawData.filter((obj, i) => {
-        let object = {}
+//     const filteredByUrlData = rawData.filter((obj, i) => {
+//         let object = {}
 
-        if (matchingCategories.length === 1) {
-            object = { ...obj, category: "", pageTitle: "", duplicateTitles: "", pageUrl: "" }
-        } else {
-            object = obj
-        }
+//         if (matchingCategories.length === 1) {
+//             object = { ...obj, category: "", pageTitle: "", duplicateTitles: "", pageUrl: "" }
+//         } else {
+//             object = obj
+//         }
 
-        if (searchObject(object, matchingCategories)) {
-            return true
-        } else {
-            return false
-        }
+//         if (searchObject(object, matchingCategories)) {
+//             return true
+//         } else {
+//             return false
+//         }
 
-    })
-    const pageCount = Math.ceil(filteredByUrlData.length / 100)
-pageCandidates.push({category,pageCount,keInit: category.split('-').length===matchingCategories.length? matchingCategories.map((m, i) => i.toString()).join(''):category.split('-').indexOf(matchingCategories[0]).toString() })
+//     })
+//     const pageCount = Math.ceil(filteredByUrlData.length / 100)
+// pageCandidates.push({category,pageCount,keInit: category.split('-').length===matchingCategories.length? matchingCategories.map((m, i) => i.toString()).join(''):category.split('-').indexOf(matchingCategories[0]).toString() })
 
 
-}
-     
-   
-    }
-    const pages =flattenArrayByPageCount(pageCandidates)
+// }
 
-  
-    return pages.map((content) => {
-     const {category,keInit,page}=content
-      
-        return {
-            slug: ['kadin', category, keInit, 'sayfa', page.toString()]
-        }
-    })
-}
+
+//     }
+//     const pages =flattenArrayByPageCount(pageCandidates)
+
+
+//     return pages.map((content) => {
+//      const {category,keInit,page}=content
+
+//         return {
+//             slug: ['kadin', category, keInit, 'sayfa', page.toString()]
+//         }
+//     })
+// }
 
 
 function flattenArrayByPageCount(arrayOfObjects) {
     return arrayOfObjects.flatMap(obj => {
-        const { category, pageCount,keInit } = obj;
+        const { category, pageCount, keInit } = obj;
         return Array.from({ length: pageCount }, (_, index) => ({
             category: category,
             keInit,

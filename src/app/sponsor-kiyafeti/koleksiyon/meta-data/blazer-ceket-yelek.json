@@ -1,0 +1,31 @@
+[
+    {
+        "keywords": ["blazer","ceket","yelek"],
+        "words": ["Jacket"],
+        "positives": [
+            [
+                "blazer"
+            ],
+            [
+                "ceket",
+                "Jacket",
+                "bolero",
+                "bomber",
+                "Ceket"
+            ],
+            [
+                "yelek",
+                "vest"
+            ]
+        ],
+        "db": [],
+        "negatives": ["Men","Erkek"],
+        "name": "blazer, ceket, yelek",
+        "slug": "23",
+        "exclude": {
+            "duplicateTitles": "",
+            "pageTitle": "",
+            "pageUrl": ""
+        }
+    }
+]

@@ -5,22 +5,22 @@
             "davet",
             "nişan",
             "gece",
-            "night",
             "nikah",
             "parti",
             "after party"
         ],
         "words": [],
         "positives": [
-            "düğün",
-            "davet",
-            "nişan",
-            "gece",
-            "night",
-            "nikah",
-            "parti",
-            "after party"
+            ["düğün"],
+            ["davet"],
+            ["nişan"],
+            ["gece","night"],
+        
+            ["nikah"],
+            ["parti"],
+            ["after party"]
         ],
+        "db": [],
         "negatives": [
             "bodysuit",
             "The Day To Night",
@@ -35,11 +35,14 @@
             "parfüm",
             "hediye seti",
             "spreyi",
-            "losyonu"
+            "losyonu",
+            "victoriassecret",
+            "babydoll",
+            "sabahlık",
+            "night blue"
         ],
-        "name": "davet, nışan, gece, nikah, parti...",
-        "slug": "2",
-        "exclude": {
-      
-        }
-    }]
+        "name": "davet, nışan, gece, nikah",
+        "slug": "davet",
+        "exclude": {}
+    }
+]

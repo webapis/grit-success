@@ -4,7 +4,7 @@ export default function KoleksiyonPage (){
 return <div>
 <Grid container>
     {mergedCategories.map(m=>{
-        debugger
+     
         const keywordint =m.keywords.map((m,i)=>m).join('-') 
         return <Grid item xs={12}> <a href={`/sponsor-kiyafeti/koleksiyon/${m.slug}/${keywordint}/sayfa/1`}>{m.name}</a></Grid> })}
         </Grid>

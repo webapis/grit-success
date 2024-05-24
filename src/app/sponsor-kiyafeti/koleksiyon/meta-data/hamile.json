@@ -13,6 +13,29 @@
             "hamile"
         ],
         "positives": [
+            [
+                "geсelik"
+            ],
+            [
+                "sabahlık"
+            ],
+            [
+                "sütyen"
+            ],
+            [
+                "pijama"
+            ],
+            [
+                "tankini"
+            ],
+            [
+                "mayo"
+            ],
+            [
+                "külot"
+            ]
+        ],
+        "db": [
             "hamile",
             "emzirme"
         ],

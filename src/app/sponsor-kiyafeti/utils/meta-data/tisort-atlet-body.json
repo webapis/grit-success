@@ -1,0 +1,59 @@
+[
+    {
+        "keywords": [
+            "tişört",
+            "atlet",
+            "büstiyer",
+            "crop",
+            "top"
+        ],
+        "words": [
+            "tshirt"
+        ],
+        "positives": [
+            [
+                "tişört",
+                "t-Shirt",
+                "T-Shırt",
+                "Tsihrt",
+                "Tshirt",
+                "T-SHİRT"
+            ],
+            [
+                "atlet"
+            ],
+            [
+                "body"
+            ],
+            [
+                "büstiyer",
+                "BUSTİYER",
+                "Bustier"
+            ],
+            [
+                "crop"
+            ],
+            [
+                "top",
+                "üst"
+            ]
+        ],
+        "db": [],
+        "negatives": [
+            "Erkek",
+            "sütyen",
+            "külot",
+            "pijama",
+            "küpe",
+            "sandal",
+            "nihanpeker"
+        ],
+        "name": "tişört, atlet, body, büstiyer, crop, top",
+        "slug": "3",
+        "exclude": {
+            "duplicateTitles": "",
+            "pageTitle": "",
+            "pageUrl": ""
+        }
+    }
+]

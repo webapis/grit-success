@@ -1,0 +1,48 @@
+[ {
+    "keywords": [
+        "elbise",
+        "bluz",
+        "tişört"
+        
+    ],
+    "words": [],
+    "positives": [
+        [
+            "elbise",
+            "elbisesi",
+            "ELBİSE",
+            "bodyсon",
+            "tuvanam",
+            "Ebise",
+            "dressweden",
+            "dresses",
+            "dress"
+        ],
+        [
+            "gömlek",
+            "shirt"
+        ],
+        [
+            "tunik"
+        ],
+        [
+            "bluz",
+            "Blouse"
+        ],
+        [
+            "tişört",
+            "t-Shirt",
+            "T-Shırt",
+            "Tsihrt",
+            "Tshirt",
+            "T-SHİRT"
+        ]
+    ],
+    "db":["büyük beden"],
+    "negatives": ["erkek","sütyen"],
+    "name": "büyük beden",
+    "slug": "buyuk-beden",
+    "exclude": {
+  
+    }
+}]

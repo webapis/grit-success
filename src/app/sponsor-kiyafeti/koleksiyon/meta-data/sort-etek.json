@@ -1,0 +1,30 @@
+[
+    {
+        "keywords": [
+            "şort",
+            "etek"
+        ],
+        "words": [],
+        "positives": [
+            [
+                "şort",
+                "shorts",
+                "SHORT",
+                "bermuda"
+            ],
+            [
+                "etek",
+                "skirt"
+            ]
+        ],
+        "db": [],
+        "negatives": ["erkek","Şapka","Jacket","Şapka","Dress","Vest","Knit"],
+        "name": "şort, etek",
+        "slug": "22",
+        "exclude": {
+            "duplicateTitles": "",
+            "pageTitle": "",
+            "pageUrl": ""
+        }
+    }
+]

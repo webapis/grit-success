@@ -17,7 +17,7 @@ import data from '@/app/sponsor-kiyafeti/data/kadin/sponsorkiyafetiMenu.json';
 //import Link from 'next/link';
 // import KeywordMenu from '../KeywordMenu'
 // import PopupMenuColor from '../popup-menu-color';
-const arrayData = Object.entries(data);
+const arrayData = Object.values(data);
 const drawerWidth = 240;
 
 
@@ -140,16 +140,17 @@ export default function PersistentDrawerLeft({ children, colors, slug, brands, p
                     <Typography variant="h5" gutterBottom>Kategori</Typography>
 
 
-                    {arrayData.map((m, i) => {
-                        const topGroup = m[0]
-                        const categories = Object.entries(m[1])
-                        return categories.filter(f => f[0] !== 'diğer').map(m => {
-                            const title = m[0]
-                            const content = m[1]
-
-                            return <DizivliewListItem key={title} title={title} content={content} />;
-                        })
-                    })}
+                
+                        {arrayData.filter(f=>f.total>50).map((m, i) => {
+                    const catName = m.name
+          
+                    
+                    const total=m.total
+                    const slug=m.slug
+                 
+                return  <DizivliewListItem slug={slug} keywords={m.keywords}  title={catName} total={total}  />
+                
+            })}
                 </Box>
             </Drawer>
             <Main open={open}>

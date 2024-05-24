@@ -4,9 +4,9 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 //import Link from 'next/link';
 import deaccent from '../deaccent';
-export default function Diziview({ title, content }) {
-    const {image,category,gender}=content
-    const keywordint =category.split(',').map((m,i)=>i.toString()).join('') 
+export default function Diziview({ title, keywords,slug }) {
+
+    const keywordint = keywords.map((m,i)=>m).join('-') 
     return (
         <List sx={{ maxWidth: 345 }}>
 
@@ -14,7 +14,7 @@ export default function Diziview({ title, content }) {
             <ListItem disablePadding>
                 <ListItemButton component='a'
     
-                    href={`/sponsor-kiyafeti/${deaccent(gender).toLowerCase().replaceAll(' ','-')}/${deaccent( category).toLowerCase().replaceAll(' ','-').replaceAll(',','')}/${keywordint}/sayfa/1`}
+                    href={`/sponsor-kiyafeti/kadin/${slug}}/${keywordint}/sayfa/1`}
                    >
                     {title}
                 </ListItemButton>

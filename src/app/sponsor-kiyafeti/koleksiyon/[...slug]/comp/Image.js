@@ -44,8 +44,8 @@ export default function Image({ image, title, link, marka, price, currency, matc
       {/* <Typography variant="caption" style={{ width: '100%', wordWrap: 'break-word', textDecoration: 'none', color: 'inherit', fontFamily: 'inherit' }}>{matchingWords}</Typography> */}
     </Box>
     <Box sx={{ width: { xs: 140, md: 200, fontSize: 8 } }}>
-      <div>{keywords.join(' ')}</div>
-      <div>{pageTitle}</div>
+      {/* <div>{keywords.join(' ')}</div>
+      <div>{pageTitle}</div> */}
       {/* <div>pageTitle:{pageTitle}</div>
       <div>duplicateTitles</div>
       <div>{duplicateTitles && duplicateTitles.join(' ')}</div>

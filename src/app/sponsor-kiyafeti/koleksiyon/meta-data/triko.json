@@ -1,0 +1,35 @@
+[
+    {
+        "keywords": [
+            "elbise",
+            
+            "etek"
+        ],
+        "words": [
+            "elbise","triko"
+        ],
+        "positives": [
+            [
+                "elbise"
+            ],
+
+            [
+                "etek"
+            ]
+        ],
+        "db": [
+            "triko"
+        ],
+        "negatives": [
+            "Boot",
+            "bebek"
+        ],
+        "name": "triko",
+        "slug": "triko",
+        "exclude": {
+            "duplicateTitles": "",
+            "pageTitle": "",
+            "pageUrl": ""
+        }
+    }
+]

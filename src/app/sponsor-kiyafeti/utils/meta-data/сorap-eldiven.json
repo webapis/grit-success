@@ -1,0 +1,49 @@
+[
+    {
+        "keywords": [
+            "çorap",
+            "eldiven",
+            "çetik",
+            "külotlu",
+            "babet"
+        ],
+        "words": [],
+        "positives": [
+            [
+                "çorap",
+                "socks",
+                "çorabı"
+            ],
+            [
+                "çetik"
+            ],
+            [
+                "eldiven"
+            ],
+            [
+                "külotlu"
+            ],
+            [
+                "babet"
+            ]
+        ],
+        "db": [
+            "çorap",
+            "socks",
+            "çorabı",
+            "çetik",
+            "eldiven"
+        ],
+        "negatives": [
+            "jartiyer",
+            "bodysuit",
+            "atkı",
+            "bere",
+            "ceket",
+            "bikini"
+        ],
+        "name": "çorap, eldiven",
+        "slug": "44",
+        "exclude": {}
+    }
+]

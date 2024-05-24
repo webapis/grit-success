@@ -1,5 +1,5 @@
 
-function searchObject(obj, searchTerms) {
+function filterNegatives(obj, searchTerms) {
 
     const sortedSearchTerms =searchTerms.sort((a, b) => b.length - a.length);
 
@@ -16,15 +16,11 @@ function searchObject(obj, searchTerms) {
                     
                     if (obj[key].toLowerCase().includes(sortedSearchTerms[i].toLowerCase())) {
                  
-                 
                         return sortedSearchTerms[i]; // Match found
-                       
-                       
-                      
                     }  
                 }
            
-                if (obj[key].replaceAll('-',' ').toLowerCase().includes(sortedSearchTerms[i].toLowerCase())) {
+                if (obj[key].replaceAll('-',' ').replaceAll('/',' ').toLowerCase().includes(sortedSearchTerms[i].toLowerCase())) {
            
                  
                     return sortedSearchTerms[i]; // Match found
@@ -38,7 +34,62 @@ function searchObject(obj, searchTerms) {
     return false; // No match found
 }
 
-export default searchObject
+export default filterNegatives
+
+// function searchObject(obj, searchTerms) {
+//     let result = []
+//     const sortedSearchTerms = searchTerms.sort((a, b) => b.length - a.length);
+
+//     // Iterate through each property of the object
+//     for (let key in obj) {
+
+//         const stringTocheck = Array.isArray(obj[key]) ? obj[key].join(' ') : obj[key]
+//         // Check if the property value is a string
+//         if (stringTocheck.length > 0) {
+//             // Check if any search term is found in the property value
+//             for (let sTerm of sortedSearchTerms) {
+//                 const substring = sTerm.replaceAll('-', ' ')
+
+               
+              
+//                 const regex = new RegExp(`\\b(\\S*${substring}\\S*)\\b`, 'i');
+
+             
+
+
+//                 const match = stringTocheck.replaceAll('-',' ').replaceAll('/',' ').match(regex);
+              
+
+//                 if (match) {
+//              //   console.log('match[1]',match[1], substring)
+//                     if(match[0].toLowerCase()==='beyaz'){
+                   
+//                     }
+//                     if (match[0].toLowerCase() === substring.toLowerCase() &&match[0].length===substring.length ) 
+//                       {
+//                         result.push(substring)
+//                       }
+                      
+//                      else {
+//                         const foundString = stringTocheck.split(' ').find(f => f === match[0])
+//                         if (foundString && foundString === match[0]  && match[0].length===foundString.length) {
+//                           //  result.push(substring)
+//                         }
+//                     }
+
+
+
+
+//                 }
+//             }
+//         }
+
+
+//     }
+//     return result
+// }
+
+// export default searchObject
 
 
 

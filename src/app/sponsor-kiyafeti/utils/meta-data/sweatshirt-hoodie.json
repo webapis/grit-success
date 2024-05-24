@@ -1,0 +1,27 @@
+[
+    {
+        "keywords": [
+            "sweatshirt",
+            "hoodie"
+        ],
+        "words": [],
+        "positives": [
+            [
+                "sweatshirt",
+                "sweat"
+            ],
+            [
+                "hoodie"
+            ]
+        ],
+        "db": [],
+        "negatives": ["Erkek","Unisex","Men"],
+        "name": "sweatshirt, hoodie",
+        "slug": "sweat",
+        "exclude": {
+            "duplicateTitles": "",
+            "pageTitle": "",
+            "pageUrl": ""
+        }
+    }
+]

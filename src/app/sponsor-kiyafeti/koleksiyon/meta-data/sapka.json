@@ -1,0 +1,27 @@
+[
+    {
+        "keywords": [
+            "vizör",
+            "şapka",
+            "bere",
+            "kasket",
+            "fötr"
+
+        ],
+        "words": [],
+        "positives": [
+            ["vizör","sunhat"],
+            ["şapka","şapkası","hat"],
+            ["bere"],
+            ["kasket"],
+            ["fötr"]
+        ],
+        "db": [],
+        "negatives": [
+         
+        ],
+        "name": "şapka, bere, kasket, vizör, fötr",
+        "slug": "başlık",
+        "exclude": {}
+    }
+]

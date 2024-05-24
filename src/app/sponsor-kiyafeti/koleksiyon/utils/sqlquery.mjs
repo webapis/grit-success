@@ -7,6 +7,7 @@ import mergedCategories from './mergedCategories.mjs'
 import searchObject from './searchObject.mjs'
 import gender from '../../utils/meta-data/gender.json'  assert { type: 'json' };
 import fs from 'fs'
+import getData from './getData.mjs'
 import mapPrice from '../../utils/mapPrice.mjs'
 const genders = gender.filter(f => f.name !== 'kadın').map(m => m.keywords).flat()
 //import categorizedProducts from './categorizeData.mjs'
@@ -27,19 +28,20 @@ for (let file of files) {
     unusedData.push(...objData)
 
 }
-let menuData = {}
+let menuData = []
 for (let category of mergedCategories) {
     await makeDir(`${process.cwd()}/src/app/sponsor-kiyafeti/koleksiyon/data/kadin`)
 
-    const positives = category.positives
     const negatives = category.negatives
     const exclude=category.exclude
     const slug = category.slug
-    const candiateData = data.filter(f => !f.error).filter(f => searchObject(f, genders).length === 0).filter(f => searchObject({...f,...exclude}, positives).length > 0 && searchObject({...f,...exclude}, negatives).length === 0).map(m => { return { ...m, keywords: searchObject(m, positives) } })
-    debugger
-
-    fs.writeFileSync(`${process.cwd()}/src/app/sponsor-kiyafeti/koleksiyon/data/kadin/${slug}.json`, JSON.stringify(candiateData), { encoding: 'utf8' })
-
+    const positives = category.db.length > 0 ? category.db : category.positives.flat()
+    const candiateData = getData({positives,negatives,exclude,keywords:category.keywords})
+    
+    menuData.push({total:candiateData.length,...category})
+//`src/app/sponsor-kiyafeti/data/${gender}/sponsorkiyafetiMenu.json`
+    fs.writeFileSync(`${process.cwd()}/src/app/sponsor-kiyafeti/data/kadin/${slug}-sponsorkiyafeti.json`, JSON.stringify(candiateData), { encoding: 'utf8' })
+    fs.writeFileSync(`${process.cwd()}/src/app/sponsor-kiyafeti/data/kadin/sponsorkiyafetiMenu.json`, JSON.stringify(menuData), { encoding: 'utf8' })
 }
 
 
