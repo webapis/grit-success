@@ -40,7 +40,7 @@
     ],
     "db":["büyük beden"],
     "negatives": ["erkek","sütyen"],
-    "name": "büyük beden",
+    "name": "büyük-beden",
     "slug": "buyuk-beden",
     "exclude": {
   

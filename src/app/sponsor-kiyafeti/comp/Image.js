@@ -7,12 +7,12 @@ import deaccent from "./deaccent"
 export default function Image({ image, title, link, marka, price, currency,matchingCategories,subcat }) {
 const selectedCategories = matchingCategories.map(m=>m.category)
 
-const matchingWords = title.split(' ').map((m)=>{
+const matchingWords = title.split(' ').map((m) => {
 
-  if(selectedCategories.includes(deaccent(m.toLowerCase()))||subcat.toLowerCase().split(' ').includes(m.toLowerCase()) ){
-    return <span key={m} style={{color:"#1A73E8", textTransform:"capitalize", fontSize:14, fontWeight:700}}>{m.toLowerCase()} {" "}</span>
-  }else{
-    return <span key={m} style={{ textTransform:"capitalize",fontSize:14}}>{m.toLowerCase()}{" "}</span>
+  if (matchingCategories.includes(m.toLowerCase())) {
+    return <span key={m} style={{ color: "#1A73E8", textTransform: "capitalize", fontSize: 14, fontWeight: 700 }}>{m.toLowerCase()} {" "}</span>
+  } else {
+    return <span key={m} style={{ textTransform: "capitalize", fontSize: 14 }}>{m.toLowerCase()}{" "}</span>
   }
 })
 

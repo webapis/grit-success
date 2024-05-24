@@ -1,66 +1,48 @@
-import { walkSync } from './walkSync.mjs'
+import { walkSync } from '../../utils/walkSync.mjs'
 import path from 'path'
 import 'dotenv/config'
 import makeDir from 'make-dir'
-import { deaccent } from './deaccent.mjs'
-import categorizedProducts from './categorizeData.mjs'
+
+import mergedCategories from './mergedCategories.mjs'
+
+import gender from './meta-data/gender.json'  assert { type: 'json' };
+import fs from 'fs'
+import getData from './getData.mjs'
+
+const genders = gender.filter(f => f.name !== 'kadın').map(m => m.keywords).flat()
+//import categorizedProducts from './categorizeData.mjs'
 debugger
-import fs from "fs"
+
 
 const files = []
 walkSync(path.join(process.cwd(), `/unzipped-data`), async (filepath) => {
-
-  files.push(filepath)
-
+    files.push(filepath)
 })
-
-
 const data = []
+const unusedData = []
 for (let file of files) {
 
-  const rowData = fs.readFileSync(file)
-  const catData = categorizedProducts(JSON.parse(rowData))
-  data.push(...catData)
-
+    const rowData = fs.readFileSync(file)
+    const objData = JSON.parse(rowData)
+    data.push(...objData)
+    unusedData.push(...objData)
 
 }
+let menuData = []
+for (let category of mergedCategories) {
+    await makeDir(`${process.cwd()}/src/app/sponsor-kiyafeti/koleksiyon/data/kadin`)
 
-const genderData = groupBy(data, 'gender')
-
-for (let gnd in genderData) {
-  debugger
-  await makeDir(`${process.cwd()}/src/app/sponsor-kiyafeti/data/${deaccent(gnd).toLowerCase().replaceAll(' ', '-').replaceAll(',', '')}`)
-  const currentData = genderData[gnd]
-  const groupedData = groupBy(currentData, 'group')
-  for (let group in groupedData) {
-    const categories = groupBy(groupedData[group], 'category')
-
-    for (let category in categories) {
-      const data = categories[category]
-      const carr = categories[category][0]
-      categories[category] = { ...carr, total: data.length }
-
-      if (category === 'diğer') {
-
-
-      }
-      if (gnd === 'kadın') {
-        fs.writeFileSync(`${process.cwd()}/src/app/sponsor-kiyafeti/data/${deaccent(gnd).toLowerCase().replaceAll(' ', '-')}/${deaccent(category).toLowerCase().replaceAll(' ', '-').replaceAll(',', '')}-sponsorkiyafeti.json`, JSON.stringify(data), { encoding: 'utf8' })
-      }
-
-    }
-
-    groupedData[group] = categories
-
-  }
-  if (gnd === 'kadın') {
-    fs.writeFileSync(`${process.cwd()}/src/app/sponsor-kiyafeti/data/${deaccent(gnd).toLowerCase().replaceAll(' ', '-').replaceAll(',', '')}/sponsorkiyafetiMenu.json`, JSON.stringify(groupedData), { encoding: 'utf8' })
-
-  }
-
-  debugger
+    const negatives = category.negatives
+    const exclude=category.exclude
+    const slug = category.slug
+    const positives = category.db.length > 0 ? category.db : category.positives.flat()
+    const candiateData = getData({positives,negatives,exclude,keywords:category.keywords})
+    
+    menuData.push({total:candiateData.length,...category})
+//`src/app/sponsor-kiyafeti/data/${gender}/sponsorkiyafetiMenu.json`
+    fs.writeFileSync(`${process.cwd()}/src/app/sponsor-kiyafeti/data/kadin/${slug}-sponsorkiyafeti.json`, JSON.stringify(candiateData), { encoding: 'utf8' })
+    fs.writeFileSync(`${process.cwd()}/src/app/sponsor-kiyafeti/data/kadin/sponsorkiyafetiMenu.json`, JSON.stringify(menuData), { encoding: 'utf8' })
 }
-debugger
 
 
 
@@ -68,13 +50,15 @@ debugger
 
 
 
-debugger
+
+
+
 
 
 
 function groupBy(xs, key) {
-  return xs.reduce(function (rv, x) {
-    (rv[x[key]] = rv[x[key]] || []).push(x);
-    return rv;
-  }, {});
+    return xs.reduce(function (rv, x) {
+        (rv[x[key]] = rv[x[key]] || []).push(x);
+        return rv;
+    }, {});
 };

@@ -6,8 +6,7 @@
             "nişan",
             "gece",
             "nikah",
-            "parti",
-            "after party"
+            "parti"
         ],
         "words": [],
         "positives": [
@@ -39,9 +38,12 @@
             "victoriassecret",
             "babydoll",
             "sabahlık",
-            "night blue"
+            "night blue",
+            "pijama",
+            "şortlu",
+            "body"
         ],
-        "name": "davet, nışan, gece, nikah, parti...",
+        "name": "davet, nışan, gece, nikah",
         "slug": "davet",
         "exclude": {}
     }

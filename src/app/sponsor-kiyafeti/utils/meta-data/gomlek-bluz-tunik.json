@@ -23,7 +23,13 @@
         ],
         "db": [],
         "negatives": [
-            "pijama"
+            "pijama",
+            "tshirt",
+            "t-Shirt",
+            "sweatshirt",
+            "sütyen",
+            "elbisesi",
+            "t-Shırt"
         ],
         "name": "gömlek, bluz, tunik",
         "slug": "2",

@@ -1,14 +1,14 @@
-import searchObject from './searchObject.mjs'
-import walkSync from './walkSync.mjs'
+
+import {walkSync} from './walkSync.mjs'
 import path from 'path'
 import fs from "fs"
 import filterNegatives from './filterNegatives.mjs'
 
-import gender from '../meta-data/gender.json'  assert { type: 'json' };
-
+import gender from './meta-data/gender.json'  assert { type: 'json' };
+import mapPrice from './mapPrice.mjs'
 //import mapPrice from '../../utils/mapPrice.mjs'
 const genders = gender.filter(f => f.name !== 'kadın').map(m => m.keywords).flat()
-export default function getData({ positives, negatives, exclude,keywords }) {
+export default function getData({ positives, negatives, exclude, keywords }) {
 
     let data = []
     const files = []
@@ -33,5 +33,5 @@ export default function getData({ positives, negatives, exclude,keywords }) {
         "pageUrl": ""
     }, negatives) : true)
     debugger
-    return filterNegative
+    return filterNegative.map(m => { return { ...m, price: mapPrice(m.price) } })
 }

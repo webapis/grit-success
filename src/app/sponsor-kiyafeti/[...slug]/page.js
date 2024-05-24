@@ -22,6 +22,7 @@ import KeywordItem from '../comp/KeywordItem';
 import PopupMenuColor from '../comp/popup-menu-color';
 import mergedCategories from '../utils/mergedCategories.mjs'
 import searchObject from "../utils/searchObject.mjs";
+import getData from '../utils/getData.mjs';
 function findMatching(primaryArray, colorsArray) {
     // Filter the colorsArray to find colors that exist in the primaryArray
     const matchingColors = colorsArray.filter(color => primaryArray.includes(color));
@@ -47,13 +48,11 @@ export async function generateMetadata({ params }) {
     const { slug } = params
 
     let gender = decodeURI(slug[0])
-    let category = decodeURI(slug[1])
-
-
+    let category = decodeURI(slug[2])
 
     return {
 
-        title: 'Sponsor Kıyafeti-' + gender + ' ' + category
+        title: 'Sponsor Kıyafeti-' + gender + ' ' + category.replaceAll('-',' ')
 
     }
 }
@@ -63,22 +62,24 @@ export default async function SponsorKiyafetiPage({ params }) {
     const { slug } = params
 
     const slugObj = mergedCategories.find(f => f.slug === decodeURI(slug[1]))
-    debugger
-    const rawData = await fs.readFile(process.cwd() + `/src/app/sponsor-kiyafeti/data/kadin/${decodeURI(slug[1])}-sponsorkiyafeti.json`, 'utf8');
-    const data = JSON.parse(rawData)
-    debugger
-    const page = slug[slug.length - 1]
-
     const selectedKeyword = decodeURI(slug[slug.length - 3])
     debugger
     const initLoad = selectedKeyword.split('-').length === slugObj.keywords.length
     const positives = slugObj.db.length > 0 ? slugObj.db : slugObj.positives.flat()
     const selectedPositives = initLoad ? positives : slugObj.positives.find(f => f.includes(selectedKeyword))
-   //console.log("slugObj",slugObj)
     debugger
-    //const selectedPositives = slugObj.positives.filter(f=> )
+    const rawData = await fs.readFile(process.cwd() + `/src/app/sponsor-kiyafeti/data/kadin/${decodeURI(slug[1])}-sponsorkiyafeti.json`, 'utf8');
+    const data = JSON.parse(rawData)
+        //const selectedPositives = slugObj.positives.filter(f=> )
 
     //const data = getData({ positives: positives,negatives:slugObj.negatives, exclude: slugObj.exclude })
+    debugger
+    const page = slug[slug.length - 1]
+
+
+   //console.log("slugObj",slugObj)
+    debugger
+
     debugger
     const result = data.filter(f => searchObject({ ...f, ...slugObj.exclude }, positives).length > 0)//.map(m => { return { ...m, keywords: searchObject(m, slugObj.positives.flat()) } })
     const filteredData = result.filter(f => searchObject({ ...f, ...slugObj.exclude }, selectedPositives).length > 0)//.map(m => { return { ...m, keywords: searchObject(m, slugObj.positives.flat()) } })
