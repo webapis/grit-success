@@ -15,7 +15,7 @@ export default function SponsorKiyafetView({title , imageUrl,slug,gender="kadin"
     const dashTitle =title.split(',').filter(f=>f).map(m=>m.trim()).join('-')
 
 
-const keywordint = keywords.map((m,i)=>m).join('-') 
+const keywordint = keywords.sort().map((m,i)=>m).join('-') 
 
     return (
         <Card sx={{ maxWidth: 345,textDecoration:'none' }} component='a' href={`/sponsor-kiyafeti/${deaccent(gender).toLowerCase().replaceAll(' ','-').replaceAll(',','')}/${slug}/${keywordint}/sayfa/1`} >

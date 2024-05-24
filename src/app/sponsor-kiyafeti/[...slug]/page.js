@@ -52,7 +52,7 @@ export async function generateMetadata({ params }) {
 
     return {
 
-        title: 'Sponsor Kıyafeti-' + gender + ' ' + category.replaceAll('-',' ')
+        title: 'Sponsor Kıyafeti-' + gender + ' ' + category.replaceAll('-', ' ')
 
     }
 }
@@ -70,18 +70,18 @@ export default async function SponsorKiyafetiPage({ params }) {
     debugger
     const rawData = await fs.readFile(process.cwd() + `/src/app/sponsor-kiyafeti/data/kadin/${decodeURI(slug[1])}-sponsorkiyafeti.json`, 'utf8');
     const data = JSON.parse(rawData)
-        //const selectedPositives = slugObj.positives.filter(f=> )
+    //const selectedPositives = slugObj.positives.filter(f=> )
 
     //const data = getData({ positives: positives,negatives:slugObj.negatives, exclude: slugObj.exclude })
     debugger
     const page = slug[slug.length - 1]
 
 
-   //console.log("slugObj",slugObj)
+    //console.log("slugObj",slugObj)
     debugger
 
     debugger
-    const result = data.filter(f => searchObject({ ...f, ...slugObj.exclude }, positives).length > 0)//.map(m => { return { ...m, keywords: searchObject(m, slugObj.positives.flat()) } })
+    const result = data//.filter(f => searchObject({ ...f, ...slugObj.exclude }, positives).length > 0)//.map(m => { return { ...m, keywords: searchObject(m, slugObj.positives.flat()) } })
     const filteredData = result.filter(f => searchObject({ ...f, ...slugObj.exclude }, selectedPositives).length > 0)//.map(m => { return { ...m, keywords: searchObject(m, slugObj.positives.flat()) } })
     const pagesData = paginate(orderData(filteredData), page, 100)
     const pageCount = Math.ceil(filteredData.length / 100)
@@ -138,18 +138,18 @@ export function GenderTabContainer({ value = 0 }) {
 }
 
 export function KeywordsTabContainer({ value = 1000, keywords, rawData, slug }) {
-console.log("keywords",keywords)
-    const keywordsWithImg =[]
-    for (let k of keywords){
-        const obj = rawData.find(f=> f.subcat===k)
-        if(obj){
-            keywordsWithImg.push({imageUrl:obj.image[0],keyword:k})
+
+    const keywordsWithImg = []
+    for (let k of keywords) {
+        const obj = rawData.find(f => f.subcat === k)
+        if (obj) {
+            keywordsWithImg.push({ imageUrl: obj.image[0], keyword: k })
         }
     }
     // keywords.map((m,i)=>m).join('-') 
-   
+
     return <Tabs value={value} sx={{ marginBottom: 0 }} variant="scrollable" scrollButtons allowScrollButtonsMobile>
-        {keywordsWithImg.map((m, i) => <Tab key={i} label={<KeywordItem imageUrl={m.imageUrl} keyword={m.keyword} selected={decodeURI(slug[2]) ===m.keyword} href={`/sponsor-kiyafeti/kadin/${slug[1]}/${decodeURI(slug[2]) ===m.keyword?keywords.map((m,i)=>m).join('-') :  m.keyword}/sayfa/1`} />} />)}
+        {keywordsWithImg.map((m, i) => <Tab key={i} label={<KeywordItem imageUrl={m.imageUrl} keyword={m.keyword} selected={decodeURI(slug[2]) === m.keyword} href={`/sponsor-kiyafeti/kadin/${slug[1]}/${decodeURI(slug[2]) === m.keyword ? keywords.sort().map((m, i) => m).join('-') : m.keyword}/sayfa/1`} />} />)}
     </Tabs>
 }
 
@@ -218,54 +218,48 @@ function extractPriceFacet(rawData, facetCandidate) {
 
 
 
-// export async function generateStaticParams() {
-//     const sponsorkiyafetiMenuRaw = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/kadin/sponsorkiyafetiMenu.json`), 'utf8');
+export async function generateStaticParams() {
+    const sponsorkiyafetiMenuRaw = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/kadin/sponsorkiyafetiMenu.json`), 'utf8');
 
-//     const objData = Object.values(JSON.parse(sponsorkiyafetiMenuRaw)).map(m => Object.keys(m)).flat().map(d => deaccent(d).toLowerCase().replaceAll(' ', '-').replaceAll(',', ''))
-//     const pageCandidates =[]
+    const objData = JSON.parse(sponsorkiyafetiMenuRaw)
+    const pageCandidates = []
 
-//     for(let category of objData){
-//         const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/kadin/${category}-sponsorkiyafeti.json`), 'utf8');
-//         const rawData = orderData(JSON.parse(data)).filter(f => !f.error)
-//       const  categories = [category.split('-'),...category.split('-').map(m=>[m])]
-
-// for(let matchingCategories of categories){
-
-//     const filteredByUrlData = rawData.filter((obj, i) => {
-//         let object = {}
-
-//         if (matchingCategories.length === 1) {
-//             object = { ...obj, category: "", pageTitle: "", duplicateTitles: "", pageUrl: "" }
-//         } else {
-//             object = obj
-//         }
-
-//         if (searchObject(object, matchingCategories)) {
-//             return true
-//         } else {
-//             return false
-//         }
-
-//     })
-//     const pageCount = Math.ceil(filteredByUrlData.length / 100)
-// pageCandidates.push({category,pageCount,keInit: category.split('-').length===matchingCategories.length? matchingCategories.map((m, i) => i.toString()).join(''):category.split('-').indexOf(matchingCategories[0]).toString() })
+    for (let category of objData) {
 
 
-// }
+        const exclude = category.exclude
+        const slug = category.slug
+        const keywords = category.keywords
+  
+        const data = await fs.readFile(path.join(process.cwd(), `src/app/sponsor-kiyafeti/data/kadin/${slug}-sponsorkiyafeti.json`), 'utf8');
+        const rawData = orderData(JSON.parse(data)).filter(f => !f.error)
+
+        const categories = [keywords, ...keywords.map(m => [m])]
 
 
-//     }
-//     const pages =flattenArrayByPageCount(pageCandidates)
+        for (let matchingKeywords of categories) {
+
+            const filteredData = rawData.filter(f => searchObject({ ...f, exclude }, matchingKeywords).length > 0)
+            
+            const pageCount = Math.ceil(filteredData.length / 100)
+            
+            pageCandidates.push({ category: slug, pageCount, keInit: matchingKeywords.sort().map((m, i) => m).join('-') })
+
+        }
 
 
-//     return pages.map((content) => {
-//      const {category,keInit,page}=content
+    }
+    const pages = flattenArrayByPageCount(pageCandidates)
 
-//         return {
-//             slug: ['kadin', category, keInit, 'sayfa', page.toString()]
-//         }
-//     })
-// }
+debugger
+    return pages.map((content) => {
+        const { category, keInit, page } = content
+        debugger
+        return {
+            slug: ['kadin', category, keInit, 'sayfa', page.toString()]
+        }
+    })
+}
 
 
 function flattenArrayByPageCount(arrayOfObjects) {
