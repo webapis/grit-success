@@ -18,7 +18,7 @@
             ]
         ],
         "db": [],
-        "negatives": ["erkek","Şapka","Jacket","Şapka","Dress","Vest","Knit"],
+        "negatives": ["Şapka","Jacket","Şapka","Dress","Vest","Knit","elbise","top","etekli","sweater","babydoll","victoriassecret"],
         "name": "şort, etek",
         "slug": "22",
         "exclude": {

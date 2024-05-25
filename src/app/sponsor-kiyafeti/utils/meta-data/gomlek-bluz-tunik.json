@@ -26,10 +26,14 @@
             "pijama",
             "tshirt",
             "t-Shirt",
+            "T-Shi̇rt",
             "sweatshirt",
             "sütyen",
             "elbisesi",
-            "t-Shırt"
+            "t-Shırt",
+            "tişört",
+            "büsti̇yer",
+            "ceket"
         ],
         "name": "gömlek, bluz, tunik",
         "slug": "2",

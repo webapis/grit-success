@@ -60,10 +60,10 @@
             ]
         ],
         "db": [
-            "spor"
+            "spor","sneaker"
         ],
         "negatives": [
-            "erkek"
+            "erkek","çorap"
         ],
         "name": "spor",
         "slug": "spor",

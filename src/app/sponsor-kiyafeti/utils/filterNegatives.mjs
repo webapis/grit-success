@@ -1,5 +1,7 @@
 
 function filterNegatives(obj, searchTerms) {
+try {
+    
 
     const sortedSearchTerms =searchTerms.sort((a, b) => b.length - a.length);
 
@@ -36,6 +38,9 @@ function filterNegatives(obj, searchTerms) {
         }
     }
     return false; // No match found
+} catch (error) {
+    debugger
+}
 }
 
 export default filterNegatives

@@ -6,14 +6,17 @@
             "süveter"
         ],
         "words": [
-            "Cardigan"
+            "cardigan",
+            "sweater"
         ],
         "positives": [
             [
-                "kazak"
+                "kazak",
+                "sweater"
             ],
             [
                 "hırka",
+                "hirka",
                 "Cardigan"
             ],
             [
@@ -31,7 +34,8 @@
             "Sneaker",
             "Erkek",
             "Knitwear",
-            "Men's"
+            "Men's",
+            "yelek"
         ],
         "name": "kazak, hırka, süveter",
         "slug": "kazak",

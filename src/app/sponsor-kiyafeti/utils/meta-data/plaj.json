@@ -6,8 +6,8 @@
             "mayokini",
             "bikini",
             "pareo",
-            "peştemal",
-            "bodysuit"
+            "peştemal"
+          
         ],
         "words": [
             
@@ -18,8 +18,8 @@
             ["mayokini"],
             ["bikini"],
             ["pareo"],
-            ["peştemal"],
-            ["bodysuit","bodysuıt"]
+            ["peştemal"]
+     
         ],
         "db": [],
         "negatives": [

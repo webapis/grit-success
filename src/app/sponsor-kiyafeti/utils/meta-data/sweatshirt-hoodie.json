@@ -3,19 +3,22 @@
         "keywords": [
             "sweatshirt",
             "hoodie"
+          
         ],
-        "words": [],
+        "words": ["sweatshirts"],
         "positives": [
             [
                 "sweatshirt",
-                "sweat"
+                "sweat",
+                "sweatshirts"
             ],
             [
                 "hoodie"
             ]
+            
         ],
         "db": [],
-        "negatives": ["Erkek","Unisex","Men"],
+        "negatives": ["cloak","sweater","sütyen","pijama"],
         "name": "sweatshirt, hoodie",
         "slug": "sweat",
         "exclude": {

@@ -7,7 +7,7 @@
             "manto",
             "trençkot"
         ],
-        "words": [],
+        "words": ["trenchcoat","trenckot"],
         "positives": [
             [
                 "kaban",
@@ -33,7 +33,7 @@
             ]
         ],
         "db": [],
-        "negatives": [],
+        "negatives": ["network","ceket"],
         "name": "kaban, mont, palto, manto, trençkot",
         "slug": "dis-giyim",
         "exclude": {

@@ -28,7 +28,8 @@
             [
                 "büstiyer",
                 "BUSTİYER",
-                "Bustier"
+                "bustier",
+                "busti̇yer"
             ],
             [
                 "crop"
@@ -46,7 +47,30 @@
             "pijama",
             "küpe",
             "sandal",
-            "nihanpeker"
+            "nihanpeker",
+            "mayo",
+            "atopik",
+            "tayt",
+            "blouse",
+            "bluz",
+            "sweatshirt",
+            "bikini",
+            "bodysuıt",
+            "bodysuit",
+            "etek",
+            "elbise",
+            "ceket",
+            "gömlek",
+            "hırka",
+            "yelek",
+            "pantolon",
+            "süveter",
+            "şort",
+            "çanta",
+            "ayakkabı",
+            "kazak",
+            "bralet",
+            "network"
         ],
         "name": "tişört, atlet, body, büstiyer, crop, top",
         "slug": "3",

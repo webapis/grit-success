@@ -19,7 +19,7 @@
             ]
         ],
         "db": [],
-        "negatives": ["Men","Erkek"],
+        "negatives": ["tulum"],
         "name": "blazer, ceket, yelek",
         "slug": "23",
         "exclude": {
