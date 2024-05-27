@@ -1,0 +1,26 @@
+[
+    {
+        "keywords": [
+            
+  "bodysui̇t"
+        ],
+        "words": [],
+        "positives": [
+            ["bodysuit","bodysuıt"]
+           
+        ],
+        "db": [
+           
+        ],
+        "negatives": [
+           "babydoll"
+        ],
+        "name": "bodysui̇t",
+        "slug": "body",
+        "exclude": {
+            "duplicateTitles": "",
+            "pageTitle": "",
+            "pageUrl": ""
+        }
+    }
+]

@@ -1,7 +1,7 @@
 [
     {
         "keywords": ["blazer","ceket","yelek"],
-        "words": ["Jacket"],
+        "words": ["Jacket","jacket"],
         "positives": [
             [
                 "blazer"
@@ -19,7 +19,7 @@
             ]
         ],
         "db": [],
-        "negatives": ["tulum"],
+        "negatives": ["tulum","pijama","bluz","dress","Jumpsuit"],
         "name": "blazer, ceket, yelek",
         "slug": "23",
         "exclude": {

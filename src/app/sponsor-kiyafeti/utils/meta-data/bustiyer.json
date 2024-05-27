@@ -1,0 +1,31 @@
+[
+    {
+        "keywords": [
+            "büstiyer"
+ 
+        ],
+        "words": [],
+        "positives": [
+            [
+                "büstiyer",
+                "BUSTİYER",
+                "bustier",
+                "busti̇yer"
+            ]
+           
+        ],
+        "db": [
+           
+        ],
+        "negatives": [
+           "babydoll"
+        ],
+        "name": "büstiyer",
+        "slug": "66",
+        "exclude": {
+            "duplicateTitles": "",
+            "pageTitle": "",
+            "pageUrl": ""
+        }
+    }
+]

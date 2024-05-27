@@ -41,7 +41,10 @@
             "night blue",
             "pijama",
             "şortlu",
-            "body"
+            "body",
+            "şort",
+            "atlet",
+            "hamile"
         ],
         "name": "davet, nışan, gece, nikah",
         "slug": "davet",

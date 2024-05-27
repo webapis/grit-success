@@ -31,7 +31,7 @@ const keywordint = keywords.sort().map((m,i)=>m).join('-')
     
            
             <Typography  variant="body2" gutterBottom component="div" sx={{ textTransform: 'capitalize', fontFamily:'inherit',width: {xs:200,sm:250,md:200} }}>
-                    {categoryLabels[dashTitle]?categoryLabels[dashTitle]:title}
+                    {title}
                 </Typography>
        
         

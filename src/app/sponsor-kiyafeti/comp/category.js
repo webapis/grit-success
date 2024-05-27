@@ -18,7 +18,7 @@ const category ={
     "sort-etek":"https://i.pinimg.com/originals/a4/30/cf/a430cfb50d5f82151a6f06c9eb386385.jpg",
     "sutyen-kulot-jartiyer-bra-babydoll-teddy-tanga":"https://i.pinimg.com/originals/e1/cd/3d/e1cd3d754d94ab39c4eeeaf97860cce1.webp",
     "sweatshirt-hoodie":"https://i.pinimg.com/originals/cd/1e/3e/cd1e3ef5be96387532470bd08f9b239c.webp",
-    "tisort-atlet-body-bustiyer-crop-top":"https://i.pinimg.com/originals/a4/79/40/a47940a750039a2e88b967b8859b0e77.jpg",
+    "tisort-atlet-body-crop-top":"https://i.pinimg.com/originals/a4/79/40/a47940a750039a2e88b967b8859b0e77.jpg",
     "toka":"https://i.pinimg.com/originals/d9/d8/71/d9d871bf3e0ad625ea6c1cac47d3c653.jpg",
     "yuzuk-kupe-kolye-bilezik-bileklik-bros":"https://i.pinimg.com/originals/a0/63/3d/a0633d53b50ca5592d5d479698505298.webp",
     "davet-nisan-gece-nikah":"https://i.pinimg.com/originals/0b/39/b6/0b39b650290d18476dfde2a37f3d85bc.webp",
@@ -28,7 +28,9 @@ const category ={
     "hamile-emzirme":"https://i.pinimg.com/originals/1d/c7/f8/1dc7f8f0193d866ba8a28fa3ad55b31b.webp",
     "gelinlik-nedime":"https://i.pinimg.com/originals/e6/47/ce/e647ce9561eeb41b438b7c4db01bc1b2.webp",
     "mezuniyet":"https://i.pinimg.com/originals/01/82/7a/01827a01b13fdf3e0a1d223fdfa11f6d.webp",
-    "ofis":"https://i.pinimg.com/originals/ea/8c/88/ea8c88b3fbe815c241e01b292095d54a.webp"
+    "ofis":"https://i.pinimg.com/originals/ea/8c/88/ea8c88b3fbe815c241e01b292095d54a.webp",
+    "bodysui̇t":"https://i.pinimg.com/originals/51/43/49/514349ed068dbeb49b1606e54311b6e7.webp",
+    "bustiyer":"https://i.pinimg.com/originals/b6/28/56/b628566655ca6b893078237ed7d165e9.webp"
 }
 
 export default category

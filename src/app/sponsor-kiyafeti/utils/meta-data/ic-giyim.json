@@ -8,14 +8,14 @@
             "bra",
         
             "babydoll",
-            "bodysuit",
             "teddy",
-            "tanga"
+            "tanga",
+            "büstiyer takım"
          
         ],
         "words": [],
         "positives": [
-            ["bodysuit","bodysuıt"],
+         
             [
                 "külot",
                 "külodu",
@@ -46,11 +46,12 @@
             ],
             [
                 "tanga"
-            ]
+            ],
+            ["büstiyer takım"]
           
         ],
         "db": [],
-        "negatives": ["pantolon","kaban","bere","çanta","mont","spor","yelek"],
+        "negatives": ["pantolon","kaban","bere","çanta","mont","spor","yelek","elbise","shirt","trençkot","pareo","bluz","ceket","espadril","kimono","sweater","kemer","trousers","üst","dress","gömlek"],
         "name": "sütyen, külot, jartiyer, bra, babydoll, teddy, tanga",
         "slug": "iç-giyim",
         "exclude": {

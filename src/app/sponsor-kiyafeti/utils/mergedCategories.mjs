@@ -8,6 +8,8 @@ const davet = require(path.join(process.cwd(), 'src/app/sponsor-kiyafeti/utils/m
 const elbise = require(path.join(process.cwd(), 'src/app/sponsor-kiyafeti/utils/meta-data/elbise.json'))
 const gomlekBluzTunik = require(path.join(process.cwd(), 'src/app/sponsor-kiyafeti/utils/meta-data/gomlek-bluz-tunik.json'))
 const tisortAtletBody = require(path.join(process.cwd(), 'src/app/sponsor-kiyafeti/utils/meta-data/tisort-atlet-body.json'))
+const bustiyer = require(path.join(process.cwd(), 'src/app/sponsor-kiyafeti/utils/meta-data/bustiyer.json'))
+const bodySuit = require(path.join(process.cwd(), 'src/app/sponsor-kiyafeti/utils/meta-data/bodysuit.json'))
 const kazakHirkaSuveter = require(path.join(process.cwd(), 'src/app/sponsor-kiyafeti/utils/meta-data/kazak-hirka-suveter.json'))
 const triko = require(path.join(process.cwd(), 'src/app/sponsor-kiyafeti/utils/meta-data/triko.json'))
 const sweatshirt = require(path.join(process.cwd(), 'src/app/sponsor-kiyafeti/utils/meta-data/sweatshirt-hoodie.json'))
@@ -32,6 +34,6 @@ const hamile = require(path.join(process.cwd(), 'src/app/sponsor-kiyafeti/utils/
 const mezuniyet = require(path.join(process.cwd(), 'src/app/sponsor-kiyafeti/utils/meta-data/mezuniyet.json'))
 const ofis = require(path.join(process.cwd(), 'src/app/sponsor-kiyafeti/utils/meta-data/ofis.json'))
 const spor = require(path.join(process.cwd(), 'src/app/sponsor-kiyafeti/utils/meta-data/spor.json'))
-const kategoryArray = [...elbise, ...davet, ...gelinlik, ...mezuniyet,  ...gomlekBluzTunik, ...tisortAtletBody, ...kazakHirkaSuveter, ...triko,...sweatshirt,...pantolon,...sortEtek,...blazerCeketYelek,...kaban,...ofis, ...spor, ...buyukbeden, ...hamile,...plaj,...gecelik,...icgiyim,...bag,...ayakkabi,...kozmetik,...taki,...sapka,...corapEldiven,...salAtkiFular,...kemer,...toka]
+const kategoryArray = [...elbise, ...davet, ...gelinlik, ...mezuniyet,  ...gomlekBluzTunik, ...tisortAtletBody,...bustiyer,...bodySuit, ...kazakHirkaSuveter, ...triko,...sweatshirt,...pantolon,...sortEtek,...blazerCeketYelek,...kaban,...ofis, ...spor, ...buyukbeden, ...hamile,...plaj,...gecelik,...icgiyim,...bag,...ayakkabi,...kozmetik,...taki,...sapka,...corapEldiven,...salAtkiFular,...kemer,...toka]
 
 export default kategoryArray

@@ -3,7 +3,6 @@
         "keywords": [
             "tişört",
             "atlet",
-            "büstiyer",
             "crop",
             "top"
         ],
@@ -25,12 +24,7 @@
             [
                 "body"
             ],
-            [
-                "büstiyer",
-                "BUSTİYER",
-                "bustier",
-                "busti̇yer"
-            ],
+           
             [
                 "crop"
             ],
@@ -70,9 +64,25 @@
             "ayakkabı",
             "kazak",
             "bralet",
-            "network"
+            "network",
+            "terlik",
+            "kolye",
+            "topuklu",
+            "eşofman",
+            "fishnet",
+            "büstiyer takım",
+            "korse",
+            "espadril",
+            "toka",
+            "tulum",
+            "çorap",
+            "topuk",
+            "terlik",
+            "çi̇zme",
+            "Topuklu",
+            "kolye"
         ],
-        "name": "tişört, atlet, body, büstiyer, crop, top",
+        "name": "tişört, atlet, body, crop, top",
         "slug": "3",
         "exclude": {
             "duplicateTitles": "",

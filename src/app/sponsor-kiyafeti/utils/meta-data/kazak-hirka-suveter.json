@@ -35,7 +35,9 @@
             "Erkek",
             "Knitwear",
             "Men's",
-            "yelek"
+            "yelek",
+            "sabahlık",
+            "sweatshirt"
         ],
         "name": "kazak, hırka, süveter",
         "slug": "kazak",

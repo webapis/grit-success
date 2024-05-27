@@ -33,7 +33,7 @@
             ]
         ],
         "db": [],
-        "negatives": ["bermuda"],
+        "negatives": ["bermuda","pijama","network","sweater"],
         "name": "pantolon, eşofman, tayt, jogger",
         "slug": "alt-giyim",
         "exclude": {
