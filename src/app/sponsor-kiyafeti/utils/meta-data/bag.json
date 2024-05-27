@@ -1,12 +1,22 @@
 [
     {
         "keywords": [
+            
+            "çapraz",
+            "omuz",
+            "tote",
+            "sırt",
+            "telefon",
+            "cüzdan",
+            "portföy",
+            "kartlık",
             "çanta"
         ],
         "words": [],
         "positives": [
             [
-                "omuz"
+                "omuz",
+                "Omuz"
             ],
             [
                 "telefon"
@@ -41,23 +51,19 @@
             ],
             [
                 "torba"
+            ],
+            [
+                "canta",
+                "çanta",
+                "Çanta",
+                "bag"
+            ],
+            [
+                "çapraz"
             ]
         ],
         "db": [
-            "canta",
-            "çanta",
-            "Çanta",
-            "bag",
-            "clutch",
-            "kartlık",
-            "portföy",
-            "telefon",
-            "tote",
-            "backpacks",
-            "cüzdan",
-            "Wallet",
-            "valiz",
-            "torba"
+           
         ],
         "negatives": [
             "gömlek",
@@ -102,9 +108,26 @@
             "yoga",
             "Havlu",
             "ayakkabı",
-            "bot"
+            "bot",
+            "Trençkot",
+            "Tişört",
+            "Tshi̇rt",
+            "Shirt",
+            "T-Shirt",
+            "Sırt Detaylı",
+            "Sırt Dekolteli",
+            "Omuz Yırtmaçlı",
+            "Ayakkabi",
+            "Atlet",
+            "Gecelik",
+            "Omuzlardan",
+            "tunik",
+            "sandalet",
+            "kasket",
+            "çizmesi",
+            "Omuz Aksesuarı"
         ],
-        "name": "çanta, cüzdan, portföy, kartlık, clutch",
+        "name": "çanta, telefon, cüzdan, portföy ",
         "slug": "çanta",
         "exclude": {
             "duplicateTitles": "",

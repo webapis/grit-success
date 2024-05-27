@@ -60,7 +60,7 @@ export async function generateMetadata({ params }) {
 export default async function SponsorKiyafetiPage({ params }) {
     debugger
     const { slug } = params
-
+debugger
     const slugObj = mergedCategories.find(f => f.slug === decodeURI(slug[1]))
     const selectedKeyword = decodeURI(slug[slug.length - 3])
     debugger
@@ -68,11 +68,11 @@ export default async function SponsorKiyafetiPage({ params }) {
     const positives = slugObj.db.length > 0 ? slugObj.db : slugObj.positives.flat()
     const selectedPositives = initLoad ? positives : slugObj.positives.find(f => f.includes(selectedKeyword))
     debugger
-    //const rawData = await fs.readFile(process.cwd() + `/src/app/sponsor-kiyafeti/data/kadin/${decodeURI(slug[1])}-sponsorkiyafeti.json`, 'utf8');
-    //const data = JSON.parse(rawData)
+   // const rawData = await fs.readFile(process.cwd() + `/src/app/sponsor-kiyafeti/data/kadin/${decodeURI(slug[1])}-sponsorkiyafeti.json`, 'utf8');
+   // const data = JSON.parse(rawData)
     //const selectedPositives = slugObj.positives.filter(f=> )
 
-    const data = getData({ positives: positives,negatives:slugObj.negatives, exclude: slugObj.exclude,keywords:slugObj.keywords })
+    const data = getData({ positives,negatives:slugObj.negatives, exclude: slugObj.exclude,keywords:slugObj.keywords })
     debugger
     const page = slug[slug.length - 1]
 
@@ -118,7 +118,7 @@ export default async function SponsorKiyafetiPage({ params }) {
         </Container>
         </Drawer>
     </>
-    //
+    
 
 }
 

@@ -28,7 +28,7 @@ export default async function Application({gender,value}) {
                     const imageUrl = category[deaccent(catName.replaceAll(',','-').replaceAll(' ','')).toLowerCase()]
                     const total=m.total
                     const slug=m.slug
-           
+           console.log(deaccent(catName.replaceAll(',','-').replaceAll(' ','')).toLowerCase())
                 return <Grid key={i} item xs={5} sm={3} md={2}> <SponsorKiyafetView slug={slug} keywords={m.keywords}  title={catName} total={total} imageUrl={imageUrl} /></Grid>
                 
             })}

@@ -1,7 +1,7 @@
 const category ={
     "ayakkabi-platform-stiletto-sandalet-bot-cizme-terlik-sneaker-makosen-babet":"https://i.pinimg.com/originals/67/1e/d7/671ed7f7f8496c17285e05749d2cffd1.jpg",
     "blazer-ceket-yelek":"https://i.pinimg.com/originals/27/10/7d/27107d43fd3d3a1399cf8f6b856e7704.jpg",
-    "canta-cuzdan-portfoy-kartlik-clutch":"https://i.pinimg.com/originals/26/0b/7a/260b7a4e7204480335563786e05061c5.webp",
+    "canta-telefon-cuzdan-portfoy":"https://i.pinimg.com/originals/26/0b/7a/260b7a4e7204480335563786e05061c5.webp",
     "corap-eldiven":"https://i.pinimg.com/originals/14/fc/09/14fc09b72659fe03e074b6233fbfcb25.webp",
     "elbise-abiye-tulum":"https://i.pinimg.com/originals/30/a6/12/30a612ed9b4fdf8e14caddbea6c7f878.webp",
     "gecelik-sabahlik-pijama-kimono":"https://i.pinimg.com/originals/39/b8/80/39b880d1975334810d2bbee33a13b4c2.webp",
@@ -22,10 +22,13 @@ const category ={
     "toka":"https://i.pinimg.com/originals/d9/d8/71/d9d871bf3e0ad625ea6c1cac47d3c653.jpg",
     "yuzuk-kupe-kolye-bilezik-bileklik-bros":"https://i.pinimg.com/originals/a0/63/3d/a0633d53b50ca5592d5d479698505298.webp",
     "davet-nisan-gece-nikah":"https://i.pinimg.com/originals/0b/39/b6/0b39b650290d18476dfde2a37f3d85bc.webp",
-    "triko":"https://i.pinimg.com/originals/7a/d3/62/7ad3626c2cb0aad0f61de72561e44bcb.webp",
+    "triko":"https://i.pinimg.com/originals/c5/b1/36/c5b13666ea07882e57f696e3a757c1b8.webp",
     "spor":"https://i.pinimg.com/originals/37/cc/73/37cc73354d32ea6b83c407dea3f69150.webp",
     "buyuk-beden":"https://i.pinimg.com/originals/11/70/89/117089443d4a4148dda73253929f508d.webp",
-    "hamile-emzirme":"https://i.pinimg.com/originals/1d/c7/f8/1dc7f8f0193d866ba8a28fa3ad55b31b.webp"
+    "hamile-emzirme":"https://i.pinimg.com/originals/1d/c7/f8/1dc7f8f0193d866ba8a28fa3ad55b31b.webp",
+    "gelinlik-nedime":"https://i.pinimg.com/originals/e6/47/ce/e647ce9561eeb41b438b7c4db01bc1b2.webp",
+    "mezuniyet":"https://i.pinimg.com/originals/01/82/7a/01827a01b13fdf3e0a1d223fdfa11f6d.webp",
+    "ofis":"https://i.pinimg.com/originals/ea/8c/88/ea8c88b3fbe815c241e01b292095d54a.webp"
 }
 
 export default category
