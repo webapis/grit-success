@@ -34,6 +34,6 @@ const hamile = require(path.join(process.cwd(), 'src/app/sponsor-kiyafeti/utils/
 const mezuniyet = require(path.join(process.cwd(), 'src/app/sponsor-kiyafeti/utils/meta-data/mezuniyet.json'))
 const ofis = require(path.join(process.cwd(), 'src/app/sponsor-kiyafeti/utils/meta-data/ofis.json'))
 const spor = require(path.join(process.cwd(), 'src/app/sponsor-kiyafeti/utils/meta-data/spor.json'))
-const kategoryArray = [...elbise, ...davet, ...gelinlik, ...mezuniyet,  ...gomlekBluzTunik, ...tisortAtletBody,...bustiyer,...bodySuit, ...kazakHirkaSuveter, ...triko,...sweatshirt,...pantolon,...sortEtek,...blazerCeketYelek,...kaban,...ofis, ...spor, ...buyukbeden, ...hamile,...plaj,...gecelik,...icgiyim,...bag,...ayakkabi,...kozmetik,...taki,...sapka,...corapEldiven,...salAtkiFular,...kemer,...toka]
+const kategoryArray = [...elbise, ...davet, ...gelinlik, ...mezuniyet,  ...gomlekBluzTunik, ...tisortAtletBody,...bustiyer,...bodySuit, ...kazakHirkaSuveter,...sweatshirt,...pantolon,...sortEtek,...blazerCeketYelek,...kaban,...ofis, ...spor, ...buyukbeden, ...hamile,...plaj,...gecelik,...icgiyim,...bag,...ayakkabi,...kozmetik,...taki,...sapka,...corapEldiven,...salAtkiFular,...kemer,...toka]
 
 export default kategoryArray
