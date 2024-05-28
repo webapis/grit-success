@@ -28,9 +28,7 @@
         "name": "plaj, pareo, mayo, mayokini, bikini",
         "slug": "plaj",
         "exclude": {
-            "duplicateTitles": "",
-            "pageTitle": "",
-            "pageUrl": ""
+  
         }
     }
 ]

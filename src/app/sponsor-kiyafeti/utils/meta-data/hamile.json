@@ -44,9 +44,7 @@
         "name": "hamile, emzirme",
         "slug": "hamile",
         "exclude": {
-            "duplicateTitles": "",
-            "pageTitle": "",
-            "pageUrl": ""
+       
         }
     }
 ]

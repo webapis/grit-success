@@ -55,9 +55,7 @@
         "name": "sütyen, külot, jartiyer, bra, babydoll, teddy, tanga",
         "slug": "iç-giyim",
         "exclude": {
-            "duplicateTitles": "",
-            "pageTitle": "",
-            "pageUrl": ""
+       
         }
     }
 ]

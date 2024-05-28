@@ -37,9 +37,7 @@
         "name": "pantolon, eşofman, tayt, jogger",
         "slug": "alt-giyim",
         "exclude": {
-            "duplicateTitles": "",
-            "pageTitle": "",
-            "pageUrl": ""
+          
         }
     }
 ]

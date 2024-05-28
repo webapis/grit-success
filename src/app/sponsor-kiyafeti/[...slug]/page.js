@@ -72,7 +72,7 @@ debugger
     const data = JSON.parse(rawData)
     //const selectedPositives = slugObj.positives.filter(f=> )
 
-    //const data = getData({ positives,negatives:slugObj.negatives, exclude: slugObj.exclude,keywords:slugObj.keywords })
+   // const data = getData({ positives,negatives:slugObj.negatives, exclude: slugObj.exclude,keywords:slugObj.keywords })
     debugger
     const page = slug[slug.length - 1]
 

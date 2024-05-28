@@ -42,9 +42,7 @@
         "name": "kazak, hırka, süveter",
         "slug": "kazak",
         "exclude": {
-            "duplicateTitles": "",
-            "pageTitle": "",
-            "pageUrl": ""
+      
         }
     }
 ]

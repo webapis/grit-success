@@ -30,9 +30,7 @@
         "name": "parfüm, krem, sprey, yağ, dudak, losyon, jel, peeling",
         "slug": "kozmetik",
         "exclude": {
-            "duplicateTitles": "",
-            "pageTitle": "",
-            "pageUrl": ""
+    
         }
     }
 ]

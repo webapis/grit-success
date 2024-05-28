@@ -32,9 +32,7 @@
         "name": "gecelik, sabahlık, pijama, kimono",
         "slug": "ev",
         "exclude": {
-            "duplicateTitles": "",
-            "pageTitle": "",
-            "pageUrl": ""
+      
         }
     }
 ]

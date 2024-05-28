@@ -9,9 +9,11 @@
             [
                 "ceket",
                 "Jacket",
+                "jackets",
                 "bolero",
                 "bomber",
-                "Ceket"
+                "Ceket",
+                "Camille"
             ],
             [
                 "yelek",
@@ -23,9 +25,7 @@
         "name": "blazer, ceket, yelek",
         "slug": "23",
         "exclude": {
-            "duplicateTitles": "",
-            "pageTitle": "",
-            "pageUrl": ""
+         
         }
     }
 ]

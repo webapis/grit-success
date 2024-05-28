@@ -7,7 +7,7 @@
         "elbise"
     ],
     "positives": [
-        ["gelinlik"],
+        ["gelinlik","wedding"],
         ["nedime"]
     ],
     "db": [],

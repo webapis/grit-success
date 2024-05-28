@@ -14,7 +14,7 @@
             ],
             [
                 "etek",
-                "skirt"
+                "skirt", "skirts"
             ]
         ],
         "db": [],
@@ -22,9 +22,7 @@
         "name": "şort, etek",
         "slug": "22",
         "exclude": {
-            "duplicateTitles": "",
-            "pageTitle": "",
-            "pageUrl": ""
+        
         }
     }
 ]

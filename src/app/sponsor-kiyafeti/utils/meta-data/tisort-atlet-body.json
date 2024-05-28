@@ -85,9 +85,7 @@
         "name": "tişört, atlet, body, crop, top",
         "slug": "3",
         "exclude": {
-            "duplicateTitles": "",
-            "pageTitle": "",
-            "pageUrl": ""
+      
         }
     }
 ]

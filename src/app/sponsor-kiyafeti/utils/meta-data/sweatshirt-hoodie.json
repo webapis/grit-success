@@ -22,9 +22,7 @@
         "name": "sweatshirt, hoodie",
         "slug": "sweat",
         "exclude": {
-            "duplicateTitles": "",
-            "pageTitle": "",
-            "pageUrl": ""
+     
         }
     }
 ]
