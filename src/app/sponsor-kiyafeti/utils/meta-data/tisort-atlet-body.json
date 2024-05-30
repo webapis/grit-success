@@ -80,14 +80,33 @@
             "terlik",
             "çi̇zme",
             "Topuklu",
-            "kolye"
+            "kolye",
+            "kemer",
+            "cüzdan",
+            "büstier",
+            "pelerin",
+            "büstiyer",
+            "sneaker",
+            "soft bra",
+            "hoodie",
+            "elibise",
+            "tunik",
+            "teddy",
+            "mont",
+            "tankini",
+            "büsti̇yer",
+            "kimono",
+            "bomber",
+            "hirka",
+            "sweat",
+            "pareo",
+            "croplet",
+            "Bustiyer"
         ],
         "name": "tişört, atlet, body, crop, top",
         "slug": "3",
         "exclude": {
-            "duplicateTitles": "",
-            "pageTitle": "",
-            "pageUrl": ""
+      
         }
     }
 ]

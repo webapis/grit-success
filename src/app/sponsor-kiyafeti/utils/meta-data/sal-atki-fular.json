@@ -29,9 +29,7 @@
         "name": "şal, atkı, fular, boyunluk",
         "slug": "atkı",
         "exclude": {
-            "duplicateTitles": "",
-            "pageTitle": "",
-            "pageUrl": ""
+      
         }
     }
 ]

@@ -37,14 +37,19 @@
             "Men's",
             "yelek",
             "sabahlık",
-            "sweatshirt"
+            "sweatshirt",
+            "ceket",
+            "elbise",
+            "tulum",
+            "bluz",
+            "pijama",
+            "gömlek",
+            "tshirt"
         ],
         "name": "kazak, hırka, süveter",
         "slug": "kazak",
         "exclude": {
-            "duplicateTitles": "",
-            "pageTitle": "",
-            "pageUrl": ""
+      
         }
     }
 ]

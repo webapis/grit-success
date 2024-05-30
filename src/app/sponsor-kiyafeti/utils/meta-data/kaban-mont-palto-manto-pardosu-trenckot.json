@@ -5,7 +5,10 @@
             "mont",
             "palto",
             "manto",
-            "trençkot"
+            "trençkot",
+            "yağmurluk"
+    
+            
         ],
         "words": ["trenchcoat","trenckot"],
         "positives": [
@@ -14,7 +17,7 @@
                 "coat"
             ],
             [
-                "mont"
+                "mont","VAL THORENS","CHAMONIX","Angie","Amber","Blake","Meatpacking","Cherrie","Angelina","Sera","Angie","Lorena","Bank Street","Soho","Malek","RAMİ","BRADLEY","Farrow","Galia","TRIBECA"
             ],
             [
                 "palto"
@@ -30,16 +33,17 @@
                 "Trench",
                 "TRENCKOT",
                 "TRENC"
-            ]
+            ],
+            ["yağmurluk"]
+         
+           
         ],
         "db": [],
-        "negatives": ["network","ceket"],
-        "name": "kaban, mont, palto, manto, trençkot",
+        "negatives": ["waistcoat","network","ceket","pantolon","etek","pijama","şort","sütyen","gömlek","elbise","sprey","büstiyer","vest","losyon","jacket","ceket","blazer","pants"],
+        "name": "kaban, mont, palto, manto, trençkot, yağmurluk",
         "slug": "dis-giyim",
         "exclude": {
-            "duplicateTitles": "",
-            "pageTitle": "",
-            "pageUrl": ""
+       
         }
     }
 ]

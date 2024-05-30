@@ -20,7 +20,8 @@
                 "Full Length",
                 "Slim Fit",
                 "Full Lenght",
-                "Fit Jea"
+                "Fit Jea",
+                "Top"
             ],
             [
                 "eşofman"
@@ -33,13 +34,30 @@
             ]
         ],
         "db": [],
-        "negatives": ["bermuda","pijama","network","sweater"],
+        "negatives": [
+            "bermuda",
+            "pijama",
+            "network",
+            "sweater",
+            "küpe",
+            "t shirt",
+            "mayo",
+            "bikini",
+            "tankini",
+            "büstier",
+            "büsti̇yer",
+            "blouse",
+            "top",
+            "sütyen",
+            "sneaker",
+            "vest",
+            "tshirt",
+            "etek",
+            "şort",
+            "blossom"
+        ],
         "name": "pantolon, eşofman, tayt, jogger",
         "slug": "alt-giyim",
-        "exclude": {
-            "duplicateTitles": "",
-            "pageTitle": "",
-            "pageUrl": ""
-        }
+        "exclude": {}
     }
 ]

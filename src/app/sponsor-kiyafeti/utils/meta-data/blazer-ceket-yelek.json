@@ -1,7 +1,14 @@
 [
     {
-        "keywords": ["blazer","ceket","yelek"],
-        "words": ["Jacket","jacket"],
+        "keywords": [
+            "blazer",
+            "ceket",
+            "yelek"
+        ],
+        "words": [
+            "Jacket",
+            "jacket"
+        ],
         "positives": [
             [
                 "blazer"
@@ -9,23 +16,39 @@
             [
                 "ceket",
                 "Jacket",
+                "jackets",
                 "bolero",
                 "bomber",
-                "Ceket"
+                "Ceket",
+                "Camille"
             ],
             [
                 "yelek",
-                "vest"
+                "vest",
+                "waistcoat"
             ]
         ],
         "db": [],
-        "negatives": ["tulum","pijama","bluz","dress","Jumpsuit"],
+        "negatives": [
+            "tulum",
+            "pijama",
+            "bluz",
+            "dress",
+            "Jumpsuit",
+            "süveter",
+            "elbise",
+            "hırka",
+            "top",
+            "shorts",
+            "pants",
+            "dungarees",
+            "skirt",
+            "kimono",
+            "tshi̇rt",
+            "kaban"
+        ],
         "name": "blazer, ceket, yelek",
         "slug": "23",
-        "exclude": {
-            "duplicateTitles": "",
-            "pageTitle": "",
-            "pageUrl": ""
-        }
+        "exclude": {}
     }
 ]

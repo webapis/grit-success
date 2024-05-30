@@ -6,31 +6,62 @@
             "mayokini",
             "bikini",
             "pareo",
-            "peştemal"
-          
+            "peştemal",
+            "tankini"
         ],
-        "words": [
-            
-        ],
+        "words": [],
         "positives": [
-            ["plaj","Yüzücü Bonesi",  "havuz Bonesi", "Kulak Tıkacı", "Burun Tıkacı"],
-            ["mayo"],
-            ["mayokini"],
-            ["bikini"],
-            ["pareo"],
-            ["peştemal"]
-     
+            [
+                "plaj",
+                "Yüzücü Bonesi",
+                "havuz Bonesi",
+                "Kulak Tıkacı",
+                "Burun Tıkacı"
+            ],
+            [
+                "mayo"
+            ],
+            [
+                "mayokini"
+            ],
+            [
+                "bikini"
+            ],
+            [
+                "pareo"
+            ],
+            [
+                "peştemal"
+            ],
+            [
+                "tankini"
+            ]
         ],
         "db": [],
         "negatives": [
-           
+            "Taş Deri Kemer",
+            "pantolon",
+            "gömlek",
+            "bluz",
+            "külot",
+            "Çanta",
+            "Şapka",
+            "bere",
+            "kep",
+            "Fötr",
+            "terlik",
+            "Platform",
+            "Saten Kemer",
+            "Stiletto",
+            "Ayakkabı",
+            "Deri Kemer",
+            "Cüzdan",
+            "Kartlık",
+            "Çizme",
+            "kemer"
         ],
-        "name": "plaj, pareo, mayo, mayokini, bikini",
+        "name": "plaj, pareo, mayo, mayokini, bikini, tankini",
         "slug": "plaj",
-        "exclude": {
-            "duplicateTitles": "",
-            "pageTitle": "",
-            "pageUrl": ""
-        }
+        "exclude": {}
     }
 ]

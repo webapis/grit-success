@@ -19,7 +19,8 @@
             [
                 "külot",
                 "külodu",
-                "kulodu"
+                "kulodu",
+                "croplet"
             ],
             [
                 "sütyen",
@@ -55,9 +56,7 @@
         "name": "sütyen, külot, jartiyer, bra, babydoll, teddy, tanga",
         "slug": "iç-giyim",
         "exclude": {
-            "duplicateTitles": "",
-            "pageTitle": "",
-            "pageUrl": ""
+       
         }
     }
 ]

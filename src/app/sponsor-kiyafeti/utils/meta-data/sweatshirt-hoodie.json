@@ -18,13 +18,11 @@
             
         ],
         "db": [],
-        "negatives": ["cloak","sweater","sütyen","pijama"],
+        "negatives": ["cloak","sweater","sütyen","pijama","t shirt","kazak","bluz","tişört","eşofman"],
         "name": "sweatshirt, hoodie",
         "slug": "sweat",
         "exclude": {
-            "duplicateTitles": "",
-            "pageTitle": "",
-            "pageUrl": ""
+     
         }
     }
 ]
