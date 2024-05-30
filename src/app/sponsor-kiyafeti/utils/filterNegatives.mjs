@@ -10,11 +10,20 @@ function filterNegatives(obj, searchTerms) {
 
             // Check if the property value is a string
             if (propValue) {
-         
+
                 // Check if any search term is found in the property value
                 for (let i = 0; i < sortedSearchTerms.length; i++) {
-
-
+                    // const regex = new RegExp(`\\b(\\S*${sortedSearchTerms[i]}\\S*)\\b`, 'i');
+               
+                    // if (sortedSearchTerms[i].length <= 3) {
+                   
+                    //     const match = propValue.replaceAll('-', ' ').replaceAll('/', ' ').match(regex);
+                    //     if (match &&match[0].length===sortedSearchTerms[i].length ) {
+                    //         debugger
+                    //         return match[0]
+                    //     }
+                    //     return false
+                    // }
                     if (propValue.replaceAll('-', ' ').replaceAll('/', ' ').toLowerCase().includes(sortedSearchTerms[i].toLowerCase())) {
 
 

@@ -10,7 +10,8 @@
                 "büstiyer",
                 "BUSTİYER",
                 "bustier",
-                "busti̇yer"
+                "busti̇yer",
+                "büstier"
             ]
            
         ],
@@ -18,7 +19,12 @@
            
         ],
         "negatives": [
-           "babydoll"
+           "babydoll",
+           "bikini",
+           "bluz",
+           "sütyen",
+           "croplet",
+           "trousers"
         ],
         "name": "büstiyer",
         "slug": "66",

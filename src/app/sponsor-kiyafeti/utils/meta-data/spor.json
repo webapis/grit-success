@@ -63,7 +63,7 @@
             "spor","sneaker"
         ],
         "negatives": [
-            "erkek","çorap"
+            "erkek","çorap","terlik","sandalet","topuklu","Bağcikli Ayakkabi","külot","boxer"
         ],
         "name": "spor",
         "slug": "spor",

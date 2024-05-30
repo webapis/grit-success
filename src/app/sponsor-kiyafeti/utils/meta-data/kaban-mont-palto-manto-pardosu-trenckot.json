@@ -5,7 +5,10 @@
             "mont",
             "palto",
             "manto",
-            "trençkot"
+            "trençkot",
+            "yağmurluk"
+    
+            
         ],
         "words": ["trenchcoat","trenckot"],
         "positives": [
@@ -30,11 +33,14 @@
                 "Trench",
                 "TRENCKOT",
                 "TRENC"
-            ]
+            ],
+            ["yağmurluk"]
+         
+           
         ],
         "db": [],
-        "negatives": ["network","ceket"],
-        "name": "kaban, mont, palto, manto, trençkot",
+        "negatives": ["waistcoat","network","ceket","pantolon","etek","pijama","şort","sütyen","gömlek","elbise","sprey","büstiyer","vest","losyon","jacket","ceket","blazer","pants"],
+        "name": "kaban, mont, palto, manto, trençkot, yağmurluk",
         "slug": "dis-giyim",
         "exclude": {
        

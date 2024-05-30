@@ -14,15 +14,37 @@
             ],
             [
                 "etek",
-                "skirt", "skirts"
+                "skirt",
+                "skirts"
             ]
         ],
         "db": [],
-        "negatives": ["Şapka","Jacket","Şapka","Dress","Vest","Knit","elbise","top","etekli","sweater","babydoll","victoriassecret"],
+        "negatives": [
+            "Şapka",
+            "Jacket",
+            "Şapka",
+            "Dress",
+            "Vest",
+            "Knit",
+            "elbise",
+            "top",
+            "etekli",
+            "sweater",
+            "babydoll",
+            "victoriassecret",
+            "pantolon",
+            "pijama",
+            "şortlu takım",
+            "kimono",
+            "tayt",
+            "eşofman",
+            "tshi̇rt",
+            "mayo",
+            "bluz",
+            "t shirt"
+        ],
         "name": "şort, etek",
         "slug": "22",
-        "exclude": {
-        
-        }
+        "exclude": {}
     }
 ]
