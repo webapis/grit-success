@@ -36,7 +36,7 @@
            
         ],
         "negatives": [
-           "Havlusu","çorap"
+           "Havlusu","çorap","trousers","skirt","pants","jumpsuit","pant","shorts","jeans","bikini","bottom"
         ],
         "name": "ayakkabı, platform, stiletto, sandalet, bot, çizme, terlik, sneaker, makosen, babet",
         "slug": "ayakkabi",

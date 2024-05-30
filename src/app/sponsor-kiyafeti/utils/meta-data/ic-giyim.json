@@ -52,7 +52,7 @@
           
         ],
         "db": [],
-        "negatives": ["pantolon","kaban","bere","çanta","mont","spor","yelek","elbise","shirt","trençkot","pareo","bluz","ceket","espadril","kimono","sweater","kemer","trousers","üst","dress","gömlek"],
+        "negatives": ["çorap","atkı","necklace","belt","crop top","jacket","etek","bracelet","bradley","pants","pantolon","kaban","bere","çanta","mont","spor","yelek","elbise","shirt","trençkot","pareo","bluz","ceket","espadril","kimono","sweater","kemer","trousers","üst","dress","gömlek"],
         "name": "sütyen, külot, jartiyer, bra, babydoll, teddy, tanga",
         "slug": "iç-giyim",
         "exclude": {
