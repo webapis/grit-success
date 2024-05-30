@@ -445,6 +445,19 @@
                 }
             ]
         }
+    }  ,
+    {
+        "slug": "yalan-dizi-sponsorlari",
+        "pageTitle": "Yalan Dizi Sponsorları",
+        "description": "",
+        "dizi": "Yalan",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Yalan"
+                }
+            ]
+        }
     }
 ]
 
