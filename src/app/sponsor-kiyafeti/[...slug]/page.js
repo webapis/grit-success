@@ -59,8 +59,9 @@ export async function generateMetadata({ params }) {
 
 export default async function SponsorKiyafetiPage({ params }) {
     debugger
+    const isDev = process.env.NODE_ENV === 'development';
     const { slug } = params
-debugger
+    debugger
     const slugObj = mergedCategories.find(f => f.slug === decodeURI(slug[1]))
     const selectedKeyword = decodeURI(slug[slug.length - 3])
     debugger
@@ -68,12 +69,20 @@ debugger
     const positives = slugObj.db.length > 0 ? slugObj.db : slugObj.positives.flat()
     const selectedPositives = initLoad ? positives : slugObj.positives.find(f => f.includes(selectedKeyword))
     debugger
-    const rawData = await fs.readFile(process.cwd() + `/src/app/sponsor-kiyafeti/data/kadin/${decodeURI(slug[1])}-sponsorkiyafeti.json`, 'utf8');
-    const data = JSON.parse(rawData)
+
+    let data = null
+
+    if (isDev) {
+        console.log('development env----')
+        data = getData({ positives, negatives: slugObj.negatives, exclude: slugObj.exclude, keywords: slugObj.keywords })
+        debugger
+    } else {
+        const rawData = await fs.readFile(process.cwd() + `/src/app/sponsor-kiyafeti/data/kadin/${decodeURI(slug[1])}-sponsorkiyafeti.json`, 'utf8');
+        data = JSON.parse(rawData)
+    }
     //const selectedPositives = slugObj.positives.filter(f=> )
 
-    //const data = getData({ positives,negatives:slugObj.negatives, exclude: slugObj.exclude,keywords:slugObj.keywords })
-    debugger
+
     const page = slug[slug.length - 1]
 
 
@@ -118,7 +127,7 @@ debugger
         </Container>
         </Drawer>
     </>
-    
+
 
 }
 
@@ -149,7 +158,7 @@ export function KeywordsTabContainer({ value = 1000, keywords, rawData, slug }) 
 
 
     return <Tabs value={value} sx={{ marginBottom: 0 }} variant="scrollable" scrollButtons allowScrollButtonsMobile>
-        {keywordsWithImg.map((m, i) => { return { ...m, id: decodeURI(slug[2]) === m.keyword ? 0 : i + 1 } }).sort((a,b)=>a.id-b.id).map((m, i) => <Tab key={i} label={<KeywordItem imageUrl={m.imageUrl} keyword={m.keyword} selected={decodeURI(slug[2]) === m.keyword} href={`/sponsor-kiyafeti/kadin/${slug[1]}/${decodeURI(slug[2]) === m.keyword ? keywords.sort().map((m, i) => m).join('-') : m.keyword}/sayfa/1`} />} />)}
+        {keywordsWithImg.map((m, i) => { return { ...m, id: decodeURI(slug[2]) === m.keyword ? 0 : i + 1 } }).sort((a, b) => a.id - b.id).map((m, i) => <Tab key={i} label={<KeywordItem imageUrl={m.imageUrl} keyword={m.keyword} selected={decodeURI(slug[2]) === m.keyword} href={`/sponsor-kiyafeti/kadin/${slug[1]}/${decodeURI(slug[2]) === m.keyword ? keywords.sort().map((m, i) => m).join('-') : m.keyword}/sayfa/1`} />} />)}
     </Tabs>
 }
 
@@ -251,10 +260,10 @@ export async function generateStaticParams() {
     }
     const pages = flattenArrayByPageCount(pageCandidates)
 
-   
+
     return pages.map((content) => {
         const { category, keInit, page } = content
-      
+
         return {
             slug: ['kadin', category, keInit, 'sayfa', page.toString()]
         }
