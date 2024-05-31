@@ -23,6 +23,7 @@ import PopupMenuColor from '../comp/popup-menu-color';
 import mergedCategories from '../utils/mergedCategories.mjs'
 import searchObject from "../utils/searchObject.mjs";
 import getData from '../utils/getData.mjs';
+
 function findMatching(primaryArray, colorsArray) {
     // Filter the colorsArray to find colors that exist in the primaryArray
     const matchingColors = colorsArray.filter(color => primaryArray.includes(color));
@@ -59,7 +60,7 @@ export async function generateMetadata({ params }) {
 
 export default async function SponsorKiyafetiPage({ params }) {
     debugger
-    const isDev = process.env.NODE_ENV === 'development';
+   // const isDev = process.env.NODE_ENV === 'development';
     const { slug } = params
     debugger
     const slugObj = mergedCategories.find(f => f.slug === decodeURI(slug[1]))
@@ -72,14 +73,14 @@ export default async function SponsorKiyafetiPage({ params }) {
 
     let data = null
 
-    if (isDev) {
-        console.log('development env----')
-        data = getData({ positives, negatives: slugObj.negatives, exclude: slugObj.exclude, keywords: slugObj.keywords })
+
+   
+       // data = getData({ positives, negatives: slugObj.negatives, exclude: slugObj.exclude, keywords: slugObj.keywords })
         debugger
-    } else {
+
         const rawData = await fs.readFile(process.cwd() + `/src/app/sponsor-kiyafeti/data/kadin/${decodeURI(slug[1])}-sponsorkiyafeti.json`, 'utf8');
         data = JSON.parse(rawData)
-    }
+    
     //const selectedPositives = slugObj.positives.filter(f=> )
 
 
@@ -122,7 +123,7 @@ export default async function SponsorKiyafetiPage({ params }) {
             {/* <GenderTabContainer value={genderIndex} /> */}
 
             <Grid container gap={0} sx={{ display: 'flex', justifyContent: { xs: 'center', md: 'start' },padding:0,margin:0 }}>
-                {pagesData.map((m, i) => { return <Grid sx={{padding:0,margin:0}} item key={i} xs={6} sm={4} md={3} lg={2}> <Image matchingCategories={[...slugObj.keywords, ...slugObj.positives.flat(), ...slugObj.words]} {...m} subcat={''} /></Grid> })}</Grid>
+                {pagesData.map((m, i) => { return <Grid sx={{padding:0,margin:0}} item key={i} xs={6} sm={4} md={3} lg={2}> <Image  matchingCategories={[...slugObj.keywords, ...slugObj.positives.flat(), ...slugObj.words]} {...m} subcat={''} /></Grid> })}</Grid>
             <PaginationContainer count={pageCount} page={parseInt(page)} url={`/sponsor-kiyafeti/kadin/${slug[1]}/${selectedKeyword}/sayfa/`} />
         </Container>
         </Drawer>
