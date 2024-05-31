@@ -121,8 +121,8 @@ export default async function SponsorKiyafetiPage({ params }) {
 
             {/* <GenderTabContainer value={genderIndex} /> */}
 
-            <Grid container gap={1} sx={{ display: 'flex', justifyContent: { xs: 'center', md: 'start' } }}>
-                {pagesData.map((m, i) => { return <Grid item key={i} > <Image matchingCategories={[...slugObj.keywords, ...slugObj.positives.flat(), ...slugObj.words]} {...m} subcat={''} /></Grid> })}</Grid>
+            <Grid container gap={0} sx={{ display: 'flex', justifyContent: { xs: 'center', md: 'start' },padding:0,margin:0 }}>
+                {pagesData.map((m, i) => { return <Grid sx={{padding:0,margin:0}} item key={i} xs={6} sm={4} md={3} lg={2}> <Image matchingCategories={[...slugObj.keywords, ...slugObj.positives.flat(), ...slugObj.words]} {...m} subcat={''} /></Grid> })}</Grid>
             <PaginationContainer count={pageCount} page={parseInt(page)} url={`/sponsor-kiyafeti/kadin/${slug[1]}/${selectedKeyword}/sayfa/`} />
         </Container>
         </Drawer>

@@ -16,9 +16,9 @@ const matchingWords = title.split(' ').map((m) => {
   }
 })
 
-  return <a href={link} target="_blank" style={{ textDecoration: 'none', color: '#757575' }} >
+  return <a href={link} target="_blank" style={{ textDecoration: 'none', color: '#757575',padding:0,margin:0 }} >
 
-    <Box sx={{ width: { xs: 150, md: 200 }, height: { xs: 200, md: 300 } }}>
+    <Box sx={{ maxWidth: { xs: 190,sm:300, md: 400 }, maxHeight: { xs: 300,sm:450, md: 550 },padding:0 ,margin:0}}>
       {
         image && image[0] && <img
           src={'https://ik.imagekit.io/mumrjdehaou/' + image[0]} loading="lazy" style={{ maxWidth: '100%', height: '100%', objectFit: 'contain', backgroundColor: '#f5f5f5',borderRadius:3 }} />
@@ -26,7 +26,7 @@ const matchingWords = title.split(' ').map((m) => {
 
     </Box>
 
-    <Box sx={{ display: 'flex', justifyContent: 'space-between', width: { xs: 140, md: 200 } }}>
+   <Box sx={{ display: 'flex', justifyContent: 'space-between',  maxWidth: { xs: 190,sm:300, md: 400  },paddingLeft:1,paddingRight:1 }} >
       <Grid container sx={{display:'flex',justifyContent:'space-between'}}>
         <Grid item>
           <Typography sx={{ fontSize: 14, fontFamily: 'inherit' }}>{marka.replace('clothing.','')}</Typography>
@@ -36,8 +36,8 @@ const matchingWords = title.split(' ').map((m) => {
         </Grid>
       </Grid>
 
-    </Box>
-    <Box sx={{ width: { xs: 140, md: 200 } }}>
+    </Box> 
+    <Box sx={{maxWidth: { xs: 190,sm:300, md: 400  }, maxHeight: { xs: 300 },paddingLeft:1,paddingRight:1 }}>
       {matchingWords}
       {/* <Typography variant="caption" style={{ width: '100%', wordWrap: 'break-word', textDecoration: 'none', color: 'inherit', fontFamily: 'inherit' }}>{matchingWords}</Typography> */}
     </Box>
