@@ -19,7 +19,7 @@ export default function Image({ image, title, link, marka, price, currency,match
         {
           root: null,
           rootMargin: "0px",
-          threshold: 0.5,
+          threshold: 0,
         }
       );
       observer.observe(imageEl.current);
