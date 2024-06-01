@@ -6,7 +6,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import deaccent from '../deaccent';
 export default function Diziview({ title, keywords,slug }) {
 
-    const keywordint = keywords.map((m,i)=>m).join('-') 
+const keywordint = keywords.sort().map((m,i)=>m).join('-') 
     return (
         <List sx={{ maxWidth: 345 }}>
 
@@ -14,7 +14,7 @@ export default function Diziview({ title, keywords,slug }) {
             <ListItem disablePadding>
                 <ListItemButton component='a'
     
-                    href={`/sponsor-kiyafeti/kadin/${slug}}/${keywordint}/sayfa/1`}
+                    href={`/sponsor-kiyafeti/kadin/${slug}/${keywordint}/sayfa/1`}
                    >
                     {title}
                 </ListItemButton>
