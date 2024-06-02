@@ -21,7 +21,7 @@ const keywordint = keywords.sort().map((m,i)=>m).join('-')
         <Card sx={{ maxWidth: 345,textDecoration:'none' }} component='a' href={`/sponsor-kiyafeti/${deaccent(gender).toLowerCase().replaceAll(' ','-').replaceAll(',','')}/${slug}/${keywordint}/sayfa/1`} >
             <CardMedia
                 sx={{ height: {xs:200,sm:250,md:250}, width:'auto',objectFit:'contain', borderRadius:2 }}
-                image={'https://ik.imagekit.io/mumrjdehaou/' +imageUrl}
+                image={imageUrl}
                 title={`${title} Dizi Sponsorları.`}
             />
 

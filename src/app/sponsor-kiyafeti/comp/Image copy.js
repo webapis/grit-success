@@ -32,7 +32,7 @@ export default function Image({ content }) {
     return <Box container sx={{ xs: 150, md: 300 }}>
         <Box item xs={12} component={Link} href={link} target="_blank">
             <img    ref={imageEl}
-        data-src={'https://ik.imagekit.io/mumrjdehaou/'+image[0]} src={placeholder} style={{ maxWidth: '100%', height: 'auto' }}  />
+        data-src={image[0]} src={placeholder} style={{ maxWidth: '100%', height: 'auto' }}  />
         </Box>
         <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <Typography sx={{fontSize:14,fontFamily:'inherit'}}>{marka}</Typography>

@@ -40,7 +40,7 @@ const matchingWords = title.split(' ').map((m) => {
     <Box sx={{ maxWidth: { xs: 190,sm:300, md: 400 }, maxHeight: { xs: 300,sm:450, md: 550 },padding:0 ,margin:0}}>
       {
         image && image[0] && <img  ref={imageEl}
-          src={dataURI}  data-src={'https://ik.imagekit.io/mumrjdehaou/' + image[0]} loading="lazy" style={{ maxWidth: '100%', height: '100%', objectFit: 'contain', backgroundColor: '#f5f5f5' }} />
+          src={dataURI}  data-src={ image[0]} loading="lazy" style={{ maxWidth: '100%', height: '100%', objectFit: 'contain', backgroundColor: '#f5f5f5' }} />
       }
 
     </Box>

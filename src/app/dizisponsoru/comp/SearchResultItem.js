@@ -25,7 +25,7 @@ export default function SearchResultItem({ item }) {
            
             height="100"
          
-            src={'https://ik.imagekit.io/mumrjdehaou/' +item.Tag}
+            src={item.Tag}
             loading="lazy"
             
         />

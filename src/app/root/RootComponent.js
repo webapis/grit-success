@@ -15,7 +15,7 @@ export default function RootComponent({title , url}) {
         <Card sx={{ maxWidth: 345 }}>
             <CardMedia
                 sx={{ height: 170 }}
-                image={'https://ik.imagekit.io/mumrjdehaou/'+url}
+                image={url}
                 title={`${title} Dizi Kıyafetleri Oyuncuların Giydiği Kıyafetler.`}
             />
 
