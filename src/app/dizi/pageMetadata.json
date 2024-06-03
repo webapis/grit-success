@@ -459,5 +459,32 @@
             ]
         }
     }
+    ,
+    {
+        "slug": "baba-dizi-sponsorlari",
+        "pageTitle": "Baba Dizi Sponsorları",
+        "description": "",
+        "dizi": "Baba",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Baba"
+                }
+            ]
+        }
+    } ,
+    {
+        "slug": "dilek-tasi-dizi-sponsorlari",
+        "pageTitle": "Dilek Taşı Dizi Sponsorları",
+        "description": "",
+        "dizi": "Dilek Taşı",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Dilek Taşı"
+                }
+            ]
+        }
+    }
 ]
 
