@@ -16,7 +16,7 @@ export default function SponsorView({title ,content }) {
         <Card sx={{ maxWidth: 345 }}>
             <CardMedia
                 sx={{ height: 170 }}
-                image={'https://ik.imagekit.io/mumrjdehaou/'+Tag}
+                image={Tag}
                 title={`${title} Dizi Sponsorları.`}
             />
 

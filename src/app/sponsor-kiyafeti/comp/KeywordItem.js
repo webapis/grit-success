@@ -16,7 +16,7 @@ export default function KeywordItem({ imageUrl, label, selected, href, keyword }
         <img
           component="img"
           style={{ height: 50, borderRadius: 3, width: 30, objectFit: 'fill' }}
-          src={'https://ik.imagekit.io/mumrjdehaou/'+imageUrl}
+          src={imageUrl}
           alt=""
         />
 
