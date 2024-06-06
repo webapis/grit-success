@@ -44,7 +44,7 @@ const matchingWords =title&& title.split(' ').map((m) => {
   }
 })
 
-  return <a href={link} target="_blank" style={{ textDecoration: 'none', color: '#757575',padding:0,margin:0 }} >
+  return <>
 
     <Box sx={{ maxWidth: { xs: 190,sm:300, md: 400 }, maxHeight: { xs: 300,sm:450, md: 550 },padding:0 ,margin:0}}>
       {
@@ -57,18 +57,17 @@ const matchingWords =title&& title.split(' ').map((m) => {
    <Box sx={{  maxWidth: { xs: 190,sm:300, md: 400  },paddingLeft:1,paddingRight:1 }} >
 
       
-          <Button component='a' href={link} target="_blank" sx={{textTransform:'lowercase'}} endIcon={<OpenInNewIcon/>}>{extractHostname(link).replace('www.','').replace('clothing.','')}</Button>
+          <Button size="small" component='a' href={link} target="_blank" sx={{textTransform:'lowercase'}} endIcon={<OpenInNewIcon/>}>{extractHostname(link).replace('www.','').replace('clothing.','')}</Button>
 
     
      
           <Typography sx={{ fontSize: 12, fontFamily: 'inherit',width:'100%'}}>{price>0 ? currentPrice:''}</Typography>
       
   
-
+          <Typography variant="body2" color="text.secondary" sx={{textTransform:'capitalize'}}>
+          {title}
+          </Typography>
     </Box> 
-    <Box sx={{maxWidth: { xs: 190,sm:300, md: 400  }, maxHeight: { xs: 300 },paddingLeft:1,paddingRight:1 }}>
-      {matchingWords}
-      {/* <Typography variant="caption" style={{ width: '100%', wordWrap: 'break-word', textDecoration: 'none', color: 'inherit', fontFamily: 'inherit' }}>{matchingWords}</Typography> */}
-    </Box>
-  </a>
+ 
+  </>
 }
