@@ -37,20 +37,12 @@ export default function Image({ image, title, link, marka, price, currency,handl
 }).format(price)
 
 
-  return <>
-
-    <Box sx={{ maxWidth: { xs: 190,sm:300, md: 400 }, maxHeight: { xs: 300,sm:450, md: 550 }}} onClick={()=>handleSelect(obj)} >
+  return<Box  >
       {
-        image && image[0] && <img  ref={imageEl}     onError={(e) => (e.target.src = dataURI)}
-          src={dataURI}  data-src={ image[0]} loading="lazy" style={{ maxWidth: '100%', height: '100%', objectFit: 'contain', backgroundColor: '#f5f5f5' }} />
+       <img onClick={()=>handleSelect(obj)}   ref={imageEl}     onError={(e) => (e.target.src = dataURI)}
+          src={dataURI}  data-src={ image[0]}  style={{ width: '100%', height: '100%' }} />
       }
-
-    </Box>
-
-   <Box sx={{  maxWidth: { xs: 190,sm:300, md: 400  },paddingLeft:1,paddingRight:1 }} >
-
-      
-          <Button size="small" component='a' href={link} target="_blank" sx={{textTransform:'lowercase',  '&:hover': {
+      <Button size="small" component='a' href={link} target="_blank" sx={{textTransform:'lowercase',  '&:hover': {
           textDecoration: 'underline'
         }}} endIcon={<OpenInNewIcon/>}>{extractHostname(link).replace('www.','').replace('clothing.','')}</Button>
 
@@ -62,7 +54,11 @@ export default function Image({ image, title, link, marka, price, currency,handl
           <Typography variant="body2" color="text.secondary" sx={{textTransform:'capitalize'}}>
           {title}
           </Typography>
+
+
+      
+    
     </Box> 
  
-  </>
+
 }
