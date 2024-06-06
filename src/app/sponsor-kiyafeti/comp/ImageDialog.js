@@ -4,7 +4,7 @@ import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
-
+import  Box  from '@mui/material/Box';
 import DialogActions from '@mui/material/DialogActions'
 import Button from '@mui/material/Button';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
@@ -81,9 +81,9 @@ function Image({ obj, handleSelect }) {
         }
     }, [marka, image]);
 
-    return <img ref={imageEl}
-        src={dataURI} data-src={image[0]} loading="lazy" style={{ maxWidth: '100%', height: '100%', objectFit: 'contain', backgroundColor: '#f5f5f5' }} />
+    return<Box><img ref={imageEl}
+        src={dataURI} data-src={image[0]} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'contain', backgroundColor: '#f5f5f5' }} />
 
-
+</Box> 
 
 }
