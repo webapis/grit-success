@@ -25,7 +25,13 @@ export default function Image({ image, title, link, marka, price, currency,match
       observer.observe(imageEl.current);
     }
   }, [marka,image]);
-
+  let currentPrice =currency==='TL'? new Intl.NumberFormat('tr-TR', {
+    style: 'currency',
+    currency: 'TRY',
+}).format(price):new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+}).format(price)
 const matchingWords = title.split(' ').map((m) => {
 
   if (matchingCategories.includes(m.toLowerCase())) {
@@ -51,7 +57,7 @@ const matchingWords = title.split(' ').map((m) => {
           <Typography sx={{ fontSize: 14, fontFamily: 'inherit' }}>{marka.replace('clothing.','')}</Typography>
         </Grid>
         <Grid item>
-          <Typography sx={{ fontSize: 12, fontFamily: 'inherit', textAlign:'end',width:'100%'}}>{price>0 ? price:''} {price>0 ?currency:""}</Typography>
+          <Typography sx={{ fontSize: 12, fontFamily: 'inherit', textAlign:'end',width:'100%'}}>{price>0 ? currentPrice:''}</Typography>
         </Grid>
       </Grid>
 
