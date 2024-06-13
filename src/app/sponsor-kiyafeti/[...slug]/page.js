@@ -1,8 +1,7 @@
 //import Application from "../Application"
 import { promises as fs } from 'fs';
 //import Link from 'next/link';
-import Image from "../comp/Image";
-import { Box, Grid } from "@mui/material";
+
 import { Container } from '@mui/material';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -13,39 +12,21 @@ import PaginationContainer from "../comp/PaginationContainer";
 import Drawer from '../comp/drawer'
 import TopNavigation from "@/app/components/TopNavigation";
 import ProductCategoryChip from "./ProductCategoryChip";
-import deaccent from '../comp/deaccent';
-import colors from './keywords/color';
-import brands from './keywords/marka'
-import prices from './keywords/price'
+
 
 import KeywordItem from '../comp/KeywordItem';
-import PopupMenuColor from '../comp/popup-menu-color';
+
 import mergedCategories from '../utils/mergedCategories.mjs'
 import searchObject from "../utils/searchObject.mjs";
-import getData from '../utils/getData.mjs';
+
 
 import ProductContainer from '../comp/ProductContainer';
-function findMatching(primaryArray, colorsArray) {
-    // Filter the colorsArray to find colors that exist in the primaryArray
-    const matchingColors = colorsArray.filter(color => primaryArray.includes(color));
-
-    return matchingColors;
-}
-
-function findMatchingPrice(price, priceRange) {
-    return priceRange.some(cv => {
-        const start = parseInt(cv.split('-')[0])
-        const end = parseInt(cv.split('-')[1])
-        if (price >= start && price <= end) {
-            return true
-        }
-        return false
-
-    })
-}
 
 
-export async function generateMetadata({ params }) {
+
+
+
+export  function generateMetadata({ params }) {
 
     const { slug } = params
 
