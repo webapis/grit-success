@@ -4,11 +4,10 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import Button from '@mui/material/Button';
+
 import ClickableLink from '../../utils/firebase/ClickableLink';
 import ViewCount from '../../utils/firebase/ViewCount';
-import { sanitizeFirebasePath } from '../../utils/firebase/sanitizeFirebasePath'
+
 import Chip from '@mui/material/Chip';
 export default function SearchResultItem({ item }) {
 
