@@ -9,13 +9,11 @@ import Container from '@mui/material/Container';
 // import Tab from '@mui/material/Tab';
 // import Tabs from '@mui/material/Tabs';
 import SelectedDiziChip from './SelectedDiziChip';
-import ClickableLink from './ClickableLink';
-import ViewCount from './ViewCount';
-import { sanitizeFirebasePath } from './sanitizeFirebasePath';
+import ClickableLink from '../../utils/firebase/ClickableLink';
+import ViewCount from '../../utils/firebase/ViewCount';
+
 export default function ImageContainer({ filteredData, pageTitle }) {
-    debugger
-
-
+ 
     return <>
 
         <Container>
@@ -44,11 +42,11 @@ export default function ImageContainer({ filteredData, pageTitle }) {
                         <div style={{ marginTop: 3, width: "100%" }}><Image fotografUrl={m.ImageUrl} alt={m.alt} /></div>
                         <div style={{display:'flex', justifyContent:'end'}}>
                    
-                        <ViewCount linkId={links}/>
+                        <ViewCount rootPath={"dizikiyafeti"} linkId={links}/>
                         </div>
                   
                         <div style={{ width: '100%', display:'flex' }}>
-                            {<div style={{ margin: 5 }}>    <ClickableLink brand={m.BrandTitle} linkId={sanitizeFirebasePath(links)} url={links} title={title.toLowerCase()} /> </div>}
+                            {<div style={{ margin: 5 }}>    <ClickableLink rootPath={"dizikiyafeti"} brand={m.BrandTitle} linkId={links} title={title.toLowerCase()} /> </div>}
                         
                         </div>
 
