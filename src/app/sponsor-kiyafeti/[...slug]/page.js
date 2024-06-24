@@ -1,28 +1,20 @@
-//import Application from "../Application"
-import { promises as fs } from 'fs';
-//import Link from 'next/link';
 
+import { promises as fs } from 'fs';
 import { Container } from '@mui/material';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import path from 'path'
-
 import orderData from "./orderData";
 import PaginationContainer from "../comp/PaginationContainer";
-import Drawer from '../comp/drawer'
+
 import TopNavigation from "@/app/components/TopNavigation";
 import ProductCategoryChip from "./ProductCategoryChip";
-
-
 import KeywordItem from '../comp/KeywordItem';
-
 import mergedCategories from '../utils/mergedCategories.mjs'
 import searchObject from "../utils/searchObject.mjs";
-
-
 import ProductContainer from '../comp/ProductContainer';
-
-
+import { mappedNavData } from '../Application';
+import PersistentDrawerLeft from '@/app/components/drawer';
 
 
 
@@ -55,21 +47,16 @@ export default async function SponsorKiyafetiPage({ params }) {
 
     let data = null
 
-
-
-    // data = getData({ positives, negatives: slugObj.negatives, exclude: slugObj.exclude, keywords: slugObj.keywords })
-    debugger
-
     const rawData = await fs.readFile(process.cwd() + `/src/app/sponsor-kiyafeti/data/kadin/${decodeURI(slug[1])}-sponsorkiyafeti.json`, 'utf8');
     data = JSON.parse(rawData)
 
-    //const selectedPositives = slugObj.positives.filter(f=> )
+
 
 
     const page = slug[slug.length - 1]
 
 
-    //console.log("slugObj",slugObj)
+
     debugger
 
     debugger
@@ -84,8 +71,7 @@ export default async function SponsorKiyafetiPage({ params }) {
 
         <ProductCategoryChip category={slugObj.name} />
         <Container maxWidth sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            {/* <ProductCategoryChip category={pagesData[0].category} /> */}
-            {/* <PopupMenuColor /> */}
+       
         </Container>
 
         <Container maxWidth>
@@ -100,14 +86,11 @@ export default async function SponsorKiyafetiPage({ params }) {
         </Container>
 
 
-        <Drawer slug={slug} > <Container maxWidth>
-
-            {/* <GenderTabContainer value={genderIndex} /> */}
+        <PersistentDrawerLeft data={mappedNavData} title="Sponsor Kıyafeti"> <Container maxWidth>
             <ProductContainer data={pagesData} slugObj={slugObj} />
-            
             <PaginationContainer count={pageCount} page={parseInt(page)} url={`/sponsor-kiyafeti/kadin/${slug[1]}/${selectedKeyword}/sayfa/`} />
         </Container>
-        </Drawer>
+        </PersistentDrawerLeft>
     </>
 
 

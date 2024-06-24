@@ -1,11 +1,7 @@
 
 import Grid  from "@mui/material/Grid"
 
-//import Link from "next/link";
-
 export default function ChipContainer({ dizi, keyword }) {
-
- 
 
     return <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center' }}>
 

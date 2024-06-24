@@ -9,7 +9,7 @@ import Box from '@mui/material/Box';
 
 import ClickableLink from '../../utils/firebase/ClickableLink';
 import ViewCount from '../../utils/firebase/ViewCount';
-export default function SponsorView({title ,content }) {
+export default function SponsorView({title ,content,href }) {
     const {tag,toplamSponsor,Tag}=content
 
     return (
@@ -34,11 +34,11 @@ export default function SponsorView({title ,content }) {
                 <Typography  variant="caption" color="text.secondary" component="div" style={{ textTransform: 'capitalize',marginTop:4 }}>
                    Sponsor sayısı: {toplamSponsor}
                 </Typography>
-                <ViewCount rootPath={"dizisponsoru-home"} linkId={`/dizi/${tag}-dizi-sponsorlari`} />
+                <ViewCount rootPath={"dizisponsoru-home"} linkId={href} />
             </CardContent>
             <CardActions>
     
-                <ClickableLink rootPath={"dizisponsoru-home"} clickable={1} title={"sayfaya git"} linkId={`/dizi/${tag}-dizi-sponsorlari`} />
+                <ClickableLink rootPath={"dizisponsoru-home"} clickable={1} title={"sayfaya git"} linkId={href} />
             </CardActions>
         </Card>
     );

@@ -16,8 +16,6 @@ import deaccent from '@/app/dizisponsoru/[...slug]/deaccent';
 export async function generateMetadata({ params }) {
 
 
-    // const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/pageMetadata.json'), 'utf8');
-    // const pagesData = JSON.parse(pages);
 
     const result = pagesMetaData.find(f => {
         const current = f.slug
@@ -56,13 +54,8 @@ export async function generateMetadata({ params }) {
 export default async function DiziPage({ params }) {
     debugger
     const page = params.slug[2] ? parseInt(params.slug[2]) : 1
-    // const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/pageMetadata.json'), 'utf8');
-    // const pagesMetaData = JSON.parse(pages);
-    // const data = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/dizisponsoru.json'), 'utf8');
-    // const pagesData = JSON.parse(data);
 
 
-    console.log('params', params)
 
 
     const result = pagesMetaData.find(f => {
