@@ -485,6 +485,33 @@
                 }
             ]
         }
+    },
+    
+    {
+        "slug": "tuzak-tasi-dizi-sponsorlari",
+        "pageTitle": "Tuzak Dizi Sponsorları",
+        "description": "",
+        "dizi": "Tuzak",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Tuzak"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "kismet-tasi-dizi-sponsorlari",
+        "pageTitle": "Kısmet Dizi Sponsorları",
+        "description": "",
+        "dizi": "Kısmet",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Kısmet"
+                }
+            ]
+        }
     }
 ]
 
