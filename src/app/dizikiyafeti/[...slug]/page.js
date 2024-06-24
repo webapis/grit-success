@@ -1,20 +1,14 @@
 
-//import Link from 'next/link';
-// import { promises as fs } from 'fs';
 
 import ImageContainer from '../comps/ImageContainer';
-//import { Tab, Tabs } from '@mui/material';
-// import path from 'path'
 import Fuse from 'fuse.js'
-
-import Drawer from '../../home/components/drawer'
 import pagesMetaData from '@/app/dizikiyafeti/meta/pageMetaData.json';
 import pagesData from '@/app/dizikiyafeti/page-data/dizikiyafeti.json';
 import TopNavigation from '@/app/components/TopNavigation';
+import PersistentDrawerLeft from '@/app/components/drawer';
+import { mappedNavData } from '@/app/dizikiyafeti/comps/Application';
 export async function generateMetadata({ params, searchParams }, parent) {
 
-    // const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizikiyafeti/meta/pageMetaData.json'), 'utf8');
-    // const pagesData = JSON.parse(pages);
     debugger
     const { title } = pagesMetaData.find(f => {
         const current = f.slug[0]
@@ -33,11 +27,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
 
 export default async function DiziPage({ params }) {
 
-    // const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizikiyafeti/meta/pageMetaData.json'),'utf8');
-    // const pagesMetaData = JSON.parse(pages);
 
-    // const data = await fs.readFile(path.join(process.cwd(), 'src/app/dizikiyafeti/page-data/dizikiyafeti.json'),'utf8');
-    // const pagesData = JSON.parse(data);
     debugger
     const { title, algoliaQuery } = pagesMetaData.find(f => {
         const current = f.slug[0]
@@ -55,11 +45,9 @@ export default async function DiziPage({ params }) {
     debugger
     return <>
         <TopNavigation selected={1} />
-        <Drawer>
+        <PersistentDrawerLeft data={mappedNavData} title="Dizi Kıyafeti">
             <ImageContainer filteredData={results} pageTitle={title} />
-
-
-        </Drawer>
+        </PersistentDrawerLeft>
     </>
 
 }

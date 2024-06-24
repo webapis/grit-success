@@ -1,6 +1,6 @@
 
 
-import Application from "@/app/home/components/Application"
+import Application from "./comps/Application"
 import TopNavigation from "../components/TopNavigation";
 0
 

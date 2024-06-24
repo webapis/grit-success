@@ -3,13 +3,12 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
 import ClickableLink from '../../utils/firebase/ClickableLink';
 import ViewCount from '../../utils/firebase/ViewCount';
-export default function Diziview({title ,content }) {
+export default function Diziview({title ,content,href }) {
     const {ImageUrl,Date,tag}=content
 
     return (
@@ -34,11 +33,11 @@ export default function Diziview({title ,content }) {
                     {title} Dizi Kıyafetleri Oyuncuların Giydiği Kıyafetler.
                 </Typography>
 
-                <ViewCount rootPath={"dizikiyafeti-home"} linkId={`/dizikiyafeti/${tag}-dizi-kiyafetleri`} />
+                <ViewCount rootPath={"dizikiyafeti-home"} linkId={href} />
             </CardContent>
             <CardActions>
           
-                <ClickableLink rootPath={"dizikiyafeti-home"} clickable={1} title={"sayfaya git"} linkId={`/dizikiyafeti/${tag}-dizi-kiyafetleri`} />
+                <ClickableLink rootPath={"dizikiyafeti-home"} clickable={1} title={"sayfaya git"} linkId={href} />
             </CardActions>
         </Card>
     );
