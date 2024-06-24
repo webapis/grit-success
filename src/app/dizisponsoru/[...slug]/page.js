@@ -54,8 +54,7 @@ export default async function DiziSponsoru({ params }) {
     const page = parseInt(params.slug[3])
 
 
-    // const data = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/dizisponsoru.json'), 'utf8');
-    // const pagesData = JSON.parse(data);
+    
 
 
 
@@ -73,7 +72,12 @@ export default async function DiziSponsoru({ params }) {
     const keywordObj = keywordMetaData.find(f => f.keyword === keyword)
 
     debugger
-    const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'Acyklama'], minMatchCharLength: 4 })
+    const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'Acyklama'],   useExtendedSearch: true,
+        threshold: 0.0,
+        minMatchCharLength: 3,
+        ignoreLocation: true,
+        findAllMatches: true,
+        ignoreFieldNorm: true})
 
 
 

@@ -54,6 +54,7 @@ export async function generateMetadata({ params }) {
 
 
 export default async function DiziPage({ params }) {
+    debugger
     const page = params.slug[2] ? parseInt(params.slug[2]) : 1
     // const pages = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/pageMetadata.json'), 'utf8');
     // const pagesMetaData = JSON.parse(pages);
@@ -72,10 +73,10 @@ export default async function DiziPage({ params }) {
 
         return match
     })
-
+debugger
     const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'tag'], minMatchCharLength: 6, threshold: 0.3 })
 
-
+debugger
 
 
     if (result) {
@@ -83,6 +84,7 @@ export default async function DiziPage({ params }) {
         let results = fuse.search(search)
         const paginatedData = paginate(results, page, 50)
         const pageCount = Math.ceil(results.length / 50)
+        debugger
         return <> <SearchResultContainer data={paginatedData} pageTitle={pageTitle} dizi={deaccent(result.dizi).replaceAll(' ', '-').toLowerCase()} keyword="tum" />
             <PaginationContainer count={pageCount} page={page} url={`/dizi/${params.slug[0]}/sayfa/`} />
         </>
@@ -111,7 +113,12 @@ export async function generateStaticParams() {
     const pageCandidates = []
     for (let meta of pagesMetaData) {
 
-        const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'tag'], minMatchCharLength: 6, threshold: 0.3 })
+        const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'tag'],  useExtendedSearch: true,
+            threshold: 0.0,
+            minMatchCharLength: 3,
+            ignoreLocation: true,
+            findAllMatches: true,
+            ignoreFieldNorm: true})
         const { search } = meta
         let results = fuse.search(search)
         const pageCount = Math.ceil(results.length / 50)
