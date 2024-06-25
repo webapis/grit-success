@@ -11,7 +11,7 @@ import Chip from '@mui/material/Chip';
 
 import ClickableLink from '../../utils/firebase/ClickableLink';
 import ViewCount from '../../utils/firebase/ViewCount';
-export default function SearchResultItem({ item }) {
+export default function SearchResultItem({ item,userViewData }) {
 
 
     debugger
@@ -58,7 +58,7 @@ export default function SearchResultItem({ item }) {
         <CardContent >
             <Typography variant="body" color="text.secondary" sx={{ textAlign: 'end', width: '100%' }}>Sponsor olduğu diziler: {' '}</Typography>
             <Typography variant="body" color="text.secondary" sx={{ textAlign: 'end' }}> {duplicateTitles ? duplicateTitles.filter(f => f).map((m, i) => { return <Chip key={i} size='small' label={m} style={{ marginLeft: 1 }} /> }) : <Chip size='small' label={TVSeriesTitle} sx={{ marginLeft: 1, textTransform: 'capitalize' }} />} </Typography>
-            <ViewCount rootPath={"sponsorkategori"} linkId={Website} />
+            <ViewCount rootPath={"sponsorkategori"} linkId={Website} userViewData={userViewData}/>
         </CardContent>
         <CardActions>
 

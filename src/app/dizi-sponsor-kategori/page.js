@@ -2,10 +2,20 @@ import SponsorKategoriView from './comp/SponsorKategoriView';
 import Container from '@mui/material/Container'
 import pagesData from '@/app/dizi-sponsor-kategori/page-data/keywordMetaData.json';
 import Grid from '@mui/material/Grid'
-import Drawer from './comp/drawer'
+
+import PersistentDrawerLeft from '../components/drawer';
 import Typography from '@mui/material/Typography'
 import TopNavigation from '../components/TopNavigation';
+import getViews from '../utils/firebase/supabase';
 
+
+const mappedNavData = pagesData.map(m => {
+    const href = `/dizi-sponsor-kategori/${m.keyword}/sayfa/1`
+    const title = m.keywordTitle
+    return { ...m, href, title }
+})
+
+export { mappedNavData }
 export async function generateMetadata({ params }) {
 
 
@@ -17,21 +27,22 @@ export async function generateMetadata({ params }) {
 
 }
 
-export default function SponsorKategori() {
 
+export default async function SponsorKategori() {
+    const userViewData = await getViews({ table: 'sponsorkategori-home' })
     return <>
-         <TopNavigation selected={3} />
-    <Drawer> <Container>
-   
-        <Typography variant='h4' textAlign='center' sx={{ marginTop: 0 }}>Dizi Sponsor Kategoriler</Typography>
-        <Grid gap={1} container sx={{ display: 'flex', justifyContent: 'center', marginTop: 0 }}>{pagesData.map(m => {
+        <TopNavigation selected={3} />
+        <PersistentDrawerLeft data={mappedNavData} title="Sponsor Kategori"> <Container>
 
-            return <Grid item xs={11} sm={3}>
-                <SponsorKategoriView kategori={m.keywordTitle} keyword={m.keyword} />
-            </Grid>
+            <Typography variant='h4' textAlign='center' sx={{ marginTop: 0 }}>Dizi Sponsor Kategoriler</Typography>
+            <Grid gap={1} container sx={{ display: 'flex', justifyContent: 'center', marginTop: 0 }}>{mappedNavData.map(m => {
 
-        })}</Grid></Container></Drawer>
-        </> 
+                return <Grid item xs={11} sm={3}>
+                    <SponsorKategoriView href={m.href} userViewData={userViewData} kategori={m.title} keyword={m.keyword} />
+                </Grid>
+
+            })}</Grid></Container></PersistentDrawerLeft>
+    </>
 }
 
 

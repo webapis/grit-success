@@ -8,8 +8,7 @@ import PaginationContainer from '@/app/dizi-sponsor-kategori/comp/PaginationCont
 import Fuse from 'fuse.js'
 import keywordMetaData from '@/app/dizi-sponsor-kategori/page-data/keywordMetaData.json';
 import pagesData from '@/app/dizi-sponsor-kategori/page-data/sponsor-kategori.json';
-
-
+import getViews from '@/app/utils/firebase/supabase';
 
 debugger
 
@@ -48,7 +47,7 @@ export default async function DiziSponsorKategori({ params }) {
     const kategori = params.slug[0]
 
     const page = parseInt(params.slug[2])
-
+    const userViewData = await getViews({table:'sponsorkategori'})
     console.log('page', page)
 
     // const data = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/dizisponsoru.json'), 'utf8');
@@ -80,7 +79,7 @@ export default async function DiziSponsorKategori({ params }) {
     const paginatedData = paginate(sortData, page, 50)
     const pageCount = Math.ceil(sortData.length / 50)
     return <>
-        <SearchResultContainer data={paginatedData} pageTitle={` Dizilerde ${keywordObj.keywordTitle} Sponsorları`} dizi={''} page={page} keyword={'keyword'} />
+        <SearchResultContainer userViewData={userViewData} data={paginatedData} pageTitle={` Dizilerde ${keywordObj.keywordTitle} Sponsorları`} dizi={''} page={page} keyword={'keyword'} />
         <PaginationContainer count={pageCount} page={page} url={`/dizi-sponsor-kategori/${keywordObj.keyword}/sayfa/`} />
     </>
 }

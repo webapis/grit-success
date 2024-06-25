@@ -3,12 +3,11 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import ClickableLink from '../../utils/firebase/ClickableLink';
 import ViewCount from '../../utils/firebase/ViewCount';
-export default function SponsorKategoriView({ kategori, total, keyword }) {
+export default function SponsorKategoriView({ kategori, total, keyword, userViewData, href }) {
 
 
     return (
@@ -30,11 +29,10 @@ export default function SponsorKategoriView({ kategori, total, keyword }) {
                 <Typography variant="body2" color="text.secondary" style={{ textTransform: 'capitalize' }}>
                     {kategori} Dizi Sponsorları.
                 </Typography>
-                <ViewCount rootPath={"sponsorkategori-home"} linkId={`/dizi-sponsor-kategori/${keyword}/sayfa/1`} />
+                <ViewCount rootPath={"sponsorkategori-home"} linkId={href} userViewData={userViewData} />
             </CardContent>
             <CardActions>
-
-                <ClickableLink rootPath={"sponsorkategori-home"} clickable={1} title={"sayfaya git"} linkId={`/dizi-sponsor-kategori/${keyword}/sayfa/1`} />
+                <ClickableLink rootPath={"sponsorkategori-home"} clickable={1} title={"sayfaya git"} linkId={href} />
             </CardActions>
         </Card>
     );
