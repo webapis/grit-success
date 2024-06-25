@@ -8,7 +8,7 @@ import Box from '@mui/material/Box';
 
 import ClickableLink from '../../utils/firebase/ClickableLink';
 import ViewCount from '../../utils/firebase/ViewCount';
-export default function Diziview({title ,content,href }) {
+export default function Diziview({title ,content,href,userViewData }) {
     const {ImageUrl,Date,tag}=content
 
     return (
@@ -33,7 +33,7 @@ export default function Diziview({title ,content,href }) {
                     {title} Dizi Kıyafetleri Oyuncuların Giydiği Kıyafetler.
                 </Typography>
 
-                <ViewCount rootPath={"dizikiyafeti-home"} linkId={href} />
+                <ViewCount rootPath={"dizikiyafeti-home"} linkId={href} userViewData={userViewData} />
             </CardContent>
             <CardActions>
           

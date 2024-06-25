@@ -9,13 +9,9 @@ import ClickableLink from '../../utils/firebase/ClickableLink';
 import ViewCount from '../../utils/firebase/ViewCount';
 
 import Chip from '@mui/material/Chip';
-export default function SearchResultItem({ item }) {
-
-
+export default function SearchResultItem({ item,userViewData }) {
     const { Name: name, Website, Acyklama, TVSeriesTitle, tag, brandTag, ServiceName, h3 } = item
-
     const imageName = brandTag ? brandTag : extractSubdomain(Website)
-
     return <Card sx={{ width: '100%', border: '1px solid #bdbdbd', borderRadius: 4 }} elevation={0}>
 
         <div container gap={0} style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
@@ -30,9 +26,6 @@ export default function SearchResultItem({ item }) {
                 loading="lazy"
 
             />
-
-
-
 
             <Image
                 component="img"
@@ -65,7 +58,7 @@ export default function SearchResultItem({ item }) {
             <Typography variant="body1" color="text.secondary">
                 {Acyklama}
             </Typography>
-            <ViewCount rootPath={"dizisponsoru"} linkId={Website} />
+            <ViewCount rootPath={"dizisponsoru"} linkId={Website} userViewData={userViewData} />
         </CardContent>
         <CardActions>
 
@@ -75,4 +68,4 @@ export default function SearchResultItem({ item }) {
 
 
 
-}//
+}

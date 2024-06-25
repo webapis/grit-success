@@ -11,7 +11,7 @@ import SelectedDiziChip from './SelectedDiziChip';
 import ClickableLink from '../../utils/firebase/ClickableLink';
 import ViewCount from '../../utils/firebase/ViewCount';
 
-export default function ImageContainer({ filteredData, pageTitle }) {
+export default function ImageContainer({ filteredData, pageTitle,userViewData }) {
  
     return <>
 
@@ -41,7 +41,7 @@ export default function ImageContainer({ filteredData, pageTitle }) {
                         <div style={{ marginTop: 3, width: "100%" }}><Image fotografUrl={m.ImageUrl} alt={m.alt} /></div>
                         <div style={{display:'flex', justifyContent:'end'}}>
                    
-                        <ViewCount rootPath={"dizikiyafeti"} linkId={links}/>
+                        <ViewCount rootPath={"dizikiyafeti"} linkId={links} userViewData={userViewData}/>
                         </div>
                   
                         <div style={{ width: '100%', display:'flex' }}>

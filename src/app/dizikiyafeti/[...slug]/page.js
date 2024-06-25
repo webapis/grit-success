@@ -7,6 +7,7 @@ import pagesData from '@/app/dizikiyafeti/page-data/dizikiyafeti.json';
 import TopNavigation from '@/app/components/TopNavigation';
 import PersistentDrawerLeft from '@/app/components/drawer';
 import { mappedNavData } from '@/app/dizikiyafeti/comps/Application';
+import getViews from '@/app/utils/firebase/supabase';
 export async function generateMetadata({ params, searchParams }, parent) {
 
     debugger
@@ -27,7 +28,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
 
 export default async function DiziPage({ params }) {
 
-
+    const userViewData = await getViews({table:'dizikiyafeti'})
     debugger
     const { title, algoliaQuery } = pagesMetaData.find(f => {
         const current = f.slug[0]
@@ -46,7 +47,7 @@ export default async function DiziPage({ params }) {
     return <>
         <TopNavigation selected={1} />
         <PersistentDrawerLeft data={mappedNavData} title="Dizi Kıyafeti">
-            <ImageContainer filteredData={results} pageTitle={title} />
+            <ImageContainer userViewData={userViewData} filteredData={results} pageTitle={title} />
         </PersistentDrawerLeft>
     </>
 

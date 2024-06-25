@@ -6,6 +6,7 @@ import Container from '@mui/material/Container';
 import SponsorView from '@/app/dizisponsoru/comp/SponsorView';
 import data from '@/app/dizi/dizisponsoruMenu.json'
 import PersistentDrawerLeft from '../components/drawer';
+import getViews from '../utils/firebase/supabase';
 const arrayData = Object.entries(data)
 
 const mappedData = arrayData.map(m => {
@@ -17,7 +18,8 @@ const mappedData = arrayData.map(m => {
 })
 
 export {mappedData}
-export default function Application() {
+export default async  function Application() {
+    const userViewData = await getViews({table:'dizisponsoru-home'})
 
     return <PersistentDrawerLeft data={mappedData} title="Dizi Sponsoru"><Container>
 
@@ -25,7 +27,7 @@ export default function Application() {
 
         <Grid container gap={1} style={{ display: 'flex', justifyContent: 'center' }}>
             {mappedData.sort((a, b) => b[1].toplamSponsor - a[1].toplamSponsor).map((m, i) => {
-                return <Grid key={i} item xs={12} md={3}> <SponsorView {...m} /></Grid>
+                return <Grid key={i} item xs={12} md={3}> <SponsorView  userViewData={userViewData} {...m} /></Grid>
             })}
         </Grid>
     </Container>

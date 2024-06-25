@@ -3,13 +3,12 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-
 import ClickableLink from '../../utils/firebase/ClickableLink';
 import ViewCount from '../../utils/firebase/ViewCount';
-export default function SponsorView({title ,content,href }) {
+export default function SponsorView({title ,content,href,userViewData }) {
+    debugger
     const {tag,toplamSponsor,Tag}=content
 
     return (
@@ -34,7 +33,7 @@ export default function SponsorView({title ,content,href }) {
                 <Typography  variant="caption" color="text.secondary" component="div" style={{ textTransform: 'capitalize',marginTop:4 }}>
                    Sponsor sayısı: {toplamSponsor}
                 </Typography>
-                <ViewCount rootPath={"dizisponsoru-home"} linkId={href} />
+                <ViewCount rootPath={"dizisponsoru-home"} linkId={href} userViewData={userViewData} />
             </CardContent>
             <CardActions>
     

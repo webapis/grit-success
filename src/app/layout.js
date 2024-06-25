@@ -16,17 +16,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
  <meta name="fo-verify" content="8de09664-17ab-4040-a646-0c5652e5e37d" />
       <body className={inter.className}>
-   
-
-
+  
             {children}
-       
 <ScrollToTopButton />
-
-
         <Footer />
-
-     
         <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1960990522971470" crossorigin="anonymous" />
 
         <GoogleTagManager gtmId="GTM-WVW74LTW" />
