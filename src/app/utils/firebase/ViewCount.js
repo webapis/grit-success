@@ -3,7 +3,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 
 
 const ViewCount = ({ linkId,userViewData }) => {
-debugger
+
 const viewCount =userViewData &&  userViewData['data'].find(f=> f.href.includes(linkId))
 
 

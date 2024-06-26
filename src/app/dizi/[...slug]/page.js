@@ -67,7 +67,7 @@ export default async function DiziPage({ params }) {
         return match
     })
 debugger
-    const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'tag'], minMatchCharLength: 6, threshold: 0.3 })
+    const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'tag'], minMatchCharLength: 0, threshold: 0.3  })
 
 debugger
 
@@ -106,12 +106,7 @@ export async function generateStaticParams() {
     const pageCandidates = []
     for (let meta of pagesMetaData) {
 
-        const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'tag'],  useExtendedSearch: true,
-            threshold: 0.0,
-            minMatchCharLength: 3,
-            ignoreLocation: true,
-            findAllMatches: true,
-            ignoreFieldNorm: true})
+        const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'tag'],  minMatchCharLength: 0, threshold: 0.3 })
         const { search } = meta
         let results = fuse.search(search)
         const pageCount = Math.ceil(results.length / 50)

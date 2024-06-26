@@ -8,7 +8,7 @@ import Box from '@mui/material/Box';
 import ClickableLink from '../../utils/firebase/ClickableLink';
 import ViewCount from '../../utils/firebase/ViewCount';
 export default function SponsorView({title ,content,href,userViewData }) {
-    debugger
+
     const {tag,toplamSponsor,Tag}=content
 
     return (

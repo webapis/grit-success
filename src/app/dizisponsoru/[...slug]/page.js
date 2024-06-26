@@ -54,12 +54,8 @@ export default async function DiziSponsoru({ params }) {
 
     debugger
     const fuse = new Fuse(pagesData, {
-        keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'Acyklama'], useExtendedSearch: true,
-        threshold: 0.0,
-        minMatchCharLength: 3,
-        ignoreLocation: true,
-        findAllMatches: true,
-        ignoreFieldNorm: true
+        keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'Acyklama']
+        , minMatchCharLength: 0, threshold: 0.3
     })
 
     let results = keywordObj.or ? fuse.search({ "$and": [{ "TVSeriesTitle": pageObj.dizi }, keywordObj.or] }) : fuse.search({ "$and": [{ "TVSeriesTitle": pageObj.dizi }] })
@@ -89,7 +85,7 @@ export async function generateStaticParams(props) {
     const pageCantidates = []
     debugger
 
-    const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'Acyklama'], minMatchCharLength: 4 })
+    const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'Acyklama'], minMatchCharLength: 0, threshold: 0.3 })
 
 
     for (let pageObj of pagesMetaData) {
