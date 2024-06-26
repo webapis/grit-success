@@ -273,5 +273,19 @@
         ],
         "title": "Dönence Dizi Kıyafetleri",
         "nextpages": []
+    },
+        
+    {
+        "dizi": "Yalan",
+        "karakter": "",
+        "pageTitle": "Yalan Dizisi Kanal D",
+        "tumurun": true,
+        "algoliaQuery":{ "$and": [{ "TVSeriesTitle": "Yalan" }]},
+        "urun": [],
+        "slug": [
+            "yalan-dizi-kiyafetleri"
+        ],
+        "title": "Yalan Dizi Kıyafetleri",
+        "nextpages": []
     }
 ]
