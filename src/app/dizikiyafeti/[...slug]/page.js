@@ -10,7 +10,6 @@ import { mappedNavData } from '@/app/dizikiyafeti/comps/Application';
 import getViews from '@/app/utils/firebase/supabase';
 export async function generateMetadata({ params, searchParams }, parent) {
 
-    debugger
     const { title } = pagesMetaData.find(f => {
         const current = f.slug[0]
         const slug = params.slug[0]
@@ -28,7 +27,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
 
 export default async function DiziPage({ params }) {
 
-    const userViewData = await getViews({table:'dizikiyafeti'})
+    const userViewData = await getViews({ table: 'dizikiyafeti' })
     debugger
     const { title, algoliaQuery } = pagesMetaData.find(f => {
         const current = f.slug[0]
@@ -40,14 +39,22 @@ export default async function DiziPage({ params }) {
     const fuse = new Fuse(pagesData, { keys: ['FullName', 'CaracterName', 'TVSeriesTitle', 'tag'], minMatchCharLength: 6 })
     debugger
 
-    let results = fuse.search(algoliaQuery)
+    let results = fuse.search(algoliaQuery).map(m => { return { ...m.item } })
+    let mappedResult = results.map(m => {
+        debugger
+        const linkId = m.ProductLink
+        const viewCount = userViewData['data'].find(f => f.href.includes(linkId))
+        console.log(linkId,userViewData['data'].map(m=>m.href))
+        debugger
+        return { ...m, viewCount: viewCount ? viewCount.count : 0 }
+    }).sort((a, b) => a.viewCount - b.viewCount)
     debugger
 
-    debugger
+
     return <>
         <TopNavigation selected={1} />
         <PersistentDrawerLeft data={mappedNavData} title="Dizi Kıyafeti">
-            <ImageContainer userViewData={userViewData} filteredData={results} pageTitle={title} />
+            <ImageContainer userViewData={userViewData} filteredData={mappedResult} pageTitle={title} />
         </PersistentDrawerLeft>
     </>
 
@@ -59,7 +66,6 @@ export async function generateStaticParams() {
 
     return pagesMetaData.map((obj) => {
         const { slug } = obj
-        debugger
         return {
             slug: [slug[0]]
         }

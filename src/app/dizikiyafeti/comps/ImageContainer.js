@@ -23,7 +23,7 @@ export default function ImageContainer({ filteredData, pageTitle,userViewData })
             >
 
                 {/* <Typography variant='h4' textAlign="center" sx={{  width:'100%' }}>{pageTitle}</Typography> */}
-                {filteredData.map(m => { return { ...m.item } }).map((m, a) => {
+                {filteredData.map((m, a) => {
                     const links = m.ProductLink
 
                     const title = m.Title

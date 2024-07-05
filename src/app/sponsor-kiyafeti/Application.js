@@ -30,7 +30,7 @@ const mappedNavData = navData.map(m => {
 export {mappedNavData}
 export default async function Application() {
 
-    debugger
+    
     return <PersistentDrawerLeft data={mappedNavData} title="Sponsor Kıyafeti"><Container>
 
         <Typography variant="body1" gutterBottom sx={{ marginBottom: 2, marginTop: 1 }}>Sponsor Kıyafeti- Kategori</Typography>
