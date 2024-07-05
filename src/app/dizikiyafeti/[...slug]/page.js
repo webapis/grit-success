@@ -47,7 +47,7 @@ export default async function DiziPage({ params }) {
         console.log(linkId,userViewData['data'].map(m=>m.href))
         debugger
         return { ...m, viewCount: viewCount ? viewCount.count : 0 }
-    }).sort((a, b) => a.viewCount - b.viewCount)
+    }).sort((a, b) => b.viewCount - a.viewCount)
     debugger
 
 
