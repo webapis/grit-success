@@ -10,7 +10,7 @@ import keywordMetaData from '@/app/dizi-sponsor-kategori/page-data/keywordMetaDa
 import pagesData from '@/app/dizi-sponsor-kategori/page-data/sponsor-kategori.json';
 import getViews from '@/app/utils/firebase/supabase';
 
-debugger
+
 
 export async function generateMetadata({ params }) {
     const kategori = params.slug[0]
@@ -117,7 +117,7 @@ export async function generateStaticParams() {
 
     return pages.map((post) => {
         const { keyword,page } = post
-        debugger
+    
         return {
             slug: [keyword, 'sayfa', page.toString()]
         }
