@@ -75,8 +75,8 @@ debugger
     if (result) {
         const { pageTitle, search } = result
         let results = fuse.search(search)
-        const paginatedData = paginate(results, page, 50)
-        const pageCount = Math.ceil(results.length / 50)
+        const paginatedData = paginate(results, page, 25)
+        const pageCount = Math.ceil(results.length / 25)
         debugger
         return <> <SearchResultContainer data={paginatedData} pageTitle={pageTitle} dizi={deaccent(result.dizi).replaceAll(' ', '-').toLowerCase()} keyword="tum" />
             <PaginationContainer count={pageCount} page={page} url={`/dizi/${params.slug[0]}/sayfa/`} />
@@ -109,7 +109,7 @@ export async function generateStaticParams() {
         const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'tag'],  minMatchCharLength: 0, threshold: 0.3 })
         const { search } = meta
         let results = fuse.search(search)
-        const pageCount = Math.ceil(results.length / 50)
+        const pageCount = Math.ceil(results.length / 25)
 
         pageCandidates.push({ pageCount, slug: meta.slug })
 

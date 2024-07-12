@@ -62,8 +62,8 @@ export default async function SponsorKiyafetiPage({ params }) {
     debugger
     const result = data//.filter(f => searchObject({ ...f, ...slugObj.exclude }, positives).length > 0)//.map(m => { return { ...m, keywords: searchObject(m, slugObj.positives.flat()) } })
     const filteredData =result.filter(f => searchObject({ ...f, ...slugObj.exclude }, selectedPositives).length > 0)//.map(m => { return { ...m, keywords: searchObject(m, slugObj.positives.flat()) } })
-    const pagesData = paginate(orderData(filteredData), page, 100)
-    const pageCount = Math.ceil(filteredData.length / 100)
+    const pagesData = paginate(orderData(filteredData), page, 50)
+    const pageCount = Math.ceil(filteredData.length / 50)
 
     return <>
 
@@ -215,7 +215,7 @@ export async function generateStaticParams() {
 
             const filteredData = rawData.filter(f => searchObject({ ...f, exclude }, matchingKeywords).length > 0)
 
-            const pageCount = Math.ceil(filteredData.length / 100)
+            const pageCount = Math.ceil(filteredData.length / 50)
 
             pageCandidates.push({ category: slug, pageCount, keInit: matchingKeywords.sort().map((m, i) => m).join('-') })
 

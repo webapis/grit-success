@@ -76,8 +76,8 @@ export default async function DiziSponsorKategori({ params }) {
 
     debugger
     const sortData = results.map(m => { return { ...m.item, duplicateTitles: m.item.duplicateTitles ? m.item.duplicateTitles : [m.item.TVSeriesTitle] } }).sort((a, b) => b.duplicateTitles.length - a.duplicateTitles.length)
-    const paginatedData = paginate(sortData, page, 50)
-    const pageCount = Math.ceil(sortData.length / 50)
+    const paginatedData = paginate(sortData, page, 25)
+    const pageCount = Math.ceil(sortData.length / 25)
     return <>
         <SearchResultContainer userViewData={userViewData} data={paginatedData} pageTitle={` Dizilerde ${keywordObj.keywordTitle} Sponsorları`} dizi={''} page={page} keyword={'keyword'} />
         <PaginationContainer count={pageCount} page={page} url={`/dizi-sponsor-kategori/${keywordObj.keyword}/sayfa/`} />
@@ -109,7 +109,7 @@ export async function generateStaticParams() {
    
         const sortData = results.map(m => { return { ...m.item, duplicateTitles: m.item.duplicateTitles ? m.item.duplicateTitles : [m.item.TVSeriesTitle] } }).sort((a, b) => b.duplicateTitles.length - a.duplicateTitles.length)
 
-        const pageCount = Math.ceil(sortData.length / 50)
+        const pageCount = Math.ceil(sortData.length / 25)
         pageCandidate.push({ keyword: keywordObj.keyword, pageCount })
      
     }
