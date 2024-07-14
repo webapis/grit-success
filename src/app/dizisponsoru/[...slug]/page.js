@@ -14,7 +14,7 @@ export async function generateMetadata({ params }) {
     const keyword = params.slug[1]
 
     const keywordObj = keywordMetaData.find(f => f.keyword === keyword)
-    debugger
+    
     const pageObj = pagesMetaData.find(f => {
 
         const current = deaccent(f.dizi).replaceAll(' ', '-').toLowerCase()
@@ -35,7 +35,7 @@ export async function generateMetadata({ params }) {
 
 
 export default async function DiziSponsoru({ params }) {
-    debugger
+    
     const dizi = params.slug[0]
     const keyword = params.slug[1]
     const page = parseInt(params.slug[3])
@@ -52,7 +52,7 @@ export default async function DiziSponsoru({ params }) {
 
     const keywordObj = keywordMetaData.find(f => f.keyword === keyword)
 
-    debugger
+    
     const fuse = new Fuse(pagesData, {
         keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'Acyklama']
         , minMatchCharLength: 0, threshold: 0.3
@@ -60,7 +60,7 @@ export default async function DiziSponsoru({ params }) {
 
     let results = keywordObj.or ? fuse.search({ "$and": [{ "TVSeriesTitle": pageObj.dizi }, keywordObj.or] }) : fuse.search({ "$and": [{ "TVSeriesTitle": pageObj.dizi }] })
 
-    debugger
+    
     const paginatedData = paginate(results, page, 25)
     const pageCount = Math.ceil(results.length / 25)
     return <>
@@ -83,7 +83,7 @@ export default async function DiziSponsoru({ params }) {
 export async function generateStaticParams(props) {
 
     const pageCantidates = []
-    debugger
+
 
     const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'Acyklama'], minMatchCharLength: 0, threshold: 0.3 })
 
@@ -105,11 +105,11 @@ export async function generateStaticParams(props) {
 
     }
     const pages = flattenArrayByPageCount(pageCantidates)
-    debugger
+  
     return pages.map((post) => {
-        debugger
+     
         const { dizi, keyword, page } = post
-        debugger
+      
         return {
             slug: [deaccent(dizi).toLowerCase().replaceAll(' ', '-'), keyword, 'sayfa', page.toString()]
         }

@@ -1,3 +1,5 @@
+'use client'
+import { permanentRedirect, usePathname } from 'next/navigation'
 import { GoogleTagManager } from '@next/third-parties/google'
 import { Inter, Poppins } from 'next/font/google'
 import ScrollToTopButton from './components/ScrollToTopButton';
@@ -12,6 +14,15 @@ const inter = Poppins({ subsets: ['latin'], weight: ['400', '700'], })
 
 
 export default function RootLayout({ children }) {
+  const pathName =usePathname()
+  const endsWithSayfa = pathName.match(/\/sayfa\/?$/) !== null;
+  if(endsWithSayfa){
+
+    debugger
+    let redirectPath = pathName+'/1'
+    permanentRedirect(redirectPath.replace('//','/'))
+  }
+
   return (
     <html lang="en">
  <meta name="fo-verify" content="8de09664-17ab-4040-a646-0c5652e5e37d" />

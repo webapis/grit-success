@@ -14,11 +14,11 @@ export default async function SearchResultContainer({ data, pageTitle, dizi, key
   const userViewData = await getViews({ table: 'dizisponsoru' })
   let mappedResult = data.map(m => {
     
-    debugger
+    
     const linkId = m.item.Website
     const viewCount = userViewData['data'].find(f => f.href.includes(linkId))
    // console.log(linkId,userViewData['data'].map(m=>m.href).includes(linkId))
-    debugger
+    
     return { ...m, viewCount: viewCount ? viewCount.count : 0 }
 }).sort((a, b) => b.viewCount - a.viewCount)
   return <>
