@@ -1,8 +1,9 @@
-import Company from "./Company";
+import TVSeriesCompany from "./TVSeriesCompany";
+import CompanyPage from "./CompanyPage";
 
 export default {
-    title:'turk-dizi/Company',
-    component:Company
+    title:'turk-dizi/TVSeriesCompany',
+    component:TVSeriesCompany
 }
 
 const companyData = {
@@ -15,44 +16,52 @@ const companyData = {
             title: 'Gaddar',
             year: 2023,
             thumbnail: 'https://ayyapim.com/media/images/yapim/1708006081.jpg?v=1721024364',
+            streamingUrl:'https://ayyapim.com/media/images/yapim/1708006081.jpg?v=1721024364'
           },
       {
         id: 1,
         title: 'Ne Gemiler Yaktım',
         year: 2023,
         thumbnail: 'https://ayyapim.com/media/images/yapim/ne-gemiler-yaktim.jpg?v=1721024364',
+           streamingUrl:'https://ayyapim.com/media/images/yapim/1708006081.jpg?v=1721024364'
       },
       {
         id: 2,
         title: 'Ne Gemiler Yaktım',
         year: 2023,
         thumbnail: 'https://ayyapim.com/media/images/yapim/ne-gemiler-yaktim.jpg?v=1721024364',
+           streamingUrl:'https://ayyapim.com/media/images/yapim/1708006081.jpg?v=1721024364'
       },
       {
         id: 1,
         title: 'Ne Gemiler Yaktım',
         year: 2023,
         thumbnail: 'https://ayyapim.com/media/images/yapim/ne-gemiler-yaktim.jpg?v=1721024364',
+           streamingUrl:'https://ayyapim.com/media/images/yapim/1708006081.jpg?v=1721024364'
       },
       {
         id: 1,
         title: 'Ne Gemiler Yaktım',
         year: 2023,
         thumbnail: 'https://ayyapim.com/media/images/yapim/ne-gemiler-yaktim.jpg?v=1721024364',
+           streamingUrl:'https://ayyapim.com/media/images/yapim/1708006081.jpg?v=1721024364'
       },
       {
         id: 1,
         title: 'Ne Gemiler Yaktım',
         year: 2023,
         thumbnail: 'https://ayyapim.com/media/images/yapim/ne-gemiler-yaktim.jpg?v=1721024364',
+           streamingUrl:'https://ayyapim.com/media/images/yapim/1708006081.jpg?v=1721024364'
       },
       {
         id: 1,
         title: 'Ne Gemiler Yaktım',
         year: 2023,
         thumbnail: 'https://ayyapim.com/media/images/yapim/ne-gemiler-yaktim.jpg?v=1721024364',
+           streamingUrl:'https://ayyapim.com/media/images/yapim/1708006081.jpg?v=1721024364'
       },
       // ... more TV series
     ],
   };
-export const Primary =()=> <Company company={companyData}/>
+export const Primary =()=> <TVSeriesCompany company={companyData}/>
+export const CompanyPagePrimary =()=> <CompanyPage company={companyData}/>
