@@ -3,15 +3,18 @@ import {
   Container,
   Typography,
   Grid,
-  Card,
-  CardMedia,
-  CardContent,
   Box,
   Link as MuiLink,
+  useTheme,
+  useMediaQuery,
 } from '@mui/material';
 import LanguageIcon from '@mui/icons-material/Language';
+import TVSeriesThumbnail from './TVSeriesThumbnail'; // Import the TVSeriesThumbnail component
 
 const CompanyPage = ({ company }) => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
       <Grid container spacing={4}>
@@ -59,25 +62,7 @@ const CompanyPage = ({ company }) => {
       <Grid container spacing={3}>
         {company.tvSeries.map((series) => (
           <Grid item key={series.id} xs={6} sm={4} md={3} lg={2}>
-            <Card>
-              <a href={series.streamingUrl} target="_blank" rel="noopener noreferrer">
-                <CardMedia
-                  component="img"
-                  height="140"
-                  image={series.thumbnail}
-                  alt={series.title}
-                  sx={{ objectFit: 'cover', cursor: 'pointer' }}
-                />
-              </a>
-              <CardContent>
-                <Typography variant="subtitle2" component="div" noWrap>
-                  {series.title}
-                </Typography>
-                <Typography variant="caption" color="text.secondary">
-                  {series.year}
-                </Typography>
-              </CardContent>
-            </Card>
+            <TVSeriesThumbnail series={series} isMobile={isMobile} />
           </Grid>
         ))}
       </Grid>
