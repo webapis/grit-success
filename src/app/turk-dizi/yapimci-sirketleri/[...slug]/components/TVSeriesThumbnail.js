@@ -35,27 +35,21 @@ const TVSeriesThumbnail = ({ series, isMobile }) => {
           {series.year}
         </Typography>
       </CardContent>
-      <Box sx={{ p: 1, mt: 'auto' }}>
-  <Button 
-    variant="" 
-    size="small" 
-    startIcon={
-      <img 
-        src={series.channelLogo} 
-        alt={`${series.channelName} logo`}
-        style={{
-          width: isMobile ? '20px' : '24px',
-          height: 'auto',
-        }}
-      />
-    }
-    href={series.streamingUrl}
-    target="_blank"
-    rel="noopener noreferrer"
-    fullWidth
-  >
+      <Box sx={{ p: 1, mt: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+  <Typography variant="caption" sx={{ cursor: 'pointer', color: 'primary.main' }}>
     İzle
-  </Button>
+  </Typography>
+  <a href={series.streamingUrl} target="_blank" rel="noopener noreferrer">
+    <img 
+      src={series.channelLogo} 
+      alt={`${series.channelName} logo`}
+      style={{
+        width: isMobile ? '20px' : '30px',
+        height: 'auto',
+        cursor: 'pointer'
+      }}
+    />
+  </a>
 </Box>
     </Card>
   );
