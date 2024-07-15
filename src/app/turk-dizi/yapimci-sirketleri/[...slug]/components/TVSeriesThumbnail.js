@@ -1,13 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
-  Card,
-  CardMedia,
-  CardContent,
-  Typography,
-  Box,
-} from '@mui/material';
-
+    Card,
+    CardMedia,
+    CardContent,
+    Typography,
+    Box,
+    Button,
+    Menu,
+    MenuItem,
+  } from '@mui/material';
+  import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 const TVSeriesThumbnail = ({ series, isMobile }) => {
+
+    const [anchorEl, setAnchorEl] = useState(null);
+    const open = Boolean(anchorEl);
+  
+    const handleClick = (event) => {
+      setAnchorEl(event.currentTarget);
+    };
+  
+    const handleClose = () => {
+      setAnchorEl(null);
+    };
   const getStateColor = (state) => {
     switch (state) {
       case 'Devam ediyor':
@@ -74,21 +88,39 @@ const TVSeriesThumbnail = ({ series, isMobile }) => {
           Son Bölüm: {series.lastEpisode}
         </Typography>
       </CardContent>
-      <Box sx={{ p: 1, mt: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Typography variant="caption" sx={{ cursor: 'pointer', color: 'primary.main' }}>
+      <Box sx={{ p: 1, mt: 'auto' }}>
+        <Button
+          variant="contained"
+          startIcon={<PlayArrowIcon />}
+          size="small"
+          fullWidth
+          onClick={handleClick}
+          sx={{ fontSize: isMobile ? '0.7rem' : '0.8rem' }}
+        >
           İzle
-        </Typography>
-        <a href={series.streamingUrl} target="_blank" rel="noopener noreferrer">
-          <img 
-            src={series.channelLogo} 
-            alt={`${series.channelName} logo`}
-            style={{
-              width: isMobile ? '20px' : '30px',
-              height: 'auto',
-              cursor: 'pointer'
-            }}
-          />
-        </a>
+        </Button>
+        <Menu
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+        >
+          {series.watchOptions.map((option, index) => (
+            <MenuItem 
+              key={index} 
+              onClick={() => {
+                window.open(option.url, '_blank');
+                handleClose();
+              }}
+            >
+              <img 
+                src={option.logo} 
+                alt={option.name}
+                style={{ width: '20px', marginRight: '8px' }}
+              />
+              {option.name}
+            </MenuItem>
+          ))}
+        </Menu>
       </Box>
     </Card>
   );
