@@ -2,15 +2,10 @@
 import 'dotenv/config'
 
  import{ downloadCollection } from'./uploadCollection.mjs'
+ const localRootFolder='test-data'
+ const gitRepo ='crawler-state-2'
+ const gitFolder='sponsor'
 
-   const genders = [
-
-    { gender: 'sponsor', gender1: 'temp-sponsor'  }
-  ]
-
-    for (let g of genders) {
-        const { gender, gender1 } = g
-        await downloadCollection(gender,gender1)
-    }
- 
+await downloadCollection(gitRepo,localRootFolder,gitFolder)
+    
 

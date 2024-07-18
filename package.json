@@ -12,6 +12,8 @@
     "getUniquePageTitles": "node src/app/sponsor-kiyafeti/utils/getUniquePageTitles.mjs",
     "build-storybook": "storybook build",
     "downloadProds": "node src/app/utils/downloadData.mjs",
+    "downloadTurkDizi": "node src/app/turk-dizi/utils/downloadData.mjs",
+    "mergeTurkDizi": "node src/app/turk-dizi/utils/mergeData.mjs",
     "extDizikiyafetiPageData": "node src/app/dizikiyafeti/utils/extractPageData.mjs",
     "sponsorkiyafeti": "node src/app/sponsor-kiyafeti/utils/sqlquery.mjs",
     "dizisponsoru": "node src/app/dizisponsoru/utils/sqlquery1.js",

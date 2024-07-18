@@ -37,8 +37,8 @@ const TVSeriesThumbnail = ({ series, isMobile }) => {
 
   return (
     <Card sx={{ 
-      minWidth: isMobile ? 120 : 160, 
-      maxWidth: isMobile ? 120 : 160, 
+      minWidth: isMobile ? 130 : 160, 
+      maxWidth: isMobile ? 130 : 160, 
       mr: 2, 
       flexShrink: 0,
       mb: 1,

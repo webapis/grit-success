@@ -38,4 +38,5 @@ next-env.d.ts
 unzipped-data/
 zipped-files/
 data/
+turk-dizi-data/
 zipped-files/adl.json.gz
