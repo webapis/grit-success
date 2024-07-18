@@ -6,7 +6,8 @@ import walkSync from './walkSync.mjs'
 
 const require = createRequire(import.meta.url);
 const yapimSirketi = require('../meta/yapim-sirket.json')
-// import deaccent from './deaccent.mjs'
+const dizi = require('../meta/dizi.json')
+import deaccent from './deaccent.mjs'
 import groupBy from './groupBy.mjs'
 const filePaths = []
 const data = []
@@ -101,21 +102,29 @@ const mapYSData = byYAPIM_SIRKETI.filter(f => f[1].length > 2).map(m => {
         { name: 'YouTube', url: 'https://www.youtube.com/channel/', logo: 'data:image/png;base64,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' },
         { name: 'Netflix', url: 'https://www.netflix.com/title/', logo: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAADSCAMAAAAIR25wAAAAkFBMVEX////lCRTr6+vkAAfkBA/84ePnFSDkAAvjAAT1oqb+9vfrQUnwbnT3trr3s7bsSVHyhIruW2L1nKHnHij73N398PHpMTr96+zqN0DvaG/xfILlDhj6z9HoJC74v8Lzkpfzi5D85+jwdHvb29vvZGvsRU34vcD2rLDpLDX5ycztUVn71Nb83d/yiYv0kJXpMzwve9UEAAAGkElEQVR4nO2a6XqrKhRAtaCgmU0zmrlJY4bbvP/bXQVMTJE4nHPPcffu9fVHCQFZgluGWB9vP4wP6836YbyhEgBQCQKoBAFUggAqQQCVIIBKEEAlCKASBFAJAqgEAVSCACpBAJUggEoQQCUIoBIEUAkCqAQBVIIAKkEAlSCAShBAJQigEgRQCQKoBAFUggAqQQCVIIBKEEAlCKASBFAJAqgEAVSCACpBAJUggEoQ+L8o+U7CdfScdrZPqSfEV7c5GY7jG4pMMkVGWhNGsgkTecWrTPn37In8xCmt5FE3hrbTdCdM0nZPVtmx3e/Ym+TCLT3DDYerewXPRUTtZ1HE9rQm9GUTdiKxcEV5Ok9znZts0cHXChqUAk5jyPKq0l2SpHnLz6Se4P1Eacy1DMrClaHIPqnrIIrwQGvCXGbIu+qfVYPSXlnLK+WUMyl5xE4g6c3rUJFUSjL1BBFKU6Zl2NQVSnoOmSV19cSViN60Pk8ylFI8bMQ1mfreSF6JjLdVldi5KUqTsaiAtWSyK1tA5lqxIiXqOg1RsuaiAhqeROosU+6lspJNv14psQfpsyQSqbFIkDCrlC2yr6J0CWUTRLhYuXIYDnKNXiuR3gulcPjA3SRKB1cm7Gz+MqOULRLuqihZZ/nFKBk3bS5v+GcNJeqejErstri+3xHvD0f862xk/lll+3clNr44jyLbSkrp4320rKvsJHLQ32bFSjbfGJXSVE5pqbTPfCSVyE37bmklJ2LpYNuIMpTmRvBCJTYemZTYdGKoMtBHetpL2n0trWTNpIjr+GNTZaWUbNppitJKBgj21bHlP33D5YuU5PBpgpJ6RbDxgcruumplSipFk4YoWYF6Wcp4y2cmoyIlm3pNUXKWmfc1tQ0RvISSeCP+NiUtSFZQsmb8oUR6pnhbopeGV1MQN1VpVpr6KXWUuvZ9JkapvhwprWQzz9BLy8ALgnXMP6eSStTtKVqpQxUlFb0N/V1FqWeYEFFGJPxbODUqPeZ4fFdDydrclfiX2ahYKZkUvZ6Jk3VppXuRdFlQSUnNXeO6h8YIXqAUppdviJI/UAHi+eMKSnQaUWmyaoaSdbRpOnDqKfH9Rg69xel3Kd03HuopLYYqcr4yeqk0c8Q0nqzzleLI8Fj/lVMKFaRWeLD66Wq7bi+R8+iWNIW1uiHVlKg72M/a7d1u116VVGJRtyPppkvsSkrbSN2Z+x2prNSTt4W686WuZF4vGZWIPmAqKXnpE8luuVtDpZRO8nmUa++/PMezrNbjVXusreS3ZOyzm6D0Gd7jkmknpVjJt+aZl+7fVto/pq2m/a4ySguXNUXpkmmKzfJ3JcsoWb3GKGUHTBxpTFcvVlo3RWkiX7PquabUHCCKlC4u/QNKOYcx35XWagt5I/cg+F4rUlbJP3OTkmnTqU4vTUb+82vuu5KKvWxp7bgMELnHZWWUMiNPe9X6zmVx6nrBerPr/pKSPWwdeufBvt3/CoJTrlJXbqPEk8NOuvtVW+kyZLlK8RJ1Gi2HbpisBXk2ANVQoixZT3LOCSP7XKWB6ptFurg1bxQUKqmTD01JLVGpuHskO3OtofSAsnaeknqkeVJpXz1Vq++VlVby0vhQdL70W5TsfKWd1LC7GT3TOrBYaTtMFxO/oiT6srbSdZlZKKmIxYaGAFGslB7nlFZa82QdxXuZj47y/DrS4n5LnrIxuTI0Kn2poxi52AzY08ltDaUjzZu2JuOAJsd8yVP9FB6Ot1YSvrIXfO9vYvqBth5pR7fxOIkybhjHGVGVDA/zrNJoKiN4JNcU6cntobbSZEyelLrpnQ2XUdz6way9mz8tM1/ssWn4/miydS6nVad79Nb9XXsQKCWxYJY730fZLfexoE5uDYvbEkrWjCT9QfhNple33mD35XU/F1dnO6nS/go4naO3affESPOnnPB4NNyn3ws7c3KrUUYpfrjd5fRwfrUf+F/ie5v57NyK7ocVvpp05M/J8pW4eEbSn7P4x8/T+8Q0//lTjDK/NAriABT/8dy5q+EHN8Nxa9B+sZX+lxkd++3zNLJzzy9yla7HU86Pr5rG5LrqlFaCDSpBAJUggEoQQCUIoBIEUAkCqAQBVIIAKkEAlSCAShBAJQigEgRQCQKoBAFUggAqQQCVIIBKEEAlCKASBFAJAqgEAVSCACpBAJUggEoQQCUIoBIEUAkCqAQBVIIAKkEAlSCAShBAJQigEgRQCQKoBAFUgsCb9fH2w/j4F9QWgxHSVZt2AAAAAElFTkSuQmCC' },
     ]
-    const mapTVSeries = tvSeries.map(m => {
+    const mapTVSeries = tvSeries.map((m) => {
+        if (m.TVSERIES_TITLE === '20 dakika') {
+            debugger
+        }
+        const matchingConstDizi = dizi.find((f => f.title === m.TVSERIES_TITLE))
+
         try {
             const mapped = {
-                id: 0,
+                id: m.TVSERIES_TITLE,
                 title: m?.TVSERIES_TITLE,
-                year: m?.FIRST_YEAR,
-                thumbnail: m?.POSTER[0].POSTER_IMG,
+                year: extractStartYear(m?.YAYIN_TARIHI[0]),
+                thumbnail: m?.POSTER.filter(f => f.POSTER_IMG).length > 0 ? m?.POSTER.filter(f => f.POSTER_IMG)[0].POSTER_IMG : matchingConstDizi?.POSTER_IMG,
                 streamingUrl: m?.WATCH_LINK[0],
                 channelLogo: `/dizi/turk-dizi/kanal/${m?.KANAL[0]}.jpg`,
                 channelName: m?.KANAL[0],
                 state: m?.DURUM[0],
-                lastEpisode: 16,
+                lastEpisode: m?.BOLUM_SAYISI[0]?.replace('(bölümleri listesi)', ''),
                 watchOptions
 
+
             }
+
+
             return mapped
         } catch (error) {
             debugger
@@ -123,9 +132,10 @@ const mapYSData = byYAPIM_SIRKETI.filter(f => f[1].length > 2).map(m => {
 
 
 
-    })
+    }).sort((a, b) => b['year'] - a['year'])
 
     return {
+        id: deaccent(title).replaceAll(' ', '-').toLowerCase(),
         description: "desk...",
         title,
         ...match,
@@ -226,4 +236,14 @@ function extractDomainOrId(url) {
     }
 }
 
+function extractStartYear(dateString) {
+    const yearRegex = /\d{4}/;
 
+    // Check if the year pattern exists
+    if (yearRegex.test(dateString)) {
+        const match = dateString.match(yearRegex);
+        return match[0];
+    } else {
+        return "Invalid data passed";
+    }
+}
