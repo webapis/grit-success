@@ -52,7 +52,7 @@ export async function generateMetadata({ params }) {
 
 
 export default async function DiziPage({ params }) {
-    debugger
+    
     const page = params.slug[2] ? parseInt(params.slug[2]) : 1
 
 
@@ -66,10 +66,10 @@ export default async function DiziPage({ params }) {
 
         return match
     })
-debugger
+
     const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'tag'], minMatchCharLength: 0, threshold: 0.3  })
 
-debugger
+
 
 
     if (result) {
@@ -77,7 +77,7 @@ debugger
         let results = fuse.search(search)
         const paginatedData = paginate(results, page, 25)
         const pageCount = Math.ceil(results.length / 25)
-        debugger
+        
         return <> <SearchResultContainer data={paginatedData} pageTitle={pageTitle} dizi={deaccent(result.dizi).replaceAll(' ', '-').toLowerCase()} keyword="tum" />
             <PaginationContainer count={pageCount} page={page} url={`/dizi/${params.slug[0]}/sayfa/`} />
         </>
