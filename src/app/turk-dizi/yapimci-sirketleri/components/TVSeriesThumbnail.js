@@ -1,27 +1,28 @@
 import React, { useState } from 'react';
 import {
-    Card,
-    CardMedia,
-    CardContent,
-    Typography,
-    Box,
-    Button,
-    Menu,
-    MenuItem,
-  } from '@mui/material';
-  import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-const TVSeriesThumbnail = ({ series, isMobile }) => {
+  Card,
+  CardMedia,
+  CardContent,
+  Typography,
+  Box,
+  Button,
+  Menu,
+  MenuItem,
+} from '@mui/material';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
-    const [anchorEl, setAnchorEl] = useState(null);
-    const open = Boolean(anchorEl);
-  
-    const handleClick = (event) => {
-      setAnchorEl(event.currentTarget);
-    };
-  
-    const handleClose = () => {
-      setAnchorEl(null);
-    };
+const TVSeriesThumbnail = ({ series, isMobile }) => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   const getStateColor = (state) => {
     switch (state) {
       case 'Devam ediyor':
@@ -34,6 +35,8 @@ const TVSeriesThumbnail = ({ series, isMobile }) => {
         return '#9e9e9e';  // Gri
     }
   };
+
+  const hasWatchOptions = series.watchOptions && series.watchOptions.length > 0;
 
   return (
     <Card sx={{ 
@@ -96,6 +99,7 @@ const TVSeriesThumbnail = ({ series, isMobile }) => {
           fullWidth
           onClick={handleClick}
           sx={{ fontSize: isMobile ? '0.7rem' : '0.8rem' }}
+          disabled={!hasWatchOptions}
         >
           İzle
         </Button>
@@ -104,7 +108,7 @@ const TVSeriesThumbnail = ({ series, isMobile }) => {
           open={open}
           onClose={handleClose}
         >
-          {series.watchOptions.map((option, index) => (
+          {hasWatchOptions && series.watchOptions.map((option, index) => (
             <MenuItem 
               key={index} 
               onClick={() => {
