@@ -7,7 +7,7 @@ import walkSync from './walkSync.mjs'
 const require = createRequire(import.meta.url);
 const yapimSirketi = require('../meta/yapim-sirket.json')
 const dizi = require('../meta/dizi.json')
-const kanallar = require('../meta/kanal.json')
+
 import deaccent from './deaccent.mjs'
 import groupBy from './groupBy.mjs'
 const filePaths = []
@@ -88,6 +88,8 @@ const removedDublicate = aggregatedData.filter(f => f.YAPIM_SIRKETI.length > 0 &
 debugger
 const byYAPIM_SIRKETI = Object.entries(groupBy(removedDublicate, 'YAPIM_SIRKETI')).sort((a, b) => b[1].length - a[1].length)
 
+
+debugger
 const mapYSData = byYAPIM_SIRKETI.filter(f => f[1].length > 2).map(m => {
 
     const title = m[0]

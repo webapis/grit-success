@@ -10,7 +10,7 @@ export default function PaginationContainer({ totalPages, currentPage, basePath 
         <Stack spacing={2} alignItems="center" mt={3}>
             <Pagination 
                 count={totalPages} 
-                page={currentPage} 
+                page={parseInt(currentPage)} 
                 renderItem={(item) => (
                     <PaginationItem
                         component={Link}
