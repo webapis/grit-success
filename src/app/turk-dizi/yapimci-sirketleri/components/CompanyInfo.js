@@ -77,7 +77,7 @@ debugger
         <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
           <Chip
             icon={<MovieIcon />}
-            label={`${company.tvSeries.length} TV Series`}
+            label={`${company.tvSeries.length} TV dizisi`}
             color="primary"
             variant="outlined"
           />
@@ -99,7 +99,7 @@ debugger
           >
             <LanguageIcon sx={{ mr: 0.5, fontSize: 'small' }} />
             <Typography variant="body2">
-              Visit Website
+            Siteyi ziyaret et
             </Typography>
           </MuiLink>
           {company.socialMedia && Object.entries(company.socialMedia).map(([platform, url]) => (

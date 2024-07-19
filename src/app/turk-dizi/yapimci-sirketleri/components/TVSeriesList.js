@@ -47,7 +47,7 @@ const TVSeriesList = ({ companyId, tvSeries, displayedSeriesCount = 5 }) => {
   return (
     <>
       <Typography variant={isMobile ? "subtitle1" : "h6"} gutterBottom sx={{ mt: 2, mb: 2 }}>
-        Recent TV Series
+      Son TV Dizileri
       </Typography>
       <Box sx={{ position: 'relative', mb: 3 }}>
         {!isMobile && <ScrollButton direction="left" onClick={() => scroll(-200)} />}
@@ -104,7 +104,7 @@ const TVSeriesList = ({ companyId, tvSeries, displayedSeriesCount = 5 }) => {
                     },
                   }}
                 >
-                  Show More
+                  Daha fazla göster
                 </MuiLink>
               </Link>
             </Box>
