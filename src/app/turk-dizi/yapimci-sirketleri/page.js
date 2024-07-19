@@ -4,14 +4,14 @@ import Container from '@mui/material/Container';
 import PaginationContainer from './components/PaginationContainer';
 import ysData from '../../../../turk-dizi-data/yapim-sirketleri.json';
 
-export default function TVseriesProductionCompanies({params:{slug}}) {
-        console.log('slug',slug)
+export default function TVseriesProductionCompanies() {
+    
         const totalPages = Math.ceil(ysData.length / 10)
-        const currentPage= slug? slug[slug.length-1]: 1
-       
+        const currentPage= '1'
+        const data = paginate(ysData,currentPage,10)
     return (
         <Container>
-            {ysData.map((company, index) => (
+            {data.map((company, index) => (
                 <TVSeriesCompany key={company.id || index} company={company} />
             ))}
             <PaginationContainer 
