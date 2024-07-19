@@ -1,17 +1,17 @@
 // pages/turk-dizi/yapimci-sirketleri/[[...page]].js
-import TVSeriesCompany from './components/TVSeriesCompany';
+import TVSeriesCompany from '../../components/TVSeriesCompany';
 import Container from '@mui/material/Container';
-import PaginationContainer from './components/PaginationContainer';
-import ysData from '../../../../turk-dizi-data/yapim-sirketleri.json';
+import PaginationContainer from '../../components/PaginationContainer';
+import ysData from '../../../../../../turk-dizi-data/yapim-sirketleri.json';
 
-export default function TVseriesProductionCompanies({params:{slug}}) {
-        console.log('slug',slug)
+export default function TVseriesProductionCompanies({params:{id}}) {
+  
         const totalPages = Math.ceil(ysData.length / 10)
-        const currentPage= slug? slug[slug.length-1]: 1
-       
+        const currentPage= id?  id.toString(): ''
+       const data = paginate(ysData,currentPage,10)
     return (
         <Container>
-            {ysData.map((company, index) => (
+            {data.map((company, index) => (
                 <TVSeriesCompany key={company.id || index} company={company} />
             ))}
             <PaginationContainer 
