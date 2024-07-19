@@ -32,7 +32,7 @@ const aggregatedData = []
 debugger
 
 debugger
-const exceptions = [['Ali̇ye', 'Atiye'],['aşk-ı memnu','memnu']]
+const exceptions = [['Ali̇ye', 'Atiye'], ['aşk-ı memnu', 'memnu']]
 debugger
 for (let current of data) {
 
@@ -107,14 +107,14 @@ const mapYSData = byYAPIM_SIRKETI.filter(f => f[1].length > 2).map(m => {
         const matchingConstDizi = dizi.find((f => f.title === m.TVSERIES_TITLE))
 
 
-      
+
         const watchLinks = m.WATCH_LINK.length === 0 ? [] : m.WATCH_LINK.map((m_) => {
 
             const url = m_
             const kanal = getBaseDomain(m_)
             const name = kanal
             const logo = `/dizi/turk-dizi/kanal/${kanal}.jpg`
-       
+
             return {
                 name, url, logo
             }
@@ -126,33 +126,42 @@ const mapYSData = byYAPIM_SIRKETI.filter(f => f[1].length > 2).map(m => {
             const kanal = getBaseDomain(m_)
             const name = kanal
             const logo = `/dizi/turk-dizi/kanal/${kanal}.jpg`
-            debugger
+
             return {
                 name, url, logo
             }
         }) : []
-    
+        try {
 
 
-        const mapped = {
-            id: m.TVSERIES_TITLE,
-            title: m?.TVSERIES_TITLE,
-            year: extractStartYear(m?.YAYIN_TARIHI[0]),
-            thumbnail: (matchingConstDizi && matchingConstDizi.POSTER_IMG.length > 0) ? matchingConstDizi?.POSTER_IMG : m?.POSTER.filter(f => f.POSTER_IMG)[0].POSTER_IMG,
-            streamingUrl: m?.WATCH_LINK[0],
-            channelLogo: `/dizi/turk-dizi/kanal/${m?.KANAL[0]}.jpg`,
-            channelName: m?.KANAL[0],
-            state: m?.DURUM[0],
-            lastEpisode: m?.BOLUM_SAYISI[0]?.replace('(bölümleri listesi)', ''),
-            watchOptions: otherWatchOptions.length > 0 ? [...otherWatchOptions, ...watchOptions] : watchOptions
+            const genres = m.GENRES ? m.GENRES.flat().map(m => m.toLowerCase()).reduce((acc, value) => {
+                if (!acc.includes(value.trim())) {
+                    acc.push(value.trim());
+                }
+                return acc;
+            }, []).filter(f => f).sort() : []
+            const mapped = {
+                id: m.TVSERIES_TITLE,
+                title: m?.TVSERIES_TITLE,
+                year: extractStartYear(m?.YAYIN_TARIHI[0]),
+                thumbnail: (matchingConstDizi && matchingConstDizi.POSTER_IMG.length > 0) ? matchingConstDizi?.POSTER_IMG : m?.POSTER.filter(f => f.POSTER_IMG)[0].POSTER_IMG,
+                streamingUrl: m?.WATCH_LINK[0],
+                channelLogo: `/dizi/turk-dizi/kanal/${m?.KANAL[0]}.jpg`,
+                channelName: m?.KANAL[0],
+                state: m?.DURUM[0],
+                genres,
+                lastEpisode: m?.BOLUM_SAYISI[0]?.replace('(bölümleri listesi)', ''),
+                watchOptions: otherWatchOptions.length > 0 ? [...otherWatchOptions, ...watchOptions] : watchOptions
 
 
+            }
+
+
+            return mapped
+
+        } catch (error) {
+            debugger
         }
-
-
-        return mapped
-
-
 
 
     }).sort((a, b) => b['year'] - a['year'])
@@ -275,19 +284,18 @@ function extractStartYear(dateString) {
 function getBaseDomain(url) {
     // Remove protocol and www if present
     let domain = url.replace(/^(https?:\/\/)?(www\.)?/, '');
-    
+
     // Remove path, query parameters, and hash
     domain = domain.split('/')[0].split('?')[0].split('#')[0];
-    
+
     // Split the remaining string by dots
     const parts = domain.split('.');
-    
+
     // Remove known top-level domains and country codes
     while (parts.length > 1 && (parts[parts.length - 1].length <= 3 || parts[parts.length - 1] === 'com')) {
-      parts.pop();
+        parts.pop();
     }
-    
+
     // Return the last remaining part
     return parts[parts.length - 1];
-  }
-  
+}

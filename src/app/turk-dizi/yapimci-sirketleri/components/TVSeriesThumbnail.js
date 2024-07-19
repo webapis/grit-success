@@ -8,6 +8,7 @@ import {
   Button,
   Menu,
   MenuItem,
+  Chip,
 } from '@mui/material';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
@@ -90,6 +91,22 @@ const TVSeriesThumbnail = ({ series, isMobile }) => {
         <Typography variant="caption" color="text.secondary" display="block">
           Son Bölüm: {series.lastEpisode}
         </Typography>
+        <Box sx={{ mt: 1, display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+          {series.genres && series.genres.map((genre, index) => (
+            <Chip
+              key={index}
+              label={genre}
+              size="small"
+              sx={{
+                fontSize: isMobile ? '0.5rem' : '0.6rem',
+                height: 'auto',
+                '& .MuiChip-label': {
+                  padding: '2px 4px',
+                },
+              }}
+            />
+          ))}
+        </Box>
       </CardContent>
       <Box sx={{ p: 1, mt: 'auto' }}>
         <Button

@@ -44,7 +44,7 @@ const SocialMediaIcon = ({ platform, url }) => {
 const CompanyInfo = ({ company, compact = false }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-debugger
+
   return (
     <Grid container spacing={2} alignItems="center">
       <Grid item xs={12} sm={compact ? 4 : 3} md={compact ? 3 : 3}>
