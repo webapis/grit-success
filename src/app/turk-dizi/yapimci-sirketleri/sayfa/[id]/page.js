@@ -3,7 +3,7 @@ import TVSeriesCompany from '../../components/TVSeriesCompany';
 import Container from '@mui/material/Container';
 import PaginationContainer from '../../components/PaginationContainer';
 import ysData from '../../../../../../turk-dizi-data/yapim-sirketleri.json';
-
+import  Grid  from '@mui/material/Grid';
 export default function TVseriesProductionCompanies({params:{id}}) {
   
         const totalPages = Math.ceil(ysData.length / 10)
@@ -11,15 +11,20 @@ export default function TVseriesProductionCompanies({params:{id}}) {
        const data = paginate(ysData,currentPage,10)
     return (
         <Container>
-            {data.map((company, index) => (
-                <TVSeriesCompany key={company.id || index} company={company} />
-            ))}
-            <PaginationContainer 
-                totalPages={totalPages} 
-                currentPage={currentPage} 
-                basePath="/turk-dizi/yapimci-sirketleri"
-            />
-        </Container>
+        <Grid container sx={{display:"flex",justifyContent:"center"}}>
+    <Grid item xs={12} md={8}>
+     
+        {data.map((company, index) => (
+            <TVSeriesCompany key={company.id || index} company={company} />
+        ))}
+        <PaginationContainer 
+            totalPages={totalPages} 
+            currentPage={currentPage} 
+            basePath="/turk-dizi/yapimci-sirketleri"
+        />
+        </Grid>
+           </Grid>
+    </Container>
     );
 }
 

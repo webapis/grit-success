@@ -6,6 +6,7 @@ import walkSync from './walkSync.mjs'
 
 const require = createRequire(import.meta.url);
 const yapimSirketi = require('../meta/yapim-sirket.json')
+const pcomanies = require('../../../../turk-dizi-data/unzipped-data/pcomanies/pcomanies.json')
 const dizi = require('../meta/dizi.json')
 
 import deaccent from './deaccent.mjs'
@@ -13,7 +14,7 @@ import groupBy from './groupBy.mjs'
 const filePaths = []
 const data = []
 debugger
-walkSync(`${process.cwd()}/turk-dizi-data`, (filePath) => {
+walkSync(`${process.cwd()}/turk-dizi-data/`, (filePath) => {
     filePaths.push(filePath)
     const currentFileData = JSON.parse(fs.readFileSync(filePath))
 
@@ -93,7 +94,13 @@ debugger
 const mapYSData = byYAPIM_SIRKETI.filter(f => f[1].length > 2).map(m => {
 
     const title = m[0]
+    debugger
     const match = yapimSirketi.find(f => f.title.includes(title))
+    const comany = pcomanies.find(f =>match?.title.includes(f.brandTitle))
+    debugger
+    const establishedYear = comany ? comany.data?.find(f => f.title === 'Kuruluş')?.value : ''
+    const founder  = comany ? comany.data?.find(f => (f.title === 'Kurucu' | f.title === 'Önemli kişiler' ))?.value : ''
+  
     const imgname = match.imgname
 
     const webpresenceId = imgname ? imgname : extractDomainOrId(match.website[0])
@@ -170,6 +177,8 @@ const mapYSData = byYAPIM_SIRKETI.filter(f => f[1].length > 2).map(m => {
         id: deaccent(title).replaceAll(' ', '-').toLowerCase(),
         description: "desk...",
         title,
+        establishedYear,
+        founder,
         ...match,
         logo,
         tvSeries: mapTVSeries

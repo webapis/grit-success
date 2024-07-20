@@ -15,7 +15,7 @@ console.log('process.env.GH_TOKEN__', process.env.GH_TOKEN)
 
 async function downloadCollection(gitRepo,localRootFolder,gitFolder) {
     await getZipFiles(gitFolder,localRootFolder,gitRepo)
-    await unzipFiles(localRootFolder)
+    await unzipFiles(localRootFolder,gitFolder)
 }
 
 
@@ -27,7 +27,7 @@ async function getZipFiles(gitFolder,localRootFolder,gitRepo) {
 debugger
     const mainSha = data.find(d => d.name === 'main')
     const { commit: { sha } } = mainSha
-debugger
+
     //------Git database / Get a tree endpoint------
     /*required to retrieve list of file and folder into*/
     const treeResponse = await fetch(`https://api.github.com/repos/webapis/${gitRepo}/git/trees/${sha}?recursive=1`, { method: 'get', headers: { Accept: "application/vnd.github.raw", authorization: `token ${process.env.GH_TOKEN}`, "X-GitHub-Api-Version": "2022-11-28" } })
@@ -65,7 +65,7 @@ async function getContent(filepath,localRootFolder,gitRepo) {
 
 
 
-async function unzipFiles(folderPath) {
+async function unzipFiles(folderPath,gitFolder) {
 
     const promises = []
     try {
@@ -75,7 +75,7 @@ async function unzipFiles(folderPath) {
         //    promises.push(filepath)
 
       //  })
-        walkSync(folderPath, async (filepath) => {
+        walkSync(folderPath+`/zipped-files`, async (filepath) => {
 
             promises.push(filepath)
 
@@ -83,7 +83,7 @@ async function unzipFiles(folderPath) {
       
         for (let a of promises) {
 
-            await unzipSingleFile(a)
+            await unzipSingleFile(a,gitFolder)
         }
 
     } catch (error) {
@@ -97,9 +97,10 @@ async function unzipFiles(folderPath) {
 
 
 
-async function unzipSingleFile(zippedfilePath) {
+async function unzipSingleFile(zippedfilePath,gitFolder) {
 
-    const unzippedFilePath = zippedfilePath.replace('zipped-files', 'unzipped-data').replace('.gz', '')
+    const unzippedFilePath = zippedfilePath.replace('zipped-files', `unzipped-data/${gitFolder}`).replace('.gz', '')
+    debugger
     const folderPath = path.dirname(unzippedFilePath)
     await makeDir(folderPath)
 
