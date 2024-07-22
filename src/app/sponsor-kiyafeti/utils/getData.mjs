@@ -12,7 +12,7 @@ export default function getData({ positives, negatives, exclude, keywords }) {
 debugger
     let data = []
     const files = []
-        walkSync(path.join(process.cwd(), `/unzipped-data`), async (filepath) => {
+        walkSync(path.join(process.cwd(), `/sponsor-kiyafeti-data/unzipped-data/sponsor`), async (filepath) => {
 
             files.push(filepath)
         })

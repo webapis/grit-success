@@ -1,4 +1,4 @@
-import { walkSync } from '../../utils/walkSync.mjs'
+import { walkSync } from './walkSync.mjs'
 import path from 'path'
 import 'dotenv/config'
 import makeDir from 'make-dir'
@@ -15,7 +15,7 @@ debugger
 
 
 const files = []
-walkSync(path.join(process.cwd(), `/unzipped-data`), async (filepath) => {
+walkSync(path.join(process.cwd(), `/sponsor-kiyafeti-data/unzipped-data/sponsor`), async (filepath) => {
     files.push(filepath)
 })
 const data = []

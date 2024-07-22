@@ -11,7 +11,7 @@
     "storybook": "storybook dev -p 6006",
     "getUniquePageTitles": "node src/app/sponsor-kiyafeti/utils/getUniquePageTitles.mjs",
     "build-storybook": "storybook build",
-    "downloadProds": "node src/app/utils/downloadData.mjs",
+    "downloadProds": "node src/app/sponsor-kiyafeti/utils/downloadData.mjs",
     "downloadTurkDizi": "node src/app/turk-dizi/utils/downloadData.mjs",
     "mergeTurkDizi": "node src/app/turk-dizi/utils/mergeData.mjs",
     "extDizikiyafetiPageData": "node src/app/dizikiyafeti/utils/extractPageData.mjs",
