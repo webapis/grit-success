@@ -18,7 +18,8 @@
     "sponsorkiyafeti": "node src/app/sponsor-kiyafeti/utils/sqlquery.mjs",
     "dizisponsoru": "node src/app/dizisponsoru/utils/sqlquery1.js",
     "dizikiyafeti": "node src/app/dizikiyafeti/utils/sqlquery1.js",
-    "sponsor-kategori": "node src/app/dizi-sponsor-kategori/utils/sqlquery.js"
+    "sponsor-kategori": "node src/app/dizi-sponsor-kategori/utils/sqlquery.js",
+    "_sponsor_urun":"npm run downloadProds && npm run sponsorkiyafeti && npm run downloadTurkDizi && npm run mergeTurkDizi && npx next build"
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",

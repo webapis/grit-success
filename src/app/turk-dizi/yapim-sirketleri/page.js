@@ -21,7 +21,7 @@ export default function TVseriesProductionCompanies() {
             <PaginationContainer 
                 totalPages={totalPages} 
                 currentPage={currentPage} 
-                basePath="/turk-dizi/yapimci-sirketleri"
+                basePath="/turk-dizi/yapim-sirketleri"
             />
             </Grid>
                </Grid>
@@ -37,16 +37,5 @@ function paginate(array, page, pageSize) {
 }
 
 
-// export async function generateStaticParams() {
-//     const itemsPerPage = 10;
-//     const totalPages = Math.ceil(ysData.length / itemsPerPage);
 
-//     const paths = [{ page: [] }]; // This represents the base path without 'sayfa'
-
-//     for (let page = 2; page <= totalPages; page++) {
-//         paths.push({ page: ['sayfa', page.toString()] });
-//     }
-
-//     return paths;
-// }
 

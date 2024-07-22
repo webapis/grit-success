@@ -92,7 +92,7 @@ const TVSeriesList = ({ companyId, tvSeries, displayedSeriesCount = 5 }) => {
               minWidth: isMobile ? 100 : 160, 
               maxWidth: isMobile ? 100 : 160 
             }}>
-              <Link href={`/turk-dizi/yapimci-sirketleri/${companyId}`} passHref legacyBehavior>
+              <Link href={`/turk-dizi/yapim-sirketleri/${companyId}`} passHref legacyBehavior>
                 <MuiLink
                   component="a"
                   variant="button"

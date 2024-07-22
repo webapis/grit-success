@@ -3,8 +3,18 @@ import CompanyPage from '../components/CompanyPage'
 console.log("ysData", ysData.length)
 export default function TVseriesProductionCompanies({ params: { slug } }) {
     const companyId = slug[0]
- const company= ysData.find(f=>f.id===companyId)
+    const company = ysData.find(f => f.id === companyId)
     console.log("slug", companyId)
 
-    return <CompanyPage company={company}/>
+    return <CompanyPage company={company} />
+}
+
+
+
+
+export async function generateStaticParams() {
+ 
+
+
+    return ysData.map((m) => { return { slug: [m.id] } })
 }
