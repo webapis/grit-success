@@ -218,7 +218,7 @@ const mapYSData = byYAPIM_SIRKETI.filter(f => f[1].length > 2 && f[0] !== 'websi
 
     return {
         id: webpresenceId,
-        description: "desk...",
+        description: "",
         establishedYear,
         founder,
         ...match,
