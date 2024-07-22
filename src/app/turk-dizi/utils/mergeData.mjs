@@ -33,7 +33,7 @@ const aggregatedData = []
 debugger
 
 debugger
-const exceptions = [['Ali̇ye', 'Atiye'], ['aşk-ı memnu', 'memnu']]
+const exceptions = [['Ali̇ye', 'Atiye'], ['aşk-ı memnu', 'memnu'], ['üç kadın', 'kadın']]
 debugger
 for (let current of data) {
 
@@ -84,23 +84,66 @@ const removedDublicate = aggregatedData.filter(f => f.YAPIM_SIRKETI.length > 0 &
     }
 
 
+}).map((m) => {
+    try {
+        const title = m['YAPIM_SIRKETI']
+        if (title === 'Limon Yapım') {
+            debugger
+        }
+
+
+        const match = yapimSirketi.find(f => {
+
+
+
+            const fTitle = deaccent(f.title.join(' ')).toLowerCase()
+
+            const ttitle = deaccent(title).toLowerCase()
+
+            const result = fTitle.includes(ttitle)
+
+
+            return result
+
+        })
+
+        const imgname = match?.imgname
+        const webpresenceId = imgname ? imgname : extractDomainOrId(match?.website[0])
+
+        return { ...m, webpresenceId }
+    } catch (error) {
+
+        return { ...m, webpresenceId: 'websitesiz' }
+
+    }
+
 })
 
 debugger
-const byYAPIM_SIRKETI = Object.entries(groupBy(removedDublicate, 'YAPIM_SIRKETI')).sort((a, b) => b[1].length - a[1].length)
+const byYAPIM_SIRKETI = Object.entries(groupBy(removedDublicate, 'webpresenceId')).sort((a, b) => b[1].length - a[1].length)
 
 
 debugger
-const mapYSData = byYAPIM_SIRKETI.filter(f => f[1].length > 2).map(m => {
+const mapYSData = byYAPIM_SIRKETI.filter(f => f[1].length > 2 && f[0] !== 'websitesiz').map(m => {
 
-    const title = m[0]
+    const title = m[1][0]['YAPIM_SIRKETI']
+
+    const match = yapimSirketi.find(f => {
+        const fTitle = deaccent(f.title.join(' ')).toLowerCase()
+
+        const ttitle = deaccent(title).toLowerCase()
+
+        const result = fTitle.includes(ttitle)
+
+
+        return result
+    })
     debugger
-    const match = yapimSirketi.find(f => f.title.includes(title))
-    const comany = pcomanies.find(f =>match?.title.includes(f.brandTitle))
-    debugger
+    const comany = pcomanies.find(f => match?.title.includes(f.brandTitle))
+
     const establishedYear = comany ? comany.data?.find(f => f.title === 'Kuruluş')?.value : ''
-    const founder  = comany ? comany.data?.find(f => (f.title === 'Kurucu' | f.title === 'Önemli kişiler' ))?.value : ''
-  
+    const founder = comany ? comany.data?.find(f => (f.title === 'Kurucu' | f.title === 'Önemli kişiler'))?.value : ''
+
     const imgname = match.imgname
 
     const webpresenceId = imgname ? imgname : extractDomainOrId(match.website[0])
@@ -151,7 +194,7 @@ const mapYSData = byYAPIM_SIRKETI.filter(f => f[1].length > 2).map(m => {
                 id: m.TVSERIES_TITLE,
                 title: m?.TVSERIES_TITLE,
                 year: extractStartYear(m?.YAYIN_TARIHI[0]),
-                thumbnail: (matchingConstDizi && matchingConstDizi.POSTER_IMG.length > 0) ? matchingConstDizi?.POSTER_IMG : m?.POSTER.filter(f => f.POSTER_IMG)[0].POSTER_IMG,
+                thumbnail: (matchingConstDizi && matchingConstDizi.POSTER_IMG.length > 0) ? matchingConstDizi?.POSTER_IMG : m?.POSTER.filter(f => f.POSTER_IMG)[0]?.POSTER_IMG,
                 streamingUrl: m?.WATCH_LINK[0],
                 channelLogo: `/dizi/turk-dizi/kanal/${m?.KANAL[0]}.jpg`,
                 channelName: m?.KANAL[0],
@@ -174,12 +217,12 @@ const mapYSData = byYAPIM_SIRKETI.filter(f => f[1].length > 2).map(m => {
     }).sort((a, b) => b['year'] - a['year'])
 
     return {
-        id: deaccent(title).replaceAll(' ', '-').toLowerCase(),
+        id: webpresenceId,
         description: "desk...",
-        title,
         establishedYear,
         founder,
         ...match,
+        title,
         logo,
         tvSeries: mapTVSeries
     }

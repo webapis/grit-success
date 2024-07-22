@@ -17,7 +17,9 @@
     "website": [
       "http://www.arcfilm.net"
     ],
-    "description": ""
+    "description": "",
+    "establishedYear":"2008",
+    "founder":""
   },
   {
     "title": [
@@ -557,7 +559,7 @@
       "Ortaks Yapım"
     ],
     "website": [
-      "https://www.instagram.com/ortaksyapim/"
+      "https://www.instagram.com/ortaksyapim"
     ]
   },
   {
@@ -581,7 +583,7 @@
       "Sis Yapım"
     ],
     "website": [
-      "https://www.facebook.com/asisyapim/"
+      "https://www.facebook.com/asisyapim"
     ]
   },
   {
@@ -791,7 +793,7 @@
   },
   {
     "title": [
-      "TRT"
+      "TRT","Türkiye Radyo Televizyon Kurumu"
     ],
     "website": [
       "https://www.trt.net.tr/"
