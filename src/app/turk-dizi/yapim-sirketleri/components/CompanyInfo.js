@@ -11,7 +11,7 @@ import {
   Chip,
   Tooltip,
 } from '@mui/material';
-import Image from 'next/image';
+
 import LanguageIcon from '@mui/icons-material/Language';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';

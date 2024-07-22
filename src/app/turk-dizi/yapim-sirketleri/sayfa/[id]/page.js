@@ -3,7 +3,29 @@ import TVSeriesCompany from '../../components/TVSeriesCompany';
 import Container from '@mui/material/Container';
 import PaginationContainer from '../../components/PaginationContainer';
 import ysData from '../../../../../../turk-dizi-data/yapim-sirketleri.json';
+import  Typography  from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
+
+
+export async function generateMetadata() {
+    return {
+      title: 'Türk Yapım Şirketlerinin En İyi Dizileri | Top Turkish TV Series',
+      description: 'Türk dizi yapım şirketlerinin en popüler ve beğenilen dizileri. Dram, komedi, tarih ve daha fazlası. | Most popular and acclaimed TV series from Turkish production companies. Drama, comedy, history, and more.',
+      keywords: 'Türk dizileri, Turkish TV series, yapım şirketleri, production companies, dram, drama, komedi, comedy',
+      openGraph: {
+        title: 'Türk Yapım Şirketlerinin En İyi Dizileri | Top Turkish TV Series',
+        description: 'Türk dizi yapım şirketlerinin en popüler ve beğenilen dizileri. | Most popular and acclaimed TV series from Turkish production companies.',
+        type: 'website',
+        locale: 'tr_TR',
+        alternateLocale: 'en_US',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: 'Türk Yapım Şirketlerinin En İyi Dizileri',
+        description: 'Türk dizi yapım şirketlerinin en popüler ve beğenilen dizileri.',
+      },
+    }
+  }
 export default function TVseriesProductionCompanies({ params: { id } }) {
 
     const totalPages = Math.ceil(ysData.length / 10)
@@ -12,7 +34,11 @@ export default function TVseriesProductionCompanies({ params: { id } }) {
     debugger
     return (
         <Container>
-            <Grid container sx={{ display: "flex", justifyContent: "center" }}>
+            <Grid container sx={{ display: "flex", justifyContent: "center", marginTop:12 }}>
+            <Grid item xs={12}>
+
+<Typography variant='h4' textAlign="center">Türk yapım şirketlerinin dizileri</Typography>
+</Grid>
                 <Grid item xs={12} md={8}>
 
                     {data.map((company, index) => (

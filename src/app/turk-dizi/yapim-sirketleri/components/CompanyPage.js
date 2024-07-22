@@ -15,7 +15,7 @@ const CompanyPage = ({ company }) => {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
-    <Container maxWidth="lg" sx={{ py: 4 }}>
+    <Container maxWidth="lg" sx={{ py: 4, marginTop:12 }}>
       <CompanyInfo company={company} compact={false} />
 
       <Typography variant="h5" component="h2" gutterBottom sx={{ mt: 6, mb: 3 }}>
