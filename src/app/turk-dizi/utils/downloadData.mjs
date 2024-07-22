@@ -1,7 +1,7 @@
 
 import 'dotenv/config'
 
-import { downloadCollection } from '../../utils/uploadCollection.mjs'
+import { downloadCollection } from './uploadCollection.mjs'
 const localRootFolder = 'turk-dizi-data'
 const gitRepo = 'crawler-state-2'
 const folders = ['pcomanies', 'tvseries']
