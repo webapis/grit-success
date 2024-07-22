@@ -51,23 +51,17 @@ const CompanyInfo = ({ company, compact = false }) => {
   return (
     <Grid container spacing={2} alignItems="center">
       <Grid item xs={12} sm={compact ? 4 : 3} md={compact ? 3 : 3}>
-        <Box sx={{ width: '100%', maxWidth: compact ? 120 : 200, margin: 'auto' }}>
-          {compact ? (
-            <Image
-              src={company.logo}
-              alt={company.title}
-              width={120}
-              height={60}
-              layout="responsive"
-              objectFit="contain"
-            />
-          ) : (
-            <img
-              src={company.logo}
-              alt={company.title}
-              style={{ width: '100%', height: 'auto' }}
-            />
-          )}
+        <Box sx={{ width: '100%', maxWidth: compact ? 150 : 250, margin: 'auto' }}>
+          <img
+            src={company.logo}
+            alt={company.title}
+            style={{
+              width: '100%',
+              height: 'auto',
+              maxHeight: compact ? '80px' : 'none',
+              objectFit: 'contain'
+            }}
+          />
         </Box>
       </Grid>
       <Grid item xs={12} sm={compact ? 8 : 9} md={compact ? 9 : 9}>

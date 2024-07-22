@@ -9,6 +9,7 @@ export default function TVseriesProductionCompanies({ params: { id } }) {
     const totalPages = Math.ceil(ysData.length / 10)
     const currentPage = id ? id.toString() : ''
     const data = paginate(ysData, currentPage, 10)
+    debugger
     return (
         <Container>
             <Grid container sx={{ display: "flex", justifyContent: "center" }}>
@@ -20,7 +21,7 @@ export default function TVseriesProductionCompanies({ params: { id } }) {
                     <PaginationContainer
                         totalPages={totalPages}
                         currentPage={currentPage}
-                        basePath="/turk-dizi/yapimci-sirketleri"
+                        basePath="/turk-dizi/yapim-sirketleri"
                     />
                 </Grid>
             </Grid>
@@ -46,6 +47,6 @@ export async function generateStaticParams() {
         console.log('id', page)
         paths.push({ id: page.toString() });
     }
-
+debugger
     return paths;
 }
