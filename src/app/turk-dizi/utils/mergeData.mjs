@@ -115,7 +115,9 @@ const removedDublicate = aggregatedData.filter(f => f.YAPIM_SIRKETI.length > 0 &
 
 
 debugger
-const byYAPIM_SIRKETI = Object.entries(groupBy(removedDublicate, 'webpresenceId')).sort((a, b) => b[1].length - a[1].length)
+const speadCompany = removedDublicate.map(m => separateCompanies(m)).flat()
+debugger
+const byYAPIM_SIRKETI = Object.entries(groupBy(speadCompany, 'webpresenceId')).sort((a, b) => b[1].length - a[1].length)
 
 
 
@@ -153,7 +155,7 @@ const mapYSData = byYAPIM_SIRKETI.filter(f => f[1].length > 2 && f[0] !== 'websi
             const kanal = getBaseDomain(m_)
             const name = kanal
             const logo = `/dizi/turk-dizi/kanal/${kanal}.jpg`
-        
+
             return {
                 name, url, logo
             }
@@ -165,7 +167,7 @@ const mapYSData = byYAPIM_SIRKETI.filter(f => f[1].length > 2 && f[0] !== 'websi
             const kanal = getBaseDomain(m_)
             const name = kanal
             const logo = `/dizi/turk-dizi/kanal/${kanal}.jpg`
-        
+
             return {
                 name, url, logo
             }
@@ -197,7 +199,7 @@ const mapYSData = byYAPIM_SIRKETI.filter(f => f[1].length > 2 && f[0] !== 'websi
             lastEpisode: m?.BOLUM_SAYISI[0]?.replace('(bölümleri listesi)', ''),
             watchOptions: [...(otherWatchOptions || []), ...watchOptions].filter((item, index, self) =>
                 index === self.findIndex((t) => t.url === item.url)
-              )
+            )
         }
         return mapped
 
@@ -337,4 +339,21 @@ function getBaseDomain(url) {
 
     // Return the last remaining part
     return parts[parts.length - 1];
+}
+
+
+function separateCompanies(data) {
+    // Split the company names by comma and trim whitespace
+    const companies = data.YAPIM_SIRKETI.split(',').map(company => company.trim());
+
+    // Create a new array to hold objects for each company
+    const separatedData = companies.map(company => {
+        // Copy the original data object and assign the specific company name
+        return {
+            ...data,
+            YAPIM_SIRKETI: company
+        };
+    });
+
+    return separatedData;
 }
