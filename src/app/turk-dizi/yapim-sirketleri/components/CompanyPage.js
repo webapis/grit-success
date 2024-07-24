@@ -13,7 +13,7 @@ import CompanyInfo from './CompanyInfo';
 const CompanyPage = ({ company }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-
+debugger
   return (
     <Container maxWidth="lg" sx={{ py: 4, marginTop:12 }}>
       <CompanyInfo company={company} compact={false} />
@@ -22,11 +22,14 @@ const CompanyPage = ({ company }) => {
         All TV Series
       </Typography>
       <Grid container spacing={3}>
-        {company.tvSeries.map((series) => (
-          <Grid item key={series.id} xs={6} sm={4} md={3} lg={2}>
-            <TVSeriesThumbnail series={series} isMobile={isMobile} />
-          </Grid>
-        ))}
+        {company.tvSeries.map((series) => {
+    
+      return   <Grid item key={series.id} xs={6} sm={4} md={3} lg={2}>
+        <TVSeriesThumbnail series={series} isMobile={isMobile} />
+      </Grid>
+     
+        
+})}
       </Grid>
     </Container>
   );

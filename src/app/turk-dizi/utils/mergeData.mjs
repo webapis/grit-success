@@ -71,6 +71,9 @@ for (let current of data) {
     }
 }
 debugger
+
+
+debugger
 const removedDublicate = aggregatedData.filter(f => f.YAPIM_SIRKETI.length > 0 && f.YAPIM_SIRKETI[0].length > 0).map((obj) => {
     try {
         let nextObj = obj["YAPIM_SIRKETI"].flat()
@@ -87,22 +90,12 @@ const removedDublicate = aggregatedData.filter(f => f.YAPIM_SIRKETI.length > 0 &
 }).map((m) => {
     try {
         const title = m['YAPIM_SIRKETI']
-        if (title === 'Limon Yapım') {
-            debugger
-        }
 
 
         const match = yapimSirketi.find(f => {
-
-
-
             const fTitle = deaccent(f.title.join(' ')).toLowerCase()
-
             const ttitle = deaccent(title).toLowerCase()
-
             const result = fTitle.includes(ttitle)
-
-
             return result
 
         })
@@ -119,26 +112,24 @@ const removedDublicate = aggregatedData.filter(f => f.YAPIM_SIRKETI.length > 0 &
 
 })
 
+
+
 debugger
 const byYAPIM_SIRKETI = Object.entries(groupBy(removedDublicate, 'webpresenceId')).sort((a, b) => b[1].length - a[1].length)
 
 
-debugger
+
 const mapYSData = byYAPIM_SIRKETI.filter(f => f[1].length > 2 && f[0] !== 'websitesiz').map(m => {
 
     const title = m[1][0]['YAPIM_SIRKETI']
 
     const match = yapimSirketi.find(f => {
         const fTitle = deaccent(f.title.join(' ')).toLowerCase()
-
         const ttitle = deaccent(title).toLowerCase()
-
         const result = fTitle.includes(ttitle)
-
-
         return result
     })
-    debugger
+
     const comany = pcomanies.find(f => match?.title.includes(f.brandTitle))
 
     const establishedYear = comany ? comany.data?.find(f => f.title === 'Kuruluş')?.value : ''
@@ -146,7 +137,7 @@ const mapYSData = byYAPIM_SIRKETI.filter(f => f[1].length > 2 && f[0] !== 'websi
 
     const imgname = match.imgname
 
-    const webpresenceId = imgname ? imgname : extractDomainOrId(match.website[0])
+    const webpresenceId = imgname || extractDomainOrId(match.website[0])
 
     const logo = `/dizi/turk-dizi/yapim-sirketleri/${webpresenceId}.jpg`
 
@@ -157,62 +148,58 @@ const mapYSData = byYAPIM_SIRKETI.filter(f => f[1].length > 2 && f[0] !== 'websi
         const matchingConstDizi = dizi.find((f => f.title === m.TVSERIES_TITLE))
 
 
-
-        const watchLinks = m.WATCH_LINK.length === 0 ? [] : m.WATCH_LINK.map((m_) => {
-
+        const watchLinks = (m.WATCH_LINK || []).map((m_) => {
             const url = m_
             const kanal = getBaseDomain(m_)
             const name = kanal
             const logo = `/dizi/turk-dizi/kanal/${kanal}.jpg`
-
+        
             return {
                 name, url, logo
             }
         })
-        const watchOptions = watchLinks
-        const otherWatchOptions = (matchingConstDizi && matchingConstDizi.watchOptions) ? matchingConstDizi.watchOptions.map((m_) => {
 
+        const watchOptions = watchLinks
+        const otherWatchOptions = ((matchingConstDizi || {}).watchOptions || []).map((m_) => {
             const url = m_
             const kanal = getBaseDomain(m_)
             const name = kanal
             const logo = `/dizi/turk-dizi/kanal/${kanal}.jpg`
-
+        
             return {
                 name, url, logo
             }
-        }) : []
-        try {
+        })
 
-
-            const genres = m.GENRES ? m.GENRES.flat().map(m => m.toLowerCase()).reduce((acc, value) => {
+        const genres = (m.GENRES || [])
+            .flat()
+            .map(m => m.toLowerCase())
+            .reduce((acc, value) => {
                 if (!acc.includes(value.trim())) {
                     acc.push(value.trim());
                 }
                 return acc;
-            }, []).filter(f => f).sort() : []
-            const mapped = {
-                id: m.TVSERIES_TITLE,
-                title: m?.TVSERIES_TITLE,
-                year: extractStartYear(m?.YAYIN_TARIHI[0]),
-                thumbnail: (matchingConstDizi && matchingConstDizi.POSTER_IMG.length > 0) ? matchingConstDizi?.POSTER_IMG : m?.POSTER.filter(f => f.POSTER_IMG)[0]?.POSTER_IMG,
-                streamingUrl: m?.WATCH_LINK[0],
-                channelLogo: `/dizi/turk-dizi/kanal/${m?.KANAL[0]}.jpg`,
-                channelName: m?.KANAL[0],
-                state: m?.DURUM[0],
-                genres,
-                lastEpisode: m?.BOLUM_SAYISI[0]?.replace('(bölümleri listesi)', ''),
-                watchOptions: otherWatchOptions.length > 0 ? [...otherWatchOptions, ...watchOptions] : watchOptions
+            }, [])
+            .filter(f => f)
+            .sort();
 
+        const mapped = {
+            id: m.TVSERIES_TITLE,
+            title: m?.TVSERIES_TITLE,
+            year: matchingConstDizi?.FIRST_YEAR || extractStartYear(m?.YAYIN_TARIHI[0]),
+            thumbnail: matchingConstDizi?.POSTER_IMG || m?.POSTER.filter(f => f.POSTER_IMG)[0]?.POSTER_IMG,
 
-            }
-
-
-            return mapped
-
-        } catch (error) {
-            debugger
+            streamingUrl: m?.WATCH_LINK[0],
+            channelLogo: `/dizi/turk-dizi/kanal/${m?.KANAL[0]}.jpg`,
+            channelName: m?.KANAL[0],
+            state: m?.DURUM[0],
+            genres,
+            lastEpisode: m?.BOLUM_SAYISI[0]?.replace('(bölümleri listesi)', ''),
+            watchOptions: [...(otherWatchOptions || []), ...watchOptions].filter((item, index, self) =>
+                index === self.findIndex((t) => t.url === item.url)
+              )
         }
-
+        return mapped
 
     }).sort((a, b) => b['year'] - a['year'])
 
