@@ -201,7 +201,8 @@
     },
     {
         "title": "i̇kizler memo-can",
-        "POSTER_IMG": "https://image.milimaj.com/i/milliyet/75/869x477/5ca1c60945d2a0296418680b.jpg"
+        "POSTER_IMG": "https://image.milimaj.com/i/milliyet/75/869x477/5ca1c60945d2a0296418680b.jpg",
+        "watchOptions":["https://www.kanald.com.tr/ikizler-memo-can/bolumler"]
     },
     {
         "title": "gurbet kadını",
@@ -715,30 +716,30 @@
     }
     ,
     {
-        "title": "",
+        "title": "karagül",
         "watchOptions": [
-            ""
+            "https://televizyongazetesi.com/wp-content/uploads/2020/06/karagul-dizi-y23.jpg"
         ]
     }
     ,
     {
-        "title": "",
+        "title": "Yersiz Yurtsuz",
         "watchOptions": [
-            ""
+            "https://www.youtube.com/playlist?list=PLIovzIxZbA61z4bfIfO14GmXD1nKzPyNX"
         ]
     }
     ,
     {
-        "title": "",
+        "title": "Kurşun Yarası",
         "watchOptions": [
-            ""
+            "https://www.youtube.com/watch?v=QX-d63s2g-o"
         ]
     }
     ,
     {
-        "title": "",
+        "title": "Sultan Makamı",
         "watchOptions": [
-            ""
+            "https://www.youtube.com/watch?v=OT-v96_XmQc&list=PLxzRvAbK02mOPAitrLTN_CB5ijAw3ZjHV"
         ]
     }
     ,
