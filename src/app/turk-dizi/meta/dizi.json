@@ -10,7 +10,9 @@
         "watchOptions": [
             "https://www.youtube.com/watch?v=b6RFC-6dJhI&list=PLpaBvso5Qp9YS_BogYqycX9oMXeOKfbna"
         ],
-        "FIRST_YEAR": ["2024"]
+        "FIRST_YEAR": [
+            "2024"
+        ]
     },
     {
         "title": "dedektif memoli",
@@ -80,16 +82,13 @@
         "POSTER_IMG": "https://m.media-amazon.com/images/M/MV5BYjhmODliYzItZTY0Yi00ZmU3LWFhMGItNTQxM2E0ZGEyN2ExXkEyXkFqcGdeQXVyODY1MDkwOQ@@._V1_.jpg"
     },
     {
-        "title": "maral: en güzel hikayem",
-        "POSTER_IMG": "https://m.media-amazon.com/images/M/MV5BYTIwZTc1ZDgtMjBhOS00YTE5LWI3MjQtZWViOWE0MDYxNjE5XkEyXkFqcGdeQXVyNDQ2MTMzODA@._V1_FMjpg_UX1000_.jpg"
-    },
-    {
         "title": "KIZIL GONCALAR",
         "POSTER_IMG": "https://upload.wikimedia.org/wikipedia/tr/f/f2/K%C4%B1z%C4%B1lGoncalar.jpg"
     },
     {
-        "title": "adını feriha koydum: emir'in yolu",
-        "POSTER_IMG": "https://mo.ciner.com.tr/showturk/iu/1020x510/adini-feriha-koydum-emirin-yolu.jpg?v=1720068787"
+        "title": "adını feriha koydum emir'in yolu",
+        "POSTER_IMG": "https://mo.ciner.com.tr/showturk/iu/1020x510/adini-feriha-koydum-emirin-yolu.jpg?v=1720068787",
+        "watchOptions":["https://www.youtube.com/watch?v=8r30nVxu0ao&list=PLcD5SoBduEo_orOpqRmHCgi9CIVEVXIUG"]
     },
     {
         "title": "hünkarın bir günü",
@@ -125,7 +124,8 @@
     },
     {
         "title": "dur yolcu",
-        "POSTER_IMG": "https://m.media-amazon.com/images/M/MV5BODJiZjY1ZWItZWExMi00MmE2LTlhNzEtZmU4MTkzZjM1NTMzXkEyXkFqcGdeQXVyNzY3MjM4NjA@._V1_.jpg"
+        "POSTER_IMG": "https://m.media-amazon.com/images/M/MV5BODJiZjY1ZWItZWExMi00MmE2LTlhNzEtZmU4MTkzZjM1NTMzXkEyXkFqcGdeQXVyNzY3MjM4NjA@._V1_.jpg",
+        "watchOptions":["https://www.youtube.com/watch?v=9H7yTqOkAds&list=PLPPvWWePHrF25Bd6ygL1Lc4Lg8Q-DbXGV"]
     },
     {
         "title": "acımak",
@@ -137,11 +137,13 @@
     },
     {
         "title": "bizim mahalle",
-        "POSTER_IMG": "https://s2.dmcdn.net/v/LMx1R1Vh5MquAsf11/x360"
+        "POSTER_IMG": "https://s2.dmcdn.net/v/LMx1R1Vh5MquAsf11/x360",
+        "watchOptions":["https://www.youtube.com/watch?v=6fPxdn1VfaM&list=PLzuwh4c14imbQfUFH5cR3qARANIm4aMgr"]
     },
     {
         "title": "hüsnü bey amca",
-        "POSTER_IMG": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0sF4GKI4q968EqnTJ7ptTuNvten9ng1Qe1jCgqk2ItxO0EUvQyzQ6IzdoqZz4BGDwqXk&usqp=CAU"
+        "POSTER_IMG": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0sF4GKI4q968EqnTJ7ptTuNvten9ng1Qe1jCgqk2ItxO0EUvQyzQ6IzdoqZz4BGDwqXk&usqp=CAU",
+        "watchOptions":["https://www.youtube.com/watch?v=aX4bi0b3c4I"]
     },
     {
         "title": "kanun savaşçıları",
@@ -161,7 +163,8 @@
     },
     {
         "title": "kaderimin yazıldığı gün",
-        "POSTER_IMG": "https://tr.web.img4.acsta.net/pictures/14/10/10/04/13/306454.jpg"
+        "POSTER_IMG": "https://tr.web.img4.acsta.net/pictures/14/10/10/04/13/306454.jpg",
+        "watchOptions":["https://www.youtube.com/watch?v=SOMu97NcNUY&list=PLHeEdUdyTudcqcOmFCEf7VD_6QmTKOO9x"]
     },
     {
         "title": "aile i̇şi",
@@ -181,7 +184,8 @@
     },
     {
         "title": "sen de gitme",
-        "POSTER_IMG": "https://i.ytimg.com/vi/hHnAUw-KF9A/sddefault.jpg"
+        "POSTER_IMG": "https://i.ytimg.com/vi/hHnAUw-KF9A/sddefault.jpg",
+        "watchOptions":["https://www.youtube.com/watch?v=hHnAUw-KF9A&list=PL4jTRXg6bx0VaH4O4zMqVNfjmbVIEW4YL"]
     },
     {
         "title": "yabancı damat",
@@ -225,7 +229,8 @@
     },
     {
         "title": "fırtına",
-        "POSTER_IMG": "https://televizyongazetesi.com/wp-content/uploads/2021/04/firtina-dizi-kanald1.jpg"
+        "POSTER_IMG": "https://televizyongazetesi.com/wp-content/uploads/2021/04/firtina-dizi-kanald1.jpg",
+        "watchOptions":["https://www.youtube.com/watch?v=WmpivjFSRzE"]
     },
     {
         "title": "kalbimdeki deniz",
@@ -265,7 +270,8 @@
     },
     {
         "title": "güldünya",
-        "POSTER_IMG": "https://cdn.sinematurk.com/media/film/9/48/f1aa325bb239/22010_14.jpg"
+        "POSTER_IMG": "https://cdn.sinematurk.com/media/film/9/48/f1aa325bb239/22010_14.jpg",
+        "watchOptions":["https://www.youtube.com/playlist?list=PLZBZ8qgul_Y0baZBHjsER8BsNCs00fwmm"]
     },
     {
         "title": "6 mantı",
@@ -356,35 +362,30 @@
     },
     {
         "title": "Kuş Uçuşu",
-        "POSTER_IMG": "",
         "watchOptions": [
             "https://www.netflix.com/tr/title/81303889"
         ]
     },
     {
         "title": "Uysallar",
-        "POSTER_IMG": "",
         "watchOptions": [
             "https://www.netflix.com/tr/title/81346907"
         ]
     },
     {
         "title": "Aşk 101",
-        "POSTER_IMG": "",
         "watchOptions": [
             "https://www.netflix.com/tr/title/81080697"
         ]
     },
     {
         "title": "Kara Sevda",
-        "POSTER_IMG": "",
         "watchOptions": [
             "https://puhutv.com/kara-sevda-detay"
         ]
     },
     {
         "title": "medcezir",
-        "POSTER_IMG": "",
         "watchOptions": [
             "https://tvdiziler.tv/medcezir-6-bolum-izle",
             "https://www.ddizi.im/izle/41485/medcezir-1-bolum-hd2.htm"
@@ -392,130 +393,535 @@
     },
     {
         "title": "kül",
-        "POSTER_IMG": "",
         "watchOptions": [
             "https://www.netflix.com/tr/title/81616617"
         ]
     },
     {
         "title": "i̇yi adamın 10 günü",
-        "POSTER_IMG": "",
         "watchOptions": [
             "https://www.netflix.com/tr/title/81426851"
         ]
     },
     {
         "title": "ölüm zamanı",
-        "POSTER_IMG": "",
         "watchOptions": [
             "https://www.exxen.com/en/detail/serie/olum-zamani/34598"
         ]
     },
     {
         "title": "ustura kemal",
-        "POSTER_IMG": "",
         "watchOptions": [
             "https://www.youtube.com/watch?v=uHCr_939oxM&list=UULFJOysRNUUhcX6os-Gl1a4Aw"
         ]
     },
     {
         "title": "türk'ün uzayla i̇mtihanı",
-        "POSTER_IMG": "",
         "watchOptions": [
             "https://www.youtube.com/playlist?list=PLyr5zKdFfeyuWWUIcItf-awz0DRQkphjn"
         ]
     },
     {
         "title": "deli saraylı",
-        "POSTER_IMG": "",
         "watchOptions": [
             "https://www.youtube.com/playlist?list=PL0rhjW1SWO4ZNDiJX3j9O2UUx1B_GP4pV"
         ]
     },
     {
         "title": "hayal ve gerçek",
-        "POSTER_IMG": "",
         "watchOptions": [
             "https://www.ddizi.im/diziler/1080/hayal-ve-gercek"
         ]
     },
     {
         "title": "Hayat Bilgisi",
-        "POSTER_IMG": "",
         "watchOptions": [
             "https://www.youtube.com/watch?v=yImYWqbS8eM&list=PLeBke5oPASwDtpUJvW39i0enSvg01LM4h"
         ]
     },
     {
         "title": "Erkek Severse",
-        "POSTER_IMG": "",
         "watchOptions": [
             "https://www.beinconnect.com.tr/bein-originals/erkek-severse"
         ]
     },
     {
         "title": "no 309",
-        "POSTER_IMG": "",
         "watchOptions": [
             "https://www.nowtv.com.tr/No-309/izle"
         ]
     },
     {
         "title": "a.ş.k.",
-        "POSTER_IMG": "",
         "watchOptions": [
             "https://www.kanald.com.tr/ask"
         ]
     },
     {
         "title": "canısı",
-        "POSTER_IMG": "",
         "watchOptions": [
             "https://www.youtube.com/playlist?list=PLFPAMV8dyUgUtEq3iv9Mr0q1SyRc3Dn5U"
         ]
     },
     {
         "title": "Masum",
-        "POSTER_IMG": "",
         "watchOptions": [
             "https://www.netflix.com/tr/title/81026192"
         ]
     },
     {
         "title": "Haneler",
-        "POSTER_IMG": "",
         "watchOptions": [
             "https://www.youtube.com/playlist?list=PL-pchwNITuEaW1dMrzoKhmXR4GBtiq9b6"
         ]
     },
     {
         "title": "Fedai",
-        "POSTER_IMG": "",
         "watchOptions": [
             "https://www.ddizi.im/izle/36442/fedai-1-bolum.htm"
         ]
     },
     {
         "title": "kampüsistan",
-        "POSTER_IMG": "",
         "watchOptions": [
             "https://www.ddizi.im/diziler/383/kampusistan"
         ]
     },
     {
-        "title": "",
-        "POSTER_IMG": ""
+        "title": "babam çok değişti",
+        "watchOptions": [
+            "https://www.youtube.com/@babamcokdegistiKanalD/featured"
+        ]
     },
     {
-        "title": "",
-        "POSTER_IMG": ""
+        "title": "şahmaran",
+        "watchOptions": [
+            "https://www.netflix.com/tr/title/81354934"
+        ]
     },
     {
-        "title": "",
-        "POSTER_IMG": ""
+        "title": "Sıcak Kafa",
+        "watchOptions": [
+            "https://www.netflix.com/tr/title/81127080"
+        ]
     },
     {
-        "title": "",
-        "POSTER_IMG": ""
+        "title": "muhteşem yüzyıl kösem",
+        "watchOptions": [
+            "https://www.youtube.com/watch?v=iljpQO4I40E&list=PLhRiyemLsikzpAD5UtC3Ilo3x3-qVKrpb"
+        ]
+    },
+    {
+        "title": "Mazi Kalbimde Yaradır",
+        "watchOptions": [
+            "https://www.youtube.com/watch?v=FMcS2pxkBhw&list=PLm3-FYEZRvRecet6bdPwBiAaLI0FSONK5"
+        ]
+    },
+    {
+        "title": "Muhteşem Yüzyıl",
+        "watchOptions": [
+            "https://www.youtube.com/watch?v=46y8o0urQx0&list=PLhs6M1ctjWI8Kmd87Jk1ZNLWS8hOYowue"
+        ]
+    },
+    {
+        "title": "Çakıl Taşları",
+        "watchOptions": [
+            "https://www.youtube.com/watch?v=RYy5l4nsC18&list=PLZqJG7RQrCQov-0PGZtbM-LtpxmmwaoHd"
+        ]
+    },
+    {
+        "title": "Melekler Korusun",
+        "watchOptions": [
+            "https://www.youtube.com/watch?v=R0yV6HNHMAQ&list=PLLVzqGMyt6J_CUL9428Jp6tvc8c5I7WoH"
+        ]
+    },
+    {
+        "title": "Es Es",
+        "watchOptions": [
+            "https://www.youtube.com/watch?v=6TOUrq7IQ1M&list=PLwsOdwF4mVeIY8PYmF_piHTxzdDuYIcIp"
+        ]
+    },
+    {
+        "title": "sağır oda",
+        "watchOptions": [
+            "https://www.youtube.com/watch?v=35NAmAH-yEg"
+        ]
+    },
+    {
+        "title": "Senden Başka",
+        "watchOptions": [
+            "https://www.youtube.com/watch?v=dBKQKBzK5xk&list=PLwsOdwF4mVeLspFLK17UA-Cs7PBoCBQhD"
+        ]
+    },
+    {
+        "title": "MELEKLER-KORUSUN",
+        "watchOptions": [
+            "https://www.youtube.com/watch?v=R0yV6HNHMAQ&list=PLLVzqGMyt6J_CUL9428Jp6tvc8c5I7WoH"
+        ]
+    },
+    {
+        "title": "MANYAK DÜKKAN",
+        "watchOptions": [
+            "https://www.showturk.com.tr/dizi/tum_bolumler/manyak-dukkan/1026"
+        ]
+    },
+    {
+        "title": "maral: en güzel hikayem",
+        "POSTER_IMG": "https://m.media-amazon.com/images/M/MV5BYTIwZTc1ZDgtMjBhOS00YTE5LWI3MjQtZWViOWE0MDYxNjE5XkEyXkFqcGdeQXVyNDQ2MTMzODA@._V1_FMjpg_UX1000_.jpg",
+        "watchOptions": [
+            "https://www.youtube.com/watch?v=2rkMNs4MpTE&list=PLCN1OTZynwzl5OgeY9Ijk-N5y_YJu1iL7"
+        ]
+    },
+    {
+        "title": "Belalı Baldız",
+        "watchOptions": [
+            "https://www.youtube.com/watch?v=2POtIC-n_0U&list=PL8d-PRoBXFbU5Mui7sW8viwuM3tmJNEcp"
+        ]
+    },
+    {
+        "title": "kıbrıs: zafere doğru",
+        "watchOptions": [
+            "https://www.youtube.com/watch?v=ILGxzOlYitU&list=PLEfBQQCNyJTBoMioXcOQBNSQVTUtpJL9t"
+        ]
+    },
+    {
+        "title": "Vay Anam Vay",
+        "watchOptions": [
+            "https://www.youtube.com/watch?v=Lf2xSeO-4HA"
+        ]
+    },
+    {
+        "title": "esir şehrin i̇nsanları",
+        "watchOptions": [
+            "https://www.youtube.com/watch?v=m9ogdROlFvs&list=PLm3-FYEZRvRfNiki7f_RJyiN0MnIu5NY0"
+        ]
+    },
+    {
+        "title": "Kulüp",
+        "watchOptions": [
+            "https://www.netflix.com/tr/title/81257567"
+        ]
+    },
+    {
+        "title": "gecenin kraliçesi",
+        "POSTER_IMG":"https://image.hurimg.com/i/hurriyet/75/750x422/568cd6cec03c0e3370f8028a.jpg",
+        "watchOptions": [
+            "https://www.youtube.com/playlist?list=PLe9Mpf0VRvFGkWpsss1MZ3p8__axYx5a2"
+        ]
+    },
+    {
+        "title": "Dünyayla Benim Aramda",
+        "watchOptions": [
+            "https://www.youtube.com/playlist?list=PLjeRgllGDnksOjDG3WCSNWlr8mTNBO1bA"
+        ]
+    },
+    {
+        "title": "Annenin Sırrıdır Çocuk",
+        "watchOptions": [
+            "https://www.youtube.com/watch?v=Kfa6U6aLJms&list=PLX-BJQscwWBZckKgMFCmivfZO3pTP2PTP"
+        ]
+    },
+    {
+        "title": "kaçak gelinler",
+        "watchOptions": [
+            "https://www.youtube.com/watch?v=engMzGOs6Ig&list=PL3dCSZOkxMl4buupjjFPz1h3fE1Rey3T1"
+        ]
+    },
+    {
+        "title": "seviyor sevmiyor",
+        "watchOptions": [
+            "https://www.youtube.com/watch?v=i0oLGeWoC-E&list=PLNkWne2DO_vnPJgEXzrbuCARgfXdwRnyN"
+        ]
+    },
+    {
+        "title": "bir aşk hikayesi",
+        "watchOptions": [
+            "https://www.youtube.com/playlist?list=PLVLV4eCtwtK92bP_eHbo1UCIqZ39LyiE8"
+        ]
+    },
+    {
+        "title": "dudullu postası",
+        "watchOptions": [
+            "https://www.blutv.com/diziler/yerli/dudullu-postasi/1-sezon/dudullu-postasi-1-bolum"
+        ]
+    },
+    {
+        "title": "cesaretin var mı aşka",
+        "POSTER_IMG":"https://i.ytimg.com/vi/lfLm-LwqmTc/sddefault.jpg",
+        "watchOptions": [
+            "https://www.youtube.com/playlist?list=PL6nM1RK5nFKfToWaFFc6s0eU0eOA3vnwj"
+        ]
+    },
+    {
+        "title": "yanık koza",
+        "watchOptions": [
+            "https://www.youtube.com/watch?v=i6zCccBPge0&list=PLjjZKiCby1QhTW-3jMe347xZULhKrGBoi"
+        ]
+    },
+    {
+        "title": "Düşler ve Umutlar",
+        "watchOptions": [
+            "https://www.youtube.com/watch?v=VDuNL5inas0"
+        ]
+    },
+    {
+        "title": "Büyük Sır",
+        "watchOptions": [
+            "https://www.showturk.com.tr/dizi/tum_bolumler/buyuk-sir/1118"
+        ]
+    },
+    {
+        "title": "Mahsun J",
+        "watchOptions": [
+            "https://www.gain.tv/t/AeZ6BMCn/mahsun-j"
+        ]
+    },
+    {
+        "title": "Doğu",
+        "watchOptions": [
+            "https://www.blutv.com/diziler/yerli/dogu"
+        ]
+    },
+    {
+        "title": "50m2",
+        "watchOptions": [
+            "https://www.netflix.com/tr/title/81103322"
+        ]
+    },
+    {
+        "title": "Sol Yanım",
+        "POSTER_IMG":"https://image.hurimg.com/i/hurriyet/75/750x422/5fbe18b667b0a91d74bcb4f0.jpg"
     }
+    ,
+    {
+        "title": "Bartu Ben",
+        "watchOptions": [
+            "https://www.blutv.com/diziler/yerli/bartu-ben"
+        ]
+    }
+    ,
+    {
+        "title": "bir varmış bir yokmuş",
+        "watchOptions": [
+            "https://www.youtube.com/watch?v=gon9oRXUXEc"
+        ]
+    }
+    ,
+    {
+        "title": "Şen Yuva",
+        "watchOptions": [
+            "https://www.youtube.com/watch?v=vfW81IcAJhY"
+        ]
+    }
+    ,
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    }
+    ,
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    }
+    ,
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    }
+    ,
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    }
+    ,
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    }
+    ,
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    }
+    ,
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    }
+    ,
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    }
+    ,
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    }
+    ,
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    }
+    ,
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    }
+    ,
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    }
+    ,
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    }
+    ,
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    }
+    ,
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    }
+    ,
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    }
+    ,
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    }
+    ,
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    }
+    ,
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    }
+    ,
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    }
+    ,
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    }
+    ,
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    }
+    ,
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    }
+    ,
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    }
+    ,
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    }
+    ,
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    }
+    ,
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    }
+    ,
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    }
+    ,
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    }
+    ,
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    }
+
 ]

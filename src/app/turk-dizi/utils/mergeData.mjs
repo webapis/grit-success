@@ -8,12 +8,12 @@ const require = createRequire(import.meta.url);
 const yapimSirketi = require('../meta/yapim-sirket.json')
 const pcomanies = require('../../../../turk-dizi-data/unzipped-data/pcomanies/pcomanies.json')
 const dizi = require('../meta/dizi.json')
-
+const unrelated = require('../meta/unrelated.json')
 import deaccent from './deaccent.mjs'
 import groupBy from './groupBy.mjs'
 const filePaths = []
 const data = []
-debugger
+
 walkSync(`${process.cwd()}/turk-dizi-data/`, (filePath) => {
     filePaths.push(filePath)
     const currentFileData = JSON.parse(fs.readFileSync(filePath))
@@ -22,24 +22,40 @@ walkSync(`${process.cwd()}/turk-dizi-data/`, (filePath) => {
 
 })
 
-debugger
+
 import fields from './consts.mjs'
 
 
 
 
-debugger
-const aggregatedData = []
-debugger
 
-debugger
+const aggregatedData = []
+
+
+
 const exceptions = [['Ali̇ye', 'Atiye'], ['aşk-ı memnu', 'memnu'], ['üç kadın', 'kadın']]
 debugger
-for (let current of data) {
+const withoultUnrelatedData = data.filter((f => {
+    if (f.TVSERIES_TITLE === "Çok Güzel Hareketler 2") {
+        debugger
+    }
+    const match = unrelated.includes(f.TVSERIES_TITLE)
 
-    const TVSERIES_TITLE = current.TVSERIES_TITLE
+    return match === false
+}))
+debugger
+for (let current of withoultUnrelatedData) {
+
+    const TVSERIES_TITLE = (current.TVSERIES_TITLE || '')
     if (TVSERIES_TITLE !== undefined) {
-        let currentAggData = aggregatedData.filter(f => f).filter(f => f.TVSERIES_TITLE !== undefined && f.TVSERIES_TITLE.length > 0).find((f) => f.TVSERIES_TITLE === TVSERIES_TITLE || areStringsSimilar(normalizeTurkish(f.TVSERIES_TITLE).normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase().trim(), normalizeTurkish(TVSERIES_TITLE).normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase().trim(), exceptions))
+        let currentAggData = aggregatedData.filter(f => f).filter(f => f.TVSERIES_TITLE !== undefined && f.TVSERIES_TITLE.length > 0).find((f) => {
+            if (TVSERIES_TITLE.includes('racon') && f.TVSERIES_TITLE.includes('racon')) {
+                debugger
+            }
+            const match = f.TVSERIES_TITLE === TVSERIES_TITLE || areStringsSimilar(f.TVSERIES_TITLE, TVSERIES_TITLE, exceptions)
+
+            return match
+        })
         if (currentAggData) {
 
 
@@ -70,10 +86,7 @@ for (let current of data) {
         }
     }
 }
-debugger
 
-
-debugger
 const removedDublicate = aggregatedData.filter(f => f.YAPIM_SIRKETI.length > 0 && f.YAPIM_SIRKETI[0].length > 0).map((obj) => {
     try {
         let nextObj = obj["YAPIM_SIRKETI"].flat()
@@ -147,7 +160,7 @@ const mapYSData = byYAPIM_SIRKETI.filter(f => f[1].length > 2 && f[0] !== 'websi
 
     const mapTVSeries = tvSeries.map((m) => {
 
-        const matchingConstDizi = dizi.find((f => f.title === m.TVSERIES_TITLE))
+        const matchingConstDizi = dizi.find((f => deaccent(f.title).toLowerCase() === deaccent(m.TVSERIES_TITLE).toLowerCase()))
 
 
         const watchLinks = (m.WATCH_LINK || []).map((m_) => {
@@ -203,7 +216,51 @@ const mapYSData = byYAPIM_SIRKETI.filter(f => f[1].length > 2 && f[0] !== 'websi
         }
         return mapped
 
-    }).sort((a, b) => b['year'] - a['year'])
+    }).sort((a, b) => b['year'] - a['year']).reduce((prev, curr, i) => {
+
+        try {
+
+
+            if (i === 0) {
+
+                return [curr]
+
+            }
+
+            if (i > 0) {
+
+                const exist = prev.find(f => areStringsSimilar(f.title, curr.title))
+                if (exist) {
+                    debugger
+                    const resp = prev.map(m => {
+
+                        const match = areStringsSimilar(m.title, curr.title)
+
+                        if (match) {
+
+
+                            return mergeObjects(m, curr)
+
+                        } else {
+
+                            return m
+                        }
+
+                    })
+
+
+                    return resp
+                } else {
+
+                    return [...prev, curr]
+                }
+
+            }
+        } catch (error) {
+            debugger
+        }
+
+    }, [])
 
     return {
         id: webpresenceId,
@@ -257,11 +314,13 @@ function levenshteinDistance(a, b) {
     return matrix[b.length][a.length];
 }
 
-function areStringsSimilar(str1, str2, maxDistance = 1, maxLengthDifference = 4, exceptions = []) {
+function areStringsSimilar(str1row, str2row, maxDistance = 1, maxLengthDifference = 4, exceptions = []) {
+    const str1 = normalizeTurkish(str1row.normalize('NFD').replaceAll('-', ' ').replaceAll(':', '').replaceAll('  ', ' ')).replace(/[\u0300-\u036f]/g, "").toLowerCase()
+    const str2 = normalizeTurkish(str2row.normalize('NFD').replaceAll('-', ' ').replaceAll(':', '').replaceAll('  ', ' ')).replace(/[\u0300-\u036f]/g, "").toLowerCase()
     // Check if the pair of strings is in the exceptions list
     if (exceptions.some(pair =>
-        (pair[0].toLowerCase() === str1.toLowerCase() && pair[1].toLowerCase() === str2.toLowerCase()) ||
-        (pair[1].toLowerCase() === str1.toLowerCase() && pair[0].toLowerCase() === str2.toLowerCase())
+        (pair[0].toLowerCase() === str1row.toLowerCase() && pair[1].toLowerCase() === str2row.toLowerCase()) ||
+        (pair[1].toLowerCase() === str1row.toLowerCase() && pair[0].toLowerCase() === str2row.toLowerCase())
     )) {
         return false;
     }
@@ -356,4 +415,12 @@ function separateCompanies(data) {
     });
 
     return separatedData;
+}
+
+
+function mergeObjects(obj1, obj2) {
+    return Object.keys({ ...obj1, ...obj2 }).reduce((result, key) => {
+        result[key] = obj1[key] !== undefined ? obj1[key] : obj2[key];
+        return result;
+    }, {});
 }

@@ -9,6 +9,7 @@ import {
   Menu,
   MenuItem,
   Chip,
+  Tooltip,
 } from '@mui/material';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
@@ -82,9 +83,11 @@ const TVSeriesThumbnail = ({ series, isMobile }) => {
         </Box>
       </Box>
       <CardContent sx={{ p: 1, flexGrow: 1 }}>
-        <Typography variant={isMobile ? "caption" : "subtitle2"} component="div" noWrap>
-          {series.title}
-        </Typography>
+        <Tooltip title={series.title} enterDelay={500} leaveDelay={200}>
+          <Typography variant={isMobile ? "caption" : "subtitle2"} component="div" noWrap>
+            {series.title}
+          </Typography>
+        </Tooltip>
         <Typography variant="caption" color="text.secondary">
           {series.year}
         </Typography>
