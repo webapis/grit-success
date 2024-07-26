@@ -36,9 +36,7 @@ const aggregatedData = []
 const exceptions = [['Ali̇ye', 'Atiye'], ['aşk-ı memnu', 'memnu'], ['üç kadın', 'kadın']]
 debugger
 const withoultUnrelatedData = data.filter((f => {
-    if (f.TVSERIES_TITLE === "Çok Güzel Hareketler 2") {
-        debugger
-    }
+
     const match = unrelated.includes(f.TVSERIES_TITLE)
 
     return match === false
@@ -49,9 +47,7 @@ for (let current of withoultUnrelatedData) {
     const TVSERIES_TITLE = (current.TVSERIES_TITLE || '')
     if (TVSERIES_TITLE !== undefined) {
         let currentAggData = aggregatedData.filter(f => f).filter(f => f.TVSERIES_TITLE !== undefined && f.TVSERIES_TITLE.length > 0).find((f) => {
-            if (TVSERIES_TITLE.includes('racon') && f.TVSERIES_TITLE.includes('racon')) {
-                debugger
-            }
+       
             const match = f.TVSERIES_TITLE === TVSERIES_TITLE || areStringsSimilar(f.TVSERIES_TITLE, TVSERIES_TITLE, exceptions)
 
             return match
@@ -186,17 +182,23 @@ const mapYSData = byYAPIM_SIRKETI.filter(f => f[1].length > 2 && f[0] !== 'websi
             }
         })
 
-        const genres = (m.GENRES || [])
-            .flat()
-            .map(m => m.toLowerCase())
-            .reduce((acc, value) => {
-                if (!acc.includes(value.trim())) {
-                    acc.push(value.trim());
-                }
-                return acc;
-            }, [])
-            .filter(f => f)
-            .sort();
+        let genres = []
+        try {
+            genres = (m.GENRES || [])
+                .flat()
+                .map(m => m.toLowerCase())
+                .reduce((acc, value) => {
+                    if (!acc.includes(value.trim())) {
+                        acc.push(value.trim());
+                    }
+                    return acc;
+                }, [])
+                .filter(f => f)
+                .sort();
+        } catch (error) {
+            debugger
+        }
+
 
         const mapped = {
             id: m.TVSERIES_TITLE,
