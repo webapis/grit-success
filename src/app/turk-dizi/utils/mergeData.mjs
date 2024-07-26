@@ -45,9 +45,11 @@ debugger
 for (let current of withoultUnrelatedData) {
 
     const TVSERIES_TITLE = (current.TVSERIES_TITLE || '')
+
+
     if (TVSERIES_TITLE !== undefined) {
         let currentAggData = aggregatedData.filter(f => f).filter(f => f.TVSERIES_TITLE !== undefined && f.TVSERIES_TITLE.length > 0).find((f) => {
-       
+
             const match = f.TVSERIES_TITLE === TVSERIES_TITLE || areStringsSimilar(f.TVSERIES_TITLE, TVSERIES_TITLE, exceptions)
 
             return match
@@ -56,6 +58,7 @@ for (let current of withoultUnrelatedData) {
 
 
             for (let propName in fields) {
+
                 const prop = current[propName]
                 if (prop && prop.length > 0) {
                     currentAggData[propName] = [...currentAggData[propName], prop]
@@ -66,6 +69,7 @@ for (let current of withoultUnrelatedData) {
 
             currentAggData = { ...fields }
             for (let propName in fields) {
+
                 const prop = current[propName]
                 if (prop) {
                     if (Array.isArray(prop)) {
@@ -198,26 +202,32 @@ const mapYSData = byYAPIM_SIRKETI.filter(f => f[1].length > 2 && f[0] !== 'websi
         } catch (error) {
             debugger
         }
+        try {
 
+            if (m.TVSERIES_TITLE === 'Kirli Sepeti') {
+                debugger
+            }
 
-        const mapped = {
-            id: m.TVSERIES_TITLE,
-            title: m?.TVSERIES_TITLE,
-            year: matchingConstDizi?.FIRST_YEAR || extractStartYear(m?.YAYIN_TARIHI[0]),
-            thumbnail: matchingConstDizi?.POSTER_IMG || m?.POSTER.filter(f => f.POSTER_IMG)[0]?.POSTER_IMG,
+            const mapped = {
+                id: m.TVSERIES_TITLE,
+                title: m?.TVSERIES_TITLE,
+                year: matchingConstDizi?.FIRST_YEAR || extractStartYear(m?.YAYIN_TARIHI[0]),
+                thumbnail: matchingConstDizi?.POSTER_IMG || m?.POSTER.filter(f => f.POSTER_IMG)[0]?.POSTER_IMG,
 
-            streamingUrl: m?.WATCH_LINK[0],
-            channelLogo: `/dizi/turk-dizi/kanal/${m?.KANAL[0]}.jpg`,
-            channelName: m?.KANAL[0],
-            state: m?.DURUM[0],
-            genres,
-            lastEpisode: m?.BOLUM_SAYISI[0]?.replace('(bölümleri listesi)', ''),
-            watchOptions: [...(otherWatchOptions || []), ...watchOptions].filter((item, index, self) =>
-                index === self.findIndex((t) => t.url === item.url)
-            )
+                streamingUrl: m?.WATCH_LINK[0],
+                channelLogo: `/dizi/turk-dizi/kanal/${m?.KANAL[0]}.jpg`,
+                channelName: m?.KANAL[0],
+                state: m?.DURUM[0],
+                genres,
+                lastEpisode: m?.BOLUM_SAYISI[0]?.replace('(bölümleri listesi)', ''),
+                watchOptions: [...(otherWatchOptions || []), ...watchOptions].filter((item, index, self) =>
+                    index === self.findIndex((t) => t.url === item.url)
+                )
+            }
+            return mapped
+        } catch (error) {
+            debugger
         }
-        return mapped
-
     }).sort((a, b) => b['year'] - a['year']).reduce((prev, curr, i) => {
 
         try {
