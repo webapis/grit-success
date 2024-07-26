@@ -3,7 +3,7 @@
 import fs from 'fs'
 import { createRequire } from "module";
 import walkSync from './walkSync.mjs'
-import mergeTvSeriesData,{groupTvSeriesByProductionCompany} from './aggregatedData.mjs'
+
 const require = createRequire(import.meta.url);
 const yapimSirketi = require('../meta/yapim-sirket.json')
 const pcomanies = require('../../../../turk-dizi-data/unzipped-data/pcomanies/pcomanies.json')
@@ -41,11 +41,6 @@ const withoultUnrelatedData = data.filter((f => {
 
     return match === false
 }))
-debugger
-
-const result = mergeTvSeriesData(withoultUnrelatedData)
-debugger
-const grpd = groupTvSeriesByProductionCompany(result)
 debugger
 for (let current of withoultUnrelatedData) {
 
