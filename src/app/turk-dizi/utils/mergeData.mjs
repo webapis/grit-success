@@ -3,7 +3,8 @@
 import fs from 'fs'
 import { createRequire } from "module";
 import walkSync from './walkSync.mjs'
-import mergeTvSeriesData,{groupTvSeriesByProductionCompany} from './aggregatedData.mjs'
+import mergeTvSeriesData from './mergeTvSeriesData.mjs'
+import { groupTvSeriesByProductionCompany } from './groupTvSeriesByProductionCompany.mjs';
 const require = createRequire(import.meta.url);
 const yapimSirketi = require('../meta/yapim-sirket.json')
 const pcomanies = require('../../../../turk-dizi-data/unzipped-data/pcomanies/pcomanies.json')
