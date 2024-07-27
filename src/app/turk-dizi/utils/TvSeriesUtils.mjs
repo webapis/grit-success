@@ -53,7 +53,7 @@ const TvSeriesUtils = {
         return matrix[b.length][a.length];
     },
 
-    areStringsSimilar(str1row, str2row, maxDistance = 1, maxLengthDifference = 4, exceptions = []) {
+    areStringsSimilar(str1row, str2row, maxDistance = 1, maxLengthDifference = 1, exceptions = []) {
         const str1 = this.normalizeTitle(str1row);
         const str2 = this.normalizeTitle(str2row);
 

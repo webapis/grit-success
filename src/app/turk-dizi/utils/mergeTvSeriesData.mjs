@@ -1,7 +1,6 @@
 import { TvSeriesUtils } from "./TvSeriesUtils.mjs";
 
-// mergeTvSeriesData.js
-export default function mergeTvSeriesData(combinedDataSource, maxDistance = 1, maxLengthDifference = 4, exceptions = []) {
+export default function mergeTvSeriesData({combinedDataSource, maxDistance = 1, maxLengthDifference = 4, exceptions = []}) {
     if (!Array.isArray(combinedDataSource)) {
         console.error('Invalid combinedDataSource provided to mergeTvSeriesData:', combinedDataSource);
         return {};
@@ -9,8 +8,25 @@ export default function mergeTvSeriesData(combinedDataSource, maxDistance = 1, m
 
     const aggregatedData = {};
 
-    function mergeValues(existing, newValue) {
-        if (Array.isArray(existing) && Array.isArray(newValue)) {
+    function flattenPosterArray(arr) {
+        return arr.reduce((acc, item) => {
+            if (Array.isArray(item)) {
+                return acc.concat(flattenPosterArray(item));
+            } else if (typeof item === 'object' && item !== null) {
+                return acc.concat(item);
+            }
+            return acc;
+        }, []);
+    }
+
+    function mergeValues(existing, newValue, key) {
+        if (key === 'POSTER') {
+            const combinedArray = Array.isArray(existing) ? existing : [existing];
+            combinedArray.push(newValue);
+            return flattenPosterArray(combinedArray);
+        } else if (key === 'WATCH_LINK') {
+            return Array.isArray(existing) ? [...existing, newValue] : [existing, newValue];
+        } else if (Array.isArray(existing) && Array.isArray(newValue)) {
             return [...new Set([...existing, ...newValue])];
         } else if (typeof existing === 'object' && typeof newValue === 'object') {
             return [existing, newValue];
@@ -66,7 +82,8 @@ export default function mergeTvSeriesData(combinedDataSource, maxDistance = 1, m
             } else {
                 aggregatedData[finalTitle].mergedData[mergedKey] = mergeValues(
                     aggregatedData[finalTitle].mergedData[mergedKey],
-                    value
+                    value,
+                    mergedKey
                 );
             }
         });
@@ -78,5 +95,3 @@ export default function mergeTvSeriesData(combinedDataSource, maxDistance = 1, m
 
     return aggregatedData;
 }
-
-

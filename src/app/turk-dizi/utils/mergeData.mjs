@@ -44,105 +44,25 @@ const withoultUnrelatedData = data.filter((f => {
 }))
 debugger
 
-const result = mergeTvSeriesData(withoultUnrelatedData)
+const result = mergeTvSeriesData({ combinedDataSource: withoultUnrelatedData })
 debugger
-const grpd = groupTvSeriesByProductionCompany(result)
+const groupedData = groupTvSeriesByProductionCompany(result)
 debugger
-for (let current of withoultUnrelatedData) {
-
-    const TVSERIES_TITLE = (current.TVSERIES_TITLE || '')
-
-
-    if (TVSERIES_TITLE !== undefined) {
-        let currentAggData = aggregatedData.filter(f => f).filter(f => f.TVSERIES_TITLE !== undefined && f.TVSERIES_TITLE.length > 0).find((f) => {
-
-            const match = f.TVSERIES_TITLE === TVSERIES_TITLE || areStringsSimilar(f.TVSERIES_TITLE, TVSERIES_TITLE, exceptions)
-
-            return match
-        })
-        if (currentAggData) {
-
-
-            for (let propName in fields) {
-
-                const prop = current[propName]
-                if (prop && prop.length > 0) {
-                    currentAggData[propName] = [...currentAggData[propName], prop]
-                }
-
-            }
-        } else {
-
-            currentAggData = { ...fields }
-            for (let propName in fields) {
-
-                const prop = current[propName]
-                if (prop) {
-                    if (Array.isArray(prop)) {
-                        currentAggData[propName] = [...currentAggData[propName], ...prop]
-                    } else {
-                        currentAggData[propName] = [...currentAggData[propName], prop]
-                    }
-
-                }
-
-            }
-            aggregatedData.push({ TVSERIES_TITLE, ...currentAggData })
-
-        }
-    }
-}
-
-const removedDublicate = aggregatedData.filter(f => f.YAPIM_SIRKETI.length > 0 && f.YAPIM_SIRKETI[0].length > 0).map((obj) => {
-    try {
-        let nextObj = obj["YAPIM_SIRKETI"].flat()
-
-        let ys = nextObj.length > 0 ? nextObj[0] : nextObj
-
-
-        return { ...obj, YAPIM_SIRKETI: ys }
-    } catch (error) {
-        debugger
-    }
-
-
-}).map((m) => {
-    try {
-        const title = m['YAPIM_SIRKETI']
-
-
-        const match = yapimSirketi.find(f => {
-            const fTitle = deaccent(f.title.join(' ')).toLowerCase()
-            const ttitle = deaccent(title).toLowerCase()
-            const result = fTitle.includes(ttitle)
-            return result
-
-        })
-
-        const imgname = match?.imgname
-        const webpresenceId = imgname ? imgname : extractDomainOrId(match?.website[0])
-
-        return { ...m, webpresenceId }
-    } catch (error) {
-
-        return { ...m, webpresenceId: 'websitesiz' }
-
-    }
-
-})
 
 
 
+
+
+
+
+
+const byYAPIM_SIRKETI = Object.entries(groupedData).sort((a, b) => b[1].length - a[1].length).filter(f => f[1].length > 2 && f[0] !== 'Unknown')
 debugger
-const speadCompany = removedDublicate.map(m => separateCompanies(m)).flat()
-debugger
-const byYAPIM_SIRKETI = Object.entries(groupBy(speadCompany, 'webpresenceId')).sort((a, b) => b[1].length - a[1].length)
 
 
+const mapYSData = byYAPIM_SIRKETI.map(m => {
 
-const mapYSData = byYAPIM_SIRKETI.filter(f => f[1].length > 2 && f[0] !== 'websitesiz').map(m => {
-
-    const title = m[1][0]['YAPIM_SIRKETI']
+    const title = m[0]
 
     const match = yapimSirketi.find(f => {
         const fTitle = deaccent(f.title.join(' ')).toLowerCase()
@@ -156,30 +76,43 @@ const mapYSData = byYAPIM_SIRKETI.filter(f => f[1].length > 2 && f[0] !== 'websi
     const establishedYear = comany ? comany.data?.find(f => f.title === 'Kuruluş')?.value : ''
     const founder = comany ? comany.data?.find(f => (f.title === 'Kurucu' | f.title === 'Önemli kişiler'))?.value : ''
 
-    const imgname = match.imgname
+    const imgname = match?.imgname
 
-    const webpresenceId = imgname || extractDomainOrId(match.website[0])
+    let webpresenceId = ''
+    try {
+        webpresenceId = imgname || match?.website[0] ? extractDomainOrId((match?.website[0])) : ''
+    } catch (error) {
+        debugger
+    }
+
 
     const logo = `/dizi/turk-dizi/yapim-sirketleri/${webpresenceId}.jpg`
 
     const tvSeries = m[1]
 
-    const mapTVSeries = tvSeries.map((m) => {
+    const mapTVSeries = tvSeries.map((d) => {
+
+        const m = d.mergedData
+
 
         const matchingConstDizi = dizi.find((f => deaccent(f.title).toLowerCase() === deaccent(m.TVSERIES_TITLE).toLowerCase()))
 
+        let watchLinks = []
+        try {
 
-        const watchLinks = (m.WATCH_LINK || []).map((m_) => {
-            const url = m_
-            const kanal = getBaseDomain(m_)
-            const name = kanal
-            const logo = `/dizi/turk-dizi/kanal/${kanal}.jpg`
+            watchLinks = (m.WATCH_LINK || []).map((m_) => {
+                const url = m_
+                const kanal = getBaseDomain(m_)
+                const name = kanal
+                const logo = `/dizi/turk-dizi/kanal/${kanal}.jpg`
 
-            return {
-                name, url, logo
-            }
-        })
-
+                return {
+                    name, url, logo
+                }
+            })
+        } catch (error) {
+            debugger
+        }
         const watchOptions = watchLinks
         const otherWatchOptions = ((matchingConstDizi || {}).watchOptions || []).map((m_) => {
             const url = m_
@@ -195,7 +128,7 @@ const mapYSData = byYAPIM_SIRKETI.filter(f => f[1].length > 2 && f[0] !== 'websi
         let genres = []
         try {
             genres = (m.GENRES || [])
-                .flat()
+                .flat().filter(f => f)
                 .map(m => m.toLowerCase())
                 .reduce((acc, value) => {
                     if (!acc.includes(value.trim())) {
@@ -208,24 +141,24 @@ const mapYSData = byYAPIM_SIRKETI.filter(f => f[1].length > 2 && f[0] !== 'websi
         } catch (error) {
             debugger
         }
+
+
         try {
 
-            if (m.TVSERIES_TITLE === 'Kirli Sepeti') {
-                debugger
-            }
+
 
             const mapped = {
                 id: m.TVSERIES_TITLE,
                 title: m?.TVSERIES_TITLE,
-                year: matchingConstDizi?.FIRST_YEAR || extractStartYear(m?.YAYIN_TARIHI[0]),
-                thumbnail: matchingConstDizi?.POSTER_IMG || m?.POSTER.filter(f => f.POSTER_IMG)[0]?.POSTER_IMG,
+                year: matchingConstDizi?.FIRST_YEAR || extractStartYear(m?.YAYIN_TARIHI),
+                thumbnail: matchingConstDizi?.POSTER_IMG || (m?.POSTER ? m?.POSTER.filter(f => f.POSTER_IMG)[0]?.POSTER_IMG : ''),
 
-                streamingUrl: m?.WATCH_LINK[0],
-                channelLogo: `/dizi/turk-dizi/kanal/${m?.KANAL[0]}.jpg`,
-                channelName: m?.KANAL[0],
-                state: m?.DURUM[0],
+                streamingUrl: (m.WATCH_LINK || [])[0],
+                channelLogo: `/dizi/turk-dizi/kanal/${m?.KANAL}.jpg`,
+                channelName: m?.KANAL,
+                state: m?.DURUM,
                 genres,
-                lastEpisode: m?.BOLUM_SAYISI[0]?.replace('(bölümleri listesi)', ''),
+                lastEpisode: m?.BOLUM_SAYISI?.replace('(bölümleri listesi)', ''),
                 watchOptions: [...(otherWatchOptions || []), ...watchOptions].filter((item, index, self) =>
                     index === self.findIndex((t) => t.url === item.url)
                 )
