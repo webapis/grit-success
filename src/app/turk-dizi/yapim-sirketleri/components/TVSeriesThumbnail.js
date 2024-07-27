@@ -94,6 +94,13 @@ const TVSeriesThumbnail = ({ series, isMobile }) => {
         <Typography variant="caption" color="text.secondary" display="block">
           Son Bölüm: {series.lastEpisode}
         </Typography>
+        {series.productionCompanies && (
+          <Tooltip title={series.productionCompanies.join(', ')} enterDelay={500} leaveDelay={200}>
+            <Typography variant="caption" color="text.secondary" display="block" noWrap>
+              Yapım: {series.productionCompanies.join(', ')}
+            </Typography>
+          </Tooltip>
+        )}
         <Box sx={{ mt: 1, display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
           {series.genres && series.genres.map((genre, index) => (
             <Chip

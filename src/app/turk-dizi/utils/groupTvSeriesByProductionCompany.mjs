@@ -1,6 +1,6 @@
 import { TvSeriesUtils } from "./TvSeriesUtils.mjs";
 
-export function groupTvSeriesByProductionCompany(tvSeriesData, maxDistance = 1, maxLengthDifference = 4) {
+export function groupTvSeriesByProductionCompany(tvSeriesData, maxDistance = 0, maxLengthDifference = 1) {
     if (!tvSeriesData || typeof tvSeriesData !== 'object') {
         console.error('Invalid tvSeriesData provided to groupTvSeriesByProductionCompany:', tvSeriesData);
         return {};
@@ -18,7 +18,7 @@ export function groupTvSeriesByProductionCompany(tvSeriesData, maxDistance = 1, 
     }
 
     function splitAndTrimCompanies(companyString) {
-        return companyString.split(',').map(company => company.trim());
+        return companyString.split(',').map(company => company.trim()).filter(Boolean);
     }
 
     for (const [title, seriesInfo] of Object.entries(tvSeriesData)) {
@@ -37,14 +37,18 @@ export function groupTvSeriesByProductionCompany(tvSeriesData, maxDistance = 1, 
         }
 
         productionCompanies.forEach(company => {
-            if (company) {  // Ensure we're not adding empty strings
-                const similarCompany = findSimilarCompany(company);
-                const finalCompany = similarCompany || company;
+            if (company) {
+                const normalizedCompany = TvSeriesUtils.normalizeCompanyName(company);
+                const similarCompany = findSimilarCompany(normalizedCompany);
+                const finalCompany = similarCompany || normalizedCompany;
 
                 if (!groupedData[finalCompany]) {
-                    groupedData[finalCompany] = [];
+                    groupedData[finalCompany] = {
+                        displayName: company,
+                        series: []
+                    };
                 }
-                groupedData[finalCompany].push({ title, ...seriesInfo });
+                groupedData[finalCompany].series.push({ title, ...seriesInfo });
             }
         });
     }

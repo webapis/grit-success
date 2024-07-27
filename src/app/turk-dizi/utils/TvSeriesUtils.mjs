@@ -91,18 +91,45 @@ const TvSeriesUtils = {
         return cleaned.replace(/\s+(Productions?|Film|Yapım|Yapim)$/i, '').trim();
     },
 
-    areCompanySimilar(company1, company2, maxDistance = 1, maxLengthDifference = 4) {
-        const normalized1 = this.normalizeCompanyName(company1);
-        const normalized2 = this.normalizeCompanyName(company2);
-
-        // Check if one is a substring of the other (case insensitive)
-        if (normalized1.toLowerCase().includes(normalized2.toLowerCase()) ||
-            normalized2.toLowerCase().includes(normalized1.toLowerCase())) {
+    areCompanySimilar(company1, company2) {
+        // Normalize and clean company names
+        const normalized1 = this.normalizeCompanyName(company1).toLowerCase();
+        const normalized2 = this.normalizeCompanyName(company2).toLowerCase();
+    
+        // Exact match check
+        if (normalized1 === normalized2) {
             return true;
         }
-
-        // Use Levenshtein distance for remaining cases
-        return this.areStringsSimilar(normalized1, normalized2, maxDistance, maxLengthDifference);
+    
+        // Split names into words
+        const words1 = normalized1.split(/\s+/);
+        const words2 = normalized2.split(/\s+/);
+    
+        // Check for significant length difference
+        if (Math.abs(words1.length - words2.length) > 1) {
+            return false;
+        }
+    
+        // Common words to ignore
+        const commonWords = ['yapim', 'yapım', 'film', 'production', 'productions'];
+    
+        // Filter out common words
+        const significantWords1 = words1.filter(word => !commonWords.includes(word));
+        const significantWords2 = words2.filter(word => !commonWords.includes(word));
+    
+        // Check if all significant words match exactly
+        if (significantWords1.length === significantWords2.length) {
+            return significantWords1.every(word => significantWords2.includes(word));
+        }
+    
+        // If one name is a single word and it's included in the other name, consider it a match
+        if ((significantWords1.length === 1 && significantWords2.includes(significantWords1[0])) ||
+            (significantWords2.length === 1 && significantWords1.includes(significantWords2[0]))) {
+            return true;
+        }
+    
+        // If we've reached here, consider the companies different
+        return false;
     }
 };
 

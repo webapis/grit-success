@@ -56,14 +56,14 @@ debugger
 
 
 
-const byYAPIM_SIRKETI = Object.entries(groupedData).sort((a, b) => b[1].length - a[1].length).filter(f => f[1].length > 2 && f[0] !== 'Unknown')
+const byYAPIM_SIRKETI = Object.entries(groupedData).sort((a, b) => b[1].series.length - a[1].series.length).filter(f => f[1].series.length > 2 && f[1].displayName !== 'Unknown')
 debugger
 
 
 const mapYSData = byYAPIM_SIRKETI.map(m => {
 
-    const title = m[0]
-
+    const title = m[1].displayName
+debugger
     const match = yapimSirketi.find(f => {
         const fTitle = deaccent(f.title.join(' ')).toLowerCase()
         const ttitle = deaccent(title).toLowerCase()
@@ -88,8 +88,8 @@ const mapYSData = byYAPIM_SIRKETI.map(m => {
 
     const logo = `/dizi/turk-dizi/yapim-sirketleri/${webpresenceId}.jpg`
 
-    const tvSeries = m[1]
-
+    const tvSeries = m[1].series
+debugger
     const mapTVSeries = tvSeries.map((d) => {
 
         const m = d.mergedData
@@ -152,7 +152,7 @@ const mapYSData = byYAPIM_SIRKETI.map(m => {
                 title: m?.TVSERIES_TITLE,
                 year: matchingConstDizi?.FIRST_YEAR || extractStartYear(m?.YAYIN_TARIHI),
                 thumbnail: matchingConstDizi?.POSTER_IMG || (m?.POSTER ? m?.POSTER.filter(f => f.POSTER_IMG)[0]?.POSTER_IMG : ''),
-
+                productionCompanies:m.YAPIM_SIRKETI.split(',') ,
                 streamingUrl: (m.WATCH_LINK || [])[0],
                 channelLogo: `/dizi/turk-dizi/kanal/${m?.KANAL}.jpg`,
                 channelName: m?.KANAL,
