@@ -45,3 +45,6 @@ https://www.trendyol.com/en/trendyol-collection/black-piping-detailed-blouse-tpr
 
 dd
 build
+
+
+i have searched for tvseries of "Ay yapım" production company. As a result at the top it displays poster images of tv series as portrait. when you hover over one of the images hovered image get slitely wider taking lanscape position and aditional information about the series are displayed. when hovering end the poster image turns into its previous state.
