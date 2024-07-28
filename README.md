@@ -47,4 +47,63 @@ dd
 build
 
 
-i have searched for tvseries of "Ay yapım" production company. As a result at the top it displays poster images of tv series as portrait. when you hover over one of the images hovered image get slitely wider taking lanscape position and aditional information about the series are displayed. when hovering end the poster image turns into its previous state.
+Create document that outlines the design specifications for a component displaying TV series posters in a portrait orientation horizontally. When hovered over, the poster expands horizontally while maintaining its original height, transitioning to a landscape orientation. The horizontally neighboring poster to the right shifts  to the right off the screen as much to accommodate the expanded poster, creating more space. If the hovered poster on the right most side it should slide to the left
+
+Understanding the Problem
+The core issue is that when a poster expands, the neighboring poster should dynamically adjust its position to accommodate the increased space.
+
+
+
+Design Specifications for TV Series Poster Display Component
+1. General Layout
+Orientation: The posters are displayed in a horizontal line.
+Default State:
+Orientation: Portrait
+Aspect Ratio: 2:3 (e.g., 200px width x 300px height)
+Spacing: 10px margin between posters
+2. Hover Interaction
+Trigger: Mouse hover over a poster
+Animation Duration: 300ms for smooth transitions
+2.1 Poster Expansion
+Transition: From portrait to landscape orientation
+Expanded Size:
+Aspect Ratio: 16:9
+Height: Remains the same (300px)
+Width: Increases to fit the 16:9 ratio (approximately 533px)
+Behavior:
+The hovered poster expands to the left.
+The expanded poster should not go beyond the screen edge.
+2.2 Neighboring Posters' Adjustment
+Right Neighboring Poster:
+Transition: Slides to the right off-screen to accommodate the expansion of the hovered poster.
+Visibility: Partially or fully off-screen, depending on the available space.
+Left Neighboring Poster:
+Behavior: Remains static unless the expanded poster reaches the left screen edge.
+2.3 Edge Case Handling
+Rightmost Poster Hover:
+Transition: The rightmost poster expands to the left.
+Adjustment: The entire row of posters shifts to the left to create space for the expansion.
+Edge Guard: Ensure no content shifts off-screen to the left, maintaining visibility of all posters.
+3. Visual Design
+Poster Frame: Slight shadow and border (2px, solid color, e.g., #ccc) for a defined look.
+Hover State Effects:
+Box Shadow: Increase in intensity and spread to emphasize the active state (e.g., shadow spread 8px).
+Border Color: Optionally change color to highlight the active poster (e.g., #ff6f61).
+Background: Consistent across the display area, preferably neutral (e.g., #f4f4f4) to avoid distraction from posters.
+4. Responsiveness
+Small Screens:
+Adjust poster size while maintaining aspect ratios.
+Reduce margin between posters if needed.
+Touch Devices:
+Support tap-and-hold for hover-like behavior.
+Ensure smooth transitions without relying on hover state alone.
+5. Accessibility
+Keyboard Navigation: Enable focus states for keyboard users to simulate hover effects.
+Screen Readers: Use ARIA roles and labels to describe actions (e.g., "Poster expands when focused").
+6. Performance Considerations
+Lazy Loading: Load poster images as they come into view to optimize performance.
+CSS Optimization: Use hardware-accelerated CSS transitions for smooth animations.
+Implementation Notes
+Technologies: CSS3 for styling and animations, JavaScript for event handling and dynamic adjustments.
+Testing: Ensure compatibility across major browsers and responsiveness on different screen sizes.
+This specification outlines the necessary details for developing a dynamic and visually appealing TV series poster display component, ensuring both functionality and user experience.
