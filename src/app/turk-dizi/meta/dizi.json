@@ -88,7 +88,9 @@
     {
         "title": "adını feriha koydum emir'in yolu",
         "POSTER_IMG": "https://mo.ciner.com.tr/showturk/iu/1020x510/adini-feriha-koydum-emirin-yolu.jpg?v=1720068787",
-        "watchOptions":["https://www.youtube.com/watch?v=8r30nVxu0ao&list=PLcD5SoBduEo_orOpqRmHCgi9CIVEVXIUG"]
+        "watchOptions": [
+            "https://www.youtube.com/watch?v=8r30nVxu0ao&list=PLcD5SoBduEo_orOpqRmHCgi9CIVEVXIUG"
+        ]
     },
     {
         "title": "hünkarın bir günü",
@@ -125,7 +127,9 @@
     {
         "title": "dur yolcu",
         "POSTER_IMG": "https://m.media-amazon.com/images/M/MV5BODJiZjY1ZWItZWExMi00MmE2LTlhNzEtZmU4MTkzZjM1NTMzXkEyXkFqcGdeQXVyNzY3MjM4NjA@._V1_.jpg",
-        "watchOptions":["https://www.youtube.com/watch?v=9H7yTqOkAds&list=PLPPvWWePHrF25Bd6ygL1Lc4Lg8Q-DbXGV"]
+        "watchOptions": [
+            "https://www.youtube.com/watch?v=9H7yTqOkAds&list=PLPPvWWePHrF25Bd6ygL1Lc4Lg8Q-DbXGV"
+        ]
     },
     {
         "title": "acımak",
@@ -138,12 +142,16 @@
     {
         "title": "bizim mahalle",
         "POSTER_IMG": "https://s2.dmcdn.net/v/LMx1R1Vh5MquAsf11/x360",
-        "watchOptions":["https://www.youtube.com/watch?v=6fPxdn1VfaM&list=PLzuwh4c14imbQfUFH5cR3qARANIm4aMgr"]
+        "watchOptions": [
+            "https://www.youtube.com/watch?v=6fPxdn1VfaM&list=PLzuwh4c14imbQfUFH5cR3qARANIm4aMgr"
+        ]
     },
     {
         "title": "hüsnü bey amca",
         "POSTER_IMG": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0sF4GKI4q968EqnTJ7ptTuNvten9ng1Qe1jCgqk2ItxO0EUvQyzQ6IzdoqZz4BGDwqXk&usqp=CAU",
-        "watchOptions":["https://www.youtube.com/watch?v=aX4bi0b3c4I"]
+        "watchOptions": [
+            "https://www.youtube.com/watch?v=aX4bi0b3c4I"
+        ]
     },
     {
         "title": "kanun savaşçıları",
@@ -164,7 +172,9 @@
     {
         "title": "kaderimin yazıldığı gün",
         "POSTER_IMG": "https://tr.web.img4.acsta.net/pictures/14/10/10/04/13/306454.jpg",
-        "watchOptions":["https://www.youtube.com/watch?v=SOMu97NcNUY&list=PLHeEdUdyTudcqcOmFCEf7VD_6QmTKOO9x"]
+        "watchOptions": [
+            "https://www.youtube.com/watch?v=SOMu97NcNUY&list=PLHeEdUdyTudcqcOmFCEf7VD_6QmTKOO9x"
+        ]
     },
     {
         "title": "aile i̇şi",
@@ -185,7 +195,9 @@
     {
         "title": "sen de gitme",
         "POSTER_IMG": "https://i.ytimg.com/vi/hHnAUw-KF9A/sddefault.jpg",
-        "watchOptions":["https://www.youtube.com/watch?v=hHnAUw-KF9A&list=PL4jTRXg6bx0VaH4O4zMqVNfjmbVIEW4YL"]
+        "watchOptions": [
+            "https://www.youtube.com/watch?v=hHnAUw-KF9A&list=PL4jTRXg6bx0VaH4O4zMqVNfjmbVIEW4YL"
+        ]
     },
     {
         "title": "yabancı damat",
@@ -202,7 +214,9 @@
     {
         "title": "i̇kizler memo-can",
         "POSTER_IMG": "https://image.milimaj.com/i/milliyet/75/869x477/5ca1c60945d2a0296418680b.jpg",
-        "watchOptions":["https://www.kanald.com.tr/ikizler-memo-can/bolumler"]
+        "watchOptions": [
+            "https://www.kanald.com.tr/ikizler-memo-can/bolumler"
+        ]
     },
     {
         "title": "gurbet kadını",
@@ -231,7 +245,9 @@
     {
         "title": "fırtına",
         "POSTER_IMG": "https://televizyongazetesi.com/wp-content/uploads/2021/04/firtina-dizi-kanald1.jpg",
-        "watchOptions":["https://www.youtube.com/watch?v=WmpivjFSRzE"]
+        "watchOptions": [
+            "https://www.youtube.com/watch?v=WmpivjFSRzE"
+        ]
     },
     {
         "title": "kalbimdeki deniz",
@@ -272,7 +288,9 @@
     {
         "title": "güldünya",
         "POSTER_IMG": "https://cdn.sinematurk.com/media/film/9/48/f1aa325bb239/22010_14.jpg",
-        "watchOptions":["https://www.youtube.com/playlist?list=PLZBZ8qgul_Y0baZBHjsER8BsNCs00fwmm"]
+        "watchOptions": [
+            "https://www.youtube.com/playlist?list=PLZBZ8qgul_Y0baZBHjsER8BsNCs00fwmm"
+        ]
     },
     {
         "title": "6 mantı",
@@ -605,7 +623,7 @@
     },
     {
         "title": "gecenin kraliçesi",
-        "POSTER_IMG":"https://image.hurimg.com/i/hurriyet/75/750x422/568cd6cec03c0e3370f8028a.jpg",
+        "POSTER_IMG": "https://image.hurimg.com/i/hurriyet/75/750x422/568cd6cec03c0e3370f8028a.jpg",
         "watchOptions": [
             "https://www.youtube.com/playlist?list=PLe9Mpf0VRvFGkWpsss1MZ3p8__axYx5a2"
         ]
@@ -648,7 +666,7 @@
     },
     {
         "title": "cesaretin var mı aşka",
-        "POSTER_IMG":"https://i.ytimg.com/vi/lfLm-LwqmTc/sddefault.jpg",
+        "POSTER_IMG": "https://i.ytimg.com/vi/lfLm-LwqmTc/sddefault.jpg",
         "watchOptions": [
             "https://www.youtube.com/playlist?list=PL6nM1RK5nFKfToWaFFc6s0eU0eOA3vnwj"
         ]
@@ -691,238 +709,196 @@
     },
     {
         "title": "Sol Yanım",
-        "POSTER_IMG":"https://image.hurimg.com/i/hurriyet/75/750x422/5fbe18b667b0a91d74bcb4f0.jpg"
-    }
-    ,
+        "POSTER_IMG": "https://image.hurimg.com/i/hurriyet/75/750x422/5fbe18b667b0a91d74bcb4f0.jpg"
+    },
     {
         "title": "Bartu Ben",
         "watchOptions": [
             "https://www.blutv.com/diziler/yerli/bartu-ben"
         ]
-    }
-    ,
+    },
     {
         "title": "bir varmış bir yokmuş",
         "watchOptions": [
             "https://www.youtube.com/watch?v=gon9oRXUXEc"
         ]
-    }
-    ,
+    },
     {
         "title": "Şen Yuva",
         "watchOptions": [
             "https://www.youtube.com/watch?v=vfW81IcAJhY"
         ]
-    }
-    ,
+    },
     {
         "title": "karagül",
         "watchOptions": [
             "https://televizyongazetesi.com/wp-content/uploads/2020/06/karagul-dizi-y23.jpg"
         ]
-    }
-    ,
+    },
     {
         "title": "Yersiz Yurtsuz",
         "watchOptions": [
             "https://www.youtube.com/playlist?list=PLIovzIxZbA61z4bfIfO14GmXD1nKzPyNX"
         ]
-    }
-    ,
+    },
     {
         "title": "Kurşun Yarası",
         "watchOptions": [
             "https://www.youtube.com/watch?v=QX-d63s2g-o"
         ]
-    }
-    ,
+    },
     {
         "title": "Sultan Makamı",
         "watchOptions": [
             "https://www.youtube.com/watch?v=OT-v96_XmQc&list=PLxzRvAbK02mOPAitrLTN_CB5ijAw3ZjHV"
         ]
-    }
-    ,
+    },
     {
-        "title": "Yıldızlar Şahidim",
+        "title": "türk dedektif",
+        "POSTER_IMG": "https://media.bantmag.com/wp-content/uploads/2023/12/turk-dedektif-header.jpeg"
+    },
+    {
+        "title": "",
         "watchOptions": [
             ""
         ]
-    }
-    ,
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
     {
         "title": "",
         "watchOptions": [
             ""
         ]
     }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-
 ]

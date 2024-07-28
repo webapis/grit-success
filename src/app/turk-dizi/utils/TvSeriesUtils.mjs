@@ -88,7 +88,7 @@ const TvSeriesUtils = {
     normalizeCompanyName(companyName) {
         const cleaned = this.cleanCompanyName(companyName);
         // Remove common suffixes
-        return cleaned.replace(/\s+(Productions?|Film|Yapım|Yapim)$/i, '').trim();
+        return cleaned.replace(/\s+(Productions?|Film|Yapım|Yapim|&B)$/i, '').trim();
     },
 
     areCompanySimilar(company1, company2) {

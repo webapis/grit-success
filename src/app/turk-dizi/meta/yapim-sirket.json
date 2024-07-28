@@ -18,8 +18,8 @@
       "http://www.arcfilm.net"
     ],
     "description": "",
-    "establishedYear":"2008",
-    "founder":""
+    "establishedYear": "2008",
+    "founder": ""
   },
   {
     "title": [
@@ -91,8 +91,7 @@
       "Pastel Film"
     ],
     "website": [
-      "https://www.pastelfilm.com.tr/",
-      "https://www.instagram.com/pastelfilmtv/"
+      "https://www.pastelfilm.com.tr/"
     ],
     "description": ""
   },
@@ -578,7 +577,6 @@
       "https://twitter.com/ANSProduksiyon"
     ]
   },
-
   {
     "title": [
       "Sis Yapım"
@@ -592,17 +590,18 @@
       "Ser Film"
     ],
     "website": [
-      "https://tr.wikipedia.org/wiki/Kategori:Ser_Film_dizileri"
+      "https://www.youtube.com/user/serfilmproduksiyon"
     ],
-    "imgname": "serfilm"
+    "imgname": "serfilmproduksiyon"
   },
   {
     "title": [
       "Endemol Shine Turkey"
     ],
     "website": [
-      "https://twitter.com/endemoltv"
-    ]
+      "https://www.youtube.com/@endemolturkey"
+    ],
+    "imgname": "endemoltv"
   },
   {
     "title": [
@@ -794,7 +793,8 @@
   },
   {
     "title": [
-      "TRT","Türkiye Radyo Televizyon Kurumu"
+      "TRT",
+      "Türkiye Radyo Televizyon Kurumu"
     ],
     "website": [
       "https://www.trt.net.tr/"
@@ -813,24 +813,26 @@
       "Adam Film"
     ],
     "website": [
-      ""
+      "https://www.youtube.com/@adamfilmtv8409"
+    ],
+    "imgname": "damfilmtv"
+  },
+  {
+    "title": [
+      "1441 Prodüksiyon"
+    ],
+    "website": [
+      "https://www.facebook.com/1441productions"
     ]
   },
   {
     "title": [
-      ""
+      "Barakuda Film"
     ],
     "website": [
-      ""
-    ]
-  },
-  {
-    "title": [
-      ""
+      "https://tr.wikipedia.org/wiki/Barakuda_Film"
     ],
-    "website": [
-      ""
-    ]
+    "imgname": "barakuda"
   },
   {
     "title": [

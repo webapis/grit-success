@@ -4,7 +4,9 @@ import fs from 'fs'
 import { createRequire } from "module";
 import walkSync from './walkSync.mjs'
 import mergeTvSeriesData from './mergeTvSeriesData.mjs'
+import correctCompanyNames from './correctCompanyNames.mjs';
 import { groupTvSeriesByProductionCompany } from './groupTvSeriesByProductionCompany.mjs';
+import { titleCorrection } from './correctCompanyNames.mjs';
 const require = createRequire(import.meta.url);
 const yapimSirketi = require('../meta/yapim-sirket.json')
 const pcomanies = require('../../../../turk-dizi-data/unzipped-data/pcomanies/pcomanies.json')
@@ -36,7 +38,9 @@ const aggregatedData = []
 
 const exceptions = [['Ali̇ye', 'Atiye'], ['aşk-ı memnu', 'memnu'], ['üç kadın', 'kadın']]
 debugger
-const withoultUnrelatedData = data.filter((f => {
+const correctedData = correctCompanyNames(data,titleCorrection)
+debugger
+const withoultUnrelatedData = correctedData.filter((f => {
 
     const match = unrelated.includes(f.TVSERIES_TITLE)
 
@@ -57,13 +61,13 @@ debugger
 
 
 const byYAPIM_SIRKETI = Object.entries(groupedData).sort((a, b) => b[1].series.length - a[1].series.length).filter(f => f[1].series.length > 2 && f[1].displayName !== 'Unknown')
-debugger
+
 
 
 const mapYSData = byYAPIM_SIRKETI.map(m => {
 
     const title = m[1].displayName
-debugger
+
     const match = yapimSirketi.find(f => {
         const fTitle = deaccent(f.title.join(' ')).toLowerCase()
         const ttitle = deaccent(title).toLowerCase()
@@ -80,7 +84,7 @@ debugger
 
     let webpresenceId = ''
     try {
-        webpresenceId = imgname || match?.website[0] ? extractDomainOrId((match?.website[0])) : ''
+        webpresenceId = imgname || extractDomainOrId(match?.website[0])
     } catch (error) {
         debugger
     }
@@ -89,7 +93,7 @@ debugger
     const logo = `/dizi/turk-dizi/yapim-sirketleri/${webpresenceId}.jpg`
 
     const tvSeries = m[1].series
-debugger
+
     const mapTVSeries = tvSeries.map((d) => {
 
         const m = d.mergedData
