@@ -1,60 +1,35 @@
-import React from 'react';
+// src/components/PostersContainer.js
+import React, { useState } from 'react';
 import Poster from './Poster';
-import { Grid } from '@mui/material';
 import './index.css';
 
-const App = () => {
-  const posters = [
-    {
-      imageSrc: 'https://media.bantmag.com/wp-content/uploads/2023/12/turk-dedektif-header.jpeg',
-      title: 'Если сильно полюбишь',
-      year: '2023',
-      season: '1 сезон',
-    },
-    {
-        imageSrc: 'https://media.bantmag.com/wp-content/uploads/2023/12/turk-dedektif-header.jpeg',
-        title: 'Если сильно полюбишь',
-        year: '2023',
-        season: '1 сезон',
-      },
-      {
-        imageSrc: 'https://media.bantmag.com/wp-content/uploads/2023/12/turk-dedektif-header.jpeg',
-        title: 'Если сильно полюбишь',
-        year: '2023',
-        season: '1 сезон',
-      },
-      {
-        imageSrc: 'https://media.bantmag.com/wp-content/uploads/2023/12/turk-dedektif-header.jpeg',
-        title: 'Если сильно полюбишь',
-        year: '2023',
-        season: '1 сезон',
-      },  {
-        imageSrc: 'https://media.bantmag.com/wp-content/uploads/2023/12/turk-dedektif-header.jpeg',
-        title: 'Если сильно полюбишь',
-        year: '2023',
-        season: '1 сезон',
-      },  {
-        imageSrc: 'https://media.bantmag.com/wp-content/uploads/2023/12/turk-dedektif-header.jpeg',
-        title: 'Если сильно полюбишь',
-        year: '2023',
-        season: '1 сезон',
-      },
-    // Add more posters as needed
-  ];
+const posters = [
+  // Sample data; replace with actual data
+  { src: 'poster1.jpg', title: 'Series 1' },
+  { src: 'poster2.jpg', title: 'Series 2' },
+  { src: 'poster3.jpg', title: 'Series 3' },
+  // Add more posters as needed
+];
+
+const PostersContainer = () => {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <div className="poster-gallery">
+    <div className="posters-container">
       {posters.map((poster, index) => (
-        <Poster 
-          key={index} 
-          imageSrc={poster.imageSrc} 
-          title={poster.title} 
-          year={poster.year} 
-          season={poster.season} 
-        />
+        <div
+          key={index}
+          className={`poster-wrapper ${hoveredIndex === index ? 'hovered' : ''} ${
+            hoveredIndex !== null && hoveredIndex !== index ? 'dimmed' : ''
+          }`}
+          onMouseEnter={() => setHoveredIndex(index)}
+          onMouseLeave={() => setHoveredIndex(null)}
+        >
+          <Poster posterSrc={poster.src} title={poster.title} />
+        </div>
       ))}
     </div>
   );
 };
 
-export default App;
+export default PostersContainer;
