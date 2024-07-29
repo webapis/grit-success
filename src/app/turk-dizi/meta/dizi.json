@@ -102,11 +102,13 @@
     },
     {
         "title": "üç kadın",
-        "POSTER_IMG": "https://img04.imgsinemalar.com/images/afis_buyuk/n/nefise-karatay-1508486975.jpg"
+        "POSTER_IMG": "https://img04.imgsinemalar.com/images/afis_buyuk/n/nefise-karatay-1508486975.jpg",
+        "watchOptions":["https://www.youtube.com/watch?app=desktop&v=3HtVnX2dj5s"]
     },
     {
         "title": "i̇z peşinde",
-        "POSTER_IMG": "https://m.media-amazon.com/images/M/MV5BYzNiYWFiYmMtOTRhNS00NmM2LTgwYWEtMjdlNDA5NTljOTk0XkEyXkFqcGdeQXVyODc5Mjc4Nzg@._V1_.jpg"
+        "POSTER_IMG": "https://m.media-amazon.com/images/M/MV5BYzNiYWFiYmMtOTRhNS00NmM2LTgwYWEtMjdlNDA5NTljOTk0XkEyXkFqcGdeQXVyODc5Mjc4Nzg@._V1_.jpg",
+        "watchOptions":["https://www.youtube.com/watch?v=L2UuaywjZfE"]
     },
     {
         "title": "gönüller sultanı mevlana",
@@ -137,7 +139,8 @@
     },
     {
         "title": "başka olur ağaların düğünü",
-        "POSTER_IMG": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmXMefK4x5XZBjic08ldB6CNVw_CQPclRGSjaEnf6e8yY5yunTatGdx_nMatWozpY4kbw&usqp=CAU"
+        "POSTER_IMG": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmXMefK4x5XZBjic08ldB6CNVw_CQPclRGSjaEnf6e8yY5yunTatGdx_nMatWozpY4kbw&usqp=CAU",
+        "watchOptions":["https://www.youtube.com/watch?v=57OSIMf4iuw"]
     },
     {
         "title": "bizim mahalle",
@@ -593,6 +596,7 @@
     },
     {
         "title": "Belalı Baldız",
+        "POSTER_IMG": "https://22dakika.org/wp-content/uploads/2022/05/hope-faith-3.png",
         "watchOptions": [
             "https://www.youtube.com/watch?v=2POtIC-n_0U&list=PL8d-PRoBXFbU5Mui7sW8viwuM3tmJNEcp"
         ]
@@ -755,84 +759,80 @@
     },
     {
         "title": "türk dedektif",
-        "POSTER_IMG": "https://media.bantmag.com/wp-content/uploads/2023/12/turk-dedektif-header.jpeg"
-    },
-    {
-        "title": "",
+        "POSTER_IMG": "https://media.bantmag.com/wp-content/uploads/2023/12/turk-dedektif-header.jpeg",
         "watchOptions": [
-            ""
+            "https://tvplus.com.tr/dizi-izle/turk-dedektif--173634068"
         ]
     },
     {
-        "title": "",
+        "title": "Benden Baba Olmaz",
+        "POSTER_IMG": "https://cdns-images.dzcdn.net/images/cover/691e247da8684b3765c9098495a790e0/1900x1900-000000-80-0-0.jpg"
+    },
+    {
+        "title": "Köprü",
+        "POSTER_IMG": "https://i.ytimg.com/vi/rJKOk8X_EWk/maxresdefault.jpg"
+    },
+    {
+        "title": "Kadın İsterse",
         "watchOptions": [
-            ""
+            "https://www.youtube.com/watch?v=c9EiFmLacrw&list=PLwXaaAWFNr9j5j5R4PdmLAhfaiqZ7Gtv2"
         ]
     },
     {
-        "title": "",
+        "title": "kurak günler",
         "watchOptions": [
-            ""
+            "https://www.netflix.com/tr/title/81647071"
         ]
     },
     {
-        "title": "",
+        "title": "nasipse adayız",
         "watchOptions": [
-            ""
+            "https://www.youtube.com/watch?v=kPFHkh4l80A"
         ]
     },
     {
-        "title": "",
+        "title": "büyük yalan",
+        "POSTER_IMG":"https://tr.web.img2.acsta.net/medias/nmedia/18/89/24/69/20033764.jpg",
         "watchOptions": [
-            ""
+            "https://www.youtube.com/playlist?list=PL-Eb2PV9J9LWePszsvPf_OqyslMIQC_R_"
         ]
     },
     {
-        "title": "",
+        "title": "Korkma Ben Yanındayım",
+       "POSTER_IMG":"https://www.dizidoktoru.com/images/haberler/2024/03/korkma_ben_yanindayim_karakterleri_h42724_d64b8.jpeg"
+    },
+    {
+        "title": "Hudutsuz Sevda",
+     "POSTER_IMG":"https://media.myshows.me/shows/760/5/17/517d916c9f85e1ad49bf9b123390404d.jpg"
+    },
+    {
+        "title": "kaçış",
         "watchOptions": [
-            ""
+            "https://www.justwatch.com/tr/tv-sovu/kacis/sezon-1"
         ]
     },
     {
-        "title": "",
+        "title": "hakan: muhafız",
         "watchOptions": [
-            ""
+            "https://www.netflix.com/tr/title/80189829"
         ]
     },
     {
-        "title": "",
+        "title": "tatlı küçük yalancılar",
         "watchOptions": [
-            ""
+            "https://puhutv.com/tatli-kucuk-yalancilar-detay"
         ]
     },
     {
-        "title": "",
+        "title": "Süper Babaanne",
         "watchOptions": [
-            ""
+            "https://www.youtube.com/watch?v=_2H2L0NU0nw"
         ]
     },
     {
-        "title": "",
+        "title": "Bizim Evin Halleri",
         "watchOptions": [
-            ""
-        ]
-    },
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    },
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    },
-    {
-        "title": "",
-        "watchOptions": [
-            ""
+            "https://www.youtube.com/watch?v=x1a5kSrsAe4&list=PLZIqFPQrPSJaRtLF0gdVl9jxJSUbKt2SX"
         ]
     },
     {

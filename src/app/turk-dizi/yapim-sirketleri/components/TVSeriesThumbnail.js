@@ -49,9 +49,9 @@ const TVSeriesThumbnail = ({ series, isMobile }) => {
       mb: 1,
       display: 'flex',
       flexDirection: 'column',
-    }}>
+    }} id={series.sha}>
       <Box sx={{ position: 'relative' }}>
-        <a href={series.streamingUrl} target="_blank" rel="noopener noreferrer">
+        <a href={series.streamingUrl} target="_blank" rel="noopener noreferrer" >
           <CardMedia
             component="img"
             height={isMobile ? "75" : "120"}

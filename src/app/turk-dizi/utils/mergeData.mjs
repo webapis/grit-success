@@ -7,6 +7,7 @@ import mergeTvSeriesData from './mergeTvSeriesData.mjs'
 import correctCompanyNames from './correctCompanyNames.mjs';
 import { groupTvSeriesByProductionCompany } from './groupTvSeriesByProductionCompany.mjs';
 import { titleCorrection } from './correctCompanyNames.mjs';
+import generateSHA from './generateSHA.mjs';
 const require = createRequire(import.meta.url);
 const yapimSirketi = require('../meta/yapim-sirket.json')
 const pcomanies = require('../../../../turk-dizi-data/unzipped-data/pcomanies/pcomanies.json')
@@ -20,29 +21,22 @@ const data = []
 walkSync(`${process.cwd()}/turk-dizi-data/`, (filePath) => {
     filePaths.push(filePath)
     const currentFileData = JSON.parse(fs.readFileSync(filePath))
-
-    data.push(...currentFileData)
+    const withSha = currentFileData.map((m => { return { ...m, sha: generateSHA(m) } }))
+    debugger
+    data.push(...withSha)
 
 })
 
 
-import fields from './consts.mjs'
 
 
 
-
-
-const aggregatedData = []
-
-
-
-const exceptions = [['Ali̇ye', 'Atiye'], ['aşk-ı memnu', 'memnu'], ['üç kadın', 'kadın']]
 debugger
-const correctedData = correctCompanyNames(data,titleCorrection)
+const correctedData = correctCompanyNames(data, titleCorrection)
 debugger
 const withoultUnrelatedData = correctedData.filter((f => {
 
-    const match = unrelated.includes(f.TVSERIES_TITLE)
+    const match = (unrelated.includes(f.sha) || unrelated.includes(f.TVSERIES_TITLE))
 
     return match === false
 }))
@@ -90,6 +84,10 @@ const mapYSData = byYAPIM_SIRKETI.map(m => {
     }
 
 
+
+
+
+
     const logo = `/dizi/turk-dizi/yapim-sirketleri/${webpresenceId}.jpg`
 
     const tvSeries = m[1].series
@@ -98,25 +96,28 @@ const mapYSData = byYAPIM_SIRKETI.map(m => {
 
         const m = d.mergedData
 
+        const WATCH_LINKS = Array.from(new Set(d.sources.filter(f => f.data.WATCH_LINK).map(m => m.data.WATCH_LINK)))
+        const POSTERS = Array.from(new Set(d.sources.filter(f => f.data.POSTER).map(m => m.data.POSTER)))
+
 
         const matchingConstDizi = dizi.find((f => deaccent(f.title).toLowerCase() === deaccent(m.TVSERIES_TITLE).toLowerCase()))
 
         let watchLinks = []
-        try {
 
-            watchLinks = (m.WATCH_LINK || []).map((m_) => {
-                const url = m_
-                const kanal = getBaseDomain(m_)
-                const name = kanal
-                const logo = `/dizi/turk-dizi/kanal/${kanal}.jpg`
 
-                return {
-                    name, url, logo
-                }
-            })
-        } catch (error) {
-            debugger
-        }
+
+
+        watchLinks = (WATCH_LINKS || []).map((m_) => {
+            const url = m_
+            const kanal = getBaseDomain(m_)
+            const name = kanal
+            const logo = `/dizi/turk-dizi/kanal/${kanal}.jpg`
+
+            return {
+                name, url, logo
+            }
+        })
+
         const watchOptions = watchLinks
         const otherWatchOptions = ((matchingConstDizi || {}).watchOptions || []).map((m_) => {
             const url = m_
@@ -130,90 +131,89 @@ const mapYSData = byYAPIM_SIRKETI.map(m => {
         })
 
         let genres = []
-        try {
-            genres = (m.GENRES || [])
-                .flat().filter(f => f)
-                .map(m => m.toLowerCase())
-                .reduce((acc, value) => {
-                    if (!acc.includes(value.trim())) {
-                        acc.push(value.trim());
-                    }
-                    return acc;
-                }, [])
-                .filter(f => f)
-                .sort();
-        } catch (error) {
-            debugger
+
+        genres = (m.GENRES || [])
+            .flat().filter(f => f)
+            .map(m => m.toLowerCase())
+            .reduce((acc, value) => {
+                if (!acc.includes(value.trim())) {
+                    acc.push(value.trim());
+                }
+                return acc;
+            }, [])
+            .filter(f => f)
+            .sort();
+
+
+
+
+
+
+
+
+
+        const mapped = {
+            id: m.TVSERIES_TITLE,
+            title: m?.TVSERIES_TITLE,
+            year: matchingConstDizi?.FIRST_YEAR || extractStartYear(m?.YAYIN_TARIHI),
+            thumbnail: matchingConstDizi?.POSTER_IMG || (POSTERS ? POSTERS?.filter(f => f.POSTER_IMG)[0]?.POSTER_IMG : ''),
+            productionCompanies: m.YAPIM_SIRKETI.split(','),
+            streamingUrl: (WATCH_LINKS || [])[0],
+            channelLogo: `/dizi/turk-dizi/kanal/${m?.KANAL}.jpg`,
+            channelName: m?.KANAL,
+            state: m?.DURUM,
+            genres,
+            sha:m.sha,
+            lastEpisode: m?.BOLUM_SAYISI?.replace('(bölümleri listesi)', ''),
+            watchOptions: [...(otherWatchOptions || []), ...watchOptions].filter((item, index, self) =>
+                index === self.findIndex((t) => t.url === item.url)
+            )
         }
-
-
-        try {
+        return mapped
 
 
 
-            const mapped = {
-                id: m.TVSERIES_TITLE,
-                title: m?.TVSERIES_TITLE,
-                year: matchingConstDizi?.FIRST_YEAR || extractStartYear(m?.YAYIN_TARIHI),
-                thumbnail: matchingConstDizi?.POSTER_IMG || (m?.POSTER ? m?.POSTER.filter(f => f.POSTER_IMG)[0]?.POSTER_IMG : ''),
-                productionCompanies:m.YAPIM_SIRKETI.split(',') ,
-                streamingUrl: (m.WATCH_LINK || [])[0],
-                channelLogo: `/dizi/turk-dizi/kanal/${m?.KANAL}.jpg`,
-                channelName: m?.KANAL,
-                state: m?.DURUM,
-                genres,
-                lastEpisode: m?.BOLUM_SAYISI?.replace('(bölümleri listesi)', ''),
-                watchOptions: [...(otherWatchOptions || []), ...watchOptions].filter((item, index, self) =>
-                    index === self.findIndex((t) => t.url === item.url)
-                )
-            }
-            return mapped
-        } catch (error) {
-            debugger
-        }
     }).sort((a, b) => b['year'] - a['year']).reduce((prev, curr, i) => {
 
-        try {
 
 
-            if (i === 0) {
 
-                return [curr]
+        if (i === 0) {
 
-            }
+            return [curr]
 
-            if (i > 0) {
-
-                const exist = prev.find(f => areStringsSimilar(f.title, curr.title))
-                if (exist) {
-                    debugger
-                    const resp = prev.map(m => {
-
-                        const match = areStringsSimilar(m.title, curr.title)
-
-                        if (match) {
-
-
-                            return mergeObjects(m, curr)
-
-                        } else {
-
-                            return m
-                        }
-
-                    })
-
-
-                    return resp
-                } else {
-
-                    return [...prev, curr]
-                }
-
-            }
-        } catch (error) {
-            debugger
         }
+
+        if (i > 0) {
+
+            const exist = prev.find(f => areStringsSimilar(f.title, curr.title))
+            if (exist) {
+                debugger
+                const resp = prev.map(m => {
+
+                    const match = areStringsSimilar(m.title, curr.title)
+
+                    if (match) {
+
+
+                        return mergeObjects(m, curr)
+
+                    } else {
+
+                        return m
+                    }
+
+                })
+
+
+                return resp
+            } else {
+
+                return [...prev, curr]
+            }
+
+        }
+
 
     }, [])
 
@@ -231,7 +231,34 @@ const mapYSData = byYAPIM_SIRKETI.map(m => {
 
 })
 
-debugger
+
+
+// Current year for reference
+const currentYear = new Date().getFullYear();
+const FIVE_YEARS_AGO = currentYear - 5;
+
+// Process data to add tvSeriesCount, latestYear, and hasRecentProduction
+mapYSData.forEach(company => {
+    company.tvSeriesCount = company.tvSeries.length;
+    company.latestYear = Math.max(...company.tvSeries.map(series => parseInt(series.year, 10) || 0));
+    company.hasRecentProduction = company.latestYear >= FIVE_YEARS_AGO;
+});
+
+// Sort the companies
+mapYSData.sort((a, b) => {
+    // 1. Prioritize companies with recent productions
+    if (a.hasRecentProduction && !b.hasRecentProduction) return -1;
+    if (!a.hasRecentProduction && b.hasRecentProduction) return 1;
+
+    // 2. Sort by the number of TV series (descending)
+    if (b.tvSeriesCount !== a.tvSeriesCount) {
+        return b.tvSeriesCount - a.tvSeriesCount;
+    }
+
+    // 3. Sort by the latest production year (descending)
+    return b.latestYear - a.latestYear;
+});
+
 fs.writeFileSync(`turk-dizi-data/yapim-sirketleri.json`, JSON.stringify(mapYSData))
 debugger
 process.exit(0)
