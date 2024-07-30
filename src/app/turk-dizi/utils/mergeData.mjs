@@ -360,7 +360,7 @@ function extractStartYear(dateString) {
         const match = dateString.match(yearRegex);
         return match[0];
     } else {
-        return "Invalid data passed";
+        return "";
     }
 }
 

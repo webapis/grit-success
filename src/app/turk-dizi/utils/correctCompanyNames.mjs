@@ -7,6 +7,7 @@ export const titleCorrection = [{ "wrong": "Tims Productions",
         ,{"wrong":"Mint","write":"MinT Motion Pictures"}
         ,{"wrong":"Mint","write":"MinT Motion Pictures"}
         ,{"wrong":"Mint","write":"MinT Motion Pictures"}
+        ,{"wrong":"MEDYAPIM","write":"Medyapım"}
 ];
 
         
