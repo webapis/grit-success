@@ -70,3 +70,8 @@ function paginate(array, page, pageSize) {
 
 
 
+export async function generateStaticParams() {
+
+debugger
+    return []
+}

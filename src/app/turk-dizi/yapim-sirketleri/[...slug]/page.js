@@ -44,6 +44,6 @@ export default function TVseriesProductionCompanies({ params: { slug } }) {
 export async function generateStaticParams() {
  
 
-
+debugger
     return ysData.map((m) => { return { slug: [m.id] } })
 }

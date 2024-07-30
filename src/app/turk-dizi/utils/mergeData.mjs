@@ -259,7 +259,9 @@ mapYSData.sort((a, b) => {
     return b.latestYear - a.latestYear;
 });
 
-fs.writeFileSync(`turk-dizi-data/yapim-sirketleri.json`, JSON.stringify(mapYSData))
+
+let filteredemptyId =mapYSData.filter(f=>f.id)
+fs.writeFileSync(`turk-dizi-data/yapim-sirketleri.json`, JSON.stringify(filteredemptyId))
 debugger
 process.exit(0)
 
