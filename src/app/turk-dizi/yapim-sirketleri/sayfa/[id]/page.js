@@ -40,7 +40,11 @@ export default function TVseriesProductionCompanies({ params: { id } }) {
 <Typography variant='h4' textAlign="center">Türk yapım şirketlerinin dizileri</Typography>
 </Grid>
                 <Grid item xs={12} md={8}>
-
+                <PaginationContainer
+                        totalPages={totalPages}
+                        currentPage={currentPage}
+                        basePath="/turk-dizi/yapim-sirketleri"
+                    />
                     {data.map((company, index) => (
                         <TVSeriesCompany key={company.id || index} company={company} />
                     ))}
