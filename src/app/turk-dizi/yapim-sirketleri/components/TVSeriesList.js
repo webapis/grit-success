@@ -50,12 +50,12 @@ const TVSeriesList = ({ companyId, tvSeries, displayedSeriesCount = 5 }) => {
         Son TV Dizileri
       </Typography>
       <Box sx={{ position: 'relative', mb: 2 }}>
-        {!isMobile && <ScrollButton direction="left" onClick={() => scroll(-200)} />}
+      
         <Box
           ref={scrollContainerRef}
           sx={{
             display: 'flex',
-            overflowX: 'auto',
+            overflowX: 'hidden',
             pl: isMobile ? 1 : 4,
             pr: isMobile ? 1 : 4,
             pb: 2,
@@ -77,7 +77,7 @@ const TVSeriesList = ({ companyId, tvSeries, displayedSeriesCount = 5 }) => {
             <TVSeriesThumbnail key={series.id} series={series} isMobile={isMobile} />
           ))}
         </Box>
-        {!isMobile && <ScrollButton direction="right" onClick={() => scroll(200)} />}
+      
       </Box>
       {tvSeries.length > displayedSeriesCount && (
         <Box 
