@@ -840,55 +840,57 @@
       "POSTER_IMG":"https://yenietik.com/wp-content/uploads/2024/06/kotu-kan.webp"
     },
     {
-        "title": "",
-       "POSTER_IMG":""
+        "title": "Seyyar",
+   
+       "watchOptions":["https://puhutv.com/seyyar-detay"]
     },
     {
-        "title": "",
+        "title": "Sıdıka",
         "watchOptions": [
-            ""
+            "https://www.youtube.com/watch?v=aSIrqK0kPSw&list=PLO3L_htSdPuR-UiPf0h_m01q0UzfRwH6m"
         ]
     },
     {
-        "title": "",
+        "title": "Kübra",
         "watchOptions": [
-            ""
+            "https://www.netflix.com/tr/title/81681294"
         ]
     },
     {
-        "title": "",
+        "title": "Terzi",
         "watchOptions": [
-            ""
+            "https://www.netflix.com/tr/title/81590491"
         ]
     },
     {
-        "title": "",
+        "title": "Ben Gri",
         "watchOptions": [
-            ""
+            "https://www.youtube.com/playlist?list=PLjeRgllGDnks1qu8fFwMU5blFCxUpV9aK"
         ]
     },
     {
-        "title": "",
+        "title": "Zeytin Ağacı",
+        "POSTER_IMG":"https://yenibakiscomtr.teimg.com/crop/1280x720/yenibakis-com-tr/uploads/2024/03/zeytin-agaci-2sezon-gelecek-mi-zeytin-agaci-2-sezon-ne-zaman.jpeg",
         "watchOptions": [
-            ""
+            "https://www.netflix.com/tr/title/81380432"
         ]
     },
     {
-        "title": "",
+        "title": "Yakamoz S-245",
         "watchOptions": [
-            ""
+            "https://www.netflix.com/tr/title/81281008"
         ]
     },
     {
-        "title": "",
+        "title": "Doğduğun Ev Kaderindir",
         "watchOptions": [
-            ""
+            "https://www.tv8.com.tr/dogdugun-ev-kaderindir/dogdugun-ev-kaderindir-43-bolum-104110-video.htm"
         ]
     },
     {
-        "title": "",
+        "title": "Dünya Bu",
         "watchOptions": [
-            ""
+            "https://www.gain.tv/t/L30ikc4W/dunya-bu"
         ]
     },
     {
