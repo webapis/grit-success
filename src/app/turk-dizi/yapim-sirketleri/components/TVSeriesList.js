@@ -6,7 +6,7 @@ import {
   IconButton,
   useTheme,
   useMediaQuery,
-  Link as MuiLink,
+  Button,
 } from '@mui/material';
 import Link from 'next/link';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
@@ -45,11 +45,11 @@ const TVSeriesList = ({ companyId, tvSeries, displayedSeriesCount = 5 }) => {
   );
 
   return (
-    <>
+    <Box sx={{ position: 'relative' }}>
       <Typography variant={isMobile ? "subtitle1" : "h6"} gutterBottom sx={{ mt: 2, mb: 2 }}>
-      Son TV Dizileri
+        Son TV Dizileri
       </Typography>
-      <Box sx={{ position: 'relative', mb: 3 }}>
+      <Box sx={{ position: 'relative', mb: 2 }}>
         {!isMobile && <ScrollButton direction="left" onClick={() => scroll(-200)} />}
         <Box
           ref={scrollContainerRef}
@@ -58,61 +58,67 @@ const TVSeriesList = ({ companyId, tvSeries, displayedSeriesCount = 5 }) => {
             overflowX: 'auto',
             pl: isMobile ? 1 : 4,
             pr: isMobile ? 1 : 4,
-            mb: 2,
-            ...(isMobile ? {
-              '&::-webkit-scrollbar': {
-                height: '4px',
-              },
-              '&::-webkit-scrollbar-track': {
-                backgroundColor: theme.palette.grey[200],
-              },
-              '&::-webkit-scrollbar-thumb': {
-                backgroundColor: theme.palette.primary.main,
-                borderRadius: '2px',
-              },
-              scrollbarWidth: 'thin',
-              scrollbarColor: `${theme.palette.primary.main} ${theme.palette.grey[200]}`,
-            } : {
-              '&::-webkit-scrollbar': {
-                display: 'none',
-              },
-              scrollbarWidth: 'none',
-              msOverflowStyle: 'none',
-            }),
+            pb: 2,
+            '&::-webkit-scrollbar': {
+              height: '4px',
+            },
+            '&::-webkit-scrollbar-track': {
+              backgroundColor: theme.palette.grey[200],
+            },
+            '&::-webkit-scrollbar-thumb': {
+              backgroundColor: theme.palette.primary.main,
+              borderRadius: '2px',
+            },
+            scrollbarWidth: 'thin',
+            scrollbarColor: `${theme.palette.primary.main} ${theme.palette.grey[200]}`,
           }}
         >
           {tvSeries.slice(0, displayedSeriesCount).map((series) => (
             <TVSeriesThumbnail key={series.id} series={series} isMobile={isMobile} />
           ))}
-          {tvSeries.length > displayedSeriesCount && (
-            <Box sx={{ 
-              display: 'flex', 
-              alignItems: 'center', 
-              justifyContent: 'center', 
-              minWidth: isMobile ? 100 : 160, 
-              maxWidth: isMobile ? 100 : 160 
-            }}>
-              <Link href={`/turk-dizi/yapim-sirketleri/${companyId}`} passHref legacyBehavior>
-                <MuiLink
-                  component="a"
-                  variant="button"
-                  sx={{
-                    textDecoration: 'none',
-                    color: 'primary.main',
-                    '&:hover': {
-                      textDecoration: 'underline',
-                    },
-                  }}
-                >
-                  Daha fazla göster
-                </MuiLink>
-              </Link>
-            </Box>
-          )}
         </Box>
         {!isMobile && <ScrollButton direction="right" onClick={() => scroll(200)} />}
       </Box>
-    </>
+      {tvSeries.length > displayedSeriesCount && (
+        <Box 
+          sx={{ 
+            display: 'flex', 
+            justifyContent: 'center',
+            mt: 2,
+            position: 'relative',
+            '&::before': {
+              content: '""',
+              position: 'absolute',
+              top: '-1px',
+              left: '10%',
+              right: '10%',
+              height: '1px',
+              bgcolor: 'divider',
+            },
+          }}
+        >
+          <Link href={`/turk-dizi/yapim-sirketleri/${companyId}`} passHref legacyBehavior>
+            <Button
+              component="a"
+              variant="text"
+              color="primary"
+              sx={{
+                textDecoration: 'none',
+                '&:hover': {
+                  textDecoration: 'none',
+                  bgcolor: 'transparent',
+                },
+                fontSize: '0.9rem',
+                fontWeight: 'medium',
+                pt: 2,
+              }}
+            >
+              Daha fazla göster
+            </Button>
+          </Link>
+        </Box>
+      )}
+    </Box>
   );
 };
 
