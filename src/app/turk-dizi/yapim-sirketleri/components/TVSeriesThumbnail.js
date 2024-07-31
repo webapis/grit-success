@@ -1,3 +1,5 @@
+// src/components/TVSeriesThumbnail.js
+'use client'
 import React, { useState } from 'react';
 import {
   Card,
@@ -9,162 +11,123 @@ import {
   Menu,
   MenuItem,
   Chip,
-  Tooltip,
-  Popper,
-  Paper,
-  ClickAwayListener,
 } from '@mui/material';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
 const TVSeriesThumbnail = ({ series, isMobile }) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
-    setMenuOpen(true);
   };
 
   const handleClose = () => {
-    setMenuOpen(false);
-  };
-
-  const getStateColor = (state) => {
-    switch (state) {
-      case 'Devam ediyor':
-        return '#4caf50';
-      case 'Sezon arası':
-        return '#ff9800';
-      case 'Sona erdi':
-        return '#f44336';
-      default:
-        return '#9e9e9e';
-    }
+    setAnchorEl(null);
   };
 
   const hasWatchOptions = series.watchOptions && series.watchOptions.length > 0;
 
   return (
-    <Card 
-    elevation={0}
-      sx={{ 
-        width: isMobile ? 130 : 160, 
-        mr: 2, 
-        flexShrink: 0,
-        mb: 1,
+    <Card
+      sx={{
         display: 'flex',
-        flexDirection: 'column',
-      }} 
-      id={series.sha}
+        flexDirection: 'row',
+        alignItems: 'flex-start',
+     
+        maxWidth: '100%', // Ensure the card does not overflow the container
+        mb: 1, // Bottom margin for spacing
+        mx: 0, // Remove left and right margins
+      }}
     >
-      <Box 
-        sx={{ position: 'relative' }}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => {
-          setIsHovered(false);
-          setMenuOpen(false);
+      <Box sx={{ flexShrink: 0 }}>
+        <a href={series.streamingUrl} target="_blank" rel="noopener noreferrer">
+          <CardMedia
+            component="img"
+            sx={{
+              width: isMobile ? '100px' : '150px',
+              height: isMobile ? '150px' : '200px',
+              objectFit: 'cover',
+              cursor: 'pointer',
+              maxWidth: '100%', // Ensure the image does not overflow
+            }}
+            image={series.thumbnail}
+            alt={series.title}
+          />
+        </a>
+      </Box>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          flexGrow: 1,
+          p: 1, // Adjust padding if needed
+          overflow: 'hidden', // Ensure the content does not overflow
         }}
       >
-        <CardMedia
-          component="img"
-          height={isMobile ? 195 : 240}
-          image={series.thumbnail}
-          alt={series.title}
-          sx={{ objectFit: 'cover' }}
-        />
-        {isHovered && (
-          <Box
-            sx={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              backgroundColor: 'rgba(0, 0, 0, 0.7)',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              padding: 1,
-            }}
-          >
-            <Box>
-              <Typography variant="caption" sx={{ color: getStateColor(series.state), fontWeight: 'bold' }}>
-                {series.state}
-              </Typography>
-              <Typography variant="caption" color="white" display="block">
-                {series.year}
-              </Typography>
-              <Typography variant="caption" color="white" display="block">
-                Son Bölüm: {series.lastEpisode}
-              </Typography>
-              {series.productionCompanies && (
-                <Tooltip title={series.productionCompanies.join(', ')} enterDelay={500} leaveDelay={200}>
-                  <Typography variant="caption" color="white" display="block" noWrap>
-                    Yapım: {series.productionCompanies.join(', ')}
-                  </Typography>
-                </Tooltip>
-              )}
-              <Box sx={{ mt: 1, display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-                {series.genres && series.genres.map((genre, index) => (
-                  <Chip
-                    key={index}
-                    label={genre}
-                    size="small"
-                    sx={{
-                      fontSize: '0.6rem',
-                      height: 'auto',
-                      '& .MuiChip-label': {
-                        padding: '2px 4px',
-                      },
-                    }}
-                  />
-                ))}
-              </Box>
-            </Box>
-            <Button
-              variant="contained"
-              startIcon={<PlayArrowIcon />}
-              size="small"
-              fullWidth
-              onClick={handleClick}
-              sx={{ fontSize: '0.8rem', mt: 1 }}
-              disabled={!hasWatchOptions}
-            >
-              İzle
-            </Button>
-            <Popper open={menuOpen} anchorEl={anchorEl} placement="top" style={{ zIndex: 1 }}>
-              <ClickAwayListener onClickAway={handleClose}>
-                <Paper>
-                  {hasWatchOptions && series.watchOptions.map((option, index) => (
-                    <MenuItem 
-                      key={index} 
-                      onClick={() => {
-                        window.open(option.url, '_blank');
-                        handleClose();
-                      }}
-                    >
-                      <img 
-                        src={option.logo} 
-                        alt={option.name}
-                        style={{ width: '20px', marginRight: '8px' }}
-                      />
-                      {option.name}
-                    </MenuItem>
-                  ))}
-                </Paper>
-              </ClickAwayListener>
-            </Popper>
-          </Box>
-        )}
-      </Box>
-      <CardContent sx={{ p: 1, pt: 0.5 }}>
-        <Tooltip title={series.title} enterDelay={500} leaveDelay={200}>
-          <Typography variant={isMobile ? "caption" : "subtitle2"} component="div" noWrap>
+        <CardContent sx={{ p: 0, flex: '1 0 auto' }}>
+          <Typography variant={isMobile ? 'caption' : 'subtitle2'} component="div" noWrap>
             {series.title}
           </Typography>
-        </Tooltip>
-      </CardContent>
+          <Typography variant="caption" color="text.secondary">
+            {series.year}
+          </Typography>
+          <Typography variant="caption" color="text.secondary" display="block">
+            Son Bölüm: {series.lastEpisode}
+          </Typography>
+          {series.productionCompanies && (
+            <Typography variant="caption" color="text.secondary" display="block" noWrap>
+              Yapım: {series.productionCompanies.join(', ')}
+            </Typography>
+          )}
+          <Box sx={{ mt: 1, display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+            {series.genres && series.genres.map((genre, index) => (
+              <Chip
+                key={index}
+                label={genre}
+                size="small"
+                sx={{
+                  fontSize: isMobile ? '0.5rem' : '0.6rem',
+                  height: 'auto',
+                  '& .MuiChip-label': {
+                    padding: '2px 4px',
+                  },
+                }}
+              />
+            ))}
+          </Box>
+        </CardContent>
+        <Box sx={{ display: 'flex', justifyContent: 'flex-end', p: 0 }}>
+          <Button
+            variant="contained"
+            startIcon={<PlayArrowIcon />}
+            size="small"
+            onClick={handleClick}
+            sx={{ fontSize: isMobile ? '0.7rem' : '0.8rem' }}
+            disabled={!hasWatchOptions}
+          >
+            İzle
+          </Button>
+          <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
+            {hasWatchOptions && series.watchOptions.map((option, index) => (
+              <MenuItem
+                key={index}
+                onClick={() => {
+                  window.open(option.url, '_blank');
+                  handleClose();
+                }}
+              >
+                <img
+                  src={option.logo}
+                  alt={option.name}
+                  style={{ width: '20px', marginRight: '8px' }}
+                />
+                {option.name}
+              </MenuItem>
+            ))}
+          </Menu>
+        </Box>
+      </Box>
     </Card>
   );
 };

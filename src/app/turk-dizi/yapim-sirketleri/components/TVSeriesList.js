@@ -52,26 +52,8 @@ const TVSeriesList = ({ companyId, tvSeries, displayedSeriesCount = 5 }) => {
       <Box sx={{ position: 'relative', mb: 2 }}>
       
         <Box
-          ref={scrollContainerRef}
-          sx={{
-            display: 'flex',
-            overflowX: 'hidden',
-            pl: isMobile ? 1 : 4,
-            pr: isMobile ? 1 : 4,
-            pb: 2,
-            '&::-webkit-scrollbar': {
-              height: '4px',
-            },
-            '&::-webkit-scrollbar-track': {
-              backgroundColor: theme.palette.grey[200],
-            },
-            '&::-webkit-scrollbar-thumb': {
-              backgroundColor: theme.palette.primary.main,
-              borderRadius: '2px',
-            },
-            scrollbarWidth: 'thin',
-            scrollbarColor: `${theme.palette.primary.main} ${theme.palette.grey[200]}`,
-          }}
+       
+         
         >
           {tvSeries.slice(0, displayedSeriesCount).map((series) => (
             <TVSeriesThumbnail key={series.id} series={series} isMobile={isMobile} />
