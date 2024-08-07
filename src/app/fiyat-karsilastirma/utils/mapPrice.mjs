@@ -3,7 +3,7 @@ function mapPrice(price) {
 
     try {
         const trimPrice = price ? price.toString().replace('TL', '')
-        .replace('$', '')
+        .replace('₺', '')
         .replace('\n', '')
         .trim() : 0//.replace(/[a-z]/gi, '') 
 

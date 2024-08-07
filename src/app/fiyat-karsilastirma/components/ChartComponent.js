@@ -10,7 +10,7 @@ export default function ChartComponent({ dataset }) {
         const price =calculateWeightedAveragePrice(prices,weights)
         debugger
         return { brand, price }
-    })
+    }).sort((a,b)=>a.price-b.price)
     debugger
 
     const chartSetting = {
