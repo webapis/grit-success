@@ -22,7 +22,7 @@ walkSync(`${process.cwd()}/turk-dizi-data/`, (filePath) => {
     filePaths.push(filePath)
     const currentFileData = JSON.parse(fs.readFileSync(filePath))
     const withSha = currentFileData.map((m => { return { ...m, sha: generateSHA(m) } }))
-    debugger
+
     data.push(...withSha)
 
 })
@@ -31,16 +31,16 @@ walkSync(`${process.cwd()}/turk-dizi-data/`, (filePath) => {
 
 
 
-debugger
+
 const correctedData = correctCompanyNames(data, titleCorrection)
-debugger
+
 const withoultUnrelatedData = correctedData.filter((f => {
 
     const match = (unrelated.includes(f.sha) || unrelated.includes(f.TVSERIES_TITLE))
 
     return match === false
 }))
-debugger
+
 
 const result = mergeTvSeriesData({ combinedDataSource: withoultUnrelatedData })
 debugger
@@ -98,13 +98,13 @@ const mapYSData = byYAPIM_SIRKETI.map(m => {
 
         const WATCH_LINKS = Array.from(new Set(d.sources.filter(f => f.data.WATCH_LINK).map(m => m.data.WATCH_LINK)))
         const POSTERS = Array.from(new Set(d.sources.filter(f => f.data.POSTER).map(m => m.data.POSTER)))
-
+        const actors =m.ACTORS
 
         const matchingConstDizi = dizi.find((f => deaccent(f.title).toLowerCase() === deaccent(m.TVSERIES_TITLE).toLowerCase()))
 
         let watchLinks = []
 
-
+debugger
 
 
         watchLinks = (WATCH_LINKS || []).map((m_) => {
@@ -162,6 +162,7 @@ const mapYSData = byYAPIM_SIRKETI.map(m => {
             channelLogo: `/dizi/turk-dizi/kanal/${m?.KANAL}.jpg`,
             channelName: m?.KANAL,
             state: m?.DURUM,
+            actors,
             genres,
             sha:m.sha,
             lastEpisode: m?.BOLUM_SAYISI?.replace('(bölümleri listesi)', ''),
