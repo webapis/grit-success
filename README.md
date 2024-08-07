@@ -107,3 +107,8 @@ Implementation Notes
 Technologies: CSS3 for styling and animations, JavaScript for event handling and dynamic adjustments.
 Testing: Ensure compatibility across major browsers and responsiveness on different screen sizes.
 This specification outlines the necessary details for developing a dynamic and visually appealing TV series poster display component, ensuring both functionality and user experience.
+
+
+//avarage
+
+https://chatgpt.com/c/5988cae5-d31e-412b-b29e-ba589b1263e5
