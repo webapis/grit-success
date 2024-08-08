@@ -10,14 +10,14 @@ const filePaths = []
 
 const data = []
 
-const productCategories =[{category:'elbise',keywords:['elbise','dress']  },{category:'pantolon',keywords:['pantolon','pants']  },{category:'pijama',keywords:['pijama']  }]
+const productCategories =[{category:'elbise',keywords:['elbise','dress','ELBİSE']  },{category:'pantolon',keywords:['pantolon','pants']  },{category:'pijama',keywords:['pijama']  }]
 
 walkSync(`${process.cwd()}/product-data/unzipped-data`, (filePath) => {
     filePaths.push(filePath)
     const currentFileData = JSON.parse(fs.readFileSync(filePath))
     const withSha = currentFileData.filter(f=>f.title).map((m => {
   
-        const category = productCategories.find(p=>  p.keywords.some(s=>m.title.toLowerCase().includes(s)) )?.category
+        const category = productCategories.find(p=>  p.keywords.some(s=>normalizeTurkish(m.title.normalize('NFD')).toLowerCase().replace(/[\u0300-\u036f]/g, "").includes(normalizeTurkish(s.normalize('NFD')).replace(/[\u0300-\u036f]/g, ""))) )?.category
   
         return { ...m, price: mapPrice(m.price), brand: getBaseDomain(m.pageURL), rawPrice: m.price, category } }))
     data.push(...withSha)
@@ -60,3 +60,18 @@ function groupProductsByCategory (products)  {
       return groupedProducts;
     }, {});
   };
+
+  function normalizeTurkish(text) {
+    try {
+        return text
+            .replace(/ç/g, 'c').replace(/Ç/g, 'C')
+            .replace(/ğ/g, 'g').replace(/Ğ/g, 'G')
+            .replace(/ı/g, 'i').replace(/I/g, 'I')
+            .replace(/ö/g, 'o').replace(/Ö/g, 'O')
+            .replace(/ş/g, 's').replace(/Ş/g, 'S')
+            .replace(/ü/g, 'u').replace(/Ü/g, 'U');
+    } catch (error) {
+        return text
+    }
+
+}
