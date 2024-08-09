@@ -14,7 +14,7 @@ export default function prepareData(dataset) {
         return { brand, price }
     }).sort((a, b) => a.price - b.price)
 debugger
-    return splitArrayByPriceRanges(mappedData, [1000,5000,10000])
+    return splitArrayByPriceRanges(mappedData, [1000,2000,3000,5000,10000])
 }
 
 
