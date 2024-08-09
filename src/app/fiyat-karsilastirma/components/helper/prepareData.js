@@ -24,7 +24,7 @@ const splitArrayByPriceRanges = (items, priceRanges) => {
   
     // Initialize the result object
     const result = {
-      [`${formatPriceAsTurkishLira(sortedRanges[0])} Altında`]: []
+      [`${formatPriceAsTurkishLira(sortedRanges[0])} altında`]: []
     };
   
     // Create keys for each price range
@@ -42,7 +42,7 @@ const splitArrayByPriceRanges = (items, priceRanges) => {
       let assigned = false;
   
       if (price < sortedRanges[0]) {
-        result[`${formatPriceAsTurkishLira(sortedRanges[0])} Altında`].push(item);
+        result[`${formatPriceAsTurkishLira(sortedRanges[0])} altında`].push(item);
         assigned = true;
       }
   

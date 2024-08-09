@@ -52,7 +52,7 @@ export default function ApexBarChart({ categories,data, label }) {
     return <div className="app">
         <div className="row">
             <div className="mixed-chart">
-                <Typography textAlign="center">{label}</Typography>
+                <Typography variant="h5" textAlign="center">{label}</Typography>
                 <Chart
                     options={options}
                     series={series}
