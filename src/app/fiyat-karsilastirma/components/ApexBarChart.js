@@ -29,7 +29,7 @@ export default function ApexBarChart({ categories,data, label }) {
             categories: categories,
             labels: {
                 formatter: function (value) {
-                  return  value +' TL' ;
+                  return  value ;
                 }
               }
         },
