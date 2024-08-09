@@ -19,11 +19,11 @@ export default function ChartComponent({ dataset }) {
                 label: 'Türk lirası',
             },
         ],
-        width: 500,
-        height: 400,
+        width: 700,
+        height: 500,
     };
     const valueFormatter = (value) => `${value} TL`;
-    return <div>  <BarChart
+    return <div>  <BarChart 
         dataset={mappedData}
         yAxis={[{ scaleType: 'band', dataKey: 'brand' }]}
         series={[{ dataKey: 'price', label: 'Ortalama Elbise Fiyatları', valueFormatter }]}
