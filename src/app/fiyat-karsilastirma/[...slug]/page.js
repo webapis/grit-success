@@ -5,7 +5,9 @@ import { Container } from '@mui/material'
 import ApexBarChartList from '../components/ApexBarChartList'
 import prepareData from '../components/helper/prepareData'
 export default function pageOrtalama() {
-    const dataPrepd = prepareData(dataset.elbise)
+    const elbise =dataset.elbise
+    debugger
+    const dataPrepd = prepareData(elbise)
 
 
 
