@@ -2,7 +2,7 @@
 import { Typography } from "@mui/material";
 import React from "react";
 import Chart from "react-apexcharts";
-
+import formatPriceAsTurkishLira from "./helper/formatPriceAsTurkishLira";
 export default function ApexBarChart({ categories,data, label }) {
   
 
@@ -18,7 +18,7 @@ export default function ApexBarChart({ categories,data, label }) {
             enabled: true,
           
             formatter: function(val, opt) {
-                return   val.toFixed(2) +' TL'
+                return   formatPriceAsTurkishLira(val.toFixed(2)) 
             },
             offsetX: 0,
           },
@@ -29,7 +29,7 @@ export default function ApexBarChart({ categories,data, label }) {
             categories: categories,
             labels: {
                 formatter: function (value) {
-                  return  value ;
+                  return  value;
                 }
               }
         },
@@ -44,6 +44,7 @@ export default function ApexBarChart({ categories,data, label }) {
         {
             name: "series-1",
             data
+            
         }
 
     ]
@@ -56,7 +57,8 @@ export default function ApexBarChart({ categories,data, label }) {
                     options={options}
                     series={series}
                     type="bar"
-                    width="100%"
+       
+                   
                 />
             </div>
         </div>

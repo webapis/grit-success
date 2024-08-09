@@ -1,5 +1,6 @@
 import groupByBrandAndPrice from "./groupByBrandAndPrice.js";
 import calculateWeightedAveragePrice from "./calculateWeightedAveragePrice.js";
+import formatPriceAsTurkishLira from "./formatPriceAsTurkishLira.js";
 import splitArrayIntoChunks from "./splitArrayIntoChunks.js";
 export default function prepareData(dataset) {
     const grouped = Object.entries(groupByBrandAndPrice(dataset))
@@ -23,15 +24,15 @@ const splitArrayByPriceRanges = (items, priceRanges) => {
   
     // Initialize the result object
     const result = {
-      [`Under ${sortedRanges[0]}`]: []
+      [`${formatPriceAsTurkishLira(sortedRanges[0])} Altında`]: []
     };
   
     // Create keys for each price range
     for (let i = 0; i < sortedRanges.length; i++) {
       if (i === sortedRanges.length - 1) {
-        result[`${sortedRanges[i]} and above`] = [];
+        result[`${formatPriceAsTurkishLira( sortedRanges[i])} ve üstü`] = [];
       } else {
-        result[`${sortedRanges[i]} - ${sortedRanges[i+1]}`] = [];
+        result[`${formatPriceAsTurkishLira(sortedRanges[i])} - ${formatPriceAsTurkishLira( sortedRanges[i+1])}`] = [];
       }
     }
   
@@ -41,7 +42,7 @@ const splitArrayByPriceRanges = (items, priceRanges) => {
       let assigned = false;
   
       if (price < sortedRanges[0]) {
-        result[`Under ${sortedRanges[0]}`].push(item);
+        result[`${formatPriceAsTurkishLira(sortedRanges[0])} Altında`].push(item);
         assigned = true;
       }
   
@@ -50,15 +51,21 @@ const splitArrayByPriceRanges = (items, priceRanges) => {
   
         if (i === sortedRanges.length - 1) {
           if (price >= sortedRanges[i]) {
-            result[`${sortedRanges[i]} and above`].push(item);
+            result[`${formatPriceAsTurkishLira( sortedRanges[i])} ve üstü`].push(item);
           }
         } else if (price >= sortedRanges[i] && price < sortedRanges[i+1]) {
-          result[`${sortedRanges[i]} - ${sortedRanges[i+1]}`].push(item);
+          result[`${formatPriceAsTurkishLira(sortedRanges[i])} - ${formatPriceAsTurkishLira(sortedRanges[i+1])}`].push(item);
           assigned = true;
         }
       }
     });
-  debugger
-    return Object.values(result);
+  
+
+  const mappedResult =Object.entries(result).map((m)=>{
+    return {groupTitle:m[0],data:m[1]}
+   
+  });
+
+    return mappedResult
   };
   
