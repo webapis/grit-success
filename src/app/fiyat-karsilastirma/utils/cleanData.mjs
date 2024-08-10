@@ -19,7 +19,7 @@ walkSync(`${process.cwd()}/product-data/unzipped-data`, (filePath) => {
   
         const category = productCategories.find(p=>  p.keywords.some(s=>normalizeTurkish(m.title.normalize('NFD')).toLowerCase().replace(/[\u0300-\u036f]/g, "").includes(normalizeTurkish(s.normalize('NFD')).replace(/[\u0300-\u036f]/g, ""))) )?.category
   
-        return { ...m, price: mapPrice(m.price), brand: getBaseDomain(m.pageURL), rawPrice: m.price, category } }))
+        return { ...m, price: mapPrice(m.price), brand: getBaseDomain(m.pageURL),rawPrice:m.price, category } }))
     data.push(...withSha)
 })
 

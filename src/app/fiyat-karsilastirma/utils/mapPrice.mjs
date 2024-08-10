@@ -26,7 +26,7 @@ export default mapPrice
 
 function parsePrice(trimPrice) {
     switch (true) {
-
+        //1999.95
         case /^\d\d\d[,]\d\d$/.test(trimPrice)://299,99
 
             return parseFloat(trimPrice.replace(',', '.'))
@@ -40,6 +40,17 @@ function parsePrice(trimPrice) {
             return parseFloat(trimPrice)
         case /^\d\d\d\d[.]\d\d$/.test(trimPrice)://1499.99
 
+            return parseFloat(trimPrice)
+
+        case /^\d\d\d\d\d[.]\d\d$/.test(trimPrice)://12999.95
+            return parseFloat(trimPrice)
+        case /^\d\d\d[.]\d\d\d$/.test(trimPrice)://106.950
+            return parseFloat(trimPrice.replace('.', ''))
+        case /^\d\d[.]\d\d\d$/.test(trimPrice)://10.950
+            return parseFloat(trimPrice.replace('.', ''))
+        case /^\d[.]\d\d\d$/.test(trimPrice)://1.950
+            return parseFloat(trimPrice.replace('.', ''))
+        case /^\d[.]\d\d$/.test(trimPrice)://5.96
             return parseFloat(trimPrice)
         case /^\d\d\d\d[.]\d$/.test(trimPrice)://1499.9
             return parseFloat(trimPrice)

@@ -10,11 +10,18 @@ export default function prepareData(dataset) {
         const prices = Object.keys(m[1]).map(m => parseFloat(m))
         const weights = Object.values(m[1]).map((m) => m.length)
         const price = calculateWeightedAveragePrice(prices, weights)
+        const urls =Object.values(m[1]).map((m) => {
+            
+           let pageURLs=  m[1]
 
-        return { brand, price }
-    }).sort((a, b) => a.price - b.price)
+            return pageURLs
+        }).filter(f=>f?.pageURL)[0]
 debugger
+        return { brand, price,urls }
+    }).sort((a, b) => a.price - b.price)
+
     return splitArrayByPriceRanges(mappedData, [1000,2000,3000,5000,10000])
+    
 }
 
 
