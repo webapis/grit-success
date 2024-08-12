@@ -14,6 +14,7 @@
     "downloadProds": "node src/app/sponsor-kiyafeti/utils/downloadData.mjs",
     "analit:downloadAProduct": "node src/app/fiyat-karsilastirma/utils/downloadData.mjs",
     "analit:clean": "node src/app/fiyat-karsilastirma/utils/cleanData.mjs",
+    "analit:snap": "node src/app/fiyat-karsilastirma/utils/snap.mjs",
     "downloadTurkDizi": "node src/app/turk-dizi/utils/downloadData.mjs",
     "mergeTurkDizi": "node src/app/turk-dizi/utils/mergeData.mjs",
     "extractActors": "node src/app/turk-dizi/actor/utils/extractActorData.mjs",

@@ -8,7 +8,7 @@ function mapPrice(price) {
             .replace('\n', '')
             .trim() : 0//.replace(/[a-z]/gi, '') 
         if (price?.includes('$')) {
-            return parsePrice(trimPrice) * 33.50
+            return parseFloat( (parsePrice(trimPrice) * 33.50).toFixed(2))
         } else {
             return parsePrice(trimPrice)
         }
