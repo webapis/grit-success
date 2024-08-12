@@ -17,7 +17,7 @@ export default function ApexBarChartSecenek({ categories,links, data, label, onC
         dataLabels: {
             enabled: true,
             formatter: function(val, opt) {
-                return val.toFixed(0) 
+                return val.toFixed(0)
             },
             offsetX: 0,
         },
@@ -26,7 +26,7 @@ export default function ApexBarChartSecenek({ categories,links, data, label, onC
             height: 350,
             stacked: true,
       
-      stackType: '100%',
+     stackType: '100%',
             id: "basic-bar",
             events: {
                 dataPointSelection: function(event, chartContext, config) {
@@ -43,7 +43,7 @@ export default function ApexBarChartSecenek({ categories,links, data, label, onC
             categories: categories,
             labels: {
                 formatter: function (value) {
-                    return value
+                    return value 
                 }
             }
         },

@@ -15,7 +15,7 @@ import deaccent from './deaccent.mjs'
 const filePaths = []
 
 const data = []
-const priceRanges = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 10000, 20000, 30000, 40000, 50000]
+const priceRanges = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000,1100,1200,1300,1400,1500,,1600,1700,1800,1900, 2000,2500, 3000,3500,4000, 4500, 5000, 6000, 7000, 8000, 10000, 20000, 30000, 40000, 50000]
 //const priceRanges = [100,200,300,400,500,1000, 2000,3000,4000,5000,10000]
 const productCategories = [{ category: 'elbise', keywords: ['elbise', 'dress', 'ELBİSE'] }, { category: 'pantolon', keywords: ['pantolon', 'pants'] }, { category: 'pijama', keywords: ['pijama'] }]
 
