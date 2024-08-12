@@ -66,24 +66,25 @@ for (let priceRange in groupedPriceRange) {
             categories.push(brand)
             const currentBrandData = brandGrouped[brand]
 
-            const countProducts =currentBrandData? reduceArrayByPrice(currentBrandData)?.map((m => m.weight))?.reduce((prev, curr, i) => prev + curr, 0):0
-        
-                obj.data.push(countProducts)
-            
-       
-
-           // series.push(obj)
-     
+            const countProducts =(currentBrandData)? reduceArrayByPrice(currentBrandData)?.map((m => m.weight))?.reduce((prev, curr, i) => prev + curr, 0):0
+                if(countProducts>10){
+                    obj.data.push(countProducts)
+                }else{
+                    obj.data.push(0)
+                }
+         
     }
-    series.push(obj)
 
-    topSeries.push(series)
+        series.push(obj)
 
+        topSeries.push(series)
+debugger
 
 
 }
 
 debugger
+
 //const uniqueSeries = filterUniqueByName(topSeries.flat(1))
 
 const sortUniqueSeries =sortByPriceRange(topSeries.flat(1))

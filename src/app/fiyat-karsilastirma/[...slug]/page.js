@@ -6,8 +6,6 @@ import ApexBarChartListSecenek from '../components/secenek/ApexBarChartListSecen
 //import prepareData from '../components/ortalama/helper/prepareData'
 export default function pageOrtalama() {
    
-debugger
-
     return <Container ><ApexBarChartListSecenek dataset={dataset} category='Elbise' /></Container>
 
 }

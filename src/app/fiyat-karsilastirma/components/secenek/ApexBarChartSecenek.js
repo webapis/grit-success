@@ -26,7 +26,7 @@ export default function ApexBarChartSecenek({ categories,links, data, label, onC
             height: 350,
             stacked: true,
       
-         // stackType: '100%',
+      stackType: '100%',
             id: "basic-bar",
             events: {
                 dataPointSelection: function(event, chartContext, config) {
