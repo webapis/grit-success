@@ -1,0 +1,36 @@
+.wedding-dress-list {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .dress-item {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .dress-item h2 {
+    color: #333;
+    margin-top: 0;
+  }
+  
+  .dress-item p {
+    margin: 5px 0;
+  }
+  
+  .dress-item a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .dress-item a:hover {
+    text-decoration: underline;
+  }
+  
+  .dress-item ul {
+    padding-left: 20px;
+  }

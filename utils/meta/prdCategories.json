@@ -1,0 +1,29 @@
+[
+    {
+        "category": "elbise",
+        "keywords": [
+            "elbise",
+            "dress",
+            "ELBİSE"
+        ]
+    },
+    {
+        "category": "pantolon",
+        "keywords": [
+            "pantolon",
+            "pants"
+        ]
+    },
+    {
+        "category": "pijama",
+        "keywords": [
+            "pijama"
+        ]
+    },
+    {
+        "category": "gelinlik",
+        "keywords": [
+            "gelinlik","bridal"
+        ]
+    }
+]

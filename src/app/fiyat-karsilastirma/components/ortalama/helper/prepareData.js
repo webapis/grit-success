@@ -1,7 +1,7 @@
 import groupByBrandAndPrice from "./groupByBrandAndPrice.js";
 import calculateWeightedAveragePrice from "./calculateWeightedAveragePrice.js";
 import formatPriceAsTurkishLira from "./formatPriceAsTurkishLira.js";
-import splitArrayIntoChunks from "./splitArrayIntoChunks.js";
+
 import groupItemsByPriceRange from "../../secenek/groupItemsByPriceRange.js";
 export default function prepareData(dataset) {
     const grouped = Object.entries(groupByBrandAndPrice(dataset))
