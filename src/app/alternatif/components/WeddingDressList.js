@@ -2,11 +2,10 @@ import React from 'react';
 import {
   Box,
   Typography,
-  List,
   Card,
-  CardContent,
   CardMedia,
   Button,
+  List,
   ListItem,
   ListItemIcon,
   ListItemText,
@@ -26,90 +25,101 @@ const WeddingDressList = ({ dresses }) => {
           const maxPrice = Math.max(...dress.prices);
 
           return (
-            <Card key={index} sx={{ display: 'flex', flexWrap: { xs: 'nowrap', sm: 'wrap' }, marginBottom: 2, alignItems: 'center' }}>
+            <Card key={index} sx={{ display: 'flex', marginBottom: 2, padding: 2 }}>
               <CardMedia
                 component="img"
                 sx={{
-                  width: { xs: 100, sm: 150 },
-                  height: 'auto',
-                  borderRadius: 1,
-                  marginRight: { xs: 2, sm: 0 },
+                  width: 100,
+                  height: 150,
+                  objectFit: 'cover',
+                  marginRight: 2,
                 }}
-                image={dress.urls.imageURL || 'https://via.placeholder.com/150'}
+                image={dress.urls.imageURL || 'https://via.placeholder.com/100x150'}
                 alt={dress.urls.title}
               />
-              <Box className="dress-info" sx={{ flex: 1, padding: 2 }}>
-                <CardContent sx={{ padding: { xs: 1, sm: 2 } }}>
-                  <Typography
-                    variant="h5"
-                    sx={{
-                      textTransform: 'capitalize',
-                      fontSize: { xs: '1.2rem', sm: '1.5rem' },
+              <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
+      
+                <Box sx={{ mb: 1 }}>
+                  <Typography variant="body2" component="span" sx={{ fontWeight: 'bold' }}>
+                    Ortalama Fiyat:
+                  </Typography>
+                  <Typography 
+                    variant="body2" 
+                    component="span" 
+                    sx={{ 
+                      ml: 1,
+                      '@media (max-width: 600px)': {
+                        display: 'block',
+                        ml: 2
+                      }
                     }}
                   >
-                    Marka: {dress.brand}
+                    {dress.priceFormatted}
                   </Typography>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      fontSize: { xs: '0.875rem', sm: '1rem' },
+                </Box>
+                <Box sx={{ mb: 1 }}>
+                  <Typography variant="body2" component="span" sx={{ fontWeight: 'bold' }}>
+                    Fiyat Aralığı:
+                  </Typography>
+                  <Typography 
+                    variant="body2" 
+                    component="span" 
+                    sx={{ 
+                      ml: 1,
+                      '@media (max-width: 600px)': {
+                        display: 'block',
+                        ml: 2
+                      }
                     }}
                   >
-                    Ortalama Fiyat: {dress.priceFormatted}
+                    {minPrice.toLocaleString('tr-TR', { style: 'currency', currency: 'TRY' })} - {maxPrice.toLocaleString('tr-TR', { style: 'currency', currency: 'TRY' })}
                   </Typography>
-                  <Typography
-                    variant="subtitle1"
+                </Box>
+                <List sx={{ mt: 1, p: 0 }}>
+                  {dress.services && dress.services.map((service, serviceIndex) => (
+                    <ListItem key={serviceIndex} sx={{ p: 0, mb: 0.5 }}>
+                      <ListItemIcon sx={{ minWidth: 'auto', mr: 1 }}>
+                        <CheckCircleIcon color="primary" fontSize="small" />
+                      </ListItemIcon>
+                      <ListItemText 
+                        primary={service} 
+                        primaryTypographyProps={{ 
+                          variant: 'body2',
+                          sx: { fontWeight: 'normal' }
+                        }} 
+                      />
+                    </ListItem>
+                  ))}
+                </List>
+                {dress.hostAddress && (
+                  <Button
+                    variant="outlined"
+                    color="primary"
+                    href={dress.urls.pageURL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mobileSmallButton"
                     sx={{
-                      marginTop: 1,
-                      fontSize: { xs: '0.875rem', sm: '1rem' },
+                      mt: 2,
+                      alignSelf: 'flex-start',
+                      textTransform: 'none',
+                      fontSize: '0.875rem',
+                      padding: '6px 16px',
+                      '&.mobileSmallButton': {
+                        '@media (max-width: 600px)': {
+                          fontSize: '0.75rem',
+                          padding: '4px 10px',
+                          '& .MuiSvgIcon-root': {
+                            fontSize: '1rem',
+                          },
+                        },
+                      },
                     }}
+                    endIcon={<OpenInNewIcon />}
                   >
-                    Fiyat Aralığı: {minPrice.toLocaleString('tr-TR', { style: 'currency', currency: 'TRY' })} - {maxPrice.toLocaleString('tr-TR', { style: 'currency', currency: 'TRY' })}
-                  </Typography>
-                  {dress.services && dress.services.length > 0 ? (
-                    <List sx={{ marginTop: 1 }}>
-                      {dress.services.map((service, serviceIndex) => (
-                        <ListItem key={serviceIndex} sx={{ padding: 0 }}>
-                          <ListItemIcon sx={{ minWidth: 'auto', marginRight: 1 }}>
-                            <CheckCircleIcon color="primary" />
-                          </ListItemIcon>
-                          <ListItemText
-                            primary={service}
-                            sx={{ margin: 0, fontSize: { xs: '0.875rem', sm: '1rem' } }}
-                          />
-                        </ListItem>
-                      ))}
-                    </List>
-                  ) : (
-                    <Typography
-                      variant="body2"
-                      sx={{ marginTop: 1, fontSize: { xs: '0.875rem', sm: '1rem' }, fontStyle: 'italic' }}
-                    >
-                      Hizmet mevcut değil
-                    </Typography>
-                  )}
-                  {dress.hostAddress && (
-                    <Button
-                      variant="outlined"
-                      color="primary"
-                      href={dress.urls.pageURL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      sx={{
-                        marginTop: 2,
-                        fontSize: { xs: '0.75rem', sm: '0.875rem' },
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        alignItems: 'center',
-                        textTransform: 'none',
-                        padding: '6px 16px',  // Default padding
-                      }}
-                      endIcon={<OpenInNewIcon />}
-                    >
-                      {dress.hostAddress}
-                    </Button>
-                  )}
-                </CardContent>
+                    {dress.hostAddress}
+                  </Button>
+                )}
               </Box>
             </Card>
           );
