@@ -22,10 +22,10 @@ const App = () => {
 
   return (
 
-    
+
     <div className="App">
       <AppBarComp>
-      <WeddingDressList dresses={aggegatedData} />
+        <WeddingDressList dresses={aggegatedData} />
       </AppBarComp>
 
     </div>
@@ -33,3 +33,18 @@ const App = () => {
 };
 
 export default App;
+
+
+
+
+export async function generateStaticParams() {
+
+
+
+
+  return [{ slug: ["gelinlik"] }]
+
+
+
+
+}

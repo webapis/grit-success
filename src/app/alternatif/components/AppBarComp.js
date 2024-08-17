@@ -30,7 +30,7 @@ export default function PersistentDrawerLeft({ children }) {
                         aria-label="open drawer"
                
                         edge="start"
-                        sx={{ mr: 2, ...(open && { display: 'none' }) }}
+                        sx={{ mr: 2 }}
                     >
                         <MenuIcon sx={{ color: 'black' }} />
                     </IconButton>
