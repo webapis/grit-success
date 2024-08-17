@@ -9,6 +9,7 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  Chip
 } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
@@ -17,7 +18,7 @@ const WeddingDressList = ({ dresses }) => {
   return (
     <Box className="wedding-dress-list" sx={{ maxWidth: 800, margin: '0 auto', padding: '0 15px' }}>
       <Typography variant="h4" gutterBottom>
-      Gelinlik Alternatifleri
+        Gelinlik Alternatifleri
       </Typography>
       <List>
         {dresses.sort((a, b) => a.price - b.price).map((dress, index) => {
@@ -38,24 +39,27 @@ const WeddingDressList = ({ dresses }) => {
                 alt={dress.urls.title}
               />
               <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
-      
                 <Box sx={{ mb: 1 }}>
                   <Typography variant="body2" component="span" sx={{ fontWeight: 'bold' }}>
                     Ortalama Fiyat:
                   </Typography>
-                  <Typography 
-                    variant="body2" 
-                    component="span" 
-                    sx={{ 
+                  <Chip
+                    label={dress.priceFormatted}
+                    size="small"
+                    sx={{
                       ml: 1,
+                      backgroundColor: 'primary.main',
+                      color: 'white',
+                      fontWeight: 'bold',
+                      fontSize: '0.75rem', // Adjust font size for smaller chip
+                      height: 'auto', // Adjust height for smaller chip
+                      padding: '2px 8px', // Adjust padding for smaller chip
                       '@media (max-width: 600px)': {
                         display: 'block',
                         ml: 2
                       }
                     }}
-                  >
-                    {dress.priceFormatted}
-                  </Typography>
+                  />
                 </Box>
                 <Box sx={{ mb: 1 }}>
                   <Typography variant="body2" component="span" sx={{ fontWeight: 'bold' }}>
