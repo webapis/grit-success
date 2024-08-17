@@ -17,7 +17,7 @@ const WeddingDressList = ({ dresses }) => {
   return (
     <Box className="wedding-dress-list" sx={{ maxWidth: 800, margin: '0 auto', padding: '0 15px' }}>
       <Typography variant="h4" gutterBottom>
-        Gelinlik Markaları
+      Gelinlik Alternatifleri
       </Typography>
       <List>
         {dresses.sort((a, b) => a.price - b.price).map((dress, index) => {
