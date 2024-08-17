@@ -28,7 +28,8 @@ export default function PersistentDrawerLeft({ children }) {
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
-               
+                        component='a'
+                        href='/'
                         edge="start"
                         sx={{ mr: 2 }}
                     >
@@ -51,7 +52,7 @@ export default function PersistentDrawerLeft({ children }) {
                             textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
                             textDecoration: 'none'
                         }}
-                        href={'#'}
+                        href={'/'}
                     >
                         Glumzi
                     </Typography>

@@ -4,7 +4,7 @@
 import React from 'react';
 import WeddingDressList from '../components/WeddingDressList';
 import aggegatedData from '../../../../aggregated-data/alternatif/dataWithAveragePrice.json'
-import AppBarComp from '../components/AppBarComp'
+import AppBarComp from '../components/AppBarComp';
 
 
 
