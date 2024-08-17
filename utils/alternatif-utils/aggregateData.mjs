@@ -1,7 +1,7 @@
 import mapData from "../mappers/mapData.mjs";
 import calculateAveragePrices from "../group/calculateAveragePrices.mjs";
 import formatPriceAsTurkishLira from "../format/formatPriceAsTurkishLira.mjs";
-
+import extractHost from "../extractors/extractHost.mjs";
 import fs from 'fs'
 const meta = JSON.parse(fs.readFileSync(`${process.cwd()}/utils/meta/alternafit/gelinlik.json`))
 
@@ -11,7 +11,7 @@ const dataWithAveragePrice = calculateAveragePrices(mappedData)
 debugger
 const mapImage = dataWithAveragePrice.map((m => {
 
-    return { ...m, urls: { ...m.urls, imageURL: `/alternatif/gelinlik/${m.brand}.jpg` }, priceFormatted: formatPriceAsTurkishLira(m.price), services: searchPropertyName(m.brand, meta)?.flat() }
+    return { ...m, urls: { ...m.urls, imageURL: `/alternatif/gelinlik/${m.brand}.jpg` }, priceFormatted: formatPriceAsTurkishLira(m.price), services: searchPropertyName(m.brand, meta)?.flat(),hostAddress:extractHost(m?.urls?.pageURL,m) }
 }))
 debugger
 
@@ -20,6 +20,6 @@ debugger
 
 function searchPropertyName(propertyName, meta) {
     const result =Object.values(meta.filter(obj => Object.keys(obj)[0] === propertyName)).map(m=>Object.values(m))[0]
-    debugger
+
     return result
 }
