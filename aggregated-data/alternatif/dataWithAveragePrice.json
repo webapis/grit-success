@@ -2,15 +2,16 @@
     {
         "brand": "galaway",
         "price": 6111.111111111111,
-        
         "urls": {
             "title": "Emily Gelinlik",
             "price": 2400,
             "pageTitle": "Gelin Elbiseleri",
             "pageURL": "https://www.galaway.co/23-gelin-elbiseleri",
+            "priceFormatted": "₺2.400,00",
             "priceAsString": "₺2.400,00",
             "category": "gelinlik",
-            "brand": "galaway"
+            "brand": "galaway",
+            "imageURL": "/alternatif/gelinlik/galaway.jpg"
         },
         "weights": [
             2,
@@ -25,6 +26,10 @@
             3600,
             4500,
             28000
+        ],
+        "priceFormatted": "₺6.111,11",
+        "services": [
+            "satlık"
         ]
     },
     {
@@ -35,8 +40,10 @@
             "price": 100,
             "pageTitle": "Kadın Gelinlik modelleri | Gardrops",
             "pageURL": "https://www.gardrops.com/kadin/gelinlik?page=8",
+            "priceFormatted": "₺100,00",
             "priceAsString": "100 tl",
-            "brand": "gardrops"
+            "brand": "gardrops",
+            "imageURL": "/alternatif/gelinlik/gardrops.jpg"
         },
         "weights": [
             1,
@@ -349,6 +356,10 @@
             28500,
             29000,
             29500
+        ],
+        "priceFormatted": "₺8.802,69",
+        "services": [
+            "satlık"
         ]
     },
     {
@@ -359,15 +370,22 @@
             "price": 9405,
             "pageTitle": "2024 Gelinlik Modelleri Ve Gelinlik Fiyatları | Kıyafet Sepeti",
             "pageURL": "https://www.kiyafetsepeti.com.tr/gelinlik?_gl=1*1bdl89i*_up*MQ..&gclid=Cj0KCQjwq_G1BhCSARIsACc7Nxqq2t6dja8RrwtQD27heS5aX6uCsGuJc5P9GM-dJdy48akAvWBWCiEaArL4EALw_wcB",
+            "priceFormatted": "₺9.405,00",
             "priceAsString": "9.405 TL",
             "category": "gelinlik",
-            "brand": "kiyafetsepeti"
+            "brand": "kiyafetsepeti",
+            "imageURL": "/alternatif/gelinlik/kiyafetsepeti.jpg"
         },
         "weights": [
             8
         ],
         "prices": [
             9405
+        ],
+        "priceFormatted": "₺9.405,00",
+        "services": [
+            "büyük beden",
+            "tesettür"
         ]
     },
     {
@@ -378,9 +396,11 @@
             "price": 9600,
             "pageTitle": "Gelinlik Modelleri | Abiyefon.com",
             "pageURL": "https://www.abiyefon.com/gelinlik-modelleri",
+            "priceFormatted": "₺9.600,00",
             "priceAsString": "9600.00",
             "category": "gelinlik",
-            "brand": "abiyefon"
+            "brand": "abiyefon",
+            "imageURL": "/alternatif/gelinlik/abiyefon.jpg"
         },
         "weights": [
             1,
@@ -393,6 +413,10 @@
             9000,
             9600,
             24000
+        ],
+        "priceFormatted": "₺10.560,00",
+        "services": [
+            "satlık"
         ]
     },
     {
@@ -403,8 +427,10 @@
             "price": 1000,
             "pageTitle": "2024 Gelinlik Modelleri ve Fiyatları - Düğün.com - Sayfa 27 / 100",
             "pageURL": "https://dugun.com/gelinlik?page=27",
+            "priceFormatted": "₺1.000,00",
             "priceAsString": "1.000 TL",
-            "brand": "dugun"
+            "brand": "dugun",
+            "imageURL": "/alternatif/gelinlik/dugun.jpg"
         },
         "weights": [
             10,
@@ -645,6 +671,11 @@
             39765.23,
             99410.82,
             34262.22
+        ],
+        "priceFormatted": "₺11.453,37",
+        "services": [
+            "satlık",
+            "tesettür"
         ]
     },
     {
@@ -655,9 +686,11 @@
             "price": 8995,
             "pageTitle": "Gelinlik Modelleri - Beyaz Elbiseler",
             "pageURL": "https://www.alfa-beta.com.tr/kategori/gelinlik-2",
+            "priceFormatted": "₺8.995,00",
             "priceAsString": "8.995,00 TL",
             "category": "elbise",
-            "brand": "alfa-beta"
+            "brand": "alfa-beta",
+            "imageURL": "/alternatif/gelinlik/alfa-beta.jpg"
         },
         "weights": [
             1,
@@ -744,6 +777,10 @@
             19995,
             21995,
             22995
+        ],
+        "priceFormatted": "₺11.510,09",
+        "services": [
+            "satlık"
         ]
     },
     {
@@ -754,30 +791,65 @@
             "price": 19500,
             "pageTitle": "Gelinlik",
             "pageURL": "https://www.omurgelinlik.com/gelinlik",
+            "priceFormatted": "₺19.500,00",
             "priceAsString": "19.500,00 TL",
             "category": "gelinlik",
-            "brand": "omurgelinlik"
+            "brand": "omurgelinlik",
+            "imageURL": "/alternatif/gelinlik/omurgelinlik.jpg"
         },
         "weights": [
             62
         ],
         "prices": [
             19500
+        ],
+        "priceFormatted": "₺19.500,00",
+        "services": [
+            "satlık"
         ]
     },
     {
         "brand": "tuvanam",
-        "price": 22500,
+        "price": 22030,
+        "urls": {
+            "title": "STELLA",
+            "price": 22500,
+            "pageTitle": "GLAMYOU BRIDAL – Tuvanam",
+            "pageURL": "https://tuvanam.com/collections/glam-you-bridal",
+            "priceFormatted": "₺22.500,00",
+            "priceAsString": "22,500.00TL",
+            "brand": "tuvanam",
+            "imageURL": "/alternatif/gelinlik/tuvanam.jpg"
+        },
         "weights": [
+            1,
+            1,
+            1,
+            1,
+            4,
+            1,
             1
         ],
         "prices": [
-            22500
+            18650,
+            20500,
+            20600,
+            21900,
+            22500,
+            23500,
+            25150
+        ],
+        "priceFormatted": "₺22.030,00",
+        "services": [
+            "satlık"
         ]
     },
     {
         "brand": "cengizakturk",
         "price": 22612.5,
+        "urls": {
+            "imageURL": "/alternatif/gelinlik/cengizakturk.jpg"
+        },
         "weights": [
             1,
             1,
@@ -805,6 +877,10 @@
             41800,
             42350,
             46200
+        ],
+        "priceFormatted": "₺22.612,50",
+        "services": [
+            "satlık"
         ]
     },
     {
@@ -815,9 +891,11 @@
             "price": 12500,
             "pageTitle": "Ürünlerimiz - Sayfa 6 / 17 - Sivas Rose Gelinlik",
             "pageURL": "https://www.rosegelinlik.com/urunlerimiz/page/6/",
+            "priceFormatted": "₺12.500,00",
             "priceAsString": "12,500.00 ₺",
             "category": "gelinlik",
-            "brand": "rosegelinlik"
+            "brand": "rosegelinlik",
+            "imageURL": "/alternatif/gelinlik/rosegelinlik.jpg"
         },
         "weights": [
             1,
@@ -954,6 +1032,11 @@
             48000,
             55000,
             58000
+        ],
+        "priceFormatted": "₺22.867,26",
+        "services": [
+            "satlık",
+            "tesettür"
         ]
     },
     {
@@ -964,8 +1047,10 @@
             "price": 12100,
             "pageTitle": "GELİNLİK Modelleri, Ürünleri ve Fiyatları - aysirashop.com",
             "pageURL": "https://aysirashop.com/tr/n/gelinlik/?page=22&direction=Descending&tab=All",
+            "priceFormatted": "₺12.100,00",
             "priceAsString": "12.100,00 ₺",
-            "brand": "aysirashop"
+            "brand": "aysirashop",
+            "imageURL": "/alternatif/gelinlik/aysirashop.jpg"
         },
         "weights": [
             1,
@@ -1694,6 +1779,12 @@
             17712.5,
             28987.5,
             20702.5
+        ],
+        "priceFormatted": "₺28.727,22",
+        "services": [
+            "satlık",
+            "büyük beden",
+            "tesettür gelinlik"
         ]
     },
     {
@@ -1704,9 +1795,11 @@
             "price": 25000,
             "pageTitle": "Gelinlik - 5fil | Çevrimiçi Konsinye ve İkinci El Mağazası",
             "pageURL": "https://5fil.com/kategori/kadin/gelinlik/",
+            "priceFormatted": "₺25.000,00",
             "priceAsString": "25,000 ₺",
             "category": "gelinlik",
-            "brand": "5fil"
+            "brand": "5fil",
+            "imageURL": "/alternatif/gelinlik/5fil.jpg"
         },
         "weights": [
             1,
@@ -1729,6 +1822,10 @@
             32255,
             42500,
             60000
+        ],
+        "priceFormatted": "₺32.386,82",
+        "services": [
+            "satlık"
         ]
     },
     {
@@ -1739,9 +1836,11 @@
             "price": 9950,
             "pageTitle": "En Güzel Gelinlik Modelleri ve Fiyatları – Oleg Cassini",
             "pageURL": "https://olegcassini.com.tr/gelinlik?page=1",
+            "priceFormatted": "₺9.950,00",
             "priceAsString": "9.950,00 ₺",
             "category": "gelinlik",
-            "brand": "olegcassini"
+            "brand": "olegcassini",
+            "imageURL": "/alternatif/gelinlik/olegcassini.jpg"
         },
         "weights": [
             12,
@@ -1770,6 +1869,10 @@
             40946.75,
             34446.75,
             37696.75
+        ],
+        "priceFormatted": "₺32.763,18",
+        "services": [
+            "satlık"
         ]
     },
     {
@@ -1780,9 +1883,11 @@
             "price": 25020,
             "pageTitle": "Gelinlik Kategorisi - Yeni Sezon Modelleri - Gelinlik Fiyatları",
             "pageURL": "https://www.dreamon.com.tr/kategori/gelinlik",
+            "priceFormatted": "₺25.020,00",
             "priceAsString": "25.020 TL",
             "category": "gelinlik",
-            "brand": "dreamon"
+            "brand": "dreamon",
+            "imageURL": "/alternatif/gelinlik/dreamon.jpg"
         },
         "weights": [
             1,
@@ -2035,6 +2140,10 @@
             73668,
             75522,
             80897
+        ],
+        "priceFormatted": "₺38.378,38",
+        "services": [
+            "satlık"
         ]
     },
     {
@@ -2045,9 +2154,11 @@
             "price": 7380,
             "pageTitle": "Vakko Wedding - Gelinlik Modelleri",
             "pageURL": "https://www.vakko.com/wedding-c-305?currentPage=1",
+            "priceFormatted": "₺7.380,00",
             "priceAsString": "₺ 7.380",
             "category": "elbise",
-            "brand": "vakko"
+            "brand": "vakko",
+            "imageURL": "/alternatif/gelinlik/vakko.jpg"
         },
         "weights": [
             2,
@@ -2122,6 +2233,10 @@
             65500,
             69500,
             79500
+        ],
+        "priceFormatted": "₺40.980,69",
+        "services": [
+            "satlık"
         ]
     },
     {
@@ -2132,9 +2247,11 @@
             "price": 71910.43,
             "pageTitle": "Gelinlik | Tarık Ediz",
             "pageURL": "https://www.tarikediz.com/tr/gelinlikler/",
+            "priceFormatted": "₺71.910,43",
             "priceAsString": "€ 1.943",
             "category": "gelinlik",
-            "brand": "tarikediz"
+            "brand": "tarikediz",
+            "imageURL": "/alternatif/gelinlik/tarikediz.jpg"
         },
         "weights": [
             2,
@@ -2199,6 +2316,7 @@
             39970.8,
             49630.41,
             38675.45
-        ]
+        ],
+        "priceFormatted": "₺66.506,97"
     }
 ]

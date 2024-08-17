@@ -1,9 +1,25 @@
 import mapData from "../mappers/mapData.mjs";
 import calculateAveragePrices from "../group/calculateAveragePrices.mjs";
+import formatPriceAsTurkishLira from "../format/formatPriceAsTurkishLira.mjs";
+
 import fs from 'fs'
+const meta = JSON.parse(fs.readFileSync(`${process.cwd()}/utils/meta/alternafit/gelinlik.json`))
+
 const mappedData = await mapData({ sourceFolder: "data-alternatif/unzipped-data/gelinlik", destinationFolder: `aggregated-data/alternatif`, fileName: 'mappedData' })
 debugger
 const dataWithAveragePrice = calculateAveragePrices(mappedData)
-
-fs.writeFileSync(`${process.cwd()}/aggregated-data/alternatif/dataWithAveragePrice.json`, JSON.stringify(dataWithAveragePrice))
 debugger
+const mapImage = dataWithAveragePrice.map((m => {
+
+    return { ...m, urls: { ...m.urls, imageURL: `/alternatif/gelinlik/${m.brand}.jpg` }, priceFormatted: formatPriceAsTurkishLira(m.price), services: searchPropertyName(m.brand, meta)?.flat() }
+}))
+debugger
+
+fs.writeFileSync(`${process.cwd()}/aggregated-data/alternatif/dataWithAveragePrice.json`, JSON.stringify(mapImage))
+debugger
+
+function searchPropertyName(propertyName, meta) {
+    const result =Object.values(meta.filter(obj => Object.keys(obj)[0] === propertyName)).map(m=>Object.values(m))[0]
+    debugger
+    return result
+}

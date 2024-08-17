@@ -1,13 +1,14 @@
 import React from 'react';
 import WeddingDressList from '../components/WeddingDressList';
-
+import aggegatedData from '../../../../aggregated-data/alternatif/dataWithAveragePrice.json'
 const App = () => {
   const dressesData = [
     {
       brand: "galaway",
       price: 6111.111111111111,
-      img: "./alternatif/gelinlik/abiyefon.jpg",
+   
       urls: {
+        imageURL:"/alternatif/gelinlik/abiyefon.jpg",
         title: "Emily Gelinlik",
         price: 2400,
         pageTitle: "Gelin Elbiseleri",
@@ -29,7 +30,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <WeddingDressList dresses={dressesData} />
+      <WeddingDressList dresses={aggegatedData} />
     </div>
   );
 };
