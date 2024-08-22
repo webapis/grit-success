@@ -15,7 +15,7 @@
     "analit:downloadAProduct": "node src/app/fiyat-karsilastirma/utils/downloadData.mjs",
     "analit:clean": "node src/app/fiyat-karsilastirma/utils/cleanData.mjs",
     "analit:snap": "node src/app/fiyat-karsilastirma/utils/snap.mjs",
-    "alternatif:download":  "node utils/alternatif-utils/downloadData.mjs",
+    "alternatif:download": "node utils/alternatif-utils/downloadData.mjs",
     "alternatif:aggregate": "node utils/alternatif-utils/aggregateData.mjs",
     "downloadTurkDizi": "node src/app/turk-dizi/utils/downloadData.mjs",
     "mergeTurkDizi": "node src/app/turk-dizi/utils/mergeData.mjs",
@@ -36,6 +36,7 @@
     "@next/third-parties": "^14.1.0",
     "@supabase/supabase-js": "^2.43.6",
     "apexcharts": "^3.52.0",
+    "crawlee": "^3.11.1",
     "dotenv": "^16.4.4",
     "firebase": "^10.12.2",
     "fuse.js": "^7.0.0",
@@ -61,5 +62,5 @@
   },
   "aliases": {
     "@utils": "utils"
-}
+  }
 }

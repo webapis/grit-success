@@ -33,22 +33,26 @@ debugger
     const treeResponse = await fetch(`https://api.github.com/repos/webapis/${gitRepo}/git/trees/${sha}?recursive=1`, { method: 'get', headers: { Accept: "application/vnd.github.raw", authorization: `token ${process.env.GH_TOKEN}`, "X-GitHub-Api-Version": "2022-11-28" } })
     const treeData = await treeResponse.json()
     const { tree } = treeData
-        debugger
+     
     const dataFolderTrees = tree.filter(f => f.type === 'blob' && f.path.includes(`${gitFolder}/`))
-
+debugger
 
     for (let t of dataFolderTrees) {
-        await getContent(t.path,localRootFolder,gitRepo)
+      
+        if(t.path.includes(gitFolder)){
+            await getContent(t.path,localRootFolder,gitRepo,gitFolder)
+        }
+      
     }
 }
 
-async function getContent(filepath,localRootFolder,gitRepo) {
+async function getContent(filepath,localRootFolder,gitRepo,gitFolder) {
     const fileName = path.basename(filepath)
 
-    await makeDir(`${localRootFolder}/zipped-files`)
+    await makeDir(`${localRootFolder}/zipped-files/${gitFolder}`)
     const response = await fetch(`https://api.github.com/repos/webapis/${gitRepo}/contents/${filepath}`, { method: 'get', headers: { Accept: "application/vnd.github.raw", authorization: `token ${process.env.GH_TOKEN}`, "X-GitHub-Api-Version": "2022-11-28" } })
 
-    var file = fs.createWriteStream(`${localRootFolder}/zipped-files/${fileName}`);
+    var file = fs.createWriteStream(`${localRootFolder}/zipped-files/${gitFolder}/${fileName}`);
 
     return new Promise((resolve, reject) => {
         response.body.on('close', () => {
@@ -76,7 +80,7 @@ async function unzipFiles(folderPath,gitFolder) {
 
       //  })
         walkSync(folderPath+`/zipped-files`, async (filepath) => {
-
+debugger
             promises.push(filepath)
 
         })
@@ -99,7 +103,7 @@ async function unzipFiles(folderPath,gitFolder) {
 
 async function unzipSingleFile(zippedfilePath,gitFolder) {
 
-    const unzippedFilePath = zippedfilePath.replace('zipped-files', `unzipped-data/${gitFolder}`).replace('.gz', '')
+    const unzippedFilePath = zippedfilePath.replace('zipped-files', `unzipped-data/`).replace('.gz', '')
     debugger
     const folderPath = path.dirname(unzippedFilePath)
     await makeDir(folderPath)
