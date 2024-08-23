@@ -14,12 +14,23 @@ import {
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
-const WeddingDressList = ({ dresses }) => {
+const WeddingDressList = ({ dresses,header }) => {
   return (
+    <>     <Typography 
+    variant="h4" 
+    gutterBottom 
+    textAlign="center" 
+    sx={{
+      width: {xs: '100%', md: '50%'},
+      margin: 'auto',
+      fontSize: {xs: '1.5rem', sm: '2rem', md: '2.5rem'},
+      padding: {xs: '0 1rem', md: 0}
+    }}
+  >
+    {header}
+  </Typography>
     <Box className="wedding-dress-list" sx={{ maxWidth: 800, margin: '0 auto', padding: '0 15px' }}>
-      <Typography variant="h4" gutterBottom>
-        Gelinlik Alternatifleri
-      </Typography>
+
       <List>
         {dresses.sort((a, b) => a.price - b.price).map((dress, index) => {
           const minPrice = Math.min(...dress.prices);
@@ -130,6 +141,7 @@ const WeddingDressList = ({ dresses }) => {
         })}
       </List>
     </Box>
+    </>
   );
 };
 

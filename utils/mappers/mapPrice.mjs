@@ -10,8 +10,9 @@ function mapPrice(price,obj) {
         .replace('$', '')
         .replace('€', '')
         .replace('\n', '')
+        .replace('USD', '')
         .trim() : 0
-    if (price?.includes('$')) {
+    if (price?.includes('$')|| price?.includes('USD')) {
        const result= parseFloat((parsePrice(trimPrice) * 33.50).toFixed(2))
         if(result===0){
             debugger
@@ -50,7 +51,7 @@ export default mapPrice
 
 function parsePrice(trimPrice) {
     switch (true) {
-       //1.943
+       //9,500
         case /^\d\d\d[,]\d\d$/.test(trimPrice)://299,99
 
             return parseFloat(trimPrice.replace(',', '.'))
@@ -87,8 +88,10 @@ function parsePrice(trimPrice) {
             return parseFloat(trimPrice.replace('.', '').replace(',', '.'))
 
         case /^\d[.]\d\d\d$/.test(trimPrice)://1.449
-
             return parseFloat(trimPrice.replace('.', ''))
+            case /^\d[,]\d\d\d$/.test(trimPrice)://9,500
+            return parseFloat(trimPrice.replace(',', ''))
+
         case /^\d\d\d\d$/.test(trimPrice)://4299
 
             return parseFloat(trimPrice)

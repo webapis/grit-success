@@ -1,31 +1,51 @@
 
 
-
+import fs from 'fs';
+import path from 'path';
 import React from 'react';
 import WeddingDressList from '../components/WeddingDressList';
-import aggegatedData from '../../../../aggregated-data/alternatif/dataWithAveragePrice.json'
+
 import AppBarComp from '../components/AppBarComp';
 
 
 
-export async function generateMetadata() {
+export async function generateMetadata({params:{slug}}) {
+  const keyword =slug[0].replaceAll('-','_')
+
+  const metaFilePath = path.join(process.cwd(), 'src/app/alternatif/page-meta',`${keyword}.json`);
+debugger
+debugger
+  const metaDataRow = fs.readFileSync(metaFilePath, 'utf8');
+debugger
+  const metaData =JSON.parse(metaDataRow)
 
   return {
-    title: 'DeFacto, Koton ve Addax Alternatifleri – Şık Gelinlikler',
-    description: 'DeFacto, Koton ve Addax gibi markalara alternatif şık gelinlikler arıyorsanız, aradığınızı bulamadıysanız, size uygun diğer siteleri keşfedin. Özel gününüz için zarif ve uygun fiyatlı gelinlik seçenekleri burada.',
-    keywords: 'DeFacto gelinlik alternatifleri, Koton gelinlik alternatifleri, Addax gelinlik alternatifleri, şık gelinlikler, zarif gelinlikler, uygun fiyatlı gelinlikler, kadın gelinlikleri, gelinlik satın alabileceğiniz siteler'
+    title: metaData.title,
+    description: metaData.description,
+    keywords: metaData.keywords
 
   }
 }
-const App = () => {
+const App = ({params:{slug}}) => {
+  const keyword =slug[0].replaceAll('-','_')
 
+  const filePath = path.join(process.cwd(), 'aggregated-data/alternatif',keyword,`dataWithAveragePrice.json`);
+debugger
+  const dataRow = fs.readFileSync(filePath, 'utf8');
+
+  const data =JSON.parse(dataRow)
+
+  const metaFilePath = path.join(process.cwd(), 'src/app/alternatif/page-meta',`${keyword}.json`);
+  debugger
+  debugger
+    const metaDataRow = fs.readFileSync(metaFilePath, 'utf8');
+  debugger
+    const metaData =JSON.parse(metaDataRow)
 
   return (
-
-
     <div className="App">
       <AppBarComp>
-        <WeddingDressList dresses={aggegatedData} />
+        <WeddingDressList dresses={data} header={metaData.header}/>
       </AppBarComp>
 
     </div>
@@ -42,7 +62,7 @@ export async function generateStaticParams() {
 
 
 
-  return [{ slug: ["gelinlik"] }]
+  return [{ slug: ["gelinlik"] },{ slug: ["buyuk-beden-elbise"] }]
 
 
 
