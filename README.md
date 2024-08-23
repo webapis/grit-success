@@ -112,3 +112,6 @@ This specification outlines the necessary details for developing a dynamic and v
 //avarage
 
 https://chatgpt.com/c/5988cae5-d31e-412b-b29e-ba589b1263e5
+
+
+node src/app/sponsor-kiyafeti/utils/downloadData.mjs && node utils/alternatif-utils/downloadData.mjs && node src/app/turk-dizi/utils/downloadData.mjs&& node utils/alternatif-utils/aggregateData.mjs && node src/app/sponsor-kiyafeti/utils/sqlquery.mjs&& node src/app/turk-dizi/utils/mergeData.mjs&& npx next build
