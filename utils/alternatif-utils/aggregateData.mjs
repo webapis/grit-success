@@ -2,6 +2,7 @@ import mapData from "../mappers/mapData.mjs";
 import calculateAveragePrices from "../group/calculateAveragePrices.mjs";
 import formatPriceAsTurkishLira from "../format/formatPriceAsTurkishLira.mjs";
 import extractHost from "../extractors/extractHost.mjs";
+import sumArray from "../reducers/sumArray.mjs";
 import makeDir from "make-dir";
 import { walkSync } from "../walkSync.mjs";
 import path from "path"
@@ -9,16 +10,17 @@ import fs from 'fs'
 
 
 const filepathes =[]
+
 walkSync(`data-alternatif/unzipped-data`, async (filePath) => {
     filepathes.push(filePath)
-debugger
+
     const filename = path.basename(filePath, '.json');
     const meta = JSON.parse(fs.readFileSync(`${process.cwd()}/utils/meta/alternafit/${filename}.json`))
     const mappedData = await mapData({ sourceFolder: `data-alternatif/unzipped-data/${filename}`, destinationFolder: `aggregated-data/alternatif`, fileName: 'mappedData' })
     const dataWithAveragePrice = calculateAveragePrices(mappedData)
     const mapImage = dataWithAveragePrice.map((m => {
-
-        return { ...m, urls: { ...m.urls, imageURL: `/alternatif/${filename}/${m.brand}.jpg` }, priceFormatted: formatPriceAsTurkishLira(m.price), services: searchPropertyName(m.brand, meta)?.flat(), hostAddress: extractHost(m?.urls?.pageURL, m) }
+debugger
+        return { ...m,totalProducts: sumArray(m.weights), urls: { ...m.urls, imageURL: `/alternatif/${filename}/${m.brand}.jpg` }, priceFormatted: formatPriceAsTurkishLira(m.price), services: searchPropertyName(m.brand, meta)?.flat(), hostAddress: extractHost(m?.urls?.pageURL, m) }
     }))
     await makeDir(`${process.cwd()}/aggregated-data/alternatif/${filename}`)
 
