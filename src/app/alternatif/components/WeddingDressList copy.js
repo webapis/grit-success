@@ -14,9 +14,9 @@ import {
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
-import ClickableLink from './ClickableLink';
-import ViewCount from './ViewCount';
-const WeddingDressList = ({ dresses, header, userViewData, table }) => {
+import ClickableLink from '@/app/utils/firebase/ClickableLink';
+import ViewCount from '@/app/utils/firebase/ViewCount';
+const WeddingDressList = ({ dresses, header, userViewData }) => {
   return (
     <>
       <Typography
@@ -128,10 +128,36 @@ const WeddingDressList = ({ dresses, header, userViewData, table }) => {
                     ))}
                   </List>
                   {dress.hostAddress && (
-                     <ClickableLink table={table}  clickable={1} title={dress.hostAddress} linkId={dress.urls.pageURL} />
+                    <Button
+                      variant="outlined"
+                      color="primary"
+                      href={dress.urls.pageURL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mobileSmallButton"
+                      sx={{
+                        mt: 2,
+                        alignSelf: 'flex-start',
+                        textTransform: 'none',
+                        fontSize: '0.875rem',
+                        padding: '6px 16px',
+                        '&.mobileSmallButton': {
+                          '@media (max-width: 600px)': {
+                            fontSize: '0.75rem',
+                            padding: '4px 10px',
+                            '& .MuiSvgIcon-root': {
+                              fontSize: '1rem',
+                            },
+                          },
+                        },
+                      }}
+                      endIcon={<OpenInNewIcon />}
+                    >
+                      {dress.hostAddress}
+                    </Button>
                   )}
 
-                  {/* <ViewCount  linkId={dress.urls.pageURL} userViewData={userViewData} /> */}
+                  <ViewCount  linkId={dress.hostAddress} userViewData={userViewData} />
                 </Box>
               </Card>
             );
