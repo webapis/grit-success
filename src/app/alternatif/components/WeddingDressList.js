@@ -128,7 +128,7 @@ const WeddingDressList = ({ dresses, header, userViewData, table }) => {
                     ))}
                   </List>
                   {dress.hostAddress && (
-                     <ClickableLink table={table}  clickable={1} title={dress.hostAddress} linkId={dress.urls.pageURL} />
+                     <ClickableLink table={table}  clickable={1} title={dress.hostAddress} linkId={dress.urls.sourceUrl} />
                   )}
 
                   {/* <ViewCount  linkId={dress.urls.pageURL} userViewData={userViewData} /> */}

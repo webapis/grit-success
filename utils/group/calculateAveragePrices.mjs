@@ -12,7 +12,8 @@ export default function calculateAveragePrices(data) {
     const prices = Object.keys(m[1]).map(m => parseFloat(m))
     const weights = Object.values(m[1]).map((m) => m.length)
     const price = calculateWeightedAveragePrice(prices, weights)
-
+ 
+debugger
     const urls = Object.values(m[1]).flat()[0]
 
    
