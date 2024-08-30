@@ -1,0 +1,301 @@
+{
+    "bayan_kazak_cesitleri": {
+      "yaka_tipine_gore": {
+        "bogazli_kazak": [
+          "Tam boğazlı",
+          "Yarım boğazlı",
+          "Katlanabilir boğazlı",
+          "Gevşek boğazlı",
+          "Asimetrik boğazlı"
+        ],
+        "v_yaka_kazak": [
+          "Derin V yaka",
+          "Sığ V yaka",
+          "Çapraz V yaka",
+          "Çift V yaka",
+          "Dantel detaylı V yaka"
+        ],
+        "balikci_yaka_kazak": [
+          "Klasik balıkçı yaka",
+          "Yarım balıkçı yaka",
+          "Geniş balıkçı yaka",
+          "Pileli balıkçı yaka",
+          "Büzgülü balıkçı yaka"
+        ],
+        "polo_yaka_kazak": [
+          "Klasik polo yaka",
+          "Uzun polo yaka",
+          "Kontrast renkli polo yaka",
+          "Düğmeli polo yaka",
+          "Fermuarlı polo yaka"
+        ],
+        "duz_yaka_kazak": [
+          "Klasik bisiklet yaka",
+          "Geniş bisiklet yaka",
+          "Dar bisiklet yaka",
+          "Ribanalı bisiklet yaka",
+          "Kontrast renkli bisiklet yaka"
+        ],
+        "kayik_yaka_kazak": [
+          "Geniş kayık yaka",
+          "Dar kayık yaka",
+          "Asimetrik kayık yaka",
+          "Omuz açık kayık yaka",
+          "Fırfırlı kayık yaka"
+        ],
+        "diger_yaka_tipleri": [
+          "Asimetrik yaka kazak",
+          "Straplez kazak",
+          "Tek omuz kazak",
+          "Halter yaka kazak",
+          "Degaje yaka kazak",
+          "Kare yaka kazak",
+          "Yuvarlak yaka kazak",
+          "Cowl (drape) yaka kazak",
+          "Fırfırlı yaka kazak",
+          "Bağcıklı yaka kazak"
+        ],
+        "yaka_detayli_kazaklar": [
+          "Dantel yakalı",
+          "Boncuk işlemeli yakalı",
+          "Kontrast renkli yakalı",
+          "Çıkarılabilir yakalı",
+          "Deri detaylı yakalı"
+        ]
+      },
+      "uzunluguna_gore": [
+        "Uzun hırka (kalça altı)",
+        "Crop (kısa) kazak",
+        "Normal boy kazak (bel hizası)",
+        "Midi boy kazak (kalça hizası)",
+        "Tunik tarzı uzun kazak",
+        "High-low (önü kısa arkası uzun) kazak",
+        "Mikro crop kazak (göğüs altı)",
+        "Ultra uzun kazak (yer süpüren)",
+        "Vücut boyunca değişken uzunluklu kazak"
+      ],
+      "kesim_sekline_gore": [
+        "Oversize (bol kesim) kazak",
+        "Dar kesim kazak",
+        "Reglan kol kazak",
+        "Yarasa kol kazak",
+        "Kimono kol kazak",
+        "Balon kol kazak",
+        "Kelebek kol kazak",
+        "Kolsuz kazak (süveter)",
+        "Peplum kesim kazak",
+        "A kesim kazak",
+        "Beli büzgülü kazak",
+        "Asimetrik kesim kazak",
+        "Vücudu saran (bodycon) kazak",
+        "Boxy (kare kesim) kazak",
+        "Dolman kol kazak",
+        "Cape tarzı kazak",
+        "Ponço tarzı kazak",
+        "Çan kesim kazak",
+        "Manto tarzı uzun kazak",
+        "Pelerin tarzı kazak",
+        "Wrap (sarmalı) kazak",
+        "Korsaj detaylı kazak",
+        "Yırtmaçlı kazak"
+      ],
+      "orgu_tipine_gore": [
+        "Triko kazak",
+        "Örgü kazak",
+        "Ajurlu kazak",
+        "Kablo örgü kazak",
+        "Fitilli kazak",
+        "Aran örgü kazak",
+        "Jakarlı kazak",
+        "İnce örgü kazak",
+        "Saç örgüsü kazak",
+        "Pirinç örgü kazak",
+        "Lastik örgü kazak",
+        "Selanik örgü kazak",
+        "Punto di roma örgü kazak",
+        "Brioche örgü kazak",
+        "Ters örgü kazak",
+        "Kafes örgü kazak",
+        "Şişle örülmüş kazak",
+        "Tığ işi kazak",
+        "Mesh (file) örgü kazak",
+        "Intarsia örgü kazak",
+        "Fair Isle örgü kazak",
+        "Fıstık örgü kazak",
+        "Balıksırtı örgü kazak",
+        "Sepet örgü kazak",
+        "Çift taraflı örgü kazak"
+      ],
+      "desen_ve_gorunume_gore": {
+        "duz_renk_kazak": [],
+        "desenli_kazak": [
+          "Çizgili kazak (yatay, dikey, diagonal)",
+          "Kareli kazak (ekose, gingham, tartan)",
+          "Puantiyeli kazak",
+          "Çiçek desenli kazak",
+          "Geometrik desenli kazak",
+          "Hayvan deseni kazak (leopar, zebra vb.)",
+          "Batik desenli kazak",
+          "Etnik desenli kazak"
+        ],
+        "baskili_kazak": [
+          "Slogan baskılı",
+          "Resim baskılı",
+          "Fotoğraf baskılı"
+        ],
+        "diger_gorunumler": [
+          "Nakışlı kazak",
+          "Patchwork kazak",
+          "Degrade (renk geçişli) kazak",
+          "Metalik görünümlü kazak",
+          "Tie-dye kazak",
+          "Kamuflaj desenli kazak",
+          "Pointelle (delikli desen) kazak",
+          "Optik illüzyon desenli kazak",
+          "Dijital baskılı kazak",
+          "Holografik görünümlü kazak",
+          "Patchwork tekniği ile yapılmış karışık desenli kazak",
+          "Üç boyutlu doku efektli kazak"
+        ]
+      },
+      "malzemeye_gore": {
+        "yun_kazak": [
+          "Merinos yünü",
+          "Alpaka yünü",
+          "Moher yünü",
+          "Lambswool (kuzu yünü)"
+        ],
+        "diger_malzemeler": [
+          "Pamuklu kazak",
+          "Kaşmir kazak",
+          "Akrilik kazak",
+          "Karışım kumaşlı kazak",
+          "İpek kazak",
+          "Viskon kazak",
+          "Polyester kazak",
+          "Angora kazak",
+          "Bambu kazak",
+          "Modal kazak",
+          "Lyocell kazak",
+          "Soya kumaşı kazak",
+          "Tencel kazak",
+          "Yün-kaşmir karışımı kazak",
+          "Pamuk-polyester karışımı kazak",
+          "Geri dönüştürülmüş malzemeden kazak",
+          "Organik malzemeden kazak",
+          "Vegan malzemeden kazak",
+          "Nanotech kumaşlı kazak",
+          "Termoregülasyon özellikli kumaştan kazak"
+        ]
+      },
+      "mevsimsel_kullanima_gore": [
+        "İnce örgülü yaz kazakları",
+        "Kalın örgülü kış kazakları",
+        "Mevsimlik kazaklar",
+        "Termal kazaklar",
+        "Hafif bahar kazakları",
+        "Sonbahar geçiş kazakları",
+        "Dört mevsim giyilebilen kazak",
+        "Güneş korumalı yaz kazağı",
+        "Rüzgar geçirmez sonbahar kazağı"
+      ],
+      "stil_ve_kullanim_amacina_gore": [
+        "Günlük kazaklar",
+        "Ofis tarzı kazaklar",
+        "Spor kazaklar",
+        "Gece tarzı şık kazaklar",
+        "Vintage tarzı kazaklar",
+        "Bohem tarzı kazaklar",
+        "Minimalist kazaklar",
+        "Retro tarzı kazaklar",
+        "Punk tarzı kazaklar",
+        "Grunge tarzı kazaklar",
+        "Preppy tarzı kazaklar",
+        "Romantik tarzı kazaklar",
+        "Casual chic kazaklar",
+        "Athleisure tarzı kazaklar",
+        "Avangard tarzı kazak",
+        "Steampunk tarzı kazak",
+        "Cyberpunk tarzı kazak",
+        "Eco-friendly tarzı kazak",
+        "Lüks tarzı kazak"
+      ],
+      "detay_ve_aksesuarlara_gore": [
+        "Düğmeli kazaklar",
+        "Fermuarlı kazaklar",
+        "Püsküllü kazaklar",
+        "Taş veya boncuk işlemeli kazaklar",
+        "Dantelli kazaklar",
+        "Fırfırlı kazaklar",
+        "Kapüşonlu kazaklar",
+        "Pul işlemeli kazaklar",
+        "Aplike detaylı kazaklar",
+        "Kenar detaylı kazaklar (saçaklı, püsküllü)",
+        "Omuz detaylı kazaklar (cut-out, düğmeli)",
+        "Kol detaylı kazaklar (volanlı, büzgülü)",
+        "Cepli kazaklar",
+        "Kemer detaylı kazaklar",
+        "Yaka detaylı kazaklar (kontrastlı, işlemeli)",
+        "LED ışıklı detaylı kazak",
+        "Çıkarılabilir aksesuarlı kazak",
+        "Değiştirilebilir parçalı kazak",
+        "Gizli cepli kazak",
+        "Koruyucu pedli kazak (dirsek, omuz)"
+      ],
+      "kombinlenebilirlik_acisindan": [
+        "Tek parça kazaklar",
+        "İkili set kazaklar (twin set)",
+        "Elbise tarzı uzun kazaklar",
+        "Kazak-gömlek kombinleri",
+        "Kazak-etek setleri",
+        "Layering için ince kazaklar",
+        "Çok fonksiyonlu dönüştürülebilir kazak",
+        "Reversible (çift taraflı) kazak",
+        "Modüler parçalı kazak seti"
+      ],
+      "ozel_kullanim_alanlarina_gore": [
+        "Hamile kazakları",
+        "Spor/fitness kazakları",
+        "Dış mekan aktivite kazakları (kamp, yürüyüş)",
+        "Üniform tarzı kazaklar (okul, iş)",
+        "Dans/performans kazakları",
+        "Meditasyon/yoga kazakları",
+        "Terapötik kazaklar (ağrı giderici, postür düzeltici)",
+        "Özel bakım gerektiren kazaklar (el yapımı, antika)",
+        "Kişiselleştirilebilir kazaklar"
+      ],
+      "teknolojik_ozelliklere_gore": [
+        "Akıllı kumaşlı kazaklar (ısı düzenleyici)",
+        "UV korumalı kazaklar",
+        "Nem emici kazaklar",
+        "Anti-bakteriyel kazaklar",
+        "Elektrostatik önleyici kazaklar",
+        "Akıllı telefon kontrollü ısıtmalı kazak",
+        "Müzik kontrollü renk değiştiren kazak",
+        "Hareket sensörlü ışıklı kazak",
+        "Güneş enerjisi depolayan kazak",
+        "Hava kirliliği ölçen sensörlü kazak"
+      ],
+      "surdurulebilirlik_ozelliklerine_gore": [
+        "Sıfır atık üretim kazaklar",
+        "Biyobozunur malzemeli kazaklar",
+        "Karbon nötr üretim kazaklar",
+        "Su tasarruflu üretim kazaklar",
+        "Etik üretim sertifikalı kazaklar"
+      ],
+      "bakim_ozelliklerine_gore": [
+        "Kendi kendini temizleyen kazak",
+        "Leke tutmayan kazak",
+        "Ütü gerektirmeyen kazak",
+        "Makinede yıkanabilen yün kazak",
+        "Hızlı kuruyan kazak"
+      ],
+      "kulturel_ve_geleneksel_ozelliklere_gore": [
+        "Yerel el sanatları ile üretilen kazak",
+        "Belirli bir kültüre özgü motifli kazak",
+        "Tarihi reprodüksiyon kazak",
+        "Modern-geleneksel füzyon kazak",
+        "Belirli bir bölgeye özgü teknikle üretilen kazak"
+      ]
+    }
+  }
