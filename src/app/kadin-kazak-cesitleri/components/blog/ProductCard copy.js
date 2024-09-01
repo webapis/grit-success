@@ -33,16 +33,16 @@ const styles = {
     borderRadius: '8px',
   },
   title: {
-    fontSize: '4vw',  // Adjusts according to the viewport width
+   // fontSize: '4vw',  // Adjusts according to the viewport width
     margin: '16px 0',
   },
   price: {
-    fontSize: '5vw',  // Adjusts according to the viewport width
+   // fontSize: '5vw',  // Adjusts according to the viewport width
     color: 'green',
     margin: '8px 0',
   },
   brand: {
-    fontSize: '3vw',  // Adjusts according to the viewport width
+   // fontSize: '3vw',  // Adjusts according to the viewport width
     color: 'gray',
   },
   '@media (min-width: 768px)': {

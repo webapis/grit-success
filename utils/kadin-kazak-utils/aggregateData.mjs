@@ -1,8 +1,5 @@
 import mapData from "../mappers/mapData.mjs";
-import calculateAveragePrices from "../group/calculateAveragePrices.mjs";
-import formatPriceAsTurkishLira from "../format/formatPriceAsTurkishLira.mjs";
-import extractHost from "../extractors/extractHost.mjs";
-import sumArray from "../reducers/sumArray.mjs";
+import deaccent from "../format/deaccent.mjs";
 import makeDir from "make-dir";
 import { walkSync } from "../walkSync.mjs";
 import path from "path"
@@ -20,8 +17,10 @@ walkSync(`data-kadin-kazak/unzipped-data`, async (filePath) => {
     const mappedData = await mapData({ sourceFolder: `data-kadin-kazak/unzipped-data/${filename}`, destinationFolder: `aggregated-data/kadin-kazak`, fileName: 'mappedData' })
     unmatchdata = mappedData
     for (let k of keywords) {
-
+        const filename = deaccent(k).toLowerCase().replaceAll(' ','-')
         const filteredData = mappedData.filter(f => f.title.toLowerCase().includes(k.toLowerCase()))
+      fs.writeFileSync(`${process.cwd()}/aggregated-data/kadin-kazak/${filename}.json`, JSON.stringify(filteredData))
+        debugger
         for (let fd of filteredData) {
         
             unmatchdata = unmatchdata.filter(f => f.title !== fd.title)
