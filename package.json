@@ -17,6 +17,8 @@
     "analit:snap": "node src/app/fiyat-karsilastirma/utils/snap.mjs",
     "alternatif:download": "node utils/alternatif-utils/downloadData.mjs",
     "alternatif:aggregate": "node utils/alternatif-utils/aggregateData.mjs",
+    "kadkaz:download": "node utils/kadin-kazak-utils/downloadData.mjs",
+    "kadkaz:aggregate": "node utils/kadin-kazak-utils/aggregateData.mjs",
     "downloadTurkDizi": "node src/app/turk-dizi/utils/downloadData.mjs",
     "mergeTurkDizi": "node src/app/turk-dizi/utils/mergeData.mjs",
     "extractActors": "node src/app/turk-dizi/actor/utils/extractActorData.mjs",
