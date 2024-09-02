@@ -423,6 +423,82 @@ const data = [{
     link: 'kadin-kazak-cesitleri/jakarli',
     src: 'kadin-kazak/jakarli-kazak.jpg'
 }
+,
+
+{
+    title: 'Degaje yaka kazak',
+    description: `<p>
+        <strong>Degaje kazak</strong>, geniş ve dökümlü bir yaka tasarımına sahip olan, genellikle rahat ve şık bir görünüm sunan bir kazak türüdür. Degaje yaka, kazakların ön kısmında bol bir şekilde aşağı doğru dökülerek zarif bir görünüm oluşturur. Bu yaka stili, soğuk havalarda sıcaklık sağlarken aynı zamanda feminen ve modern bir hava katmaktadır.
+    </p>
+    <p>
+        <strong>Özellikleri:</strong>
+    </p>
+    <ul>
+        <li><strong>Yaka Tasarımı:</strong> Degaje kazaklar, düşük ve dökümlü bir yaka tasarımına sahiptir. Bu yaka, V yaka ya da yuvarlak yaka yerine bol bir kumaş katmanıyla öne çıkar.</li>
+        <li><strong>Konfor ve Şıklık:</strong> Degaje kazaklar, rahat bir giyim sunarken aynı zamanda şık bir görünüm sağlar. Yaka tasarımı, kazaklara zarif bir detay katar.</li>
+        <li><strong>Kullanım Alanları:</strong> Genellikle soğuk havalarda tercih edilir. Hem günlük hem de özel günlerde şık bir seçenek olarak kullanılabilir. Yumuşak kumaşlar kullanılarak üretildiği için konforludur.</li>
+        <li><strong>Stil ve Moda:</strong> Degaje kazaklar, modern bir stil sunar. Farklı renk ve desen seçenekleri ile kombinlenebilir. Özellikle dar pantolonlar, etekler ya da yüksek bel pantolonlarla birlikte şık bir görünüm elde edilebilir.</li>
+    </ul>
+
+    <h2>Sıklıkla Kullanılan Eşanlamlı Kelimeler:</h2>
+    <ul>
+        <li><strong>Cowl Neck Sweater (İngilizce):</strong> Degaje kazakların İngilizce karşılığıdır.</li>
+    </ul>`,
+    alt: 'Degaje yaka kazak',
+    link: 'kadin-kazak-cesitleri/degaje',
+    src: 'kadin-kazak/cowl-neck-types-sweaters.jpg'
+}
+,
+
+{
+    title: 'Degrade kazak',
+    description: `<p>
+        <strong>Degrade kazak</strong>, renklerin tonlarının kademeli olarak birbirine geçtiği, yumuşak geçişlerin olduğu bir kazak türüdür. "Degrade" terimi, Fransızca kökenlidir ve "azalmak" ya da "düşmek" anlamına gelir. Moda dünyasında ise renklerin bir tondan diğerine geçişini ifade eder.
+    </p>
+    <p>
+        <strong>Özellikleri:</strong>
+    </p>
+    <ul>
+        <li><strong>Renk Geçişleri:</strong> Degrade kazakların en belirgin özelliği, bir renkten diğerine yumuşak geçişlerin olmasıdır. Bu geçişler, aynı rengin farklı tonları arasında olabilir veya tamamen farklı renkler arasında olabilir.</li>
+        <li><strong>Tasarım ve Şıklık:</strong> Degrade kazaklar, dikkat çekici ve estetik bir görünüme sahiptir. Renklerin kademeli geçişi, kazağa dinamik ve modern bir hava katar. Bu tasarım, hem gündelik hem de şık kombinlerde tercih edilebilir.</li>
+        <li><strong>Kullanım Alanları:</strong> Degrade kazaklar, günlük hayatta rahatlıkla kullanılabilir ve aynı zamanda özel günlerde de şık bir seçenek sunar. Renk geçişleri, kıyafet kombinlerinde farklı bir boyut katar.</li>
+        <li><strong>Kumaş ve Konfor:</strong> Degrade kazaklar, genellikle yumuşak ve rahat kumaşlardan üretilir. Bu kazaklar, soğuk havalarda sıcak tutarken aynı zamanda şıklık sağlar.</li>
+    </ul>
+
+    <h2>Sıklıkla Kullanılan Eşanlamlı Kelimeler:</h2>
+    <ul>
+        <li><strong>Ombre Sweater (İngilizce):</strong> Degrade kazakların İngilizce karşılığıdır.</li>
+    </ul>`,
+    alt: 'Degrade kazak',
+    link: 'kadin-kazak-cesitleri/degrade',
+    src: 'kadin-kazak/ombre-sweater.jpg'
+},
+
+
+
+{
+    title: 'Dekolte kazak',
+    description: `<p>
+        <strong>Dekolte kazak</strong>, vücudun belirli bölgelerini vurgulayan ve genellikle şık, cesur bir görünüm sunan bir kazak türüdür. "Dekolte" kelimesi, Fransızca kökenli olup, "açıklık" veya "açıkta bırakma" anlamına gelir. Bu tür kazaklar, genellikle göğüs, omuz veya sırt bölgesinde çeşitli açıklıklar veya kesikler barındırır ve bu sayede dikkat çekici bir stil sunar.
+    </p>
+    <p>
+        <strong>Özellikleri:</strong>
+    </p>
+    <ul>
+        <li><strong>Vurgulu Kesimler:</strong> Dekolte kazakların en belirgin özelliği, belirli bölgelerdeki açıklık veya kesiklerdir. Bu açıklıklar, kazağa zarif ve çekici bir hava katar.</li>
+        <li><strong>Tasarım Çeşitleri:</strong> Dekolte kazaklar, V yaka, omuzları açıkta bırakan tasarımlar, derin sırt dekoltesi veya asimetrik kesimlerle tasarlanabilir. Her tasarım, farklı bir vücut bölgesini öne çıkarmayı amaçlar.</li>
+        <li><strong>Kullanım Alanları:</strong> Dekolte kazaklar, genellikle özel davetler, gece gezmeleri veya şık bir akşam yemeği için tercih edilir. Cesur bir stil sunar ve dikkat çekmek isteyenler için idealdir.</li>
+        <li><strong>Kumaş ve Konfor:</strong> Bu kazaklar, genellikle rahat ve esnek kumaşlardan üretilir. Hem vücudu saran hem de zarif bir görünüm sunan modeller mevcuttur.</li>
+    </ul>
+
+    <h2>Sıklıkla Kullanılan Eşanlamlı Kelimeler:</h2>
+    <ul>
+        <li><strong>Cut-Out Sweater (İngilizce):</strong> Dekolte kazakların İngilizce karşılığıdır.</li>
+    </ul>`,
+    alt: 'Dekolte kazak',
+    link: 'kadin-kazak-cesitleri/dekolte',
+    src: 'kadin-kazak/cutout-sweater.jpg'
+}
 ]
 
 export default data
