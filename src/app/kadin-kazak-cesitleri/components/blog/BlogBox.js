@@ -51,8 +51,8 @@ export default function BlogBox({ title, description, alt, src, link }) {
                                 transition: 'height 0.3s ease',
                             }}
                         >
-                            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                                {description}
+                            <Typography variant="body2" sx={{ color: 'text.secondary' }} dangerouslySetInnerHTML={{ __html: description }}>
+                             
                             </Typography>
                         </Box>
                         {showExpandIcon && (
