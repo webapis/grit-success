@@ -19,3 +19,20 @@ export default function KadinKazak() {
 
     return <PersistentDrawerLeft> <Container sx={{ marginTop: 3 }}><Typography variant="h4" >Kazak Çeşitleri</Typography> <Grid container spacing={1} >{blogBoxData.map((m,i) => <Grid item xs={12} key={i}><BlogBox {...m} /> </Grid>)}</Grid> </Container></PersistentDrawerLeft>
 }
+
+
+
+
+
+
+export async function generateStaticParams() {
+
+
+
+
+    return [{ slug: ["kadin-kazak-cesitleri"] }]
+  
+  
+  
+  
+  }
