@@ -25,14 +25,14 @@ export default function KadinKazak() {
 
 
 
-export async function generateStaticParams() {
+// export async function generateStaticParams() {
 
 
 
 
-    return [{ slug: ["kadin-kazak-cesitleri"] }]
+//     return [{ slug: ["kadin-kazak-cesitleri"] }]
   
   
   
   
-  }
+//   }
