@@ -66,9 +66,9 @@ export default function BlogBox({ title, description, alt, src, link }) {
                             </IconButton>
                         )}
                     </CardContent>
-                    <CardActions>
+                    {/* <CardActions>
                         <Button size="small" href={link} component='a'>Benzer Ürünler</Button>
-                    </CardActions>
+                    </CardActions> */}
                 </Grid>
             </Grid>
         </Card>

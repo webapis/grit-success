@@ -498,6 +498,122 @@ const data = [{
     alt: 'Dekolte kazak',
     link: 'kadin-kazak-cesitleri/dekolte',
     src: 'kadin-kazak/cutout-sweater.jpg'
+},{
+    title: 'Deve tüyü kazak',
+    description: `<p>
+        <strong>Deve tüyü kazak</strong>, adını yapımında kullanılan doğal deve tüyünden alan ve yüksek kaliteli, sıcak tutan bir kazak türüdür. Deve tüyü, yumuşak, hafif ve izolasyon özellikleri yüksek bir malzeme olduğundan, soğuk havalarda mükemmel bir koruma sağlar. Bu kazaklar, doğallık ve lüks bir görünüm sunar.
+    </p>
+    <p>
+        <strong>Özellikleri:</strong>
+    </p>
+    <ul>
+        <li><strong>Malzeme:</strong> Deve tüyü kazaklar, doğal deve tüyünden üretilir. Bu tüyler, deve postundan elde edilir ve oldukça yumuşak, hafif ve dayanıklıdır.</li>
+        <li><strong>Yumuşaklık ve Konfor:</strong> Deve tüyü kazaklar, cilt üzerinde son derece yumuşak bir his bırakır. Hafif yapısı sayesinde konforludur ve vücudu rahatsız etmeden sarar.</li>
+        <li><strong>İzolasyon ve Sıcaklık:</strong> Bu kazaklar, mükemmel bir ısı yalıtımı sunar. Deve tüyü, doğal olarak sıcak tutma özelliğine sahiptir, bu nedenle soğuk kış günlerinde ideal bir seçimdir.</li>
+        <li><strong>Doğal Renkler:</strong> Deve tüyü genellikle doğal, toprak tonlarında renklere sahiptir. Bu nedenle deve tüyü kazaklar genellikle bej, kahverengi, krem gibi doğal renklerde üretilir.</li>
+        <li><strong>Lüks ve Kalite:</strong> Deve tüyü kazaklar, genellikle lüks ürünler kategorisinde yer alır. Hem doğallığı hem de nadir bulunması nedeniyle, bu kazaklar yüksek kalite ve prestij simgesi olarak kabul edilir.</li>
+    </ul>
+
+    <h2>Sıklıkla Kullanılan Eşanlamlı Kelimeler:</h2>
+    <ul>
+        <li><strong>Camel Hair Sweater (İngilizce):</strong> Deve tüyü kazakların İngilizce karşılığıdır.</li>
+    </ul>`,
+    alt: 'Deve tüyü kazak',
+    link: 'kadin-kazak-cesitleri/deve-tuyu',
+    src: 'kadin-kazak/camel-hair-sweater.jpg'
+}
+,{
+    title: 'Emzirme kazakları',
+    description: ` <p>
+        <strong>Emzirme kazakları</strong>, annelerin bebeklerini rahatça emzirebilmeleri için özel olarak tasarlanmış kazak türleridir. Bu kazaklar, emzirme sürecini daha kolay ve konforlu hale getirmek için çeşitli işlevsel detaylar içerir.
+    </p>
+    <p>
+        <strong>Özellikleri:</strong>
+    </p>
+    <ul>
+        <li><strong>Pratik Açılabilirlik:</strong> Emzirme kazakları, genellikle ön kısmında veya yan taraflarında emzirme için kolayca açılabilen paneller veya kapaklar içerir. Bu tasarım, annelerin bebeklerini hızlı ve rahat bir şekilde beslemelerine olanak tanır.</li>
+        <li><strong>Rahatlık:</strong> Bu kazaklar, emzirme sırasında annenin rahatlığını ön planda tutacak şekilde tasarlanmıştır. Genellikle yumuşak, esnek ve hafif kumaşlar kullanılır, böylece anneler emzirme sırasında konforlu hisseder.</li>
+        <li><strong>Stil ve Moda:</strong> Emzirme kazakları, şıklığı da düşünerek tasarlanır. Farklı renk, desen ve kesim seçenekleri ile hem işlevsel hem de şık bir görünüm sunar. Böylece anneler, emzirme sürecinde stilinden ödün vermemiş olurlar.</li>
+        <li><strong>Gizlilik:</strong> Emzirme kazakları, emzirme sırasında gizlilik sağlayacak şekilde tasarlanabilir. Açılabilir paneller, annelerin rahatça emzirmelerine olanak tanırken, dışarıdan fazla görünürlük sağlamaz.</li>
+        <li><strong>Kolay Erişim:</strong> Bazı emzirme kazakları, düğme veya fermuar gibi detaylarla donatılmıştır, bu da annelerin emzirmeye kolayca erişmelerini sağlar.</li>
+    </ul>
+
+    <h2>Sıklıkla Kullanılan Eşanlamlı Kelimeler:</h2>
+    <ul>
+        <li><strong>Nursing Sweater (İngilizce):</strong> Emzirme kazaklarının İngilizce karşılığıdır. "Nursing" terimi, emzirme anlamına gelir.</li>
+    </ul>`,
+    alt: 'Emzirme kazakları',
+    link: 'kadin-kazak-cesitleri/emzirme',
+    src: 'kadin-kazak/nursing-sweater.jpg'
+}
+,{
+    title: 'Fermuar yaka kazak',
+    description: ` <p>
+        <strong>Fermuar yaka kazak</strong>, ön kısmında fermuar bulunan ve bu fermuar sayesinde yakanın açılıp kapatılabildiği bir kazak türüdür. Fermuar, genellikle kazakların vücuda uyumunu artırmak, kolayca giyip çıkarmak veya stil açısından esneklik sağlamak amacıyla kullanılır.
+    </p>
+    <p>
+        <strong>Özellikleri:</strong>
+    </p>
+    <ul>
+        <li><strong>Fermuar Tasarımı:</strong> Fermuar yaka kazaklarda, yaka kısmında genellikle uzun bir fermuar bulunur. Bu fermuar, kazak yaka kısmını açıp kapatmanıza olanak tanır ve farklı görünüm seçenekleri sunar. Fermuarın uzunluğu ve yaka yüksekliği değişiklik gösterebilir.</li>
+        <li><strong>Konfor ve Fonksiyonellik:</strong> Fermuar, kazakların giyilmesini ve çıkarılmasını kolaylaştırır. Ayrıca, fermuar kapalıyken kazak daha sıcak ve koruyucu olurken, açıldığında daha rahat ve serin bir hava sağlar.</li>
+        <li><strong>Kullanım Alanları:</strong> Fermuar yaka kazaklar, genellikle spor yaparken, günlük kullanımda veya soğuk havalarda tercih edilir. Ayrıca, bu kazaklar şık ve rahat bir stil sunarak hem spor hem de casual kombinlerde kullanılabilir.</li>
+        <li><strong>Tasarım ve Moda:</strong> Fermuar yaka kazaklar, modern bir görünüm sağlar ve farklı renk ve desen seçenekleri ile tasarlanabilir. Hem klasik hem de spor tarzlarda bulunabilir.</li>
+    </ul>
+
+    <h2>Sıklıkla Kullanılan Eşanlamlı Kelimeler:</h2>
+    <ul>
+        <li><strong>Zip Neck Sweater (İngilizce):</strong> Fermuar yaka kazakların İngilizce karşılığıdır. "Zip neck" ifadesi, fermuarın yaka kısmında bulunduğunu belirtir.</li>
+    </ul>`,
+    alt: 'Fermuar yaka kazak',
+    link: 'kadin-kazak-cesitleri/fermuar-yaka',
+    src: 'kadin-kazak/fermuarli-kazak.jpg'
+}
+,{
+    title: 'File kazak',
+    description: `<p>
+        <strong>File kazak</strong>, ince delikli ve genellikle hafif bir dokusu olan bir kazak türüdür. "File" terimi, Fransızca kökenli olup "ağ" veya "delikli kumaş" anlamına gelir. File kazaklar, bu dokusuyla hafif ve hava geçiren bir yapı sunar, bu da onları yaz mevsiminde veya serin hava koşullarında ideal kılar.
+    </p>
+    <p>
+        <strong>Özellikleri:</strong>
+    </p>
+    <ul>
+        <li><strong>Delikli Doku:</strong> File kazakların en belirgin özelliği, kumaşın yüzeyinde bulunan küçük delikler veya ağ yapılandırmalarıdır. Bu delikler, havanın geçişini kolaylaştırır ve kazakları hafif ve nefes alabilir hale getirir.</li>
+        <li><strong>Kumaş Yapısı:</strong> File kazaklar genellikle örgü veya dantel gibi hafif kumaşlardan üretilir. Bu, hem rahat bir giyim sağlar hem de estetik bir görünüm sunar.</li>
+        <li><strong>Kullanım Alanları:</strong> File kazaklar, yaz aylarında hafif bir katman olarak veya serin hava koşullarında üst olarak giyilebilir. Ayrıca, deniz kenarında ya da tatil bölgelerinde şık bir seçenek olarak tercih edilir.</li>
+        <li><strong>Tasarım ve Şıklık:</strong> File kazaklar, zarif bir görünüm sunar ve genellikle şeffaf veya yarı şeffaf olabilir. Farklı renk ve desen seçenekleri ile şık bir stil oluşturabilir.</li>
+    </ul>
+
+    <h2>Sıklıkla Kullanılan Eşanlamlı Kelimeler:</h2>
+    <ul>
+        <li><strong>Mesh Sweater (İngilizce):</strong> File kazakların İngilizce karşılığıdır. "Mesh" terimi, delikli ve ağ yapılı kumaşları ifade eder.</li>
+    </ul>`,
+    alt: 'File kazak',
+    link: 'kadin-kazak-cesitleri/file-kazagi',
+    src: 'kadin-kazak/file-kazagi.jpg'
+}
+,{
+    title: 'Kaz Ayağı Kazak',
+    description: ` <p>
+        <strong>Kaz ayağı kazak</strong>, klasik ve şık bir desen olan kaz ayağı deseniyle tasarlanmış bir kazak türüdür. Kaz ayağı deseni, kareli veya dişli bir görünümde olup, genellikle iki renkli olup, belirgin bir geometrik şekil oluşturur.
+    </p>
+    <p>
+        <strong>Özellikleri:</strong>
+    </p>
+    <ul>
+        <li><strong>Desen:</strong> Kaz ayağı deseni, genellikle siyah-beyaz gibi iki zıt renkten oluşan klasik bir motif olup, küçük “dişli” veya “ayak” şekillerinde tekrarlanır. Bu desen, hem geleneksel hem de modern tarzlarda sıkça kullanılır.</li>
+        <li><strong>Tasarım:</strong> Kaz ayağı kazaklar genellikle bu klasik deseni vurgulayan, zarif ve şık bir görünüme sahiptir. Desen, kazakların tüm yüzeyine yayılır ve dikkat çekici bir stil sunar.</li>
+        <li><strong>Kullanım Alanları:</strong> Kaz ayağı kazaklar, hem günlük hem de özel durumlarda tercih edilebilir. Genellikle ofis ortamlarında veya şık bir görünüm isteyen etkinliklerde kullanılır. Üzerindeki desen, kıyafeti daha ilgi çekici hale getirir.</li>
+        <li><strong>Kumaş ve Konfor:</strong> Kaz ayağı kazaklar, yumuşak ve rahat kumaşlardan üretilir. Çeşitli kalınlıklarda bulunabilir ve mevsime uygun kumaş seçenekleri sunar.</li>
+    </ul>
+
+    <h2>Sıklıkla Kullanılan Eşanlamlı Kelimeler:</h2>
+    <ul>
+        <li><strong>Houndstooth Sweater (İngilizce):</strong> Kaz ayağı deseniyle tasarlanmış kazakların İngilizce karşılığıdır.</li>
+    </ul>`,
+    alt: 'Kaz Ayağı Kazak',
+    link: 'kadin-kazak-cesitleri/kaz-ayagi',
+    src: 'kadin-kazak/kaz-ayagi-kazak.jpg'
 }
 ]
 
