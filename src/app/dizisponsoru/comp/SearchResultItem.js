@@ -22,7 +22,7 @@ export default function SearchResultItem({ item,userViewData }) {
 
                 height="100"
 
-                src={item.Tag}
+                src={`/dizi-image/${item.Tag}.jpg`}
                 loading="lazy"
 
             />
