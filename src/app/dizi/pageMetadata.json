@@ -513,5 +513,19 @@
             ]
         }
     }
+    ,
+    {
+        "slug": "kiralik-ask-dizi-sponsorlari",
+        "pageTitle": "Kiralık Aşk Dizi Sponsorları",
+        "description": "",
+        "dizi": "Kısmet",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Kiralık Aşk"
+                }
+            ]
+        }
+    }
 ]
 
