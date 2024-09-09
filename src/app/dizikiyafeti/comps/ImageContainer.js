@@ -38,7 +38,7 @@ export default function ImageContainer({ filteredData, pageTitle,userViewData })
                         </div>
 
 
-                        <div style={{ marginTop: 3, width: "100%" }}><Image fotografUrl={`https://ik.imagekit.io/occchd2yc/dk-image/${m.ImageUrl}.jpg`} alt={m.alt} /></div>
+                        <div style={{ marginTop: 3, width: "100%" }}><Image fotografUrl={`/dk-image/${m.ImageUrl}.jpg`} alt={m.alt} /></div>
                         <div style={{display:'flex', justifyContent:'end'}}>
                    
                         <ViewCount rootPath={"dizikiyafeti"} linkId={links} userViewData={userViewData}/>
