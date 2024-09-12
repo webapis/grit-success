@@ -527,5 +527,19 @@
             ]
         }
     }
+    ,
+    {
+        "slug": "kotu-kan-dizi-sponsorlari",
+        "pageTitle": "Kötü Kan Dizi Sponsorları",
+        "description": "",
+        "dizi": "Kötü Kan",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Kötü Kan"
+                }
+            ]
+        }
+    }
 ]
 
