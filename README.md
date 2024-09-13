@@ -115,3 +115,6 @@ https://chatgpt.com/c/5988cae5-d31e-412b-b29e-ba589b1263e5
 
 
 node src/app/sponsor-kiyafeti/utils/downloadData.mjs && node utils/alternatif-utils/downloadData.mjs && node src/app/turk-dizi/utils/downloadData.mjs&& node utils/alternatif-utils/aggregateData.mjs && node src/app/sponsor-kiyafeti/utils/sqlquery.mjs&& node src/app/turk-dizi/utils/mergeData.mjs&& npx next build
+
+// install typesense to hostinger
+https://chatgpt.com/c/66e2f6a0-3d88-8000-920e-ac9bc6022667
