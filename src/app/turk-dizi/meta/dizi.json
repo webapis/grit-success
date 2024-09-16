@@ -12,7 +12,8 @@
         ],
         "FIRST_YEAR": [
             "2024"
-        ]
+        ],
+        "POSTER_IMG": "https://i.12punto.com.tr/Archive/2024/5/7/35471/kapak_135822.jpg"
     },
     {
         "title": "dedektif memoli",
@@ -360,8 +361,21 @@
         "POSTER_IMG": "https://i.ytimg.com/vi/KctGIo2SNqc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBinogK2_yGP2aPzuKgqzIoJBLJVw"
     },
     {
+        "title": "Duy Beni",
+        "POSTER_IMG": "https://img-puhutv.mncdn.com/media/22-07/07/duybeni_1bol_mobil_1.jpg"
+    },
+    
+    {
+        "title": "Yıldızlar Şahidim",
+        "POSTER_IMG": "https://img-puhutv.mncdn.com/media/22-07/07/duybeni_1bol_mobil_1.jpg"
+    },
+    {
+        "title": "Kızlarım İçin",
+        "POSTER_IMG": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMa71I_4GiC3JpmSoCUrXYvTgxdm6Yf3wi9w&s"
+    },
+    {
         "title": "kuzgun",
-        "POSTER_IMG": "https://i.ytimg.com/vi/fMiyKxBF5uQ/sddefault.jpg"
+        "POSTER_IMG": "https://im.haberturk.com/2019/02/13/2372452_31d092119873b1f695cb7f1bd1723d84_640x640.jpg"
     },
     {
         "title": "çarpışma",

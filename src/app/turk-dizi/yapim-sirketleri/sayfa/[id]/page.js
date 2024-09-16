@@ -5,7 +5,7 @@ import PaginationContainer from '../../components/PaginationContainer';
 import ysData from '../../../../../../turk-dizi-data/yapim-sirketleri.json';
 import  Typography  from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-
+import TopNavigation from '@/app/components/TopNavigation';
 
 export async function generateMetadata() {
     return {
@@ -34,7 +34,8 @@ export default function TVseriesProductionCompanies({ params: { id } }) {
     debugger
     return (
         <Container>
-            <Grid container sx={{ display: "flex", justifyContent: "center", marginTop:12 }}>
+            <TopNavigation selected={4}/>
+            <Grid container sx={{ display: "flex", justifyContent: "center", marginTop:1 }}>
             <Grid item xs={12}>
 
 <Typography variant='h4' textAlign="center">Türk yapım şirketlerinin dizileri</Typography>

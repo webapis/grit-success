@@ -11,7 +11,7 @@ export default function TopNavigation ({selected}){
       <Tab label="Dizi Kıyafeti"  component ='a' href="/dizikiyafeti" style={{ textTransform:'capitalize'}} />
       <Tab label="Dizi Sponsoru" component ='a' href="/dizisponsoru" style={{ textTransform:'capitalize'}}/>
       <Tab label="Sponsor Kategori" component ='a' href="/dizi-sponsor-kategori" style={{ textTransform:'capitalize'}}/>
-
+      <Tab label="Yapım Şirketleri" component ='a' href="/turk-dizi/yapim-sirketleri" style={{ textTransform:'capitalize'}}/>
     </Tabs>
     </div>
 }

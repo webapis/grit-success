@@ -5,6 +5,7 @@ import Grid from '@mui/material/Grid';
 import PaginationContainer from './components/PaginationContainer';
 import ysData from '../../../../turk-dizi-data/yapim-sirketleri.json';
 import PersistentDrawerLeft from '@/app/components/drawer';
+import TopNavigation from '@/app/components/TopNavigation';
 import { Typography } from '@mui/material';
 
 const NavData = ysData.map((m) => { return { href: `/turk-dizi/yapim-sirketleri/${m.id}`, title: m.title } })
@@ -38,10 +39,11 @@ export default function TVseriesProductionCompanies() {
     return (
         
             <Container>
-                <Grid container sx={{ display: "flex", justifyContent: "center", marginTop: 12 }}>
+                <TopNavigation selected={4}/>
+                <Grid container sx={{ display: "flex", justifyContent: "center", marginTop: 1 }}>
                     <Grid item xs={12}>
 
-                        <Typography variant='h4' textAlign="center">Türk yapım şirketlerinin dizileri</Typography>
+                        <Typography variant='h4' textAlign="center">Türk yapım şirketleri ve dizileri</Typography>
                     </Grid>
                     <Grid item xs={12} md={8}>
                     <PaginationContainer

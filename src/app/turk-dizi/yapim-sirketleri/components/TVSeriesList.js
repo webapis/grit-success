@@ -7,13 +7,14 @@ import {
   useTheme,
   useMediaQuery,
   Button,
+  Grid
 } from '@mui/material';
 import Link from 'next/link';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import TVSeriesThumbnail from './TVSeriesThumbnail';
 
-const TVSeriesList = ({ companyId, tvSeries, displayedSeriesCount = 5 }) => {
+const TVSeriesList = ({ companyId, tvSeries, displayedSeriesCount = 4 }) => {
   const scrollContainerRef = useRef(null);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -49,18 +50,18 @@ const TVSeriesList = ({ companyId, tvSeries, displayedSeriesCount = 5 }) => {
       <Typography variant={isMobile ? "subtitle1" : "h6"} gutterBottom sx={{ mt: 2, mb: 2 }}>
         Son TV Dizileri
       </Typography>
-      <Box sx={{ position: 'relative', mb: 2 }}>
+  
       
-        <Box
+        <Grid
        
-         
+        container
         >
-          {tvSeries.slice(0, displayedSeriesCount).map((series) => (
-            <TVSeriesThumbnail key={series.id} series={series} isMobile={isMobile} />
+          {tvSeries.slice(0, displayedSeriesCount).map((series,i) => (
+           <Grid item key={i}> <TVSeriesThumbnail key={series.id} series={series} isMobile={isMobile} /></Grid>
           ))}
-        </Box>
+        </Grid>
       
-      </Box>
+ 
       {tvSeries.length > displayedSeriesCount && (
         <Box 
           sx={{ 

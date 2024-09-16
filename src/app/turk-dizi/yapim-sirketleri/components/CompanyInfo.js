@@ -47,7 +47,7 @@ const SocialMediaIcon = ({ platform, url }) => {
   ) : null;
 };
 
-const CompanyInfo = ({ company, compact = false }) => {
+const CompanyInfo = ({ company, compact = true }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -55,7 +55,7 @@ const CompanyInfo = ({ company, compact = false }) => {
     <Card sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', mb: 2 }}>
       <CardMedia
         component="img"
-        sx={{ width: compact ? 150 : 250, height: 'auto', objectFit: 'contain' }}
+        sx={{ width: 150, height: 'auto', objectFit: 'contain' }}
         image={company.logo}
         alt={company.title}
       />

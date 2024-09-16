@@ -1,6 +1,6 @@
 import ysData from '../../../../../turk-dizi-data/yapim-sirketleri.json'
 import CompanyPage from '../components/CompanyPage'
-console.log("ysData", ysData.length)
+import TopNavigation from '@/app/components/TopNavigation'
 
 
 export async function generateMetadata({ params: { slug } }) {
@@ -35,7 +35,7 @@ export default function TVseriesProductionCompanies({ params: { slug } }) {
     const company = ysData.find(f => f.id === companyId)
     console.log("slug", companyId)
 
-    return <CompanyPage company={company} />
+    return <CompanyPage company={company} companyId={companyId}/>
 }
 
 
