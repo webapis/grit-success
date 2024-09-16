@@ -12,7 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Chip from '@mui/material/Chip';
 import Tooltip from '@mui/material/Tooltip';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-
+//
 const TVSeriesThumbnail = ({ series, isMobile }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -55,7 +55,7 @@ const TVSeriesThumbnail = ({ series, isMobile }) => {
           <CardMedia
             component="img"
             height={{xs:75,md:120}}
-            image={series.thumbnail}
+            image={series.thumbnail.replace('https://www.nowtv.com.tr/','')}
             alt={series.title}
             sx={{ objectFit: 'cover', cursor: 'pointer' }}
           />
