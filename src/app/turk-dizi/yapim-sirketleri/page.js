@@ -38,7 +38,7 @@ export default function TVseriesProductionCompanies() {
     const data = paginate(ysData, currentPage, 10)
     return (
         
-            <Container>
+            <>
                 <TopNavigation selected={4}/>
 
             <DrawerWrapper>
@@ -64,7 +64,7 @@ export default function TVseriesProductionCompanies() {
                     </Grid>
                 </Grid>
                 </DrawerWrapper>
-            </Container>
+            </>
        
     );
 }

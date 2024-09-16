@@ -1,4 +1,4 @@
-import { Container, Grid } from '@mui/material'
+
 import ysData from '../../../../../turk-dizi-data/yapim-sirketleri.json'
 import CompanyPage from '../components/CompanyPage'
 import TopNavigation from '@/app/components/TopNavigation'

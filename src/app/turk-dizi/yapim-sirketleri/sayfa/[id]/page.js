@@ -33,7 +33,7 @@ export default function TVseriesProductionCompanies({ params: { id } }) {
     const data = paginate(ysData, currentPage, 10)
     debugger
     return (
-        <Container>
+        <>
             <TopNavigation selected={4}/>
             <DrawerWrapper>
             <Grid container sx={{ display: "flex", justifyContent: "center", marginTop:1 }}>
@@ -58,7 +58,7 @@ export default function TVseriesProductionCompanies({ params: { id } }) {
                 </Grid>
             </Grid>
             </DrawerWrapper>
-        </Container>
+        </>
     );
 }
 
