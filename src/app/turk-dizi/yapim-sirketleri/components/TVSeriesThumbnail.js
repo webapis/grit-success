@@ -1,6 +1,5 @@
 'use client'
 import React, { useState } from 'react';
-
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
@@ -12,7 +11,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Chip from '@mui/material/Chip';
 import Tooltip from '@mui/material/Tooltip';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-//
+
 const TVSeriesThumbnail = ({ series, isMobile }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -27,14 +26,10 @@ const TVSeriesThumbnail = ({ series, isMobile }) => {
 
   const getStateColor = (state) => {
     switch (state) {
-      case 'Devam ediyor':
-        return '#4caf50';  // Yeşil
-      case 'Sezon arası':
-        return '#ff9800';  // Turuncu
-      case 'Sona erdi':
-        return '#f44336';  // Kırmızı
-      default:
-        return '#9e9e9e';  // Gri
+      case 'Devam ediyor': return '#4caf50';
+      case 'Sezon arası': return '#ff9800';
+      case 'Sona erdi': return '#f44336';
+      default: return '#9e9e9e';
     }
   };
 
@@ -42,22 +37,17 @@ const TVSeriesThumbnail = ({ series, isMobile }) => {
 
   return (
     <Card sx={{ 
-      width: {xs:140,md:160} , 
-     // maxWidth: isMobile ? 140 : 160, 
-      mr: 2, 
-      flexShrink: 0,
-      mb: 1,
-      display: 'flex',
-      flexDirection: 'column',
+   
+      width: '100%',
+      mb: 2,
     }} id={series.sha}>
-      <Box sx={{ position: 'relative' }}>
-        <a href={series.streamingUrl} target="_blank" rel="noopener noreferrer" >
+      <Box sx={{ position: 'relative', width: '100%', flexShrink: 0 }}>
+        <a href={series.streamingUrl} target="_blank" rel="noopener noreferrer">
           <CardMedia
             component="img"
-            height={{xs:75,md:120}}
+            sx={{ height: '100%', objectFit: 'cover' }}
             image={series.thumbnail.replace('https://www.nowtv.com.tr/','')}
             alt={series.title}
-            sx={{ objectFit: 'cover', cursor: 'pointer' }}
           />
         </a>
         <Box
@@ -82,76 +72,78 @@ const TVSeriesThumbnail = ({ series, isMobile }) => {
           </Typography>
         </Box>
       </Box>
-      <CardContent sx={{ p: 1, flexGrow: 1 }}>
-        <Tooltip title={series.title} enterDelay={500} leaveDelay={200}>
-          <Typography variant={isMobile ? "caption" : "subtitle2"} component="div" noWrap style={{textTransform:'capitalize'}}>
-            {series.title}
-          </Typography>
-        </Tooltip>
-        <Typography variant="caption" color="text.secondary">
-          {series.year}
-        </Typography>
-        <Typography variant="caption" color="text.secondary" display="block">
-          Son Bölüm: {series.lastEpisode}
-        </Typography>
-        {series.productionCompanies && (
-          <Tooltip title={series.productionCompanies.join(', ')} enterDelay={500} leaveDelay={200}>
-            <Typography variant="caption" color="text.secondary" display="block" noWrap>
-              Yapım: {series.productionCompanies.join(', ')}
+      <Box sx={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+        <CardContent sx={{ flex: '1 0 auto', p: 1 }}>
+          <Tooltip title={series.title} enterDelay={500} leaveDelay={200}>
+            <Typography variant={isMobile ? "body2" : "h6"} component="div" noWrap style={{textTransform:'capitalize'}}>
+              {series.title}
             </Typography>
           </Tooltip>
-        )}
-        <Box sx={{ mt: 1, display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-          {series.genres && series.genres.map((genre, index) => (
-            <Chip
-              key={index}
-              label={genre}
-              size="small"
-              sx={{
-                fontSize: isMobile ? '0.5rem' : '0.6rem',
-                height: 'auto',
-                '& .MuiChip-label': {
-                  padding: '2px 4px',
-                },
-              }}
-            />
-          ))}
-        </Box>
-      </CardContent>
-      <Box sx={{ mt: 'auto' }}>
-        <Button
-          variant="contained"
-          startIcon={<PlayArrowIcon />}
-          size="small"
-          fullWidth
-          onClick={handleClick}
-          sx={{ fontSize: isMobile ? '0.7rem' : '0.8rem' }}
-          disabled={!hasWatchOptions}
-        >
-          İzle
-        </Button>
-        <Menu
-          anchorEl={anchorEl}
-          open={open}
-          onClose={handleClose}
-        >
-          {hasWatchOptions && series.watchOptions.map((option, index) => (
-            <MenuItem 
-              key={index} 
-              onClick={() => {
-                window.open(option.url, '_blank');
-                handleClose();
-              }}
-            >
-              <img 
-                src={option.logo} 
-                alt={option.name}
-                style={{ width: '20px', marginRight: '8px' }}
+          <Typography variant="caption" color="text.secondary">
+            {series.year}
+          </Typography>
+          <Typography variant="caption" color="text.secondary" display="block">
+            Son Bölüm: {series.lastEpisode}
+          </Typography>
+          {series.productionCompanies && (
+            <Tooltip title={series.productionCompanies.join(', ')} enterDelay={500} leaveDelay={200}>
+              <Typography variant="caption" color="text.secondary" display="block" noWrap>
+                Yapım: {series.productionCompanies.join(', ')}
+              </Typography>
+            </Tooltip>
+          )}
+          <Box sx={{ mt: 1, display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+            {series.genres && series.genres.map((genre, index) => (
+              <Chip
+                key={index}
+                label={genre}
+                size="small"
+                sx={{
+                  fontSize: isMobile ? '0.5rem' : '0.6rem',
+                  height: 'auto',
+                  '& .MuiChip-label': {
+                    padding: '2px 4px',
+                  },
+                }}
               />
-              {option.name}
-            </MenuItem>
-          ))}
-        </Menu>
+            ))}
+          </Box>
+        </CardContent>
+        <Box sx={{ p: 1, pt: 0 }}>
+          <Button
+            variant="contained"
+            startIcon={<PlayArrowIcon />}
+            size="small"
+            fullWidth
+            onClick={handleClick}
+            sx={{ fontSize: isMobile ? '0.7rem' : '0.8rem' }}
+            disabled={!hasWatchOptions}
+          >
+            İzle
+          </Button>
+          <Menu
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+          >
+            {hasWatchOptions && series.watchOptions.map((option, index) => (
+              <MenuItem 
+                key={index} 
+                onClick={() => {
+                  window.open(option.url, '_blank');
+                  handleClose();
+                }}
+              >
+                <img 
+                  src={option.logo} 
+                  alt={option.name}
+                  style={{ width: '20px', marginRight: '8px' }}
+                />
+                {option.name}
+              </MenuItem>
+            ))}
+          </Menu>
+        </Box>
       </Box>
     </Card>
   );
