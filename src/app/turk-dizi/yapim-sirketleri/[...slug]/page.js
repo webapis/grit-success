@@ -1,7 +1,8 @@
+import { Container, Grid } from '@mui/material'
 import ysData from '../../../../../turk-dizi-data/yapim-sirketleri.json'
 import CompanyPage from '../components/CompanyPage'
 import TopNavigation from '@/app/components/TopNavigation'
-
+import DrawerWrapper from '../DrawerWrapper'
 
 export async function generateMetadata({ params: { slug } }) {
     const companyId = slug[0]
@@ -33,9 +34,14 @@ export async function generateMetadata({ params: { slug } }) {
 export default function TVseriesProductionCompanies({ params: { slug } }) {
     const companyId = slug[0]
     const company = ysData.find(f => f.id === companyId)
-    console.log("slug", companyId)
 
-    return <CompanyPage company={company} companyId={companyId}/>
+
+    return <> <TopNavigation selected={4}/>
+    <DrawerWrapper>
+    <CompanyPage company={company} companyId={companyId}/>
+    </DrawerWrapper>
+ 
+    </> 
 }
 
 

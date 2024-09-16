@@ -43,8 +43,8 @@ const TVSeriesThumbnail = ({ series, isMobile }) => {
 
   return (
     <Card sx={{ 
-      minWidth: isMobile ? 140 : 160, 
-      maxWidth: isMobile ? 140 : 160, 
+      width: isMobile ? 140 : 160, 
+     // maxWidth: isMobile ? 140 : 160, 
       mr: 2, 
       flexShrink: 0,
       mb: 1,
@@ -85,7 +85,7 @@ const TVSeriesThumbnail = ({ series, isMobile }) => {
       </Box>
       <CardContent sx={{ p: 1, flexGrow: 1 }}>
         <Tooltip title={series.title} enterDelay={500} leaveDelay={200}>
-          <Typography variant={isMobile ? "caption" : "subtitle2"} component="div" noWrap>
+          <Typography variant={isMobile ? "caption" : "subtitle2"} component="div" noWrap style={{textTransform:'capitalize'}}>
             {series.title}
           </Typography>
         </Tooltip>

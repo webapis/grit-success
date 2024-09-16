@@ -4,7 +4,7 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import PaginationContainer from './components/PaginationContainer';
 import ysData from '../../../../turk-dizi-data/yapim-sirketleri.json';
-import PersistentDrawerLeft from '@/app/components/drawer';
+import DrawerWrapper from './DrawerWrapper';
 import TopNavigation from '@/app/components/TopNavigation';
 import { Typography } from '@mui/material';
 
@@ -40,6 +40,8 @@ export default function TVseriesProductionCompanies() {
         
             <Container>
                 <TopNavigation selected={4}/>
+
+            <DrawerWrapper>
                 <Grid container sx={{ display: "flex", justifyContent: "center", marginTop: 1 }}>
                     <Grid item xs={12}>
 
@@ -61,6 +63,7 @@ export default function TVseriesProductionCompanies() {
                         />
                     </Grid>
                 </Grid>
+                </DrawerWrapper>
             </Container>
        
     );

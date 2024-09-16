@@ -6,7 +6,7 @@ import ysData from '../../../../../../turk-dizi-data/yapim-sirketleri.json';
 import  Typography  from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import TopNavigation from '@/app/components/TopNavigation';
-
+import DrawerWrapper from '../../DrawerWrapper';
 export async function generateMetadata() {
     return {
       title: 'Türk Yapım Şirketlerinin En İyi Dizileri | Top Turkish TV Series',
@@ -35,10 +35,11 @@ export default function TVseriesProductionCompanies({ params: { id } }) {
     return (
         <Container>
             <TopNavigation selected={4}/>
+            <DrawerWrapper>
             <Grid container sx={{ display: "flex", justifyContent: "center", marginTop:1 }}>
             <Grid item xs={12}>
 
-<Typography variant='h4' textAlign="center">Türk yapım şirketlerinin dizileri</Typography>
+<Typography variant='h4' textAlign="center">Türk yapım şirketleri ve dizileri</Typography>
 </Grid>
                 <Grid item xs={12} md={8}>
                 <PaginationContainer
@@ -56,6 +57,7 @@ export default function TVseriesProductionCompanies({ params: { id } }) {
                     />
                 </Grid>
             </Grid>
+            </DrawerWrapper>
         </Container>
     );
 }
