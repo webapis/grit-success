@@ -1,12 +1,12 @@
 // pages/turk-dizi/yapimci-sirketleri/[[...page]].js
 import TVSeriesCompany from './components/TVSeriesCompany';
-import Container from '@mui/material/Container';
+
 import Grid from '@mui/material/Grid';
 import PaginationContainer from './components/PaginationContainer';
 import ysData from '../../../../turk-dizi-data/yapim-sirketleri.json';
 import DrawerWrapper from './DrawerWrapper';
 import TopNavigation from '@/app/components/TopNavigation';
-import { Typography } from '@mui/material';
+import  Typography  from '@mui/material/Typography';
 
 const NavData = ysData.map((m) => { return { href: `/turk-dizi/yapim-sirketleri/${m.id}`, title: m.title } })
 export { NavData }

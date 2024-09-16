@@ -1,53 +1,18 @@
-'use client'
-import React, { useRef } from 'react';
-import {
-  Typography,
-  Box,
-  IconButton,
-  useTheme,
-  useMediaQuery,
-  Button,
-  Grid
-} from '@mui/material';
+
+import React from 'react';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
 import Link from 'next/link';
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+
 import TVSeriesThumbnail from './TVSeriesThumbnail';
 
 const TVSeriesList = ({ companyId, tvSeries, displayedSeriesCount = 4 }) => {
-  const scrollContainerRef = useRef(null);
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-
-  const scroll = (scrollOffset) => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: scrollOffset, behavior: 'smooth' });
-    }
-  };
-
-  const ScrollButton = ({ direction, onClick }) => (
-    <IconButton
-      onClick={onClick}
-      sx={{
-        position: 'absolute',
-        [direction]: -20,
-        top: '50%',
-        transform: 'translateY(-50%)',
-        zIndex: 2,
-        bgcolor: 'rgba(255, 255, 255, 0.8)',
-        boxShadow: 2,
-        '&:hover': {
-          bgcolor: 'rgba(255, 255, 255, 1)',
-        },
-      }}
-    >
-      {direction === 'left' ? <ArrowBackIosNewIcon /> : <ArrowForwardIosIcon />}
-    </IconButton>
-  );
 
   return (
     <Box sx={{ position: 'relative' }}>
-      <Typography variant={isMobile ? "subtitle1" : "h6"} gutterBottom sx={{ mt: 2, mb: 2 }}>
+      <Typography variant={true ? "subtitle1" : "h6"} gutterBottom sx={{ mt: 2, mb: 2 }}>
         Son TV Dizileri
       </Typography>
   
@@ -55,9 +20,10 @@ const TVSeriesList = ({ companyId, tvSeries, displayedSeriesCount = 4 }) => {
         <Grid
        
         container
+        sx={{display:'flex',justifyContent:{xs:'center',md:'start'}}}
         >
           {tvSeries.slice(0, displayedSeriesCount).map((series,i) => (
-           <Grid item key={i}> <TVSeriesThumbnail key={series.id} series={series} isMobile={isMobile} /></Grid>
+           <Grid item key={i}> <TVSeriesThumbnail key={series.id} series={series} isMobile={true} /></Grid>
           ))}
         </Grid>
       

@@ -1,17 +1,16 @@
 'use client'
 import React, { useState } from 'react';
-import {
-  Card,
-  CardMedia,
-  CardContent,
-  Typography,
-  Box,
-  Button,
-  Menu,
-  MenuItem,
-  Chip,
-  Tooltip,
-} from '@mui/material';
+
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Chip from '@mui/material/Chip';
+import Tooltip from '@mui/material/Tooltip';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
 const TVSeriesThumbnail = ({ series, isMobile }) => {
@@ -43,7 +42,7 @@ const TVSeriesThumbnail = ({ series, isMobile }) => {
 
   return (
     <Card sx={{ 
-      width: isMobile ? 140 : 160, 
+      width: {xs:140,md:160} , 
      // maxWidth: isMobile ? 140 : 160, 
       mr: 2, 
       flexShrink: 0,
@@ -55,7 +54,7 @@ const TVSeriesThumbnail = ({ series, isMobile }) => {
         <a href={series.streamingUrl} target="_blank" rel="noopener noreferrer" >
           <CardMedia
             component="img"
-            height={isMobile ? "75" : "120"}
+            height={{xs:75,md:120}}
             image={series.thumbnail}
             alt={series.title}
             sx={{ objectFit: 'cover', cursor: 'pointer' }}
