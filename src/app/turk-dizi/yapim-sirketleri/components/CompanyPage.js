@@ -1,7 +1,14 @@
 // src/components/CompanyPage.js
 
 import React from 'react';
-import { Container, Typography, Box,Grid,Breadcrumbs,Link } from '@mui/material';
+
+import  Container  from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import Link from '@mui/material/Link';
+
 import TVSeriesThumbnail from './TVSeriesThumbnail';
 import CompanyInfo from './CompanyInfo';
 

@@ -1,6 +1,6 @@
 // pages/turk-dizi/yapimci-sirketleri/[[...page]].js
 import TVSeriesCompany from '../../components/TVSeriesCompany';
-import Container from '@mui/material/Container';
+
 import PaginationContainer from '../../components/PaginationContainer';
 import ysData from '../../../../../../turk-dizi-data/yapim-sirketleri.json';
 import  Typography  from '@mui/material/Typography';

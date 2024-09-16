@@ -1,10 +1,8 @@
 
 import React from 'react';
-import {
-  Card,
-  CardContent,
 
-} from '@mui/material';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 import CompanyInfo from './CompanyInfo';
 import TVSeriesList from './TVSeriesList';
 

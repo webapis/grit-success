@@ -1,20 +1,15 @@
-'use client'
-import React from 'react';
-import {
-  Card,
-  CardContent,
-  CardMedia,
-  Typography,
-  Grid,
-  Box,
-  Link as MuiLink,
-  useTheme,
-  useMediaQuery,
-  IconButton,
-  Chip,
-  Tooltip,
-} from '@mui/material';
 
+import React from 'react';
+
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import MuiLink from '@mui/material/Link';
+import IconButton from '@mui/material/IconButton';
+import Chip from '@mui/material/Chip';
+import Tooltip from '@mui/material/Tooltip';
 import LanguageIcon from '@mui/icons-material/Language';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -48,11 +43,11 @@ const SocialMediaIcon = ({ platform, url }) => {
 };
 
 const CompanyInfo = ({ company, compact = true }) => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  //const theme = useTheme();
+  const isMobile = true// useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
-    <Card sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', mb: 2 }}>
+    <Card sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, mb: 2 }}>
       <CardMedia
         component="img"
         sx={{ width: 150, height: 'auto', objectFit: 'contain' }}
