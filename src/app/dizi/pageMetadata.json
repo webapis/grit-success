@@ -540,6 +540,19 @@
                 }
             ]
         }
+    } ,
+    {
+        "slug": "kara-sevda-dizi-sponsorlari",
+        "pageTitle": "Kara Sevda Dizi Sponsorları",
+        "description": "",
+        "dizi": "Kara Sevda",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Kara Sevda"
+                }
+            ]
+        }
     }
 ]
 
