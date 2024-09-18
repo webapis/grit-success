@@ -1,3 +1,4 @@
+import  Grid  from '@mui/material/Grid';
 import WebSitesi from './WebSitesi'
 
 const singleData= {
@@ -147,4 +148,4 @@ const data = [{
 
 
 
-export const Primary =()=>data.map(m=><WebSitesi data={m}/>)
+export const Primary =()=><Grid container spacing={1}>{data.map(m=><Grid item> <WebSitesi data={m}/></Grid>)}</Grid>

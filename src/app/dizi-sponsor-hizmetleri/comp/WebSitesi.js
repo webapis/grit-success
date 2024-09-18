@@ -5,10 +5,10 @@ import Button from '@mui/material/Button';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-const EvTekstiliWebSiteleri = ({ data }) => {
-    const { brandTag, Website, duplicateTitles, TVSeriesTitle, h3, TOTAL } = data;
-    const hostname = new URL(data.Website).hostname;
-    const imageName = brandTag ? brandTag : extractSubdomain(Website);
+const WebsiteInfoComponent = ({ data }) => {
+    const { brandTag, Website, duplicateTitles, TVSeriesTitle, h3, Acyklama, ServiceName } = data;
+    const hostname = new URL(Website).hostname;
+    const imageName = brandTag || extractSubdomain(Website);
     const [expanded, setExpanded] = useState(false);
     
     const handleChange = () => {
@@ -16,67 +16,78 @@ const EvTekstiliWebSiteleri = ({ data }) => {
     };
     
     return (
-        <Paper elevation={1} sx={{ padding: 2 }}>
-            <Grid container spacing={1}>
-                <Grid item>
+        <Paper elevation={3} sx={{ padding: 3, borderRadius: 2 }}>
+            <Grid container spacing={2}>
+                <Grid item xs={12} sm={3}>
                     <img
-                        component="img"
-                        alt={`${imageName} marka logosu`}
-                        style={{width:'100%', height:50}}
+                        alt={`${imageName} brand logo`}
+                        style={{ width: '100%', height: 'auto', maxHeight: 80, objectFit: 'contain' }}
                         src={`/dizi/marka/${imageName}.jpg`}
                         loading="lazy"
                     />
                 </Grid>
-                <Grid item>
-                    <Grid container>
-                        <Grid item>
-                            <Button component="a" href={Website} target='_blank' endIcon={<OpenInNewIcon />} sx={{ textTransform: 'lowercase' }} variant='outlined' size='small'>
-                                {hostname}
-                            </Button>
-                            <Typography variant="h6">{data.h3}</Typography>
-                            <Typography variant="body1" gutterBottom>{data.Acyklama}</Typography>
-                            {data.ServiceName.split(',').map((m, index) => (
-                                <Chip key={index} size='small' label={m} sx={{ marginRight: 1, marginBottom: 1, textTransform:'lowercase' }} />
-                            ))}
-                        </Grid>
-                        <Grid item xs={12}>
-                            <Accordion expanded={expanded} onChange={handleChange}>
-                                <AccordionSummary
-                                    expandIcon={<ExpandMoreIcon />}
-                                    aria-controls="sponsorship-content"
-                                    id="sponsorship-header"
-                                >
-                                    <Typography>
-                                        Sponsorluk Faaliyetleri 
-                                        <Chip 
-                                            label={`Toplam: ${duplicateTitles? duplicateTitles.length:1}`} 
-                                            size="small" 
-                                            color="primary" 
-                                            sx={{ marginLeft: 1 }}
-                                        />
-                                    </Typography>
-                                </AccordionSummary>
-                                <AccordionDetails>
-                                    <Typography>
-                                        {duplicateTitles ? 
-                                            duplicateTitles.filter(f => f).map((m, i) => (
-                                                <i key={i} size='small' style={{ marginRight: 5 }}>{m} dizisi, </i>
-                                            ))
-                                            : 
-                                            <i size='small' sx={{ textTransform: 'capitalize' }}>{TVSeriesTitle} dizisi</i>
-                                        }
-                                    </Typography>
-                                </AccordionDetails>
-                            </Accordion>
-                        </Grid>
+                <Grid item xs={12} sm={9}>
+                    <Button 
+                        component="a" 
+                        href={Website} 
+                        target='_blank' 
+                        endIcon={<OpenInNewIcon />} 
+                        variant='outlined' 
+                        size='small'
+                        sx={{ mb: 1, textTransform: 'none' }}
+                    >
+                        {hostname}
+                    </Button>
+                    <Typography variant="h6" gutterBottom>{h3}</Typography>
+                    <Typography variant="body2" paragraph>{Acyklama}</Typography>
+                    <Grid container spacing={1} sx={{ mb: 2 }}>
+                        {ServiceName.split(',').map((service, index) => (
+                            <Grid item key={index}>
+                                <Chip 
+                                    size='small' 
+                                    label={service.trim()} 
+                                    sx={{ textTransform: 'lowercase' }} 
+                                />
+                            </Grid>
+                        ))}
                     </Grid>
+                    <Accordion expanded={expanded} onChange={handleChange}>
+                        <AccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
+                            aria-controls="sponsorship-content"
+                            id="sponsorship-header"
+                        >
+                            <Typography>
+                            Sponsorluk Faaliyetleri 
+                                <Chip 
+                                    label={`Toplam: ${duplicateTitles ? duplicateTitles.length : 1}`} 
+                                    size="small" 
+                                    color="primary" 
+                                    sx={{ ml: 1 }}
+                                />
+                            </Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <Typography variant="body2">
+                                {duplicateTitles ? 
+                                    duplicateTitles.filter(Boolean).map((title, i, arr) => (
+                                        <React.Fragment key={i}>
+                                            <i>{title} dizisi</i>{i < arr.length - 1 ? ', ' : ''}
+                                        </React.Fragment>
+                                    ))
+                                    : 
+                                    <i>{TVSeriesTitle} dizisi</i>
+                                }
+                            </Typography>
+                        </AccordionDetails>
+                    </Accordion>
                 </Grid>
             </Grid>
         </Paper>
     );
 };
 
-export default EvTekstiliWebSiteleri;
+export default WebsiteInfoComponent;
 
 /*
 import React from 'react';
