@@ -61,6 +61,7 @@ const ExpandableTypography = styled(Typography)(({ theme }) => ({
 export default function SearchResultItem({ item, userViewData }) {
   const { Name: name, Website, Acyklama, TVSeriesTitle, tag, brandTag, ServiceName, h3 } = item;
   const imageName = brandTag || extractSubdomain(Website);
+  const hostname =  new URL(Website).hostname;
   const [expanded, setExpanded] = useState(false);
 
   const toggleExpand = () => setExpanded(!expanded);
@@ -93,7 +94,7 @@ export default function SearchResultItem({ item, userViewData }) {
                 component={ClickableLink}
                 rootPath="dizisponsoru"
                 clickable={1}
-                title="Visit sponsor website"
+                title={hostname}
                 linkId={Website}
                 size="small"
               >
