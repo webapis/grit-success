@@ -1,12 +1,17 @@
 'use client'
-import React, { useState, useEffect } from 'react';
-import { Typography, Grid, Chip, Paper, Accordion, AccordionSummary, AccordionDetails, Box, Tooltip } from '@mui/material';
+import React, { useState } from 'react';
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
+import Chip from '@mui/material/Chip';
+import Paper from '@mui/material/Paper';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Box from '@mui/material/Box';
+import Tooltip from '@mui/material/Tooltip';
 import { styled } from '@mui/material/styles';
 import extractSubdomain from './extractSubdomain';
-import Button from '@mui/material/Button';
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-
 import ClickableLink from './ClickableLink';
 import ViewCount from '../../utils/firebase/ViewCount';
 const StyledPaper = styled(Paper)(({ theme }) => ({
@@ -33,10 +38,11 @@ const StyledImg = styled('img')({
 
 const WebsiteInfoComponent = ({ data, userViewData }) => {
   const { brandTag, Website, duplicateTitles, TVSeriesTitle, h3, Acyklama, ServiceName } = data;
-  const hostname = new URL(Website).hostname;
-  const imageName = brandTag || extractSubdomain(Website);
+  const hostname =  new URL(Website).hostname;
+  const imageName = brandTag ? brandTag : extractSubdomain(Website)
   const [expanded, setExpanded] = useState(false);
 
+ 
 
 
   const handleChange = () => setExpanded(!expanded);
@@ -115,3 +121,14 @@ const WebsiteInfoComponent = ({ data, userViewData }) => {
 
 export default WebsiteInfoComponent;
 
+ function extractHost(urlString,obj) {
+  try {
+    const url = new URL(urlString);
+    return url.hostname;
+  } catch (error) {
+      debugger
+    // Handle invalid URL cases
+    console.error("Invalid URL:", error);
+    return null;
+  }
+}

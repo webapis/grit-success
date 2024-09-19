@@ -12,11 +12,11 @@ export default function SearchResultContainer({ data, pageTitle,userViewData }) 
 
     let mappedResult = data.map(m => {
     
-        debugger
+    
         const linkId = m.Website
         const viewCount = userViewData['data'].find(f => f.href.includes(linkId))
        // console.log(linkId,userViewData['data'].map(m=>m.href).includes(linkId))
-        debugger
+      
         return { ...m, viewCount: viewCount ? viewCount.count : 0 }
     }).sort((a, b) => b.viewCount - a.viewCount)
 
@@ -30,7 +30,7 @@ export default function SearchResultContainer({ data, pageTitle,userViewData }) 
             <SelectedSponsorKategoriChip category={pageTitle} />
             </Grid>
         {mappedResult.map((m, i) => {
-            debugger
+       
             return <Grid item key={i} xs={12} > <WebsiteInfoComponent userViewData={userViewData} data={m} /></Grid>
         })}
     </Grid>

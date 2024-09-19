@@ -43,7 +43,7 @@ export async function generateMetadata({ params }) {
 
 
 export default async function DiziSponsorKategori({ params }) {
-    debugger
+
     const kategori = params.slug[0]
 
     const page = parseInt(params.slug[2])
@@ -53,7 +53,7 @@ export default async function DiziSponsorKategori({ params }) {
     // const data = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/dizisponsoru.json'), 'utf8');
     // const pagesData = JSON.parse(data);
 
-    debugger
+
 
 
     const keywordObj = keywordMetaData.find(f => {
@@ -68,13 +68,13 @@ export default async function DiziSponsorKategori({ params }) {
 
 
 
-    debugger
+   
     const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'Acyklama'], minMatchCharLength: 5 })
 
 
     let results = fuse.search(keywordObj.or)
 
-    debugger
+    
     const sortData = results.map(m => { return { ...m.item, duplicateTitles: m.item.duplicateTitles ? m.item.duplicateTitles : [m.item.TVSeriesTitle] } }).sort((a, b) => b.duplicateTitles.length - a.duplicateTitles.length)
     const paginatedData = paginate(sortData, page, 25)
     const pageCount = Math.ceil(sortData.length / 25)
@@ -101,8 +101,6 @@ export async function generateStaticParams() {
     const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'Acyklama'], minMatchCharLength: 5 })
     const pageCandidate = []
     for (let keywordObj of keywordMetaData) {
-
-
 
         let results = fuse.search(keywordObj.or)
 
