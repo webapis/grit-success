@@ -8,5 +8,5 @@ export default function PaginationContainer({ count, page, url }) {
       window.location.replace(url+ value)
     };
 
-    return <Box sx={{justifyContent:'center',display:'flex', paddingTop:2}}> <Pagination count={count} page={page} onChange={handleChange}/></Box>
+    return <Box sx={{justifyContent:'center',display:'flex', paddingTop:2, width:'100%'}}> <Pagination count={count} page={page} onChange={handleChange}/></Box>
 }
