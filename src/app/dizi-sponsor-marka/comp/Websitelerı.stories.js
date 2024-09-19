@@ -1,5 +1,5 @@
 import  Grid  from '@mui/material/Grid';
-import WebSitesi from './WebSitesi'
+import WebsiteInfoComponent from './WebsiteInfoComponent'
 
 const singleData= {
     "Name": "3p",
@@ -34,7 +34,7 @@ const singleData= {
 export default {
 
     title:'Benzer Hizzmetler',
-    component:WebSitesi
+    component:WebsiteInfoComponent
 }
 
 const data = [{
@@ -148,4 +148,4 @@ const data = [{
 
 
 
-export const Primary =()=><Grid container spacing={1}>{data.map(m=><Grid item> <WebSitesi data={m}/></Grid>)}</Grid>
+export const Primary =()=><Grid container spacing={1}>{data.map(m=><Grid item> <WebsiteInfoComponent data={m}/></Grid>)}</Grid>

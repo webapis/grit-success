@@ -1,6 +1,6 @@
 import SponsorKategoriView from './comp/SponsorKategoriView';
 import Container from '@mui/material/Container'
-import pagesData from '@/app/dizi-sponsor-hizmetleri/page-data/keywordMetaData.json';
+import pagesData from '@/app/dizi-sponsor-marka/page-data/keywordMetaData.json';
 import Grid from '@mui/material/Grid'
 
 import PersistentDrawerLeft from '../components/drawer';
@@ -10,7 +10,7 @@ import getViews from '../utils/firebase/supabase';
 
 
 const mappedNavData = pagesData.map(m => {
-    const href = `/dizi-sponsor-hizmetleri/${m.keyword}/sayfa/1`
+    const href = `/dizi-sponsor-marka/${m.keyword}/sayfa/1`
     const title = m.keywordTitle
     return { ...m, href, title }
 })
@@ -28,10 +28,10 @@ export async function generateMetadata({ params }) {
 }
 
 
-export default async function SponsorKategori() {
+export default async function DiziSponsorMarka() {
     const userViewData = await getViews({ table: 'sponsorkategori-home' })
     return <>
-        <TopNavigation selected={3} />
+        <TopNavigation selected={5} />
         <PersistentDrawerLeft data={mappedNavData} title="Sponsor Kategori"> <Container>
 
             <Typography variant='h4' textAlign='center' sx={{ marginTop: 0 }}>Dizi Sponsor Kategoriler</Typography>

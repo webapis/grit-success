@@ -1,9 +1,9 @@
 
 // import { promises as fs } from 'fs';
 
-import SearchResultContainer from '@/app/dizi-sponsor-kategori/comp/SearchResultContainer';
+import SearchResultContainer from '../comp/SearchResultContainer';
 
-import PaginationContainer from '@/app/dizi-sponsor-kategori/comp/PaginationContainer';
+import PaginationContainer from '@/app/dizi-sponsor-marka/comp/PaginationContainer';
 // import path from 'path'
 import Fuse from 'fuse.js'
 import keywordMetaData from '@/app/dizi-sponsor-kategori/page-data/keywordMetaData.json';
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }) {
 
     return {
 
-        title: keywordObj.keywordTitle + ' Dizi Sponsor Hizmetleri'
+        title: keywordObj.keywordTitle + ' Dizi Sponsor Kategori'
 
     }
 
@@ -70,7 +70,7 @@ export default async function DiziSponsorKategori({ params }) {
     const pageCount = Math.ceil(sortData.length / 25)
     return <>
         <SearchResultContainer userViewData={userViewData} data={paginatedData} pageTitle={` Dizilerde ${keywordObj.keywordTitle} Sponsorları`} dizi={''} page={page} keyword={'keyword'} />
-        <PaginationContainer count={pageCount} page={page} url={`/dizi-sponsor-kategori/${keywordObj.keyword}/sayfa/`} />
+        <PaginationContainer count={pageCount} page={page} url={`/dizi-sponsor-hizmetleri/${keywordObj.keyword}/sayfa/`} />
     </>
 }
 
