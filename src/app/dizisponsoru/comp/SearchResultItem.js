@@ -1,6 +1,7 @@
 'use client'
-import React from 'react';
-import { Card, CardContent, CardActions, Typography, Chip, Box, Button, Tooltip } from '@mui/material';
+
+import React, { useState } from 'react';
+import { Card, CardContent, CardActions, Typography, Chip, Box, IconButton, Tooltip } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Image from './Image';
 import ClickableLink from './ClickableLink';
@@ -23,7 +24,7 @@ const ImageContainer = styled(Box)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'space-between',
   backgroundColor: theme.palette.grey[100],
-  padding: theme.spacing(2),
+  padding: theme.spacing(1),
   [theme.breakpoints.down('sm')]: {
     flexDirection: 'column',
     alignItems: 'center',
@@ -31,7 +32,7 @@ const ImageContainer = styled(Box)(({ theme }) => ({
 }));
 
 const StyledImage = styled(Image)(({ theme }) => ({
-  height: 100,
+  height: 80,
   width: 'auto',
   objectFit: 'contain',
   borderRadius: theme.shape.borderRadius,
@@ -40,15 +41,30 @@ const StyledImage = styled(Image)(({ theme }) => ({
     transform: 'scale(1.05)',
   },
   [theme.breakpoints.down('sm')]: {
-    marginBottom: theme.spacing(2),
+    marginBottom: theme.spacing(1),
+  },
+}));
+
+const ContentWrapper = styled(Box)({
+  display: 'flex',
+  flexDirection: 'column',
+  height: '100%',
+});
+
+const ExpandableTypography = styled(Typography)(({ theme }) => ({
+  cursor: 'pointer',
+  '&:hover': {
+    textDecoration: 'underline',
   },
 }));
 
 export default function SearchResultItem({ item, userViewData }) {
   const { Name: name, Website, Acyklama, TVSeriesTitle, tag, brandTag, ServiceName, h3 } = item;
   const imageName = brandTag || extractSubdomain(Website);
-  const hostname = new URL(Website).hostname;
+  const [expanded, setExpanded] = useState(false);
 
+  const toggleExpand = () => setExpanded(!expanded);
+  const description = Acyklama || 'No description available.';
   return (
     <StyledCard elevation={2}>
       <ImageContainer>
@@ -66,57 +82,76 @@ export default function SearchResultItem({ item, userViewData }) {
         />
       </ImageContainer>
 
-      <CardContent sx={{ flexGrow: 1 }}>
-        <Typography variant="subtitle1" color="text.secondary" gutterBottom>
-          Dizi: {TVSeriesTitle}
-        </Typography>
-        <Typography variant="h5" component="div" gutterBottom>
-          <Tooltip title="Sponsor" arrow>
-            <Box component="span" sx={{ color: 'text.secondary', fontSize: '0.8em', mr: 1 }}>
-              S:
-            </Box>
-          </Tooltip>
-          {name}
-        </Typography>
-        {ServiceName && (
-          <Box sx={{ mt: 1, mb: 2 }}>
-            {ServiceName.trim().replaceAll(',', ' ').split(' ')
-              .filter(Boolean)
-              .map((service, index) => (
-                <Chip
-                  key={index}
-                  size="small"
-                  label={service.toLowerCase()}
-                  sx={{ mr: 0.5, mb: 0.5, textTransform: 'capitalize' }}
-                />
-              ))}
+      <ContentWrapper>
+        <CardContent sx={{ flexGrow: 1, py: 1 }}>
+          <Box display="flex" justifyContent="space-between" alignItems="center" mb={1}>
+            <Typography variant="subtitle2" color="text.secondary">
+              {TVSeriesTitle}
+            </Typography>
+            <Tooltip title="Visit Sponsor Website">
+              <IconButton
+                component={ClickableLink}
+                rootPath="dizisponsoru"
+                clickable={1}
+                title="Visit sponsor website"
+                linkId={Website}
+                size="small"
+              >
+                <OpenInNewIcon fontSize="small" />
+              </IconButton>
+            </Tooltip>
           </Box>
-        )}
-        <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 1 }}>
-          {h3}
-        </Typography>
-        <Typography variant="body2" color="text.secondary" paragraph>
-          {Acyklama}
-        </Typography>
+          
+          <Typography variant="h6" component="div" gutterBottom>
+            <Tooltip title="Sponsor" arrow>
+              <Box component="span" sx={{ color: 'text.secondary', fontSize: '0.8em', mr: 1 }}>
+                S:
+              </Box>
+            </Tooltip>
+            {name}
+          </Typography>
+          
+          {ServiceName && (
+            <Box sx={{ mt: 0.5, mb: 1 }}>
+              {ServiceName.trim().replaceAll(',', ' ').split(' ')
+                .filter(Boolean)
+                .map((service, index) => (
+                  <Chip
+                    key={index}
+                    size="small"
+                    label={service.toLowerCase()}
+                    sx={{ mr: 0.5, mb: 0.5, textTransform: 'capitalize' }}
+                  />
+                ))}
+            </Box>
+          )}
+          
+          {h3 && (
+            <Typography variant="body2" sx={{ fontWeight: 600, mb: 0.5 }}>
+              {h3}
+            </Typography>
+          )}
+          
+          <ExpandableTypography 
+            variant="body2" 
+            color="text.secondary"
+            onClick={toggleExpand}
+          >
+            {expanded ? description : description.length > 100 ? `${description.substring(0, 100)}...` : description}
+          </ExpandableTypography>
+        </CardContent>
 
-      </CardContent>
-      
-      <CardActions sx={{ justifyContent: 'space-between', p: 2, mt: 'auto' }}>
-      <ViewCount rootPath="dizisponsoru" linkId={Website} userViewData={userViewData} />
-        <Button
-          variant="outlined"
-          size="small"
-          endIcon={<OpenInNewIcon />}
-          component={ClickableLink}
-          rootPath="dizisponsoru"
-          clickable={1}
-          title={hostname}
-          linkId={Website}
-          sx={{ textTransform: 'none' }}
-        >
-          Visit Site
-        </Button>
-      </CardActions>
+        <CardActions sx={{ justifyContent: 'space-between', p: 1, pt: 0 }}>
+          <ViewCount rootPath="dizisponsoru" linkId={Website} userViewData={userViewData} />
+          {description.length > 100 && (
+            <Tooltip title={expanded ? "Show less" : "Show more"}>
+              <IconButton size="small" onClick={toggleExpand}>
+                {expanded ? '▲' : '▼'}
+              </IconButton>
+            </Tooltip>
+          )}
+        </CardActions>
+      </ContentWrapper>
     </StyledCard>
   );
 }
