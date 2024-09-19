@@ -554,5 +554,19 @@
             ]
         }
     }
+    ,
+    {
+        "slug": "siyah-kalp-dizi-sponsorlari",
+        "pageTitle": "Siyah Kalp Dizi Sponsorları",
+        "description": "",
+        "dizi": "Siyah Kalp",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Siyah Kalp"
+                }
+            ]
+        }
+    }
 ]
 
