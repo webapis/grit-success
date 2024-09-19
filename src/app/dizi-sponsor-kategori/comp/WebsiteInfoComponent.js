@@ -60,7 +60,7 @@ const WebsiteInfoComponent = ({ data, userViewData }) => {
         <Grid item xs={12} sm={9}>
           <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
 
-            <ClickableLink linkId={Website} title={hostname} />
+            <ClickableLink linkId={Website} title={hostname}  rootPath={"sponsorkategori"} />
             <Tooltip title="Views">
               <ViewCount rootPath={"sponsorkategori"} linkId={Website} userViewData={userViewData} />
             </Tooltip>
