@@ -93,7 +93,7 @@
             "$or": [
              
                 {
-                    "ServiceName": "aydinlatma"
+                    "ServiceName": "aydınlatma"
                 }
             ]
         },
@@ -115,5 +115,19 @@
         "keyword": "canta",
         "keywordTitle":"Çanta"
     }
-
+    ,
+    {
+        "or": {
+            "$or": [
+              
+            
+                {
+                    "ServiceName": "Ev tekstili ürünler"
+                }
+              
+            ]
+        },
+        "keyword": "ev-tekstil",
+        "keywordTitle":"Ev Tekstil"
+    }
 ]

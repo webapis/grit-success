@@ -25,18 +25,11 @@ export async function generateMetadata({ params }) {
         return match
     })
 
-
-
     return {
 
         title: keywordObj.keywordTitle + ' Dizi Sponsorları'
 
     }
-
-
-
-
-
 
 }
 
@@ -69,7 +62,11 @@ export default async function DiziSponsorKategori({ params }) {
 
 
    
-    const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'Acyklama'], minMatchCharLength: 5 })
+    const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'Acyklama'],
+        // minMatchCharLength: 5
+        threshold:0.0,
+        findAllMatches:true 
+        })
 
 
     let results = fuse.search(keywordObj.or)
