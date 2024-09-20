@@ -567,6 +567,19 @@
                 }
             ]
         }
+    }  ,
+    {
+        "slug": "bir-gece-masali-dizi-sponsorlari",
+        "pageTitle": "Bir Gece Masalı Dizi Sponsorları",
+        "description": "",
+        "dizi": "Bir Gece Masalı",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Bir Gece Masalı"
+                }
+            ]
+        }
     }
 ]
 
