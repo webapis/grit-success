@@ -34,7 +34,7 @@ export default async function sitemap() {
     return {
       url: `https://www.glumzi.com/dizi-sponsor-kategori/${keyword}/sayfa/${page}`,
       lastModified: new Date(),
-      changeFrequency: 'weekly'
+      changeFrequency: 'monthly'
     }
 
   })
