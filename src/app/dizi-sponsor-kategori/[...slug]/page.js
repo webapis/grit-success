@@ -13,24 +13,58 @@ import getViews from '@/app/utils/firebase/supabase';
 
 
 export async function generateMetadata({ params }) {
-    const kategori = params.slug[0]
+    const kategori = params.slug[0];
+    const keywordObj = keywordMetaData.find(f => f.keyword === kategori);
 
-    const keywordObj = keywordMetaData.find(f => {
+    // Initialize Fuse instance
+    const fuse = new Fuse(pagesData, {
+        keys: ['ServiceName', 'Acyklama'],
+        threshold: 0.0,
+        findAllMatches: true
+    });
 
-        const current = f.keyword
+    // Search for relevant items
+    const results = fuse.search(keywordObj.or);
 
-        const slug = kategori
-        const match = current === slug
+    // Extract and process relevant data
+    const relevantPages = results.map(result => result.item);
+    const uniqueServices = [...new Set(relevantPages.map(page => page.ServiceName))];
+    const uniqueBrands = [...new Set(relevantPages.map(page => page.Name))];
+    const uniqueSeries = [...new Set(relevantPages.map(page => page.TVSeriesTitle))];
 
-        return match
-    })
+    // Generate keywords
+    const keywords = [
+        keywordObj.keywordTitle,
+        "dizi sponsorları",
+        ...uniqueServices,
+        ...uniqueBrands,
+        ...uniqueSeries,
+        "tv dizileri",
+        "marka sponsorluğu",
+        "ürün yerleştirme"
+    ].join(", ");
+debugger
+    // Generate description
+    const description = `${keywordObj.keywordTitle} ile ilgili dizi sponsorları ve ürün yerleştirmeleri. ${uniqueServices.slice(0, 3).join(", ")} gibi hizmetler sunan ${uniqueBrands.slice(0, 3).join(", ")} gibi markalar ${uniqueSeries.slice(0, 3).join(", ")} gibi dizilerde yer alıyor. Dizi sponsorluğu örnekleri ve detaylı bilgiler.`;
+
+    // Generate title
+    const title = `${keywordObj.keywordTitle} Dizi Sponsorları ve Ürün Yerleştirmeleri`;
 
     return {
-
-        title: keywordObj.keywordTitle + ' Dizi Sponsorları'
-
-    }
-
+        title,
+        description,
+        keywords,
+        openGraph: {
+            title,
+            description,
+            type: 'website',
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title,
+            description,
+        },
+    };
 }
 
 
