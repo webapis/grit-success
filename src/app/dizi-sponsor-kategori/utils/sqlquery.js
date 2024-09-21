@@ -3,7 +3,9 @@ require("dotenv").config();
 
 const sql = require('mssql/msnodesqlv8');
 const { deaccent } = require('./deaccent.js')
+const {groupByServiceName}=require('./groupByServiceName.js')
 const { removeDuplicatesAndCollectTitles } = require('./removeDuplicatesAndCollectTitles.js')
+
 debugger
 const fs = require('fs')
 // config for your database
@@ -30,8 +32,9 @@ pool.connect().then(() => {
 
 
 
-
+const groupedData = groupByServiceName(removeDuplicateDizi)
     debugger
+    fs.writeFileSync(`${process.cwd()}/src/app/dizi-sponsor-kategori/page-data/keywordMeta.json`, JSON.stringify(groupedData), { encoding: 'utf8' })
     fs.writeFileSync(`${process.cwd()}/src/app/dizi-sponsor-kategori/page-data/sponsor-kategori.json`, JSON.stringify(removeDuplicateDizi), { encoding: 'utf8' })
     console.log('data uploaded', objectsWithTags.length)
 

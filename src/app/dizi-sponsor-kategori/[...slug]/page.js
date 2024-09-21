@@ -6,7 +6,7 @@ import SearchResultContainer from '@/app/dizi-sponsor-kategori/comp/SearchResult
 import PaginationContainer from '@/app/dizi-sponsor-kategori/comp/PaginationContainer';
 // import path from 'path'
 import Fuse from 'fuse.js'
-import keywordMetaData from '@/app/dizi-sponsor-kategori/page-data/keywordMetaData.json';
+import keywordMetaData from '@/app/dizi-sponsor-kategori/page-data/keywordMeta.json';
 import pagesData from '@/app/dizi-sponsor-kategori/page-data/sponsor-kategori.json';
 import getViews from '@/app/utils/firebase/supabase';
 
@@ -24,8 +24,8 @@ export async function generateMetadata({ params }) {
     });
 
     // Search for relevant items
-    const results = fuse.search(keywordObj.or);
-
+    const results = fuse.search(keywordObj.keywordTitle);
+debugger
     // Extract and process relevant data
     const relevantPages = results.map(result => result.item);
     const uniqueServices = [...new Set(relevantPages.map(page => page.ServiceName))];
@@ -101,9 +101,9 @@ export default async function DiziSponsorKategori({ params }) {
         threshold:0.0,
         findAllMatches:true 
         })
+debugger
 
-
-    let results = fuse.search(keywordObj.or)
+    let results = fuse.search(keywordObj.keywordTitle)
 
     
     const sortData = results.map(m => { return { ...m.item, duplicateTitles: m.item.duplicateTitles ? m.item.duplicateTitles : [m.item.TVSeriesTitle] } }).sort((a, b) => b.duplicateTitles.length - a.duplicateTitles.length)
@@ -129,11 +129,12 @@ function paginate(array, page, pageSize) {
 
 export async function generateStaticParams() {
 
-    const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'Acyklama'], minMatchCharLength: 5 })
+    const fuse = new Fuse(pagesData, {  keys: ['ServiceName', 'Acyklama'],   threshold:0.0,
+        findAllMatches:true  })
     const pageCandidate = []
     for (let keywordObj of keywordMetaData) {
 
-        let results = fuse.search(keywordObj.or)
+        let results = fuse.search(keywordObj.keywordTitle)
 
    
         const sortData = results.map(m => { return { ...m.item, duplicateTitles: m.item.duplicateTitles ? m.item.duplicateTitles : [m.item.TVSeriesTitle] } }).sort((a, b) => b.duplicateTitles.length - a.duplicateTitles.length)
