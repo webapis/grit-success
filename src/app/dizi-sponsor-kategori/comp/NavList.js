@@ -42,12 +42,12 @@ const NavList = ({ items }) => {
         >
           {isExpanded ? (
             <>
-              <span>Show Less</span>
+              <span>Daha Az Göster</span>
               <ChevronUp style={{ marginLeft: 4, width: 16, height: 16 }} />
             </>
           ) : (
             <>
-              <span>Show More</span>
+              <span>Daha Fazla Göster</span>
               <ChevronDown style={{ marginLeft: 4, width: 16, height: 16 }} />
             </>
           )}

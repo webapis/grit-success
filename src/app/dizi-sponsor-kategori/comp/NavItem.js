@@ -20,7 +20,10 @@ const NavItem = ({ title, href, totalCount, isActive, onClick, imageUrl }) => (
       '&:hover': {
         bgcolor: 'action.hover',
       },
+    
     }}
+
+    target='_blank'
   >
     <Box
       sx={{
@@ -43,7 +46,7 @@ const NavItem = ({ title, href, totalCount, isActive, onClick, imageUrl }) => (
     </Box>
     <Box sx={{ flexGrow: 1 }}>
       <Typography variant="subtitle1">{title}</Typography>
-      <Typography variant="body2" color="text.secondary">{totalCount} items</Typography>
+      <Typography variant="body2" color="text.secondary">{totalCount} sponsor</Typography>
     </Box>
   </Box>
 );

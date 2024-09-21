@@ -12,6 +12,7 @@ function groupByServiceName(data, minCount = 5) {
         .replace(/ı/g, 'i')
         .replace(/ö/g, 'o')
         .replace(/ç/g, 'c')
+        //.replaceAll(' ', '-')
         .replace(/[^a-z0-9]+/g, '-')
         .replace(/^-+|-+$/g, '');
     };
