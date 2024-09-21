@@ -129,5 +129,21 @@
         },
         "keyword": "ev-tekstil",
         "keywordTitle":"Ev Tekstil"
+    }   ,
+    {
+        "or": {
+            "$or": [
+              
+                {
+                    "Acyklama": "bebek"
+                },
+                {
+                    "ServiceName": "bebek gereçleri"
+                }
+              
+            ]
+        },
+        "keyword": "bebek-gerecleri",
+        "keywordTitle":"Bebek Gereçleri"
     }
 ]
