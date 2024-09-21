@@ -7,7 +7,7 @@ const NavItem = ({ title, href, totalCount, isActive, onClick, imageUrl }) => (
     component="a"
     href={href}
     onClick={(e) => {
-      e.preventDefault();
+     // e.preventDefault();
       onClick();
     }}
     sx={{
