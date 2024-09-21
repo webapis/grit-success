@@ -1,6 +1,7 @@
+
 'use client'
 import React, { useState } from 'react';
-import { Box } from '@mui/material';
+import  Box  from '@mui/material/Box';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import NavItem from './NavItem';
 

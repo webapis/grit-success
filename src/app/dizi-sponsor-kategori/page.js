@@ -1,9 +1,10 @@
 import React from 'react';
-import { Container, Typography } from '@mui/material';
+import Container from  '@mui/material/Container'
+import Typography from '@mui/material/Typography'
 import TopNavigation from '../components/TopNavigation';
 import PersistentDrawerLeft from '../components/drawer';
-import getViews from '../utils/firebase/supabase';
-import Grid from '@mui/material/Grid';
+//import getViews from '../utils/firebase/supabase';
+//import Grid from '@mui/material/Grid';
 import NavList from './comp/NavList';
 import pagesData from '@/app/dizi-sponsor-kategori/page-data/keywordMeta.json';
 // Main page component
