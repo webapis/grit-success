@@ -593,6 +593,19 @@
                 }
             ]
         }
+    },
+    {
+        "slug": "yabani-dizi-sponsorlari",
+        "pageTitle": "Yabani Dizi Sponsorları",
+        "description": "",
+        "dizi": "Yabani",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Yabani"
+                }
+            ]
+        }
     }
 ]
 
