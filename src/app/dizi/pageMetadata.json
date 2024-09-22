@@ -606,6 +606,19 @@
                 }
             ]
         }
+    },
+    {
+        "slug": "leyla-dizi-sponsorlari",
+        "pageTitle": "Leyla Dizi Sponsorları",
+        "description": "",
+        "dizi": "Leyla",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Leyla"
+                }
+            ]
+        }
     }
 ]
 
