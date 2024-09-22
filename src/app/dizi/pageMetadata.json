@@ -580,6 +580,19 @@
                 }
             ]
         }
+    } ,
+    {
+        "slug": "kizil-goncalar-dizi-sponsorlari",
+        "pageTitle": "Kızıl Goncalar Dizi Sponsorları",
+        "description": "",
+        "dizi": "Kızıl Goncalar",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Kızıl Goncalar"
+                }
+            ]
+        }
     }
 ]
 

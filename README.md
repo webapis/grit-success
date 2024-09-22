@@ -118,3 +118,6 @@ node src/app/sponsor-kiyafeti/utils/downloadData.mjs && node utils/alternatif-ut
 
 // install typesense to hostinger
 https://chatgpt.com/c/66e2f6a0-3d88-8000-920e-ac9bc6022667
+
+
+https://www.mehmettatli.com.tr markasının yaptığı hizmeti hakkında kısa  kelem şeklinde açıklama ve slogan(h1 tag)
