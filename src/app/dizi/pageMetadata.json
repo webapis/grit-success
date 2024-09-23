@@ -619,6 +619,19 @@
                 }
             ]
         }
+    },
+    {
+        "slug": "kor-nokta-dizi-sponsorlari",
+        "pageTitle": "Kör Nokta Dizi Sponsorları",
+        "description": "",
+        "dizi": "Kör Nokta",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Kör Nokta"
+                }
+            ]
+        }
     }
 ]
 
