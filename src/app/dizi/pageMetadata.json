@@ -632,6 +632,19 @@
                 }
             ]
         }
+    },
+    {
+        "slug": "deha-dizi-sponsorlari",
+        "pageTitle": "Deha Dizi Sponsorları",
+        "description": "",
+        "dizi": "Deha",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Deha"
+                }
+            ]
+        }
     }
 ]
 
