@@ -7,7 +7,7 @@ import NavItem from './NavItem';
 
 const NavList = ({ items }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const visibleItems = isExpanded ? items : items.slice(0, 5);
+  const visibleItems = isExpanded ? items : items.slice(0, 8);
   const [activeHref, setActiveHref] = useState(null);
 
   const onItemClick = (href) => {
@@ -25,7 +25,7 @@ const NavList = ({ items }) => {
           onClick={() => onItemClick(item.href)}
         />
       ))}
-      {items.length > 5 && (
+      {items.length > 8 && (
         <Box
           component="button"
           onClick={() => setIsExpanded(!isExpanded)}
