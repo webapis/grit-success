@@ -62,7 +62,7 @@ const ImageContainer = ({ filteredData, pageTitle, userViewData }) => {
             gutterBottom 
             sx={{ 
               fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' },
-              color: 'primary.main',
+              color: 'primary.secondary',
               mb: 2,
             }}
           >
@@ -83,7 +83,7 @@ const ImageContainer = ({ filteredData, pageTitle, userViewData }) => {
                     sx={{ 
                       fontSize: { xs: '1.1rem', sm: '1.25rem', md: '1.4rem' },
                       mb: 2,
-                      color: 'primary.main',
+                    //  color: 'primary.main',
                     }}
                   >
                     {item.TVSeriesTitle}
