@@ -658,6 +658,19 @@
                 }
             ]
         }
+    },
+    {
+        "slug": "guzel-asklar-diyari-dizi-sponsorlari",
+        "pageTitle": "Güzel Aşklar Diyarı Dizi Sponsorları",
+        "description": "",
+        "dizi": "Güzel Aşklar Diyarı",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Güzel Aşklar Diyarı"
+                }
+            ]
+        }
     }
 ]
 
