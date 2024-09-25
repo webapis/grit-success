@@ -645,6 +645,19 @@
                 }
             ]
         }
+    },
+    {
+        "slug": "karadut-dizi-sponsorlari",
+        "pageTitle": "Karadut Dizi Sponsorları",
+        "description": "",
+        "dizi": "Karadut",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Karadut"
+                }
+            ]
+        }
     }
 ]
 
