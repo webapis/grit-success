@@ -9,7 +9,7 @@ import ClickableLink from '../../utils/firebase/ClickableLink';
 import ViewCount from '../../utils/firebase/ViewCount';
 export default function SponsorView({title ,content,href,userViewData }) {
 
-    const {tag,toplamSponsor,Tag}=content
+    const {tag,toplamSponsor,Tag,Year}=content
 
     return (
         <Card sx={{ maxWidth: 345 }}>
@@ -24,7 +24,9 @@ export default function SponsorView({title ,content,href,userViewData }) {
                 <Typography  variant="h5" component="div" style={{ textTransform: 'capitalize' }}>
                     {title}
                 </Typography>
-              
+                <Typography  variant="body" component="div" style={{ textTransform: 'capitalize' }}>
+                    {Year}
+                </Typography>
                 </Box>
          
                 <Typography variant="body2" color="text.secondary" style={{ textTransform: 'capitalize' }}>

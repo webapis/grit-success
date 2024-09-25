@@ -13,10 +13,11 @@ const mappedData = arrayData.map(m => {
     const content = m[1]
     const href = `/dizi/${content.tag}-dizi-sponsorlari`
     const title = m[0]
+    debugger
     return { ...m, href, content, title }
 
-})
-
+}).sort((a, b) => new Date(b[1].StartDate) - new Date(a[1].StartDate))
+debugger
 export {mappedData}
 export default async  function Application() {
     const userViewData = await getViews({table:'dizisponsoru-home'})
@@ -26,7 +27,7 @@ export default async  function Application() {
         <Typography variant='h4' textAlign='center' sx={{ marginTop: 0 }}>Dizi Sponsorları</Typography>
 
         <Grid container gap={1} style={{ display: 'flex', justifyContent: 'center' }}>
-            {mappedData.sort((a, b) => b[1].toplamSponsor - a[1].toplamSponsor).map((m, i) => {
+            {mappedData.map((m, i) => {
                 return <Grid key={i} item xs={12} md={3}> <SponsorView  userViewData={userViewData} {...m} /></Grid>
             })}
         </Grid>
