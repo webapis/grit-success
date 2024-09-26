@@ -40,7 +40,7 @@ const CompanyPage = ({ company, companyId }) => {
           container
         >
           {company.tvSeries.map((series, i) => (
-            <Grid item key={i} xs={6} md={2} > <TVSeriesThumbnail key={series.id} series={series} /></Grid>
+            <Grid item key={i} xs={6} md={2}> <TVSeriesThumbnail key={series.id} series={series} /></Grid>
           ))}
         </Grid>
       </Box>
