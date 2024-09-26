@@ -1,4 +1,63 @@
-[
+[{
+    "title": "Sen de Gitme",
+    "POSTER_IMG": "/dizi-image/sende-gitme.jpg"
+},
+    {
+        "title": "Bedel",
+        "POSTER_IMG": "/dizi-image/bedel.jpg"
+    },
+    {
+        "title": "Evlilik Hakkında Her Şey",
+        "POSTER_IMG": "/dizi-image/evlilik-hakkinda-her-sey.jpg"
+    },
+    {
+        "title": "Kusursuz Kiracı",
+        "POSTER_IMG": "/dizi-image/kusursuz-kiraci.jpg"
+    },
+    {
+        "title": "Bir Deli Rüzgar",
+        "POSTER_IMG": "/dizi-image/bir-deli-ruzgar.jpg"
+    },
+    {
+        "title": "Tetikçinin oğlu",
+        "POSTER_IMG": "/dizi-image/tetikcinin-oglu.jpg"
+    },
+    {
+        "title": "Bay Yanlış",
+        "POSTER_IMG": "/dizi-image/bay-yanlis.jpg"
+    },
+    {
+        "title": "Masumiyet",
+        "POSTER_IMG": "/dizi-image/masumiyet.jpg"
+    },
+    {
+        "title": "Kanunsuz Topraklar",
+        "POSTER_IMG": "/dizi-image/kanunsuz-topraklar.jpg"
+    },
+    {
+        "title": "Senden Daha Güzel",
+        "POSTER_IMG": "/dizi-image/senden-daha-guzel.jpg"
+    },
+    {
+        "title": "Kiraz Mevsimi",
+        "POSTER_IMG": "/dizi-image/kiraz-mevsimi.jpg"
+    },
+    {
+        "title": "Aşk Yeniden",
+        "POSTER_IMG": "/dizi-image/ask-yeniden.jpg"
+    },
+    {
+        "title": "Adı Mutluluk",
+        "POSTER_IMG": "/dizi-image/adi-mutluluk.jpg"
+    },
+    {
+        "title": "Dokuz Oğuz",
+        "POSTER_IMG": "/dizi-image/dokuz-oguz.jpg"
+    },
+    {
+        "title": "karadut",
+        "POSTER_IMG": "/dizi-image/44.jpg"
+    },
     {
         "title": "Gaddar",
         "watchOptions": [
@@ -104,12 +163,16 @@
     {
         "title": "üç kadın",
         "POSTER_IMG": "https://img04.imgsinemalar.com/images/afis_buyuk/n/nefise-karatay-1508486975.jpg",
-        "watchOptions":["https://www.youtube.com/watch?app=desktop&v=3HtVnX2dj5s"]
+        "watchOptions": [
+            "https://www.youtube.com/watch?app=desktop&v=3HtVnX2dj5s"
+        ]
     },
     {
         "title": "i̇z peşinde",
         "POSTER_IMG": "https://m.media-amazon.com/images/M/MV5BYzNiYWFiYmMtOTRhNS00NmM2LTgwYWEtMjdlNDA5NTljOTk0XkEyXkFqcGdeQXVyODc5Mjc4Nzg@._V1_.jpg",
-        "watchOptions":["https://www.youtube.com/watch?v=L2UuaywjZfE"]
+        "watchOptions": [
+            "https://www.youtube.com/watch?v=L2UuaywjZfE"
+        ]
     },
     {
         "title": "gönüller sultanı mevlana",
@@ -141,7 +204,9 @@
     {
         "title": "başka olur ağaların düğünü",
         "POSTER_IMG": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmXMefK4x5XZBjic08ldB6CNVw_CQPclRGSjaEnf6e8yY5yunTatGdx_nMatWozpY4kbw&usqp=CAU",
-        "watchOptions":["https://www.youtube.com/watch?v=57OSIMf4iuw"]
+        "watchOptions": [
+            "https://www.youtube.com/watch?v=57OSIMf4iuw"
+        ]
     },
     {
         "title": "bizim mahalle",
@@ -364,7 +429,6 @@
         "title": "Duy Beni",
         "POSTER_IMG": "https://img-puhutv.mncdn.com/media/22-07/07/duybeni_1bol_mobil_1.jpg"
     },
-    
     {
         "title": "Yıldızlar Şahidim",
         "POSTER_IMG": "https://img-puhutv.mncdn.com/media/22-07/07/duybeni_1bol_mobil_1.jpg"
@@ -806,18 +870,18 @@
     },
     {
         "title": "büyük yalan",
-        "POSTER_IMG":"https://tr.web.img2.acsta.net/medias/nmedia/18/89/24/69/20033764.jpg",
+        "POSTER_IMG": "https://tr.web.img2.acsta.net/medias/nmedia/18/89/24/69/20033764.jpg",
         "watchOptions": [
             "https://www.youtube.com/playlist?list=PL-Eb2PV9J9LWePszsvPf_OqyslMIQC_R_"
         ]
     },
     {
         "title": "Korkma Ben Yanındayım",
-       "POSTER_IMG":"https://www.dizidoktoru.com/images/haberler/2024/03/korkma_ben_yanindayim_karakterleri_h42724_d64b8.jpeg"
+        "POSTER_IMG": "https://www.dizidoktoru.com/images/haberler/2024/03/korkma_ben_yanindayim_karakterleri_h42724_d64b8.jpeg"
     },
     {
         "title": "Hudutsuz Sevda",
-     "POSTER_IMG":"https://media.myshows.me/shows/760/5/17/517d916c9f85e1ad49bf9b123390404d.jpg"
+        "POSTER_IMG": "https://media.myshows.me/shows/760/5/17/517d916c9f85e1ad49bf9b123390404d.jpg"
     },
     {
         "title": "kaçış",
@@ -851,12 +915,13 @@
     },
     {
         "title": "KÖTÜ KAN",
-      "POSTER_IMG":"https://yenietik.com/wp-content/uploads/2024/06/kotu-kan.webp"
+        "POSTER_IMG": "https://yenietik.com/wp-content/uploads/2024/06/kotu-kan.webp"
     },
     {
         "title": "Seyyar",
-   
-       "watchOptions":["https://puhutv.com/seyyar-detay"]
+        "watchOptions": [
+            "https://puhutv.com/seyyar-detay"
+        ]
     },
     {
         "title": "Sıdıka",
@@ -884,7 +949,7 @@
     },
     {
         "title": "Zeytin Ağacı",
-        "POSTER_IMG":"https://yenibakiscomtr.teimg.com/crop/1280x720/yenibakis-com-tr/uploads/2024/03/zeytin-agaci-2sezon-gelecek-mi-zeytin-agaci-2-sezon-ne-zaman.jpeg",
+        "POSTER_IMG": "https://yenibakiscomtr.teimg.com/crop/1280x720/yenibakis-com-tr/uploads/2024/03/zeytin-agaci-2sezon-gelecek-mi-zeytin-agaci-2-sezon-ne-zaman.jpeg",
         "watchOptions": [
             "https://www.netflix.com/tr/title/81380432"
         ]
@@ -912,188 +977,161 @@
         "watchOptions": [
             "https://www.gain.tv/t/wGPdXzFW/ru"
         ]
-    }
-    ,
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
+    {
+        "title": "",
+        "watchOptions": [
+            ""
+        ]
+    },
     {
         "title": "",
         "watchOptions": [
             ""
         ]
     }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-    ,
-    {
-        "title": "",
-        "watchOptions": [
-            ""
-        ]
-    }
-
 ]
