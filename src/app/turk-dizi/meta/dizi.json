@@ -1,7 +1,140 @@
-[{
-    "title": "Sen de Gitme",
-    "POSTER_IMG": "/dizi-image/sende-gitme.jpg"
-},
+[
+    {
+        "title": "Kördüğüm",
+        "POSTER_IMG": "/dizi-image/kordugum.jpg"
+    },
+    {
+        "title": "Dayan Yüreğim",
+        "POSTER_IMG": "/dizi-image/dayan-yuregim.jpg"
+    },
+    {
+        "title": "Harem",
+        "POSTER_IMG": "/dizi-image/harem.jpg"
+    },
+    {
+        "title": "Yetim Gönüller",
+        "POSTER_IMG": "/dizi-image/yetim-gonuller.jpg"
+    },
+    {
+        "title": "Yol Arkadaşım",
+        "POSTER_IMG": "/dizi-image/yol-arkadasim.jpg"
+    },
+    {
+        "title": "Bayanlar Baylar",
+        "POSTER_IMG": "/dizi-image/bayanlar-baylar.jpg"
+    },
+    {
+        "title": "Sevginin Gücü",
+        "POSTER_IMG": "/dizi-image/sevginin-gucu.jpg"
+    },
+    {
+        "title": "Yabancı Damat",
+        "POSTER_IMG": "/dizi-image/yabanci-damat.jpg"
+    },
+    {
+        "title": "Deli Gönül",
+        "POSTER_IMG": "/dizi-image/deli-gonul.jpg"
+    },
+    {
+        "title": "Kefaret",
+        "POSTER_IMG": "/dizi-image/kefaret.jpg"
+    },
+    {
+        "title": "Uzak Şehrin Masalı",
+        "POSTER_IMG": "/dizi-image/uzak-sehrin-masali.jpg"
+    },
+    {
+        "title": "Küdüs Fatihi Selahaddin Eyyubi",
+        "POSTER_IMG": "/dizi-image/kudus-fatihi-selahaddin-eyyubi.jpg"
+    },
+    {
+        "title": "Kayıtdışı",
+        "POSTER_IMG": "/dizi-image/kayitdisi.jpg"
+    },
+    {
+        "title": "Her Yerde Sen",
+        "POSTER_IMG": "/dizi-image/her-yerde-sen.jpg"
+    },
+    {
+        "title": "Cocuk",
+        "POSTER_IMG": "/dizi-image/cocuk.jpg"
+    },
+    {
+        "title": "Kızılelma: Bir Fetih Öyküsü",
+        "POSTER_IMG": "/dizi-image/kizilelma-bir-fetih-oykusu.jpg"
+    },
+    {
+        "title": "Kendi Düşen Ağlamaz",
+        "POSTER_IMG": "/dizi-image/kendi-dusen-aglamaz.jpg"
+    },
+    {
+        "title": "Hayaller ve Hayatlar",
+        "POSTER_IMG": "/dizi-image/hayaller-ve-hayatlar.jpg"
+    },
+    {
+        "title": "Kaderimin Oyunu",
+        "POSTER_IMG": "/dizi-image/kaderimin-oyunu.jpg"
+    },
+    {
+        "title": "Sefirin Kızı",
+        "POSTER_IMG": "/dizi-image/sefirin-kizi.jpg"
+    },
+    {
+        "title": "Deniz Yıldızı",
+        "POSTER_IMG": "/dizi-image/deniz-yildizi.jpg"
+    },
+    {
+        "title": "Çoban Yıldızı",
+        "POSTER_IMG": "/dizi-image/coban-yildizi.jpg"
+    },
+    {
+        "title": "Elbet Bir Gün",
+        "POSTER_IMG": "/dizi-image/elbet-bir-gun.jpg"
+    },
+    {
+        "title": "Seni Kimler Aldı",
+        "POSTER_IMG": "/dizi-image/seni-kimler-aldi.jpg"
+    },
+    {
+        "title": "Bir Mucize Olsun",
+        "POSTER_IMG": "/dizi-image/bir-mucize-olsun.jpg"
+    },
+    {
+        "title": "Aşk Kapıyı Çalınca",
+        "POSTER_IMG": "/dizi-image/ask-kapiyi-calinca.jpg"
+    },
+    {
+        "title": "Firar",
+        "POSTER_IMG": "/dizi-image/firar.jpg"
+    },
+    {
+        "title": "Fatih Harbiye",
+        "POSTER_IMG": "/dizi-image/fatih-harbiye.jpg"
+    },
+    {
+        "title": "Lale Devri",
+        "POSTER_IMG": "/dizi-image/lale-devri.jpg"
+    },
+    {
+        "title": "Yer Gök Aşk",
+        "POSTER_IMG": "/dizi-image/yer-gok-ask.jpg"
+    },
+    {
+        "title": "Gülümse Kaderine",
+        "POSTER_IMG": "/dizi-image/gulumse-kaderine.jpg"
+    },
+    {
+        "title": "Jet Sosyete",
+        "POSTER_IMG": "/dizi-image/jet-sosyete.jpg"
+    },
+    {
+        "title": "Cesaretin Var Mı Aşka",
+        "POSTER_IMG": "/dizi-image/cesaretin-varmi-aska.jpg"
+    },
+    {
+        "title": "Sen de Gitme",
+        "POSTER_IMG": "/dizi-image/sende-gitme.jpg"
+    },
     {
         "title": "Bedel",
         "POSTER_IMG": "/dizi-image/bedel.jpg"
