@@ -28,7 +28,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
 export default async function DiziPage({ params }) {
 
     const userViewData = await getViews({ table: 'dizikiyafeti' })
-    debugger
+
     const { title, algoliaQuery } = pagesMetaData.find(f => {
         const current = f.slug[0]
         const slug = params.slug[0]
@@ -37,15 +37,15 @@ export default async function DiziPage({ params }) {
         return match
     })
     const fuse = new Fuse(pagesData, { keys: ['FullName', 'CaracterName', 'TVSeriesTitle', 'tag'], minMatchCharLength: 6 })
-    debugger
+    
 
     let results = fuse.search(algoliaQuery).map(m => { return { ...m.item } })
     let mappedResult = results.map(m => {
-        debugger
+      
         const linkId = m.ProductLink
         const viewCount = userViewData['data'].find(f => f.href.includes(linkId))
        // console.log(linkId,userViewData['data'].map(m=>m.href))
-        debugger
+        
         return { ...m, viewCount: viewCount ? viewCount.count : 0 }
     }).sort((a, b) => b.viewCount - a.viewCount)
     

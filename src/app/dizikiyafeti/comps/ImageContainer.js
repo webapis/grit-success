@@ -52,6 +52,7 @@ InfoChip.propTypes = {
 };
 
 const ImageContainer = ({ filteredData, pageTitle, userViewData }) => {
+  debugger
   return (
     <ThemeProvider theme={turkishTheme}>
       <Container component="main" maxWidth="lg" sx={{ bgcolor: 'background.default', py: 3 }}>
@@ -72,7 +73,7 @@ const ImageContainer = ({ filteredData, pageTitle, userViewData }) => {
         </Box>
 
         <Grid container spacing={3} component="section" aria-label="Dizi Kıyafetleri">
-          {filteredData.map((item,i) => (
+          {filteredData.sort((a,b)=>b.Time-a.Time).map((item,i) => (
             <Grid item xs={12} sm={6} lg={4} key={i}>
               <Paper elevation={3} sx={{ p: 2, height: '100%', display: 'flex', flexDirection: 'column', borderRadius: '12px' }}>
                 <article>
