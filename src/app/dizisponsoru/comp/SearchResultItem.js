@@ -1,9 +1,9 @@
 'use client'
 
 import React, { useState } from 'react';
-import { Card, CardContent, CardActions, Typography, Chip, Box, IconButton, Tooltip } from '@mui/material';
+import { Card, CardContent, CardActions, Typography, Chip, Box, IconButton, Tooltip, Skeleton } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import Image from './Image';
+import Image from 'next/image';
 import ClickableLink from './ClickableLink';
 import ViewCount from '../../utils/firebase/ViewCount';
 import extractSubdomain from './extractSubdomain';
@@ -31,11 +31,12 @@ const ImageContainer = styled(Box)(({ theme }) => ({
   },
 }));
 
-const StyledImage = styled(Image)(({ theme }) => ({
+const StyledImageWrapper = styled(Box)(({ theme }) => ({
+  position: 'relative',
   height: 80,
-  width: 'auto',
-  objectFit: 'contain',
+  width: 120,
   borderRadius: theme.shape.borderRadius,
+  overflow: 'hidden',
   transition: 'transform 0.3s ease-in-out',
   '&:hover': {
     transform: 'scale(1.05)',
@@ -61,26 +62,56 @@ const ExpandableTypography = styled(Typography)(({ theme }) => ({
 export default function SearchResultItem({ item, userViewData }) {
   const { Name: name, Website, Acyklama, TVSeriesTitle, tag, brandTag, ServiceName, h3 } = item;
   const imageName = brandTag || extractSubdomain(Website);
-  const hostname =  new URL(Website).hostname;
+  const hostname = new URL(Website).hostname;
   const [expanded, setExpanded] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState({ dizi: false, marka: false });
 
   const toggleExpand = () => setExpanded(!expanded);
   const description = Acyklama || 'No description available.';
+
+  const handleImageLoad = (imageType) => {
+    setImageLoaded(prev => ({ ...prev, [imageType]: true }));
+  };
+
   return (
     <StyledCard elevation={2}>
-      <ImageContainer>
-        <StyledImage
-          component="img"
-          alt={`${TVSeriesTitle} dizi resmi`}
-          src={`/dizi-image/${item.Tag}.jpg`}
-          loading="lazy"
-        />
-        <StyledImage
-          component="img"
-          alt={`${name} marka resmi`}
-          src={`/dizi/marka/${imageName}.jpg`}
-          loading="lazy"
-        />
+         <ImageContainer>
+        <StyledImageWrapper>
+          <Image
+            src={`/dizi-image/${item.Tag}.jpg`}
+            alt={`${TVSeriesTitle} dizi resmi`}
+            width={120}
+            height={80}
+            style={{ objectFit: 'contain' }}
+            onLoad={() => handleImageLoad('dizi')}
+          />
+          {!imageLoaded.dizi && (
+            <Skeleton 
+              variant="rectangular" 
+              width={120} 
+              height={80} 
+              style={{position: 'absolute', top: 0, left: 0}}
+            />
+          )}
+        </StyledImageWrapper>
+        <StyledImageWrapper>
+          <Image
+            src={`/dizi/marka/${imageName}.jpg`}
+            alt={`${name} marka resmi`}
+            width={120}
+            height={80}
+            style={{ objectFit: 'contain' }}
+            onLoad={() => handleImageLoad('marka')}
+          />
+          {!imageLoaded.marka && (
+            <Skeleton 
+              variant="rectangular" 
+              width={120} 
+              height={80} 
+              style={{position: 'absolute', top: 0, left: 0}}
+            />
+          )}
+        </StyledImageWrapper>
       </ImageContainer>
 
       <ContentWrapper>
@@ -89,7 +120,7 @@ export default function SearchResultItem({ item, userViewData }) {
             <Typography variant="subtitle2" color="text.secondary">
               {TVSeriesTitle}
             </Typography>
-            <Tooltip title="Visit Sponsor Website">
+       
               <IconButton
                 component={ClickableLink}
                 rootPath="dizisponsoru"
@@ -100,7 +131,7 @@ export default function SearchResultItem({ item, userViewData }) {
               >
                 <OpenInNewIcon fontSize="small" />
               </IconButton>
-            </Tooltip>
+         
           </Box>
           
           <Typography variant="h6" component="div" gutterBottom>
