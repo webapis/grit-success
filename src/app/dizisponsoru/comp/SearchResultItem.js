@@ -1,13 +1,13 @@
 'use client'
 
 import React, { useState } from 'react';
-import { Card, CardContent, CardActions, Typography, Chip, Box, IconButton, Tooltip, Skeleton } from '@mui/material';
+import { Card, CardContent, CardActions, Typography, Chip, Box, IconButton, Tooltip } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import Image from 'next/image';
 import ClickableLink from './ClickableLink';
 import ViewCount from '../../utils/firebase/ViewCount';
 import extractSubdomain from './extractSubdomain';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import ImageIcon from '@mui/icons-material/Image';
 
 const StyledCard = styled(Card)(({ theme }) => ({
   display: 'flex',
@@ -38,6 +38,10 @@ const StyledImageWrapper = styled(Box)(({ theme }) => ({
   borderRadius: theme.shape.borderRadius,
   overflow: 'hidden',
   transition: 'transform 0.3s ease-in-out',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  backgroundColor: theme.palette.grey[300],
   '&:hover': {
     transform: 'scale(1.05)',
   },
@@ -45,6 +49,12 @@ const StyledImageWrapper = styled(Box)(({ theme }) => ({
     marginBottom: theme.spacing(1),
   },
 }));
+
+const StyledImage = styled('img')({
+  maxWidth: '100%',
+  maxHeight: '100%',
+  objectFit: 'contain',
+});
 
 const ContentWrapper = styled(Box)({
   display: 'flex',
@@ -65,6 +75,7 @@ export default function SearchResultItem({ item, userViewData }) {
   const hostname = new URL(Website).hostname;
   const [expanded, setExpanded] = useState(false);
   const [imageLoaded, setImageLoaded] = useState({ dizi: false, marka: false });
+  const [imageError, setImageError] = useState({ dizi: false, marka: false });
 
   const toggleExpand = () => setExpanded(!expanded);
   const description = Acyklama || 'No description available.';
@@ -73,44 +84,33 @@ export default function SearchResultItem({ item, userViewData }) {
     setImageLoaded(prev => ({ ...prev, [imageType]: true }));
   };
 
+  const handleImageError = (imageType) => {
+    setImageError(prev => ({ ...prev, [imageType]: true }));
+    console.error(`Failed to load ${imageType} image`);
+  };
+
+  const renderImage = (src, alt, imageType) => {
+    if (imageError[imageType]) {
+      return <ImageIcon style={{ fontSize: 40, color: 'grey' }} />;
+    }
+    return (
+      <StyledImage
+        src={src}
+        alt={alt}
+        onLoad={() => handleImageLoad(imageType)}
+        onError={() => handleImageError(imageType)}
+      />
+    );
+  };
+
   return (
     <StyledCard elevation={2}>
-         <ImageContainer>
+      <ImageContainer>
         <StyledImageWrapper>
-          <Image
-            src={`/dizi-image/${item.Tag}.jpg`}
-            alt={`${TVSeriesTitle} dizi resmi`}
-            width={120}
-            height={80}
-            style={{ objectFit: 'contain' }}
-            onLoad={() => handleImageLoad('dizi')}
-          />
-          {!imageLoaded.dizi && (
-            <Skeleton 
-              variant="rectangular" 
-              width={120} 
-              height={80} 
-              style={{position: 'absolute', top: 0, left: 0}}
-            />
-          )}
+          {renderImage(`/dizi-image/${item.Tag}.jpg`, `${TVSeriesTitle} dizi resmi`, 'dizi')}
         </StyledImageWrapper>
         <StyledImageWrapper>
-          <Image
-            src={`/dizi/marka/${imageName}.jpg`}
-            alt={`${name} marka resmi`}
-            width={120}
-            height={80}
-            style={{ objectFit: 'contain' }}
-            onLoad={() => handleImageLoad('marka')}
-          />
-          {!imageLoaded.marka && (
-            <Skeleton 
-              variant="rectangular" 
-              width={120} 
-              height={80} 
-              style={{position: 'absolute', top: 0, left: 0}}
-            />
-          )}
+          {renderImage(`/dizi/marka/${imageName}.jpg`, `${name} marka resmi`, 'marka')}
         </StyledImageWrapper>
       </ImageContainer>
 
@@ -120,7 +120,7 @@ export default function SearchResultItem({ item, userViewData }) {
             <Typography variant="subtitle2" color="text.secondary">
               {TVSeriesTitle}
             </Typography>
-       
+      
               <IconButton
                 component={ClickableLink}
                 rootPath="dizisponsoru"
@@ -131,7 +131,7 @@ export default function SearchResultItem({ item, userViewData }) {
               >
                 <OpenInNewIcon fontSize="small" />
               </IconButton>
-         
+      
           </Box>
           
           <Typography variant="h6" component="div" gutterBottom>
