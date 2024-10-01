@@ -1,47 +1,21 @@
 'use client'
-
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardMedia, Typography, Box, Button, Menu, MenuItem, Chip, Tooltip } from '@mui/material';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import Skeleton from '@mui/material/Skeleton';
 
-// This should be a state in a parent component or a global state
-let globalOpenMenuId = null;
-
-const TVSeriesThumbnail = ({ series, isMobile, onMenuOpen }) => {
+const TVSeriesThumbnail = ({ series, isMobile }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [imageLoaded, setImageLoaded] = useState(false);
   const open = Boolean(anchorEl);
 
   const handleClick = (event) => {
-    if (globalOpenMenuId && globalOpenMenuId !== series.sha) {
-      // Close the previously opened menu
-      onMenuOpen(null);
-    }
     setAnchorEl(event.currentTarget);
-    onMenuOpen(series.sha);
-    globalOpenMenuId = series.sha;
   };
 
   const handleClose = () => {
     setAnchorEl(null);
-    onMenuOpen(null);
-    globalOpenMenuId = null;
   };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (open) {
-        handleClose();
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [open]);
 
   const getStateColor = (state) => {
     switch (state) {
@@ -69,7 +43,7 @@ const TVSeriesThumbnail = ({ series, isMobile, onMenuOpen }) => {
           )}
           <CardMedia
             component="img"
-            image={series.thumbnail.replace('https://www.nowtv.com.tr/','') }
+            image={series.thumbnail.replace('https://www.nowtv.com.tr/','')}
             alt={series.title}
             sx={{
               position: 'absolute',
@@ -107,19 +81,20 @@ const TVSeriesThumbnail = ({ series, isMobile, onMenuOpen }) => {
         </Tooltip>
 
         <Typography variant="caption" color="text.secondary">
-          {series.year ? series.year : '_'}
+          {series.year ?series.year:'_'}
         </Typography>
         <Typography variant="caption" color="text.secondary" display="block">
-          {series.lastEpisode ? `Son Bölüm: ${series.lastEpisode}` : '_'}
-        </Typography>
+            {series.lastEpisode? `Son Bölüm: ${series.lastEpisode}`:'_'}
+          </Typography>
+       
    
-        {series.productionCompanies && (
-          <Tooltip title={series.productionCompanies.join(', ')} enterDelay={500} leaveDelay={200}>
-            <Typography variant="caption" color="text.secondary" display="block" noWrap>
-              {series.productionCompanies.join(', ')}
-            </Typography>
-          </Tooltip>
-        )}
+          {series.productionCompanies && (
+            <Tooltip title={series.productionCompanies.join(', ')} enterDelay={500} leaveDelay={200}>
+              <Typography variant="caption" color="text.secondary" display="block" noWrap>
+             {series.productionCompanies.join(', ')}
+              </Typography>
+            </Tooltip>
+          )}
         <Box sx={{ mt: 0.5, display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
           {series.genres && series.genres.slice(0, 2).map((genre, index) => (
             <Chip
@@ -153,7 +128,6 @@ const TVSeriesThumbnail = ({ series, isMobile, onMenuOpen }) => {
           anchorEl={anchorEl}
           open={open}
           onClose={handleClose}
-          disableScrollLock={true}
         >
           {hasWatchOptions && series.watchOptions.map((option, index) => (
             <MenuItem 
