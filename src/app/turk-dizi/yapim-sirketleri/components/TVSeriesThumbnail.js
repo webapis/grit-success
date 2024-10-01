@@ -1,7 +1,16 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
-import { Card, CardContent, CardMedia, Typography, Box, Button, Menu, MenuItem, Chip, Tooltip } from '@mui/material';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Chip from '@mui/material/Chip';
+import Tooltip from '@mui/material/Tooltip';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import Skeleton from '@mui/material/Skeleton';
 
@@ -16,16 +25,16 @@ const TVSeriesThumbnail = ({ series, isMobile, onMenuOpen }) => {
   const handleClick = (event) => {
     if (globalOpenMenuId && globalOpenMenuId !== series.sha) {
       // Close the previously opened menu
-      onMenuOpen(null);
+    //  onMenuOpen(null);
     }
     setAnchorEl(event.currentTarget);
-    onMenuOpen(series.sha);
+   // onMenuOpen(series.sha);
     globalOpenMenuId = series.sha;
   };
 
   const handleClose = () => {
     setAnchorEl(null);
-    onMenuOpen(null);
+  //  onMenuOpen(null);
     globalOpenMenuId = null;
   };
 

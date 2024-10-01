@@ -23,7 +23,7 @@ const TVSeriesList = ({ companyId, tvSeries, displayedSeriesCount = 4 }) => {
         sx={{display:'flex',justifyContent:{xs:'center',md:'start'}}}
         >
           {tvSeries.slice(0, displayedSeriesCount).map((series,i) => (
-           <Grid item key={i} xs={6} md={2}> <TVSeriesThumbnail key={series.id} series={series} isMobile={true} /></Grid>
+           <Grid item key={i} xs={6} md={2}> <TVSeriesThumbnail    key={series.id} series={series} isMobile={true} /></Grid>
           ))}
         </Grid>
       
