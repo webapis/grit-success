@@ -671,6 +671,32 @@
                 }
             ]
         }
+    },
+    {
+        "slug": "cukur-dizi-sponsorlari",
+        "pageTitle": "Çukur Dizi Sponsorları",
+        "description": "",
+        "dizi": "Çukur",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Çukur"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "uc-kiz-kardes-dizi-sponsorlari",
+        "pageTitle": "Üç Kız Kardeş Dizi Sponsorları",
+        "description": "",
+        "dizi": "Üç Kız Kardeş",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Üç Kız Kadeş"
+                }
+            ]
+        }
     }
 ]
 
