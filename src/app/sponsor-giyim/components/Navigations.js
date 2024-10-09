@@ -43,7 +43,7 @@ import {
     return <IconComponent fontSize="small" />;
   };
   
-  const CategoryNode = ({ category }) => {
+  const CategoryNode = ({ category,gender }) => {
     const sortedChildren = [...category.children].sort((a, b) =>
       a.title.localeCompare(b.title)
     );
@@ -58,7 +58,7 @@ import {
           {sortedChildren.map((item) => (
             <Box component="li" key={item.uid || item.title} sx={{ mb: 1 }}>
               {item.uid ? (
-                <Link href={`/category/${item.uid}`} passHref style={{ textDecoration: 'none' }}>
+                <Link href={`/${gender}/${category.title.replace(' ','-')}/${item.title}/${item.uid}`} passHref style={{ textDecoration: 'none' }}>
                   <Box
                     sx={{
                       display: 'flex',
@@ -162,9 +162,10 @@ const GenderTabbedNavigation = () => {
                 },
               }}
             >
-              {navData[selectedGender].children.map((category) => (
-                <CategoryNode key={category.title} category={category} />
-              ))}
+              {navData[selectedGender].children.map((category) => {
+               
+                return <CategoryNode key={category.title} gender={navData[selectedGender].title} category={category} />
+})}
             </Box>
           )}
         </Box>
