@@ -4,108 +4,107 @@ import Link from 'next/link';
 import navData from '../nav/navigation.json';
 
 import { 
-  Tabs, 
-  Tab, 
-  Box, 
-  Typography, 
-  useMediaQuery, 
-  useTheme, 
-  Paper,
-  Fade,
-  Divider
-} from '@mui/material';
+    Tabs, 
+    Tab, 
+    Box, 
+    Typography, 
 
-import { 
-  Shirt, 
-  Checkroom, 
-  Stairs, 
-  ChildFriendly, 
-  Face, 
-  Backpack, 
-  Watch, 
-  Spa,
-  KeyboardArrowRight
-} from '@mui/icons-material';
-
-const getIcon = (title) => {
-  const iconMap = {
-    'Tops': Shirt,
-    'Dresses': Checkroom,
-    'Bottoms': Stairs,
-    'Kids': ChildFriendly,
-    'Beauty': Spa,
-    'Accessories': Watch,
-    'Bags': Backpack,
-    // Add more mappings as needed
+    useTheme, 
+    Paper,
+    Fade,
+    Divider
+  } from '@mui/material';
+  
+  import { 
+    Shirt, 
+    Checkroom, 
+    Stairs, 
+    ChildFriendly, 
+    Face, 
+    Backpack, 
+    Watch, 
+    Spa,
+    KeyboardArrowRight
+  } from '@mui/icons-material';
+  
+  const getIcon = (title) => {
+    const iconMap = {
+      'Tops': Shirt,
+      'Dresses': Checkroom,
+      'Bottoms': Stairs,
+      'Kids': ChildFriendly,
+      'Beauty': Spa,
+      'Accessories': Watch,
+      'Bags': Backpack,
+      // Add more mappings as needed
+    };
+  
+    const IconComponent = iconMap[title] || Face;
+    return <IconComponent fontSize="small" />;
   };
-
-  const IconComponent = iconMap[title] || Face;
-  return <IconComponent fontSize="small" />;
-};
-
-const CategoryNode = ({ category }) => {
-  const sortedChildren = [...category.children].sort((a, b) =>
-    a.title.localeCompare(b.title)
-  );
-
-  return (
-    <Box sx={{ mb: 4 }}>
-      <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold', color: 'primary.main' }}>
-        {category.title}
-      </Typography>
-      <Divider sx={{ mb: 2 }} />
-      <Box component="ul" sx={{ listStyleType: 'none', p: 0, m: 0 }}>
-        {sortedChildren.map((item) => (
-          <Box component="li" key={item.uid || item.title} sx={{ mb: 1 }}>
-            {item.uid ? (
-              <Link href={`/category/${item.uid}`} passHref>
-                <Box
-                  sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    color: 'text.primary',
-                    cursor: 'pointer',
-                    p: 1,
-                    borderRadius: 1,
-                    transition: 'all 0.2s',
-                    '&:hover': { 
-                      bgcolor: 'action.hover',
-                      color: 'primary.main',
-                      '& .MuiSvgIcon-root:last-child': {
-                        opacity: 1,
-                        transform: 'translateX(4px)',
-                      }
-                    },
-                  }}
-                >
-                  <Box sx={{ mr: 2, display: 'flex', alignItems: 'center', color: 'primary.main' }}>
+  
+  const CategoryNode = ({ category }) => {
+    const sortedChildren = [...category.children].sort((a, b) =>
+      a.title.localeCompare(b.title)
+    );
+  
+    return (
+      <Box sx={{ mb: 4 }}>
+        <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold', color: 'primary.main' }}>
+          {category.title}
+        </Typography>
+        <Divider sx={{ mb: 2 }} />
+        <Box component="ul" sx={{ listStyleType: 'none', p: 0, m: 0 }}>
+          {sortedChildren.map((item) => (
+            <Box component="li" key={item.uid || item.title} sx={{ mb: 1 }}>
+              {item.uid ? (
+                <Link href={`/category/${item.uid}`} passHref style={{ textDecoration: 'none' }}>
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      color: 'text.primary',
+                      cursor: 'pointer',
+                      p: 1,
+                      borderRadius: 1,
+                      transition: 'all 0.2s',
+                      '&:hover': { 
+                        bgcolor: 'action.hover',
+                        color: 'primary.main',
+                        textDecoration: 'underline',
+                        '& .MuiSvgIcon-root:last-child': {
+                          opacity: 1,
+                          transform: 'translateX(4px)',
+                        }
+                      },
+                    }}
+                  >
+                    <Box sx={{ mr: 2, display: 'flex', alignItems: 'center', color: 'primary.main' }}>
+                      {getIcon(item.title)}
+                    </Box>
+                    <Typography sx={{ flexGrow: 1 }}>{item.title}</Typography>
+                    <KeyboardArrowRight sx={{ opacity: 0, transition: 'all 0.2s' }} />
+                  </Box>
+                </Link>
+              ) : (
+                <Box sx={{ display: 'flex', alignItems: 'center', p: 1 }}>
+                  <Box sx={{ mr: 2, display: 'flex', alignItems: 'center', color: 'text.secondary' }}>
                     {getIcon(item.title)}
                   </Box>
-                  <Typography sx={{ flexGrow: 1 }}>{item.title}</Typography>
-                  <KeyboardArrowRight sx={{ opacity: 0, transition: 'all 0.2s' }} />
+                  <Typography color="text.secondary">{item.title}</Typography>
                 </Box>
-              </Link>
-            ) : (
-              <Box sx={{ display: 'flex', alignItems: 'center', p: 1 }}>
-                <Box sx={{ mr: 2, display: 'flex', alignItems: 'center', color: 'text.secondary' }}>
-                  {getIcon(item.title)}
-                </Box>
-                <Typography color="text.secondary">{item.title}</Typography>
-              </Box>
-            )}
-          </Box>
-        ))}
+              )}
+            </Box>
+          ))}
+        </Box>
       </Box>
-    </Box>
-  );
-};
+    );
+  };
 
 const GenderTabbedNavigation = () => {
   const [selectedGender, setSelectedGender] = useState(0);
   const theme = useTheme();
-  const isExtraSmall = useMediaQuery(theme.breakpoints.down('sm'));
-  const isSmall = useMediaQuery(theme.breakpoints.between('sm', 'md'));
-  const isMedium = useMediaQuery(theme.breakpoints.between('md', 'lg'));
+
 
   const handleChange = (event, newValue) => {
     setSelectedGender(newValue);
