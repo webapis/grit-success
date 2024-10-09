@@ -1,6 +1,5 @@
 'use client'
 import React, { useState } from 'react';
-
 import Link from 'next/link';
 import navData from '../nav/navigation.json';
 
@@ -104,16 +103,18 @@ const CategoryNode = ({ category }) => {
 const GenderTabbedNavigation = () => {
   const [selectedGender, setSelectedGender] = useState(0);
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
+  const isExtraSmall = useMediaQuery(theme.breakpoints.down('sm'));
+  const isSmall = useMediaQuery(theme.breakpoints.between('sm', 'md'));
+  const isMedium = useMediaQuery(theme.breakpoints.between('md', 'lg'));
 
   const handleChange = (event, newValue) => {
     setSelectedGender(newValue);
   };
 
   const getColumnCount = () => {
-    if (isMobile) return 1;
-    if (isTablet) return 2;
+    if (isExtraSmall) return 1;
+    if (isSmall) return 2;
+    if (isMedium) return 3;
     return 4;
   };
 
@@ -155,7 +156,12 @@ const GenderTabbedNavigation = () => {
           {navData[selectedGender] && (
             <Box
               sx={{
-                columnCount: getColumnCount(),
+                columnCount: {
+                  xs: 1,
+                  sm: 2,
+                  md: 3,
+                  lg: 4,
+                },
                 columnGap: '32px',
                 '& > div': {
                   breakInside: 'avoid-column',
