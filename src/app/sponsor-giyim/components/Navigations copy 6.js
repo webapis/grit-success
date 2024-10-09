@@ -5,18 +5,13 @@ import Link from 'next/link';
 import navData from '../nav/navigation.json';
 
 const CategoryNode = ({ category }) => {
-    // Sort the children alphabetically by title
-    const sortedChildren = [...category.children].sort((a, b) =>
-      a.title.localeCompare(b.title)
-    );
-  
     return (
       <div style={{ breakInside: 'avoid' }}>
         <Typography variant="h6" gutterBottom>
           {category.title}
         </Typography>
         <ul style={{ listStyleType: 'none', padding: 0 }}>
-          {sortedChildren.map((item) => (
+          {category.children.map((item) => (
             <li key={item.uid || item.title}>
               {item.uid ? (
                 <Link href={`/category/${item.uid}`}>
@@ -70,6 +65,5 @@ const CategoryNode = ({ category }) => {
       </Box>
     );
   };
-  
 
 export default GenderTabbedNavigation;
