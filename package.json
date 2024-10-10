@@ -11,6 +11,7 @@
     "storybook": "storybook dev -p 6006",
     "getUniquePageTitles": "node src/app/sponsor-kiyafeti/utils/getUniquePageTitles.mjs",
     "build-storybook": "storybook build",
+    "sponsorgiyim:downloadData":"node utils/sponsor-giyim/downloadData.mjs",
     "downloadProds": "node src/app/sponsor-kiyafeti/utils/downloadData.mjs",
     "analit:downloadAProduct": "node src/app/fiyat-karsilastirma/utils/downloadData.mjs",
     "analit:clean": "node src/app/fiyat-karsilastirma/utils/cleanData.mjs",

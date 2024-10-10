@@ -8,7 +8,7 @@ const ProductDisplay = ({ product }) => {
     <Card sx={{ maxWidth: 345, margin: 'auto', marginTop: 2 }}>
       <CardMedia
         component="img"
-        image={product.image[0]}
+        image={product.img}
         alt={product.h4}
       />
       <CardContent>

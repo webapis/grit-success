@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import Link from 'next/link';
-import navData from '../nav/navigation.json';
+//import navData from '../nav/navigation.json';
 
 import {
     Tabs,
@@ -101,7 +101,7 @@ const CategoryNode = ({ category, gender }) => {
     );
 };
 
-const GenderTabbedNavigation = () => {
+const GenderTabbedNavigation = ({navData}) => {
     const [selectedGender, setSelectedGender] = useState(0);
     const theme = useTheme();
 
