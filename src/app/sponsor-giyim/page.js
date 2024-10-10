@@ -1,13 +1,14 @@
-import Navigation from "./components/Navigations"
-import navigation from '../../../data-sponsor-giyim/unzipped-data/5.step-data/giyim/navigation.json'
-import Container from '@mui/material/Container'
 
+import Container from '@mui/material/Container'
+import Application from "./Application"
+import TopNavigation from '../components/TopNavigation'
 debugger
-export default function SponsorGiyim(){
+export default function SponsorGiyim() {
 
     debugger
     return <Container>
+        <TopNavigation selected={0}/>
+        <Application />
 
-        <Navigation navData={navigation}/>
     </Container>
 }
