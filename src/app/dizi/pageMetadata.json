@@ -697,6 +697,19 @@
                 }
             ]
         }
+    },
+    {
+        "slug": "aldatmak-dizi-sponsorlari",
+        "pageTitle": "Aldatmak Dizi Sponsorları",
+        "description": "",
+        "dizi": "Aldatmak",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Aldatmak"
+                }
+            ]
+        }
     }
 ]
 
