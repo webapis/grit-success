@@ -39,7 +39,7 @@ const NavItem = ({ title, href, totalCount, isActive, onClick, imageUrl }) => (
       }}
     >
       {imageUrl ? (
-        <img src={imageUrl} alt={title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        <img src={`${process.env.NEXT_PUBLIC_IMG_HOST}`+imageUrl} alt={title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
       ) : (
         <ImageIcon sx={{ width: 24, height: 24, color: 'grey.400' }} />
       )}

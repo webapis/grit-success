@@ -15,7 +15,7 @@ export default function SponsorView({title ,content,href,userViewData }) {
         <Card sx={{ maxWidth: 345 }}>
             <CardMedia
                 sx={{ height: 170 }}
-                image={`/dizi-image/${Tag}.jpg`}
+                image={`${process.env.NEXT_PUBLIC_IMG_HOST}/dizi-image/${Tag}.jpg`}
                 title={`${title} Dizi Sponsorları.`}
             />
 

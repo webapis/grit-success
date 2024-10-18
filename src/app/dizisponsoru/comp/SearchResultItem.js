@@ -114,10 +114,10 @@ export default function SearchResultItem({ item, userViewData }) {
     <StyledCard elevation={2}>
       <ImageContainer>
         <StyledImageWrapper>
-          {renderImage(`/dizi-image/${item.Tag}.jpg`, `${TVSeriesTitle} dizi resmi`, 'dizi')}
+          {renderImage(`${process.env.NEXT_PUBLIC_IMG_HOST}/dizi-image/${item.Tag}.jpg`, `${TVSeriesTitle} dizi resmi`, 'dizi')}
         </StyledImageWrapper>
         <StyledImageWrapper>
-          {renderImage(`/dizi/marka/${imageName}.jpg`, `${name} marka resmi`, 'marka')}
+          {renderImage(`${process.env.NEXT_PUBLIC_IMG_HOST}/dizi/marka/${imageName}.jpg`, `${name} marka resmi`, 'marka')}
         </StyledImageWrapper>
       </ImageContainer>
 

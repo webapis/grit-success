@@ -14,7 +14,7 @@ export default function SponsorKategoriView({ kategori, total, keyword, userView
         <Card sx={{ maxWidth: 345 }}>
             <CardMedia
                 sx={{ height: 170 }}
-                image={`/dizi/sponsor-kategori/${keyword}.jpg`}
+                image={`${process.env.NEXT_PUBLIC_IMG_HOST}/dizi/sponsor-kategori/${keyword}.jpg`}
                 title={`${kategori} Dizi sponsoru`}
             />
 
