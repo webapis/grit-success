@@ -61,8 +61,8 @@ export default async function DiziSponsoru({ params }) {
     let results = keywordObj.or ? fuse.search({ "$and": [{ "TVSeriesTitle": pageObj.dizi }, keywordObj.or] }) : fuse.search({ "$and": [{ "TVSeriesTitle": pageObj.dizi }] })
 
     
-    const paginatedData = paginate(results, page, 25)
-    const pageCount = Math.ceil(results.length / 25)
+    const paginatedData = paginate(results, page, 50)
+    const pageCount = Math.ceil(results.length / 50)
     return <>
 
         <SearchResultContainer data={paginatedData} pageTitle={`${pageObj.dizi} Dizisi ${keywordObj.keywordTitle} Sponsorları`} dizi={dizi} page={page} keyword={keyword} />
@@ -96,7 +96,7 @@ export async function generateStaticParams(props) {
 
 
 
-            const pageCount = Math.ceil(results.length / 25)
+            const pageCount = Math.ceil(results.length / 50)
 
             pageCantidates.push({ dizi: pageObj.dizi, keyword: keywordObj.keyword, pageCount })
 
