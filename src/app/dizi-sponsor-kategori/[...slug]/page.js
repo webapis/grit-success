@@ -75,7 +75,7 @@ export default async function DiziSponsorKategori({ params }) {
 
     const page = parseInt(params.slug[2])
     const userViewData = await getViews({table:'sponsorkategori'})
-    console.log('page', page)
+ 
 
     // const data = await fs.readFile(path.join(process.cwd(), 'src/app/dizi/dizisponsoru.json'), 'utf8');
     // const pagesData = JSON.parse(data);
