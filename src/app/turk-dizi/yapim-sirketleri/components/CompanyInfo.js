@@ -87,7 +87,7 @@ const CompanyInfo = ({ company }) => {
             height: '90%',
             objectFit: 'contain',
           }}
-          image={company.logo}
+          image={`${process.env.NEXT_PUBLIC_IMG_HOST}`+company.logo}
           alt={company.title}
         />
       </Box>
