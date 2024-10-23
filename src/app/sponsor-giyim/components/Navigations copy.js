@@ -51,10 +51,7 @@ const CategoryNode = ({ category, gender }) => {
     return (
         <Box sx={{ mb: 4 }}>
             <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold', color: 'primary.main' }}>
-                {category.title} 
-                <span style={{ fontSize: '0.8rem', color: 'text.secondary', opacity: 0.7 }}> {/* Adjust opacity for transparency */}
-                    ({category.childrenLength} items)
-                </span>
+                {category.title}
             </Typography>
             <Divider sx={{ mb: 2 }} />
             <Box component="ul" sx={{ listStyleType: 'none', p: 0, m: 0 }}>
@@ -85,12 +82,7 @@ const CategoryNode = ({ category, gender }) => {
                                     <Box sx={{ mr: 2, display: 'flex', alignItems: 'center', color: 'primary.main' }}>
                                         {getIcon(item.title)}
                                     </Box>
-                                    <Typography sx={{ flexGrow: 1 }}>
-                                        {item.title} 
-                                        <span style={{ fontSize: '0.8rem', color: 'text.secondary', opacity: 0.7 }}> {/* Adjust opacity for transparency */}
-                                            ({item.childrenLength} marka)
-                                        </span>
-                                    </Typography>
+                                    <Typography sx={{ flexGrow: 1 }}>{item.title}</Typography>
                                     <KeyboardArrowRight sx={{ opacity: 0, transition: 'all 0.2s' }} />
                                 </Box>
                             </Link>
@@ -99,12 +91,7 @@ const CategoryNode = ({ category, gender }) => {
                                 <Box sx={{ mr: 2, display: 'flex', alignItems: 'center', color: 'text.secondary' }}>
                                     {getIcon(item.title)}
                                 </Box>
-                                <Typography color="text.secondary">
-                                    {item.title} 
-                                    <span style={{ fontSize: '0.8rem', color: 'text.secondary', opacity: 0.7 }}> {/* Adjust opacity for transparency */}
-                                        ({item.childrenLength} marka)
-                                    </span>
-                                </Typography>
+                                <Typography color="text.secondary">{item.title}</Typography>
                             </Box>
                         )}
                     </Box>
@@ -113,6 +100,7 @@ const CategoryNode = ({ category, gender }) => {
         </Box>
     );
 };
+
 const GenderTabbedNavigation = ({navData}) => {
     const [selectedGender, setSelectedGender] = useState(0);
     const theme = useTheme();
