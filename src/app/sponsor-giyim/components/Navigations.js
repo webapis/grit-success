@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import {
     Tabs,
@@ -40,6 +40,7 @@ const getIcon = (title) => {
     return <IconComponent fontSize="small" />;
 };
 
+import { data as tabData } from '../components/GenderCards'
 const CategoryNode = ({ category, gender }) => {
     const MAX_ITEMS_DISPLAY = 5; // Set your limit here
     const sortedChildren = [...category.children].sort((a, b) =>
@@ -54,7 +55,7 @@ const CategoryNode = ({ category, gender }) => {
     return (
         <Box sx={{ mb: 4 }}>
             <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold', color: 'primary.main' }}>
-                {category.title} 
+                {category.title}
                 <span style={{ fontSize: '0.8rem', color: 'text.secondary', opacity: 0.7 }}>
                     ({category.childrenLength} items)
                 </span>
@@ -89,7 +90,7 @@ const CategoryNode = ({ category, gender }) => {
                                         {getIcon(item.title)}
                                     </Box>
                                     <Typography sx={{ flexGrow: 1 }}>
-                                        {item.title} 
+                                        {item.title}
                                         <span style={{ fontSize: '0.8rem', color: 'text.secondary', opacity: 0.7 }}>
                                             ({item.childrenLength} marka)
                                         </span>
@@ -103,7 +104,7 @@ const CategoryNode = ({ category, gender }) => {
                                     {getIcon(item.title)}
                                 </Box>
                                 <Typography color="text.secondary">
-                                    {item.title} 
+                                    {item.title}
                                     <span style={{ fontSize: '0.8rem', color: 'text.secondary', opacity: 0.7 }}>
                                         ({item.childrenLength} marka)
                                     </span>
@@ -114,7 +115,7 @@ const CategoryNode = ({ category, gender }) => {
                 ))}
             </Box>
             {sortedChildren.length > MAX_ITEMS_DISPLAY && (
-                <Button size='small' onClick={handleShowMoreClick}  color="primary">
+                <Button size='small' onClick={handleShowMoreClick} color="primary">
                     Show More
                 </Button>
             )}
@@ -122,13 +123,14 @@ const CategoryNode = ({ category, gender }) => {
     );
 };
 
-const GenderTabbedNavigation = ({ navData,selectedGender }) => {
-  //  const [selectedGender, setSelectedGender] = useState(0);
+const GenderTabbedNavigation = ({ navData, selectedGender }) => {
+    //  const [selectedGender, setSelectedGender] = useState(0);
     const theme = useTheme();
 
-    const handleChange = (event, newValue) => {
-        console.log('newValue',newValue)
-
+    const handleChange = (event, index) => {
+        console.log('index', index)
+        const selectedGender = tabData.find(f => f.index === index).urlGender
+        window.location.href = `/sponsor-giyim/${selectedGender}/`;
     };
 
     return (
