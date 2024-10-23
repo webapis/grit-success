@@ -3,9 +3,9 @@ import navigation from '../../../data-sponsor-giyim/unzipped-data/5.step-data/gi
 
 
 debugger
-export default function Application(){
+export default function Application({selectedGender}){
 
     debugger
-    return  <Navigation navData={navigation}/>
+    return  <Navigation navData={navigation} selectedGender={selectedGender}/>
     
 }
