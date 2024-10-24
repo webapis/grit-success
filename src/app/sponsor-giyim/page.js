@@ -8,7 +8,7 @@ export default function SponsorGiyim() {
 
     debugger
     return <Container>
-        <TopNavigation selected={0} />
+   
        <Application {...props} gender="kadin"/>
 
     </Container>

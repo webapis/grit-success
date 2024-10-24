@@ -49,7 +49,7 @@ const CategoryNode = ({ category, gender }) => {
 
     const handleShowMoreClick = () => {
         // Navigate to the URL for showing all items in this category
-        window.location.href = `/sponsor-giyim/kategori/${gender}/${category.title.replace(' ', '-')}`;
+        window.location.href = `/sponsor-giyim/${gender}/${category.title.replace(' ', '-')}`;
     };
 
     return (
@@ -65,7 +65,7 @@ const CategoryNode = ({ category, gender }) => {
                 {sortedChildren.slice(0, MAX_ITEMS_DISPLAY).map((item) => (
                     <Box component="li" key={item.uid || item.title} sx={{ mb: 1 }}>
                         {item.uid ? (
-                            <Link href={`/sponsor-giyim/kategori/${gender}/${category.title.replace(' ', '-')}/${item.title}/${item.uid}`} passHref style={{ textDecoration: 'none' }}>
+                            <Link href={`/sponsor-giyim/${gender}/${category.title.replace(' ', '-')}/${item.uid}`} passHref style={{ textDecoration: 'none' }}>
                                 <Box
                                     sx={{
                                         display: 'flex',

@@ -12,7 +12,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Divider from '@mui/material/Divider';
-import DizivliewListItem from './DiziviewListItem';
+//import DizivliewListItem from './DiziviewListItem';
+import navData from '../../../../../data-sponsor-giyim/unzipped-data/5.step-data/giyim/navigation.json'
+import GenderTabbedNavigation from './NavForDrawer.js'
 
 const drawerWidth = 240;
 
@@ -61,7 +63,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
     justifyContent: 'flex-end',
 }));
 
-export default function PersistentDrawerLeft({ children, data,title }) {
+export default function SponsorGiyimDrawer({ children, data, title, selectedGender }) {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
@@ -131,10 +133,9 @@ export default function PersistentDrawerLeft({ children, data,title }) {
                 <Divider />
                 <Box sx={{ padding: 2 }}>
                     <Typography variant="h5" gutterBottom>{title}</Typography>
-                    {data.map((m, i) => {
-                        const { href, title } = m
-                        return <DizivliewListItem key={i} href={href} title={title} />
-                    })}
+
+                    <GenderTabbedNavigation selectedGender={selectedGender} navData={navData}/>
+
                 </Box>
             </Drawer>
             <Main open={open}>

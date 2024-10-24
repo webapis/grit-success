@@ -15,8 +15,8 @@ export async function generateMetadata() {
 export default async function Home(props) {
 
 
-  return <Container>    <TopNavigation selected={0}/>
-    {/* <Application {...props} gender="kadin"/> */}
+  return <Container>    
+<TopNavigation selected={0}/>
     <GenderCards/>
 </Container>
 
