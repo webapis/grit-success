@@ -1,4 +1,8 @@
 import navigationData from '../../../../../data-sponsor-giyim/unzipped-data/5.step-data/giyim/navigation.json'
+
+import {data as genderData} from '../../components/GenderCards';
+import SponsorGiyimDrawer from '../../components/drawer/SponsorGiyimDrawer';
+import BreadcrumbsComponent from '../../components/BreadcrumbsComponent';
 const getCategoryData = (category, subCategory) => {
     const mainCategory = navigationData.find(item => item.title === category);
 
@@ -12,11 +16,11 @@ const getCategoryData = (category, subCategory) => {
 };
 
 
-export default function Page({ params: { gender, kategori } }) {
+export default function Page({ params: { gender, kategori,id } }) {
   
     const category = decodeURI(gender)
     const subCategory = decodeURI(kategori).replace('-',' ').toLowerCase()
-
+    const selectedGender = genderData.find(f => f.urlGender === category).index
     const categoryData = getCategoryData(category, subCategory)
 
     if (!categoryData) {
@@ -24,14 +28,16 @@ export default function Page({ params: { gender, kategori } }) {
     }
 
     return (
-        <div>
+
+        <SponsorGiyimDrawer selectedGender={selectedGender}>
+            <BreadcrumbsComponent urlPath={`/sponsor-giyim/${category}/${subCategory}`}/>
             <h1>{categoryData.title}</h1>
             <ul>
                 {categoryData.children.map((child) => (
                     <li key={child.uid}>{child.title}</li>
                 ))}
             </ul>
-        </div>
+        </SponsorGiyimDrawer>
     );
 
     return

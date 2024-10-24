@@ -1,16 +1,16 @@
 
 import Container from '@mui/material/Container'
 import Application from "./Application"
-import TopNavigation from '../components/TopNavigation'
+import SponsorGiyimDrawer from './components/drawer/SponsorGiyimDrawer'
 
 debugger
-export default function SponsorGiyim() {
+export default function SponsorGiyim(props) {
 
     debugger
     return <Container>
-   
-       <Application {...props} gender="kadin"/>
-
+        <SponsorGiyimDrawer selectedGender={0}>
+            <Application {...props} selectedGender={0} />
+        </SponsorGiyimDrawer>
     </Container>
 }
 

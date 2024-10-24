@@ -10,7 +10,9 @@ import {
     Collapse,
     Typography,
     Divider,
-    Box
+    Box,
+    Tabs,
+    Tab,
 } from '@mui/material';
 import {
     Shirt,
@@ -54,20 +56,21 @@ const CategoryItem = ({ category, gender }) => {
             <ListItem 
                 disablePadding
                 secondaryAction={
-                    <Typography variant="caption" color="text.secondary">
+                    <Typography variant="caption" color="text.secondary" sx={{ ml: 1, minWidth: '3rem' }}>
                         ({category.childrenLength})
                     </Typography>
                 }
             >
                 <ListItemButton onClick={() => setOpen(!open)}>
-                    <ListItemIcon>
+                    <ListItemIcon sx={{ minWidth: 40 }}>
                         {getIcon(category.title)}
                     </ListItemIcon>
                     <ListItemText 
                         primary={category.title}
                         primaryTypographyProps={{
                             variant: 'body2',
-                            fontWeight: 'medium'
+                            fontWeight: 'medium',
+                            noWrap: true
                         }}
                     />
                     {open ? <ExpandLess /> : <ExpandMore />}
@@ -91,15 +94,17 @@ const CategoryItem = ({ category, gender }) => {
                                             primary={item.title}
                                             secondary={`${item.childrenLength} marka`}
                                             primaryTypographyProps={{
-                                                variant: 'body2'
+                                                variant: 'body2',
+                                                noWrap: true
                                             }}
                                             secondaryTypographyProps={{
-                                                variant: 'caption'
+                                                variant: 'caption',
+                                                noWrap: true
                                             }}
                                         />
                                         <KeyboardArrowRight 
                                             fontSize="small"
-                                            sx={{ opacity: 0.5 }}
+                                            sx={{ opacity: 0.5, ml: 1 }}
                                         />
                                     </ListItemButton>
                                 </Link>
@@ -109,10 +114,12 @@ const CategoryItem = ({ category, gender }) => {
                                         primary={item.title}
                                         secondary={`${item.childrenLength} marka`}
                                         primaryTypographyProps={{
-                                            variant: 'body2'
+                                            variant: 'body2',
+                                            noWrap: true
                                         }}
                                         secondaryTypographyProps={{
-                                            variant: 'caption'
+                                            variant: 'caption',
+                                            noWrap: true
                                         }}
                                     />
                                 </ListItemButton>
@@ -145,22 +152,83 @@ const CategoryItem = ({ category, gender }) => {
 };
 
 const DrawerNavigation = ({ navData, selectedGender }) => {
+    const handleGenderChange = (event, newValue) => {
+        const selectedGender = navData[newValue].title.toLowerCase();
+        window.location.href = `/sponsor-giyim/${selectedGender}/`;
+    };
+
     return (
-        <List
-            sx={{
-                width: '100%',
-                bgcolor: 'background.paper',
-                p: 0
-            }}
-        >
-            {navData[selectedGender]?.children.map((category) => (
-                <CategoryItem 
-                    key={category.title} 
-                    category={category} 
-                    gender={navData[selectedGender].title}
-                />
-            ))}
-        </List>
+        <Box sx={{ width: '100%' }}>
+            <Box sx={{ 
+                borderBottom: 1, 
+                borderColor: 'divider', 
+                mb: 2,
+                position: 'relative'
+            }}>
+                <Tabs 
+                    value={selectedGender} 
+                    onChange={handleGenderChange}
+                    variant="scrollable"
+                    scrollButtons="auto"
+                    allowScrollButtonsMobile
+                    sx={{
+                        minHeight: 48,
+                        '& .MuiTab-root': {
+                            minHeight: 48,
+                            minWidth: 'auto',
+                            py: 0,
+                            px: 2,
+                            fontSize: '0.875rem',
+                            fontWeight: 'medium',
+                            textTransform: 'none',
+                            '&.Mui-selected': {
+                                color: 'primary.main',
+                            },
+                        },
+                        '& .MuiTabs-scrollButtons': {
+                            '&.Mui-disabled': {
+                                opacity: 0.3,
+                            },
+                            '&.MuiTabs-scrollButtons--auto': {
+                                display: 'flex',
+                            },
+                        },
+                    }}
+                >
+                    {navData.map((gender, index) => (
+                        <Tab 
+                            key={gender.title} 
+                            label={gender.title}
+                            id={`gender-tab-${index}`}
+                            aria-controls={`gender-tabpanel-${index}`}
+                        />
+                    ))}
+                </Tabs>
+            </Box>
+            
+            <Box
+                role="tabpanel"
+                hidden={false}
+                id={`gender-tabpanel-${selectedGender}`}
+                aria-labelledby={`gender-tab-${selectedGender}`}
+            >
+                <List
+                    sx={{
+                        width: '100%',
+                        bgcolor: 'background.paper',
+                        p: 0
+                    }}
+                >
+                    {navData[selectedGender]?.children.map((category) => (
+                        <CategoryItem 
+                            key={category.title} 
+                            category={category} 
+                            gender={navData[selectedGender].title}
+                        />
+                    ))}
+                </List>
+            </Box>
+        </Box>
     );
 };
 
