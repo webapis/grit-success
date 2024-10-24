@@ -1,6 +1,6 @@
 import navigationData from '../../../../../data-sponsor-giyim/unzipped-data/5.step-data/giyim/navigation.json'
 
-import {data as genderData} from '../../components/GenderCards';
+import genderData from '../../components/genderData';
 import SponsorGiyimDrawer from '../../components/drawer/SponsorGiyimDrawer';
 import BreadcrumbsComponent from '../../components/BreadcrumbsComponent';
 const getCategoryData = (genderDecoded, kategoriDecoded) => {

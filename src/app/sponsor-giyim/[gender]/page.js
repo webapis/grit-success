@@ -3,14 +3,14 @@ import Container from '@mui/material/Container'
 import Application from '../Application'
 import SponsorGiyimDrawer from '../components/drawer/SponsorGiyimDrawer'
 
-import { data } from '../components/GenderCards'
 
+import genderData from '../components/genderData'
 
 export default function SponsorGiyim(props) {
     const { params: { gender } } = props
 
-
-    const selectedGender = data.find(f => f.urlGender === decodeURI(gender)).index
+debugger
+    const selectedGender = genderData.find(f => f.urlGender === decodeURI(gender)).index
 
     return <Container>
         <SponsorGiyimDrawer title="Sponsor Giyim" selectedGender={selectedGender}>

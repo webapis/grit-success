@@ -1,43 +1,108 @@
+'use client'
 import React from 'react';
-import { Card, CardContent, CardMedia, Typography, Grid } from '@mui/material';
+import {
+    Card,
+    CardContent,
+    CardMedia,
+    Typography,
+    Grid,
+    Container,
+    CardActionArea
+} from '@mui/material';
+import { styled } from '@mui/material/styles';
+import Link from 'next/link';
+import Image from 'next/image';
+import genderData from './genderData'
 
-const data = [
-    { gender: 'Kadın',urlGender:'kadın', index: 0, url: '/sponsor-giyim/kadın/', imageSrc: '/gender/kadin.jpg' },
-    { gender: 'Erkek',urlGender:'erkek',  index: 2, url: '/sponsor-giyim/erkek/', imageSrc: '/gender/erkek.jpg' },
-    { gender: 'Kız Çocuk',urlGender:'kız-çocuk',  index: 3, url: '/sponsor-giyim/kız-çocuk/', imageSrc: '/gender/kiz-cocuk.jpg' },
-    { gender: 'Erkek Bebek',urlGender:'erkek-bebek',  index: 4, url: '/sponsor-giyim/erkek-bebek/', imageSrc: '/gender/erkek-bebek.jpg' },
-    { gender: 'Kız Bebek',urlGender:'kız-bebek',  index: 5, url: '/sponsor-giyim/kız-bebek/', imageSrc: '/gender/kiz-bebek.jpg' },
-    { gender: 'Genç',urlGender:'genc',  index: 6, url: '/sponsor-giyim/genc/', imageSrc: '/gender/genc.jpg' },
-    { gender: 'Unisex',urlGender:'unisex',  index: 1, url: '/sponsor-giyim/unisex/', imageSrc: '/gender/unisex.jpg' },
-    { gender: 'Unrelated',urlGender:'unrelated',  index: 8, url: '/sponsor-giyim/unrelated/', imageSrc: '/gender/unrelated.jpg' },
-];
 
-export { data }
 
+// Styled components for custom styles
+const StyledCard = styled(Card)(({ theme }) => ({
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    transition: 'transform 0.2s ease-in-out',
+    '&:hover': {
+        transform: 'scale(1.02)',
+    },
+}));
+
+const ImageWrapper = styled('div')({
+    position: 'relative',
+    width: '100%',
+    paddingTop: '62.5%', // 16:10 aspect ratio
+    overflow: 'hidden',
+});
+
+// Individual card component
+const GenderCard = ({ item }) => {
+    return (
+        <Link href={item.url} passHref style={{ textDecoration: 'none' }}>
+            <StyledCard elevation={2}>
+                <CardActionArea>
+                    <ImageWrapper>
+                        <Image
+                            src={item.imageSrc}
+                            alt={item.gender}
+                            fill
+                            sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+                            style={{
+                                objectFit: 'cover',
+                                transition: 'transform 0.3s ease-in-out'
+                            }}
+                            priority={item.index < 4} // Load first 4 images immediately
+                        />
+                    </ImageWrapper>
+                    <CardContent>
+                        <Typography
+                            variant="h6"
+                            component="h3"
+                            gutterBottom
+                            sx={{ fontWeight: 'medium' }}
+                        >
+                            {item.gender}
+                        </Typography>
+                        <Typography
+                            variant="body2"
+                            color="text.secondary"
+                            sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: 0.5
+                            }}
+                        >
+                            Kategoriye Git →
+                        </Typography>
+                    </CardContent>
+                </CardActionArea>
+            </StyledCard>
+        </Link>
+    );
+};
+
+// Main component
 const GenderCards = () => {
     return (
-        <Grid container spacing={2}>
-            {data.map((item, index) => (
-                <Grid item xs={12} sm={6} md={4} key={index}>
-                    <Card>
-                        <CardMedia
-                            component="img"
-                            height="140"
-                            image={item.imageSrc}
-                            alt={item.gender}
-                        />
-                        <CardContent>
-                            <Typography variant="h5" component="div">
-                                {item.gender}
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                <a href={item.url}>More Info</a>
-                            </Typography>
-                        </CardContent>
-                    </Card>
-                </Grid>
-            ))}
-        </Grid>
+        <Container maxWidth="lg" sx={{ py: 4 }}>
+            <Grid
+                container
+                spacing={{ xs: 2, md: 3 }}
+                columns={{ xs: 4, sm: 8, md: 12 }}
+            >
+                {genderData.map((item) => (
+                    <Grid
+                        item
+                        xs={4}
+                        sm={4}
+                        md={3}
+                        key={item.index}
+                        sx={{ display: 'flex' }}
+                    >
+                        <GenderCard item={item} />
+                    </Grid>
+                ))}
+            </Grid>
+        </Container>
     );
 };
 

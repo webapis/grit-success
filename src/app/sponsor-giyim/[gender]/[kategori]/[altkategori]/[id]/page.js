@@ -4,7 +4,7 @@
 import ProductDisplayContainer from '@/app/sponsor-giyim/components/ProductDisplayContainer'
 import datas from '../../../../../../../data-sponsor-giyim/unzipped-data/5.step-data/giyim/references.json'
 import { Container } from '@mui/material'
-import { data as genderData } from '../../../../components/GenderCards'
+import  genderData  from '../../../../components/genderData'
 import BreadcrumbsComponent from '@/app/sponsor-giyim/components/BreadcrumbsComponent'
 import SponsorGiyimDrawer from '@/app/sponsor-giyim/components/drawer/SponsorGiyimDrawer'
 export default function CategoryByBrandPage({ params: { id, gender, kategori, altkategori } }) {

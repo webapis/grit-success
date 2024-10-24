@@ -40,7 +40,7 @@ const getIcon = (title) => {
     return <IconComponent fontSize="small" />;
 };
 
-import { data as tabData } from '../components/GenderCards'
+import tabData  from '../components/genderData'
 const CategoryNode = ({ category, gender }) => {
     const MAX_ITEMS_DISPLAY = 5; // Set your limit here
     const sortedChildren = [...category.children].sort((a, b) =>
