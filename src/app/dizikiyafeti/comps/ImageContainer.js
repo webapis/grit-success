@@ -99,7 +99,7 @@ const ImageContainer = ({ filteredData, pageTitle, userViewData }) => {
 
                   <Box position="relative" mb={2}>
                     <Image
-                      fotografUrl={`/dk-image/${item.ImageUrl}.jpg`}
+                      fotografUrl={`${process.env.NEXT_PUBLIC_IMG_HOST}/dk-image/${item.ImageUrl}.jpg`}
                       alt={`${item.TVSeriesTitle} dizisinde ${item.FullName}'in canlandırdığı ${item.CaracterName} karakterinin ${item.Season}. sezon ${item.Episode}. bölümündeki kıyafeti`}
                       style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
                     />

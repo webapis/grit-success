@@ -15,7 +15,7 @@ export default function Diziview({title ,content,href,userViewData }) {
         <Card sx={{ maxWidth: 345 }}>
             <CardMedia
                 sx={{ height: 170 }}
-                image={`/dk-image/${ImageUrl}.jpg`}
+                image={`${process.env.NEXT_PUBLIC_IMG_HOST}/dk-image/${ImageUrl}.jpg`}
                 title={`${title} Dizi Kıyafetleri Oyuncuların Giydiği Kıyafetler.`}
             />
 

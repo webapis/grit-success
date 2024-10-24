@@ -29,7 +29,7 @@ export default function SearchResultItem({ item,userViewData }) {
 
                 height="100"
                 style={{ maxWidth: 250 }}
-                src={`/dizi/marka/${imageName}.jpg`}
+                src={`${process.env.NEXT_PUBLIC_IMG_HOST}/dizi/marka/${imageName}.jpg`}
                 loading="lazy"
             />
 

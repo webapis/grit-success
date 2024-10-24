@@ -14,3 +14,7 @@ export default function SponsorGiyim(props) {
     </Container>
 }
 
+// export async function generateStaticParams() {
+
+//     return []
+// }

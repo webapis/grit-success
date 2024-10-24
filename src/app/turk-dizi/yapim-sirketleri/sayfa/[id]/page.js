@@ -77,7 +77,7 @@ export async function generateStaticParams() {
     const paths = [{ page: [] }]; // This represents the base path without 'sayfa'
 
     for (let page = 2; page <= totalPages; page++) {
-        console.log('id', page)
+    
         paths.push({ id: page.toString() });
     }
 debugger

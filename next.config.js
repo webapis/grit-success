@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-//output: 'export',
+    env: {
+        IMG_HOST: process.env.NEXT_PUBLIC_IMG_HOST,
+      },
+output: 'export',
 
 }
 

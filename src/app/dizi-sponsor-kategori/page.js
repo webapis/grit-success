@@ -9,7 +9,7 @@ import NavList from './comp/NavList';
 import pagesData from '@/app/dizi-sponsor-kategori/page-data/keywordMeta.json';
 // Main page component
 const mappedNavData = pagesData.map(m => {
-    console.log('m.keyword',m.keyword)
+   // console.log('m.keyword',m.keyword)
     const href = `/dizi-sponsor-kategori/${m.keyword}/sayfa/1`
     const imageUrl =`/dizi/sponsor-kategori/${m.keyword}.jpg`
     const title = m.keywordTitle

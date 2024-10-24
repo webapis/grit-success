@@ -697,6 +697,32 @@
                 }
             ]
         }
+    },
+    {
+        "slug": "aldatmak-dizi-sponsorlari",
+        "pageTitle": "Aldatmak Dizi Sponsorları",
+        "description": "",
+        "dizi": "Aldatmak",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Aldatmak"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "gizli-bahce-dizi-sponsorlari",
+        "pageTitle": "Gizli Bahçe Dizi Sponsorları",
+        "description": "",
+        "dizi": "Gizli Bahçe",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Gizli Bahçe"
+                }
+            ]
+        }
     }
 ]
 

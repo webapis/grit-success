@@ -50,3 +50,9 @@ export default function Page({ params: { gender, kategori,id } }) {
 
     return
 }
+
+
+// export async function generateStaticParams() {
+
+//     return []
+// }

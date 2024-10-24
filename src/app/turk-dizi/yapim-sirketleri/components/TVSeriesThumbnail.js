@@ -25,16 +25,16 @@ const TVSeriesThumbnail = ({ series, isMobile, onMenuOpen }) => {
   const handleClick = (event) => {
     if (globalOpenMenuId && globalOpenMenuId !== series.sha) {
       // Close the previously opened menu
-    //  onMenuOpen(null);
+      //  onMenuOpen(null);
     }
     setAnchorEl(event.currentTarget);
-   // onMenuOpen(series.sha);
+    // onMenuOpen(series.sha);
     globalOpenMenuId = series.sha;
   };
 
   const handleClose = () => {
     setAnchorEl(null);
-  //  onMenuOpen(null);
+    //  onMenuOpen(null);
     globalOpenMenuId = null;
   };
 
@@ -65,7 +65,7 @@ const TVSeriesThumbnail = ({ series, isMobile, onMenuOpen }) => {
 
   useEffect(() => {
     const img = new Image();
-    img.src = series.thumbnail.replace('https://www.nowtv.com.tr/','');
+    img.src = series.thumbnail.replace('https://www.nowtv.com.tr/', '');
     img.onload = () => setImageLoaded(true);
   }, [series.thumbnail]);
 
@@ -78,7 +78,7 @@ const TVSeriesThumbnail = ({ series, isMobile, onMenuOpen }) => {
           )}
           <CardMedia
             component="img"
-            image={series.thumbnail.replace('https://www.nowtv.com.tr/','') }
+            image={series.thumbnail.replace('https://www.nowtv.com.tr/', '')}
             alt={series.title}
             sx={{
               position: 'absolute',
@@ -110,7 +110,7 @@ const TVSeriesThumbnail = ({ series, isMobile, onMenuOpen }) => {
       </Box>
       <CardContent sx={{ flexGrow: 1, p: 1, '&:last-child': { pb: 1 } }}>
         <Tooltip title={series.title} enterDelay={500} leaveDelay={200}>
-          <Typography variant="body2" component="div" noWrap sx={{ fontWeight: 'bold', textTransform:"capitalize" }}>
+          <Typography variant="body2" component="div" noWrap sx={{ fontWeight: 'bold', textTransform: "capitalize" }}>
             {series.title}
           </Typography>
         </Tooltip>
@@ -121,7 +121,7 @@ const TVSeriesThumbnail = ({ series, isMobile, onMenuOpen }) => {
         <Typography variant="caption" color="text.secondary" display="block">
           {series.lastEpisode ? `Son Bölüm: ${series.lastEpisode}` : '_'}
         </Typography>
-   
+
         {series.productionCompanies && (
           <Tooltip title={series.productionCompanies.join(', ')} enterDelay={500} leaveDelay={200}>
             <Typography variant="caption" color="text.secondary" display="block" noWrap>
@@ -165,15 +165,15 @@ const TVSeriesThumbnail = ({ series, isMobile, onMenuOpen }) => {
           disableScrollLock={true}
         >
           {hasWatchOptions && series.watchOptions.map((option, index) => (
-            <MenuItem 
-              key={index} 
+            <MenuItem
+              key={index}
               onClick={() => {
                 window.open(option.url, '_blank');
                 handleClose();
               }}
             >
-              <img 
-                src={option.logo} 
+              <img
+                src={`${process.env.NEXT_PUBLIC_IMG_HOST}` + option.logo}
                 alt={option.name}
                 style={{ width: '20px', marginRight: '8px' }}
               />

@@ -53,7 +53,7 @@ const WebsiteInfoComponent = ({ data, userViewData }) => {
         <Grid item xs={12} sm={3} sx={{ display: 'flex', alignItems: 'center' }}>
           <StyledImg
             alt={`${imageName} brand logo`}
-            src={`/dizi/marka/${imageName}.jpg`}
+            src={`${process.env.NEXT_PUBLIC_IMG_HOST}/dizi/marka/${imageName}.jpg`}
             loading="lazy"
           />
         </Grid>
