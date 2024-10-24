@@ -3,39 +3,44 @@ import navigationData from '../../../../../data-sponsor-giyim/unzipped-data/5.st
 import {data as genderData} from '../../components/GenderCards';
 import SponsorGiyimDrawer from '../../components/drawer/SponsorGiyimDrawer';
 import BreadcrumbsComponent from '../../components/BreadcrumbsComponent';
-const getCategoryData = (category, subCategory) => {
-    const mainCategory = navigationData.find(item => item.title === category);
+const getCategoryData = (genderDecoded, kategoriDecoded) => {
+    const mainCategory = navigationData.find(item => item.title === genderDecoded);
 
-    if (!mainCategory) return null; // If the main category is not found
+    if (!mainCategory) return null; // If the main genderDecoded is not found
 
-    const subCategoryData = mainCategory.children.find(child => child.title === subCategory);
+    const kategoriDecodedData = mainCategory.children.find(child => child.title === kategoriDecoded);
 
-    if (!subCategoryData) return null; // If the sub-category is not found
+    if (!kategoriDecodedData) return null; // If the sub-genderDecoded is not found
 
-    return subCategoryData; // Return the filtered data
+    return kategoriDecodedData; // Return the filtered data
 };
 
 
 export default function Page({ params: { gender, kategori,id } }) {
   
-    const category = decodeURI(gender)
-    const subCategory = decodeURI(kategori).replace('-',' ').toLowerCase()
-    const selectedGender = genderData.find(f => f.urlGender === category).index
-    const categoryData = getCategoryData(category, subCategory)
+    const genderDecoded = decodeURI(gender)
+    const kategoriDecoded = decodeURI(kategori).replace('-',' ').toLowerCase()
+    const selectedGender = genderData.find(f => f.urlGender === genderDecoded).index
+    const genderDecodedData = getCategoryData(genderDecoded, kategoriDecoded)
 
-    if (!categoryData) {
+    if (!genderDecodedData) {
         return <p>Category not found</p>;
     }
 
     return (
 
         <SponsorGiyimDrawer selectedGender={selectedGender}>
-            <BreadcrumbsComponent urlPath={`/sponsor-giyim/${category}/${subCategory}`}/>
-            <h1>{categoryData.title}</h1>
+            <BreadcrumbsComponent urlPath={`/sponsor-giyim/${genderDecoded}/${kategoriDecoded}/${id}`}/>
+            <h1>{genderDecodedData.title}</h1>
             <ul>
-                {categoryData.children.map((child) => (
-                    <li key={child.uid}>{child.title}</li>
-                ))}
+                {genderDecodedData.children.map((child) => {
+                    debugger
+                    return <li key={child.uid}>
+                        <a href={`/sponsor-giyim/${genderDecoded}/${genderDecodedData.title.replace(' ', '-')}/${child.title.replace(' ', '-')}/${child.uid}`}>
+                        {child.title}
+                        </a>
+                        </li>
+                 } )}
             </ul>
         </SponsorGiyimDrawer>
     );
