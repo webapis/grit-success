@@ -13,7 +13,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Divider from '@mui/material/Divider';
 //import DizivliewListItem from './DiziviewListItem';
-import navData from '../../../../../data-sponsor-giyim/unzipped-data/5.step-data/giyim/navigation.json'
+//import navData from '../../../../../data-sponsor-giyim/unzipped-data/5.step-data/giyim/navigation.json'
 import GenderTabbedNavigation from './NavForDrawer.js'
 
 const drawerWidth = 240;
@@ -63,7 +63,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
     justifyContent: 'flex-end',
 }));
 
-export default function SponsorGiyimDrawer({ children, data, title, selectedGender }) {
+export default function SponsorGiyimDrawer({ children, navData, title, selectedGender }) {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 

@@ -1,7 +1,7 @@
 
 import Container from '@mui/material/Container'
 import Application from '../Application'
-import SponsorGiyimDrawer from '../components/drawer/SponsorGiyimDrawer'
+import SponsorGiyimDrawerContainer from '../components/drawer/SponsorGiyimDrawerContainer'
 
 
 import genderData from '../components/genderData'
@@ -13,9 +13,9 @@ debugger
     const selectedGender = genderData.find(f => f.urlGender === decodeURI(gender)).index
 
     return <Container>
-        <SponsorGiyimDrawer title="Sponsor Giyim" selectedGender={selectedGender}>
+        <SponsorGiyimDrawerContainer title="Sponsor Giyim" selectedGender={selectedGender}>
         <Application {...props} selectedGender={selectedGender} />
-        </SponsorGiyimDrawer>
+        </SponsorGiyimDrawerContainer>
   
 
     </Container>

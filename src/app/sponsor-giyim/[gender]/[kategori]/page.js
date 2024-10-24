@@ -1,8 +1,11 @@
-import navigationData from '../../../../../data-sponsor-giyim/unzipped-data/5.step-data/giyim/navigation.json'
+//import navigationData from '../../../../../data-sponsor-giyim/unzipped-data/5.step-data/giyim/navigation.json'
 
 import genderData from '../../components/genderData';
-import SponsorGiyimDrawer from '../../components/drawer/SponsorGiyimDrawer';
+import SponsorGiyimDrawerContainer from '../../components/drawer/SponsorGiyimDrawerContainer';
 import BreadcrumbsComponent from '../../components/BreadcrumbsComponent';
+import getNavigationData from '../../components/getNavigationData';
+
+const navigationData = await getNavigationData({URI:'data-sponsor-giyim/unzipped-data/5.step-data/giyim/navigation.json'})
 const getCategoryData = (genderDecoded, kategoriDecoded) => {
     const mainCategory = navigationData.find(item => item.title === genderDecoded);
 
@@ -29,7 +32,7 @@ export default function Page({ params: { gender, kategori,id } }) {
 
     return (
 
-        <SponsorGiyimDrawer selectedGender={selectedGender}>
+        <SponsorGiyimDrawerContainer selectedGender={selectedGender}>
             <BreadcrumbsComponent urlPath={`/sponsor-giyim/${genderDecoded}/${kategoriDecoded}/${id}`}/>
             <h1>{genderDecodedData.title}</h1>
             <ul>
@@ -42,7 +45,7 @@ export default function Page({ params: { gender, kategori,id } }) {
                         </li>
                  } )}
             </ul>
-        </SponsorGiyimDrawer>
+        </SponsorGiyimDrawerContainer>
     );
 
     return

@@ -2,9 +2,10 @@
 
 
 import TopNavigation from "./components/TopNavigation"
-import  Container  from "@mui/material/Container"
+import Container from "@mui/material/Container"
 import GenderCards from "./sponsor-giyim/components/GenderCards"
-import SponsorGiyimDrawer from "./sponsor-giyim/components/drawer/SponsorGiyimDrawer"
+import SponsorGiyimDrawerContainer from "./sponsor-giyim/components/drawer/SponsorGiyimDrawerContainer"
+import getNavigationData from "./sponsor-giyim/components/getNavigationData"
 export async function generateMetadata() {
 
   return {
@@ -16,12 +17,12 @@ export async function generateMetadata() {
 export default async function Home(props) {
 
 
-  return <Container> 
-    <SponsorGiyimDrawer selectedGender={0}>
-    <TopNavigation selected={0}/>
-    <GenderCards/>
-    </SponsorGiyimDrawer>
+  return <Container>
+    <SponsorGiyimDrawerContainer selectedGender={0}>
+      <TopNavigation selected={0} />
+      <GenderCards />
+    </SponsorGiyimDrawerContainer>
 
-</Container>
+  </Container>
 
 }
