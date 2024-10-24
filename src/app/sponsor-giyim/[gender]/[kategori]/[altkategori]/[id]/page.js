@@ -9,7 +9,7 @@ import BreadcrumbsComponent from '@/app/sponsor-giyim/components/BreadcrumbsComp
 import SponsorGiyimDrawerContainer from '@/app/sponsor-giyim/components/drawer/SponsorGiyimDrawerContainer'
 import getNavigationData from '@/app/sponsor-giyim/components/getNavigationData'
 
-const datas = getNavigationData({URI:'data-sponsor-giyim/unzipped-data/5.step-data/giyim/references.json'})
+const datas =await getNavigationData({URI:'data-sponsor-giyim/unzipped-data/5.step-data/giyim/references.json'})
 export default function CategoryByBrandPage({ params: { id, gender, kategori, altkategori } }) {
   const genderDecoded = decodeURI(gender)
   const category = decodeURI(kategori).replace('-', ' ')
@@ -28,8 +28,6 @@ export default function CategoryByBrandPage({ params: { id, gender, kategori, al
       <BreadcrumbsComponent urlPath={`/sponsor-giyim/${genderDecoded}/${category}/${subCategori}/${id}`} />
       <ProductDisplayContainer brands={brands} slug={`/sponsor-giyim/${genderDecoded}/${category}/${id}`} />
     </SponsorGiyimDrawerContainer>
-
-
   </Container>
 }
 
