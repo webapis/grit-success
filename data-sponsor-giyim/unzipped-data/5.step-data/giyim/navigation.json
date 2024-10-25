@@ -1,0 +1,1992 @@
+[
+    {
+        "title": "kadın",
+        "uid": null,
+        "childrenLength": 19,
+        "children": [
+            {
+                "title": "dış giyim",
+                "uid": null,
+                "childrenLength": 14,
+                "children": [
+                    {
+                        "title": "сeket",
+                        "uid": "m2z9x8b69",
+                        "childrenLength": 30
+                    },
+                    {
+                        "title": "yelek",
+                        "uid": "3abi1pjk9",
+                        "childrenLength": 29
+                    },
+                    {
+                        "title": "kaban",
+                        "uid": "pn7rxrkzc",
+                        "childrenLength": 25
+                    },
+                    {
+                        "title": "bomber",
+                        "uid": "aejf21pw4",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "trençkot",
+                        "uid": "57554fuz7",
+                        "childrenLength": 13
+                    },
+                    {
+                        "title": "palto",
+                        "uid": "pp5vibm6b",
+                        "childrenLength": 6
+                    },
+                    {
+                        "title": "yağmurluk",
+                        "uid": "nxiw5qiav",
+                        "childrenLength": 5
+                    },
+                    {
+                        "title": "mont",
+                        "uid": "dbavgloo4",
+                        "childrenLength": 17
+                    },
+                    {
+                        "title": "pardösü",
+                        "uid": "5uxvieivg",
+                        "childrenLength": 5
+                    },
+                    {
+                        "title": "parka",
+                        "uid": "q4ujmk0gj",
+                        "childrenLength": 2
+                    },
+                    {
+                        "title": "manto",
+                        "uid": "83wxms95r",
+                        "childrenLength": 2
+                    },
+                    {
+                        "title": "kap",
+                        "uid": "l4237rr2v",
+                        "childrenLength": 3
+                    },
+                    {
+                        "title": "kaftan",
+                        "uid": "hzqqdx11g",
+                        "childrenLength": 2
+                    },
+                    {
+                        "title": "kürk",
+                        "uid": "fjfqun6xr",
+                        "childrenLength": 3
+                    }
+                ]
+            },
+            {
+                "title": "alt giyim",
+                "uid": null,
+                "childrenLength": 9,
+                "children": [
+                    {
+                        "title": "pantolon",
+                        "uid": "1j1cvdutj",
+                        "childrenLength": 31
+                    },
+                    {
+                        "title": "etek",
+                        "uid": "1olggmz5t",
+                        "childrenLength": 31
+                    },
+                    {
+                        "title": "şort",
+                        "uid": "iknxwsci5",
+                        "childrenLength": 23
+                    },
+                    {
+                        "title": "tayt",
+                        "uid": "b63qx0x7z",
+                        "childrenLength": 17
+                    },
+                    {
+                        "title": "bermuda",
+                        "uid": "dheh1ih5e",
+                        "childrenLength": 6
+                    },
+                    {
+                        "title": "eşofman",
+                        "uid": "n6uegg1lj",
+                        "childrenLength": 9
+                    },
+                    {
+                        "title": "jogger",
+                        "uid": "2phnaa781",
+                        "childrenLength": 6
+                    },
+                    {
+                        "title": "kapri",
+                        "uid": "53k816r73",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "loungwear altı",
+                        "uid": "2d4r9rh4b",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "üst giyim",
+                "uid": null,
+                "childrenLength": 33,
+                "children": [
+                    {
+                        "title": "elbise",
+                        "uid": "zqsgp33mo",
+                        "childrenLength": 30
+                    },
+                    {
+                        "title": "gömlek",
+                        "uid": "zk93lgebs",
+                        "childrenLength": 29
+                    },
+                    {
+                        "title": "kazak",
+                        "uid": "9ha6wx6uz",
+                        "childrenLength": 19
+                    },
+                    {
+                        "title": "bluz",
+                        "uid": "oshfdqm26",
+                        "childrenLength": 30
+                    },
+                    {
+                        "title": "body",
+                        "uid": "2mkptik0p",
+                        "childrenLength": 9
+                    },
+                    {
+                        "title": "süveter",
+                        "uid": "uejbm0cik",
+                        "childrenLength": 8
+                    },
+                    {
+                        "title": "hırka",
+                        "uid": "spmjop9d1",
+                        "childrenLength": 22
+                    },
+                    {
+                        "title": "tulum",
+                        "uid": "if9p8kaf5",
+                        "childrenLength": 23
+                    },
+                    {
+                        "title": "tişört",
+                        "uid": "ggos70pff",
+                        "childrenLength": 26
+                    },
+                    {
+                        "title": "atlet",
+                        "uid": "wfdu0f4i5",
+                        "childrenLength": 13
+                    },
+                    {
+                        "title": "tunik",
+                        "uid": "xfaaz56qf",
+                        "childrenLength": 10
+                    },
+                    {
+                        "title": "üst",
+                        "uid": "3mno783dy",
+                        "childrenLength": 21
+                    },
+                    {
+                        "title": "pareo",
+                        "uid": "wzp9djq9g",
+                        "childrenLength": 5
+                    },
+                    {
+                        "title": "kimono",
+                        "uid": "hwumoball",
+                        "childrenLength": 12
+                    },
+                    {
+                        "title": "pelerin",
+                        "uid": "ykoh9bx2u",
+                        "childrenLength": 3
+                    },
+                    {
+                        "title": "büstiyer",
+                        "uid": "50bqpx5hj",
+                        "childrenLength": 18
+                    },
+                    {
+                        "title": "сrop",
+                        "uid": "k85ftuk4i",
+                        "childrenLength": 7
+                    },
+                    {
+                        "title": "bolero",
+                        "uid": "i2bpflm8t",
+                        "childrenLength": 3
+                    },
+                    {
+                        "title": "bra",
+                        "uid": "ho82ocd1h",
+                        "childrenLength": 5
+                    },
+                    {
+                        "title": "takım elbise",
+                        "uid": "dzm02eeqr",
+                        "childrenLength": 6
+                    },
+                    {
+                        "title": "hoodie",
+                        "uid": "olmfh7gpp",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "sweatshirt",
+                        "uid": "5k2j8bxyc",
+                        "childrenLength": 10
+                    },
+                    {
+                        "title": "triko",
+                        "uid": "02o67noox",
+                        "childrenLength": 17
+                    },
+                    {
+                        "title": "panço",
+                        "uid": "32v4akahx",
+                        "childrenLength": 6
+                    },
+                    {
+                        "title": "kaftan",
+                        "uid": "fuovoaris",
+                        "childrenLength": 4
+                    },
+                    {
+                        "title": "abiye",
+                        "uid": "ksa9kyor4",
+                        "childrenLength": 2
+                    },
+                    {
+                        "title": "polo",
+                        "uid": "k4avm8ljj",
+                        "childrenLength": 6
+                    },
+                    {
+                        "title": "denim korse",
+                        "uid": "ge1krjsig",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "pardesü",
+                        "uid": "res6nix71",
+                        "childrenLength": 2
+                    },
+                    {
+                        "title": "ikili takım",
+                        "uid": "yobxrt671",
+                        "childrenLength": 2
+                    },
+                    {
+                        "title": "kurdele",
+                        "uid": "2xuq5kal6",
+                        "childrenLength": 4
+                    },
+                    {
+                        "title": "muun kolleksyon",
+                        "uid": "48f4slhwo",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "korseler",
+                        "uid": "yle5toje8",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "ayakkabı",
+                "uid": null,
+                "childrenLength": 22,
+                "children": [
+                    {
+                        "title": "ayakkabı",
+                        "uid": "kucowplq4",
+                        "childrenLength": 8
+                    },
+                    {
+                        "title": "sandalet",
+                        "uid": "fhkzueo6p",
+                        "childrenLength": 9
+                    },
+                    {
+                        "title": "terlik",
+                        "uid": "awd19q7xp",
+                        "childrenLength": 13
+                    },
+                    {
+                        "title": "stiletto",
+                        "uid": "awkyqgdnf",
+                        "childrenLength": 5
+                    },
+                    {
+                        "title": "topuklu",
+                        "uid": "ems9hxez3",
+                        "childrenLength": 11
+                    },
+                    {
+                        "title": "çizme",
+                        "uid": "i6e42lh7l",
+                        "childrenLength": 9
+                    },
+                    {
+                        "title": "babet",
+                        "uid": "b1olfoxc8",
+                        "childrenLength": 13
+                    },
+                    {
+                        "title": "makosen",
+                        "uid": "n57o7qu7n",
+                        "childrenLength": 5
+                    },
+                    {
+                        "title": "loafer",
+                        "uid": "utzsy626y",
+                        "childrenLength": 9
+                    },
+                    {
+                        "title": "bot",
+                        "uid": "kzq81wn85",
+                        "childrenLength": 10
+                    },
+                    {
+                        "title": "çapraz bağlamalı anna",
+                        "uid": "nqcx7yhj5",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "sneaker",
+                        "uid": "k9l8740o8",
+                        "childrenLength": 9
+                    },
+                    {
+                        "title": "günlük ayakkabı",
+                        "uid": "i6fs5mf13",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "gece ayakkabısı",
+                        "uid": "yzq2cuhv7",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "yağmur botu",
+                        "uid": "dxexjwp1k",
+                        "childrenLength": 2
+                    },
+                    {
+                        "title": "kar botu",
+                        "uid": "suilhwarz",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "espadril",
+                        "uid": "b4gi4y2xd",
+                        "childrenLength": 3
+                    },
+                    {
+                        "title": "panduf",
+                        "uid": "qmcgah4jd",
+                        "childrenLength": 2
+                    },
+                    {
+                        "title": "patik",
+                        "uid": "84icj17z5",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "postal",
+                        "uid": "0vfd8mo1v",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "espardenya",
+                        "uid": "26mzl3l7i",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "platform ayakkabı",
+                        "uid": "g1atcpl0j",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "çanta",
+                "uid": null,
+                "childrenLength": 11,
+                "children": [
+                    {
+                        "title": "çanta",
+                        "uid": "xxh8zb1n0",
+                        "childrenLength": 19
+                    },
+                    {
+                        "title": "сüzdan",
+                        "uid": "50ni6vscs",
+                        "childrenLength": 8
+                    },
+                    {
+                        "title": "kartlık",
+                        "uid": "8h3zdifju",
+                        "childrenLength": 5
+                    },
+                    {
+                        "title": "bavul",
+                        "uid": "ckq1ew1vd",
+                        "childrenLength": 2
+                    },
+                    {
+                        "title": "сlucth",
+                        "uid": "3bhbc6h24",
+                        "childrenLength": 5
+                    },
+                    {
+                        "title": "portföy",
+                        "uid": "8fuzngrb5",
+                        "childrenLength": 3
+                    },
+                    {
+                        "title": "hobo",
+                        "uid": "6x4g66q2i",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "valiz",
+                        "uid": "79ndibv1w",
+                        "childrenLength": 3
+                    },
+                    {
+                        "title": "anahtarlık",
+                        "uid": "qnkql75y6",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "kartvizitlik",
+                        "uid": "i729xpm7b",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "sırt çantası",
+                        "uid": "q90vo9g4y",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "saç-aksesuar",
+                "uid": null,
+                "childrenLength": 4,
+                "children": [
+                    {
+                        "title": "toka",
+                        "uid": "bjvhz8t8k",
+                        "childrenLength": 14
+                    },
+                    {
+                        "title": "saç bandı",
+                        "uid": "ehrmslxo3",
+                        "childrenLength": 2
+                    },
+                    {
+                        "title": "taç",
+                        "uid": "8x04872n0",
+                        "childrenLength": 2
+                    },
+                    {
+                        "title": "saç aksesuarı",
+                        "uid": "9lzvrwpcg",
+                        "childrenLength": 3
+                    }
+                ]
+            },
+            {
+                "title": "jean",
+                "uid": null,
+                "childrenLength": 1,
+                "children": [
+                    {
+                        "title": "jean",
+                        "uid": "he794xf9n",
+                        "childrenLength": 12
+                    }
+                ]
+            },
+            {
+                "title": "plaj, havuz",
+                "uid": null,
+                "childrenLength": 3,
+                "children": [
+                    {
+                        "title": "mayo",
+                        "uid": "t05pny3vq",
+                        "childrenLength": 9
+                    },
+                    {
+                        "title": "bikini",
+                        "uid": "d3qnjdkim",
+                        "childrenLength": 10
+                    },
+                    {
+                        "title": "peştemal",
+                        "uid": "tpdb6f607",
+                        "childrenLength": 2
+                    }
+                ]
+            },
+            {
+                "title": "atkı",
+                "uid": null,
+                "childrenLength": 7,
+                "children": [
+                    {
+                        "title": "şal",
+                        "uid": "5veo5gcoa",
+                        "childrenLength": 11
+                    },
+                    {
+                        "title": "atkı",
+                        "uid": "gyq00fdpe",
+                        "childrenLength": 14
+                    },
+                    {
+                        "title": "fular",
+                        "uid": "ubreuq9bb",
+                        "childrenLength": 5
+                    },
+                    {
+                        "title": "eşarp",
+                        "uid": "aqhnj10sq",
+                        "childrenLength": 4
+                    },
+                    {
+                        "title": "kafa bandı",
+                        "uid": "s1v4f48yn",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "bandana",
+                        "uid": "jzn0ircov",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "poplin yaka",
+                        "uid": "8pyy8efn1",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "aksesuar",
+                "uid": null,
+                "childrenLength": 13,
+                "children": [
+                    {
+                        "title": "kemer",
+                        "uid": "1kqtox0cc",
+                        "childrenLength": 13
+                    },
+                    {
+                        "title": "çorap",
+                        "uid": "zk5p797hj",
+                        "childrenLength": 9
+                    },
+                    {
+                        "title": "maske",
+                        "uid": "ozasdx9z6",
+                        "childrenLength": 2
+                    },
+                    {
+                        "title": "boyunluk",
+                        "uid": "jabe97akl",
+                        "childrenLength": 4
+                    },
+                    {
+                        "title": "uyku bandı",
+                        "uid": "tts3rdp6f",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "mendil",
+                        "uid": "hprkgrwg2",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "eldiven",
+                        "uid": "9gktezfdj",
+                        "childrenLength": 7
+                    },
+                    {
+                        "title": "balaklava",
+                        "uid": "4zkwbk8c9",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "kuşak",
+                        "uid": "o626juuq2",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "gift card",
+                        "uid": "jtv19yvlw",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "telefon kılıfı",
+                        "uid": "pejobzozo",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "omuzluk",
+                        "uid": "wd69qqpt7",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "boyun aksesuarı",
+                        "uid": "c09k26y12",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "başlık",
+                "uid": null,
+                "childrenLength": 4,
+                "children": [
+                    {
+                        "title": "şapka",
+                        "uid": "av2wg9wcu",
+                        "childrenLength": 12
+                    },
+                    {
+                        "title": "kasket",
+                        "uid": "600dl68dd",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "bere",
+                        "uid": "iej17s2ot",
+                        "childrenLength": 7
+                    },
+                    {
+                        "title": "beanie",
+                        "uid": "7sk0tkcro",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "iç giyim",
+                "uid": null,
+                "childrenLength": 7,
+                "children": [
+                    {
+                        "title": "boxer",
+                        "uid": "epszejes3",
+                        "childrenLength": 2
+                    },
+                    {
+                        "title": "sütyen",
+                        "uid": "gk2pxm4oh",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "termal i̇çlik",
+                        "uid": "qsvt4im04",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "i̇çlik",
+                        "uid": "sgd5jmi72",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "külot",
+                        "uid": "h1ftaj1qa",
+                        "childrenLength": 3
+                    },
+                    {
+                        "title": "bralet",
+                        "uid": "g0blz8ucn",
+                        "childrenLength": 2
+                    },
+                    {
+                        "title": "tanga",
+                        "uid": "8e8jffpag",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "ev",
+                "uid": null,
+                "childrenLength": 3,
+                "children": [
+                    {
+                        "title": "pijama",
+                        "uid": "3hbgn999j",
+                        "childrenLength": 4
+                    },
+                    {
+                        "title": "sabahlık",
+                        "uid": "krm5y69qk",
+                        "childrenLength": 2
+                    },
+                    {
+                        "title": "gecelik",
+                        "uid": "wfb6krsxb",
+                        "childrenLength": 2
+                    }
+                ]
+            },
+            {
+                "title": "gözlük ve optik ürünler",
+                "uid": null,
+                "childrenLength": 2,
+                "children": [
+                    {
+                        "title": "güneş gözlüğü",
+                        "uid": "g76v9rkbs",
+                        "childrenLength": 3
+                    },
+                    {
+                        "title": "gözlük",
+                        "uid": "ltwplgwy1",
+                        "childrenLength": 2
+                    }
+                ]
+            },
+            {
+                "title": "saat",
+                "uid": null,
+                "childrenLength": 1,
+                "children": [
+                    {
+                        "title": "saat",
+                        "uid": "gttq9zoxp",
+                        "childrenLength": 2
+                    }
+                ]
+            },
+            {
+                "title": "elbise aksesuarı",
+                "uid": null,
+                "childrenLength": 1,
+                "children": [
+                    {
+                        "title": "omuz aksesuarı",
+                        "uid": "8j0uy4ua8",
+                        "childrenLength": 2
+                    }
+                ]
+            },
+            {
+                "title": "kombinler",
+                "uid": null,
+                "childrenLength": 1,
+                "children": [
+                    {
+                        "title": "kombinler",
+                        "uid": "3ftmnshsy",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "koleksiyon",
+                "uid": null,
+                "childrenLength": 3,
+                "children": [
+                    {
+                        "title": "ethereal waters",
+                        "uid": "ptmiz4baq",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "fall/winter",
+                        "uid": "4f84vsku6",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "glamyou bridal",
+                        "uid": "qmle0rd5e",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "spor ve outdoor",
+                "uid": null,
+                "childrenLength": 1,
+                "children": [
+                    {
+                        "title": "sporсu bra",
+                        "uid": "pcbnl4it5",
+                        "childrenLength": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "unisex",
+        "uid": null,
+        "childrenLength": 10,
+        "children": [
+            {
+                "title": "ayakkabı",
+                "uid": null,
+                "childrenLength": 3,
+                "children": [
+                    {
+                        "title": "terlik",
+                        "uid": "62ms7iexh",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "kar botu",
+                        "uid": "3y4an4bsc",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "bot",
+                        "uid": "yv10nstyx",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "çanta",
+                "uid": null,
+                "childrenLength": 2,
+                "children": [
+                    {
+                        "title": "çanta",
+                        "uid": "6iw6azlzk",
+                        "childrenLength": 2
+                    },
+                    {
+                        "title": "kartlık",
+                        "uid": "xgv1f79ja",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "gözlük ve optik ürünler",
+                "uid": null,
+                "childrenLength": 1,
+                "children": [
+                    {
+                        "title": "güneş gözlüğü",
+                        "uid": "udrk7jv53",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "saat",
+                "uid": null,
+                "childrenLength": 1,
+                "children": [
+                    {
+                        "title": "saat",
+                        "uid": "rjcpa40ve",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "aksesuar",
+                "uid": null,
+                "childrenLength": 3,
+                "children": [
+                    {
+                        "title": "boyunluk",
+                        "uid": "5jd1v0bac",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "eldiven",
+                        "uid": "n8qiqed97",
+                        "childrenLength": 2
+                    },
+                    {
+                        "title": "çorap",
+                        "uid": "dapzxmowc",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "üst giyim",
+                "uid": null,
+                "childrenLength": 5,
+                "children": [
+                    {
+                        "title": "kazak",
+                        "uid": "928dlyxo0",
+                        "childrenLength": 2
+                    },
+                    {
+                        "title": "gömlek",
+                        "uid": "f95lt0jk5",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "elbise",
+                        "uid": "94uzzo0va",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "triko",
+                        "uid": "9f7yc3hs3",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "tişört",
+                        "uid": "ji1gwesfk",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "dış giyim",
+                "uid": null,
+                "childrenLength": 2,
+                "children": [
+                    {
+                        "title": "mont",
+                        "uid": "yr9a8xh6i",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "сeket",
+                        "uid": "quvlnyh2d",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "alt giyim",
+                "uid": null,
+                "childrenLength": 2,
+                "children": [
+                    {
+                        "title": "pantolon",
+                        "uid": "2yc8igaud",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "eşofman",
+                        "uid": "pgl9mpomg",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "atkı",
+                "uid": null,
+                "childrenLength": 2,
+                "children": [
+                    {
+                        "title": "şal",
+                        "uid": "pwhauol79",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "atkı",
+                        "uid": "j9ya9tzw2",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "başlık",
+                "uid": null,
+                "childrenLength": 1,
+                "children": [
+                    {
+                        "title": "bere",
+                        "uid": "htwbqqsb6",
+                        "childrenLength": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "erkek",
+        "uid": null,
+        "childrenLength": 15,
+        "children": [
+            {
+                "title": "çanta",
+                "uid": null,
+                "childrenLength": 6,
+                "children": [
+                    {
+                        "title": "çanta",
+                        "uid": "xy1xwzf0z",
+                        "childrenLength": 5
+                    },
+                    {
+                        "title": "сüzdan",
+                        "uid": "aazqewwgo",
+                        "childrenLength": 3
+                    },
+                    {
+                        "title": "kartlık",
+                        "uid": "662tt9psz",
+                        "childrenLength": 3
+                    },
+                    {
+                        "title": "valiz",
+                        "uid": "ms4zkj2uq",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "portföy",
+                        "uid": "8euimbrcm",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "travel organızer",
+                        "uid": "tlx9r0p75",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "ayakkabı",
+                "uid": null,
+                "childrenLength": 9,
+                "children": [
+                    {
+                        "title": "bot",
+                        "uid": "1xa7930tq",
+                        "childrenLength": 4
+                    },
+                    {
+                        "title": "patik",
+                        "uid": "8xhdw9j8j",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "panduf",
+                        "uid": "1enfa4qch",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "sneaker",
+                        "uid": "2b1yfkiwx",
+                        "childrenLength": 4
+                    },
+                    {
+                        "title": "espadril",
+                        "uid": "27i8u1erd",
+                        "childrenLength": 3
+                    },
+                    {
+                        "title": "loafer",
+                        "uid": "hq6sxoba9",
+                        "childrenLength": 3
+                    },
+                    {
+                        "title": "ayakkabı",
+                        "uid": "351txieme",
+                        "childrenLength": 3
+                    },
+                    {
+                        "title": "sandalet",
+                        "uid": "s6mm8hzhf",
+                        "childrenLength": 2
+                    },
+                    {
+                        "title": "terlik",
+                        "uid": "ze5uibcbu",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "alt giyim",
+                "uid": null,
+                "childrenLength": 5,
+                "children": [
+                    {
+                        "title": "pantolon",
+                        "uid": "xaima4fud",
+                        "childrenLength": 4
+                    },
+                    {
+                        "title": "eşofman",
+                        "uid": "sqk2evlrt",
+                        "childrenLength": 3
+                    },
+                    {
+                        "title": "jogger",
+                        "uid": "6g0953iov",
+                        "childrenLength": 2
+                    },
+                    {
+                        "title": "şort",
+                        "uid": "97l57sfyl",
+                        "childrenLength": 4
+                    },
+                    {
+                        "title": "bermuda",
+                        "uid": "svquyau1w",
+                        "childrenLength": 2
+                    }
+                ]
+            },
+            {
+                "title": "iç giyim",
+                "uid": null,
+                "childrenLength": 1,
+                "children": [
+                    {
+                        "title": "boxer",
+                        "uid": "4a9a73xol",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "atkı",
+                "uid": null,
+                "childrenLength": 2,
+                "children": [
+                    {
+                        "title": "atkı",
+                        "uid": "xwt9x9m3b",
+                        "childrenLength": 2
+                    },
+                    {
+                        "title": "şal",
+                        "uid": "x24m1pgrj",
+                        "childrenLength": 2
+                    }
+                ]
+            },
+            {
+                "title": "dış giyim",
+                "uid": null,
+                "childrenLength": 8,
+                "children": [
+                    {
+                        "title": "mont",
+                        "uid": "h6xmdzpi4",
+                        "childrenLength": 4
+                    },
+                    {
+                        "title": "сeket",
+                        "uid": "l5ux8ii28",
+                        "childrenLength": 4
+                    },
+                    {
+                        "title": "parka",
+                        "uid": "4ivo1mnwr",
+                        "childrenLength": 2
+                    },
+                    {
+                        "title": "yelek",
+                        "uid": "26qpuexum",
+                        "childrenLength": 3
+                    },
+                    {
+                        "title": "kaban",
+                        "uid": "rm1z80mzd",
+                        "childrenLength": 3
+                    },
+                    {
+                        "title": "yağmurluk",
+                        "uid": "gzrgrrcvo",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "palto",
+                        "uid": "l07uf1o11",
+                        "childrenLength": 2
+                    },
+                    {
+                        "title": "pardösü",
+                        "uid": "lbse6zf05",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "üst giyim",
+                "uid": null,
+                "childrenLength": 14,
+                "children": [
+                    {
+                        "title": "tişört",
+                        "uid": "k5evo1hes",
+                        "childrenLength": 4
+                    },
+                    {
+                        "title": "gömlek",
+                        "uid": "l3q2f6uoa",
+                        "childrenLength": 4
+                    },
+                    {
+                        "title": "polo",
+                        "uid": "v36joygl8",
+                        "childrenLength": 3
+                    },
+                    {
+                        "title": "kazak",
+                        "uid": "n9vk4u7lp",
+                        "childrenLength": 4
+                    },
+                    {
+                        "title": "hırka",
+                        "uid": "ol5d7qlld",
+                        "childrenLength": 4
+                    },
+                    {
+                        "title": "üst",
+                        "uid": "iqdzomv7x",
+                        "childrenLength": 2
+                    },
+                    {
+                        "title": "atlet",
+                        "uid": "c1q7ah2oz",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "takım elbise",
+                        "uid": "ynnwryf46",
+                        "childrenLength": 2
+                    },
+                    {
+                        "title": "triko",
+                        "uid": "exgtses7o",
+                        "childrenLength": 2
+                    },
+                    {
+                        "title": "kimono",
+                        "uid": "gf6aio8lz",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "sweatshirt",
+                        "uid": "mpgq9ebkb",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "pardesü",
+                        "uid": "ee868x1lt",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "smoki̇n",
+                        "uid": "nokdb1dwp",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "elbise",
+                        "uid": "xe8os05bl",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "ev",
+                "uid": null,
+                "childrenLength": 1,
+                "children": [
+                    {
+                        "title": "pijama",
+                        "uid": "ynqjzrudw",
+                        "childrenLength": 2
+                    }
+                ]
+            },
+            {
+                "title": "aksesuar",
+                "uid": null,
+                "childrenLength": 10,
+                "children": [
+                    {
+                        "title": "çorap",
+                        "uid": "dud3d80kx",
+                        "childrenLength": 4
+                    },
+                    {
+                        "title": "pelüş kulaklık",
+                        "uid": "heqnb7fxk",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "boyunluk",
+                        "uid": "mkxr1dxke",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "balaklava",
+                        "uid": "n1ietbo6k",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "eldiven",
+                        "uid": "dd7x324df",
+                        "childrenLength": 3
+                    },
+                    {
+                        "title": "kemer",
+                        "uid": "csf1qhp66",
+                        "childrenLength": 4
+                    },
+                    {
+                        "title": "kravat",
+                        "uid": "3537x65ov",
+                        "childrenLength": 2
+                    },
+                    {
+                        "title": "papyon",
+                        "uid": "ap20nbo50",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "mendil",
+                        "uid": "amkrfqki0",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "kol düğmesi̇",
+                        "uid": "jnhb1y81a",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "jean",
+                "uid": null,
+                "childrenLength": 1,
+                "children": [
+                    {
+                        "title": "jean",
+                        "uid": "9pu79ukv2",
+                        "childrenLength": 2
+                    }
+                ]
+            },
+            {
+                "title": "başlık",
+                "uid": null,
+                "childrenLength": 4,
+                "children": [
+                    {
+                        "title": "bere",
+                        "uid": "ufsoz48bo",
+                        "childrenLength": 3
+                    },
+                    {
+                        "title": "şapka",
+                        "uid": "nb041en6h",
+                        "childrenLength": 4
+                    },
+                    {
+                        "title": "kasket",
+                        "uid": "4pvs70b02",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "beanie",
+                        "uid": "klmuhhmcm",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "saç-aksesuar",
+                "uid": null,
+                "childrenLength": 1,
+                "children": [
+                    {
+                        "title": "toka",
+                        "uid": "wot0n4g1m",
+                        "childrenLength": 2
+                    }
+                ]
+            },
+            {
+                "title": "saat",
+                "uid": null,
+                "childrenLength": 1,
+                "children": [
+                    {
+                        "title": "saat",
+                        "uid": "g9gg6ptk2",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "plaj, havuz",
+                "uid": null,
+                "childrenLength": 1,
+                "children": [
+                    {
+                        "title": "mayo",
+                        "uid": "ckyzh23ks",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "gözlük ve optik ürünler",
+                "uid": null,
+                "childrenLength": 1,
+                "children": [
+                    {
+                        "title": "gözlük kılıfı",
+                        "uid": "gu5npkb9x",
+                        "childrenLength": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Kız Çocuk",
+        "uid": null,
+        "childrenLength": 9,
+        "children": [
+            {
+                "title": "üst giyim",
+                "uid": null,
+                "childrenLength": 9,
+                "children": [
+                    {
+                        "title": "tişört",
+                        "uid": "0vow75nu9",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "hırka",
+                        "uid": "fbwa0do8d",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "okul gömleği",
+                        "uid": "8wc4b6tgs",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "bluz",
+                        "uid": "7y2d8f32m",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "triko",
+                        "uid": "denldou7p",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "kazak",
+                        "uid": "2mr16wl1f",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "süveter",
+                        "uid": "flhr6ekoa",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "elbise",
+                        "uid": "h7zn284ke",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "gömlek",
+                        "uid": "v3angpd48",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "dış giyim",
+                "uid": null,
+                "childrenLength": 4,
+                "children": [
+                    {
+                        "title": "mont",
+                        "uid": "s1107760g",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "kaban",
+                        "uid": "jkzvfcyu0",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "сeket",
+                        "uid": "cblznrmtd",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "yelek",
+                        "uid": "lspivyclu",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "alt giyim",
+                "uid": null,
+                "childrenLength": 6,
+                "children": [
+                    {
+                        "title": "jogger",
+                        "uid": "4gfvopcnb",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "pantolon",
+                        "uid": "15lqx93wf",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "etek",
+                        "uid": "p05v4g66k",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "şort",
+                        "uid": "y104ofqrb",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "tayt",
+                        "uid": "2dvb6izun",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "eşofman",
+                        "uid": "d2fa6ivlx",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "ev",
+                "uid": null,
+                "childrenLength": 1,
+                "children": [
+                    {
+                        "title": "pijama",
+                        "uid": "zngit23a5",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "aksesuar",
+                "uid": null,
+                "childrenLength": 3,
+                "children": [
+                    {
+                        "title": "çorap",
+                        "uid": "0xecjtwbl",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "eldiven",
+                        "uid": "q69ekwyvk",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "pelüş kulaklık",
+                        "uid": "8tt922m37",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "ayakkabı",
+                "uid": null,
+                "childrenLength": 1,
+                "children": [
+                    {
+                        "title": "patik",
+                        "uid": "7hxmwqr18",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "atkı",
+                "uid": null,
+                "childrenLength": 1,
+                "children": [
+                    {
+                        "title": "atkı",
+                        "uid": "yh9zeqe0u",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "çanta",
+                "uid": null,
+                "childrenLength": 1,
+                "children": [
+                    {
+                        "title": "çanta",
+                        "uid": "7akrltzpn",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "başlık",
+                "uid": null,
+                "childrenLength": 1,
+                "children": [
+                    {
+                        "title": "bere",
+                        "uid": "ox50o1fw9",
+                        "childrenLength": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Erkek Bebek",
+        "uid": null,
+        "childrenLength": 4,
+        "children": [
+            {
+                "title": "üst giyim",
+                "uid": null,
+                "childrenLength": 7,
+                "children": [
+                    {
+                        "title": "tulum",
+                        "uid": "phpxau7ck",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "tişört",
+                        "uid": "tmwk3bkkh",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "kazak",
+                        "uid": "glzliejpq",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "hırka",
+                        "uid": "2e6f4050m",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "gömlek",
+                        "uid": "s1bjvm6du",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "body",
+                        "uid": "whgkgzgdg",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "süveter",
+                        "uid": "5svnj5b81",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "dış giyim",
+                "uid": null,
+                "childrenLength": 1,
+                "children": [
+                    {
+                        "title": "mont",
+                        "uid": "d6plm3pxu",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "ev",
+                "uid": null,
+                "childrenLength": 1,
+                "children": [
+                    {
+                        "title": "pijama",
+                        "uid": "1lw0x2rg6",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "alt giyim",
+                "uid": null,
+                "childrenLength": 2,
+                "children": [
+                    {
+                        "title": "pantolon",
+                        "uid": "ny7g3yd1a",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "eşofman",
+                        "uid": "aiih2fsex",
+                        "childrenLength": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Kız Bebek",
+        "uid": null,
+        "childrenLength": 6,
+        "children": [
+            {
+                "title": "üst giyim",
+                "uid": null,
+                "childrenLength": 9,
+                "children": [
+                    {
+                        "title": "tulum",
+                        "uid": "nqr59w6a3",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "kazak",
+                        "uid": "xp1zyux93",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "tişört",
+                        "uid": "wcj5k027q",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "gömlek",
+                        "uid": "h7afx9ybc",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "body",
+                        "uid": "qvrkmzotx",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "hırka",
+                        "uid": "ujdgeora8",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "elbise",
+                        "uid": "921u87owa",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "üst",
+                        "uid": "lrvieyna1",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "bluz",
+                        "uid": "z9670csez",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "dış giyim",
+                "uid": null,
+                "childrenLength": 2,
+                "children": [
+                    {
+                        "title": "mont",
+                        "uid": "2kaolodt6",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "yelek",
+                        "uid": "z36b15x64",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "ev",
+                "uid": null,
+                "childrenLength": 1,
+                "children": [
+                    {
+                        "title": "pijama",
+                        "uid": "9p46ulz98",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "alt giyim",
+                "uid": null,
+                "childrenLength": 3,
+                "children": [
+                    {
+                        "title": "pantolon",
+                        "uid": "t1j0d9rk5",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "eşofman",
+                        "uid": "n6amy739v",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "tayt",
+                        "uid": "nd0e37ke0",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "başlık",
+                "uid": null,
+                "childrenLength": 1,
+                "children": [
+                    {
+                        "title": "bere",
+                        "uid": "3k6bs2myi",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "aksesuar",
+                "uid": null,
+                "childrenLength": 1,
+                "children": [
+                    {
+                        "title": "çorap",
+                        "uid": "kwu32pvlq",
+                        "childrenLength": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Genç",
+        "uid": null,
+        "childrenLength": 3,
+        "children": [
+            {
+                "title": "alt giyim",
+                "uid": null,
+                "childrenLength": 3,
+                "children": [
+                    {
+                        "title": "jogger",
+                        "uid": "ghzu1yb7i",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "eşofman",
+                        "uid": "6nhl10zah",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "pantolon",
+                        "uid": "pqay6ufyc",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "dış giyim",
+                "uid": null,
+                "childrenLength": 1,
+                "children": [
+                    {
+                        "title": "mont",
+                        "uid": "ql4ehc1cz",
+                        "childrenLength": 1
+                    }
+                ]
+            },
+            {
+                "title": "üst giyim",
+                "uid": null,
+                "childrenLength": 6,
+                "children": [
+                    {
+                        "title": "tişört",
+                        "uid": "81rqt07pt",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "hırka",
+                        "uid": "18x7dh78v",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "kazak",
+                        "uid": "ifzmpn79g",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "triko",
+                        "uid": "ax8pyuyu9",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "okul gömleği",
+                        "uid": "lpsetvgxw",
+                        "childrenLength": 1
+                    },
+                    {
+                        "title": "gömlek",
+                        "uid": "j736mug7l",
+                        "childrenLength": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "unrelated",
+        "uid": null,
+        "childrenLength": 1,
+        "children": [
+            {
+                "title": "dış giyim",
+                "uid": null,
+                "childrenLength": 1,
+                "children": [
+                    {
+                        "title": "mont",
+                        "uid": "wbesnf5a3",
+                        "childrenLength": 1
+                    }
+                ]
+            }
+        ]
+    }
+]

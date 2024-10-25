@@ -35,7 +35,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .env
-unzipped-data/
+sponsor-urunleri-data
+data-kadin-kazak
 zipped-files/
 data/
 turk-dizi-data/
