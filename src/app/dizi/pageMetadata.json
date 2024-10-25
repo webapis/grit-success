@@ -723,6 +723,19 @@
                 }
             ]
         }
+    },
+    {
+        "slug": "kalpazan-dizi-sponsorlari",
+        "pageTitle": "Kalpazan Dizi Sponsorları",
+        "description": "",
+        "dizi": "Kalpazan",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Kalpazan"
+                }
+            ]
+        }
     }
 ]
 
