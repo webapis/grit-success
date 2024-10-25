@@ -20,7 +20,7 @@ const getCategoryData = (genderDecoded, kategoriDecoded) => {
 
 
 export default function Page({ params: { gender, kategori,id } }) {
-  
+  debugger
     const genderDecoded = decodeURI(gender)
     const kategoriDecoded = decodeURI(kategori).replace('-',' ').toLowerCase()
     const selectedGender = genderData.find(f => f.urlGender === genderDecoded).index
@@ -52,7 +52,29 @@ export default function Page({ params: { gender, kategori,id } }) {
 }
 
 
-// export async function generateStaticParams() {
+export async function generateStaticParams() {
+    const datas = await getNavigationData({ URI: 'data-sponsor-giyim/unzipped-data/5.step-data/giyim/navigation.json' })
+    const paramCandidates = []
+    for (let d in datas) {
+      const currentNav = datas[d]
+      const gender = currentNav.title.replace(' ', '-').toLowerCase()
+      const children2 = currentNav.children
+      for (let c2 in children2) {
+        const currentc2 = children2[c2]
+        const kategori = currentc2.title.replace(' ', '-').toLowerCase()
+    
+        const id = currentc2.uid
+        paramCandidates.push({ params: { gender, kategori,id } })
+        debugger
 
-//     return []
-// }
+  
+  
+      }
+  
+  
+    }
+  
+    debugger
+  
+    return paramCandidates
+  }

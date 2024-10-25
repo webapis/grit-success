@@ -9,7 +9,8 @@ import genderData from '../components/genderData'
 export default function SponsorGiyim(props) {
     const { params: { gender } } = props
 
- 
+    console.log('props', props)
+    
     const selectedGender = genderData.find(f => f.urlGender === decodeURI(gender)).index
 
     return <Container>
@@ -24,5 +25,5 @@ export default function SponsorGiyim(props) {
 
 export async function generateStaticParams() {
 
-    return genderData.map(m => { return { params:{ gender: m.url} } })
+    return genderData.map(m => { return { params: { gender: m.url } } })
 }
