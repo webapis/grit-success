@@ -218,11 +218,12 @@ const GenderCards = () => {
         <Grid
           container
           spacing={{ xs: 0, sm: 2, md: 3 }}
+          sx={{display:'flex',justifyContent:'center'}}
         >
           {genderData.map((item) => (
             <Grid
               item
-              xs={5}
+              xs={6}
               sm={4}
               md={3}
               key={item.index}
