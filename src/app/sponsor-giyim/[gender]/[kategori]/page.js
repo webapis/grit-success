@@ -64,7 +64,7 @@ export async function generateStaticParams() {
         const kategori = currentc2.title.replace(' ', '-').toLowerCase()
     
         const id = currentc2.uid
-        paramCandidates.push({ params: { gender, kategori,id } })
+        paramCandidates.push({ gender, kategori,id  })
         debugger
 
   

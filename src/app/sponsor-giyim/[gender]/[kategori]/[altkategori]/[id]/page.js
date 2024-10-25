@@ -49,7 +49,7 @@ export async function generateStaticParams() {
         const currentc3 = children3[c3]
         const altkategori = currentc3.title.replace(' ', '-').toLowerCase()
         const id = currentc3.uid
-        paramCandidates.push({ params: { gender, kategori, altkategori, id } })
+        paramCandidates.push( { gender, kategori, altkategori, id })
 
       }
 

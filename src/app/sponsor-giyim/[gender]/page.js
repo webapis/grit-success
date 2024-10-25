@@ -25,5 +25,5 @@ export default function SponsorGiyim(props) {
 
 export async function generateStaticParams() {
 
-    return genderData.map(m => { return { params: { gender: m.url } } })
+    return genderData.map(m => { return  { gender: m.urlGender  } })
 }
