@@ -1,8 +1,5 @@
 'use client'
 import genderData from './genderData'
-
-
-
 import React from 'react';
 import { 
   Card,
@@ -19,10 +16,8 @@ import {
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Link from 'next/link';
-import Image from 'next/image';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
-// Create theme instance with custom breakpoints
 const theme = createTheme({
   breakpoints: {
     values: {
@@ -35,7 +30,6 @@ const theme = createTheme({
   },
 });
 
-// Styled components optimized for mobile
 const StyledCard = styled(Card)(({ theme }) => ({
   height: '100%',
   display: 'flex',
@@ -50,16 +44,17 @@ const StyledCard = styled(Card)(({ theme }) => ({
   }
 }));
 
-// Adjusted ImageWrapper with responsive aspect ratio
-const ImageWrapper = styled(Box)(({ theme }) => ({
+const ImageWrapper = styled(Box)(({ theme, image }) => ({
   position: 'relative',
   width: '100%',
-  // Adjusted aspect ratio for mobile
-  paddingTop: '120%', // Taller aspect ratio for mobile
+  paddingTop: '120%',
   overflow: 'hidden',
   backgroundColor: '#f5f5f5',
+  backgroundImage: `url(${image})`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'top center',
   [theme.breakpoints.up('sm')]: {
-    paddingTop: '133.33%', // Original aspect ratio for larger screens
+    paddingTop: '133.33%',
   }
 }));
 
@@ -87,6 +82,18 @@ const StyledLink = styled('a')({
 
 const GenderCard = ({ item }) => {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const [imageError, setImageError] = React.useState(false);
+  
+  const handleImageError = () => {
+    setImageError(true);
+  };
+
+  // Preload image
+  React.useEffect(() => {
+    const img = new Image();
+    img.src = item.imageSrc;
+    img.onerror = handleImageError;
+  }, [item.imageSrc]);
   
   return (
     <Link href={item.url} passHref legacyBehavior>
@@ -105,20 +112,38 @@ const GenderCard = ({ item }) => {
               }
             }}
           >
-            <ImageWrapper>
-              <Image
-                src={item.imageSrc}
-                alt={`${item.gender} category image`}
-                fill
-                sizes="(max-width: 600px) 45vw, (max-width: 960px) 30vw, 23vw"
-                style={{
-                  objectFit: 'cover',
-                  objectPosition: 'top center',
+            {imageError ? (
+              <Box
+                sx={{
+                  width: '100%',
+                  paddingTop: { xs: '120%', sm: '133.33%' },
+                  bgcolor: '#f5f5f5',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  position: 'relative',
                 }}
-                priority={item.index < 4}
-                loading={item.index < 4 ? "eager" : "lazy"}
+              >
+                <Typography 
+                  variant="body2" 
+                  color="text.secondary"
+                  sx={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                  }}
+                >
+                  Image not available
+                </Typography>
+              </Box>
+            ) : (
+              <ImageWrapper 
+                image={item.imageSrc}
+                role="img"
+                aria-label={`${item.gender} category image`}
               />
-            </ImageWrapper>
+            )}
             <StyledCardContent>
               <Typography
                 variant={isMobile ? "body1" : "h6"}
@@ -128,11 +153,11 @@ const GenderCard = ({ item }) => {
                 sx={{
                   fontWeight: 500,
                   fontSize: {
-                    xs: '0.9rem',  // Smaller font size for mobile
+                    xs: '0.9rem',
                     sm: '1.1rem',
                     md: '1.25rem',
                   },
-                  mb: { xs: 0.5, sm: 1 }, // Reduced margin on mobile
+                  mb: { xs: 0.5, sm: 1 },
                 }}
               >
                 {item.gender}
@@ -143,7 +168,7 @@ const GenderCard = ({ item }) => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   gap: 0.5,
-                  mt: { xs: 0.5, sm: 'auto' } // Reduced margin on mobile
+                  mt: { xs: 0.5, sm: 'auto' }
                 }}
               >
                 <Typography
@@ -151,7 +176,7 @@ const GenderCard = ({ item }) => {
                   color="text.secondary"
                   sx={{
                     fontSize: {
-                      xs: '0.75rem', // Smaller font size for mobile
+                      xs: '0.75rem',
                       sm: '0.875rem',
                     }
                   }}
@@ -184,7 +209,7 @@ const GenderCards = () => {
     <ThemeProvider theme={theme}>
       <Container
         maxWidth="lg"
-        disableGutters // Removed default gutters for mobile
+        disableGutters
         sx={{
           py: { xs: 1, sm: 3, md: 4 },
           px: { xs: 1, sm: 2, md: 3 }
@@ -192,13 +217,12 @@ const GenderCards = () => {
       >
         <Grid
           container
-           spacing={{ xs: 0, sm: 2, md: 3 }}
-        //   columns={{ xs: 2, sm: 8, md: 12 }} // Changed to 2 columns for mobile
+          spacing={{ xs: 0, sm: 2, md: 3 }}
         >
           {genderData.map((item) => (
             <Grid
               item
-              xs={5} // Take up 1 of 2 columns on mobile
+              xs={5}
               sm={4}
               md={3}
               key={item.index}
