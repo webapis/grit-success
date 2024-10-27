@@ -131,9 +131,16 @@ const GenderTabbedNavigation = ({ navData, selectedGender }) => {
     const theme = useTheme();
 
     const handleChange = (event, index) => {
-        const selectedGender = tabData.find(f => f.index === index).urlGender;
+        const selectedGender = tabData.find(f => f.index === index).urlGender
+
+        debugger
         window.location.href = `/sponsor-giyim/${selectedGender}/`;
     };
+
+    // Show 'Unrelated' tab only in 'dev' environment
+    const filteredNavData = process.env.NEXT_PUBLIC_ENV === 'dev'
+        ? navData // In 'dev', use the original navData
+        : navData.filter(gender => gender.title !== 'unrelated'); // In other environments, hide 'Unrelated'
 
     return (
         <Paper elevation={3} sx={{ width: '100%', overflow: 'hidden' }}>
@@ -163,14 +170,14 @@ const GenderTabbedNavigation = ({ navData, selectedGender }) => {
                         },
                     }}
                 >
-                    {navData.map((gender, index) => (
-                        <Tab key={gender.title} label={gender.title} />
+                    {filteredNavData.map((gender, index) => (
+                        <Tab key={gender.title} label={gender.title} sx={{textTransform:'capitalize'}} />
                     ))}
                 </Tabs>
             </Box>
             <Fade in={true} timeout={500}>
                 <Box sx={{ p: { xs: 2, sm: 3, md: 4 } }}>
-                    {navData[selectedGender] && (
+                    {filteredNavData[selectedGender] && (
                         <Box
                             sx={{
                                 columnCount: {
@@ -187,8 +194,8 @@ const GenderTabbedNavigation = ({ navData, selectedGender }) => {
                                 },
                             }}
                         >
-                            {navData[selectedGender].children.map((category) => (
-                                <CategoryNode key={category.title} gender={navData[selectedGender].title} category={category} />
+                            {filteredNavData[selectedGender].children.map((category) => (
+                                <CategoryNode key={category.title} gender={filteredNavData[selectedGender].title} category={category} />
                             ))}
                         </Box>
                     )}
@@ -199,3 +206,5 @@ const GenderTabbedNavigation = ({ navData, selectedGender }) => {
 };
 
 export default GenderTabbedNavigation;
+
+
