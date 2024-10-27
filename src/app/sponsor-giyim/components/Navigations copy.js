@@ -1,20 +1,17 @@
 'use client';
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
-//import navData from '../nav/navigation.json';
-
 import {
     Tabs,
     Tab,
     Box,
     Typography,
-
     useTheme,
     Paper,
     Fade,
-    Divider
+    Divider,
+    Button
 } from '@mui/material';
-
 import {
     Shirt,
     Checkroom,
@@ -43,22 +40,32 @@ const getIcon = (title) => {
     return <IconComponent fontSize="small" />;
 };
 
+import tabData  from '../components/genderData'
 const CategoryNode = ({ category, gender }) => {
+    const MAX_ITEMS_DISPLAY = 5; // Set your limit here
     const sortedChildren = [...category.children].sort((a, b) =>
         a.title.localeCompare(b.title)
     );
+
+    const handleShowMoreClick = () => {
+        // Navigate to the URL for showing all items in this category
+        window.location.href = `/sponsor-giyim/${gender}/${category.title.replace(' ', '-')}`;
+    };
 
     return (
         <Box sx={{ mb: 4 }}>
             <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold', color: 'primary.main' }}>
                 {category.title}
+                <span style={{ fontSize: '0.8rem', color: 'text.secondary', opacity: 0.7 }}>
+                    ({category.childrenLength} items)
+                </span>
             </Typography>
             <Divider sx={{ mb: 2 }} />
             <Box component="ul" sx={{ listStyleType: 'none', p: 0, m: 0 }}>
-                {sortedChildren.map((item) => (
+                {sortedChildren.slice(0, MAX_ITEMS_DISPLAY).map((item) => (
                     <Box component="li" key={item.uid || item.title} sx={{ mb: 1 }}>
                         {item.uid ? (
-                            <Link href={`/sponsor-giyim/kategori/${gender}/${category.title.replace(' ', '-')}/${item.title}/${item.uid}`} passHref style={{ textDecoration: 'none' }}>
+                            <Link href={`/sponsor-giyim/${gender}/${category.title.replace(' ', '-')}/${item.title.replace(' ', '-')}/${item.uid}`} passHref style={{ textDecoration: 'none' }}>
                                 <Box
                                     sx={{
                                         display: 'flex',
@@ -82,7 +89,12 @@ const CategoryNode = ({ category, gender }) => {
                                     <Box sx={{ mr: 2, display: 'flex', alignItems: 'center', color: 'primary.main' }}>
                                         {getIcon(item.title)}
                                     </Box>
-                                    <Typography sx={{ flexGrow: 1 }}>{item.title}</Typography>
+                                    <Typography sx={{ flexGrow: 1 }}>
+                                        {item.title}
+                                        <span style={{ fontSize: '0.8rem', color: 'text.secondary', opacity: 0.7 }}>
+                                            ({item.childrenLength} marka)
+                                        </span>
+                                    </Typography>
                                     <KeyboardArrowRight sx={{ opacity: 0, transition: 'all 0.2s' }} />
                                 </Box>
                             </Link>
@@ -91,23 +103,34 @@ const CategoryNode = ({ category, gender }) => {
                                 <Box sx={{ mr: 2, display: 'flex', alignItems: 'center', color: 'text.secondary' }}>
                                     {getIcon(item.title)}
                                 </Box>
-                                <Typography color="text.secondary">{item.title}</Typography>
+                                <Typography color="text.secondary">
+                                    {item.title}
+                                    <span style={{ fontSize: '0.8rem', color: 'text.secondary', opacity: 0.7 }}>
+                                        ({item.childrenLength} marka)
+                                    </span>
+                                </Typography>
                             </Box>
                         )}
                     </Box>
                 ))}
             </Box>
+            {sortedChildren.length > MAX_ITEMS_DISPLAY && (
+                <Button size='small' onClick={handleShowMoreClick} color="primary">
+                    Show More
+                </Button>
+            )}
         </Box>
     );
 };
 
-const GenderTabbedNavigation = ({navData}) => {
-    const [selectedGender, setSelectedGender] = useState(0);
+const GenderTabbedNavigation = ({ navData, selectedGender }) => {
+    //  const [selectedGender, setSelectedGender] = useState(0);
     const theme = useTheme();
 
-
-    const handleChange = (event, newValue) => {
-        setSelectedGender(newValue);
+    const handleChange = (event, index) => {
+        console.log('index', index)
+        const selectedGender = tabData.find(f => f.index === index).urlGender
+        window.location.href = `/sponsor-giyim/${selectedGender}/`;
     };
 
     return (
@@ -162,10 +185,9 @@ const GenderTabbedNavigation = ({navData}) => {
                                 },
                             }}
                         >
-                            {navData[selectedGender].children.map((category) => {
-
-                                return <CategoryNode key={category.title} gender={navData[selectedGender].title} category={category} />
-                            })}
+                            {navData[selectedGender].children.map((category) => (
+                                <CategoryNode key={category.title} gender={navData[selectedGender].title} category={category} />
+                            ))}
                         </Box>
                     )}
                 </Box>

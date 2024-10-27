@@ -24,6 +24,7 @@ import {
     KeyboardArrowRight
 } from '@mui/icons-material';
 
+// Icon mapping function
 const getIcon = (title) => {
     const iconMap = {
         'Tops': Shirt,
@@ -33,27 +34,24 @@ const getIcon = (title) => {
         'Beauty': Spa,
         'Accessories': Watch,
         'Bags': Backpack,
-        // Add more mappings as needed
     };
-
     const IconComponent = iconMap[title] || Face;
     return <IconComponent fontSize="small" />;
 };
 
-import tabData  from '../components/genderData'
+import tabData from '../components/genderData';
+
 const CategoryNode = ({ category, gender }) => {
-    const MAX_ITEMS_DISPLAY = 5; // Set your limit here
-    const sortedChildren = [...category.children].sort((a, b) =>
-        a.title.localeCompare(b.title)
-    );
+    const MAX_ITEMS_DISPLAY = 5;
+    const sortedChildren = [...category.children].sort((a, b) => a.title.localeCompare(b.title));
 
     const handleShowMoreClick = () => {
-        // Navigate to the URL for showing all items in this category
         window.location.href = `/sponsor-giyim/${gender}/${category.title.replace(' ', '-')}`;
     };
 
     return (
         <Box sx={{ mb: 4 }}>
+         
             <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold', color: 'primary.main' }}>
                 {category.title}
                 <span style={{ fontSize: '0.8rem', color: 'text.secondary', opacity: 0.7 }}>
@@ -124,12 +122,10 @@ const CategoryNode = ({ category, gender }) => {
 };
 
 const GenderTabbedNavigation = ({ navData, selectedGender }) => {
-    //  const [selectedGender, setSelectedGender] = useState(0);
     const theme = useTheme();
 
     const handleChange = (event, index) => {
-        console.log('index', index)
-        const selectedGender = tabData.find(f => f.index === index).urlGender
+        const selectedGender = tabData.find(f => f.index === index).urlGender;
         window.location.href = `/sponsor-giyim/${selectedGender}/`;
     };
 
@@ -172,7 +168,7 @@ const GenderTabbedNavigation = ({ navData, selectedGender }) => {
                         <Box
                             sx={{
                                 columnCount: {
-                                    xs: 2, // Two columns on extra small devices
+                                    xs: 2,
                                     sm: 2,
                                     md: 3,
                                     lg: 4,

@@ -13,8 +13,8 @@ const datas = await getNavigationData({ URI: 'data-sponsor-giyim/unzipped-data/5
 export default function CategoryByBrandPage({ params: { id, gender, kategori, altkategori } }) {
   const genderDecoded = decodeURI(gender)
   const category = decodeURI(kategori).replace('-', ' ')
-  const { details: { children: brands } } = datas.find((f => {
-
+  const { details: { children: brands,title } } = datas.find((f => {
+debugger
     const match = f.uid.includes(id)
 
     return match
@@ -26,7 +26,7 @@ export default function CategoryByBrandPage({ params: { id, gender, kategori, al
   return <Container>
     <SponsorGiyimDrawerContainer selectedGender={selectedGender}>
       <BreadcrumbsComponent urlPath={`/sponsor-giyim/${genderDecoded}/${category}/${subCategori}/${id}`} />
-      <ProductDisplayContainer brands={brands} slug={`/sponsor-giyim/${genderDecoded}/${category}/${id}`} />
+      <ProductDisplayContainer title={title} brands={brands} slug={`/sponsor-giyim/${genderDecoded}/${category}/${id}`} />
     </SponsorGiyimDrawerContainer>
   </Container>
 }
@@ -59,7 +59,6 @@ export async function generateStaticParams() {
 
   }
 
-  debugger
 
   return paramCandidates
 }
