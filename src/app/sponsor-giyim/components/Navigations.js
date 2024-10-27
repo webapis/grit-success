@@ -54,9 +54,7 @@ const CategoryNode = ({ category, gender }) => {
          
             <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold', color: 'primary.main' }}>
                 {category.title}
-                <span style={{ fontSize: '0.8rem', color: 'text.secondary', opacity: 0.7 }}>
-                    ({category.childrenLength} items)
-                </span>
+            
             </Typography>
             <Divider sx={{ mb: 2 }} />
             <Box component="ul" sx={{ listStyleType: 'none', p: 0, m: 0 }}>

@@ -12,7 +12,7 @@ export default function ProductDisplayContainer({ brands,title }) {
         const product = m.children[0]; // Assume each brand has children
  
         return (
-          <Grid item xs={12} sm={6} md={4} lg={2} key={i}> {/* Responsive grid item */}
+          <Grid item xs={6} sm={6} md={4} lg={2} key={i}> {/* Responsive grid item */}
             <ProductDisplay product={product} /> {/* Render your product */}
           </Grid>
         );
