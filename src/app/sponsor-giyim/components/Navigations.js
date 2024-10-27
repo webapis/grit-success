@@ -51,7 +51,7 @@ const CategoryNode = ({ category, gender }) => {
 
     return (
         <Box sx={{ mb: 4 }}>
-            <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold', color: 'primary.main' }}>
+            <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold', color: 'primary.main',fontSize:14, textTransform:'uppercase' }}>
                 {category.title}
             </Typography>
             <Divider sx={{ mb: 2 }} />
@@ -119,8 +119,8 @@ const CategoryNode = ({ category, gender }) => {
                 ))}
             </Box>
             {sortedChildren.length > MAX_ITEMS_DISPLAY && (
-                <Button size='small' onClick={handleShowMoreClick} color="primary">
-                    Show More
+                <Button size='small' onClick={handleShowMoreClick} color="primary" variant='outlined' sx={{textTransform:'capitalize'}}>
+                    Fazla Göster
                 </Button>
             )}
         </Box>
