@@ -98,7 +98,7 @@ const GenderCard = ({ item }) => {
   // Check if the environment is production and gender is 'unrelated'
   const isProduction =  process.env.NEXT_PUBLIC_ENV !=='dev';
   const shouldDisplayCard = !(isProduction && item.gender === 'Unrelated');
-console.log('item.gender',item.gender)
+
   if (!shouldDisplayCard) {
     return null; // Do not render the card in production if gender is 'unrelated'
   }
