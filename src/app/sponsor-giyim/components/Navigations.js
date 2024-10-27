@@ -51,7 +51,7 @@ const CategoryNode = ({ category, gender }) => {
 
     return (
         <Box sx={{ mb: 4 }}>
-            <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold', color: 'primary.main',fontSize:14, textTransform:'uppercase' }}>
+            <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold', color: 'primary.main', fontSize: 14, textTransform: 'uppercase' }}>
                 {category.title}
             </Typography>
             <Divider sx={{ mb: 2 }} />
@@ -119,8 +119,15 @@ const CategoryNode = ({ category, gender }) => {
                 ))}
             </Box>
             {sortedChildren.length > MAX_ITEMS_DISPLAY && (
-                <Button size='small' onClick={handleShowMoreClick} color="primary" variant='outlined' sx={{textTransform:'capitalize'}}>
+                <Button
+                    size='small'
+                    onClick={handleShowMoreClick}
+                    color="primary"
+                    variant='outlined'
+                    sx={{ textTransform: 'capitalize', display: 'flex', alignItems: 'center' }} // Adjusted styles
+                >
                     Fazla Göster
+                    <KeyboardArrowRight sx={{ ml: 1 }} /> {/* Arrow icon added */}
                 </Button>
             )}
         </Box>
@@ -131,9 +138,7 @@ const GenderTabbedNavigation = ({ navData, selectedGender }) => {
     const theme = useTheme();
 
     const handleChange = (event, index) => {
-        const selectedGender = tabData.find(f => f.index === index).urlGender
-
-        debugger
+        const selectedGender = tabData.find(f => f.index === index).urlGender;
         window.location.href = `/sponsor-giyim/${selectedGender}/`;
     };
 
@@ -171,7 +176,7 @@ const GenderTabbedNavigation = ({ navData, selectedGender }) => {
                     }}
                 >
                     {filteredNavData.map((gender, index) => (
-                        <Tab key={gender.title} label={gender.title} sx={{textTransform:'capitalize'}} />
+                        <Tab key={gender.title} label={gender.title} sx={{ textTransform: 'capitalize' }} />
                     ))}
                 </Tabs>
             </Box>
@@ -206,5 +211,3 @@ const GenderTabbedNavigation = ({ navData, selectedGender }) => {
 };
 
 export default GenderTabbedNavigation;
-
-
