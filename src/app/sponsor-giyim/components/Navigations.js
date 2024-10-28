@@ -8,11 +8,12 @@ import {
     Typography,
     useTheme,
     Paper,
-    Fade,
     Button,
     useMediaQuery,
     Badge,
-    Stack
+    Stack,
+    Container,
+    Grid
 } from '@mui/material';
 import {
     Shirt,
@@ -26,8 +27,8 @@ import {
     KeyboardArrowRight,
     KeyboardArrowDown,
 } from '@mui/icons-material';
-
-// Icon mapping
+import tabData  from '../components/genderData'
+// Icon mapping stays the same
 const getIcon = (title) => {
     const iconMap = {
         'Tops': Shirt,
@@ -46,7 +47,9 @@ const getIcon = (title) => {
 const CategoryNode = ({ category, gender }) => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-    const MAX_ITEMS_DISPLAY = isMobile ? 3 : 5;
+    const isTablet = useMediaQuery(theme.breakpoints.down('md'));
+    
+    const MAX_ITEMS_DISPLAY = isMobile ? 3 : isTablet ? 4 : 5;
     
     const [expanded, setExpanded] = React.useState(false);
     const sortedChildren = [...category.children].sort((a, b) => a.title.localeCompare(b.title));
@@ -56,14 +59,15 @@ const CategoryNode = ({ category, gender }) => {
         <Paper 
             elevation={1} 
             sx={{ 
-                mb: 2,
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
                 width: '100%',
-                maxWidth: '100%',
-                overflow: 'hidden' // Prevent content from causing horizontal scroll
+                overflow: 'hidden' // Prevent content overflow
             }}
         >
             <Box sx={{ 
-                p: 2,
+                p: { xs: 1.5, sm: 2 }, // Reduced padding on mobile
                 borderBottom: 1,
                 borderColor: 'divider'
             }}>
@@ -72,7 +76,7 @@ const CategoryNode = ({ category, gender }) => {
                     sx={{ 
                         fontWeight: 600, 
                         color: 'primary.main',
-                        fontSize: isMobile ? 14 : 16,
+                        fontSize: { xs: 14, sm: 16 },
                         textTransform: 'uppercase'
                     }}
                 >
@@ -86,7 +90,7 @@ const CategoryNode = ({ category, gender }) => {
                 </Typography>
             </Box>
 
-            <Stack spacing={0.5}>
+            <Stack spacing={0.5} sx={{ flexGrow: 1, width: '100%' }}>
                 {displayItems.map((item) => (
                     <Box 
                         key={item.uid || item.title}
@@ -103,29 +107,35 @@ const CategoryNode = ({ category, gender }) => {
                                         display: 'flex',
                                         alignItems: 'center',
                                         width: '100%',
-                                        p: 2,
+                                        p: { xs: 1.5, sm: 2 }, // Reduced padding on mobile
                                         color: 'text.primary',
+                                        '&:hover': {
+                                            bgcolor: 'action.hover'
+                                        },
                                         '&:active': {
                                             bgcolor: 'action.selected'
                                         }
                                     }}
                                 >
                                     <Box sx={{ 
-                                        minWidth: 24,
-                                        mr: 2,
+                                        minWidth: { xs: 20, sm: 24 }, // Smaller icons on mobile
+                                        mr: { xs: 1.5, sm: 2 },
                                         color: 'primary.main',
-                                        opacity: 0.7
+                                        opacity: 0.7,
+                                        display: 'flex',
+                                        alignItems: 'center'
                                     }}>
                                         {getIcon(item.title)}
                                     </Box>
                                     <Box sx={{ 
                                         flexGrow: 1,
-                                        minWidth: 0 // Allow text to shrink
+                                        minWidth: 0,
+                                        overflow: 'hidden' // Prevent text overflow
                                     }}>
                                         <Typography 
-                                            noWrap // Prevent text wrapping
+                                            noWrap
                                             sx={{ 
-                                                fontSize: '0.875rem',
+                                                fontSize: { xs: '0.813rem', sm: '0.875rem' },
                                                 fontWeight: 500
                                             }}
                                         >
@@ -135,7 +145,7 @@ const CategoryNode = ({ category, gender }) => {
                                             noWrap
                                             variant="body2"
                                             sx={{ 
-                                                fontSize: '0.75rem',
+                                                fontSize: { xs: '0.75rem', sm: '0.75rem' },
                                                 color: 'text.secondary',
                                             }}
                                         >
@@ -144,9 +154,10 @@ const CategoryNode = ({ category, gender }) => {
                                     </Box>
                                     <KeyboardArrowRight 
                                         sx={{ 
-                                            ml: 1,
-                                            fontSize: 20,
-                                            color: 'primary.main'
+                                            ml: { xs: 0.5, sm: 1 },
+                                            fontSize: { xs: 18, sm: 20 },
+                                            color: 'primary.main',
+                                            flexShrink: 0 // Prevent icon from shrinking
                                         }} 
                                     />
                                 </Box>
@@ -155,25 +166,28 @@ const CategoryNode = ({ category, gender }) => {
                             <Box sx={{ 
                                 display: 'flex', 
                                 alignItems: 'center', 
-                                p: 2,
+                                p: { xs: 1.5, sm: 2 },
                                 opacity: 0.6,
                                 width: '100%'
                             }}>
                                 <Box sx={{ 
-                                    minWidth: 24,
-                                    mr: 2,
-                                    color: 'text.secondary' 
+                                    minWidth: { xs: 20, sm: 24 },
+                                    mr: { xs: 1.5, sm: 2 },
+                                    color: 'text.secondary',
+                                    display: 'flex',
+                                    alignItems: 'center'
                                 }}>
                                     {getIcon(item.title)}
                                 </Box>
                                 <Box sx={{ 
                                     flexGrow: 1,
-                                    minWidth: 0
+                                    minWidth: 0,
+                                    overflow: 'hidden'
                                 }}>
                                     <Typography 
                                         noWrap
                                         color="text.secondary" 
-                                        sx={{ fontSize: '0.875rem' }}
+                                        sx={{ fontSize: { xs: '0.813rem', sm: '0.875rem' } }}
                                     >
                                         {item.title}
                                     </Typography>
@@ -181,7 +195,7 @@ const CategoryNode = ({ category, gender }) => {
                                         noWrap
                                         variant="body2"
                                         sx={{ 
-                                            fontSize: '0.75rem',
+                                            fontSize: { xs: '0.75rem', sm: '0.75rem' },
                                             color: 'text.secondary',
                                         }}
                                     >
@@ -194,7 +208,7 @@ const CategoryNode = ({ category, gender }) => {
                 ))}
             </Stack>
             {sortedChildren.length > MAX_ITEMS_DISPLAY && (
-                <Box sx={{ p: 2 }}>
+                <Box sx={{ p: { xs: 1.5, sm: 2 }, mt: 'auto' }}>
                     <Button 
                         fullWidth
                         size='small' 
@@ -220,7 +234,9 @@ const GenderTabbedNavigation = ({ navData, selectedGender }) => {
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
     const handleChange = (event, index) => {
-        const selectedGender = navData.find(f => f.index === index).urlGender;
+        debugger
+        const selectedGender = tabData.find(f => f.index === index).urlGender;
+        debugger
         window.location.href = `/sponsor-giyim/${selectedGender}/`;
     };
 
@@ -231,8 +247,8 @@ const GenderTabbedNavigation = ({ navData, selectedGender }) => {
     return (
         <Box sx={{ 
             width: '100%',
-            maxWidth: '100vw',
-            overflow: 'hidden' // Prevent any horizontal scroll
+            overflowX: 'hidden',
+            maxWidth: '100vw' // Ensure box doesn't exceed viewport width
         }}>
             <Box sx={{ 
                 borderBottom: 1, 
@@ -241,19 +257,33 @@ const GenderTabbedNavigation = ({ navData, selectedGender }) => {
                 top: 0,
                 bgcolor: 'background.paper',
                 zIndex: 1000,
+                maxWidth: '100%', // Ensure container respects parent width
             }}>
                 <Tabs
                     value={selectedGender}
                     onChange={handleChange}
                     aria-label="gender navigation tabs"
-                    variant="scrollable"
-                    scrollButtons={isMobile ? false : "auto"}
+                    variant={isMobile ? "scrollable" : "standard"} // Always use scrollable on mobile
+                    scrollButtons={false} // Disable scroll buttons on mobile
+                    allowScrollButtonsMobile={false}
                     sx={{
+                        maxWidth: '100%', // Ensure tabs respect container width
+                        '& .MuiTabs-scroller': {
+                            overflow: 'auto !important', // Enable native scrolling
+                            '&::-webkit-scrollbar': { display: 'none' }, // Hide scrollbar for webkit
+                            scrollbarWidth: 'none', // Hide scrollbar for Firefox
+                        },
+                        '& .MuiTabs-flexContainer': {
+                            gap: { xs: 1, sm: 2 }, // Add some spacing between tabs
+                        },
                         '& .MuiTab-root': {
                             fontSize: { xs: '0.875rem', sm: '1rem' },
-                            minHeight: 48,
-                            px: 2,
-                            minWidth: 'auto',
+                            minHeight: { xs: 40, sm: 48 },
+                            padding: { xs: '6px 12px', sm: '12px 16px' }, // Adjust padding instead of using px
+                            minWidth: 'auto', // Allow tabs to shrink
+                            flex: isMobile ? '0 0 auto' : 1, // Make tabs scrollable on mobile
+                            whiteSpace: 'nowrap',
+                            textTransform: 'capitalize',
                         }
                     }}
                 >
@@ -261,29 +291,46 @@ const GenderTabbedNavigation = ({ navData, selectedGender }) => {
                         <Tab 
                             key={gender.title} 
                             label={gender.title}
-                            sx={{
-                                textTransform: 'capitalize',
-                            }}
                         />
                     ))}
                 </Tabs>
             </Box>
 
             <Box sx={{ 
+                width: '100%',
                 px: { xs: 1, sm: 2 },
-                py: 2,
-                maxWidth: '100%'
+                py: { xs: 1, sm: 2 }
             }}>
                 {filteredNavData[selectedGender] && (
-                    <Stack spacing={2} sx={{ width: '100%' }}>
+                    <Grid 
+                        container 
+                        spacing={{ xs: 1, sm: 2, md: 3 }}
+                        sx={{ 
+                            width: '100%', 
+                            m: 0,
+                            maxWidth: '100%' // Ensure grid respects container width
+                        }}
+                    >
                         {filteredNavData[selectedGender].children.map((category) => (
-                            <CategoryNode 
-                                key={category.title} 
-                                gender={filteredNavData[selectedGender].title} 
-                                category={category} 
-                            />
+                            <Grid 
+                                item 
+                                xs={12}
+                                sm={6}
+                                md={4}
+                                lg={3}
+                                key={category.title}
+                                sx={{ 
+                                    width: '100%',
+                                    p: { xs: 1, sm: 2 }
+                                }}
+                            >
+                                <CategoryNode 
+                                    gender={filteredNavData[selectedGender].title} 
+                                    category={category} 
+                                />
+                            </Grid>
                         ))}
-                    </Stack>
+                    </Grid>
                 )}
             </Box>
         </Box>
@@ -291,4 +338,3 @@ const GenderTabbedNavigation = ({ navData, selectedGender }) => {
 };
 
 export default GenderTabbedNavigation;
-
