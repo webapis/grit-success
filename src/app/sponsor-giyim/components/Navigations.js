@@ -9,11 +9,8 @@ import {
     useTheme,
     Paper,
     Fade,
-    Divider,
     Button,
-    IconButton,
     useMediaQuery,
-    Tooltip,
     Badge,
     Stack
 } from '@mui/material';
@@ -28,28 +25,22 @@ import {
     Spa,
     KeyboardArrowRight,
     KeyboardArrowDown,
-    Menu as MenuIcon
 } from '@mui/icons-material';
 
-// Icon mapping with tooltips
+// Icon mapping
 const getIcon = (title) => {
     const iconMap = {
-        'Tops': { icon: Shirt, tooltip: 'Clothing Tops' },
-        'Dresses': { icon: Checkroom, tooltip: 'Dresses Collection' },
-        'Bottoms': { icon: Stairs, tooltip: 'Pants & Bottoms' },
-        'Kids': { icon: ChildFriendly, tooltip: 'Kids Fashion' },
-        'Beauty': { icon: Spa, tooltip: 'Beauty Products' },
-        'Accessories': { icon: Watch, tooltip: 'Fashion Accessories' },
-        'Bags': { icon: Backpack, tooltip: 'Bags & Purses' },
+        'Tops': Shirt,
+        'Dresses': Checkroom,
+        'Bottoms': Stairs,
+        'Kids': ChildFriendly,
+        'Beauty': Spa,
+        'Accessories': Watch,
+        'Bags': Backpack,
     };
     
-    const IconConfig = iconMap[title] || { icon: Face, tooltip: 'Fashion Items' };
-    const IconComponent = IconConfig.icon;
-    
-    return {
-        component: <IconComponent fontSize="small" />,
-        tooltip: IconConfig.tooltip
-    };
+    const IconComponent = iconMap[title] || Face;
+    return <IconComponent fontSize="small" />;
 };
 
 const CategoryNode = ({ category, gender }) => {
@@ -61,30 +52,18 @@ const CategoryNode = ({ category, gender }) => {
     const sortedChildren = [...category.children].sort((a, b) => a.title.localeCompare(b.title));
     const displayItems = expanded ? sortedChildren : sortedChildren.slice(0, MAX_ITEMS_DISPLAY);
 
-    const handleShowMoreClick = () => {
-        if (expanded) {
-            setExpanded(false);
-        } else {
-            setExpanded(true);
-        }
-    };
-
     return (
         <Paper 
             elevation={1} 
             sx={{ 
                 mb: 2,
-                transition: theme.transitions.create(['box-shadow']),
-                '&:hover': {
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.08)'
-                },
-                borderRadius: isMobile ? 1 : theme.shape.borderRadius
+                width: '100%',
+                maxWidth: '100%',
+                overflow: 'hidden' // Prevent content from causing horizontal scroll
             }}
         >
             <Box sx={{ 
-                p: 2, 
-                display: 'flex', 
-                alignItems: 'center',
+                p: 2,
                 borderBottom: 1,
                 borderColor: 'divider'
             }}>
@@ -94,8 +73,7 @@ const CategoryNode = ({ category, gender }) => {
                         fontWeight: 600, 
                         color: 'primary.main',
                         fontSize: isMobile ? 14 : 16,
-                        textTransform: 'uppercase',
-                        flexGrow: 1
+                        textTransform: 'uppercase'
                     }}
                 >
                     <Badge 
@@ -108,71 +86,66 @@ const CategoryNode = ({ category, gender }) => {
                 </Typography>
             </Box>
 
-            <Stack spacing={0.5} sx={{ p: 1 }}>
+            <Stack spacing={0.5}>
                 {displayItems.map((item) => (
                     <Box 
                         key={item.uid || item.title}
-                        sx={{ 
-                            '&:last-child': { mb: 0 }
-                        }}
+                        sx={{ width: '100%' }}
                     >
                         {item.uid ? (
                             <Link 
                                 href={`/sponsor-giyim/${gender}/${category.title.replace(' ', '-')}/${item.title.replace(' ', '-')}/${item.uid}`} 
                                 passHref 
-                                style={{ textDecoration: 'none' }}
+                                style={{ textDecoration: 'none', display: 'block', width: '100%' }}
                             >
                                 <Box
                                     sx={{
                                         display: 'flex',
                                         alignItems: 'center',
+                                        width: '100%',
+                                        p: 2,
                                         color: 'text.primary',
-                                        cursor: 'pointer',
-                                        p: 1.5,
-                                        borderRadius: 1,
-                                        transition: theme.transitions.create(['background-color', 'color']),
-                                        '&:hover': {
-                                            bgcolor: theme.palette.action.hover,
-                                            '& .MuiTypography-root': {
-                                                color: 'primary.main'
-                                            },
-                                            '& .hover-icon': {
-                                                opacity: 1,
-                                            }
+                                        '&:active': {
+                                            bgcolor: 'action.selected'
                                         }
                                     }}
                                 >
                                     <Box sx={{ 
-                                        mr: 2, 
-                                        display: 'flex', 
-                                        alignItems: 'center',
+                                        minWidth: 24,
+                                        mr: 2,
                                         color: 'primary.main',
                                         opacity: 0.7
                                     }}>
-                                        {getIcon(item.title).component}
+                                        {getIcon(item.title)}
                                     </Box>
-                                    <Box sx={{ flexGrow: 1 }}>
-                                        <Typography sx={{ 
-                                            fontSize: '0.875rem',
-                                            fontWeight: 500
-                                        }}>
+                                    <Box sx={{ 
+                                        flexGrow: 1,
+                                        minWidth: 0 // Allow text to shrink
+                                    }}>
+                                        <Typography 
+                                            noWrap // Prevent text wrapping
+                                            sx={{ 
+                                                fontSize: '0.875rem',
+                                                fontWeight: 500
+                                            }}
+                                        >
                                             {item.title}
                                         </Typography>
                                         <Typography
+                                            noWrap
                                             variant="body2"
                                             sx={{ 
                                                 fontSize: '0.75rem',
                                                 color: 'text.secondary',
-                                                opacity: 0.7
                                             }}
                                         >
                                             {item.childrenLength} marka
                                         </Typography>
                                     </Box>
                                     <KeyboardArrowRight 
-                                        className="hover-icon"
                                         sx={{ 
-                                            opacity: isMobile ? 1 : 0,
+                                            ml: 1,
+                                            fontSize: 20,
                                             color: 'primary.main'
                                         }} 
                                     />
@@ -182,27 +155,34 @@ const CategoryNode = ({ category, gender }) => {
                             <Box sx={{ 
                                 display: 'flex', 
                                 alignItems: 'center', 
-                                p: 1.5,
-                                opacity: 0.6
+                                p: 2,
+                                opacity: 0.6,
+                                width: '100%'
                             }}>
                                 <Box sx={{ 
-                                    mr: 2, 
-                                    display: 'flex', 
-                                    alignItems: 'center', 
+                                    minWidth: 24,
+                                    mr: 2,
                                     color: 'text.secondary' 
                                 }}>
-                                    {getIcon(item.title).component}
+                                    {getIcon(item.title)}
                                 </Box>
-                                <Box sx={{ flexGrow: 1 }}>
-                                    <Typography color="text.secondary" sx={{ fontSize: '0.875rem' }}>
+                                <Box sx={{ 
+                                    flexGrow: 1,
+                                    minWidth: 0
+                                }}>
+                                    <Typography 
+                                        noWrap
+                                        color="text.secondary" 
+                                        sx={{ fontSize: '0.875rem' }}
+                                    >
                                         {item.title}
                                     </Typography>
                                     <Typography
+                                        noWrap
                                         variant="body2"
                                         sx={{ 
                                             fontSize: '0.75rem',
                                             color: 'text.secondary',
-                                            opacity: 0.7
                                         }}
                                     >
                                         ({item.childrenLength} marka)
@@ -214,13 +194,13 @@ const CategoryNode = ({ category, gender }) => {
                 ))}
             </Stack>
             {sortedChildren.length > MAX_ITEMS_DISPLAY && (
-                <Box sx={{ p: 1.5, textAlign: 'center' }}>
+                <Box sx={{ p: 2 }}>
                     <Button 
-                        fullWidth={isMobile}
+                        fullWidth
                         size='small' 
-                        onClick={handleShowMoreClick}
+                        onClick={() => setExpanded(!expanded)}
                         color="primary"
-                        variant='text'
+                        variant='outlined'
                         endIcon={expanded ? <KeyboardArrowDown /> : <KeyboardArrowRight />}
                         sx={{
                             textTransform: 'capitalize',
@@ -249,48 +229,31 @@ const GenderTabbedNavigation = ({ navData, selectedGender }) => {
         : navData.filter(gender => gender.title !== 'unrelated');
 
     return (
-        <Paper 
-            elevation={0} 
-            sx={{ 
-                width: '100%',
-                overflow: 'hidden',
-                bgcolor: 'background.default'
-            }}
-        >
-            <Box 
-                sx={{ 
-                    borderBottom: 1, 
-                    borderColor: 'divider',
-                    position: 'sticky',
-                    top: 0,
-                    bgcolor: 'background.paper',
-                    zIndex: 1000
-                }}
-            >
+        <Box sx={{ 
+            width: '100%',
+            maxWidth: '100vw',
+            overflow: 'hidden' // Prevent any horizontal scroll
+        }}>
+            <Box sx={{ 
+                borderBottom: 1, 
+                borderColor: 'divider',
+                position: 'sticky',
+                top: 0,
+                bgcolor: 'background.paper',
+                zIndex: 1000,
+            }}>
                 <Tabs
                     value={selectedGender}
                     onChange={handleChange}
                     aria-label="gender navigation tabs"
                     variant="scrollable"
-                    scrollButtons="auto"
-                    allowScrollButtonsMobile
+                    scrollButtons={isMobile ? false : "auto"}
                     sx={{
-                        '& .MuiTabs-scrollButtons': {
-                            '&.Mui-disabled': { opacity: 0.3 }
-                        },
                         '& .MuiTab-root': {
-                            fontWeight: 600,
                             fontSize: { xs: '0.875rem', sm: '1rem' },
-                            minWidth: { xs: '100px', sm: '160px' },
-                            minHeight: isMobile ? 48 : 56,
-                            transition: theme.transitions.create(['background-color', 'color']),
-                            '&:hover': {
-                                bgcolor: 'action.hover',
-                                color: 'primary.main'
-                            },
-                            '&.Mui-selected': {
-                                color: 'primary.main'
-                            }
+                            minHeight: 48,
+                            px: 2,
+                            minWidth: 'auto',
                         }
                     }}
                 >
@@ -305,35 +268,25 @@ const GenderTabbedNavigation = ({ navData, selectedGender }) => {
                     ))}
                 </Tabs>
             </Box>
-            <Fade in={true} timeout={500}>
-                <Box sx={{ 
-                    p: isMobile ? 1 : 2,
-                }}>
-                    {filteredNavData[selectedGender] && (
-                        <Box
-                            sx={{
-                                display: 'grid',
-                                gridTemplateColumns: {
-                                    xs: '1fr',  // Single column for mobile
-                                    sm: 'repeat(2, 1fr)',
-                                    md: 'repeat(3, 1fr)',
-                                    lg: 'repeat(4, 1fr)',
-                                },
-                                gap: { xs: 1, sm: 2, md: 3 },
-                            }}
-                        >
-                            {filteredNavData[selectedGender].children.map((category) => (
-                                <CategoryNode 
-                                    key={category.title} 
-                                    gender={filteredNavData[selectedGender].title} 
-                                    category={category} 
-                                />
-                            ))}
-                        </Box>
-                    )}
-                </Box>
-            </Fade>
-        </Paper>
+
+            <Box sx={{ 
+                px: { xs: 1, sm: 2 },
+                py: 2,
+                maxWidth: '100%'
+            }}>
+                {filteredNavData[selectedGender] && (
+                    <Stack spacing={2} sx={{ width: '100%' }}>
+                        {filteredNavData[selectedGender].children.map((category) => (
+                            <CategoryNode 
+                                key={category.title} 
+                                gender={filteredNavData[selectedGender].title} 
+                                category={category} 
+                            />
+                        ))}
+                    </Stack>
+                )}
+            </Box>
+        </Box>
     );
 };
 
