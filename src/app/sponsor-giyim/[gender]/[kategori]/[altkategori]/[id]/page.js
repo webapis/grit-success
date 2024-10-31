@@ -14,7 +14,7 @@ export default function CategoryByBrandPage({ params: { id, gender, kategori, al
   const genderDecoded = decodeURI(gender)
   const category = decodeURI(kategori).replace('-', ' ')
   const { details: { children: brands,title } } = datas.find((f => {
-debugger
+
     const match = f.uid.includes(id)
 
     return match
