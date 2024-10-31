@@ -21,7 +21,7 @@ const getCategoryData = (genderDecoded, kategoriDecoded) => {
 export default function Page({ params: { gender, kategori, id } }) {
   const genderDecoded = decodeURI(gender);
   const kategoriDecoded = decodeURI(kategori).replace('-', ' ').toLowerCase();
-  const selectedGender = genderData.find(f => f.urlGender === genderDecoded)?.index;
+  const selectedGender = genderData.find(f => f.urlGender === genderDecoded)?.urlGender;
   const genderDecodedData = getCategoryData(genderDecoded, kategoriDecoded);
 
   if (!genderDecodedData) {

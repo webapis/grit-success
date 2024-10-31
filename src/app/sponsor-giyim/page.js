@@ -8,8 +8,8 @@ export default function SponsorGiyim(props) {
 
     debugger
     return <Container>
-        <SponsorGiyimDrawerContainer selectedGender={0}>
-            <Application {...props} selectedGender={0} />
+        <SponsorGiyimDrawerContainer selectedGender={'kadın'}>
+            <Application {...props} selectedGender={'kadın'} />
         </SponsorGiyimDrawerContainer>
     </Container>
 }

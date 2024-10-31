@@ -43,17 +43,17 @@ const getIcon = (title) => {
     return <IconComponent fontSize="small" />;
 };
 
-const CategoryItem = ({ category, gender }) => {
+const CategoryItem = ({ category, gender, key }) => {
     const [open, setOpen] = React.useState(false);
     const MAX_ITEMS_DISPLAY = 5;
-
+    debugger
     const sortedChildren = [...category.children].sort((a, b) =>
         a.title.localeCompare(b.title)
     );
 
     return (
         <>
-            <ListItem 
+            <ListItem
                 disablePadding
                 secondaryAction={
                     <Typography variant="caption" color="text.secondary" sx={{ ml: 1, minWidth: '3rem' }}>
@@ -65,7 +65,7 @@ const CategoryItem = ({ category, gender }) => {
                     <ListItemIcon sx={{ minWidth: 40 }}>
                         {getIcon(category.title)}
                     </ListItemIcon>
-                    <ListItemText 
+                    <ListItemText
                         primary={category.title}
                         primaryTypographyProps={{
                             variant: 'body2',
@@ -78,19 +78,20 @@ const CategoryItem = ({ category, gender }) => {
             </ListItem>
             <Collapse in={open} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
-                    {sortedChildren.slice(0, MAX_ITEMS_DISPLAY).map((item) => (
-                        <ListItem 
-                            key={item.uid || item.title} 
+                    {sortedChildren.slice(0, MAX_ITEMS_DISPLAY).map((item) => {
+                        debugger
+                        return <ListItem
+                            key={item.uid || item.title}
                             disablePadding
                             sx={{ pl: 4 }}
                         >
                             {item.uid ? (
-                                <Link 
-                                    href={`/sponsor-giyim/${gender}/${category.title.replace(' ', '-')}/${item.uid}`}
+                                <Link
+                                    href={`/sponsor-giyim/${gender.replace(' ','-').toLowerCase()}/${category.title.replace(' ', '-')}/${item.title}/${item.uid}`}
                                     style={{ textDecoration: 'none', width: '100%' }}
                                 >
                                     <ListItemButton>
-                                        <ListItemText 
+                                        <ListItemText
                                             primary={item.title}
                                             secondary={`${item.childrenLength} marka`}
                                             primaryTypographyProps={{
@@ -102,7 +103,7 @@ const CategoryItem = ({ category, gender }) => {
                                                 noWrap: true
                                             }}
                                         />
-                                        <KeyboardArrowRight 
+                                        <KeyboardArrowRight
                                             fontSize="small"
                                             sx={{ opacity: 0.5, ml: 1 }}
                                         />
@@ -110,7 +111,7 @@ const CategoryItem = ({ category, gender }) => {
                                 </Link>
                             ) : (
                                 <ListItemButton disabled>
-                                    <ListItemText 
+                                    <ListItemText
                                         primary={item.title}
                                         secondary={`${item.childrenLength} marka`}
                                         primaryTypographyProps={{
@@ -125,15 +126,15 @@ const CategoryItem = ({ category, gender }) => {
                                 </ListItemButton>
                             )}
                         </ListItem>
-                    ))}
+                    })}
                     {sortedChildren.length > MAX_ITEMS_DISPLAY && (
                         <ListItem sx={{ pl: 4 }}>
-                            <Link 
+                            <Link
                                 href={`/sponsor-giyim/${gender}/${category.title.replace(' ', '-')}`}
                                 style={{ textDecoration: 'none', width: '100%' }}
                             >
                                 <ListItemButton>
-                                    <ListItemText 
+                                    <ListItemText
                                         primary="Show More"
                                         primaryTypographyProps={{
                                             variant: 'body2',
@@ -152,21 +153,23 @@ const CategoryItem = ({ category, gender }) => {
 };
 
 const DrawerNavigation = ({ navData, selectedGender }) => {
-    const handleGenderChange = (event, newValue) => {
-        const selectedGender = navData[newValue].title.toLowerCase();
+
+    const handleGenderChange = (event, selectedGender) => {
+
         window.location.href = `/sponsor-giyim/${selectedGender}/`;
+
     };
 
     return (
         <Box sx={{ width: '100%' }}>
-            <Box sx={{ 
-                borderBottom: 1, 
-                borderColor: 'divider', 
+            <Box sx={{
+                borderBottom: 1,
+                borderColor: 'divider',
                 mb: 2,
                 position: 'relative'
             }}>
-                <Tabs 
-                    value={selectedGender} 
+                <Tabs
+                    value={selectedGender}
                     onChange={handleGenderChange}
                     variant="scrollable"
                     scrollButtons="auto"
@@ -196,8 +199,9 @@ const DrawerNavigation = ({ navData, selectedGender }) => {
                     }}
                 >
                     {navData.map((gender, index) => (
-                        <Tab 
-                            key={gender.title} 
+                        <Tab
+                            value={gender.title.replace(' ', '-').toLowerCase()}
+                            key={gender.title}
                             label={gender.title}
                             id={`gender-tab-${index}`}
                             aria-controls={`gender-tabpanel-${index}`}
@@ -205,7 +209,7 @@ const DrawerNavigation = ({ navData, selectedGender }) => {
                     ))}
                 </Tabs>
             </Box>
-            
+
             <Box
                 role="tabpanel"
                 hidden={false}
@@ -219,13 +223,14 @@ const DrawerNavigation = ({ navData, selectedGender }) => {
                         p: 0
                     }}
                 >
-                    {navData[selectedGender]?.children.map((category) => (
-                        <CategoryItem 
-                            key={category.title} 
-                            category={category} 
-                            gender={navData[selectedGender].title}
+                    {navData.find((f => f.title.replace(' ', '-').toLowerCase() === selectedGender))?.children.map((category) => {
+
+                        return <CategoryItem
+                            key={category.title}
+                            category={category}
+                            gender={navData.find((f => f.title.replace(' ', '-').toLowerCase() === selectedGender)).title}
                         />
-                    ))}
+                    })}
                 </List>
             </Box>
         </Box>

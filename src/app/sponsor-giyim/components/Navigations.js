@@ -27,7 +27,7 @@ import {
     KeyboardArrowRight,
     KeyboardArrowDown,
 } from '@mui/icons-material';
-import tabData  from '../components/genderData'
+import tabData from '../components/genderData'
 // Icon mapping stays the same
 const getIcon = (title) => {
     const iconMap = {
@@ -39,7 +39,7 @@ const getIcon = (title) => {
         'Accessories': Watch,
         'Bags': Backpack,
     };
-    
+
     const IconComponent = iconMap[title] || Face;
     return <IconComponent fontSize="small" />;
 };
@@ -48,17 +48,17 @@ const CategoryNode = ({ category, gender }) => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
     const isTablet = useMediaQuery(theme.breakpoints.down('md'));
-    
+
     const MAX_ITEMS_DISPLAY = isMobile ? 3 : isTablet ? 4 : 5;
-    
+
     const [expanded, setExpanded] = React.useState(false);
     const sortedChildren = [...category.children].sort((a, b) => a.title.localeCompare(b.title));
     const displayItems = expanded ? sortedChildren : sortedChildren.slice(0, MAX_ITEMS_DISPLAY);
 
     return (
-        <Paper 
-            elevation={1} 
-            sx={{ 
+        <Paper
+            elevation={1}
+            sx={{
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
@@ -66,22 +66,22 @@ const CategoryNode = ({ category, gender }) => {
                 overflow: 'hidden' // Prevent content overflow
             }}
         >
-            <Box sx={{ 
+            <Box sx={{
                 p: { xs: 1.5, sm: 2 }, // Reduced padding on mobile
                 borderBottom: 1,
                 borderColor: 'divider'
             }}>
-                <Typography 
-                    variant="h6" 
-                    sx={{ 
-                        fontWeight: 600, 
+                <Typography
+                    variant="h6"
+                    sx={{
+                        fontWeight: 600,
                         color: 'primary.main',
                         fontSize: { xs: 14, sm: 16 },
                         textTransform: 'uppercase'
                     }}
                 >
-                    <Badge 
-                        badgeContent={category.children.length} 
+                    <Badge
+                        badgeContent={category.children.length}
                         color="primary"
                         sx={{ '& .MuiBadge-badge': { fontSize: '0.6rem' } }}
                     >
@@ -92,14 +92,14 @@ const CategoryNode = ({ category, gender }) => {
 
             <Stack spacing={0.5} sx={{ flexGrow: 1, width: '100%' }}>
                 {displayItems.map((item) => (
-                    <Box 
+                    <Box
                         key={item.uid || item.title}
                         sx={{ width: '100%' }}
                     >
                         {item.uid ? (
-                            <Link 
-                                href={`/sponsor-giyim/${gender}/${category.title.replace(' ', '-')}/${item.title.replace(' ', '-')}/${item.uid}`} 
-                                passHref 
+                            <Link
+                                href={`/sponsor-giyim/${gender}/${category.title.replace(' ', '-')}/${item.title.replace(' ', '-')}/${item.uid}`}
+                                passHref
                                 style={{ textDecoration: 'none', display: 'block', width: '100%' }}
                             >
                                 <Box
@@ -117,7 +117,7 @@ const CategoryNode = ({ category, gender }) => {
                                         }
                                     }}
                                 >
-                                    <Box sx={{ 
+                                    <Box sx={{
                                         minWidth: { xs: 20, sm: 24 }, // Smaller icons on mobile
                                         mr: { xs: 1.5, sm: 2 },
                                         color: 'primary.main',
@@ -127,14 +127,14 @@ const CategoryNode = ({ category, gender }) => {
                                     }}>
                                         {getIcon(item.title)}
                                     </Box>
-                                    <Box sx={{ 
+                                    <Box sx={{
                                         flexGrow: 1,
                                         minWidth: 0,
                                         overflow: 'hidden' // Prevent text overflow
                                     }}>
-                                        <Typography 
+                                        <Typography
                                             noWrap
-                                            sx={{ 
+                                            sx={{
                                                 fontSize: { xs: '0.813rem', sm: '0.875rem' },
                                                 fontWeight: 500
                                             }}
@@ -144,7 +144,7 @@ const CategoryNode = ({ category, gender }) => {
                                         <Typography
                                             noWrap
                                             variant="body2"
-                                            sx={{ 
+                                            sx={{
                                                 fontSize: { xs: '0.75rem', sm: '0.75rem' },
                                                 color: 'text.secondary',
                                             }}
@@ -152,25 +152,25 @@ const CategoryNode = ({ category, gender }) => {
                                             {item.childrenLength} marka
                                         </Typography>
                                     </Box>
-                                    <KeyboardArrowRight 
-                                        sx={{ 
+                                    <KeyboardArrowRight
+                                        sx={{
                                             ml: { xs: 0.5, sm: 1 },
                                             fontSize: { xs: 18, sm: 20 },
                                             color: 'primary.main',
                                             flexShrink: 0 // Prevent icon from shrinking
-                                        }} 
+                                        }}
                                     />
                                 </Box>
                             </Link>
                         ) : (
-                            <Box sx={{ 
-                                display: 'flex', 
-                                alignItems: 'center', 
+                            <Box sx={{
+                                display: 'flex',
+                                alignItems: 'center',
                                 p: { xs: 1.5, sm: 2 },
                                 opacity: 0.6,
                                 width: '100%'
                             }}>
-                                <Box sx={{ 
+                                <Box sx={{
                                     minWidth: { xs: 20, sm: 24 },
                                     mr: { xs: 1.5, sm: 2 },
                                     color: 'text.secondary',
@@ -179,14 +179,14 @@ const CategoryNode = ({ category, gender }) => {
                                 }}>
                                     {getIcon(item.title)}
                                 </Box>
-                                <Box sx={{ 
+                                <Box sx={{
                                     flexGrow: 1,
                                     minWidth: 0,
                                     overflow: 'hidden'
                                 }}>
-                                    <Typography 
+                                    <Typography
                                         noWrap
-                                        color="text.secondary" 
+                                        color="text.secondary"
                                         sx={{ fontSize: { xs: '0.813rem', sm: '0.875rem' } }}
                                     >
                                         {item.title}
@@ -194,7 +194,7 @@ const CategoryNode = ({ category, gender }) => {
                                     <Typography
                                         noWrap
                                         variant="body2"
-                                        sx={{ 
+                                        sx={{
                                             fontSize: { xs: '0.75rem', sm: '0.75rem' },
                                             color: 'text.secondary',
                                         }}
@@ -209,9 +209,9 @@ const CategoryNode = ({ category, gender }) => {
             </Stack>
             {sortedChildren.length > MAX_ITEMS_DISPLAY && (
                 <Box sx={{ p: { xs: 1.5, sm: 2 }, mt: 'auto' }}>
-                    <Button 
+                    <Button
                         fullWidth
-                        size='small' 
+                        size='small'
                         onClick={() => setExpanded(!expanded)}
                         color="primary"
                         variant='outlined'
@@ -233,11 +233,11 @@ const GenderTabbedNavigation = ({ navData, selectedGender }) => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
-    const handleChange = (event, index) => {
+    const handleChange = (event, urlGender) => {
         debugger
-        const selectedGender = tabData.find(f => f.index === index).urlGender;
+        //  const selectedGender = tabData.find(f => f.index === index).urlGender;
         debugger
-        window.location.href = `/sponsor-giyim/${selectedGender}/`;
+        window.location.href = `/sponsor-giyim/${urlGender}/`;
     };
 
     const filteredNavData = process.env.NEXT_PUBLIC_ENV === 'dev'
@@ -245,13 +245,13 @@ const GenderTabbedNavigation = ({ navData, selectedGender }) => {
         : navData.filter(gender => gender.title !== 'unrelated');
 
     return (
-        <Box sx={{ 
+        <Box sx={{
             width: '100%',
             overflowX: 'hidden',
             maxWidth: '100vw' // Ensure box doesn't exceed viewport width
         }}>
-            <Box sx={{ 
-                borderBottom: 1, 
+            <Box sx={{
+                borderBottom: 1,
                 borderColor: 'divider',
                 position: 'sticky',
                 top: 0,
@@ -287,46 +287,48 @@ const GenderTabbedNavigation = ({ navData, selectedGender }) => {
                         }
                     }}
                 >
-                    {filteredNavData.map((gender) => (
-                        <Tab 
-                            key={gender.title} 
+                    {filteredNavData.map((gender) => {
+                
+                        return <Tab
+                            value={gender.title.replace(' ','-').toLowerCase()}
+                            key={gender.title}
                             label={gender.title}
                         />
-                    ))}
+                    })}
                 </Tabs>
             </Box>
 
-            <Box sx={{ 
+            <Box sx={{
                 width: '100%',
                 px: { xs: 1, sm: 2 },
                 py: { xs: 1, sm: 2 }
             }}>
-                {filteredNavData[selectedGender] && (
-                    <Grid 
-                        container 
+                {filteredNavData.find((f=>f.title.replace(' ','-').toLowerCase()===selectedGender)) && (
+                    <Grid
+                        container
                         spacing={{ xs: 1, sm: 2, md: 3 }}
-                        sx={{ 
-                            width: '100%', 
+                        sx={{
+                            width: '100%',
                             m: 0,
                             maxWidth: '100%' // Ensure grid respects container width
                         }}
                     >
-                        {filteredNavData[selectedGender].children.map((category) => (
-                            <Grid 
-                                item 
+                        {filteredNavData.find((f=>f.title.replace(' ','-').toLowerCase()===selectedGender)).children.map((category) => (
+                            <Grid
+                                item
                                 xs={12}
                                 sm={6}
                                 md={4}
                                 lg={3}
                                 key={category.title}
-                                sx={{ 
+                                sx={{
                                     width: '100%',
                                     p: { xs: 1, sm: 2 }
                                 }}
                             >
-                                <CategoryNode 
-                                    gender={filteredNavData[selectedGender].title} 
-                                    category={category} 
+                                <CategoryNode
+                                    gender={filteredNavData.find((f=>f.title.replace(' ','-').toLowerCase()===selectedGender)).title}
+                                    category={category}
                                 />
                             </Grid>
                         ))}

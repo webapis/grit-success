@@ -18,9 +18,9 @@ export default async function Home(props) {
 
 
   return <>
-         <TopNavigation selected={0} />
-    <SponsorGiyimDrawerContainer selectedGender={0}>
- 
+    <TopNavigation selected={'kadın'} />
+    <SponsorGiyimDrawerContainer selectedGender={'kadın'}>
+
       <GenderCards />
     </SponsorGiyimDrawerContainer>
 

@@ -9,8 +9,8 @@ import genderData from '../components/genderData'
 export default function SponsorGiyim(props) {
     const { params: { gender } } = props
 
-  
-    const selectedGender = genderData.find(f => f.urlGender === decodeURI(gender)).index
+
+    const selectedGender = genderData.find(f => f.urlGender === decodeURI(gender)).urlGender
 
     return <>
         <SponsorGiyimDrawerContainer title="Sponsor Giyim" selectedGender={selectedGender}>

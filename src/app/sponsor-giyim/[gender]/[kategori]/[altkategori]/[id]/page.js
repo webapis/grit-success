@@ -21,7 +21,7 @@ debugger
   }))
   const subCategori = decodeURI(altkategori)
 
-  const selectedGender = genderData.find(f => f.urlGender === decodeURI(genderDecoded)).index
+  const selectedGender = genderData.find(f => f.urlGender === decodeURI(genderDecoded)).urlGender
 
   return <Container>
     <SponsorGiyimDrawerContainer selectedGender={selectedGender}>
