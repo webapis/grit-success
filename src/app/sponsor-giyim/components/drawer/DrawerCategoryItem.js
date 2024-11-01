@@ -28,6 +28,8 @@ import {
     KeyboardArrowRight
 } from '@mui/icons-material';
 
+
+const isDevelopment = process.env.NEXT_PUBLIC_ENV === 'dev';
 const getIcon = (title) => {
     const iconMap = {
         'Tops': Shirt,
@@ -50,7 +52,9 @@ export default function CategoryItem({ category, gender }) {
     const sortedChildren = [...category.children].sort((a, b) =>
         a.title.localeCompare(b.title)
     );
-
+    const filteredItems = sortedChildren.filter(item => {
+        return item.childrenLength >= 5 || isDevelopment;
+    });
     return (
         <>
             <ListItem
@@ -78,7 +82,7 @@ export default function CategoryItem({ category, gender }) {
             </ListItem>
             <Collapse in={open} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
-                    {sortedChildren.slice(0, MAX_ITEMS_DISPLAY).map((item) => (
+                    {filteredItems.slice(0, MAX_ITEMS_DISPLAY).map((item) => (
                         <ListItem
                             key={item.uid || item.title}
                             disablePadding
@@ -126,7 +130,7 @@ export default function CategoryItem({ category, gender }) {
                             )}
                         </ListItem>
                     ))}
-                    {sortedChildren.length > MAX_ITEMS_DISPLAY && (
+                    {filteredItems.length > MAX_ITEMS_DISPLAY && (
                         <ListItem sx={{ pl: 4 }}>
                             <Link
                                 href={`/sponsor-giyim/${gender}/${category.title.replace(' ', '-')}`}

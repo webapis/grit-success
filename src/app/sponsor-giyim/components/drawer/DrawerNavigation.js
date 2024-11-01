@@ -3,7 +3,7 @@ import React from 'react';
 import { Box, List } from '@mui/material';
 import DrawerTabs from './DrawerTabs';
 import CategoryItem from './DrawerCategoryItem';
-
+const isDevelopment = process.env.NEXT_PUBLIC_ENV === 'dev';
 // Server Component
 export default function DrawerNavigation({ navData, selectedGender }) {
     const selectedGenderData = navData.find(
