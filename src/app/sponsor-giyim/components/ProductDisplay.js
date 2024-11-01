@@ -57,11 +57,11 @@ const ProductDisplay = React.memo(({ product }) => {
       />
       <CardContent>
         <Box sx={{ mb: 2 }}>
-          <Typography id={`product-${product.id}`} variant="h6" component="h2" gutterBottom>
-            {product.h4}
+          <Typography id={`product-${product.id}`} variant="body2" component="h2" gutterBottom>
+            {isDevEnvironment ?product.h4:''}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {product.description}
+          <Typography variant="caption" color="text.secondary">
+            {isDevEnvironment ? product.title:''}
           </Typography>
         </Box>
         <Link href={product.pageURL} passHref target='_blank'>
