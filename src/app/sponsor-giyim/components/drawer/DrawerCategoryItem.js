@@ -50,7 +50,9 @@ export default function CategoryItem({ category, gender }) {
     const [expanded, setExpanded] = React.useState(false);
     const MAX_ITEMS_DISPLAY = 5;
     
-    const sortedChildren = [...category.children].sort((a, b) =>
+    const sortedChildren = [...category.children].filter(item => {
+        return item.childrenLength >= 5 || isDevelopment;
+    }).sort((a, b) =>
         a.title.localeCompare(b.title)
     );
     const filteredItems = sortedChildren.filter(item => {
@@ -69,7 +71,7 @@ export default function CategoryItem({ category, gender }) {
                 disablePadding
                 secondaryAction={
                     <Typography variant="caption" color="text.secondary" sx={{ ml: 1, minWidth: '3rem' }}>
-                        ({category.childrenLength})
+                        ({sortedChildren.length})
                     </Typography>
                 }
             >

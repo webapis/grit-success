@@ -1,3 +1,7 @@
+/*
+need to update containerHeight. depending on category.children.length containerHeight's height should fit for displaying upto 6 items. items coming
+after 6th will be displayed when scrolling enabled by clicking show more button.
+*/
 'use client'
 import React from 'react';
 import Link from 'next/link';
@@ -48,10 +52,11 @@ export default function CategoryNode({ category, gender }) {
     const [expanded, setExpanded] = React.useState(false);
 
     const MAX_ITEMS_DISPLAY = isMobile ? 3 : isTablet ? 4 : 5;
-    const sortedChildren = [...category.children].filter(item => {
-        return item.childrenLength >= 5 || isDevelopment;
-    }).sort((a, b) => a.title.localeCompare(b.title));
+    const sortedChildren = [...category.children].sort((a, b) => a.title.localeCompare(b.title));
     const displayItems = expanded ? sortedChildren : sortedChildren.slice(0, MAX_ITEMS_DISPLAY);
+    const filteredItems = displayItems.filter(item => {
+        return item.childrenLength >= 5 || isDevelopment;
+    });
 
     // Calculate approximate height based on item count and padding
     const itemHeight = isMobile ? 72 : 88; // Adjusted for padding and content
@@ -83,7 +88,7 @@ export default function CategoryNode({ category, gender }) {
                     }}
                 >
                     <Badge
-                        badgeContent={sortedChildren.length}
+                        badgeContent={category.children.length}
                         color="primary"
                         sx={{ '& .MuiBadge-badge': { fontSize: '0.6rem' } }}
                     >
@@ -114,7 +119,7 @@ export default function CategoryNode({ category, gender }) {
                     }
                 }}
             >
-                {displayItems.map((item) => (
+                {filteredItems.map((item) => (
                     <Box
                         key={item.uid || item.title}
                         sx={{ width: '100%', flexShrink: 0 }}
