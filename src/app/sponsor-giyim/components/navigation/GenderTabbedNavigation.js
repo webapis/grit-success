@@ -1,6 +1,6 @@
 // components/navigation/GenderTabbedNavigation.jsx
 import React from 'react';
-import { Box, Grid, Container } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 import CategoryNode from './CategoryNode';
 import TabNavigation from './TabNavigation';
 
@@ -40,7 +40,7 @@ export default function GenderTabbedNavigation({ navData, selectedGender }) {
                             maxWidth: '100%'
                         }}
                     >
-                        {selectedGenderData.children.map((category) => (
+                        {selectedGenderData.children.sort((a,b)=> b.children.length- a.children.length).map((category) => (
                             <Grid
                                 item
                                 xs={12}
