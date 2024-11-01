@@ -13,6 +13,7 @@ import {
     Collapse,
     Typography,
     Divider,
+    Box,
 } from '@mui/material';
 import {
     Shirt,
@@ -27,7 +28,6 @@ import {
     ExpandMore,
     KeyboardArrowRight
 } from '@mui/icons-material';
-
 
 const isDevelopment = process.env.NEXT_PUBLIC_ENV === 'dev';
 const getIcon = (title) => {
@@ -47,6 +47,7 @@ const getIcon = (title) => {
 
 export default function CategoryItem({ category, gender }) {
     const [open, setOpen] = React.useState(false);
+    const [expanded, setExpanded] = React.useState(false);
     const MAX_ITEMS_DISPLAY = 5;
     
     const sortedChildren = [...category.children].sort((a, b) =>
@@ -55,6 +56,13 @@ export default function CategoryItem({ category, gender }) {
     const filteredItems = sortedChildren.filter(item => {
         return item.childrenLength >= 5 || isDevelopment;
     });
+
+    const displayItems = expanded ? filteredItems : filteredItems.slice(0, MAX_ITEMS_DISPLAY);
+    
+    // Calculate approximate height for the collapsed list
+    const itemHeight = 48; // Standard MUI ListItem height
+    const containerHeight = (MAX_ITEMS_DISPLAY * itemHeight);
+
     return (
         <>
             <ListItem
@@ -81,19 +89,58 @@ export default function CategoryItem({ category, gender }) {
                 </ListItemButton>
             </ListItem>
             <Collapse in={open} timeout="auto" unmountOnExit>
-                <List component="div" disablePadding>
-                    {filteredItems.slice(0, MAX_ITEMS_DISPLAY).map((item) => (
-                        <ListItem
-                            key={item.uid || item.title}
-                            disablePadding
-                            sx={{ pl: 4 }}
-                        >
-                            {item.uid ? (
-                                <Link
-                                    href={`/sponsor-giyim/${gender.replace(' ','-').toLowerCase()}/${category.title.replace(' ', '-')}/${item.title}/${item.uid}`}
-                                    style={{ textDecoration: 'none', width: '100%' }}
-                                >
-                                    <ListItemButton>
+                <Box
+                    sx={{
+                        height: containerHeight,
+                        overflow: expanded ? 'auto' : 'hidden',
+                        '&::-webkit-scrollbar': {
+                            width: '6px',
+                        },
+                        '&::-webkit-scrollbar-track': {
+                            background: 'transparent'
+                        },
+                        '&::-webkit-scrollbar-thumb': {
+                            background: (theme) => theme.palette.divider,
+                            borderRadius: '3px',
+                        },
+                        '&::-webkit-scrollbar-thumb:hover': {
+                            background: (theme) => theme.palette.action.hover
+                        }
+                    }}
+                >
+                    <List component="div" disablePadding>
+                        {displayItems.map((item) => (
+                            <ListItem
+                                key={item.uid || item.title}
+                                disablePadding
+                                sx={{ pl: 4 }}
+                            >
+                                {item.uid ? (
+                                    <Link
+                                        href={`/sponsor-giyim/${gender.replace(' ','-').toLowerCase()}/${category.title.replace(' ', '-')}/${item.title}/${item.uid}`}
+                                        style={{ textDecoration: 'none', width: '100%' }}
+                                    >
+                                        <ListItemButton>
+                                            <ListItemText
+                                                primary={item.title}
+                                                secondary={`${item.childrenLength} marka`}
+                                                primaryTypographyProps={{
+                                                    variant: 'body2',
+                                                    noWrap: true
+                                                }}
+                                                secondaryTypographyProps={{
+                                                    variant: 'caption',
+                                                    noWrap: true
+                                                }}
+                                            />
+                                            <KeyboardArrowRight
+                                                fontSize="small"
+                                                sx={{ opacity: 0.5, ml: 1 }}
+                                            />
+                                        </ListItemButton>
+                                    </Link>
+                                ) : (
+                                    <ListItemButton disabled>
                                         <ListItemText
                                             primary={item.title}
                                             secondary={`${item.childrenLength} marka`}
@@ -106,49 +153,26 @@ export default function CategoryItem({ category, gender }) {
                                                 noWrap: true
                                             }}
                                         />
-                                        <KeyboardArrowRight
-                                            fontSize="small"
-                                            sx={{ opacity: 0.5, ml: 1 }}
-                                        />
                                     </ListItemButton>
-                                </Link>
-                            ) : (
-                                <ListItemButton disabled>
-                                    <ListItemText
-                                        primary={item.title}
-                                        secondary={`${item.childrenLength} marka`}
-                                        primaryTypographyProps={{
-                                            variant: 'body2',
-                                            noWrap: true
-                                        }}
-                                        secondaryTypographyProps={{
-                                            variant: 'caption',
-                                            noWrap: true
-                                        }}
-                                    />
-                                </ListItemButton>
-                            )}
-                        </ListItem>
-                    ))}
-                    {filteredItems.length > MAX_ITEMS_DISPLAY && (
-                        <ListItem sx={{ pl: 4 }}>
-                            <Link
-                                href={`/sponsor-giyim/${gender}/${category.title.replace(' ', '-')}`}
-                                style={{ textDecoration: 'none', width: '100%' }}
-                            >
-                                <ListItemButton>
-                                    <ListItemText
-                                        primary="Show More"
-                                        primaryTypographyProps={{
-                                            variant: 'body2',
-                                            color: 'primary'
-                                        }}
-                                    />
-                                </ListItemButton>
-                            </Link>
-                        </ListItem>
-                    )}
-                </List>
+                                )}
+                            </ListItem>
+                        ))}
+                    </List>
+                </Box>
+                {filteredItems.length > MAX_ITEMS_DISPLAY && (
+                    <ListItem sx={{ pl: 4 }}>
+                        <ListItemButton onClick={() => setExpanded(!expanded)}>
+                            <ListItemText
+                                primary={expanded ? "Show Less" : "Show More"}
+                                primaryTypographyProps={{
+                                    variant: 'body2',
+                                    color: 'primary'
+                                }}
+                            />
+                            {expanded ? <ExpandLess color="primary" /> : <ExpandMore color="primary" />}
+                        </ListItemButton>
+                    </ListItem>
+                )}
             </Collapse>
             <Divider />
         </>

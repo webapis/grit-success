@@ -1,4 +1,11 @@
-'use client'
+
+/*
+update functionality of show more button when show more button is clicked instead of expanding height of component should be preserved
+and scrolling should be enablied to see more items
+*/
+// components/navigation/CategoryNode.jsx
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import {
@@ -38,7 +45,6 @@ const getIcon = (title) => {
     const IconComponent = iconMap[title] || Face;
     return <IconComponent fontSize="small" />;
 };
-
 const isDevelopment = process.env.NEXT_PUBLIC_ENV === 'dev';
 
 export default function CategoryNode({ category, gender }) {
@@ -53,11 +59,6 @@ export default function CategoryNode({ category, gender }) {
     const filteredItems = displayItems.filter(item => {
         return item.childrenLength >= 5 || isDevelopment;
     });
-
-    // Calculate approximate height based on item count and padding
-    const itemHeight = isMobile ? 72 : 88; // Adjusted for padding and content
-    const containerHeight = (MAX_ITEMS_DISPLAY * itemHeight);
-
     return (
         <Paper
             elevation={1}
@@ -93,32 +94,11 @@ export default function CategoryNode({ category, gender }) {
                 </Typography>
             </Box>
 
-            <Stack 
-                spacing={0.5} 
-                sx={{ 
-                    flexGrow: 1,
-                    width: '100%',
-                    height: containerHeight,
-                    overflow: expanded ? 'auto' : 'hidden',
-                    '&::-webkit-scrollbar': {
-                        width: '8px',
-                    },
-                    '&::-webkit-scrollbar-track': {
-                        background: theme.palette.background.default
-                    },
-                    '&::-webkit-scrollbar-thumb': {
-                        background: theme.palette.divider,
-                        borderRadius: '4px',
-                    },
-                    '&::-webkit-scrollbar-thumb:hover': {
-                        background: theme.palette.action.hover
-                    }
-                }}
-            >
+            <Stack spacing={0.5} sx={{ flexGrow: 1, width: '100%' }}>
                 {filteredItems.map((item) => (
                     <Box
                         key={item.uid || item.title}
-                        sx={{ width: '100%', flexShrink: 0 }}
+                        sx={{ width: '100%' }}
                     >
                         {item.uid ? (
                             <Link
