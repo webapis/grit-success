@@ -52,9 +52,8 @@ export default function CategoryItem({ category, gender }) {
     
     const sortedChildren = [...category.children].filter(item => {
         return item.childrenLength >= 5 || isDevelopment;
-    }).sort((a, b) =>
-        a.title.localeCompare(b.title)
-    );
+    }).sort((a,b)=>b.childrenLength-a.childrenLength)
+    
     const filteredItems = sortedChildren.filter(item => {
         return item.childrenLength >= 5 || isDevelopment;
     });

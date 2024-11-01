@@ -50,7 +50,7 @@ export default function CategoryNode({ category, gender }) {
     const MAX_ITEMS_DISPLAY = isMobile ? 3 : isTablet ? 4 : 5;
     const sortedChildren = [...category.children].filter(item => {
         return item.childrenLength >= 5 || isDevelopment;
-    }).sort((a, b) => a.title.localeCompare(b.title));
+    }).sort((a,b)=>b.childrenLength-a.childrenLength);
     const displayItems = expanded ? sortedChildren : sortedChildren.slice(0, MAX_ITEMS_DISPLAY);
 
     // Calculate approximate height based on item count and padding
