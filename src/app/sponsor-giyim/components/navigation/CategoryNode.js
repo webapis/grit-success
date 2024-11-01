@@ -47,7 +47,7 @@ export default function CategoryNode({ category, gender }) {
     const isTablet = useMediaQuery(theme.breakpoints.down('md'));
     const [expanded, setExpanded] = React.useState(false);
 
-    const MAX_ITEMS_DISPLAY = isMobile ? 3 : isTablet ? 4 : 5;
+    const MAX_ITEMS_DISPLAY = isMobile ? 4 : isTablet ? 4 : 5;
     const sortedChildren = [...category.children].filter(item => {
         return item.childrenLength >= 5 || isDevelopment;
     }).sort((a,b)=>b.childrenLength-a.childrenLength);
