@@ -7,9 +7,9 @@ export default function ProductDisplayContainer({ brands,title }) {
 <Grid item xs={12}>
 <Typography variant='h5' textAlign='center' sx={{textTransform:'capitalize'}}>{title}</Typography>
 </Grid>
-      {brands.map((m, i) => {
+      {brands.map(m=>{return {...m,product:m.children[0]}}).sort((a,b)=>b.product.isLinkCandidate-a.product.isLinkCandidate).map(({product}, i) => {
     
-        const product = m.children[0]; // Assume each brand has children
+       // const product = m.children[0]; // Assume each brand has children
  
         return (
           <Grid item xs={6} sm={6} md={4} lg={2} key={i}> {/* Responsive grid item */}
