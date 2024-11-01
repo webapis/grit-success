@@ -3,14 +3,14 @@
 import React from 'react';
 import { Box, Tab, Tabs, useTheme, useMediaQuery } from '@mui/material';
 import { useRouter } from 'next/navigation';
-
-export default function TabNavigation({ navData, selectedGender }) {
+import genderData from '../genderData.js'
+export default function TabNavigation({ selectedGender }) {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
     const router = useRouter();
 
-    const handleChange = (event, urlGender) => {
-        router.push(`/sponsor-giyim/${urlGender}/`);
+    const handleChange = (event, gender) => {
+        router.push(`/sponsor-giyim/${gender}/`);
     };
 
     return (
@@ -51,11 +51,11 @@ export default function TabNavigation({ navData, selectedGender }) {
                     }
                 }}
             >
-                {navData.map((gender) => (
+                {genderData.map((gender) => (
                     <Tab
-                        value={gender.title.replace(' ', '-').toLowerCase()}
-                        key={gender.title}
-                        label={gender.title}
+                        value={gender.gender.toLowerCase().replace(' ','-')}
+                        key={gender.gender}
+                        label={gender.gender}
                     />
                 ))}
             </Tabs>

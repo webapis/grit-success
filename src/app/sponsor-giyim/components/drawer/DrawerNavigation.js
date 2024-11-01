@@ -13,7 +13,7 @@ export default function DrawerNavigation({ navData, selectedGender }) {
     return (
         <Box sx={{ width: '100%' }}>
             <DrawerTabs 
-                navData={navData} 
+             
                 selectedGender={selectedGender} 
             />
 

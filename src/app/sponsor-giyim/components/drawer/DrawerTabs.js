@@ -4,8 +4,8 @@
 import React from 'react';
 import { Box, Tabs, Tab } from '@mui/material';
 import { useRouter } from 'next/navigation';
-
-export default function DrawerTabs({ navData, selectedGender }) {
+import genderData from '../genderData'
+export default function DrawerTabs({ selectedGender }) {
     const router = useRouter();
 
     const handleGenderChange = (event, selectedGender) => {
@@ -49,11 +49,11 @@ export default function DrawerTabs({ navData, selectedGender }) {
                     },
                 }}
             >
-                {navData.map((gender, index) => (
+                {genderData.map((obj, index) => (
                     <Tab
-                        value={gender.title.replace(' ', '-').toLowerCase()}
-                        key={gender.title}
-                        label={gender.title}
+                        value={obj.gender.replace(' ', '-').toLowerCase()}
+                        key={obj.gender}
+                        label={obj.gender}
                         id={`gender-tab-${index}`}
                         aria-controls={`gender-tabpanel-${index}`}
                     />

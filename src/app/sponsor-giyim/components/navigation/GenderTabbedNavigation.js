@@ -21,7 +21,7 @@ export default function GenderTabbedNavigation({ navData, selectedGender }) {
             maxWidth: '100vw'
         }}>
             <TabNavigation 
-                navData={filteredNavData} 
+            
                 selectedGender={selectedGender} 
             />
 
