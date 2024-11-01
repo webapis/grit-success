@@ -1,13 +1,15 @@
+
+/*
+in this component i need to filder out some tabs. objects in genderData contains property show with true
+or false value. if show value is true it should always be visible to user if it is false it should be only
+visible during delvelopment. environemtent considered development if  process.env.NEXT_PUBLIC_ENV==='dev'
+*/
 'use client';
 
 import React from 'react';
 import { Box, Tab, Tabs, useTheme, useMediaQuery } from '@mui/material';
 import { useRouter } from 'next/navigation';
 import genderData from '../genderData.js'
-const isDevelopment = process.env.NEXT_PUBLIC_ENV === 'dev';
-const filteredTabs = genderData.filter(tab => {
-    return tab.show || isDevelopment;
-});
 export default function TabNavigation({ selectedGender }) {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -55,7 +57,7 @@ export default function TabNavigation({ selectedGender }) {
                     }
                 }}
             >
-                {filteredTabs.map((gender) => (
+                {genderData.map((gender) => (
                     <Tab
                         value={gender.gender.toLowerCase().replace(' ','-')}
                         key={gender.gender}

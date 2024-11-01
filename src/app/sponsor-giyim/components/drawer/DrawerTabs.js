@@ -5,6 +5,11 @@ import React from 'react';
 import { Box, Tabs, Tab } from '@mui/material';
 import { useRouter } from 'next/navigation';
 import genderData from '../genderData'
+
+const isDevelopment = process.env.NEXT_PUBLIC_ENV === 'dev';
+const filteredTabs = genderData.filter(tab => {
+    return tab.show || isDevelopment;
+});
 export default function DrawerTabs({ selectedGender }) {
     const router = useRouter();
 
@@ -49,7 +54,7 @@ export default function DrawerTabs({ selectedGender }) {
                     },
                 }}
             >
-                {genderData.map((obj, index) => (
+                {filteredTabs.map((obj, index) => (
                     <Tab
                         value={obj.gender.replace(' ', '-').toLowerCase()}
                         key={obj.gender}
