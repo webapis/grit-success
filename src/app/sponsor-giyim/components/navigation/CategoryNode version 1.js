@@ -1,3 +1,9 @@
+
+/*
+in this component i need to filter out some items from displayItems. if item.childrenLength is less than 2 it should hidden and only be visible
+during development and hidden in production. development environment is considered  true if process.env.NEXT_PUBLIC_ENV==='dev'
+*/
+
 // components/navigation/CategoryNode.jsx
 'use client';
 
@@ -40,7 +46,6 @@ const getIcon = (title) => {
     const IconComponent = iconMap[title] || Face;
     return <IconComponent fontSize="small" />;
 };
-const isDevelopment = process.env.NEXT_PUBLIC_ENV === 'dev';
 
 export default function CategoryNode({ category, gender }) {
     const theme = useTheme();
@@ -51,9 +56,7 @@ export default function CategoryNode({ category, gender }) {
     const MAX_ITEMS_DISPLAY = isMobile ? 3 : isTablet ? 4 : 5;
     const sortedChildren = [...category.children].sort((a, b) => a.title.localeCompare(b.title));
     const displayItems = expanded ? sortedChildren : sortedChildren.slice(0, MAX_ITEMS_DISPLAY);
-    const filteredItems = displayItems.filter(item => {
-        return item.childrenLength >= 5 || isDevelopment;
-    });
+
     return (
         <Paper
             elevation={1}
@@ -90,7 +93,7 @@ export default function CategoryNode({ category, gender }) {
             </Box>
 
             <Stack spacing={0.5} sx={{ flexGrow: 1, width: '100%' }}>
-                {filteredItems.map((item) => (
+                {displayItems.map((item) => (
                     <Box
                         key={item.uid || item.title}
                         sx={{ width: '100%' }}
