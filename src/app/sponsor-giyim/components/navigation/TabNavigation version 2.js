@@ -1,30 +1,26 @@
+
+/*
+can we display spinner when switching between gender tabs. spinning should be displayed to the right side of clicked tab. 
+do not break functionality
+https://claude.ai/chat/07f1dd38-5dc6-4857-9c4d-308a044c3dc9
+*/
 'use client';
 
-import React, { useState } from 'react';
-import { Box, Tab, Tabs, useTheme, useMediaQuery, CircularProgress } from '@mui/material';
+import React from 'react';
+import { Box, Tab, Tabs, useTheme, useMediaQuery } from '@mui/material';
 import { useRouter } from 'next/navigation';
 import genderData from '../genderData.js'
-
 const isDevelopment = process.env.NEXT_PUBLIC_ENV === 'dev';
 const filteredTabs = genderData.filter(tab => {
     return tab.show || isDevelopment;
 });
-
 export default function TabNavigation({ selectedGender }) {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
     const router = useRouter();
-    const [loadingTab, setLoadingTab] = useState(null);
 
     const handleChange = (event, gender) => {
-        setLoadingTab(gender);
         router.push(`/sponsor-giyim/${gender}/`);
-        
-        // Reset loading state after navigation
-        // You might want to adjust the timeout based on your needs
-        setTimeout(() => {
-            setLoadingTab(null);
-        }, 1000);
     };
 
     return (
@@ -65,31 +61,13 @@ export default function TabNavigation({ selectedGender }) {
                     }
                 }}
             >
-                {filteredTabs.map((gender) => {
-                    const genderValue = gender.gender.toLowerCase().replace(' ', '-');
-                    const isLoading = loadingTab === genderValue;
-                    
-                    return (
-                        <Tab
-                            value={genderValue}
-                            key={gender.gender}
-                            label={
-                                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                                    {gender.gender}
-                                    {isLoading && (
-                                        <CircularProgress
-                                            size={16}
-                                            sx={{
-                                                ml: 1,
-                                                color: theme.palette.primary.main
-                                            }}
-                                        />
-                                    )}
-                                </Box>
-                            }
-                        />
-                    );
-                })}
+                {filteredTabs.map((gender) => (
+                    <Tab
+                        value={gender.gender.toLowerCase().replace(' ','-')}
+                        key={gender.gender}
+                        label={gender.gender}
+                    />
+                ))}
             </Tabs>
         </Box>
     );
