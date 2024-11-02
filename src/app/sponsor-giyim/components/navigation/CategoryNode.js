@@ -121,7 +121,7 @@ export default function CategoryNode({ category, gender }) {
                     >
                         {item.uid ? (
                             <Link
-                                href={`/sponsor-giyim/${gender}/${category.title.replace(' ', '-')}/${item.title.replace(' ', '-')}/${item.uid}`}
+                                href={`/sponsor-giyim/${gender.replace(' ', '-').toLowerCase()}/${category.title.replace(' ', '-')}/${item.title.replace(' ', '-')}/${item.uid}`}
                                 passHref
                                 style={{ textDecoration: 'none', display: 'block', width: '100%' }}
                             >

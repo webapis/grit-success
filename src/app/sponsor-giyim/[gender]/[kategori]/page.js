@@ -9,7 +9,7 @@ import getNavigationData from '../../components/getNavigationData';
 const navigationData = await getNavigationData({ URI: 'data-sponsor-giyim/unzipped-data/5.step-data/giyim/navigation.json' });
 
 const getCategoryData = (genderDecoded, kategoriDecoded) => {
-  const mainCategory = navigationData.find(item => item.title === genderDecoded);
+  const mainCategory = navigationData.find(item => item.title.toLowerCase() === genderDecoded.toLowerCase());
   if (!mainCategory) return null;
 
   const kategoriDecodedData = mainCategory.children.find(child => child.title === kategoriDecoded);
@@ -38,7 +38,8 @@ export default function Page({ params: { gender, kategori} }) {
   const genderDecoded = decodeURI(gender);
   const kategoriDecoded = decodeURI(kategori).replace('-', ' ').toLowerCase();
   const selectedGender = genderData.find(f => f.urlGender === genderDecoded)?.urlGender;
-  const genderDecodedData = getCategoryData(genderDecoded, kategoriDecoded);
+  debugger
+  const genderDecodedData = getCategoryData(genderDecoded.replace('-', ' '), kategoriDecoded);
 
   if (!genderDecodedData) {
     return <Typography variant="h6" color="error">Category not found</Typography>;

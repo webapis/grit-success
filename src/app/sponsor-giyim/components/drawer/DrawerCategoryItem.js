@@ -118,7 +118,7 @@ export default function CategoryItem({ category, gender }) {
                             >
                                 {item.uid ? (
                                     <Link
-                                        href={`/sponsor-giyim/${gender.replace(' ','-').toLowerCase()}/${category.title.replace(' ', '-')}/${item.title}/${item.uid}`}
+                                        href={`/sponsor-giyim/${gender.replace(' ', '-').toLowerCase()}/${category.title.replace(' ', '-')}/${item.title.replace(' ', '-')}/${item.title}/${item.uid}`}
                                         style={{ textDecoration: 'none', width: '100%' }}
                                     >
                                         <ListItemButton>
