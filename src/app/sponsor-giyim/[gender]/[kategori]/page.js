@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, List, ListItem, ListItemText, Link, Breadcrumbs, Container, Box } from '@mui/material';
+import { Typography, List, ListItem, ListItemText, Link, Container } from '@mui/material';
 import genderData from '../../components/genderData';
 import SponsorGiyimDrawerContainer from '../../components/drawer/SponsorGiyimDrawerContainer';
 import BreadcrumbsComponent from '../../components/BreadcrumbsComponent';
@@ -18,7 +18,23 @@ const getCategoryData = (genderDecoded, kategoriDecoded) => {
   return kategoriDecodedData;
 };
 
-export default function Page({ params: { gender, kategori, id } }) {
+
+export  function generateMetadata({ params: { gender, kategori } }) {
+
+
+
+
+  const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase().replaceAll('-',' ');
+
+
+  return {
+
+      title:   `${capitalize(decodeURI(gender))} | ${capitalize(decodeURI(kategori))} | Dizi Sponsoru Giyim Markalar`
+
+  }
+}
+
+export default function Page({ params: { gender, kategori} }) {
   const genderDecoded = decodeURI(gender);
   const kategoriDecoded = decodeURI(kategori).replace('-', ' ').toLowerCase();
   const selectedGender = genderData.find(f => f.urlGender === genderDecoded)?.urlGender;
@@ -31,7 +47,7 @@ export default function Page({ params: { gender, kategori, id } }) {
   return (
     <SponsorGiyimDrawerContainer selectedGender={selectedGender}>
       <Container maxWidth="md" sx={{ py: 4 }}>
-        <BreadcrumbsComponent urlPath={`/sponsor-giyim/${genderDecoded}/${kategoriDecoded}/${id}`} />
+        <BreadcrumbsComponent urlPath={`/sponsor-giyim/${genderDecoded}/${kategoriDecoded}`} />
 
         <Typography variant="h4" component="h1" gutterBottom sx={{ mt: 2, fontWeight: 'bold' }}>
           {genderDecodedData.title}

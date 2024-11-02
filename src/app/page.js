@@ -9,7 +9,7 @@ import SponsorGiyimDrawerContainer from "./sponsor-giyim/components/drawer/Spons
 export async function generateMetadata() {
 
   return {
-    title: 'Sponsor Kiyafeti',
+    title: 'Dizi Sponsoru Giyim Makralar',
 
   }
 }

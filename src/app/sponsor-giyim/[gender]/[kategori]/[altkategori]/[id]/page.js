@@ -2,7 +2,7 @@
 
 
 import ProductDisplayContainer from '@/app/sponsor-giyim/components/ProductDisplayContainer'
-//import datas from '../../../../../../../data-sponsor-giyim/unzipped-data/5.step-data/giyim/references.json'
+
 import { Container } from '@mui/material'
 import genderData from '../../../../components/genderData'
 import BreadcrumbsComponent from '@/app/sponsor-giyim/components/BreadcrumbsComponent'
@@ -10,6 +10,24 @@ import SponsorGiyimDrawerContainer from '@/app/sponsor-giyim/components/drawer/S
 import getNavigationData from '@/app/sponsor-giyim/components/getNavigationData'
 
 const datas = await getNavigationData({ URI: 'data-sponsor-giyim/unzipped-data/5.step-data/giyim/references.json' })
+
+
+
+export  function generateMetadata({ params: { id, gender, kategori, altkategori } }) {
+
+
+
+
+  const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase().replaceAll('-',' ');
+
+
+  return {
+
+      title:   `${capitalize(decodeURI(gender))} ${capitalize(decodeURI(altkategori) )} | ${capitalize(decodeURI(kategori))} | Dizi Sponsoru Giyim Markalar`
+
+  }
+}
+
 export default function CategoryByBrandPage({ params: { id, gender, kategori, altkategori } }) {
   const genderDecoded = decodeURI(gender)
   const category = decodeURI(kategori).replace('-', ' ')
@@ -26,7 +44,7 @@ export default function CategoryByBrandPage({ params: { id, gender, kategori, al
   return <Container>
     <SponsorGiyimDrawerContainer selectedGender={selectedGender}>
       <BreadcrumbsComponent urlPath={`/sponsor-giyim/${genderDecoded}/${category}/${subCategori}/${id}`} />
-      <ProductDisplayContainer title={title} brands={brands} slug={`/sponsor-giyim/${genderDecoded}/${category}/${id}`} />
+      <ProductDisplayContainer title={title} brands={brands} slug={`/sponsor-giyim/${genderDecoded}/${category}/${id}`} selectedGender={genderDecoded}/>
     </SponsorGiyimDrawerContainer>
   </Container>
 }

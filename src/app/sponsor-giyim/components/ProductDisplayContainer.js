@@ -1,11 +1,12 @@
 import { Grid,Typography } from '@mui/material';  // Import MUI's Grid component
 import ProductDisplay from './ProductDisplay';
-
-export default function ProductDisplayContainer({ brands,title }) {
+import SelectedProductCategoryChip from './SelectedProductCategoryChip';
+export default function ProductDisplayContainer({ brands,title, selectedGender }) {
   return (
     <Grid container spacing={2}> {/* Grid container for layout */}
 <Grid item xs={12}>
-<Typography variant='h5' textAlign='center' sx={{textTransform:'capitalize'}}>{title}</Typography>
+
+<SelectedProductCategoryChip selectedGender={selectedGender} category={title}/>
 </Grid>
       {brands.map(m=>{return {...m,product:m.children[0]}}).sort((a,b)=>b.product.isLinkCandidate-a.product.isLinkCandidate).map(({product}, i) => {
     

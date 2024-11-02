@@ -29,7 +29,7 @@ export default function DrawerNavigation({ navData, selectedGender }) {
                         p: 0
                     }}
                 >
-                    {selectedGenderData?.children.sort((a,b)=> b.children.length- a.children.length).map((category) => (
+                    {selectedGenderData?.children.filter(f=> isDevelopment? isDevelopment: f.childrenLength>=5).sort((a,b)=> b.children.length- a.children.length).map((category) => (
                         <CategoryItem
                             key={category.title}
                             category={category}
