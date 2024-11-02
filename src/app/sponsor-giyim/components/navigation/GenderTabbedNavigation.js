@@ -3,17 +3,18 @@ import React from 'react';
 import { Box, Grid } from '@mui/material';
 import CategoryNode from './CategoryNode';
 import TabNavigation from './TabNavigation';
-
+const isDevelopment = process.env.NEXT_PUBLIC_ENV === 'dev';
 // Server Component
 export default function GenderTabbedNavigation({ navData, selectedGender }) {
-    const filteredNavData = process.env.NEXT_PUBLIC_ENV === 'dev'
+    const filteredNavData = isDevelopment
         ? navData
-        : navData.filter(gender => gender.title !== 'unrelated');
+        : navData.filter(gender => gender.title !== 'unrelated')
+        debugger
 
     const selectedGenderData = filteredNavData.find(
         f => f.title.replace(' ', '-').toLowerCase() === selectedGender
-    );
-
+    )
+debugger
     return (
         <Box sx={{
             width: '100%',
@@ -30,7 +31,7 @@ export default function GenderTabbedNavigation({ navData, selectedGender }) {
                 px: { xs: 1, sm: 2 },
                 py: { xs: 1, sm: 2 }
             }}>
-                {selectedGenderData && (
+                {selectedGenderData&& (
                     <Grid
                         container
                         spacing={{ xs: 1, sm: 2, md: 3 }}
@@ -40,7 +41,7 @@ export default function GenderTabbedNavigation({ navData, selectedGender }) {
                             maxWidth: '100%'
                         }}
                     >
-                        {selectedGenderData.children.sort((a,b)=> b.children.length- a.children.length).map((category) => (
+                        {selectedGenderData.children.filter(f=> isDevelopment? isDevelopment: f.childrenLength>=5).sort((a,b)=> b.children.length- a.children.length).map((category) => (
                             <Grid
                                 item
                                 xs={12}

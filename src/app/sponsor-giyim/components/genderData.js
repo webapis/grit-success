@@ -10,7 +10,8 @@ const data = [
     { gender: 'Bebek', urlGender: 'bebek', index: 7, url: '/sponsor-giyim/bebek/', imageSrc: '/gender/bebek.jpg', show: false },
     { gender: 'Çocuk', urlGender: 'çocuk', index: 8, url: '/sponsor-giyim/çocuk/', imageSrc: '/gender/cocuk.jpg', show: false },
     { gender: 'Unisex', urlGender: 'unisex', index: 9, url: '/sponsor-giyim/unisex/', imageSrc: '/gender/unisex.jpg', show: false },
-    { gender: 'Unrelated', urlGender: 'unrelated', index: 10, url: '/sponsor-giyim/unrelated/', imageSrc: '/gender/unrelated.jpg', show: false },
+    { gender: 'Evcil Hayvan', urlGender: 'evcil-hayvan', index: 10, url: '/sponsor-giyim/evcil-hayvan/', imageSrc: '/gender/unisex.jpg', show: false },
+    { gender: 'Unrelated', urlGender: 'unrelated', index: 11, url: '/sponsor-giyim/unrelated/', imageSrc: '/gender/unrelated.jpg', show: false },
 ].sort((a, b) => a.index - b.index);
 
 export default data
