@@ -1,3 +1,8 @@
+/*
+in BreadcrumbsComponent if 
+
+isMixed is true then find the sengment that comes before last segment. this segmetn should not be navigable .
+*/
 import React from 'react';
 import { Breadcrumbs, Link, Typography } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
@@ -24,33 +29,16 @@ const BreadcrumbsComponent = ({ urlPath }) => {
           const cleanSegment = segment.startsWith('/') ? segment.slice(1) : segment;
           const path = segments.slice(0, index + 1).join('/').replace(' ', '-');
           const isLastSegment = index === segments.length - 1;
-          const isSecondToLast = index === segments.length - 2;
-          const lastSegment = segments[segments.length - 1];
-          const isMixed = /[a-zA-Z]/.test(lastSegment) && /\d/.test(lastSegment);
+          const isMixed = /[a-zA-Z]/.test(cleanSegment) && /\d/.test(cleanSegment);
 
-          // Return null for the last segment if isMixed is true
-          if (isLastSegment && isMixed) {
-            return null;
-          }
-
-          // For the second to last segment when the last segment is mixed
-          if (isSecondToLast && isMixed) {
-            return (
-              <Typography key={index} color="textPrimary">
+          return isLastSegment && isMixed ? null : (
+            isLastSegment ? (
+              <Typography key={index} color="textPrimary">{cleanSegment}</Typography>
+            ) : (
+              <Link key={index} href={path} color="inherit">
                 {cleanSegment}
-              </Typography>
-            );
-          }
-
-          // For all other segments
-          return isLastSegment ? (
-            <Typography key={index} color="textPrimary">
-              {cleanSegment}
-            </Typography>
-          ) : (
-            <Link key={index} href={path} color="inherit">
-              {cleanSegment}
-            </Link>
+              </Link>
+            )
           );
         })}
       </Breadcrumbs>
