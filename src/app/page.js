@@ -3,7 +3,7 @@
 
 import TopNavigation from "./components/TopNavigation"
 
-import GenderCards from "./sponsor-giyim/components/GenderCards"
+import GenderCards from "./sponsor-giyim/components/gender-card/GenderCards"
 import SponsorGiyimDrawerContainer from "./sponsor-giyim/components/drawer/SponsorGiyimDrawerContainer"
 
 export async function generateMetadata() {

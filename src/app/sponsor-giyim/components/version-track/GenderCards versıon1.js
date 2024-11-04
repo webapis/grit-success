@@ -1,3 +1,8 @@
+
+/*
+can we optimize this component data manipulation part remains on SSR side. And also
+optimize other parts for SSR if applicable.
+*/
 'use client';
 import genderData from './genderData';
 import React from 'react';
@@ -17,6 +22,10 @@ import {
 import { styled } from '@mui/material/styles';
 import Link from 'next/link';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+const isDevelopment = process.env.NEXT_PUBLIC_ENV === 'dev';
+const filteredTabs = genderData.filter(tab => {
+    return tab.show || isDevelopment;
+});
 
 const theme = createTheme({
   breakpoints: {
@@ -95,13 +104,7 @@ const GenderCard = ({ item }) => {
     img.onerror = handleImageError;
   }, [item.imageSrc]);
 
-  // Check if the environment is production and gender is 'unrelated'
-  const isProduction =  process.env.NEXT_PUBLIC_ENV !=='dev';
-  const shouldDisplayCard = !(isProduction && item.gender === 'Unrelated');
 
-  if (!shouldDisplayCard) {
-    return null; // Do not render the card in production if gender is 'unrelated'
-  }
 
   return (  
     <Link href={item.url} passHref legacyBehavior>
@@ -228,7 +231,7 @@ const GenderCards = () => {
           spacing={{ xs: 0, sm: 2, md: 3 }}
           sx={{ display: 'flex', justifyContent: 'center' }}
         >
-          {genderData.map((item) => (
+          {filteredTabs.map((item) => (
             <Grid
               item
               xs={6}
