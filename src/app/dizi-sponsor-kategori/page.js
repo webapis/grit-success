@@ -16,7 +16,17 @@ const mappedNavData = pagesData.map(m => {
 
     return { ...m, href, title,imageUrl }
 })
-
+export async function generateMetadata() {
+  return {
+    title: 'Türk Dizi Sponsor Kategoriler',
+    description: 'Türk dizilerinde yer alan sponsorların kategorileştirilmiş listesi. En güncel dizi sponsorları ve markalar hakkında detaylı bilgiler.',
+    openGraph: {
+      title: 'Türk Dizi Sponsor Kategoriler',
+      description: 'Türk dizilerinde yer alan sponsorların kategorileştirilmiş listesi',
+      type: 'website',
+    }
+  }
+}
 
 export default function SponsorKategori() {
 
