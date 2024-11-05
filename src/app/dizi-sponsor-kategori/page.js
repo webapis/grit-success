@@ -16,7 +16,8 @@ const mappedNavData = pagesData.map(m => {
 
     return { ...m, href, title,imageUrl }
 })
-export async function generateMetadata() {
+export  function generateMetadata() {
+  
   return {
     title: 'Türk Dizi Sponsor Kategoriler',
     description: 'Türk dizilerinde yer alan sponsorların kategorileştirilmiş listesi. En güncel dizi sponsorları ve markalar hakkında detaylı bilgiler.',
