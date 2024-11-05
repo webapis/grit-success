@@ -12,7 +12,7 @@ import getViews from '@/app/utils/firebase/supabase';
 
 
 
-export async function generateMetadata({ params }) {
+export  function generateMetadata({ params }) {
     const kategori = params.slug[0];
     const keywordObj = keywordMetaData.find(f => f.keyword === kategori);
 

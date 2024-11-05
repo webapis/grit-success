@@ -2,7 +2,7 @@
 
 import Application from "./sponsor-kiyafeti/Application"
 import TopNavigation from "./components/TopNavigation"
-export async function generateMetadata() {
+export  function generateMetadata() {
 
   return {
     title: 'Sponsor Kiyafeti',
@@ -10,7 +10,7 @@ export async function generateMetadata() {
   }
 }
 
-export default async function Home(props) {
+export default  function Home(props) {
 
 
   return <>    <TopNavigation selected={0}/>

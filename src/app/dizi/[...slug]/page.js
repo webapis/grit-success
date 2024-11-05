@@ -13,7 +13,7 @@ import deaccent from '@/app/dizisponsoru/[...slug]/deaccent';
 
 
 
-export async function generateMetadata({ params }) {
+export  function generateMetadata({ params }) {
 
 
 

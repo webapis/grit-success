@@ -9,7 +9,7 @@ import deaccent from './deaccent';
 
 
 
-export async function generateMetadata({ params }) {
+export  function generateMetadata({ params }) {
     const dizi = params.slug[0]
     const keyword = params.slug[1]
 
