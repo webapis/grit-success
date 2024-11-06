@@ -1,3 +1,13 @@
+/*
+ Shirt,
+    Checkroom,
+    Stairs,
+    ChildFriendly,
+    Face,
+    Backpack,
+    Watch,
+    Spa icons does not exist. can we create thouse icons using svg or other ways if you know better way.
+*/
 'use client'
 import React from 'react';
 import Link from 'next/link';
@@ -12,62 +22,27 @@ import {
     Stack
 } from '@mui/material';
 import {
-    // Shirt,
-    // Checkroom,
-    // Stairs,
-     ChildFriendly,
-     Face,
-    // Backpack,
-    // Watch,
-    // Spa,
+    Shirt,
+    Checkroom,
+    Stairs,
+    ChildFriendly,
+    Face,
+    Backpack,
+    Watch,
+    Spa,
     KeyboardArrowRight,
     KeyboardArrowDown,
 } from '@mui/icons-material';
-import {
-    ShirtIcon,
-    CheckroomIcon,
-    StairsIcon,
-    BackpackIcon,
-    BlouseIcon,
-    WatchIcon,
-    SpaIcon,
-    TshirtIcon,
-    TulumIcon,
-    HirkaIcon,
-    KazakIcon,
-    BustiyerIcon,
-    AtletIcon,
-    KimonoIcon,
-    TunikIcon,
-    SweatshirtIcon,
-    PoloIcon,
-    PareoIcon,
-    PancoIcon,
-    GomlekIcon
-} from './CustomIcons';  // Adjust the import path based on your file structure
+
 const getIcon = (title) => {
     const iconMap = {
-        'Tops': ShirtIcon,
-        'elbise': CheckroomIcon,
-        'Bottoms': StairsIcon,
+        'Tops': Shirt,
+        'Dresses': Checkroom,
+        'Bottoms': Stairs,
         'Kids': ChildFriendly,
-        'Beauty': SpaIcon,
-        'Accessories': WatchIcon,
-        'Bags': BackpackIcon,
-        'bluz': BlouseIcon,
-        'tişört':TshirtIcon,
-        'tulum': TulumIcon,
-        'hırka': HirkaIcon,
-        'kazak': KazakIcon,
-        'büstiyer': BustiyerIcon,
-        'atlet': AtletIcon,
-        'kimono': KimonoIcon,
-        'tunik': TunikIcon,
-        'sweatshirt': SweatshirtIcon,
-        'polo': PoloIcon,
-        'pareo': PareoIcon,
-        'panço': PancoIcon,
-        'gömlek': GomlekIcon,
+        'Beauty': Spa,
+        'Accessories': Watch,
+        'Bags': Backpack,
     };
 
     const IconComponent = iconMap[title] || Face;
