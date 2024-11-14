@@ -67,7 +67,7 @@ export default async function DiziPage({ params }) {
         return match
     })
 
-    const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'tag'], minMatchCharLength: 0, threshold: 0.3  })
+    const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'tag'], minMatchCharLength: 0, threshold: 0.0  })
 
 
 
