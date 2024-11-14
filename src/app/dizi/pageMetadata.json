@@ -418,8 +418,7 @@
                 }
             ]
         }
-    }
-    ,
+    },
     {
         "slug": "kirli-sepeti-dizi-sponsorlari",
         "pageTitle": "Kirli Sepeti Dizi Sponsorları",
@@ -432,7 +431,7 @@
                 }
             ]
         }
-    }  ,
+    },
     {
         "slug": "hudutsuz-sevda-dizi-sponsorlari",
         "pageTitle": "Hudutsuz Sevda Dizi Sponsorları",
@@ -445,7 +444,7 @@
                 }
             ]
         }
-    }  ,
+    },
     {
         "slug": "yalan-dizi-sponsorlari",
         "pageTitle": "Yalan Dizi Sponsorları",
@@ -458,8 +457,7 @@
                 }
             ]
         }
-    }
-    ,
+    },
     {
         "slug": "baba-dizi-sponsorlari",
         "pageTitle": "Baba Dizi Sponsorları",
@@ -472,7 +470,7 @@
                 }
             ]
         }
-    } ,
+    },
     {
         "slug": "dilek-tasi-dizi-sponsorlari",
         "pageTitle": "Dilek Taşı Dizi Sponsorları",
@@ -486,7 +484,6 @@
             ]
         }
     },
-    
     {
         "slug": "tuzak-dizi-sponsorlari",
         "pageTitle": "Tuzak Dizi Sponsorları",
@@ -512,8 +509,7 @@
                 }
             ]
         }
-    }
-    ,
+    },
     {
         "slug": "kiralik-ask-dizi-sponsorlari",
         "pageTitle": "Kiralık Aşk Dizi Sponsorları",
@@ -526,8 +522,7 @@
                 }
             ]
         }
-    }
-    ,
+    },
     {
         "slug": "kotu-kan-dizi-sponsorlari",
         "pageTitle": "Kötü Kan Dizi Sponsorları",
@@ -540,7 +535,7 @@
                 }
             ]
         }
-    } ,
+    },
     {
         "slug": "kara-sevda-dizi-sponsorlari",
         "pageTitle": "Kara Sevda Dizi Sponsorları",
@@ -553,8 +548,7 @@
                 }
             ]
         }
-    }
-    ,
+    },
     {
         "slug": "siyah-kalp-dizi-sponsorlari",
         "pageTitle": "Siyah Kalp Dizi Sponsorları",
@@ -567,7 +561,7 @@
                 }
             ]
         }
-    }  ,
+    },
     {
         "slug": "bir-gece-masali-dizi-sponsorlari",
         "pageTitle": "Bir Gece Masalı Dizi Sponsorları",
@@ -580,7 +574,7 @@
                 }
             ]
         }
-    } ,
+    },
     {
         "slug": "kizil-goncalar-dizi-sponsorlari",
         "pageTitle": "Kızıl Goncalar Dizi Sponsorları",
@@ -723,6 +717,31 @@
                 }
             ]
         }
+    },
+    {
+        "slug": "uzak-sehir-dizi-sponsorlari",
+        "pageTitle": "Uzak Şehir Dizi Sponsorları",
+        "description": "",
+        "dizi": "Uzak Şehir",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Uzak Şehir"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "adim-farah-dizi-sponsorlari",
+        "pageTitle": "Adım Farah Dizi Sponsorları",
+        "description": "",
+        "dizi": "Adım Farah",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Adım Farah"
+                }
+            ]
+        }
     }
 ]
-
