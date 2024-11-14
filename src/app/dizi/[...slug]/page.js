@@ -75,8 +75,8 @@ export default async function DiziPage({ params }) {
     if (result) {
         const { pageTitle, search } = result
         let results = fuse.search(search)
-        const paginatedData = paginate(results, page, 25)
-        const pageCount = Math.ceil(results.length / 25)
+        const paginatedData = paginate(results, page, 50)
+        const pageCount = Math.ceil(results.length / 50)
         
         return <> <SearchResultContainer data={paginatedData} pageTitle={pageTitle} dizi={deaccent(result.dizi).replaceAll(' ', '-').toLowerCase()} keyword="tum" />
             <PaginationContainer count={pageCount} page={page} url={`/dizi/${params.slug[0]}/sayfa/`} />

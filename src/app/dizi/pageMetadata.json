@@ -736,6 +736,32 @@
                 }
             ]
         }
+    },
+    {
+        "slug": "uzak-sehir-dizi-sponsorlari",
+        "pageTitle": "Uzak Şehir Dizi Sponsorları",
+        "description": "",
+        "dizi": "Uzak Şehir",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Uzak Şehir"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "adim-farah-dizi-sponsorlari",
+        "pageTitle": "Adım Farah Dizi Sponsorları",
+        "description": "",
+        "dizi": "Adım Farah",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Adım Farah"
+                }
+            ]
+        }
     }
 ]
 
