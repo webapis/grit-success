@@ -114,5 +114,5 @@ https://chatgpt.com/c/66e2f6a0-3d88-8000-920e-ac9bc6022667
 https://www.mehmettatli.com.tr markasının yaptığı hizmeti hakkında kısa  kelem şeklinde açıklama ve slogan(h1 tag)
 
 
-//aggregation
+//aggregation/
 https://claude.ai/chat/835f790d-2e0d-43ac-8eed-226f1ba28b2f
