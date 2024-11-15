@@ -85,7 +85,7 @@ export async function generateStaticParams(props) {
     const pageCantidates = []
 
 
-    const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'Acyklama'], minMatchCharLength: 0, threshold: 0.0 })
+    const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'Acyklama'], minMatchCharLength: 4, threshold: 0.0 })
 
 
     for (let pageObj of pagesMetaData) {
