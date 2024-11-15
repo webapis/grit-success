@@ -1,37 +1,94 @@
-
 import React from 'react';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
+import { 
+  Grid, 
+  Typography, 
+  Container, 
+  Box,
+  useTheme,
+  useMediaQuery 
+} from '@mui/material';
 import SponsorView from '@/app/dizisponsoru/comp/SponsorView';
-import data from '@/app/dizi/dizisponsoruMenu.json'
+import data from '@/app/dizi/dizisponsoruMenu.json';
 import PersistentDrawerLeft from '../components/drawer';
 import getViews from '../utils/firebase/supabase';
-const arrayData = Object.entries(data)
 
-const mappedData = arrayData.map(m => {
-    const content = m[1]
-    const href = `/dizi/${content.tag}-dizi-sponsorlari`
-    const title = m[0]
-    debugger
-    return { ...m, href, content, title }
+// Process data outside component
+const arrayData = Object.entries(data);
+const mappedData = arrayData
+  .map(([title, content]) => ({
+    content,
+    href: `/dizi/${content.tag}-dizi-sponsorlari`,
+    title
+  }))
+  .sort((a, b) => new Date(b.content.StartDate) - new Date(a.content.StartDate));
 
-}).sort((a, b) => new Date(b[1].StartDate) - new Date(a[1].StartDate))
-debugger
-export {mappedData}
-export default async  function Application() {
-    const userViewData = await getViews({table:'dizisponsoru-home'})
+export { mappedData };
 
-    return <PersistentDrawerLeft data={mappedData} title="Dizi Sponsoru"><Container>
+export default async function Application() {
+  const userViewData = await getViews({ table: 'dizisponsoru-home' });
 
-        <Typography variant='h4' textAlign='center' sx={{ marginTop: 0 }}>Dizi Sponsorları</Typography>
+  return (
+    <PersistentDrawerLeft data={mappedData} title="Dizi Sponsoru">
+      <Container maxWidth="xl">
+        <Box
+          sx={{
+            py: { xs: 2, md: 4 },
+            px: { xs: 1, md: 2 }
+          }}
+        >
+          {/* Header */}
+          <Typography 
+            variant="h6" 
+            component="h6"
+            sx={{
+              textAlign: 'center',
+              mb: { xs: 2, md: 4 },
+              fontSize: { xs: '1.75rem', md: '2.125rem' },
+              fontWeight: 600
+            }}
+          >
+            Dizi Sponsorları
+          </Typography>
 
-        <Grid container gap={1} style={{ display: 'flex', justifyContent: 'center' }}>
-            {mappedData.map((m, i) => {
-                return <Grid key={i} item xs={12} md={3}> <SponsorView  userViewData={userViewData} {...m} /></Grid>
-            })}
-        </Grid>
-    </Container>
+          {/* Grid Layout */}
+          <Grid 
+            container 
+            spacing={{ xs: 2, md: 3 }}
+            sx={{
+              display: 'flex',
+              justifyContent: 'center'
+            }}
+          >
+            {mappedData.map((item, index) => (
+              <Grid 
+                item 
+                xs={12}
+                sm={6}
+                md={4}
+                lg={3}
+                key={item.content.tag || index}
+                sx={{
+                  display: 'flex',
+                  alignItems: 'stretch'
+                }}
+              >
+                <Box sx={{ 
+                  width: '100%',
+                  display: 'flex',
+                  '& > *': { // Make SponsorView fill the container
+                    flex: 1
+                  }
+                }}>
+                  <SponsorView
+                    userViewData={userViewData}
+                    {...item}
+                  />
+                </Box>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+      </Container>
     </PersistentDrawerLeft>
+  );
 }
-
