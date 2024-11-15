@@ -38,8 +38,7 @@ export default async function Application() {
         >
           {/* Header */}
           <Typography 
-            variant="h6" 
-            component="h6"
+    
             sx={{
               textAlign: 'center',
               mb: { xs: 2, md: 4 },
@@ -47,7 +46,7 @@ export default async function Application() {
               fontWeight: 600
             }}
           >
-            Dizi Sponsorları
+            Türk Dizi Sponsorları
           </Typography>
 
           {/* Grid Layout */}

@@ -10,6 +10,7 @@ import {
   IconButton,
   useTheme,
   useMediaQuery,
+  Skeleton,
 } from '@mui/material';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import ClickableLink from './ClickableLinkResponsive';
@@ -19,9 +20,39 @@ export default function SponsorView({ title, content, href, userViewData }) {
   const { tag, toplamSponsor, Tag, Year } = content;
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const [imageLoaded, setImageLoaded] = React.useState(false);
+  const [isVisible, setIsVisible] = React.useState(false);
+  const cardRef = React.useRef(null);
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        root: null,
+        rootMargin: '50px',
+        threshold: 0.1,
+      }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => {
+      if (cardRef.current) {
+        observer.unobserve(cardRef.current);
+      }
+    };
+  }, []);
 
   return (
     <Card 
+      ref={cardRef}
       sx={{ 
         display: 'flex',
         height: { xs: '120px', sm: '140px' },
@@ -42,6 +73,7 @@ export default function SponsorView({ title, content, href, userViewData }) {
         sx={{ 
           position: 'relative',
           width: { xs: '96px', sm: '140px' },
+          bgcolor: 'action.hover',
           '&:hover': {
             '&::after': {
               content: '""',
@@ -56,16 +88,35 @@ export default function SponsorView({ title, content, href, userViewData }) {
           }
         }}
       >
-        <CardMedia
-          component="img"
-          sx={{ 
-            height: '100%',
-            objectFit: 'cover',
-            transition: 'all 0.2s ease-in-out'
-          }}
-          image={`${process.env.NEXT_PUBLIC_IMG_HOST}/dizi-image/${Tag}.jpg`}
-          alt={`${title} Dizi Sponsorları`}
-        />
+        {!imageLoaded && (
+          <Skeleton
+            variant="rectangular"
+            sx={{ 
+              height: '100%',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              zIndex: 1
+            }}
+          />
+        )}
+        {isVisible && (
+          <CardMedia
+            component="img"
+            sx={{ 
+              height: '100%',
+              objectFit: 'cover',
+              transition: 'all 0.2s ease-in-out',
+              opacity: imageLoaded ? 1 : 0
+            }}
+            image={`${process.env.NEXT_PUBLIC_IMG_HOST}/dizi-image/${Tag}.jpg`}
+            alt={`${title} Dizi Sponsorları`}
+            onLoad={() => setImageLoaded(true)}
+            loading="lazy"
+          />
+        )}
         <ClickableLink 
           rootPath="dizisponsoru-home"
           clickable={1}
