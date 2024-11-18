@@ -15,8 +15,6 @@ import deaccent from '@/app/dizisponsoru/[...slug]/deaccent';
 
 export  function generateMetadata({ params }) {
 
-
-
     const result = pagesMetaData.find(f => {
         const current = f.slug
         const slug = params.slug[0]
@@ -51,11 +49,9 @@ export  function generateMetadata({ params }) {
 
 
 
-export default async function DiziPage({ params }) {
+export default  function DiziPage({ params }) {
     
     const page = params.slug[2] ? parseInt(params.slug[2]) : 1
-
-
 
 
     const result = pagesMetaData.find(f => {
@@ -68,8 +64,6 @@ export default async function DiziPage({ params }) {
     })
 
     const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'tag'], minMatchCharLength: 4, threshold: 0.0  })
-
-
 
 
     if (result) {
@@ -101,7 +95,7 @@ function paginate(array, page, pageSize) {
 }
 
 
-export async function generateStaticParams() {
+export  function generateStaticParams() {
 
     const pageCandidates = []
     for (let meta of pagesMetaData) {

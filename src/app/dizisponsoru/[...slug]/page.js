@@ -34,7 +34,7 @@ export  function generateMetadata({ params }) {
 
 
 
-export default async function DiziSponsoru({ params }) {
+export default  function DiziSponsoru({ params }) {
     
     const dizi = params.slug[0]
     const keyword = params.slug[1]

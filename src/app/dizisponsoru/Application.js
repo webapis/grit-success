@@ -3,9 +3,8 @@ import {
   Grid, 
   Typography, 
   Container, 
-  Box,
-  useTheme,
-  useMediaQuery 
+  Box
+
 } from '@mui/material';
 import SponsorView from '@/app/dizisponsoru/comp/SponsorView';
 import data from '@/app/dizi/dizisponsoruMenu.json';
