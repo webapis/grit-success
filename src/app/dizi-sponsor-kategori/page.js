@@ -16,7 +16,18 @@ const mappedNavData = pagesData.map(m => {
 
     return { ...m, href, title,imageUrl }
 })
+export  function generateMetadata() {
 
+  return {
+    title: 'Türk Dizi Sponsor Kategoriler',
+    description: 'Türk dizilerinde yer alan sponsorların kategorileştirilmiş listesi. En güncel dizi sponsorları ve markalar hakkında detaylı bilgiler.',
+    openGraph: {
+      title: 'Türk Dizi Sponsor Kategoriler',
+      description: 'Türk dizilerinde yer alan sponsorların kategorileştirilmiş listesi',
+      type: 'website',
+    }
+  }
+}
 
 export default function SponsorKategori() {
 
@@ -40,11 +51,6 @@ export default function SponsorKategori() {
 
 export { mappedNavData };
 
-export async function generateMetadata({ params }) {
-  return {
-    title: 'Dizi Sponsor Kategori'
-  };
-}
 
 // You'll need to implement this function to fetch user view data
 // const getUserViewData = async () => {

@@ -4,7 +4,7 @@ import CompanyPage from '../components/CompanyPage'
 import TopNavigation from '@/app/components/TopNavigation'
 import DrawerWrapper from '../DrawerWrapper'
 
-export async function generateMetadata({ params: { slug } }) {
+export  function generateMetadata({ params: { slug } }) {
     const companyId = slug[0]
     const company = ysData.find(f => f.id === companyId)
     const companyTitle = company.title

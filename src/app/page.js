@@ -1,12 +1,9 @@
 
 
-
-import TopNavigation from "./components/TopNavigation"
-
-import GenderCards from "./sponsor-giyim/components/gender-card/GenderCards"
 import SponsorGiyimDrawerContainer from "./sponsor-giyim/components/drawer/SponsorGiyimDrawerContainer"
-
-export async function generateMetadata() {
+import GenderCards from "./sponsor-giyim/components/gender-card/GenderCards"
+import TopNavigation from "./components/TopNavigation"
+export  function generateMetadata() {
 
   return {
     title: 'Dizi Sponsoru Giyim Makralar',
@@ -14,7 +11,7 @@ export async function generateMetadata() {
   }
 }
 
-export default async function Home(props) {
+export default  function Home(props) {
 
 
   return <>

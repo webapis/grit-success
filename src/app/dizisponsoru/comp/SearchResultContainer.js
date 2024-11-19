@@ -11,11 +11,12 @@ import { mappedData } from "../Application";
 import PersistentDrawerLeft from "@/app/components/drawer";
 import getViews from "@/app/utils/firebase/supabase";
 export default async function SearchResultContainer({ data, pageTitle, dizi, keyword }) {
+
   const userViewData = await getViews({ table: 'dizisponsoru' })
   let mappedResult = data.map(m => {
     
     
-    const linkId = m.item.Website
+    const linkId = m.Website
     const viewCount = userViewData['data'].find(f => f.href.includes(linkId))
    // console.log(linkId,userViewData['data'].map(m=>m.href).includes(linkId))
     
@@ -28,7 +29,7 @@ export default async function SearchResultContainer({ data, pageTitle, dizi, key
       <SelectedDiziChip category={pageTitle} />
       <Grid container gap={1} justifyContent="center">
         <ChipContainer dizi={dizi} keyword={keyword} />
-        {mappedResult.map((m, i) => <Grid item key={i} xs={12} md={5} > <SearchResultItem item={m.item} userViewData={userViewData} /></Grid>)}
+        {mappedResult.map((m, i) => <Grid item key={i} xs={12} md={5} > <SearchResultItem item={{...m}} userViewData={userViewData} /></Grid>)}
       </Grid>
       <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center', marginTop: 3 }}>
         <ChipContainer dizi={dizi} keyword={keyword} />

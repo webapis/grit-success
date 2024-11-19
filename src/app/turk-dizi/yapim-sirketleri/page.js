@@ -12,7 +12,7 @@ const NavData = ysData.map((m) => { return { href: `/turk-dizi/yapim-sirketleri/
 export { NavData }
 
 
-export async function generateMetadata() {
+export  function generateMetadata() {
     return {
       title: 'Türk Yapım Şirketlerinin En İyi Dizileri | Top Turkish TV Series',
       description: 'Türk dizi yapım şirketlerinin en popüler ve beğenilen dizileri. Dram, komedi, tarih ve daha fazlası. | Most popular and acclaimed TV series from Turkish production companies. Drama, comedy, history, and more.',

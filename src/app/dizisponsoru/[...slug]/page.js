@@ -9,12 +9,12 @@ import deaccent from './deaccent';
 
 
 
-export async function generateMetadata({ params }) {
+export function generateMetadata({ params }) {
     const dizi = params.slug[0]
     const keyword = params.slug[1]
 
     const keywordObj = keywordMetaData.find(f => f.keyword === keyword)
-    
+
     const pageObj = pagesMetaData.find(f => {
 
         const current = deaccent(f.dizi).replaceAll(' ', '-').toLowerCase()
@@ -34,8 +34,8 @@ export async function generateMetadata({ params }) {
 
 
 
-export default async function DiziSponsoru({ params }) {
-    
+export default function DiziSponsoru({ params }) {
+
     const dizi = params.slug[0]
     const keyword = params.slug[1]
     const page = parseInt(params.slug[3])
@@ -51,16 +51,16 @@ export default async function DiziSponsoru({ params }) {
     })
 
     const keywordObj = keywordMetaData.find(f => f.keyword === keyword)
+    debugger
 
-    
-    const fuse = new Fuse(pagesData, {
+
+    const resultSimple = pagesData.filter((f) => f.tag === pageObj.slug.replace('-dizi-sponsorlari', ''))
+    const fuse = new Fuse(resultSimple, {
         keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'Acyklama']
-        , minMatchCharLength: 0, threshold: 0.3
+        , minMatchCharLength: 4, threshold: 0.0
     })
 
-    let results = keywordObj.or ? fuse.search({ "$and": [{ "TVSeriesTitle": pageObj.dizi }, keywordObj.or] }) : fuse.search({ "$and": [{ "TVSeriesTitle": pageObj.dizi }] })
-
-    
+    let results = keywordObj.or ? fuse.search({ "$and": [keywordObj.or] }).map(m=>{return {...m.item}}) : resultSimple
     const paginatedData = paginate(results, page, 50)
     const pageCount = Math.ceil(results.length / 50)
     return <>
@@ -71,31 +71,24 @@ export default async function DiziSponsoru({ params }) {
     </>
 
 
-
-
-
-
-
-
 }
 
 
-export async function generateStaticParams(props) {
+export function generateStaticParams(props) {
 
     const pageCantidates = []
-
-
-    const fuse = new Fuse(pagesData, { keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'Acyklama'], minMatchCharLength: 0, threshold: 0.3 })
 
 
     for (let pageObj of pagesMetaData) {
 
         for (let keywordObj of keywordMetaData) {
 
-            let results = keywordObj.or ? fuse.search({ "$and": [{ "TVSeriesTitle": pageObj.dizi }, keywordObj.or] }) : fuse.search({ "$and": [{ "TVSeriesTitle": pageObj.dizi }] })
-
-
-
+            const resultSimple = pagesData.filter((f) => f.tag === pageObj.slug.replace('-dizi-sponsorlari', ''))
+            const fuse = new Fuse(resultSimple, {
+                keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'Acyklama']
+                , minMatchCharLength: 4, threshold: 0.0
+            })
+            let results = keywordObj.or ? fuse.search({ "$and": [keywordObj.or] }).map(m=>{return {...m.item}}) : resultSimple
             const pageCount = Math.ceil(results.length / 50)
 
             pageCantidates.push({ dizi: pageObj.dizi, keyword: keywordObj.keyword, pageCount })
@@ -105,11 +98,11 @@ export async function generateStaticParams(props) {
 
     }
     const pages = flattenArrayByPageCount(pageCantidates)
-  
+
     return pages.map((post) => {
-     
+
         const { dizi, keyword, page } = post
-      
+
         return {
             slug: [deaccent(dizi).toLowerCase().replaceAll(' ', '-'), keyword, 'sayfa', page.toString()]
         }

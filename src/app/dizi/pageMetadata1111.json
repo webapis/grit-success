@@ -1,0 +1,767 @@
+[
+    {
+        "slug": "yali-capkini-dizi-sponsorlari",
+        "pageTitle": "Yalı Çapkını Dizi Sponsorları",
+        "description": "",
+        "dizi": "Yalı Çapkını",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Yalı Çapkını"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "kizilcik-serbeti-dizi-sponsorlari",
+        "pageTitle": "Kızılcık Şerbeti Dizi Sponsorları",
+        "description": "",
+        "dizi": "Kızılcık Şerbeti",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Kızılcık Şerbeti"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "ego-dizi-sponsorlari",
+        "pageTitle": "Ego Dizi Sponsorları",
+        "description": "",
+        "dizi": "Ego",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Ego"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "bambaska-biri-dizi-sponsorlari",
+        "pageTitle": "Bambaşka Biri Dizi Sponsorları",
+        "description": "",
+        "dizi": "Bambaşka Biri",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Bambaşka Biri"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "yali-capkini-mobilya-sponsoru",
+        "pageTitle": "Yalı Çapkını Mobilya Sponsoru",
+        "description": "Yalı Çapkını Mobilya Sponsoru: Kaliteli ve uygun fiyatlı mobilyalarla tanışın.",
+        "dizi": "Yalı Çapkını",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Yalı Çapkını",
+                    "ServiceName": "Mobilya"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "yali-capkini-sponsorlari",
+        "pageTitle": "Yalı Çapkını Sponsorları",
+        "description": "Yalı Çapkını Dizi Sponsorları.",
+        "dizi": "Yalı Çapkını",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Yalı Çapkını"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "kizilcik-serbeti-mobilya-sponsorlari",
+        "pageTitle": "Kızılcık Şerbeti Mobilya Sponsorları",
+        "description": "Kızılcık Şerbeti Mobilya Sponsoru: Kaliteli ve uygun fiyatlı mobilyalarla tanışın.",
+        "dizi": "Kızılcık Şerbeti",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Kızılcık Şerbeti",
+                    "ServiceName": "Mobilya"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "kizilcik-serbeti-sponsorlari",
+        "pageTitle": "Kızılcık Şerbeti Sponsorları",
+        "description": "Kızılcık Şerbeti Tüm sponsor markalar.",
+        "dizi": "Kızılcık Şerbeti",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Kızılcık Şerbeti"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "kizilcik-serbeti-kiyafet-sponsorlari",
+        "pageTitle": "Kızılcık Şerbeti Kıyafet Sponsorları",
+        "description": "Kızılcık Şerbeti Tüm Kıyafet Sponsor Markalar.",
+        "dizi": "Kızılcık Şerbeti",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Kızılcık Şerbeti",
+                    "ServiceName": "kıyafet"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "inci-taneleri-dizi-sponsorlari",
+        "pageTitle": "İnci Taneleri Dizi Sponsorları",
+        "description": "",
+        "dizi": "İnci Taneleri",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "İnci Taneleri"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "aile-dizi-sponsorlari",
+        "pageTitle": "Aile Dizi Sponsorları",
+        "description": "",
+        "dizi": "Aile",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Aile"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "kader-baglari-dizi-sponsorlari",
+        "pageTitle": "Kader Bağları Dizi Sponsorları",
+        "description": "",
+        "dizi": "Kader Bağları",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Kader Bağları"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "gaddar-dizi-sponsorlari",
+        "pageTitle": "Gaddar Dizi Sponsorları",
+        "description": "",
+        "dizi": "Gaddar",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Gaddar"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "tas-kagit-makas-dizi-sponsorlari",
+        "pageTitle": "Taş Kagıt Makas Dizi Sponsorları",
+        "description": "",
+        "dizi": "Taş Kagıt Makas",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Taş Kagıt Makas"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "tas-kagit-makas-sponsorlari",
+        "pageTitle": "Taş Kagıt Makas Dizi Sponsorları",
+        "description": "",
+        "dizi": "Taş Kagıt Makas",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Taş Kagıt Makas"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "tas-kagit-makas-kiyafet-sponsorlari",
+        "pageTitle": "Taş Kagıt Makas Dizi Kıyafet Sponsorları",
+        "description": "",
+        "dizi": "Taş Kagıt Makas",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Taş Kağıt Makas"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "kara-agac-destani-dizi-sponsorlari",
+        "pageTitle": "Kara Ağaç Destanı Dizi Sponsorları",
+        "description": "",
+        "dizi": "Kara Ağaç Destanı",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Kara Ağaç Destanı"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "yan-oda-dizi-sponsorlari",
+        "pageTitle": "Yan Oda Dizi Sponsorları",
+        "description": "",
+        "dizi": "Yan Oda",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Yan Oda"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "bahar-dizi-sponsorlari",
+        "pageTitle": "Bahar Dizi Sponsorları",
+        "description": "",
+        "dizi": "Bahar",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Bahar"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "yargi-dizi-sponsorlari",
+        "pageTitle": "Yargı Dizi Sponsorları",
+        "description": "",
+        "dizi": "Yargı",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Yargı"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "yargi-mobilya-sponsoru",
+        "pageTitle": "Yargı Dizi Mobilya Sponsoru",
+        "description": "Yargı Dizi Mobilya Sponsoru: Kaliteli ve uygun fiyatlı mobilyalarla tanışın.",
+        "dizi": "Yargı",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Yargı",
+                    "ServiceName": "Mobilya"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "sandik-kokusu-dizi-sponsorlari",
+        "pageTitle": "Sandık Kokusu Dizi Sponsorları",
+        "description": "",
+        "dizi": "Sandık Kokusu",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Sandık Kokusu"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "yasak-elma-dizi-sponsorlari",
+        "pageTitle": "Yasak Elma Dizi Sponsorları",
+        "description": "",
+        "dizi": "Yasak Elma",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Yasak Elma"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "safir-dizi-sponsorlari",
+        "pageTitle": "Safir Dizi Sponsorları",
+        "description": "",
+        "dizi": "Safir",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Safir"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "sahane-hayatim-dizi-sponsorlari",
+        "pageTitle": "Şahane hayatım Sponsorları",
+        "description": "",
+        "dizi": "Şahane hayatım",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Şahane hayatım"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "bir-derdim-var-dizi-sponsorlari",
+        "pageTitle": "Bir Derdim Var Dizi Sponsorları",
+        "description": "",
+        "dizi": "Bir Derdim Var",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Bir Derdim Var"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "altin-kafes-dizi-sponsorlari",
+        "pageTitle": "Altın Kafes Dizi Sponsorları",
+        "description": "",
+        "dizi": "Altın Kafes",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Altın Kafesr"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "kara-dizi-sponsorlari",
+        "pageTitle": "Kara Dizi Sponsorları",
+        "description": "",
+        "dizi": "Kara",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Kara"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "kopuk-dizi-sponsorlari",
+        "pageTitle": "Kopuk Dizi Sponsorları",
+        "description": "",
+        "dizi": "Kopuk",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Kopuk"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "sakla-beni-dizi-sponsorlari",
+        "pageTitle": "Sakla Beni Dizi Sponsorları",
+        "description": "",
+        "dizi": "Sakla Beni",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Sakla Beni"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "korkma-ben-yanindayim-dizi-sponsorlari",
+        "pageTitle": "Korkma Ben Yanındayım Dizi Sponsorları",
+        "description": "",
+        "dizi": "Korkma Ben Yanındayım",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Korkma Ben Yanındayım"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "veda-mektubu-dizi-sponsorlari",
+        "pageTitle": "Veda Mektubu Dizi Sponsorları",
+        "description": "",
+        "dizi": "Veda Mektubu",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Veda Mektubu"
+                }
+            ]
+        }
+    }
+    ,
+    {
+        "slug": "kirli-sepeti-dizi-sponsorlari",
+        "pageTitle": "Kirli Sepeti Dizi Sponsorları",
+        "description": "",
+        "dizi": "Kirli Sepeti",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Kirli Sepeti"
+                }
+            ]
+        }
+    }  ,
+    {
+        "slug": "hudutsuz-sevda-dizi-sponsorlari",
+        "pageTitle": "Hudutsuz Sevda Dizi Sponsorları",
+        "description": "",
+        "dizi": "Hudutsuz Sevda",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Hudutsuz Sevda"
+                }
+            ]
+        }
+    }  ,
+    {
+        "slug": "yalan-dizi-sponsorlari",
+        "pageTitle": "Yalan Dizi Sponsorları",
+        "description": "",
+        "dizi": "Yalan",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Yalan"
+                }
+            ]
+        }
+    }
+    ,
+    {
+        "slug": "baba-dizi-sponsorlari",
+        "pageTitle": "Baba Dizi Sponsorları",
+        "description": "",
+        "dizi": "Baba",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Baba"
+                }
+            ]
+        }
+    } ,
+    {
+        "slug": "dilek-tasi-dizi-sponsorlari",
+        "pageTitle": "Dilek Taşı Dizi Sponsorları",
+        "description": "",
+        "dizi": "Dilek Taşı",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Dilek Taşı"
+                }
+            ]
+        }
+    },
+    
+    {
+        "slug": "tuzak-dizi-sponsorlari",
+        "pageTitle": "Tuzak Dizi Sponsorları",
+        "description": "",
+        "dizi": "Tuzak",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Tuzak"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "kismet-dizi-sponsorlari",
+        "pageTitle": "Kısmet Dizi Sponsorları",
+        "description": "",
+        "dizi": "Kısmet",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Kısmet"
+                }
+            ]
+        }
+    }
+    ,
+    {
+        "slug": "kiralik-ask-dizi-sponsorlari",
+        "pageTitle": "Kiralık Aşk Dizi Sponsorları",
+        "description": "",
+        "dizi": "Kiralık Aşk",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Kiralık Aşk"
+                }
+            ]
+        }
+    }
+    ,
+    {
+        "slug": "kotu-kan-dizi-sponsorlari",
+        "pageTitle": "Kötü Kan Dizi Sponsorları",
+        "description": "",
+        "dizi": "Kötü Kan",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Kötü Kan"
+                }
+            ]
+        }
+    } ,
+    {
+        "slug": "kara-sevda-dizi-sponsorlari",
+        "pageTitle": "Kara Sevda Dizi Sponsorları",
+        "description": "",
+        "dizi": "Kara Sevda",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Kara Sevda"
+                }
+            ]
+        }
+    }
+    ,
+    {
+        "slug": "siyah-kalp-dizi-sponsorlari",
+        "pageTitle": "Siyah Kalp Dizi Sponsorları",
+        "description": "",
+        "dizi": "Siyah Kalp",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Siyah Kalp"
+                }
+            ]
+        }
+    }  ,
+    {
+        "slug": "bir-gece-masali-dizi-sponsorlari",
+        "pageTitle": "Bir Gece Masalı Dizi Sponsorları",
+        "description": "",
+        "dizi": "Bir Gece Masalı",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Bir Gece Masalı"
+                }
+            ]
+        }
+    } ,
+    {
+        "slug": "kizil-goncalar-dizi-sponsorlari",
+        "pageTitle": "Kızıl Goncalar Dizi Sponsorları",
+        "description": "",
+        "dizi": "Kızıl Goncalar",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Kızıl Goncalar"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "yabani-dizi-sponsorlari",
+        "pageTitle": "Yabani Dizi Sponsorları",
+        "description": "",
+        "dizi": "Yabani",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Yabani"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "leyla-dizi-sponsorlari",
+        "pageTitle": "Leyla Dizi Sponsorları",
+        "description": "",
+        "dizi": "Leyla",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Leyla"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "kor-nokta-dizi-sponsorlari",
+        "pageTitle": "Kör Nokta Dizi Sponsorları",
+        "description": "",
+        "dizi": "Kör Nokta",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Kör Nokta"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "deha-dizi-sponsorlari",
+        "pageTitle": "Deha Dizi Sponsorları",
+        "description": "",
+        "dizi": "Deha",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Deha"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "karadut-dizi-sponsorlari",
+        "pageTitle": "Karadut Dizi Sponsorları",
+        "description": "",
+        "dizi": "Karadut",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Karadut"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "guzel-asklar-diyari-dizi-sponsorlari",
+        "pageTitle": "Güzel Aşklar Diyarı Dizi Sponsorları",
+        "description": "",
+        "dizi": "Güzel Aşklar Diyarı",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Güzel Aşklar Diyarı"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "cukur-dizi-sponsorlari",
+        "pageTitle": "Çukur Dizi Sponsorları",
+        "description": "",
+        "dizi": "Çukur",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Çukur"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "uc-kiz-kardes-dizi-sponsorlari",
+        "pageTitle": "Üç Kız Kardeş Dizi Sponsorları",
+        "description": "",
+        "dizi": "Üç Kız Kardeş",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Üç Kız Kadeş"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "aldatmak-dizi-sponsorlari",
+        "pageTitle": "Aldatmak Dizi Sponsorları",
+        "description": "",
+        "dizi": "Aldatmak",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Aldatmak"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "gizli-bahce-dizi-sponsorlari",
+        "pageTitle": "Gizli Bahçe Dizi Sponsorları",
+        "description": "",
+        "dizi": "Gizli Bahçe",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Gizli Bahçe"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "kalpazan-dizi-sponsorlari",
+        "pageTitle": "Kalpazan Dizi Sponsorları",
+        "description": "",
+        "dizi": "Kalpazan",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Kalpazan"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "uzak-sehir-dizi-sponsorlari",
+        "pageTitle": "Uzak Şehir Dizi Sponsorları",
+        "description": "",
+        "dizi": "Uzak Şehir",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Uzak Şehir"
+                }
+            ]
+        }
+    },
+    {
+        "slug": "adim-farah-dizi-sponsorlari",
+        "pageTitle": "Adım Farah Dizi Sponsorları",
+        "description": "",
+        "dizi": "Adım Farah",
+        "search": {
+            "$and": [
+                {
+                    "TVSeriesTitle": "Adım Farah"
+                }
+            ]
+        }
+    }
+]
+
