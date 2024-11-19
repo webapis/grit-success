@@ -116,3 +116,8 @@ https://www.mehmettatli.com.tr markasının yaptığı hizmeti hakkında kısa  
 
 //aggregation/
 https://claude.ai/chat/835f790d-2e0d-43ac-8eed-226f1ba28b2f
+
+prev
+node src/app/sponsor-kiyafeti/utils/downloadData.mjs && node utils/alternatif-utils/downloadData.mjs && node src/app/turk-dizi/utils/downloadData.mjs&& node utils/alternatif-utils/aggregateData.mjs && node src/app/sponsor-kiyafeti/utils/sqlquery.mjs&& node src/app/turk-dizi/utils/mergeData.mjs&& npx next build
+next
+node utils/sponsor-giyim/downloadData.mjs && node utils/alternatif-utils/downloadData.mjs && node src/app/turk-dizi/utils/downloadData.mjs&& node utils/alternatif-utils/aggregateData.mjs && node src/app/sponsor-kiyafeti/utils/sqlquery.mjs&& node src/app/turk-dizi/utils/mergeData.mjs&& npx next build
