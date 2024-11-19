@@ -3,7 +3,8 @@ import { permanentRedirect, usePathname } from 'next/navigation'
 import { GoogleTagManager } from '@next/third-parties/google'
 import { Inter, Poppins } from 'next/font/google'
 import ScrollToTopButton from './components/ScrollToTopButton';
-import TopNavigation from './components/TopNavigation';
+import { Box } from '@mui/material';
+
 import './globals.css'
 
 import Footer from './components/Footer';
@@ -30,10 +31,22 @@ export default function RootLayout(props) {
     <html lang="en">
  <meta name="fo-verify" content="8de09664-17ab-4040-a646-0c5652e5e37d" />
       <body className={inter.className}>
-
-            {children}
+      <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100vh', // This ensures the footer sticks to bottom
+      }}
+    >
+      {/* Your header component */}
+      <Box sx={{ flex: 1 }}>
+      {children}
+      </Box>
+      <Footer />
+    </Box>
+        
 <ScrollToTopButton />
-        <Footer />
+    
         <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1960990522971470" crossorigin="anonymous" />
 
         <GoogleTagManager gtmId="GTM-WVW74LTW" />

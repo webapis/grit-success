@@ -2,8 +2,8 @@
 const data = [
     { gender: 'Kadın', urlGender: 'kadın', index: 0, url: '/sponsor-giyim/kadın/', imageSrc: '/gender/kadin.jpg', show: true },
     { gender: 'Erkek', urlGender: 'erkek', index: 1, url: '/sponsor-giyim/erkek/', imageSrc: '/gender/erkek.jpg', show: true },
-    { gender: 'Kız Çocuk', urlGender: 'kız-çocuk', index: 2, url: '/sponsor-giyim/kız-çocuk/', imageSrc: '/gender/kiz-cocuk.jpg', show: false },
-    { gender: 'Erkek Çocuk', urlGender: 'erkek-çocuk', index: 3, url: '/sponsor-giyim/erkek-çocuk/', imageSrc: '/gender/erkek-cocuk.jpg', show: false },
+    { gender: 'Kız Çocuk', urlGender: 'kız-çocuk', index: 2, url: '/sponsor-giyim/kız-çocuk/', imageSrc: '/gender/kiz-cocuk.jpg', show: true },
+    { gender: 'Erkek Çocuk', urlGender: 'erkek-çocuk', index: 3, url: '/sponsor-giyim/erkek-çocuk/', imageSrc: '/gender/erkek-cocuk.jpg', show: true },
     { gender: 'Kız Bebek', urlGender: 'kız-bebek', index: 4, url: '/sponsor-giyim/kız-bebek/', imageSrc: '/gender/kiz-bebek.jpg', show: false },
     { gender: 'Erkek Bebek', urlGender: 'erkek-bebek', index: 5, url: '/sponsor-giyim/erkek-bebek/', imageSrc: '/gender/erkek-bebek.jpg', show: false },
     { gender: 'Genç', urlGender: 'genç', index: 6, url: '/sponsor-giyim/genç/', imageSrc: '/gender/genc.jpg', show: false },
