@@ -50,5 +50,5 @@ sponsor-kiyafeti-data/
 package-lock.json
 product-data
 aggregated-data
-data-sponsor-giyim
-unzipped-data
+data-sponsor-giyim/
+unzipped-data/
