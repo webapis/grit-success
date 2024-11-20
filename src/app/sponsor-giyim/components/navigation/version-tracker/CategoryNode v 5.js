@@ -1,7 +1,10 @@
+
+/*
+when link is clicked ca we give use feedback by showing spinning bar. use mui components
+*/
 'use client'
 import React from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import {
     Box,
     Typography,
@@ -10,12 +13,17 @@ import {
     Button,
     useMediaQuery,
     Badge,
-    Stack,
-    CircularProgress
+    Stack
 } from '@mui/material';
 import {
-    ChildFriendly,
-    Face,
+    // Shirt,
+    // Checkroom,
+    // Stairs,
+     ChildFriendly,
+     Face,
+    // Backpack,
+    // Watch,
+    // Spa,
     KeyboardArrowRight,
     KeyboardArrowDown,
 } from '@mui/icons-material';
@@ -40,8 +48,7 @@ import {
     PareoIcon,
     PancoIcon,
     GomlekIcon
-} from './CustomIcons';
-
+} from './CustomIcons';  // Adjust the import path based on your file structure
 const getIcon = (title) => {
     const iconMap = {
         'Tops': ShirtIcon,
@@ -75,12 +82,9 @@ const isDevelopment = process.env.NEXT_PUBLIC_ENV === 'dev';
 
 export default function CategoryNode({ category, gender }) {
     const theme = useTheme();
-    const router = useRouter();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
     const isTablet = useMediaQuery(theme.breakpoints.down('md'));
     const [expanded, setExpanded] = React.useState(false);
-    const [loading, setLoading] = React.useState(false);
-    const [activeItem, setActiveItem] = React.useState(null);
 
     const MAX_ITEMS_DISPLAY = isMobile ? 4 : isTablet ? 4 : 5;
     const sortedChildren = [...category.children].filter(item => {
@@ -88,16 +92,9 @@ export default function CategoryNode({ category, gender }) {
     }).sort((a,b)=>b.childrenLength-a.childrenLength);
     const displayItems = expanded ? sortedChildren : sortedChildren.slice(0, MAX_ITEMS_DISPLAY);
 
-    const itemHeight = isMobile ? 72 : 88;
+    // Calculate approximate height based on item count and padding
+    const itemHeight = isMobile ? 72 : 88; // Adjusted for padding and content
     const containerHeight = (MAX_ITEMS_DISPLAY * itemHeight);
-
-    const handleClick = (e, item) => {
-        e.preventDefault();
-        setLoading(true);
-        setActiveItem(item.uid);
-        const url = `/sponsor-giyim/${gender.replace(' ', '-').toLowerCase()}/${category.title.replace(' ', '-')}/${item.title.replace(' ', '-')}/${item.uid}`;
-        router.push(url);
-    };
 
     return (
         <Paper
@@ -164,7 +161,7 @@ export default function CategoryNode({ category, gender }) {
                         {item.uid ? (
                             <Link
                                 href={`/sponsor-giyim/${gender.replace(' ', '-').toLowerCase()}/${category.title.replace(' ', '-')}/${item.title.replace(' ', '-')}/${item.uid}`}
-                                onClick={(e) => handleClick(e, item)}
+                                passHref
                                 style={{ textDecoration: 'none', display: 'block', width: '100%' }}
                             >
                                 <Box
@@ -174,7 +171,6 @@ export default function CategoryNode({ category, gender }) {
                                         width: '100%',
                                         p: { xs: 1.5, sm: 2 },
                                         color: 'text.primary',
-                                        bgcolor: loading && activeItem === item.uid ? 'action.selected' : 'inherit',
                                         '&:hover': {
                                             bgcolor: 'action.hover'
                                         },
@@ -218,28 +214,17 @@ export default function CategoryNode({ category, gender }) {
                                             {item.childrenLength} marka
                                         </Typography>
                                     </Box>
-                                    {loading && activeItem === item.uid ? (
-                                        <CircularProgress
-                                            size={20}
-                                            sx={{
-                                                ml: { xs: 0.5, sm: 1 },
-                                                color: 'primary.main'
-                                            }}
-                                        />
-                                    ) : (
-                                        <KeyboardArrowRight
-                                            sx={{
-                                                ml: { xs: 0.5, sm: 1 },
-                                                fontSize: { xs: 18, sm: 20 },
-                                                color: 'primary.main',
-                                                flexShrink: 0
-                                            }}
-                                        />
-                                    )}
+                                    <KeyboardArrowRight
+                                        sx={{
+                                            ml: { xs: 0.5, sm: 1 },
+                                            fontSize: { xs: 18, sm: 20 },
+                                            color: 'primary.main',
+                                            flexShrink: 0
+                                        }}
+                                    />
                                 </Box>
                             </Link>
                         ) : (
-                            // ... rest of the non-link item rendering remains the same
                             <Box sx={{
                                 display: 'flex',
                                 alignItems: 'center',
