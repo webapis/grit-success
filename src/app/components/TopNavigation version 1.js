@@ -1,7 +1,11 @@
 
 
-/*add spinner to Top Navigation component*/
-//import Link from "next/link";
+/*
+when tab is clicked ca we give use feedback by showing spinning bar. use mui components.
+this component is used with nextjs 14. please do not break code
+*/
+
+
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 
