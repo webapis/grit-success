@@ -159,7 +159,7 @@ const ProductDisplay = React.memo(({ product }) => {
               <CardMedia
                 component="img"
                 height="200"
-                image={process.env.NEXT_PUBLIC_IMG_CDN + product.img}
+                image={product.img}
                 alt={product.h4}
                 loading="lazy"
                 onLoad={handleImageLoad}

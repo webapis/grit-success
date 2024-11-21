@@ -37,4 +37,3 @@ export default async function SearchResultContainer({ data, pageTitle, dizi, key
     </Container></PersistentDrawerLeft>
   </>
 }
-//
