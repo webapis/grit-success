@@ -8,7 +8,7 @@ import TopNavigation from '@/app/components/TopNavigation';
 import PersistentDrawerLeft from '@/app/components/drawer';
 import { mappedNavData } from '@/app/dizikiyafeti/comps/Application';
 import getViews from '@/app/utils/firebase/supabase';
-export async function generateMetadata({ params, searchParams }, parent) {
+export  function generateMetadata({ params, searchParams }, parent) {
 
     const { title } = pagesMetaData.find(f => {
         const current = f.slug[0]
@@ -61,7 +61,7 @@ export default async function DiziPage({ params }) {
 }
 
 
-export async function generateStaticParams() {
+export  function generateStaticParams() {
 
 
     return pagesMetaData.map((obj) => {
