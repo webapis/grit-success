@@ -7,12 +7,13 @@ import PaginationContainer from '@/app/dizisponsoru/comp/PaginationContainer';
 //import path from 'path'
 //import Fuse from 'fuse.js'
 import pagesMetaData from '@/app/dizi/pageMetadata.json'
+import keywordMetaData from '@/app/dizisponsoru/keywordMetaData.json';
 import pagesData from '@/app/dizi/dizisponsoru.json'
 import deaccent from '@/app/dizisponsoru/[...slug]/deaccent';
+import { countItemsByKeyword } from '@/app/dizisponsoru/[...slug]/page';
 
 
-
-
+const keywordsCounter = countItemsByKeyword({ pagesMetaData, keywordMetaData })
 export function generateMetadata({ params }) {
 
     const result = pagesMetaData.find(f => {
@@ -56,8 +57,8 @@ export default function DiziPage({ params }) {
 
         return match
     })
-
-
+debugger
+    const currentKeywordCounter = keywordsCounter.filter(f => f.dizi === result.slug.replace('-dizi-sponsorlari', ''))
 
     const resultSimple = pagesData.filter((f) => f.tag === result.slug.replace('-dizi-sponsorlari', ''))
 
@@ -67,7 +68,7 @@ export default function DiziPage({ params }) {
         const paginatedData = paginate(resultSimple, page, 50)
         const pageCount = Math.ceil(resultSimple.length / 50)
 
-        return <> <SearchResultContainer data={paginatedData} pageTitle={pageTitle} dizi={deaccent(result.dizi).replaceAll(' ', '-').toLowerCase()} keyword="tum" />
+        return <> <SearchResultContainer totalItems={resultSimple.length} keywordsCounter={currentKeywordCounter} data={paginatedData} pageTitle={pageTitle} dizi={deaccent(result.dizi).replaceAll(' ', '-').toLowerCase()} keyword="tum" />
             <PaginationContainer count={pageCount} page={page} url={`/dizi/${params.slug[0]}/sayfa/`} />
         </>
  
