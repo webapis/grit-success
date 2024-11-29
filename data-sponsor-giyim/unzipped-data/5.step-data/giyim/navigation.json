@@ -2,70 +2,18 @@
   {
     "title": "kadın",
     "uid": null,
-    "childrenLength": 4,
+    "childrenLength": 6,
     "children": [
-      {
-        "title": "üst giyim",
-        "uid": null,
-        "childrenLength": 10,
-        "children": [
-          {
-            "title": "bluz",
-            "uid": "0798ad3d3",
-            "childrenLength": 1
-          },
-          {
-            "title": "elbise",
-            "uid": "646cb0e46",
-            "childrenLength": 1
-          },
-          {
-            "title": "bra",
-            "uid": "04e2cf353",
-            "childrenLength": 1
-          },
-          {
-            "title": "büstiyer",
-            "uid": "b366293b3",
-            "childrenLength": 1
-          },
-          {
-            "title": "tişört",
-            "uid": "5f8aac8b5",
-            "childrenLength": 1
-          },
-          {
-            "title": "yelek",
-            "uid": "eb8251e88",
-            "childrenLength": 1
-          },
-          {
-            "title": "sweatshirt",
-            "uid": "14064741e",
-            "childrenLength": 1
-          },
-          {
-            "title": "tulum",
-            "uid": "f31873345",
-            "childrenLength": 1
-          },
-          {
-            "title": "atlet",
-            "uid": "38b850ed2",
-            "childrenLength": 1
-          },
-          {
-            "title": "muun kolleksyon",
-            "uid": "af0878855",
-            "childrenLength": 1
-          }
-        ]
-      },
       {
         "title": "alt giyim",
         "uid": null,
-        "childrenLength": 3,
+        "childrenLength": 4,
         "children": [
+          {
+            "title": "şort",
+            "uid": "a030a3157",
+            "childrenLength": 1
+          },
           {
             "title": "etek",
             "uid": "577c48c5d",
@@ -86,7 +34,7 @@
       {
         "title": "dış giyim",
         "uid": null,
-        "childrenLength": 2,
+        "childrenLength": 4,
         "children": [
           {
             "title": "сeket",
@@ -96,6 +44,73 @@
           {
             "title": "kaban",
             "uid": "40b164030",
+            "childrenLength": 1
+          },
+          {
+            "title": "trençkot",
+            "uid": "f7b881d75",
+            "childrenLength": 1
+          },
+          {
+            "title": "mont",
+            "uid": "7cd4ed9b5",
+            "childrenLength": 1
+          }
+        ]
+      },
+      {
+        "title": "üst giyim",
+        "uid": null,
+        "childrenLength": 10,
+        "children": [
+          {
+            "title": "elbise",
+            "uid": "646cb0e46",
+            "childrenLength": 1
+          },
+          {
+            "title": "gömlek",
+            "uid": "f30502b86",
+            "childrenLength": 1
+          },
+          {
+            "title": "bluz",
+            "uid": "0798ad3d3",
+            "childrenLength": 1
+          },
+          {
+            "title": "büstiyer",
+            "uid": "b366293b3",
+            "childrenLength": 1
+          },
+          {
+            "title": "crop top",
+            "uid": "6f8840ab1",
+            "childrenLength": 1
+          },
+          {
+            "title": "yelek",
+            "uid": "eb8251e88",
+            "childrenLength": 1
+          },
+          {
+            "title": "hırka",
+            "uid": "a43c015f7",
+            "childrenLength": 1
+          },
+          {
+            "title": "tişört",
+            "uid": "5f8aac8b5",
+            "childrenLength": 1
+          },
+          {
+            "title": "sweatshirt",
+            "uid": "14064741e",
+            "childrenLength": 1
+          },
+          {
+            "title": "tulum",
+            "uid": "f31873345",
             "childrenLength": 1
           }
         ]
@@ -108,6 +123,30 @@
           {
             "title": "bodysuit",
             "uid": "5e0f8a078",
+            "childrenLength": 1
+          }
+        ]
+      },
+      {
+        "title": "atkı",
+        "uid": null,
+        "childrenLength": 1,
+        "children": [
+          {
+            "title": "şal",
+            "uid": "cdf415fd1",
+            "childrenLength": 1
+          }
+        ]
+      },
+      {
+        "title": "triko",
+        "uid": null,
+        "childrenLength": 1,
+        "children": [
+          {
+            "title": "triko",
+            "uid": "3475ab0f0",
             "childrenLength": 1
           }
         ]

@@ -1,562 +1,58 @@
 [
   {
-    "uid": "0798ad3d3",
+    "uid": "a030a3157",
     "details": {
-      "title": "bluz",
+      "title": "şort",
       "children": [
         {
-          "title": "biancoenero.com.tr",
+          "title": "www.rueonline.com",
           "children": [
             {
-              "_id": "67495fff67f204b294aa05c1",
-              "title": "Batman Blouse Gold",
+              "_id": "6749b7a6569316beaf12d91e",
+              "title": "Fermuarlı Siyah Suni Deri Şort",
               "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/b6.png?v=1719418707&width=1000",
-              "link": "https://biancoenero.com.tr/products/batman-blouse-gold",
-              "pageTitle": "All Products ",
-              "pageURL": "https://biancoenero.com.tr/collections/all-products",
-              "pageURLString": "https://biancoenero_com_tr/collections/all-products",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/b6_png?v=1719418707&width=1000",
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/fermuarli-siyah-deri-sort-6c7e-4.jpg",
+              "link": "https://www.rueonline.com/fermuarli-siyah-suni-deri-sort",
+              "pageTitle": "Fermuarlı Kahverengi Deri Şort | Rue Online Sipariş ",
+              "pageURL": "https://www.rueonline.com/fermuarli-kahverengi-suni-deri-sort",
+              "pageURLString": "https://www_rueonline_com/fermuarli-kahverengi-suni-deri-sort",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/fermuarli-siyah-deri-sort-6c7e-4_jpg",
               "h1": "giyim",
               "h2": "kadın",
-              "h3": "üst giyim",
-              "h4": "bluz",
-              "h5": "biancoenero.com.tr",
-              "priceString": 0,
-              "isValid": true,
-              "isLinkCandidate": false,
-              "childrenLength": 0
-            },
-            {
-              "_id": "67495fff67f204b294aa05c8",
-              "title": "Point Blouse",
-              "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/b5.png?v=1719062035&width=1000",
-              "link": "https://biancoenero.com.tr/products/point-blouse",
-              "pageTitle": "All Products ",
-              "pageURL": "https://biancoenero.com.tr/collections/all-products",
-              "pageURLString": "https://biancoenero_com_tr/collections/all-products",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/b5_png?v=1719062035&width=1000",
-              "h1": "giyim",
-              "h2": "kadın",
-              "h3": "üst giyim",
-              "h4": "bluz",
-              "h5": "biancoenero.com.tr",
-              "priceString": 0,
-              "isValid": true,
-              "isLinkCandidate": false,
-              "childrenLength": 0
-            }
-          ],
-          "childrenLength": 34
-        }
-      ],
-      "childrenLength": 1,
-      "uid": "0798ad3d3"
-    }
-  },
-  {
-    "uid": "646cb0e46",
-    "details": {
-      "title": "elbise",
-      "children": [
-        {
-          "title": "biancoenero.com.tr",
-          "children": [
-            {
-              "_id": "67495fff67f204b294aa0603",
-              "title": "Valentine Dress Black",
-              "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/963A8753.png?v=1699398745&width=1000",
-              "link": "https://biancoenero.com.tr/products/valentine-dress-black",
-              "pageTitle": "Dresses ",
-              "pageURL": "https://biancoenero.com.tr/collections/elbiseler",
-              "pageURLString": "https://biancoenero_com_tr/collections/elbiseler",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/963A8753_png?v=1699398745&width=1000",
-              "h1": "giyim",
-              "h2": "kadın",
-              "h3": "üst giyim",
-              "h4": "elbise",
-              "h5": "biancoenero.com.tr",
+              "h3": "alt giyim",
+              "h4": "şort",
+              "h5": "www.rueonline.com",
               "priceString": 0,
               "isValid": true,
               "isLinkCandidate": true,
               "childrenLength": 0
             },
             {
-              "_id": "67495fff67f204b294aa0604",
-              "title": "Presilla Dress",
+              "_id": "6749b7a6569316beaf12d91f",
+              "title": "Fermuarlı Kahverengi Suni Deri Şort",
               "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/8A9A0732.png?v=1698668823&width=1000",
-              "link": "https://biancoenero.com.tr/products/presilla-dress",
-              "pageTitle": "Dresses ",
-              "pageURL": "https://biancoenero.com.tr/collections/elbiseler",
-              "pageURLString": "https://biancoenero_com_tr/collections/elbiseler",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/8A9A0732_png?v=1698668823&width=1000",
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/fermuarli-kahverengi-deri-sort-df-a77.jpg",
+              "link": "https://www.rueonline.com/fermuarli-kahverengi-suni-deri-sort",
+              "pageTitle": "Fermuarlı Kahverengi Deri Şort | Rue Online Sipariş ",
+              "pageURL": "https://www.rueonline.com/fermuarli-kahverengi-suni-deri-sort",
+              "pageURLString": "https://www_rueonline_com/fermuarli-kahverengi-suni-deri-sort",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/fermuarli-kahverengi-deri-sort-df-a77_jpg",
               "h1": "giyim",
               "h2": "kadın",
-              "h3": "üst giyim",
-              "h4": "elbise",
-              "h5": "biancoenero.com.tr",
+              "h3": "alt giyim",
+              "h4": "şort",
+              "h5": "www.rueonline.com",
               "priceString": 0,
               "isValid": true,
               "isLinkCandidate": true,
               "childrenLength": 0
             }
           ],
-          "childrenLength": 134
+          "childrenLength": 79
         }
       ],
       "childrenLength": 1,
-      "uid": "646cb0e46"
-    }
-  },
-  {
-    "uid": "04e2cf353",
-    "details": {
-      "title": "bra",
-      "children": [
-        {
-          "title": "biancoenero.com.tr",
-          "children": [
-            {
-              "_id": "67495fff67f204b294aa05c4",
-              "title": "Sue Bra White",
-              "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/sb1.png?v=1719075457&width=1000",
-              "link": "https://biancoenero.com.tr/products/sue-bra-white",
-              "pageTitle": "All Products ",
-              "pageURL": "https://biancoenero.com.tr/collections/all-products",
-              "pageURLString": "https://biancoenero_com_tr/collections/all-products",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/sb1_png?v=1719075457&width=1000",
-              "h1": "giyim",
-              "h2": "kadın",
-              "h3": "üst giyim",
-              "h4": "bra",
-              "h5": "biancoenero.com.tr",
-              "priceString": 0,
-              "isValid": true,
-              "isLinkCandidate": false,
-              "childrenLength": 0
-            },
-            {
-              "_id": "67495fff67f204b294aa05dc",
-              "title": "Sue Bra White",
-              "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/sb1.png?v=1719075457&width=1000",
-              "link": "https://biancoenero.com.tr/products/sue-bra-white",
-              "pageTitle": "New Arrivals ",
-              "pageURL": "https://biancoenero.com.tr/collections/new-arrivals",
-              "pageURLString": "https://biancoenero_com_tr/collections/new-arrivals",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/sb1_png?v=1719075457&width=1000",
-              "h1": "giyim",
-              "h2": "kadın",
-              "h3": "üst giyim",
-              "h4": "bra",
-              "h5": "biancoenero.com.tr",
-              "priceString": 0,
-              "isValid": true,
-              "isLinkCandidate": false,
-              "childrenLength": 0
-            }
-          ],
-          "childrenLength": 3
-        }
-      ],
-      "childrenLength": 1,
-      "uid": "04e2cf353"
-    }
-  },
-  {
-    "uid": "b366293b3",
-    "details": {
-      "title": "büstiyer",
-      "children": [
-        {
-          "title": "biancoenero.com.tr",
-          "children": [
-            {
-              "_id": "67495fff67f204b294aa05c7",
-              "title": "Vivaldi Bustier",
-              "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/vv.png?v=1719072588&width=1000",
-              "link": "https://biancoenero.com.tr/products/vivaldi-bustier",
-              "pageTitle": "All Products ",
-              "pageURL": "https://biancoenero.com.tr/collections/all-products",
-              "pageURLString": "https://biancoenero_com_tr/collections/all-products",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/vv_png?v=1719072588&width=1000",
-              "h1": "giyim",
-              "h2": "kadın",
-              "h3": "üst giyim",
-              "h4": "büstiyer",
-              "h5": "biancoenero.com.tr",
-              "priceString": 0,
-              "isValid": true,
-              "isLinkCandidate": false,
-              "childrenLength": 0
-            },
-            {
-              "_id": "67495fff67f204b294aa05cc",
-              "title": "Roma Bustier",
-              "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/s1.png?v=1719060303&width=1000",
-              "link": "https://biancoenero.com.tr/products/roma-bustier",
-              "pageTitle": "All Products ",
-              "pageURL": "https://biancoenero.com.tr/collections/all-products",
-              "pageURLString": "https://biancoenero_com_tr/collections/all-products",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/s1_png?v=1719060303&width=1000",
-              "h1": "giyim",
-              "h2": "kadın",
-              "h3": "üst giyim",
-              "h4": "büstiyer",
-              "h5": "biancoenero.com.tr",
-              "priceString": 0,
-              "isValid": true,
-              "isLinkCandidate": false,
-              "childrenLength": 0
-            }
-          ],
-          "childrenLength": 18
-        }
-      ],
-      "childrenLength": 1,
-      "uid": "b366293b3"
-    }
-  },
-  {
-    "uid": "5f8aac8b5",
-    "details": {
-      "title": "tişört",
-      "children": [
-        {
-          "title": "biancoenero.com.tr",
-          "children": [
-            {
-              "_id": "67495fff67f204b294aa05d6",
-              "title": "Zeplin T-Shirt",
-              "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/ss2_0765d1d2-2622-4d23-9fab-de6c114d1190.jpg?v=1717856069&width=1000",
-              "link": "https://biancoenero.com.tr/products/zeplin-t-shirt",
-              "pageTitle": "All Products ",
-              "pageURL": "https://biancoenero.com.tr/collections/all-products",
-              "pageURLString": "https://biancoenero_com_tr/collections/all-products",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/ss2_0765d1d2-2622-4d23-9fab-de6c114d1190_jpg?v=1717856069&width=1000",
-              "h1": "giyim",
-              "h2": "kadın",
-              "h3": "üst giyim",
-              "h4": "tişört",
-              "h5": "biancoenero.com.tr",
-              "priceString": 0,
-              "isValid": true,
-              "isLinkCandidate": false,
-              "childrenLength": 0
-            },
-            {
-              "_id": "67495fff67f204b294aa05ee",
-              "title": "Zeplin T-Shirt",
-              "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/ss2_0765d1d2-2622-4d23-9fab-de6c114d1190.jpg?v=1717856069&width=1000",
-              "link": "https://biancoenero.com.tr/products/zeplin-t-shirt",
-              "pageTitle": "New Arrivals ",
-              "pageURL": "https://biancoenero.com.tr/collections/new-arrivals",
-              "pageURLString": "https://biancoenero_com_tr/collections/new-arrivals",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/ss2_0765d1d2-2622-4d23-9fab-de6c114d1190_jpg?v=1717856069&width=1000",
-              "h1": "giyim",
-              "h2": "kadın",
-              "h3": "üst giyim",
-              "h4": "tişört",
-              "h5": "biancoenero.com.tr",
-              "priceString": 0,
-              "isValid": true,
-              "isLinkCandidate": false,
-              "childrenLength": 0
-            }
-          ],
-          "childrenLength": 3
-        }
-      ],
-      "childrenLength": 1,
-      "uid": "5f8aac8b5"
-    }
-  },
-  {
-    "uid": "eb8251e88",
-    "details": {
-      "title": "yelek",
-      "children": [
-        {
-          "title": "biancoenero.com.tr",
-          "children": [
-            {
-              "_id": "67495fff67f204b294aa05f8",
-              "title": "Paris Vest Off White",
-              "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/PHOTO-2021-07-07-13-15-11.png?v=1699422636&width=1000",
-              "link": "https://biancoenero.com.tr/products/paris-jacket-off-white",
-              "pageTitle": "Wedding ",
-              "pageURL": "https://biancoenero.com.tr/collections/weeding",
-              "pageURLString": "https://biancoenero_com_tr/collections/weeding",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/PHOTO-2021-07-07-13-15-11_png?v=1699422636&width=1000",
-              "h1": "giyim",
-              "h2": "kadın",
-              "h3": "üst giyim",
-              "h4": "yelek",
-              "h5": "biancoenero.com.tr",
-              "priceString": 0,
-              "isValid": true,
-              "isLinkCandidate": false,
-              "childrenLength": 0
-            },
-            {
-              "_id": "67495fff67f204b294aa0639",
-              "title": "Paris Vest Black",
-              "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/PHOTO-2021-07-07-13-15-10-1.png?v=1699422944&width=1000",
-              "link": "https://biancoenero.com.tr/products/paris-jacket-black",
-              "pageTitle": "Blazers \\ Coat ",
-              "pageURL": "https://biancoenero.com.tr/collections/blazer",
-              "pageURLString": "https://biancoenero_com_tr/collections/blazer",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/PHOTO-2021-07-07-13-15-10-1_png?v=1699422944&width=1000",
-              "h1": "giyim",
-              "h2": "kadın",
-              "h3": "üst giyim",
-              "h4": "yelek",
-              "h5": "biancoenero.com.tr",
-              "priceString": 0,
-              "isValid": true,
-              "isLinkCandidate": false,
-              "childrenLength": 0
-            }
-          ],
-          "childrenLength": 3
-        }
-      ],
-      "childrenLength": 1,
-      "uid": "eb8251e88"
-    }
-  },
-  {
-    "uid": "14064741e",
-    "details": {
-      "title": "sweatshirt",
-      "children": [
-        {
-          "title": "biancoenero.com.tr",
-          "children": [
-            {
-              "_id": "67495fff67f204b294aa065e",
-              "title": "Hunter Sweat",
-              "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/ben33.jpg?v=1700657990&width=1000",
-              "link": "https://biancoenero.com.tr/products/hunter-sweat",
-              "pageTitle": "Blouse \\ Top ",
-              "pageURL": "https://biancoenero.com.tr/collections/bodysuits",
-              "pageURLString": "https://biancoenero_com_tr/collections/bodysuits",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/ben33_jpg?v=1700657990&width=1000",
-              "h1": "giyim",
-              "h2": "kadın",
-              "h3": "üst giyim",
-              "h4": "sweatshirt",
-              "h5": "biancoenero.com.tr",
-              "priceString": 0,
-              "isValid": true,
-              "isLinkCandidate": false,
-              "childrenLength": 0
-            },
-            {
-              "_id": "67495fff67f204b294aa071d",
-              "title": "Hunter Sweat",
-              "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/ben33.jpg?v=1700657990&width=1000",
-              "link": "https://biancoenero.com.tr/products/hunter-sweat",
-              "pageTitle": "FALL WINTER-22 ",
-              "pageURL": "https://biancoenero.com.tr/collections/victoria-fw-2022",
-              "pageURLString": "https://biancoenero_com_tr/collections/victoria-fw-2022",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/ben33_jpg?v=1700657990&width=1000",
-              "h1": "giyim",
-              "h2": "kadın",
-              "h3": "üst giyim",
-              "h4": "sweatshirt",
-              "h5": "biancoenero.com.tr",
-              "priceString": 0,
-              "isValid": true,
-              "isLinkCandidate": false,
-              "childrenLength": 0
-            }
-          ],
-          "childrenLength": 3
-        }
-      ],
-      "childrenLength": 1,
-      "uid": "14064741e"
-    }
-  },
-  {
-    "uid": "f31873345",
-    "details": {
-      "title": "tulum",
-      "children": [
-        {
-          "title": "biancoenero.com.tr",
-          "children": [
-            {
-              "_id": "67495fff67f204b294aa066d",
-              "title": "Melissa Jumpsuit",
-              "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/melissajump1.png?v=1697041351&width=1000",
-              "link": "https://biancoenero.com.tr/products/melissa-overalls",
-              "pageTitle": "Jumpsuits ",
-              "pageURL": "https://biancoenero.com.tr/collections/jumpsuits",
-              "pageURLString": "https://biancoenero_com_tr/collections/jumpsuits",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/melissajump1_png?v=1697041351&width=1000",
-              "h1": "giyim",
-              "h2": "kadın",
-              "h3": "üst giyim",
-              "h4": "tulum",
-              "h5": "biancoenero.com.tr",
-              "priceString": 0,
-              "isValid": true,
-              "isLinkCandidate": true,
-              "childrenLength": 0
-            },
-            {
-              "_id": "67495fff67f204b294aa066e",
-              "title": "Lost Jumpsuit",
-              "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/l4_e815d64b-19de-46ce-ab58-df28119cbbd2.jpg?v=1716826693&width=1000",
-              "link": "https://biancoenero.com.tr/products/lost-jumpsuit",
-              "pageTitle": "Jumpsuits ",
-              "pageURL": "https://biancoenero.com.tr/collections/jumpsuits",
-              "pageURLString": "https://biancoenero_com_tr/collections/jumpsuits",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/l4_e815d64b-19de-46ce-ab58-df28119cbbd2_jpg?v=1716826693&width=1000",
-              "h1": "giyim",
-              "h2": "kadın",
-              "h3": "üst giyim",
-              "h4": "tulum",
-              "h5": "biancoenero.com.tr",
-              "priceString": 0,
-              "isValid": true,
-              "isLinkCandidate": true,
-              "childrenLength": 0
-            }
-          ],
-          "childrenLength": 10
-        }
-      ],
-      "childrenLength": 1,
-      "uid": "f31873345"
-    }
-  },
-  {
-    "uid": "38b850ed2",
-    "details": {
-      "title": "atlet",
-      "children": [
-        {
-          "title": "biancoenero.com.tr",
-          "children": [
-            {
-              "_id": "67495fff67f204b294aa06c7",
-              "title": "Swarovski Atlet Siyah",
-              "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/SS.png?v=1697031700&width=1000",
-              "link": "https://biancoenero.com.tr/products/swarovski-atlet-siyah",
-              "pageTitle": "READY TO WEAR-23 ",
-              "pageURL": "https://biancoenero.com.tr/collections/rtw-23",
-              "pageURLString": "https://biancoenero_com_tr/collections/rtw-23",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/SS_png?v=1697031700&width=1000",
-              "h1": "giyim",
-              "h2": "kadın",
-              "h3": "üst giyim",
-              "h4": "atlet",
-              "h5": "biancoenero.com.tr",
-              "priceString": 0,
-              "isValid": true,
-              "isLinkCandidate": false,
-              "childrenLength": 0
-            },
-            {
-              "_id": "67495fff67f204b294aa06c8",
-              "title": "Swarovski Atlet",
-              "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/PINO5_e2ac5551-b6df-4cb5-901d-76258cd6437a.png?v=1697031293&width=1000",
-              "link": "https://biancoenero.com.tr/products/swarovski-atlet",
-              "pageTitle": "READY TO WEAR-23 ",
-              "pageURL": "https://biancoenero.com.tr/collections/rtw-23",
-              "pageURLString": "https://biancoenero_com_tr/collections/rtw-23",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/PINO5_e2ac5551-b6df-4cb5-901d-76258cd6437a_png?v=1697031293&width=1000",
-              "h1": "giyim",
-              "h2": "kadın",
-              "h3": "üst giyim",
-              "h4": "atlet",
-              "h5": "biancoenero.com.tr",
-              "priceString": 0,
-              "isValid": true,
-              "isLinkCandidate": false,
-              "childrenLength": 0
-            }
-          ],
-          "childrenLength": 2
-        }
-      ],
-      "childrenLength": 1,
-      "uid": "38b850ed2"
-    }
-  },
-  {
-    "uid": "af0878855",
-    "details": {
-      "title": "muun kolleksyon",
-      "children": [
-        {
-          "title": "biancoenero.com.tr",
-          "children": [
-            {
-              "_id": "67495fff67f204b294aa0719",
-              "title": "Valencia Mini Dress",
-              "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/963A9360.png?v=1698165823&width=1000",
-              "link": "https://biancoenero.com.tr/products/valencia-mini-dress",
-              "pageTitle": "FALL WINTER-22 ",
-              "pageURL": "https://biancoenero.com.tr/collections/victoria-fw-2022",
-              "pageURLString": "https://biancoenero_com_tr/collections/victoria-fw-2022",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/963A9360_png?v=1698165823&width=1000",
-              "h1": "giyim",
-              "h2": "kadın",
-              "h3": "üst giyim",
-              "h4": "muun kolleksyon",
-              "h5": "biancoenero.com.tr",
-              "priceString": 0,
-              "isValid": true,
-              "isLinkCandidate": false,
-              "childrenLength": 0
-            },
-            {
-              "_id": "67495fff67f204b294aa0723",
-              "title": "Valencia Bronz Dress",
-              "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/963A8653.png?v=1698606582&width=1000",
-              "link": "https://biancoenero.com.tr/products/valencia-bronz-dress",
-              "pageTitle": "FALL WINTER-22 ",
-              "pageURL": "https://biancoenero.com.tr/collections/victoria-fw-2022",
-              "pageURLString": "https://biancoenero_com_tr/collections/victoria-fw-2022",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/963A8653_png?v=1698606582&width=1000",
-              "h1": "giyim",
-              "h2": "kadın",
-              "h3": "üst giyim",
-              "h4": "muun kolleksyon",
-              "h5": "biancoenero.com.tr",
-              "priceString": 0,
-              "isValid": true,
-              "isLinkCandidate": false,
-              "childrenLength": 0
-            }
-          ],
-          "childrenLength": 2
-        }
-      ],
-      "childrenLength": 1,
-      "uid": "af0878855"
+      "uid": "a030a3157"
     }
   },
   {
@@ -565,50 +61,50 @@
       "title": "etek",
       "children": [
         {
-          "title": "biancoenero.com.tr",
+          "title": "www.rueonline.com",
           "children": [
             {
-              "_id": "67495fff67f204b294aa064b",
-              "title": "Berta Skirt",
+              "_id": "6749b7a6569316beaf12d591",
+              "title": "Metal Button Detail Textured Brown Velvet Skirt",
               "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/biancoEnerokasim231484.jpg?v=1704176139&width=1000",
-              "link": "https://biancoenero.com.tr/products/berta-skirt",
-              "pageTitle": "Skirts ",
-              "pageURL": "https://biancoenero.com.tr/collections/skirts",
-              "pageURLString": "https://biancoenero_com_tr/collections/skirts",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/biancoEnerokasim231484_jpg?v=1704176139&width=1000",
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/gold-dugme-detayli-kahverengi-kadife-d-2cd5-5.jpg",
+              "link": "https://www.rueonline.com/en/20224084-etek-15491",
+              "pageTitle": "New Arrivals Online Store | Rue Les Createurs ",
+              "pageURL": "https://www.rueonline.com/en/new-arrivals",
+              "pageURLString": "https://www_rueonline_com/en/new-arrivals",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/gold-dugme-detayli-kahverengi-kadife-d-2cd5-5_jpg",
               "h1": "giyim",
               "h2": "kadın",
               "h3": "alt giyim",
               "h4": "etek",
-              "h5": "biancoenero.com.tr",
+              "h5": "www.rueonline.com",
               "priceString": 0,
               "isValid": true,
-              "isLinkCandidate": true,
+              "isLinkCandidate": false,
               "childrenLength": 0
             },
             {
-              "_id": "67495fff67f204b294aa064c",
-              "title": "Point Skirt",
+              "_id": "6749b7a6569316beaf12d598",
+              "title": "Metal Button Detail Textured Navy Velvet Skirt",
               "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/PPP3.jpg?v=1701350925&width=1000",
-              "link": "https://biancoenero.com.tr/products/point-skirt",
-              "pageTitle": "Skirts ",
-              "pageURL": "https://biancoenero.com.tr/collections/skirts",
-              "pageURLString": "https://biancoenero_com_tr/collections/skirts",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/PPP3_jpg?v=1701350925&width=1000",
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/gold-dugme-detayli-lacivert-kadife-dok-9c4-9e.jpg",
+              "link": "https://www.rueonline.com/en/20224084-etek-15490",
+              "pageTitle": "New Arrivals Online Store | Rue Les Createurs ",
+              "pageURL": "https://www.rueonline.com/en/new-arrivals",
+              "pageURLString": "https://www_rueonline_com/en/new-arrivals",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/gold-dugme-detayli-lacivert-kadife-dok-9c4-9e_jpg",
               "h1": "giyim",
               "h2": "kadın",
               "h3": "alt giyim",
               "h4": "etek",
-              "h5": "biancoenero.com.tr",
+              "h5": "www.rueonline.com",
               "priceString": 0,
               "isValid": true,
-              "isLinkCandidate": true,
+              "isLinkCandidate": false,
               "childrenLength": 0
             }
           ],
-          "childrenLength": 21
+          "childrenLength": 135
         }
       ],
       "childrenLength": 1,
@@ -621,50 +117,50 @@
       "title": "pantolon",
       "children": [
         {
-          "title": "biancoenero.com.tr",
+          "title": "www.rueonline.com",
           "children": [
             {
-              "_id": "67495fff67f204b294aa061b",
-              "title": "Zebra Pants",
+              "_id": "6749b7a6569316beaf12da5d",
+              "title": "Dokulu Yüksek Bel Vizon Pantolon",
               "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/8A9A2253.png?v=1698666038&width=1000",
-              "link": "https://biancoenero.com.tr/products/zebra-pants",
-              "pageTitle": "Pants ",
-              "pageURL": "https://biancoenero.com.tr/collections/pantolonlar",
-              "pageURLString": "https://biancoenero_com_tr/collections/pantolonlar",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/8A9A2253_png?v=1698666038&width=1000",
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/dokulu-yuksek-bel-vizon-pantolon-c-ada6.jpg",
+              "link": "https://www.rueonline.com/dokulu-yuksek-bel-vizon-pantolon",
+              "pageTitle": "Dokulu Yüksek Bel Vizon Pantolon | Rue Online Sipariş ",
+              "pageURL": "https://www.rueonline.com/dokulu-yuksek-bel-vizon-pantolon",
+              "pageURLString": "https://www_rueonline_com/dokulu-yuksek-bel-vizon-pantolon",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/dokulu-yuksek-bel-vizon-pantolon-c-ada6_jpg",
               "h1": "giyim",
               "h2": "kadın",
               "h3": "alt giyim",
               "h4": "pantolon",
-              "h5": "biancoenero.com.tr",
+              "h5": "www.rueonline.com",
               "priceString": 0,
               "isValid": true,
               "isLinkCandidate": true,
               "childrenLength": 0
             },
             {
-              "_id": "67495fff67f204b294aa061c",
-              "title": "Alpha White Pants",
+              "_id": "6749b7a6569316beaf12da64",
+              "title": "Dokulu Yüksek Bel Vizon Pantolon",
               "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/963A9803_87a645e8-b7dd-4b9d-bd4b-7201aef453b8.png?v=1698618458&width=1000",
-              "link": "https://biancoenero.com.tr/products/alpha-white-pant",
-              "pageTitle": "Pants ",
-              "pageURL": "https://biancoenero.com.tr/collections/pantolonlar",
-              "pageURLString": "https://biancoenero_com_tr/collections/pantolonlar",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/963A9803_87a645e8-b7dd-4b9d-bd4b-7201aef453b8_png?v=1698618458&width=1000",
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/dokulu-yuksek-bel-vizon-pantolon-c-ada6.jpg",
+              "link": "https://www.rueonline.com/dokulu-yuksek-bel-vizon-pantolon",
+              "pageTitle": "Dokulu Yüksek Bel Vizon Pantolon | Rue Online Sipariş ",
+              "pageURL": "https://www.rueonline.com/dokulu-yuksek-bel-vizon-pantolon",
+              "pageURLString": "https://www_rueonline_com/dokulu-yuksek-bel-vizon-pantolon",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/dokulu-yuksek-bel-vizon-pantolon-c-ada6_jpg",
               "h1": "giyim",
               "h2": "kadın",
               "h3": "alt giyim",
               "h4": "pantolon",
-              "h5": "biancoenero.com.tr",
+              "h5": "www.rueonline.com",
               "priceString": 0,
               "isValid": true,
               "isLinkCandidate": true,
               "childrenLength": 0
             }
           ],
-          "childrenLength": 61
+          "childrenLength": 338
         }
       ],
       "childrenLength": 1,
@@ -677,50 +173,50 @@
       "title": "tayt",
       "children": [
         {
-          "title": "biancoenero.com.tr",
+          "title": "www.rueonline.com",
           "children": [
             {
-              "_id": "67495fff67f204b294aa05cd",
-              "title": "Leopard Legging",
+              "_id": "6749b7a6569316beaf12d723",
+              "title": "Faux Leather Leggings",
               "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/LGDN1.png?v=1718472229&width=1000",
-              "link": "https://biancoenero.com.tr/products/leopard-legging",
-              "pageTitle": "All Products ",
-              "pageURL": "https://biancoenero.com.tr/collections/all-products",
-              "pageURLString": "https://biancoenero_com_tr/collections/all-products",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/LGDN1_png?v=1718472229&width=1000",
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/yuksek-bel-siyah-suni-deri-tayt-d404ee.jpg",
+              "link": "https://www.rueonline.com/en/balck-faux-leather-leggings",
+              "pageTitle": "Rue Studio Onlie Store ",
+              "pageURL": "https://www.rueonline.com/en/rue-studio?kategori=465&sayfa=1",
+              "pageURLString": "https://www_rueonline_com/en/rue-studio?kategori=465&sayfa=1",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/yuksek-bel-siyah-suni-deri-tayt-d404ee_jpg",
               "h1": "giyim",
               "h2": "kadın",
               "h3": "alt giyim",
               "h4": "tayt",
-              "h5": "biancoenero.com.tr",
+              "h5": "www.rueonline.com",
               "priceString": 0,
               "isValid": true,
               "isLinkCandidate": false,
               "childrenLength": 0
             },
             {
-              "_id": "67495fff67f204b294aa05e5",
-              "title": "Leopard Legging",
+              "_id": "6749b7a6569316beaf12d724",
+              "title": "Faux Leather Leggings",
               "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/LGDN1.png?v=1718472229&width=1000",
-              "link": "https://biancoenero.com.tr/products/leopard-legging",
-              "pageTitle": "New Arrivals ",
-              "pageURL": "https://biancoenero.com.tr/collections/new-arrivals",
-              "pageURLString": "https://biancoenero_com_tr/collections/new-arrivals",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/LGDN1_png?v=1718472229&width=1000",
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/yuksek-bel-haki-suni-deri-tayt-7ab-42.jpg",
+              "link": "https://www.rueonline.com/en/khaki-faux-leather-leggings",
+              "pageTitle": "Rue Studio Onlie Store ",
+              "pageURL": "https://www.rueonline.com/en/rue-studio?kategori=465&sayfa=1",
+              "pageURLString": "https://www_rueonline_com/en/rue-studio?kategori=465&sayfa=1",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/yuksek-bel-haki-suni-deri-tayt-7ab-42_jpg",
               "h1": "giyim",
               "h2": "kadın",
               "h3": "alt giyim",
               "h4": "tayt",
-              "h5": "biancoenero.com.tr",
+              "h5": "www.rueonline.com",
               "priceString": 0,
               "isValid": true,
               "isLinkCandidate": false,
               "childrenLength": 0
             }
           ],
-          "childrenLength": 3
+          "childrenLength": 6
         }
       ],
       "childrenLength": 1,
@@ -733,50 +229,50 @@
       "title": "сeket",
       "children": [
         {
-          "title": "biancoenero.com.tr",
+          "title": "www.rueonline.com",
           "children": [
             {
-              "_id": "67495fff67f204b294aa0635",
-              "title": "Cross Black Blazer",
+              "_id": "6749b7a6569316beaf12d6c3",
+              "title": "Striped Oversized Grey Wool Jacket",
               "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/MGL4348.png?v=1699844918&width=1000",
-              "link": "https://biancoenero.com.tr/products/cross-black-blazer",
-              "pageTitle": "Blazers \\ Coat ",
-              "pageURL": "https://biancoenero.com.tr/collections/blazer",
-              "pageURLString": "https://biancoenero_com_tr/collections/blazer",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/MGL4348_png?v=1699844918&width=1000",
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/cizgili-oversize-gri-kase-ceket-14697f.jpg",
+              "link": "https://www.rueonline.com/en/striped-oversized-grey-wool-jacket",
+              "pageTitle": "Blazers | Rue Online Store ",
+              "pageURL": "https://www.rueonline.com/en/blazer",
+              "pageURLString": "https://www_rueonline_com/en/blazer",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/cizgili-oversize-gri-kase-ceket-14697f_jpg",
               "h1": "giyim",
               "h2": "kadın",
               "h3": "dış giyim",
               "h4": "сeket",
-              "h5": "biancoenero.com.tr",
+              "h5": "www.rueonline.com",
               "priceString": 0,
               "isValid": true,
               "isLinkCandidate": true,
               "childrenLength": 0
             },
             {
-              "_id": "67495fff67f204b294aa0636",
-              "title": "Pino White Blazer",
+              "_id": "6749b7a6569316beaf12d6c4",
+              "title": "Striped Oversized Navy Wool Jacket",
               "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/PINO.png?v=1697016972&width=1000",
-              "link": "https://biancoenero.com.tr/products/pino-blazer",
-              "pageTitle": "Blazers \\ Coat ",
-              "pageURL": "https://biancoenero.com.tr/collections/blazer",
-              "pageURLString": "https://biancoenero_com_tr/collections/blazer",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/PINO_png?v=1697016972&width=1000",
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/cizgili-oversize-lacivert-kase-ceket-7d-b78.jpg",
+              "link": "https://www.rueonline.com/en/striped-oversized-navy-wool-jacket",
+              "pageTitle": "Blazers | Rue Online Store ",
+              "pageURL": "https://www.rueonline.com/en/blazer",
+              "pageURLString": "https://www_rueonline_com/en/blazer",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/cizgili-oversize-lacivert-kase-ceket-7d-b78_jpg",
               "h1": "giyim",
               "h2": "kadın",
               "h3": "dış giyim",
               "h4": "сeket",
-              "h5": "biancoenero.com.tr",
+              "h5": "www.rueonline.com",
               "priceString": 0,
               "isValid": true,
               "isLinkCandidate": true,
               "childrenLength": 0
             }
           ],
-          "childrenLength": 47
+          "childrenLength": 291
         }
       ],
       "childrenLength": 1,
@@ -789,54 +285,726 @@
       "title": "kaban",
       "children": [
         {
-          "title": "biancoenero.com.tr",
+          "title": "www.rueonline.com",
           "children": [
             {
-              "_id": "67495fff67f204b294aa0633",
-              "title": "Monica Red Coat",
+              "_id": "6749b7a6569316beaf12d640",
+              "title": "Gold Buttoned Navy Blue Wool Coat",
               "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/biancoEnerokasim231593.jpg?v=1703997852&width=1000",
-              "link": "https://biancoenero.com.tr/products/monica-red-coat",
-              "pageTitle": "Blazers \\ Coat ",
-              "pageURL": "https://biancoenero.com.tr/collections/blazer",
-              "pageURLString": "https://biancoenero_com_tr/collections/blazer",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/biancoEnerokasim231593_jpg?v=1703997852&width=1000",
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/gold-dugmeli-lacivert-midi-boy-kase-ka-757042.jpg",
+              "link": "https://www.rueonline.com/en/gold-buttoned-midi-length-navy-blue-wool-coat",
+              "pageTitle": "New Arrivals Online Store | Rue Les Createurs ",
+              "pageURL": "https://www.rueonline.com/en/new-arrivals?kategori=477&sayfa=1",
+              "pageURLString": "https://www_rueonline_com/en/new-arrivals?kategori=477&sayfa=1",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/gold-dugmeli-lacivert-midi-boy-kase-ka-757042_jpg",
               "h1": "giyim",
               "h2": "kadın",
               "h3": "dış giyim",
               "h4": "kaban",
-              "h5": "biancoenero.com.tr",
+              "h5": "www.rueonline.com",
               "priceString": 0,
               "isValid": true,
               "isLinkCandidate": false,
               "childrenLength": 0
             },
             {
-              "_id": "67495fff67f204b294aa0634",
-              "title": "Monica Black Coat",
+              "_id": "6749b7a6569316beaf12d641",
+              "title": "Gold Buttoned Camel Wool Coat",
               "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/biancoEnerokasim231265.jpg?v=1703945673&width=1000",
-              "link": "https://biancoenero.com.tr/products/monica-black-coat",
-              "pageTitle": "Blazers \\ Coat ",
-              "pageURL": "https://biancoenero.com.tr/collections/blazer",
-              "pageURLString": "https://biancoenero_com_tr/collections/blazer",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/biancoEnerokasim231265_jpg?v=1703945673&width=1000",
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/gold-dugmeli-camel-midi-boy-kase-kaban-7ed-5b.jpg",
+              "link": "https://www.rueonline.com/en/gold-buttoned-midi-length-camel-wool-coat",
+              "pageTitle": "New Arrivals Online Store | Rue Les Createurs ",
+              "pageURL": "https://www.rueonline.com/en/new-arrivals?kategori=477&sayfa=1",
+              "pageURLString": "https://www_rueonline_com/en/new-arrivals?kategori=477&sayfa=1",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/gold-dugmeli-camel-midi-boy-kase-kaban-7ed-5b_jpg",
               "h1": "giyim",
               "h2": "kadın",
               "h3": "dış giyim",
               "h4": "kaban",
-              "h5": "biancoenero.com.tr",
+              "h5": "www.rueonline.com",
               "priceString": 0,
               "isValid": true,
               "isLinkCandidate": false,
               "childrenLength": 0
             }
           ],
-          "childrenLength": 6
+          "childrenLength": 18
         }
       ],
       "childrenLength": 1,
       "uid": "40b164030"
+    }
+  },
+  {
+    "uid": "f7b881d75",
+    "details": {
+      "title": "trençkot",
+      "children": [
+        {
+          "title": "www.rueonline.com",
+          "children": [
+            {
+              "_id": "6749b7a6569316beaf12d6e7",
+              "title": "Belted Beige Long Trench Coat",
+              "price": 0,
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/kemerli-lacivert-uzun-trenckot-0-0202.jpg",
+              "link": "https://www.rueonline.com/en/metalik-dugmeli-ceket-14346",
+              "pageTitle": "Outwear | Rue Online Store ",
+              "pageURL": "https://www.rueonline.com/en/dis-giyim",
+              "pageURLString": "https://www_rueonline_com/en/dis-giyim",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/kemerli-lacivert-uzun-trenckot-0-0202_jpg",
+              "h1": "giyim",
+              "h2": "kadın",
+              "h3": "dış giyim",
+              "h4": "trençkot",
+              "h5": "www.rueonline.com",
+              "priceString": 0,
+              "isValid": true,
+              "isLinkCandidate": false,
+              "childrenLength": 0
+            },
+            {
+              "_id": "6749b7a6569316beaf12d6e8",
+              "title": "Belted Beige Long Trench Coat",
+              "price": 0,
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/kemerli-bej-uzun-trenckot--95d6-.jpg",
+              "link": "https://www.rueonline.com/en/metalik-dugmeli-ceket-14344",
+              "pageTitle": "Outwear | Rue Online Store ",
+              "pageURL": "https://www.rueonline.com/en/dis-giyim",
+              "pageURLString": "https://www_rueonline_com/en/dis-giyim",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/kemerli-bej-uzun-trenckot--95d6-_jpg",
+              "h1": "giyim",
+              "h2": "kadın",
+              "h3": "dış giyim",
+              "h4": "trençkot",
+              "h5": "www.rueonline.com",
+              "priceString": 0,
+              "isValid": true,
+              "isLinkCandidate": false,
+              "childrenLength": 0
+            }
+          ],
+          "childrenLength": 3
+        }
+      ],
+      "childrenLength": 1,
+      "uid": "f7b881d75"
+    }
+  },
+  {
+    "uid": "7cd4ed9b5",
+    "details": {
+      "title": "mont",
+      "children": [
+        {
+          "title": "www.rueonline.com",
+          "children": [
+            {
+              "_id": "6749b7a6569316beaf12dca4",
+              "title": "Siyah Kapitone Mont",
+              "price": 0,
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/f16cb2a8-f1b3-4518-92f5-59a1eb4c1d70-9525-8.jpg",
+              "link": "https://www.rueonline.com/siyah-kapitone-mont",
+              "pageTitle": "Rue Studio Koleksiyonu ",
+              "pageURL": "https://www.rueonline.com/rue-studio",
+              "pageURLString": "https://www_rueonline_com/rue-studio",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/f16cb2a8-f1b3-4518-92f5-59a1eb4c1d70-9525-8_jpg",
+              "h1": "giyim",
+              "h2": "kadın",
+              "h3": "dış giyim",
+              "h4": "mont",
+              "h5": "www.rueonline.com",
+              "priceString": 0,
+              "isValid": true,
+              "isLinkCandidate": false,
+              "childrenLength": 0
+            },
+            {
+              "_id": "6749b7a6569316beaf12dca5",
+              "title": "Ekru Kapitone Mont",
+              "price": 0,
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/d08c2c54-7d2b-4b59-865c-af77020ad909-2772a-.jpg",
+              "link": "https://www.rueonline.com/ekru-kapitone-mont",
+              "pageTitle": "Rue Studio Koleksiyonu ",
+              "pageURL": "https://www.rueonline.com/rue-studio",
+              "pageURLString": "https://www_rueonline_com/rue-studio",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/d08c2c54-7d2b-4b59-865c-af77020ad909-2772a-_jpg",
+              "h1": "giyim",
+              "h2": "kadın",
+              "h3": "dış giyim",
+              "h4": "mont",
+              "h5": "www.rueonline.com",
+              "priceString": 0,
+              "isValid": true,
+              "isLinkCandidate": false,
+              "childrenLength": 0
+            }
+          ],
+          "childrenLength": 2
+        }
+      ],
+      "childrenLength": 1,
+      "uid": "7cd4ed9b5"
+    }
+  },
+  {
+    "uid": "646cb0e46",
+    "details": {
+      "title": "elbise",
+      "children": [
+        {
+          "title": "www.rueonline.com",
+          "children": [
+            {
+              "_id": "6749b7a6569316beaf12d595",
+              "title": "Velvet Texture Square Neck Brown Midi Dress",
+              "price": 0,
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/kadife-dokulu-kare-yaka-kahverengi-mid-d0a1-1.jpg",
+              "link": "https://www.rueonline.com/en/20624070-elbise-15528",
+              "pageTitle": "New Arrivals Online Store | Rue Les Createurs ",
+              "pageURL": "https://www.rueonline.com/en/new-arrivals",
+              "pageURLString": "https://www_rueonline_com/en/new-arrivals",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/kadife-dokulu-kare-yaka-kahverengi-mid-d0a1-1_jpg",
+              "h1": "giyim",
+              "h2": "kadın",
+              "h3": "üst giyim",
+              "h4": "elbise",
+              "h5": "www.rueonline.com",
+              "priceString": 0,
+              "isValid": true,
+              "isLinkCandidate": false,
+              "childrenLength": 0
+            },
+            {
+              "_id": "6749b7a6569316beaf12d596",
+              "title": "Velvet Texture Square Neck Navy Midi Dress",
+              "price": 0,
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/kadife-dokulu-kare-yaka-lacivert-midi--30-b63.jpg",
+              "link": "https://www.rueonline.com/en/20624070-elbise-15527",
+              "pageTitle": "New Arrivals Online Store | Rue Les Createurs ",
+              "pageURL": "https://www.rueonline.com/en/new-arrivals",
+              "pageURLString": "https://www_rueonline_com/en/new-arrivals",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/kadife-dokulu-kare-yaka-lacivert-midi--30-b63_jpg",
+              "h1": "giyim",
+              "h2": "kadın",
+              "h3": "üst giyim",
+              "h4": "elbise",
+              "h5": "www.rueonline.com",
+              "priceString": 0,
+              "isValid": true,
+              "isLinkCandidate": false,
+              "childrenLength": 0
+            }
+          ],
+          "childrenLength": 218
+        }
+      ],
+      "childrenLength": 1,
+      "uid": "646cb0e46"
+    }
+  },
+  {
+    "uid": "f30502b86",
+    "details": {
+      "title": "gömlek",
+      "children": [
+        {
+          "title": "www.rueonline.com",
+          "children": [
+            {
+              "_id": "6749b7a6569316beaf12d59e",
+              "title": "Square Neck Pocket Detail Navy Denim Crop Shirt",
+              "price": 0,
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/kare-yaka-cep-detayli-lacivert-denim-c-7cac26.jpg",
+              "link": "https://www.rueonline.com/en/21124033-gomlek-15620",
+              "pageTitle": "New Arrivals Online Store | Rue Les Createurs ",
+              "pageURL": "https://www.rueonline.com/en/new-arrivals",
+              "pageURLString": "https://www_rueonline_com/en/new-arrivals",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/kare-yaka-cep-detayli-lacivert-denim-c-7cac26_jpg",
+              "h1": "giyim",
+              "h2": "kadın",
+              "h3": "üst giyim",
+              "h4": "gömlek",
+              "h5": "www.rueonline.com",
+              "priceString": 0,
+              "isValid": true,
+              "isLinkCandidate": false,
+              "childrenLength": 0
+            },
+            {
+              "_id": "6749b7a6569316beaf12d5f0",
+              "title": "Square Neck Pocket Detail Navy Denim Crop Shirt",
+              "price": 0,
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/kare-yaka-cep-detayli-lacivert-denim-c-7cac26.jpg",
+              "link": "https://www.rueonline.com/en/21124033-gomlek-15620",
+              "pageTitle": "New Arrivals Online Store | Rue Les Createurs ",
+              "pageURL": "https://www.rueonline.com/en/new-arrivals?kategori=466",
+              "pageURLString": "https://www_rueonline_com/en/new-arrivals?kategori=466",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/kare-yaka-cep-detayli-lacivert-denim-c-7cac26_jpg",
+              "h1": "giyim",
+              "h2": "kadın",
+              "h3": "üst giyim",
+              "h4": "gömlek",
+              "h5": "www.rueonline.com",
+              "priceString": 0,
+              "isValid": true,
+              "isLinkCandidate": false,
+              "childrenLength": 0
+            }
+          ],
+          "childrenLength": 38
+        }
+      ],
+      "childrenLength": 1,
+      "uid": "f30502b86"
+    }
+  },
+  {
+    "uid": "0798ad3d3",
+    "details": {
+      "title": "bluz",
+      "children": [
+        {
+          "title": "www.rueonline.com",
+          "children": [
+            {
+              "_id": "6749b7a6569316beaf12d93a",
+              "title": "Önden Düğmeli Siyah Transparan Şık Bluz",
+              "price": 0,
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/onden-dugmeli-siyah-transparan-sik-blu-44fbb9.jpg",
+              "link": "https://www.rueonline.com/onden-dugmeli-siyah-transparan-sik-bluz",
+              "pageTitle": "Önden Düğmeli Bej Transparan Şık Bluz | Rue Online Sipariş ",
+              "pageURL": "https://www.rueonline.com/onden-dugmeli-bej-transparan-sik-bluz",
+              "pageURLString": "https://www_rueonline_com/onden-dugmeli-bej-transparan-sik-bluz",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/onden-dugmeli-siyah-transparan-sik-blu-44fbb9_jpg",
+              "h1": "giyim",
+              "h2": "kadın",
+              "h3": "üst giyim",
+              "h4": "bluz",
+              "h5": "www.rueonline.com",
+              "priceString": 0,
+              "isValid": true,
+              "isLinkCandidate": true,
+              "childrenLength": 0
+            },
+            {
+              "_id": "6749b7a6569316beaf12d93b",
+              "title": "Önden Düğmeli Bej Transparan Şık Bluz",
+              "price": 0,
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/onden-dugmeli-bej-transparan-sik-bluz-6-446d.jpg",
+              "link": "https://www.rueonline.com/onden-dugmeli-bej-transparan-sik-bluz",
+              "pageTitle": "Önden Düğmeli Bej Transparan Şık Bluz | Rue Online Sipariş ",
+              "pageURL": "https://www.rueonline.com/onden-dugmeli-bej-transparan-sik-bluz",
+              "pageURLString": "https://www_rueonline_com/onden-dugmeli-bej-transparan-sik-bluz",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/onden-dugmeli-bej-transparan-sik-bluz-6-446d_jpg",
+              "h1": "giyim",
+              "h2": "kadın",
+              "h3": "üst giyim",
+              "h4": "bluz",
+              "h5": "www.rueonline.com",
+              "priceString": 0,
+              "isValid": true,
+              "isLinkCandidate": true,
+              "childrenLength": 0
+            }
+          ],
+          "childrenLength": 278
+        }
+      ],
+      "childrenLength": 1,
+      "uid": "0798ad3d3"
+    }
+  },
+  {
+    "uid": "b366293b3",
+    "details": {
+      "title": "büstiyer",
+      "children": [
+        {
+          "title": "www.rueonline.com",
+          "children": [
+            {
+              "_id": "6749b7a6569316beaf12d5dc",
+              "title": "Thick Strap Ecru Bustier",
+              "price": 0,
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/kalin-askili-ekru-bustiyer-762330.jpg",
+              "link": "https://www.rueonline.com/en/21424040-bustiyer-15624",
+              "pageTitle": "New Arrivals Online Store | Rue Les Createurs ",
+              "pageURL": "https://www.rueonline.com/en/new-arrivals?kategori=472",
+              "pageURLString": "https://www_rueonline_com/en/new-arrivals?kategori=472",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/kalin-askili-ekru-bustiyer-762330_jpg",
+              "h1": "giyim",
+              "h2": "kadın",
+              "h3": "üst giyim",
+              "h4": "büstiyer",
+              "h5": "www.rueonline.com",
+              "priceString": 0,
+              "isValid": true,
+              "isLinkCandidate": false,
+              "childrenLength": 0
+            },
+            {
+              "_id": "6749b7a6569316beaf12d5dd",
+              "title": "Thick Strap Navy Bustier",
+              "price": 0,
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/kalin-askili-lacivert-bustiyer-47d9-a.jpg",
+              "link": "https://www.rueonline.com/en/21424040-bustiyer-15623",
+              "pageTitle": "New Arrivals Online Store | Rue Les Createurs ",
+              "pageURL": "https://www.rueonline.com/en/new-arrivals?kategori=472",
+              "pageURLString": "https://www_rueonline_com/en/new-arrivals?kategori=472",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/kalin-askili-lacivert-bustiyer-47d9-a_jpg",
+              "h1": "giyim",
+              "h2": "kadın",
+              "h3": "üst giyim",
+              "h4": "büstiyer",
+              "h5": "www.rueonline.com",
+              "priceString": 0,
+              "isValid": true,
+              "isLinkCandidate": false,
+              "childrenLength": 0
+            }
+          ],
+          "childrenLength": 101
+        }
+      ],
+      "childrenLength": 1,
+      "uid": "b366293b3"
+    }
+  },
+  {
+    "uid": "6f8840ab1",
+    "details": {
+      "title": "crop top",
+      "children": [
+        {
+          "title": "www.rueonline.com",
+          "children": [
+            {
+              "_id": "6749b7a6569316beaf12d5ea",
+              "title": "Ribbed Crop Top",
+              "price": 0,
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/fitilli-ekru-crop-top-c8d61c.jpg",
+              "link": "https://www.rueonline.com/en/ecru-ribbed-crop-top",
+              "pageTitle": "New Arrivals Online Store | Rue Les Createurs ",
+              "pageURL": "https://www.rueonline.com/en/new-arrivals?kategori=472",
+              "pageURLString": "https://www_rueonline_com/en/new-arrivals?kategori=472",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/fitilli-ekru-crop-top-c8d61c_jpg",
+              "h1": "giyim",
+              "h2": "kadın",
+              "h3": "üst giyim",
+              "h4": "crop top",
+              "h5": "www.rueonline.com",
+              "priceString": 0,
+              "isValid": true,
+              "isLinkCandidate": false,
+              "childrenLength": 0
+            },
+            {
+              "_id": "6749b7a6569316beaf12d5eb",
+              "title": "Ribbed Crop Top",
+              "price": 0,
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/fitilli-siyah-crop-top-926ea-.jpg",
+              "link": "https://www.rueonline.com/en/black-ribbed-crop-top",
+              "pageTitle": "New Arrivals Online Store | Rue Les Createurs ",
+              "pageURL": "https://www.rueonline.com/en/new-arrivals?kategori=472",
+              "pageURLString": "https://www_rueonline_com/en/new-arrivals?kategori=472",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/fitilli-siyah-crop-top-926ea-_jpg",
+              "h1": "giyim",
+              "h2": "kadın",
+              "h3": "üst giyim",
+              "h4": "crop top",
+              "h5": "www.rueonline.com",
+              "priceString": 0,
+              "isValid": true,
+              "isLinkCandidate": false,
+              "childrenLength": 0
+            }
+          ],
+          "childrenLength": 12
+        }
+      ],
+      "childrenLength": 1,
+      "uid": "6f8840ab1"
+    }
+  },
+  {
+    "uid": "eb8251e88",
+    "details": {
+      "title": "yelek",
+      "children": [
+        {
+          "title": "www.rueonline.com",
+          "children": [
+            {
+              "_id": "6749b7a6569316beaf12d841",
+              "title": "Düğme Detaylı Kolsuz Tütün Yelek",
+              "price": 0,
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/dugme-detayli-kolsuz-tutun-yelek-6705cf.jpg",
+              "link": "https://www.rueonline.com/dugme-detayli-kolsuz-tutun-yelek",
+              "pageTitle": "Düğme Detaylı Kolsuz Lacivert Yelek | Rue Online Sipariş ",
+              "pageURL": "https://www.rueonline.com/dugme-detayli-kolsuz-lacivert-yelek",
+              "pageURLString": "https://www_rueonline_com/dugme-detayli-kolsuz-lacivert-yelek",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/dugme-detayli-kolsuz-tutun-yelek-6705cf_jpg",
+              "h1": "giyim",
+              "h2": "kadın",
+              "h3": "üst giyim",
+              "h4": "yelek",
+              "h5": "www.rueonline.com",
+              "priceString": 0,
+              "isValid": true,
+              "isLinkCandidate": true,
+              "childrenLength": 0
+            },
+            {
+              "_id": "6749b7a6569316beaf12d842",
+              "title": "Düğme Detaylı Kolsuz Siyah Yelek",
+              "price": 0,
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/dugme-detayli-kolsuz-siyah-yelek-aee6-8.jpg",
+              "link": "https://www.rueonline.com/dugme-detayli-kolsuz-siyah-yelek1",
+              "pageTitle": "Düğme Detaylı Kolsuz Lacivert Yelek | Rue Online Sipariş ",
+              "pageURL": "https://www.rueonline.com/dugme-detayli-kolsuz-lacivert-yelek",
+              "pageURLString": "https://www_rueonline_com/dugme-detayli-kolsuz-lacivert-yelek",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/dugme-detayli-kolsuz-siyah-yelek-aee6-8_jpg",
+              "h1": "giyim",
+              "h2": "kadın",
+              "h3": "üst giyim",
+              "h4": "yelek",
+              "h5": "www.rueonline.com",
+              "priceString": 0,
+              "isValid": true,
+              "isLinkCandidate": true,
+              "childrenLength": 0
+            }
+          ],
+          "childrenLength": 97
+        }
+      ],
+      "childrenLength": 1,
+      "uid": "eb8251e88"
+    }
+  },
+  {
+    "uid": "a43c015f7",
+    "details": {
+      "title": "hırka",
+      "children": [
+        {
+          "title": "www.rueonline.com",
+          "children": [
+            {
+              "_id": "6749b7a6569316beaf12d7cd",
+              "title": "Gold Düğme Detaylı Siyah Triko Hırka",
+              "price": 0,
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/gold-dugme-detayli-siyah-triko-hirka-a-bfe1.jpg",
+              "link": "https://www.rueonline.com/23024089-hirka-15650",
+              "pageTitle": "Gold Düğme Detaylı Ekru Triko Hırka | Rue Online Sipariş ",
+              "pageURL": "https://www.rueonline.com/gold-dugme-detayli-ekru-triko-hirka",
+              "pageURLString": "https://www_rueonline_com/gold-dugme-detayli-ekru-triko-hirka",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/gold-dugme-detayli-siyah-triko-hirka-a-bfe1_jpg",
+              "h1": "giyim",
+              "h2": "kadın",
+              "h3": "üst giyim",
+              "h4": "hırka",
+              "h5": "www.rueonline.com",
+              "priceString": 0,
+              "isValid": true,
+              "isLinkCandidate": true,
+              "childrenLength": 0
+            },
+            {
+              "_id": "6749b7a6569316beaf12d7ce",
+              "title": "Gold Düğme Detaylı Ekru Triko Hırka",
+              "price": 0,
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/gold-dugme-detayli-ekru-triko-hirka-9bd8-9.jpg",
+              "link": "https://www.rueonline.com/gold-dugme-detayli-ekru-triko-hirka",
+              "pageTitle": "Gold Düğme Detaylı Ekru Triko Hırka | Rue Online Sipariş ",
+              "pageURL": "https://www.rueonline.com/gold-dugme-detayli-ekru-triko-hirka",
+              "pageURLString": "https://www_rueonline_com/gold-dugme-detayli-ekru-triko-hirka",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/gold-dugme-detayli-ekru-triko-hirka-9bd8-9_jpg",
+              "h1": "giyim",
+              "h2": "kadın",
+              "h3": "üst giyim",
+              "h4": "hırka",
+              "h5": "www.rueonline.com",
+              "priceString": 0,
+              "isValid": true,
+              "isLinkCandidate": true,
+              "childrenLength": 0
+            }
+          ],
+          "childrenLength": 35
+        }
+      ],
+      "childrenLength": 1,
+      "uid": "a43c015f7"
+    }
+  },
+  {
+    "uid": "5f8aac8b5",
+    "details": {
+      "title": "tişört",
+      "children": [
+        {
+          "title": "www.rueonline.com",
+          "children": [
+            {
+              "_id": "6749b7a6569316beaf12d6ad",
+              "title": "Dökümlü Siyah Basic T-shirt",
+              "price": 0,
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/dokumlu-siyah-basic-t-shirt-680725.jpg",
+              "link": "https://www.rueonline.com/dokumlu-siyah-basic-t-shirt",
+              "pageTitle": "T-shirt ",
+              "pageURL": "https://www.rueonline.com/t-shirt",
+              "pageURLString": "https://www_rueonline_com/t-shirt",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/dokumlu-siyah-basic-t-shirt-680725_jpg",
+              "h1": "giyim",
+              "h2": "kadın",
+              "h3": "üst giyim",
+              "h4": "tişört",
+              "h5": "www.rueonline.com",
+              "priceString": 0,
+              "isValid": true,
+              "isLinkCandidate": true,
+              "childrenLength": 0
+            },
+            {
+              "_id": "6749b7a6569316beaf12d6ae",
+              "title": "Dökümlü Lacivert Basic T-shirt",
+              "price": 0,
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/dokumlu-lacivert-basic-t-shirt-5b-474.jpg",
+              "link": "https://www.rueonline.com/dokumlu-lacivert-basic-t-shirt",
+              "pageTitle": "T-shirt ",
+              "pageURL": "https://www.rueonline.com/t-shirt",
+              "pageURLString": "https://www_rueonline_com/t-shirt",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/dokumlu-lacivert-basic-t-shirt-5b-474_jpg",
+              "h1": "giyim",
+              "h2": "kadın",
+              "h3": "üst giyim",
+              "h4": "tişört",
+              "h5": "www.rueonline.com",
+              "priceString": 0,
+              "isValid": true,
+              "isLinkCandidate": true,
+              "childrenLength": 0
+            }
+          ],
+          "childrenLength": 24
+        }
+      ],
+      "childrenLength": 1,
+      "uid": "5f8aac8b5"
+    }
+  },
+  {
+    "uid": "14064741e",
+    "details": {
+      "title": "sweatshirt",
+      "children": [
+        {
+          "title": "www.rueonline.com",
+          "children": [
+            {
+              "_id": "6749b7a6569316beaf12d6b9",
+              "title": "Ekru Renk Bloklu Bağcıklı Sweatshirt",
+              "price": 0,
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/ekru-renk-bloklu-bagcikli-sweatshirt--41bd-.jpg",
+              "link": "https://www.rueonline.com/ekru-renk-bloklu-bagcikli-sweatshirt",
+              "pageTitle": "Sweatshirt ",
+              "pageURL": "https://www.rueonline.com/sweatshirt",
+              "pageURLString": "https://www_rueonline_com/sweatshirt",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/ekru-renk-bloklu-bagcikli-sweatshirt--41bd-_jpg",
+              "h1": "giyim",
+              "h2": "kadın",
+              "h3": "üst giyim",
+              "h4": "sweatshirt",
+              "h5": "www.rueonline.com",
+              "priceString": 0,
+              "isValid": true,
+              "isLinkCandidate": true,
+              "childrenLength": 0
+            },
+            {
+              "_id": "6749b7a6569316beaf12d6ba",
+              "title": "Siyah Renk Bloklu Bağcıklı Sweatshirt",
+              "price": 0,
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/siyah-renk-bloklu-bagcikli-sweatshirt--0e162.jpg",
+              "link": "https://www.rueonline.com/siyah-renk-bloklu-bagcikli-sweatshirt",
+              "pageTitle": "Sweatshirt ",
+              "pageURL": "https://www.rueonline.com/sweatshirt",
+              "pageURLString": "https://www_rueonline_com/sweatshirt",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/siyah-renk-bloklu-bagcikli-sweatshirt--0e162_jpg",
+              "h1": "giyim",
+              "h2": "kadın",
+              "h3": "üst giyim",
+              "h4": "sweatshirt",
+              "h5": "www.rueonline.com",
+              "priceString": 0,
+              "isValid": true,
+              "isLinkCandidate": true,
+              "childrenLength": 0
+            }
+          ],
+          "childrenLength": 43
+        }
+      ],
+      "childrenLength": 1,
+      "uid": "14064741e"
+    }
+  },
+  {
+    "uid": "f31873345",
+    "details": {
+      "title": "tulum",
+      "children": [
+        {
+          "title": "www.rueonline.com",
+          "children": [
+            {
+              "_id": "6749b7a6569316beaf12d8d6",
+              "title": "Göğüs Kulplu Kalın Askılı Siyah Tulum",
+              "price": 0,
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/gogus-kulplu-kalin-askili-siyah-tulum-aa-af0.jpg",
+              "link": "https://www.rueonline.com/gogus-kulplu-kalin-askili-siyah-tulum",
+              "pageTitle": "Göğüs Kulplu Kalın Askılı Lacivert Tulum | Rue Online Sipariş ",
+              "pageURL": "https://www.rueonline.com/gogus-kulplu-kalin-askili-lacivert-tulum",
+              "pageURLString": "https://www_rueonline_com/gogus-kulplu-kalin-askili-lacivert-tulum",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/gogus-kulplu-kalin-askili-siyah-tulum-aa-af0_jpg",
+              "h1": "giyim",
+              "h2": "kadın",
+              "h3": "üst giyim",
+              "h4": "tulum",
+              "h5": "www.rueonline.com",
+              "priceString": 0,
+              "isValid": true,
+              "isLinkCandidate": true,
+              "childrenLength": 0
+            },
+            {
+              "_id": "6749b7a6569316beaf12d8d7",
+              "title": "Göğüs Kulplu Kalın Askılı Lacivert Tulum",
+              "price": 0,
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/gogus-kulplu-kalin-askili-lacivert-tul-7a-c84.jpg",
+              "link": "https://www.rueonline.com/gogus-kulplu-kalin-askili-lacivert-tulum",
+              "pageTitle": "Göğüs Kulplu Kalın Askılı Lacivert Tulum | Rue Online Sipariş ",
+              "pageURL": "https://www.rueonline.com/gogus-kulplu-kalin-askili-lacivert-tulum",
+              "pageURLString": "https://www_rueonline_com/gogus-kulplu-kalin-askili-lacivert-tulum",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/gogus-kulplu-kalin-askili-lacivert-tul-7a-c84_jpg",
+              "h1": "giyim",
+              "h2": "kadın",
+              "h3": "üst giyim",
+              "h4": "tulum",
+              "h5": "www.rueonline.com",
+              "priceString": 0,
+              "isValid": true,
+              "isLinkCandidate": true,
+              "childrenLength": 0
+            }
+          ],
+          "childrenLength": 39
+        }
+      ],
+      "childrenLength": 1,
+      "uid": "f31873345"
     }
   },
   {
@@ -845,54 +1013,146 @@
       "title": "bodysuit",
       "children": [
         {
-          "title": "biancoenero.com.tr",
+          "title": "www.rueonline.com",
           "children": [
             {
-              "_id": "67495fff67f204b294aa0655",
-              "title": "Havana Bodysuit",
+              "_id": "6749b7a6569316beaf12d5d2",
+              "title": "Basic Crepe Texture Ecru Bodysuit",
               "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/HAVAN2.jpg?v=1700516710&width=1000",
-              "link": "https://biancoenero.com.tr/products/havana-bodysuit",
-              "pageTitle": "Blouse \\ Top ",
-              "pageURL": "https://biancoenero.com.tr/collections/bodysuits",
-              "pageURLString": "https://biancoenero_com_tr/collections/bodysuits",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/HAVAN2_jpg?v=1700516710&width=1000",
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/kare-yaka-dokulu-ekru-bluz--975a-.jpg",
+              "link": "https://www.rueonline.com/en/20924008-bluz-15614",
+              "pageTitle": "New Arrivals Online Store | Rue Les Createurs ",
+              "pageURL": "https://www.rueonline.com/en/new-arrivals?kategori=467",
+              "pageURLString": "https://www_rueonline_com/en/new-arrivals?kategori=467",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/kare-yaka-dokulu-ekru-bluz--975a-_jpg",
               "h1": "giyim",
               "h2": "kadın",
               "h3": "iç giyim",
               "h4": "bodysuit",
-              "h5": "biancoenero.com.tr",
+              "h5": "www.rueonline.com",
+              "priceString": 0,
+              "isValid": true,
+              "isLinkCandidate": false,
+              "childrenLength": 0
+            },
+            {
+              "_id": "6749b7a6569316beaf12d5d4",
+              "title": "Basic Crepe Texture Red Bodysuit",
+              "price": 0,
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/kare-yaka-dokulu-kirmizi-bluz-b949-1.jpg",
+              "link": "https://www.rueonline.com/en/20924008-bluz-15613",
+              "pageTitle": "New Arrivals Online Store | Rue Les Createurs ",
+              "pageURL": "https://www.rueonline.com/en/new-arrivals?kategori=467",
+              "pageURLString": "https://www_rueonline_com/en/new-arrivals?kategori=467",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/kare-yaka-dokulu-kirmizi-bluz-b949-1_jpg",
+              "h1": "giyim",
+              "h2": "kadın",
+              "h3": "iç giyim",
+              "h4": "bodysuit",
+              "h5": "www.rueonline.com",
+              "priceString": 0,
+              "isValid": true,
+              "isLinkCandidate": false,
+              "childrenLength": 0
+            }
+          ],
+          "childrenLength": 11
+        }
+      ],
+      "childrenLength": 1,
+      "uid": "5e0f8a078"
+    }
+  },
+  {
+    "uid": "cdf415fd1",
+    "details": {
+      "title": "şal",
+      "children": [
+        {
+          "title": "www.rueonline.com",
+          "children": [
+            {
+              "_id": "6749b7a6569316beaf12d7a4",
+              "title": "Sheer Black Basic Knit",
+              "price": 0,
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/transparan-siyah-basic-triko-5e7cac.jpg",
+              "link": "https://www.rueonline.com/sheer-black-basic-knit",
+              "pageTitle": "Outlet Online Store | Rue Les Createurs ",
+              "pageURL": "https://www.rueonline.com/en/sale-off?kategori=475&sayfa=1",
+              "pageURLString": "https://www_rueonline_com/en/sale-off?kategori=475&sayfa=1",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/transparan-siyah-basic-triko-5e7cac_jpg",
+              "h1": "giyim",
+              "h2": "kadın",
+              "h3": "atkı",
+              "h4": "şal",
+              "h5": "www.rueonline.com",
+              "priceString": 0,
+              "isValid": true,
+              "isLinkCandidate": false,
+              "childrenLength": 0
+            }
+          ],
+          "childrenLength": 1
+        }
+      ],
+      "childrenLength": 1,
+      "uid": "cdf415fd1"
+    }
+  },
+  {
+    "uid": "3475ab0f0",
+    "details": {
+      "title": "triko",
+      "children": [
+        {
+          "title": "www.rueonline.com",
+          "children": [
+            {
+              "_id": "6749b7a6569316beaf12da34",
+              "title": "Triko Bant Detaylı Siyah Transparan Şık Bluz",
+              "price": 0,
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/triko-bant-detayli-siyah-transparan-si-ba-b17.jpg",
+              "link": "https://www.rueonline.com/triko-bant-detayli-siyah-transparan-sik-bluz",
+              "pageTitle": "Triko Bant Detaylı Siyah Transparan Şık Bluz | Rue Online Sipariş ",
+              "pageURL": "https://www.rueonline.com/triko-bant-detayli-siyah-transparan-sik-bluz",
+              "pageURLString": "https://www_rueonline_com/triko-bant-detayli-siyah-transparan-sik-bluz",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/triko-bant-detayli-siyah-transparan-si-ba-b17_jpg",
+              "h1": "giyim",
+              "h2": "kadın",
+              "h3": "triko",
+              "h4": "triko",
+              "h5": "www.rueonline.com",
               "priceString": 0,
               "isValid": true,
               "isLinkCandidate": true,
               "childrenLength": 0
             },
             {
-              "_id": "67495fff67f204b294aa0659",
-              "title": "Presilla Gold Bodysuit",
+              "_id": "6749b7a6569316beaf12da35",
+              "title": "Triko Bant Detaylı Siyah Transparan Şık Bluz",
               "price": 0,
-              "img": "https://biancoenero.com.tr/cdn/shop/files/PBG2.png?v=1704311089&width=1000",
-              "link": "https://biancoenero.com.tr/products/presilla-gold-bodysuit",
-              "pageTitle": "Blouse \\ Top ",
-              "pageURL": "https://biancoenero.com.tr/collections/bodysuits",
-              "pageURLString": "https://biancoenero_com_tr/collections/bodysuits",
-              "imgString": "https://biancoenero_com_tr/cdn/shop/files/PBG2_png?v=1704311089&width=1000",
+              "img": "https://static.ticimax.cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/triko-bant-detayli-siyah-transparan-si-ba-b17.jpg",
+              "link": "https://www.rueonline.com/triko-bant-detayli-siyah-transparan-sik-bluz",
+              "pageTitle": "Triko Bant Detaylı Siyah Transparan Şık Bluz | Rue Online Sipariş ",
+              "pageURL": "https://www.rueonline.com/triko-bant-detayli-siyah-transparan-sik-bluz",
+              "pageURLString": "https://www_rueonline_com/triko-bant-detayli-siyah-transparan-sik-bluz",
+              "imgString": "https://static_ticimax_cloud/cdn-cgi/image/width=680,quality=95,format=webp/6924/uploads/urunresimleri/buyuk/triko-bant-detayli-siyah-transparan-si-ba-b17_jpg",
               "h1": "giyim",
               "h2": "kadın",
-              "h3": "iç giyim",
-              "h4": "bodysuit",
-              "h5": "biancoenero.com.tr",
+              "h3": "triko",
+              "h4": "triko",
+              "h5": "www.rueonline.com",
               "priceString": 0,
               "isValid": true,
               "isLinkCandidate": true,
               "childrenLength": 0
             }
           ],
-          "childrenLength": 12
+          "childrenLength": 26
         }
       ],
       "childrenLength": 1,
-      "uid": "5e0f8a078"
+      "uid": "3475ab0f0"
     }
   }
 ]
