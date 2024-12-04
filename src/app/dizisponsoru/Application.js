@@ -1,29 +1,42 @@
-import React from 'react';
+import React, { cache } from 'react';
 import { 
   Grid, 
   Typography, 
   Container, 
   Box
-
 } from '@mui/material';
 import SponsorView from '@/app/dizisponsoru/comp/SponsorView';
 import data from '@/app/dizi/dizisponsoruMenu.json';
 import PersistentDrawerLeft from '../components/drawer';
 import getViews from '../utils/firebase/supabase';
 
-// Process data outside component
-const arrayData = Object.entries(data);
-const mappedData = arrayData
-  .map(([title, content]) => ({
-    content,
-    href: `/dizi/${content.tag}-dizi-sponsorlari`,
-    title
-  }))
-  .sort((a, b) => new Date(b.content.StartDate) - new Date(a.content.StartDate));
+// Memoize data processing
+const processSponsorData = cache(() => {
+  const arrayData = Object.entries(data);
+  return arrayData
+    .map(([title, content]) => ({
+      content,
+      href: `/dizi/${content.tag}-dizi-sponsorlari`,
+      title
+    }))
+    .sort((a, b) => new Date(b.content.StartDate) - new Date(a.content.StartDate));
+});
 
-export { mappedData };
+// Memoize SponsorView to prevent unnecessary re-renders
+const MemoizedSponsorView = React.memo(SponsorView);
+
+export async function generateMetadata() {
+  return {
+    title: 'Türk Dizi Sponsorları',
+    description: 'Türk dizilerinin sponsorları ve detayları'
+  };
+}
 
 export default async function Application() {
+  // Memoized data processing
+  const mappedData = processSponsorData();
+  
+  // Cached view data
   const userViewData = await getViews({ table: 'dizisponsoru-home' });
 
   return (
@@ -37,7 +50,6 @@ export default async function Application() {
         >
           {/* Header */}
           <Typography 
-    
             sx={{
               textAlign: 'center',
               mb: { xs: 2, md: 4 },
@@ -77,7 +89,7 @@ export default async function Application() {
                     flex: 1
                   }
                 }}>
-                  <SponsorView
+                  <MemoizedSponsorView
                     userViewData={userViewData}
                     {...item}
                   />
@@ -90,3 +102,6 @@ export default async function Application() {
     </PersistentDrawerLeft>
   );
 }
+
+// Export mapped data if needed elsewhere
+export { processSponsorData };
