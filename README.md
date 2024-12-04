@@ -123,4 +123,3 @@ next
 node utils/sponsor-giyim/downloadData.mjs && node utils/alternatif-utils/downloadData.mjs && node src/app/turk-dizi/utils/downloadData.mjs&& node utils/alternatif-utils/aggregateData.mjs &&  node src/app/turk-dizi/utils/mergeData.mjs&& npx next build
 
 
-rpeview
