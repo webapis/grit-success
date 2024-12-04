@@ -6,50 +6,15 @@ import {
   CardMedia,
   Typography,
   Box,
-  Stack,
-  IconButton,
-  useTheme,
-  useMediaQuery,
   Skeleton,
 } from '@mui/material';
+import { useTheme, useMediaQuery } from '@mui/material';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import ClickableLink from './ClickableLinkResponsive';
 import ViewCount from './ViewCount';
 
-export default function SponsorView({ title, content, href, userViewData }) {
-  const { tag, toplamSponsor, Tag, Year } = content;
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const [imageLoaded, setImageLoaded] = React.useState(false);
-  const [isVisible, setIsVisible] = React.useState(false);
-  const cardRef = React.useRef(null);
-
-  React.useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      {
-        root: null,
-        rootMargin: '50px',
-        threshold: 0.1,
-      }
-    );
-
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
-    }
-
-    return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
-      }
-    };
-  }, []);
-
+// Memoized Card component to prevent unnecessary re-renders
+const MemoizedCard = React.memo(function CardWrapper({ children, cardRef, ...props }) {
   return (
     <Card 
       ref={cardRef}
@@ -67,72 +32,157 @@ export default function SponsorView({ title, content, href, userViewData }) {
           }
         }
       }}
+      {...props}
     >
-      {/* Left side image with its own clickable area */}
-      <Box
-        sx={{ 
-          position: 'relative',
-          width: { xs: '96px', sm: '140px' },
-          bgcolor: 'action.hover',
-          '&:hover': {
-            '&::after': {
-              content: '""',
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              backgroundColor: 'rgba(0, 0, 0, 0.1)',
-              transition: 'background-color 0.2s'
-            }
-          }
-        }}
-      >
-        {!imageLoaded && (
-          <Skeleton
-            variant="rectangular"
-            sx={{ 
-              height: '100%',
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              zIndex: 1
-            }}
-          />
-        )}
-        {isVisible && (
-          <CardMedia
-            component="img"
-            sx={{ 
-              height: '100%',
-              objectFit: 'cover',
-              transition: 'all 0.2s ease-in-out',
-              opacity: imageLoaded ? 1 : 0
-            }}
-            image={`${process.env.NEXT_PUBLIC_IMG_HOST}/dizi-image/${Tag}.jpg`}
-            alt={`${title} Dizi Sponsorları`}
-            onLoad={() => setImageLoaded(true)}
-            loading="lazy"
-          />
-        )}
-        <ClickableLink 
-          rootPath="dizisponsoru-home"
-          clickable={1}
-          linkId={href}
-          sx={{
+      {children}
+    </Card>
+  );
+});
+
+// Separate Image component to handle image loading logic
+const CardImageSection = React.memo(function CardImageSection({ isVisible, title, Tag, href }) {
+  const [imageLoaded, setImageLoaded] = React.useState(false);
+
+  return (
+    <Box
+      sx={{ 
+        position: 'relative',
+        width: { xs: '96px', sm: '140px' },
+        bgcolor: 'action.hover',
+        '&:hover': {
+          '&::after': {
+            content: '""',
             position: 'absolute',
             top: 0,
             left: 0,
             right: 0,
             bottom: 0,
-            zIndex: 2
+            backgroundColor: 'rgba(0, 0, 0, 0.1)',
+            transition: 'background-color 0.2s'
+          }
+        }
+      }}
+    >
+      {!imageLoaded && (
+        <Skeleton
+          variant="rectangular"
+          sx={{ 
+            height: '100%',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            zIndex: 1
           }}
         />
-      </Box>
+      )}
+      {isVisible && (
+        <CardMedia
+          component="img"
+          sx={{ 
+            height: '100%',
+            objectFit: 'cover',
+            transition: 'all 0.2s ease-in-out',
+            opacity: imageLoaded ? 1 : 0
+          }}
+          image={`${process.env.NEXT_PUBLIC_IMG_HOST}/dizi-image/${Tag}.jpg`}
+          alt={`${title} Dizi Sponsorları`}
+          onLoad={() => setImageLoaded(true)}
+          loading="lazy"
+        />
+      )}
+      <ClickableLink 
+        rootPath="dizisponsoru-home"
+        clickable={1}
+        linkId={href}
+        sx={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: 2
+        }}
+      />
+    </Box>
+  );
+});
 
-      {/* Right side content */}
+// Footer component
+const CardFooter = React.memo(function CardFooter({ href, userViewData }) {
+  return (
+    <Box sx={{ 
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      mt: 'auto',
+      position: 'absolute',
+      bottom: 0,
+      left: 0,
+      right: 0,
+      pr: { xs: 1.5, sm: 2 }
+    }}>
+      <ViewCount 
+        rootPath="dizisponsoru-home" 
+        linkId={href} 
+        userViewData={userViewData}
+      />
+      
+      <OpenInNewIcon 
+        className="hover-icon"
+        sx={{
+          fontSize: '1rem',
+          opacity: 0,
+          transition: 'opacity 0.2s ease-in-out',
+          color: 'text.secondary'
+        }}
+      />
+    </Box>
+  );
+});
+
+export default function SponsorView({ title, content, href, userViewData }) {
+  const { tag, toplamSponsor, Tag, Year } = content;
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const [isVisible, setIsVisible] = React.useState(false);
+  const cardRef = React.useRef(null);
+
+  // Memoized intersection observer callback
+  const intersectionCallback = React.useCallback(([entry]) => {
+    if (entry.isIntersecting) {
+      setIsVisible(true);
+    }
+  }, []);
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(intersectionCallback, {
+      root: null,
+      rootMargin: '50px',
+      threshold: 0.1,
+    });
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => {
+      if (cardRef.current) {
+        observer.unobserve(cardRef.current);
+      }
+    };
+  }, [intersectionCallback]);
+
+  return (
+    <MemoizedCard cardRef={cardRef}>
+      <CardImageSection 
+        isVisible={isVisible}
+        title={title}
+        Tag={Tag}
+        href={href}
+      />
+
       <Box sx={{ 
         display: 'flex', 
         flexDirection: 'column',
@@ -145,7 +195,6 @@ export default function SponsorView({ title, content, href, userViewData }) {
           p: 0,
           '&:last-child': { pb: 0 }
         }}>
-          {/* Header with title and year */}
           <Box sx={{ 
             display: 'flex', 
             justifyContent: 'space-between',
@@ -153,7 +202,6 @@ export default function SponsorView({ title, content, href, userViewData }) {
             mb: 0.5,
             gap: 1
           }}>
-            {/* Title */}
             <Typography 
               component="h2" 
               sx={{ 
@@ -171,7 +219,6 @@ export default function SponsorView({ title, content, href, userViewData }) {
               {title}
             </Typography>
 
-            {/* Year */}
             <Typography 
               variant="caption" 
               sx={{ 
@@ -186,7 +233,6 @@ export default function SponsorView({ title, content, href, userViewData }) {
             </Typography>
           </Box>
 
-          {/* Series Type */}
           <Typography 
             variant="body2" 
             color="text.secondary"
@@ -199,7 +245,6 @@ export default function SponsorView({ title, content, href, userViewData }) {
             Dizi Sponsorları
           </Typography>
 
-          {/* Sponsor Count */}
           <Typography 
             variant="caption" 
             color="text.secondary"
@@ -212,37 +257,9 @@ export default function SponsorView({ title, content, href, userViewData }) {
             Sponsor sayısı: {toplamSponsor}
           </Typography>
 
-          {/* Footer with view count */}
-          <Box sx={{ 
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            mt: 'auto',
-            position: 'absolute',
-            bottom: 0,
-            left: 0,
-            right: 0,
-            pr: { xs: 1.5, sm: 2 }
-          }}>
-            <ViewCount 
-              rootPath="dizisponsoru-home" 
-              linkId={href} 
-              userViewData={userViewData}
-            />
-            
-            <OpenInNewIcon 
-              className="hover-icon"
-              sx={{
-                fontSize: '1rem',
-                opacity: 0,
-                transition: 'opacity 0.2s ease-in-out',
-                color: 'text.secondary'
-              }}
-            />
-          </Box>
+          <CardFooter href={href} userViewData={userViewData} />
         </CardContent>
 
-        {/* Main content clickable overlay */}
         <ClickableLink 
           rootPath="dizisponsoru-home"
           clickable={1}
@@ -257,6 +274,6 @@ export default function SponsorView({ title, content, href, userViewData }) {
           }}
         />
       </Box>
-    </Card>
+    </MemoizedCard>
   );
 }
