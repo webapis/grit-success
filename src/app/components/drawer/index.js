@@ -1,5 +1,5 @@
 'use client'
-import * as React from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -19,7 +19,7 @@ const drawerWidth = 240;
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
     ({ theme, open }) => ({
         flexGrow: 1,
-        paddingTop: 2,// theme.spacing(3),
+        paddingTop: 2,
         transition: theme.transitions.create('margin', {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
@@ -56,27 +56,35 @@ const DrawerHeader = styled('div')(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
     padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
 }));
 
-export default function PersistentDrawerLeft({ children, data,title }) {
+export default function PersistentDrawerLeft({ children, data, title }) {
     const theme = useTheme();
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
 
-    const handleDrawerOpen = () => {
+    const handleDrawerOpen = useCallback(() => {
         setOpen(true);
-    };
+    }, []);
 
-    const handleDrawerClose = () => {
+    const handleDrawerClose = useCallback(() => {
         setOpen(false);
-    };
+    }, []);
+
+    // Memoize list items to prevent unnecessary re-renders
+    const memoizedListItems = useMemo(() => 
+        data.map((m, i) => {
+            const { href, title } = m;
+            return <DizivliewListItem key={i} href={href} title={title} />;
+        }),
+        [data]
+    );
 
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar position="fixed" open={open} style={{ backgroundColor: 'white', zIndex: 500 }} elevation={1} >
+            <AppBar position="fixed" open={open} style={{ backgroundColor: 'white', zIndex: 500 }} elevation={1}>
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -92,15 +100,12 @@ export default function PersistentDrawerLeft({ children, data,title }) {
                         noWrap
                         component='a'
                         sx={{
-                            // border:'1px solid #bdbdbd',
                             paddingLeft: 2,
                             paddingRight: 2,
                             borderRadius: 5,
                             color: 'black',
                             fontFamily: 'inherit',
                             fontWeight: 500,
-                            // fontSize: '1.5rem',
-                            // letterSpacing: '0.05em',
                             textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
                             textDecoration: 'none'
                         }}
@@ -131,10 +136,7 @@ export default function PersistentDrawerLeft({ children, data,title }) {
                 <Divider />
                 <Box sx={{ padding: 2 }}>
                     <Typography variant="h5" gutterBottom>{title}</Typography>
-                    {data.map((m, i) => {
-                        const { href, title } = m
-                        return <DizivliewListItem key={i} href={href} title={title} />
-                    })}
+                    {memoizedListItems}
                 </Box>
             </Drawer>
             <Main open={open}>
@@ -143,5 +145,3 @@ export default function PersistentDrawerLeft({ children, data,title }) {
         </Box>
     );
 }
-
-
