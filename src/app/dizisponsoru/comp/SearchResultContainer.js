@@ -1,39 +1,91 @@
-
 import Container from "@mui/material/Container"
 import Grid from "@mui/material/Grid"
 import SearchResultItem from "./SearchResultItem"
+import ChipContainer from "./ChipContainer"
+import SelectedDiziChip from "./SelectedDiziChip"
+import TopNavigation from "@/app/components/TopNavigation"
+import { mappedData } from "../Application"
+import PersistentDrawerLeft from "@/app/components/drawer"
+import getViews from "@/app/utils/firebase/supabase"
 
+// Memoized view count mapping function
+const mapViewCountToData = (data, viewData) => {
+  const viewsMap = new Map(
+    viewData['data'].map(item => [item.href, item.count])
+  );
 
-import ChipContainer from "./ChipContainer";
-import SelectedDiziChip from "./SelectedDiziChip";
-import TopNavigation from "@/app/components/TopNavigation";
-import { mappedData } from "../Application";
-import PersistentDrawerLeft from "@/app/components/drawer";
-import getViews from "@/app/utils/firebase/supabase";
-export default async function SearchResultContainer({ data, pageTitle, dizi, keyword,keywordsCounter,totalItems }) {
-debugger
-  const userViewData = await getViews({ table: 'dizisponsoru' })
-  let mappedResult = data.map(m => {
-    
-    
-    const linkId = m.Website
-    const viewCount = userViewData['data'].find(f => f.href.includes(linkId))
-   // console.log(linkId,userViewData['data'].map(m=>m.href).includes(linkId))
-    
-    return { ...m, viewCount: viewCount ? viewCount.count : 0 }
-}).sort((a, b) => b.viewCount - a.viewCount)
-  return <>
-    <TopNavigation selected={2} />
-    <PersistentDrawerLeft data={mappedData} title="Dizi Sponsoru"><Container>
+  return data.map(item => ({
+    ...item,
+    viewCount: viewsMap.get(item.Website) || 0
+  })).sort((a, b) => b.viewCount - a.viewCount);
+};
 
-      <SelectedDiziChip category={pageTitle} />
-      <Grid container gap={1} justifyContent="center">
-        <ChipContainer dizi={dizi} keyword={keyword} keywordsCounter={keywordsCounter} totalItems={totalItems} />
-        {mappedResult.map((m, i) => <Grid item key={i} xs={12} md={5} > <SearchResultItem item={{...m}} userViewData={userViewData} /></Grid>)}
-      </Grid>
-      <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center', marginTop: 3 }}>
-        <ChipContainer dizi={dizi} keyword={keyword} />
-      </Grid>
-    </Container></PersistentDrawerLeft>
-  </>
+// Memoized grid item component
+const GridItem = ({ item, userViewData, index }) => (
+  <Grid item key={index} xs={12} md={5}>
+    <SearchResultItem item={item} userViewData={userViewData} />
+  </Grid>
+);
+
+export default async function SearchResultContainer({ 
+  data, 
+  pageTitle, 
+  dizi, 
+  keyword,
+  keywordsCounter,
+  totalItems 
+}) {
+  // Get view data
+  const userViewData = await getViews({ table: 'dizisponsoru' });
+  
+  // Map and sort data efficiently using the memoized function
+  const mappedResult = mapViewCountToData(data, userViewData);
+
+  // Common props for ChipContainer to avoid prop spreading
+  const chipContainerProps = {
+    dizi,
+    keyword,
+    keywordsCounter,
+    totalItems
+  };
+
+  return (
+    <>
+      <TopNavigation selected={2} />
+      <PersistentDrawerLeft data={mappedData} title="Dizi Sponsoru">
+        <Container>
+          <SelectedDiziChip category={pageTitle} />
+          
+          <Grid 
+            container 
+            gap={1} 
+            justifyContent="center"
+          >
+            <ChipContainer {...chipContainerProps} />
+            
+            {mappedResult.map((item, index) => (
+              <GridItem 
+                key={item.Website} // Using Website as a unique key instead of index
+                item={item}
+                userViewData={userViewData}
+                index={index}
+              />
+            ))}
+          </Grid>
+
+          <Grid 
+            item 
+            xs={12} 
+            sx={{ 
+              display: 'flex', 
+              justifyContent: 'center', 
+              marginTop: 3 
+            }}
+          >
+            <ChipContainer dizi={dizi} keyword={keyword} />
+          </Grid>
+        </Container>
+      </PersistentDrawerLeft>
+    </>
+  );
 }

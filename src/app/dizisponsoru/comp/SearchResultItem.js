@@ -1,6 +1,7 @@
+
 'use client'
 
-import React, { useState } from 'react';
+import React, { useState, useCallback, memo,useMemo } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
@@ -16,6 +17,7 @@ import extractSubdomain from './extractSubdomain';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import ImageIcon from '@mui/icons-material/Image';
 
+// Styled components remain unchanged since they're already optimized
 const StyledCard = styled(Card)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
@@ -76,39 +78,84 @@ const ExpandableTypography = styled(Typography)(({ theme }) => ({
   },
 }));
 
+// Memoized image component
+const MemoizedImage = memo(function Image({ src, alt, onLoad, onError }) {
+  return (
+    <StyledImage
+      src={src}
+      alt={alt}
+      onLoad={onLoad}
+      onError={onError}
+    />
+  );
+});
+
+// Memoized service chips component
+const ServiceChips = memo(function ServiceChips({ services }) {
+  return services.trim().replaceAll(',', ' ').split(' ')
+    .filter(Boolean)
+    .map((service, index) => (
+      <Chip
+        key={index}
+        size="small"
+        label={service.toLowerCase()}
+        sx={{ mr: 0.5, mb: 0.5, textTransform: 'capitalize' }}
+      />
+    ));
+});
+
+// Memoized description component
+const Description = memo(function Description({ description, expanded, onClick }) {
+  const displayText = expanded 
+    ? description 
+    : description.length > 100 
+      ? `${description.substring(0, 100)}...` 
+      : description;
+
+  return (
+    <ExpandableTypography 
+      variant="body2" 
+      color="text.secondary"
+      onClick={onClick}
+    >
+      {displayText}
+    </ExpandableTypography>
+  );
+});
+
 export default function SearchResultItem({ item, userViewData }) {
   const { Name: name, Website, Acyklama, TVSeriesTitle, tag, brandTag, ServiceName, h3 } = item;
   const imageName = brandTag || extractSubdomain(Website);
-  const hostname = new URL(Website).hostname;
+  const hostname = useMemo(() => new URL(Website).hostname, [Website]);
   const [expanded, setExpanded] = useState(false);
   const [imageLoaded, setImageLoaded] = useState({ dizi: false, marka: false });
   const [imageError, setImageError] = useState({ dizi: false, marka: false });
 
-  const toggleExpand = () => setExpanded(!expanded);
+  const toggleExpand = useCallback(() => setExpanded(prev => !prev), []);
   const description = Acyklama || 'No description available.';
 
-  const handleImageLoad = (imageType) => {
+  const handleImageLoad = useCallback((imageType) => {
     setImageLoaded(prev => ({ ...prev, [imageType]: true }));
-  };
+  }, []);
 
-  const handleImageError = (imageType) => {
+  const handleImageError = useCallback((imageType) => {
     setImageError(prev => ({ ...prev, [imageType]: true }));
     console.error(`Failed to load ${imageType} image`);
-  };
+  }, []);
 
-  const renderImage = (src, alt, imageType) => {
+  const renderImage = useCallback((src, alt, imageType) => {
     if (imageError[imageType]) {
       return <ImageIcon style={{ fontSize: 40, color: 'grey' }} />;
     }
     return (
-      <StyledImage
+      <MemoizedImage
         src={src}
         alt={alt}
         onLoad={() => handleImageLoad(imageType)}
         onError={() => handleImageError(imageType)}
       />
     );
-  };
+  }, [imageError, handleImageLoad, handleImageError]);
 
   return (
     <StyledCard elevation={2}>
@@ -127,18 +174,17 @@ export default function SearchResultItem({ item, userViewData }) {
             <Typography variant="subtitle2" color="text.secondary">
               {TVSeriesTitle}
             </Typography>
-      
-              <IconButton
-                component={ClickableLink}
-                rootPath="dizisponsoru"
-                clickable={1}
-                title={hostname}
-                linkId={Website}
-                size="small"
-              >
-                <OpenInNewIcon fontSize="small" />
-              </IconButton>
-      
+            
+            <IconButton
+              component={ClickableLink}
+              rootPath="dizisponsoru"
+              clickable={1}
+              title={hostname}
+              linkId={Website}
+              size="small"
+            >
+              <OpenInNewIcon fontSize="small" />
+            </IconButton>
           </Box>
           
           <Typography variant="h6" component="div" gutterBottom>
@@ -152,16 +198,7 @@ export default function SearchResultItem({ item, userViewData }) {
           
           {ServiceName && (
             <Box sx={{ mt: 0.5, mb: 1 }}>
-              {ServiceName.trim().replaceAll(',', ' ').split(' ')
-                .filter(Boolean)
-                .map((service, index) => (
-                  <Chip
-                    key={index}
-                    size="small"
-                    label={service.toLowerCase()}
-                    sx={{ mr: 0.5, mb: 0.5, textTransform: 'capitalize' }}
-                  />
-                ))}
+              <ServiceChips services={ServiceName} />
             </Box>
           )}
           
@@ -171,13 +208,11 @@ export default function SearchResultItem({ item, userViewData }) {
             </Typography>
           )}
           
-          <ExpandableTypography 
-            variant="body2" 
-            color="text.secondary"
+          <Description 
+            description={description}
+            expanded={expanded}
             onClick={toggleExpand}
-          >
-            {expanded ? description : description.length > 100 ? `${description.substring(0, 100)}...` : description}
-          </ExpandableTypography>
+          />
         </CardContent>
 
         <CardActions sx={{ justifyContent: 'space-between', p: 1, pt: 0 }}>
