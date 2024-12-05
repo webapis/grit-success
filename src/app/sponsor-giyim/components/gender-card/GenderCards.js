@@ -47,7 +47,7 @@ export default function GenderCards() {
                 fontSize: { xs: '1.75rem', sm: '2rem', md: '2.25rem' }
               }}
             >
-              Dizi Kıyafetleri
+              Dizi Sponsorları Koleksiyonu
             </Typography>
             <Typography
               variant="subtitle1"
@@ -58,7 +58,7 @@ export default function GenderCards() {
                 lineHeight: 1.6
               }}
             >
-              En popüler Türk dizilerinde giyilen kıyafetleri keşfedin. Favori karakterlerinizin stilini yakalayın.
+              Türk dizilerinin sponsor markalarının en yeni koleksiyonlarını keşfedin. Markaların özel seçili ürünlerini inceleyin.
             </Typography>
           </Box>
 
