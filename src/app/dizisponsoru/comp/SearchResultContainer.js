@@ -53,7 +53,13 @@ export default async function SearchResultContainer({
     <>
       {/* <TopNavigation selected={2} /> */}
    
-        <Container maxWidth="lg" sx={{ overflow: 'hidden' }}>
+        <Container 
+          maxWidth="lg" 
+          sx={{ 
+            overflow: 'hidden',
+            px: { xs: 0, sm: 2 }  // 0 padding on mobile, 16px (theme.spacing(2)) on tablet and up
+          }}
+        >
           <SelectedDiziChip category={pageTitle} />
           
           <Grid 
@@ -64,7 +70,7 @@ export default async function SearchResultContainer({
               width: '100%', 
               margin: 0,
               overflow: 'hidden',
-              paddingX: 1
+              paddingX: { xs: 0, sm: 1 }  // Remove horizontal padding on mobile
             }}
           >
             <Grid item xs={12}>

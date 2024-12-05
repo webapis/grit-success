@@ -28,6 +28,15 @@ const StyledCard = styled(Card)(({ theme }) => ({
     transform: 'translateY(-5px)',
     boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
   },
+  [theme.breakpoints.down('sm')]: {
+    borderRadius: '0',
+    border: 'none',
+    borderBottom: `1px solid ${theme.palette.grey[200]}`,
+    '&:hover': {
+      transform: 'none',
+      boxShadow: 'none',
+    },
+  },
 }));
 
 const ImageContainer = styled(Box)(({ theme }) => ({
@@ -40,6 +49,7 @@ const ImageContainer = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down('sm')]: {
     flexDirection: 'column',
     alignItems: 'center',
+    padding: theme.spacing(1),
   },
 }));
 
