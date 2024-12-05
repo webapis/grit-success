@@ -58,7 +58,7 @@ const SelectedProductCategoryChip = memo(({ selectedGender, category }) => {
                         >
                             {category}
                         </Typography>
-                        Dizi Sponsor Markaları
+                        {/* Dizi Sponsor Markaları */}
                     </Typography>
                 }
                 onDelete={handleDelete}
