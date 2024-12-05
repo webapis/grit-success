@@ -1,70 +1,63 @@
-import React from "react";
-import { Box, Container, Typography, Divider, Link } from "@mui/material";
+import React, { memo } from "react";
+import { Box, Container, Typography, Divider, Link, Stack } from "@mui/material";
 
-const Footer = () => {
-  const footerLinks = [
-    { name: "Ana Sayfa", href: "/" },
-    { name: "Hakkımızda", href: "/hakkimizda" },
-    // { name: "Hizmetler", href: "/services" },
-    // { name: "İletişim", href: "/contact" },
-  ];
+const footerLinks = [
+  { name: "Ana Sayfa", href: "/" },
+  { name: "Hakkımızda", href: "/hakkimizda" },
+  // { name: "Hizmetler", href: "/services" },
+  // { name: "İletişim", href: "/contact" },
+];
+
+const Footer = memo(() => {
+  const currentYear = new Date().getFullYear();
 
   return (
     <Box
       component="footer"
       sx={{
-        backgroundColor: (theme) => theme.palette.grey[100],
-        py: 3, // Reduced from 6 to 3
+        backgroundColor: (theme) => theme.palette.grey[200],
+        borderTop: '1px solid',
+        borderColor: 'divider',
+        py: { xs: 3, md: 4 },
         mt: 'auto',
       }}
     >
       <Container maxWidth="lg">
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: 1 // Reduced from 2 to 1
-          }}
+        <Stack
+          spacing={2.5}
+          alignItems="center"
         >
-        <Typography
-                        variant="h5"
-                        noWrap
-                        component='a'
-                        sx={{
-                            // border:'1px solid #bdbdbd',
-                            paddingLeft: 2,
-                            paddingRight: 2,
-                            borderRadius: 5,
-                            color: 'black',
-                            fontFamily: 'inherit',
-                            fontWeight: 500,
-                            // fontSize: '1.5rem',
-                            // letterSpacing: '0.05em',
-                            textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
-                            textDecoration: 'none'
-                        }}
-                        href={'/'}
-                    >
-                        Glumzi
-                    </Typography>
-
-          <Box
+          <Typography
+            variant="h6"
+            component="div"
             sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              flexWrap: 'wrap',
-              gap: 3,
-              my: 1 // Reduced from 2 to 1
+              color: 'text.secondary',
+              fontFamily: 'inherit',
+              fontWeight: 500,
+              textDecoration: 'none',
+              padding: '0.5rem 1rem',
             }}
+          >
+            © {currentYear} glumzi.com
+          </Typography>
+
+          <Stack
+            direction="row"
+            spacing={{ xs: 2, sm: 3 }}
+            flexWrap="wrap"
+            justifyContent="center"
+            useFlexGap
           >
             {footerLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                underline="hover"
+                underline="none"
                 sx={{
                   color: 'text.secondary',
+                  fontSize: '0.875rem',
+                  fontWeight: 500,
+                  transition: 'all 0.2s ease-in-out',
                   '&:hover': {
                     color: 'primary.main',
                   },
@@ -73,24 +66,28 @@ const Footer = () => {
                 {link.name}
               </Link>
             ))}
-          </Box>
+          </Stack>
 
-          <Divider sx={{ width: '100%', my: 1 }} /> {/* Reduced from 2 to 1 */}
+          <Divider flexItem sx={{ opacity: 0.7 }} />
 
           <Typography
             variant="body2"
             color="text.secondary"
             align="center"
             sx={{
-              opacity: 0.8
+              opacity: 0.8,
+              fontSize: '0.75rem',
+              fontWeight: 400,
             }}
           >
-            © {new Date().getFullYear()} glumzi.com. Her hakkı saklıdır.
+            Her hakkı saklıdır.
           </Typography>
-        </Box>
+        </Stack>
       </Container>
     </Box>
   );
-};
+});
+
+Footer.displayName = 'Footer';
 
 export default Footer;
