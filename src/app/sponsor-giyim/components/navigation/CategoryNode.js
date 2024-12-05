@@ -1,5 +1,5 @@
 'use client'
-import React, { useMemo, useCallback } from 'react';
+import React, { useMemo, useCallback, memo } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import {
@@ -11,43 +11,56 @@ import {
     useMediaQuery,
     Badge,
     Stack,
-    CircularProgress
+    CircularProgress,
+    Fade,
+    Tooltip
 } from '@mui/material';
 import {
     KeyboardArrowRight,
     KeyboardArrowDown,
 } from '@mui/icons-material';
-import { getIcon } from './iconMapping'; // Move icon mapping to separate file
+import { getIcon } from './iconMapping';
 
 const styles = {
-    paper: {
+    paper: (theme) => ({
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
         width: '100%',
         overflow: 'hidden',
-        transition: 'box-shadow 0.2s ease-in-out',
+        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+        borderRadius: theme.shape.borderRadius * 1.5,
         '&:hover': {
-            boxShadow: 3
+            boxShadow: theme.shadows[4],
+            transform: 'translateY(-2px)'
         }
-    },
-    header: {
+    }),
+    header: (theme) => ({
         p: { xs: 1.5, sm: 2 },
         borderBottom: 1,
-        borderColor: 'divider'
-    },
+        borderColor: 'divider',
+        background: theme.palette.background.default,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+    }),
     headerTitle: {
-        fontWeight: 600,
+        fontWeight: 700,
         color: 'primary.main',
         fontSize: { xs: 14, sm: 16 },
-        textTransform: 'uppercase'
+        textTransform: 'uppercase',
+        letterSpacing: '0.5px'
     },
-    badge: {
+    badge: (theme) => ({
         '& .MuiBadge-badge': {
             fontSize: '0.6rem',
-            fontWeight: 600
+            fontWeight: 600,
+            minWidth: '20px',
+            height: '20px',
+            padding: '0 6px',
+            borderRadius: '10px'
         }
-    },
+    }),
     itemList: (theme, expanded, containerHeight) => ({
         flexGrow: 1,
         width: '100%',
@@ -55,10 +68,10 @@ const styles = {
         overflow: expanded ? 'auto' : 'hidden',
         scrollBehavior: 'smooth',
         '&::-webkit-scrollbar': {
-            width: '6px',
+            width: '4px',
         },
         '&::-webkit-scrollbar-track': {
-            background: theme.palette.background.default
+            background: 'transparent'
         },
         '&::-webkit-scrollbar-thumb': {
             background: theme.palette.divider,
@@ -74,21 +87,120 @@ const styles = {
         width: '100%',
         p: { xs: 1.5, sm: 2 },
         color: 'text.primary',
-        bgcolor: loading && isActive ? 'action.selected' : 'inherit',
-        transition: 'all 0.2s ease-in-out',
+        bgcolor: loading && isActive ? 'action.selected' : 'transparent',
+        transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+        borderRadius: theme.shape.borderRadius,
+        position: 'relative',
+        '&::before': {
+            content: '""',
+            position: 'absolute',
+            left: 0,
+            width: '3px',
+            height: '0%',
+            background: theme.palette.primary.main,
+            transition: 'height 0.2s ease',
+        },
         '&:hover': {
             bgcolor: 'action.hover',
-            transform: 'translateX(4px)'
+            transform: 'translateX(4px)',
+            '&::before': {
+                height: '100%',
+            }
         },
         '&:active': {
             bgcolor: 'action.selected'
+        }
+    }),
+    showMoreButton: (theme) => ({
+        textTransform: 'none',
+        fontSize: '0.75rem',
+        borderRadius: theme.shape.borderRadius * 1.5,
+        transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+        py: 1,
+        '&:hover': {
+            transform: 'translateY(-2px)',
+            boxShadow: theme.shadows[2]
         }
     })
 };
 
 const isDevelopment = process.env.NEXT_PUBLIC_ENV === 'dev';
 
-export default function CategoryNode({ category, gender }) {
+const CategoryItem = memo(({ item, loading, isActive, onClick, gender, categoryTitle, theme }) => (
+    <Tooltip title={`${item.childrenLength} products`} placement="left" arrow>
+        <Link
+            href={`/sponsor-giyim/${gender.replace(' ', '-').toLowerCase()}/${categoryTitle.replace(' ', '-')}/${item.title.replace(' ', '-')}/${item.uid}`}
+            onClick={(e) => onClick(e, item)}
+            style={{ textDecoration: 'none', display: 'block', width: '100%' }}
+        >
+            <Fade in timeout={300}>
+                <Box sx={styles.itemContainer(loading, isActive, theme)}>
+                    <Box sx={{
+                        minWidth: { xs: 24, sm: 28 },
+                        mr: { xs: 1.5, sm: 2 },
+                        color: 'primary.main',
+                        opacity: 0.8,
+                        display: 'flex',
+                        alignItems: 'center'
+                    }}>
+                        {getIcon(item.title)}
+                    </Box>
+                    <Box sx={{
+                        flexGrow: 1,
+                        minWidth: 0,
+                        overflow: 'hidden'
+                    }}>
+                        <Typography
+                            noWrap
+                            sx={{
+                                fontSize: { xs: '0.875rem', sm: '0.925rem' },
+                                fontWeight: 500,
+                                letterSpacing: '0.2px'
+                            }}
+                        >
+                            {item.title}
+                        </Typography>
+                        <Typography
+                            noWrap
+                            variant="body2"
+                            sx={{
+                                fontSize: { xs: '0.75rem', sm: '0.8rem' },
+                                color: 'text.secondary',
+                                mt: 0.5
+                            }}
+                        >
+                            {item.childrenLength} products available
+                        </Typography>
+                    </Box>
+                    {loading && isActive ? (
+                        <CircularProgress
+                            size={20}
+                            sx={{
+                                ml: { xs: 0.5, sm: 1 },
+                                color: 'primary.main'
+                            }}
+                        />
+                    ) : (
+                        <KeyboardArrowRight
+                            sx={{
+                                ml: { xs: 0.5, sm: 1 },
+                                fontSize: { xs: 18, sm: 20 },
+                                color: 'primary.main',
+                                flexShrink: 0,
+                                transition: 'transform 0.2s',
+                                transform: isActive ? 'translateX(4px)' : 'none'
+                            }}
+                        />
+                    )}
+                </Box>
+            </Fade>
+        </Link>
+    </Tooltip>
+));
+
+CategoryItem.displayName = 'CategoryItem';
+
+const CategoryNode = memo(({ category, gender }) => {
     const theme = useTheme();
     const router = useRouter();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -122,90 +234,14 @@ export default function CategoryNode({ category, gender }) {
         router.push(url);
     }, [gender, category.title, router]);
 
-    const renderItem = useCallback((item) => {
-        const isActive = activeItem === item.uid;
-        
-        if (!item.uid) {
-            return (
-                <Box sx={{ ...styles.itemContainer(false, false, theme), opacity: 0.6 }}>
-                    {/* ... inactive item content ... */}
-                </Box>
-            );
-        }
-
-        return (
-            <Link
-                href={`/sponsor-giyim/${gender.replace(' ', '-').toLowerCase()}/${category.title.replace(' ', '-')}/${item.title.replace(' ', '-')}/${item.uid}`}
-                onClick={(e) => handleClick(e, item)}
-                style={{ textDecoration: 'none', display: 'block', width: '100%' }}
-            >
-                <Box sx={styles.itemContainer(loading, isActive, theme)}>
-                    <Box sx={{
-                        minWidth: { xs: 20, sm: 24 },
-                        mr: { xs: 1.5, sm: 2 },
-                        color: 'primary.main',
-                        opacity: 0.7,
-                        display: 'flex',
-                        alignItems: 'center'
-                    }}>
-                        {getIcon(item.title)}
-                    </Box>
-                    <Box sx={{
-                        flexGrow: 1,
-                        minWidth: 0,
-                        overflow: 'hidden'
-                    }}>
-                        <Typography
-                            noWrap
-                            sx={{
-                                fontSize: { xs: '0.813rem', sm: '0.875rem' },
-                                fontWeight: 500
-                            }}
-                        >
-                            {item.title}
-                        </Typography>
-                        <Typography
-                            noWrap
-                            variant="body2"
-                            sx={{
-                                fontSize: { xs: '0.75rem', sm: '0.75rem' },
-                                color: 'text.secondary',
-                            }}
-                        >
-                            {item.childrenLength} marka
-                        </Typography>
-                    </Box>
-                    {loading && isActive ? (
-                        <CircularProgress
-                            size={20}
-                            sx={{
-                                ml: { xs: 0.5, sm: 1 },
-                                color: 'primary.main'
-                            }}
-                        />
-                    ) : (
-                        <KeyboardArrowRight
-                            sx={{
-                                ml: { xs: 0.5, sm: 1 },
-                                fontSize: { xs: 18, sm: 20 },
-                                color: 'primary.main',
-                                flexShrink: 0
-                            }}
-                        />
-                    )}
-                </Box>
-            </Link>
-        );
-    }, [loading, activeItem, handleClick, gender, category.title, theme]);
-
     return (
-        <Paper elevation={1} sx={styles.paper}>
-            <Box sx={styles.header}>
+        <Paper elevation={1} sx={styles.paper(theme)}>
+            <Box sx={styles.header(theme)}>
                 <Typography variant="h6" sx={styles.headerTitle}>
                     <Badge
                         badgeContent={sortedChildren.length}
                         color="primary"
-                        sx={styles.badge}
+                        sx={styles.badge(theme)}
                     >
                         {category.title}
                     </Badge>
@@ -214,9 +250,16 @@ export default function CategoryNode({ category, gender }) {
 
             <Stack spacing={0.5} sx={styles.itemList(theme, expanded, containerHeight)}>
                 {displayItems.map((item) => (
-                    <Box key={item.uid || item.title} sx={{ width: '100%', flexShrink: 0 }}>
-                        {renderItem(item)}
-                    </Box>
+                    <CategoryItem
+                        key={item.uid || item.title}
+                        item={item}
+                        loading={loading}
+                        isActive={activeItem === item.uid}
+                        onClick={handleClick}
+                        gender={gender}
+                        categoryTitle={category.title}
+                        theme={theme}
+                    />
                 ))}
             </Stack>
 
@@ -229,14 +272,7 @@ export default function CategoryNode({ category, gender }) {
                         color="primary"
                         variant='outlined'
                         endIcon={expanded ? <KeyboardArrowDown /> : <KeyboardArrowRight />}
-                        sx={{
-                            textTransform: 'capitalize',
-                            fontSize: '0.75rem',
-                            transition: 'all 0.2s ease-in-out',
-                            '&:hover': {
-                                transform: 'translateY(-2px)'
-                            }
-                        }}
+                        sx={styles.showMoreButton(theme)}
                     >
                         {expanded ? 'Show Less' : `Show ${sortedChildren.length - MAX_ITEMS_DISPLAY} More`}
                     </Button>
@@ -244,4 +280,8 @@ export default function CategoryNode({ category, gender }) {
             )}
         </Paper>
     );
-}
+});
+
+CategoryNode.displayName = 'CategoryNode';
+
+export default CategoryNode;
