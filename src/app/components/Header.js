@@ -1,5 +1,5 @@
-import { AppBar, Toolbar, Typography, Button, Container, IconButton, Box, Drawer, List, ListItem, ListItemText } from '@mui/material';
-import { Menu as MenuIcon } from '@mui/icons-material';
+import { AppBar, Toolbar, Typography, Button, Container, IconButton, Box, Drawer, List, ListItem, ListItemText, ListItemIcon } from '@mui/material';
+import { Menu as MenuIcon, Home, Movie, Checkroom, Business, Info } from '@mui/icons-material';
 import Link from 'next/link';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
@@ -9,11 +9,11 @@ export default function Header() {
   const pathname = usePathname();
 
   const navItems = [
-    { name: 'Ana Sayfa', path: '/' },
-    { name: 'Diziler', path: '/dizi' },
-    { name: 'Dizi Kıyafetleri', path: '/dizikiyafeti' },
-    { name: 'Dizi Sponsorları', path: '/dizisponsoru' },
-    { name: 'Hakkımızda', path: '/hakkimizda' },
+    { name: 'Ana Sayfa', path: '/', icon: Home },
+    { name: 'Diziler', path: '/dizi', icon: Movie },
+    { name: 'Dizi Kıyafetleri', path: '/dizikiyafeti', icon: Checkroom },
+    { name: 'Dizi Sponsorları', path: '/dizisponsoru', icon: Business },
+    { name: 'Hakkımızda', path: '/hakkimizda', icon: Info },
   ];
 
   const handleDrawerToggle = () => {
@@ -22,37 +22,48 @@ export default function Header() {
 
   return (
     <>
-      <AppBar position="sticky" sx={{ backgroundColor: 'white', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
+      <AppBar position="sticky" sx={{ 
+        backgroundColor: 'white', 
+        boxShadow: '0 2px 4px rgba(0,0,0,0.08)',
+        borderBottom: '1px solid',
+        borderColor: 'divider'
+      }}>
         <Container maxWidth="xl">
-          <Toolbar disableGutters>
+          <Toolbar disableGutters sx={{ minHeight: { xs: '64px', md: '72px' } }}>
             {/* Logo/Brand */}
             <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
-              <Typography
-                variant="h6"
-                component="div"
-                sx={{
-                  color: '#1a1a1a',
-                  fontWeight: 700,
-                  fontSize: { xs: '1.2rem', md: '1.5rem' },
-                  mr: 1
-                }}
-              >
-                DİZİ PORTAL
-              </Typography>
-              <Typography
-                variant="caption"
-                component="div"
-                sx={{
-                  color: 'primary.main',
-                  fontSize: { xs: '0.7rem', md: '0.8rem' },
-                  alignSelf: 'flex-end',
-                  mb: '4px',
-                  opacity: 0.9,
-                  fontWeight: 500
-                }}
-              >
-                glumzi.com
-              </Typography>
+              <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+                <Typography
+                  variant="h6"
+                  component="div"
+                  sx={{
+                    color: '#1a1a1a',
+                    fontWeight: 700,
+                    fontSize: { xs: '1.2rem', md: '1.5rem' },
+                    mr: 1,
+                    '&:hover': {
+                      color: 'primary.main',
+                    },
+                    transition: 'color 0.2s ease-in-out'
+                  }}
+                >
+                  DİZİ PORTAL
+                </Typography>
+                <Typography
+                  variant="caption"
+                  component="div"
+                  sx={{
+                    color: 'primary.main',
+                    fontSize: { xs: '0.7rem', md: '0.8rem' },
+                    alignSelf: 'flex-end',
+                    mb: '4px',
+                    opacity: 0.9,
+                    fontWeight: 500
+                  }}
+                >
+                  glumzi.com
+                </Typography>
+              </Link>
             </Box>
 
             {/* Mobile Menu Button */}
@@ -61,32 +72,58 @@ export default function Header() {
               aria-label="open drawer"
               edge="start"
               onClick={handleDrawerToggle}
-              sx={{ display: { sm: 'none' }, color: '#1a1a1a' }}
+              sx={{ 
+                display: { sm: 'none' }, 
+                color: '#1a1a1a',
+                '&:hover': {
+                  backgroundColor: 'rgba(0, 127, 255, 0.04)'
+                }
+              }}
             >
               <MenuIcon />
             </IconButton>
 
             {/* Desktop Navigation */}
-            <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-              {navItems.map((item) => (
-                <Button
-                  key={item.name}
-                  component={Link}
-                  href={item.path}
-                  sx={{
-                    color: pathname === item.path ? '#007FFF' : '#1a1a1a',
-                    mx: 1,
-                    '&:hover': {
-                      color: '#007FFF',
-                      backgroundColor: 'transparent',
-                    },
-                    textTransform: 'none',
-                    fontWeight: pathname === item.path ? 700 : 400,
-                  }}
-                >
-                  {item.name}
-                </Button>
-              ))}
+            <Box sx={{ display: { xs: 'none', sm: 'flex' }, gap: 0.5 }}>
+              {navItems.map((item) => {
+                const isActive = pathname === item.path;
+                const Icon = item.icon;
+                return (
+                  <Button
+                    key={item.name}
+                    component={Link}
+                    href={item.path}
+                    startIcon={<Icon />}
+                    sx={{
+                      color: isActive ? 'primary.main' : '#1a1a1a',
+                      mx: 0.5,
+                      py: 1,
+                      px: 2,
+                      '&:hover': {
+                        color: 'primary.main',
+                        backgroundColor: 'rgba(0, 127, 255, 0.04)',
+                      },
+                      textTransform: 'none',
+                      fontWeight: isActive ? 600 : 400,
+                      borderRadius: 2,
+                      transition: 'all 0.2s ease-in-out',
+                      position: 'relative',
+                      '&::after': isActive ? {
+                        content: '""',
+                        position: 'absolute',
+                        bottom: 0,
+                        left: '10%',
+                        width: '80%',
+                        height: '2px',
+                        backgroundColor: 'primary.main',
+                        borderRadius: '2px'
+                      } : {}
+                    }}
+                  >
+                    {item.name}
+                  </Button>
+                );
+              })}
             </Box>
           </Toolbar>
         </Container>
@@ -99,15 +136,31 @@ export default function Header() {
         open={mobileOpen}
         onClose={handleDrawerToggle}
         ModalProps={{
-          keepMounted: true, // Better mobile performance
+          keepMounted: true,
         }}
         sx={{
           display: { xs: 'block', sm: 'none' },
-          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 240 },
+          '& .MuiDrawer-paper': { 
+            boxSizing: 'border-box', 
+            width: 280,
+            backgroundColor: 'white',
+            borderLeft: '1px solid',
+            borderColor: 'divider'
+          },
         }}
       >
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', pt: 2 }}>
-          <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'baseline', mb: 2 }}>
+        <Box sx={{ 
+          display: 'flex', 
+          flexDirection: 'column',
+          height: '100%'
+        }}>
+          <Box sx={{ 
+            p: 2, 
+            display: 'flex', 
+            alignItems: 'center',
+            borderBottom: '1px solid',
+            borderColor: 'divider'
+          }}>
             <Typography variant="h6" sx={{ color: '#1a1a1a', fontWeight: 700, mr: 1 }}>
               DİZİ PORTAL
             </Typography>
@@ -119,21 +172,53 @@ export default function Header() {
               glumzi.com
             </Typography>
           </Box>
-          <List>
-            {navItems.map((item) => (
-              <ListItem key={item.name} disablePadding>
-                <Link href={item.path} style={{ width: '100%', textDecoration: 'none' }}>
-                  <ListItemText 
-                    primary={item.name} 
-                    sx={{
-                      textAlign: 'center',
-                      color: pathname === item.path ? '#007FFF' : '#1a1a1a',
-                      fontWeight: pathname === item.path ? 700 : 400,
+          <List sx={{ flex: 1, pt: 2 }}>
+            {navItems.map((item) => {
+              const isActive = pathname === item.path;
+              const Icon = item.icon;
+              return (
+                <ListItem 
+                  key={item.name} 
+                  disablePadding
+                  sx={{
+                    backgroundColor: isActive ? 'rgba(0, 127, 255, 0.04)' : 'transparent',
+                  }}
+                >
+                  <Link 
+                    href={item.path} 
+                    style={{ 
+                      width: '100%', 
+                      textDecoration: 'none',
+                      color: isActive ? '#007FFF' : '#1a1a1a'
                     }}
-                  />
-                </Link>
-              </ListItem>
-            ))}
+                  >
+                    <ListItem 
+                      sx={{ 
+                        px: 3,
+                        '&:hover': {
+                          backgroundColor: 'rgba(0, 127, 255, 0.04)',
+                        }
+                      }}
+                    >
+                      <ListItemIcon sx={{ 
+                        color: isActive ? 'primary.main' : '#1a1a1a',
+                        minWidth: 40
+                      }}>
+                        <Icon />
+                      </ListItemIcon>
+                      <ListItemText 
+                        primary={item.name}
+                        sx={{
+                          '& .MuiListItemText-primary': {
+                            fontWeight: isActive ? 600 : 400,
+                          }
+                        }}
+                      />
+                    </ListItem>
+                  </Link>
+                </ListItem>
+              );
+            })}
           </List>
         </Box>
       </Drawer>
