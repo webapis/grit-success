@@ -169,7 +169,7 @@ const CategoryItem = memo(({ item, loading, isActive, onClick, gender, categoryT
                                 mt: 0.5
                             }}
                         >
-                            {item.childrenLength} products available
+                            {item.childrenLength} marka
                         </Typography>
                     </Box>
                     {loading && isActive ? (
