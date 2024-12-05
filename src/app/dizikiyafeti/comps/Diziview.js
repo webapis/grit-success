@@ -9,27 +9,64 @@ import Box from '@mui/material/Box';
 import ClickableLink from '../../utils/firebase/ClickableLink';
 import ViewCount from '../../utils/firebase/ViewCount';
 
-// Extract static styles
-const cardStyles = { maxWidth: 345 };
-const mediaStyles = { height: 170 };
-const boxStyles = {
-  display: 'flex',
-  alignItems: 'baseline',
-  justifyContent: 'space-between'
+const cardStyles = { 
+    maxWidth: '100%',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    transition: 'transform 0.2s, box-shadow 0.2s',
+    '&:hover': {
+        transform: 'translateY(-4px)',
+        boxShadow: '0 4px 20px rgba(0,0,0,0.1)'
+    }
 };
-const dateStyles = { textAlign: 'end', opacity: 0.5 };
-const capitalizeStyles = { textTransform: 'capitalize' };
+
+const mediaStyles = { 
+    height: 200,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center center'
+};
+
+const boxStyles = {
+    display: 'flex',
+    alignItems: 'baseline',
+    justifyContent: 'space-between',
+    marginBottom: 1
+};
+
+const titleStyles = { 
+    fontWeight: 600,
+    fontSize: '1.1rem',
+    textTransform: 'capitalize',
+    color: 'primary.main'
+};
+
+const dateStyles = { 
+    textAlign: 'end', 
+    opacity: 0.7,
+    fontSize: '0.85rem'
+};
+
+const descriptionStyles = { 
+    textTransform: 'capitalize',
+    color: 'text.secondary',
+    marginBottom: 2
+};
+
+const cardActionsStyles = {
+    marginTop: 'auto',
+    borderTop: '1px solid',
+    borderColor: 'divider'
+};
 
 const Diziview = React.memo(function Diziview({title, content, href, userViewData}) {
     const {ImageUrl, Date, tag} = content;
     
-    // Memoize the image URL construction
     const imageUrl = React.useMemo(() => 
         `${process.env.NEXT_PUBLIC_IMG_HOST}/dk-image/${ImageUrl}.jpg`,
         [ImageUrl]
     );
 
-    // Memoize the description text
     const description = React.useMemo(() => 
         `${title} Dizi Kıyafetleri Oyuncuların Giydiği Kıyafetler.`,
         [title]
@@ -45,21 +82,26 @@ const Diziview = React.memo(function Diziview({title, content, href, userViewDat
 
             <CardContent>
                 <Box sx={boxStyles}>
-                    <Typography variant="h5" component="div" sx={capitalizeStyles}>
+                    <Typography sx={titleStyles} variant="h5" component="div">
                         {title}
                     </Typography>
-                    <Typography variant="caption" display="block" sx={dateStyles}>
+                    <Typography sx={dateStyles} variant="caption" display="block">
                         {Date}
                     </Typography>
                 </Box>
          
-                <Typography variant="body2" color="text.secondary" sx={capitalizeStyles}>
+                <Typography sx={descriptionStyles} variant="body2">
                     {description}
                 </Typography>
 
-                <ViewCount rootPath="dizikiyafeti-home" linkId={href} userViewData={userViewData} />
+                <ViewCount 
+                    rootPath="dizikiyafeti-home" 
+                    linkId={href} 
+                    userViewData={userViewData} 
+                />
             </CardContent>
-            <CardActions>
+
+            <CardActions sx={cardActionsStyles}>
                 <ClickableLink 
                     rootPath="dizikiyafeti-home" 
                     clickable={1} 

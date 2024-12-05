@@ -17,13 +17,33 @@ const mappedNavData = Object.entries(data).map(([title, content]) => ({
 // Sort data once, outside the component
 const sortedNavData = [...mappedNavData].sort((a, b) => b.content.Time - a.content.Time);
 
-// Static styles
-const containerStyles = { marginTop: 0 };
+// Enhanced static styles
+const containerStyles = { 
+    paddingTop: 4,
+    paddingBottom: 8
+};
+
+const titleStyles = {
+    marginBottom: 4,
+    fontWeight: 700,
+    color: 'primary.main',
+    textTransform: 'uppercase',
+    letterSpacing: '0.5px'
+};
+
 const gridContainerStyles = { 
     display: 'flex', 
-    justifyContent: 'center' 
+    justifyContent: 'center',
+    gap: 3  // Increased gap between cards
 };
-const gridItemStyles = { xs: 12, md: 3 };
+
+const gridItemStyles = { 
+    xs: 12,
+    sm: 6,
+    md: 4,
+    lg: 3,
+    display: 'flex'  // This ensures equal height cards
+};
 
 export { mappedNavData };
 
@@ -32,18 +52,18 @@ export default async function Application() {
     
     return (
         <PersistentDrawerLeft data={mappedNavData} title="Dizi Kıyafeti">
-            <Container>
+            <Container maxWidth="xl" sx={containerStyles}>
                 <Typography 
                     variant='h4' 
                     textAlign='center' 
-                    sx={containerStyles}
+                    sx={titleStyles}
+                    component="h1"
                 >
-                    Dizi kıyafetleri
+                    Dizi Kıyafetleri
                 </Typography>
                 
                 <Grid 
                     container 
-                    gap={1} 
                     sx={gridContainerStyles}
                 >
                     {sortedNavData.map((item, i) => (
