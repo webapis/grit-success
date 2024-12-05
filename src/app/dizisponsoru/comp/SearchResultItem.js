@@ -1,4 +1,3 @@
-
 'use client'
 
 import React, { useState, useCallback, memo,useMemo } from 'react';
@@ -22,18 +21,22 @@ const StyledCard = styled(Card)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   height: '100%',
-  transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
+  transition: 'all 0.3s ease-in-out',
+  borderRadius: '12px',
+  border: `1px solid ${theme.palette.grey[200]}`,
   '&:hover': {
     transform: 'translateY(-5px)',
-    boxShadow: theme.shadows[4],
+    boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
   },
 }));
 
 const ImageContainer = styled(Box)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'space-between',
-  backgroundColor: theme.palette.grey[100],
-  padding: theme.spacing(1),
+  backgroundColor: theme.palette.grey[50],
+  padding: theme.spacing(2),
+  borderBottom: `1px solid ${theme.palette.grey[100]}`,
+  gap: theme.spacing(2),
   [theme.breakpoints.down('sm')]: {
     flexDirection: 'column',
     alignItems: 'center',
@@ -42,15 +45,16 @@ const ImageContainer = styled(Box)(({ theme }) => ({
 
 const StyledImageWrapper = styled(Box)(({ theme }) => ({
   position: 'relative',
-  height: 80,
-  width: 120,
-  borderRadius: theme.shape.borderRadius,
+  height: 100,
+  width: 150,
+  borderRadius: '8px',
   overflow: 'hidden',
   transition: 'transform 0.3s ease-in-out',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  backgroundColor: theme.palette.grey[300],
+  backgroundColor: theme.palette.grey[100],
+  boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
   '&:hover': {
     transform: 'scale(1.05)',
   },
@@ -90,18 +94,49 @@ const MemoizedImage = memo(function Image({ src, alt, onLoad, onError }) {
   );
 });
 
-// Memoized service chips component
+// Update the StyledChip component
+const StyledChip = styled(Chip)(({ theme }) => ({
+  borderRadius: '6px',
+  fontWeight: 500,
+  backgroundColor: theme.palette.grey[100],
+  color: theme.palette.grey[700],
+  border: `1px solid ${theme.palette.grey[200]}`,
+  transition: 'all 0.2s ease-in-out',
+  '&:hover': {
+    backgroundColor: theme.palette.grey[200],
+    color: theme.palette.grey[900],
+    boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
+  },
+  '& .MuiChip-label': {
+    padding: '0 8px',
+  }
+}));
+
+// Optional: Add a container for better chip spacing
+const ChipsContainer = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  flexWrap: 'wrap',
+  gap: theme.spacing(0.75),
+  marginTop: theme.spacing(1),
+  marginBottom: theme.spacing(1.5),
+}));
+
+// Update the ServiceChips component
 const ServiceChips = memo(function ServiceChips({ services }) {
-  return services.trim().replaceAll(',', ' ').split(' ')
-    .filter(Boolean)
-    .map((service, index) => (
-      <Chip
-        key={index}
-        size="small"
-        label={service.toLowerCase()}
-        sx={{ mr: 0.5, mb: 0.5, textTransform: 'capitalize' }}
-      />
-    ));
+  return (
+    <ChipsContainer>
+      {services.trim().replaceAll(',', ' ').split(' ')
+        .filter(Boolean)
+        .map((service, index) => (
+          <StyledChip
+            key={index}
+            size="small"
+            label={service.toLowerCase()}
+            sx={{ textTransform: 'capitalize' }}
+          />
+        ))}
+    </ChipsContainer>
+  );
 });
 
 // Memoized description component
@@ -158,7 +193,7 @@ export default function SearchResultItem({ item, userViewData }) {
   }, [imageError, handleImageLoad, handleImageError]);
 
   return (
-    <StyledCard elevation={2}>
+    <StyledCard elevation={0}>
       <ImageContainer>
         <StyledImageWrapper>
           {renderImage(`${process.env.NEXT_PUBLIC_IMG_HOST}/dizi-image/${item.Tag}.jpg`, `${TVSeriesTitle} dizi resmi`, 'dizi')}
@@ -169,9 +204,17 @@ export default function SearchResultItem({ item, userViewData }) {
       </ImageContainer>
 
       <ContentWrapper>
-        <CardContent sx={{ flexGrow: 1, py: 1 }}>
-          <Box display="flex" justifyContent="space-between" alignItems="center" mb={1}>
-            <Typography variant="subtitle2" color="text.secondary">
+        <CardContent sx={{ flexGrow: 1, py: 2, px: 3 }}>
+          <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
+            <Typography 
+              variant="subtitle2" 
+              color="text.secondary"
+              sx={{ 
+                fontSize: '0.9rem',
+                fontWeight: 500,
+                letterSpacing: '0.02em'
+              }}
+            >
               {TVSeriesTitle}
             </Typography>
             
@@ -182,14 +225,36 @@ export default function SearchResultItem({ item, userViewData }) {
               title={hostname}
               linkId={Website}
               size="small"
+              sx={{ 
+                backgroundColor: (theme) => theme.palette.grey[50],
+                '&:hover': {
+                  backgroundColor: (theme) => theme.palette.primary.light,
+                  color: (theme) => theme.palette.primary.main,
+                }
+              }}
             >
               <OpenInNewIcon fontSize="small" />
             </IconButton>
           </Box>
           
-          <Typography variant="h6" component="div" gutterBottom>
+          <Typography 
+            variant="h6" 
+            component="div" 
+            gutterBottom
+            sx={{ 
+              fontSize: '1.2rem',
+              fontWeight: 600,
+              color: (theme) => theme.palette.text.primary,
+              mb: 2
+            }}
+          >
             <Tooltip title="Sponsor" arrow>
-              <Box component="span" sx={{ color: 'text.secondary', fontSize: '0.8em', mr: 1 }}>
+              <Box component="span" sx={{ 
+                color: 'primary.main', 
+                fontSize: '0.9em', 
+                mr: 1,
+                fontWeight: 500
+              }}>
                 S:
               </Box>
             </Tooltip>
@@ -197,7 +262,7 @@ export default function SearchResultItem({ item, userViewData }) {
           </Typography>
           
           {ServiceName && (
-            <Box sx={{ mt: 0.5, mb: 1 }}>
+            <Box sx={{ mt: 1, mb: 2 }}>
               <ServiceChips services={ServiceName} />
             </Box>
           )}
@@ -215,7 +280,12 @@ export default function SearchResultItem({ item, userViewData }) {
           />
         </CardContent>
 
-        <CardActions sx={{ justifyContent: 'space-between', p: 1, pt: 0 }}>
+        <CardActions sx={{ 
+          justifyContent: 'space-between', 
+          p: 2, 
+          pt: 0,
+          borderTop: (theme) => `1px solid ${theme.palette.grey[100]}`
+        }}>
           <ViewCount rootPath="dizisponsoru" linkId={Website} userViewData={userViewData} />
           {description.length > 100 && (
             <Tooltip title={expanded ? "Show less" : "Show more"}>
