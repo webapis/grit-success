@@ -10,8 +10,8 @@ export  function generateMetadata() {
 
 export default function Home(props) {
   return (
-    <PersistentDrawerLeft  data={mappedData} title="Dizi Sponsoru">
+    // <PersistentDrawerLeft  data={mappedData} title="Dizi Sponsoru">
       <Application {...props}/>
-    </PersistentDrawerLeft>
+    // </PersistentDrawerLeft>
   );
 }

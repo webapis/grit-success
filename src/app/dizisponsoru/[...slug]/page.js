@@ -55,7 +55,8 @@ export default async function DiziSponsoru({ params }) {
     const pageCount = Math.ceil(results.length / 50);
 
     return (
-        <PersistentDrawerLeft  data={mappedData} title="Dizi Sponsoru">
+        <>
+     
             <SearchResultContainer 
                 totalItems={resultSimple.length} 
                 keywordsCounter={keywordsCounter.filter(f => f.dizi === dizi)} 
@@ -66,7 +67,8 @@ export default async function DiziSponsoru({ params }) {
                 keyword={keyword} 
             />
             <PaginationContainer count={pageCount} page={page} url={`/dizisponsoru/${dizi}/${keyword}/sayfa/`} />
-        </PersistentDrawerLeft>
+    
+        </>
     );
 }
 
