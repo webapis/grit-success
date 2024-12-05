@@ -3,7 +3,7 @@ import Grid from "@mui/material/Grid"
 import SearchResultItem from "./SearchResultItem"
 import ChipContainer from "./ChipContainer"
 import SelectedDiziChip from "./SelectedDiziChip"
-import TopNavigation from "@/app/components/TopNavigation"
+//import TopNavigation from "@/app/components/TopNavigation"
 import { mappedData } from "../Application"
 import PersistentDrawerLeft from "@/app/components/drawer"
 import getViews from "@/app/utils/firebase/supabase"
@@ -51,7 +51,7 @@ export default async function SearchResultContainer({
 
   return (
     <>
-      <TopNavigation selected={2} />
+      {/* <TopNavigation selected={2} /> */}
       <PersistentDrawerLeft data={mappedData} title="Dizi Sponsoru">
         <Container>
           <SelectedDiziChip category={pageTitle} />
