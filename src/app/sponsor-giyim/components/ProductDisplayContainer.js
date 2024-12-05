@@ -24,18 +24,7 @@ export default function ProductDisplayContainer({ brands, title, selectedGender 
         margin: '0 auto'
       }}
     >
-      <Grid item xs={12} sx={{ mb: 2 }}>
-        <Typography 
-          variant="h5" 
-          component="h2" 
-          sx={{ 
-            mb: 2,
-            fontWeight: 500,
-            textAlign: { xs: 'center', sm: 'left' }
-          }}
-        >
-          {title}
-        </Typography>
+      <Grid item xs={12} sx={{ mb: 0 }}>
         <SelectedProductCategoryChip 
           selectedGender={selectedGender} 
           category={title}
