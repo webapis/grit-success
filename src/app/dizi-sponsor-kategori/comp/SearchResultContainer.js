@@ -21,7 +21,7 @@ export default function SearchResultContainer({ data, pageTitle,userViewData }) 
     }).sort((a, b) => b.viewCount - a.viewCount)
 
     return <>
-        <TopNavigation selected={3} />
+        {/* <TopNavigation selected={3} /> */}
         <PersistentDrawerLeft data={mappedNavData} title="Sponsor Kategori"><Container sx={{ display:'flex',justifyContent:'center'}}>
     
             

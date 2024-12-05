@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Typography, Button, Container, IconButton, Box, Drawer, List, ListItem, ListItemText, ListItemIcon } from '@mui/material';
+import { AppBar, Toolbar, Typography, Button, Container, IconButton, Box, Drawer, List, ListItem, ListItemText, ListItemIcon, Tabs, Tab } from '@mui/material';
 import { Menu as MenuIcon, Home, Movie, Checkroom, Business, Info } from '@mui/icons-material';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -8,12 +8,21 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
 
-  const navItems = [
+  const mainNavItems = [
     { name: 'Ana Sayfa', path: '/', icon: Home },
-    { name: 'Diziler', path: '/dizi', icon: Movie },
+    { name: 'Diziler', path: '/turk-dizi/yapim-sirketleri', icon: Movie },
     { name: 'Dizi Kıyafetleri', path: '/dizikiyafeti', icon: Checkroom },
     { name: 'Dizi Sponsorları', path: '/dizisponsoru', icon: Business },
+    { name: 'Sponsor Kategori', path: '/dizi-sponsor-kategori', icon: Business },
     { name: 'Hakkımızda', path: '/hakkimizda', icon: Info },
+  ];
+
+  const subNavItems = [
+    { name: 'Sponsor Kıyafeti', path: '/' },
+    { name: 'Dizi Kıyafeti', path: '/dizikiyafeti' },
+    { name: 'Dizi Sponsoru', path: '/dizisponsoru' },
+    { name: 'Sponsor Kategori', path: '/dizi-sponsor-kategori' },
+    { name: 'Yapım Şirketleri', path: '/turk-dizi/yapim-sirketleri' },
   ];
 
   const handleDrawerToggle = () => {
@@ -22,12 +31,16 @@ export default function Header() {
 
   return (
     <>
-      <AppBar position="sticky" sx={{ 
-        backgroundColor: 'white', 
-        boxShadow: '0 2px 4px rgba(0,0,0,0.08)',
-        borderBottom: '1px solid',
-        borderColor: 'divider'
-      }}>
+      <AppBar 
+        position="sticky" 
+        sx={{ 
+          backgroundColor: 'white',
+          boxShadow: 'none',
+          borderBottom: '1px solid',
+          borderColor: 'divider'
+        }}
+      >
+        {/* Top Bar */}
         <Container maxWidth="xl">
           <Toolbar disableGutters sx={{ minHeight: { xs: '64px', md: '72px' } }}>
             {/* Logo/Brand */}
@@ -66,26 +79,9 @@ export default function Header() {
               </Link>
             </Box>
 
-            {/* Mobile Menu Button */}
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ 
-                display: { sm: 'none' }, 
-                color: '#1a1a1a',
-                '&:hover': {
-                  backgroundColor: 'rgba(0, 127, 255, 0.04)'
-                }
-              }}
-            >
-              <MenuIcon />
-            </IconButton>
-
             {/* Desktop Navigation */}
             <Box sx={{ display: { xs: 'none', sm: 'flex' }, gap: 0.5 }}>
-              {navItems.map((item) => {
+              {mainNavItems.map((item) => {
                 const isActive = pathname === item.path;
                 const Icon = item.icon;
                 return (
@@ -106,18 +102,7 @@ export default function Header() {
                       textTransform: 'none',
                       fontWeight: isActive ? 600 : 400,
                       borderRadius: 2,
-                      transition: 'all 0.2s ease-in-out',
-                      position: 'relative',
-                      '&::after': isActive ? {
-                        content: '""',
-                        position: 'absolute',
-                        bottom: 0,
-                        left: '10%',
-                        width: '80%',
-                        height: '2px',
-                        backgroundColor: 'primary.main',
-                        borderRadius: '2px'
-                      } : {}
+                      transition: 'all 0.2s ease-in-out'
                     }}
                   >
                     {item.name}
@@ -125,8 +110,67 @@ export default function Header() {
                 );
               })}
             </Box>
+
+            {/* Mobile Menu Button */}
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{ 
+                display: { sm: 'none' }, 
+                color: '#1a1a1a',
+                '&:hover': {
+                  backgroundColor: 'rgba(0, 127, 255, 0.04)'
+                }
+              }}
+            >
+              <MenuIcon />
+            </IconButton>
           </Toolbar>
         </Container>
+
+        {/* Sub Navigation */}
+        <Box 
+          sx={{ 
+            borderTop: '1px solid',
+            borderColor: 'divider',
+            display: { xs: 'none', sm: 'block' },
+            backgroundColor: 'rgba(0, 0, 0, 0.02)'
+          }}
+        >
+          <Container maxWidth="xl">
+            <Tabs 
+              value={subNavItems.findIndex(item => pathname === item.path)}
+              variant="scrollable"
+              scrollButtons="auto"
+              allowScrollButtonsMobile
+              sx={{
+                minHeight: '48px',
+                '& .MuiTab-root': {
+                  minHeight: '48px',
+                  textTransform: 'none',
+                  fontSize: '0.875rem',
+                  fontWeight: 500,
+                  color: '#1a1a1a',
+                  '&.Mui-selected': {
+                    color: 'primary.main',
+                    fontWeight: 600
+                  }
+                }
+              }}
+            >
+              {subNavItems.map((item) => (
+                <Tab
+                  key={item.name}
+                  label={item.name}
+                  component={Link}
+                  href={item.path}
+                />
+              ))}
+            </Tabs>
+          </Container>
+        </Box>
       </AppBar>
 
       {/* Mobile Navigation Drawer */}
@@ -172,8 +216,10 @@ export default function Header() {
               glumzi.com
             </Typography>
           </Box>
+
           <List sx={{ flex: 1, pt: 2 }}>
-            {navItems.map((item) => {
+            {/* Main Navigation Items */}
+            {mainNavItems.map((item) => {
               const isActive = pathname === item.path;
               const Icon = item.icon;
               return (
@@ -206,6 +252,62 @@ export default function Header() {
                       }}>
                         <Icon />
                       </ListItemIcon>
+                      <ListItemText 
+                        primary={item.name}
+                        sx={{
+                          '& .MuiListItemText-primary': {
+                            fontWeight: isActive ? 600 : 400,
+                          }
+                        }}
+                      />
+                    </ListItem>
+                  </Link>
+                </ListItem>
+              );
+            })}
+
+            {/* Divider for Sub Navigation */}
+            <Box sx={{ 
+              my: 2, 
+              px: 3, 
+              py: 1,
+              bgcolor: 'rgba(0, 0, 0, 0.02)',
+              borderTop: '1px solid',
+              borderBottom: '1px solid',
+              borderColor: 'divider'
+            }}>
+              <Typography variant="subtitle2" color="text.secondary">
+                Kategoriler
+              </Typography>
+            </Box>
+
+            {/* Sub Navigation Items */}
+            {subNavItems.map((item) => {
+              const isActive = pathname === item.path;
+              return (
+                <ListItem 
+                  key={item.name} 
+                  disablePadding
+                  sx={{
+                    backgroundColor: isActive ? 'rgba(0, 127, 255, 0.04)' : 'transparent',
+                  }}
+                >
+                  <Link 
+                    href={item.path} 
+                    style={{ 
+                      width: '100%', 
+                      textDecoration: 'none',
+                      color: isActive ? '#007FFF' : '#1a1a1a'
+                    }}
+                  >
+                    <ListItem 
+                      sx={{ 
+                        px: 3,
+                        '&:hover': {
+                          backgroundColor: 'rgba(0, 127, 255, 0.04)',
+                        }
+                      }}
+                    >
                       <ListItemText 
                         primary={item.name}
                         sx={{
