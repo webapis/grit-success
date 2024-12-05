@@ -34,7 +34,7 @@ export default function TVseriesProductionCompanies({ params: { id } }) {
     debugger
     return (
         <>
-            <TopNavigation selected={4}/>
+            {/* <TopNavigation selected={4}/> */}
             <DrawerWrapper>
             <Grid container sx={{ display: "flex", justifyContent: "center", marginTop:1 }}>
             <Grid item xs={12}>

@@ -36,7 +36,8 @@ export default function TVseriesProductionCompanies({ params: { slug } }) {
     const company = ysData.find(f => f.id === companyId)
 
 
-    return <> <TopNavigation selected={4}/>
+    return <> 
+    {/* <TopNavigation selected={4}/> */}
     <DrawerWrapper>
     <CompanyPage company={company} companyId={companyId}/>
     </DrawerWrapper>
