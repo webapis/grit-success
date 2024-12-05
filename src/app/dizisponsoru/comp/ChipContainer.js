@@ -27,6 +27,7 @@ const containerStyles = {
 const chipStyles = {
     borderRadius: '16px',
     transition: 'all 0.2s ease-in-out',
+    margin: '4px',
     '&:hover': {
         transform: 'translateY(-2px)',
         boxShadow: 2,

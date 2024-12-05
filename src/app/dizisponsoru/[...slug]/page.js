@@ -5,7 +5,8 @@ import keywordMetaData from '@/app/dizisponsoru/keywordMetaData.json';
 import pagesMetaData from '@/app/dizi/pageMetadata.json';
 import pagesData from '@/app/dizi/dizisponsoru.json';
 import deaccent from './deaccent';
-
+import {mappedData} from "../[...slug]/../Application"
+import PersistentDrawerLeft from "@/app/components/drawer"
 const keywordsCounter = countItemsByKeyword({ pagesMetaData, keywordMetaData });
 
 export function generateMetadata({ params }) {
@@ -55,6 +56,7 @@ export default async function DiziSponsoru({ params }) {
 
     return (
         <>
+     
             <SearchResultContainer 
                 totalItems={resultSimple.length} 
                 keywordsCounter={keywordsCounter.filter(f => f.dizi === dizi)} 
@@ -65,6 +67,7 @@ export default async function DiziSponsoru({ params }) {
                 keyword={keyword} 
             />
             <PaginationContainer count={pageCount} page={page} url={`/dizisponsoru/${dizi}/${keyword}/sayfa/`} />
+    
         </>
     );
 }

@@ -16,6 +16,12 @@ import extractSubdomain from './extractSubdomain';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import ImageIcon from '@mui/icons-material/Image';
 
+// Add this utility function at the top with other imports
+const formatHostname = (url) => {
+  const hostname = new URL(url).hostname;
+  return hostname.replace(/^www\./, '');  // Remove www.
+};
+
 // Styled components remain unchanged since they're already optimized
 const StyledCard = styled(Card)(({ theme }) => ({
   display: 'flex',
@@ -27,6 +33,15 @@ const StyledCard = styled(Card)(({ theme }) => ({
   '&:hover': {
     transform: 'translateY(-5px)',
     boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
+  },
+  [theme.breakpoints.down('sm')]: {
+    borderRadius: '0',
+    border: 'none',
+    borderBottom: `1px solid ${theme.palette.grey[200]}`,
+    '&:hover': {
+      transform: 'none',
+      boxShadow: 'none',
+    },
   },
 }));
 
@@ -40,6 +55,7 @@ const ImageContainer = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down('sm')]: {
     flexDirection: 'column',
     alignItems: 'center',
+    padding: theme.spacing(1),
   },
 }));
 
@@ -161,7 +177,7 @@ const Description = memo(function Description({ description, expanded, onClick }
 export default function SearchResultItem({ item, userViewData }) {
   const { Name: name, Website, Acyklama, TVSeriesTitle, tag, brandTag, ServiceName, h3 } = item;
   const imageName = brandTag || extractSubdomain(Website);
-  const hostname = useMemo(() => new URL(Website).hostname, [Website]);
+  const hostname = useMemo(() => formatHostname(Website), [Website]);
   const [expanded, setExpanded] = useState(false);
   const [imageLoaded, setImageLoaded] = useState({ dizi: false, marka: false });
   const [imageError, setImageError] = useState({ dizi: false, marka: false });
@@ -218,23 +234,25 @@ export default function SearchResultItem({ item, userViewData }) {
               {TVSeriesTitle}
             </Typography>
             
-            <IconButton
-              component={ClickableLink}
-              rootPath="dizisponsoru"
-              clickable={1}
-              title={hostname}
-              linkId={Website}
-              size="small"
-              sx={{ 
-                backgroundColor: (theme) => theme.palette.grey[50],
-                '&:hover': {
-                  backgroundColor: (theme) => theme.palette.primary.light,
-                  color: (theme) => theme.palette.primary.main,
-                }
-              }}
-            >
-              <OpenInNewIcon fontSize="small" />
-            </IconButton>
+            <Tooltip title={hostname}>
+              <IconButton
+                component={ClickableLink}
+                rootPath="dizisponsoru"
+                clickable={1}
+                title={hostname}
+                linkId={Website}
+                size="small"
+                sx={{ 
+                  backgroundColor: (theme) => theme.palette.grey[50],
+                  '&:hover': {
+                    backgroundColor: (theme) => theme.palette.primary.light,
+                    color: (theme) => theme.palette.primary.main,
+                  }
+                }}
+              >
+                <OpenInNewIcon fontSize="small" />
+              </IconButton>
+            </Tooltip>
           </Box>
           
           <Typography 

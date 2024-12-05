@@ -1,6 +1,12 @@
+/* Add these rules to prevent horizontal scroll */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
-
-
+* {
+  box-sizing: border-box;
+}
 
 .image-text-box {
   border: 1px solid #ddd;
