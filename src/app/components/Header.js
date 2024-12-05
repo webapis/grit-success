@@ -17,14 +17,6 @@ export default function Header() {
     { name: 'Hakkımızda', path: '/hakkimizda', icon: Info },
   ];
 
-  const subNavItems = [
-    { name: 'Sponsor Kıyafeti', path: '/' },
-    { name: 'Dizi Kıyafeti', path: '/dizikiyafeti' },
-    { name: 'Dizi Sponsoru', path: '/dizisponsoru' },
-    { name: 'Sponsor Kategori', path: '/dizi-sponsor-kategori' },
-    { name: 'Yapım Şirketleri', path: '/turk-dizi/yapim-sirketleri' },
-  ];
-
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -129,48 +121,6 @@ export default function Header() {
             </IconButton>
           </Toolbar>
         </Container>
-
-        {/* Sub Navigation */}
-        <Box 
-          sx={{ 
-            borderTop: '1px solid',
-            borderColor: 'divider',
-            display: { xs: 'none', sm: 'block' },
-            backgroundColor: 'rgba(0, 0, 0, 0.02)'
-          }}
-        >
-          <Container maxWidth="xl">
-            <Tabs 
-              value={subNavItems.findIndex(item => pathname === item.path)}
-              variant="scrollable"
-              scrollButtons="auto"
-              allowScrollButtonsMobile
-              sx={{
-                minHeight: '48px',
-                '& .MuiTab-root': {
-                  minHeight: '48px',
-                  textTransform: 'none',
-                  fontSize: '0.875rem',
-                  fontWeight: 500,
-                  color: '#1a1a1a',
-                  '&.Mui-selected': {
-                    color: 'primary.main',
-                    fontWeight: 600
-                  }
-                }
-              }}
-            >
-              {subNavItems.map((item) => (
-                <Tab
-                  key={item.name}
-                  label={item.name}
-                  component={Link}
-                  href={item.path}
-                />
-              ))}
-            </Tabs>
-          </Container>
-        </Box>
       </AppBar>
 
       {/* Mobile Navigation Drawer */}
@@ -252,62 +202,6 @@ export default function Header() {
                       }}>
                         <Icon />
                       </ListItemIcon>
-                      <ListItemText 
-                        primary={item.name}
-                        sx={{
-                          '& .MuiListItemText-primary': {
-                            fontWeight: isActive ? 600 : 400,
-                          }
-                        }}
-                      />
-                    </ListItem>
-                  </Link>
-                </ListItem>
-              );
-            })}
-
-            {/* Divider for Sub Navigation */}
-            <Box sx={{ 
-              my: 2, 
-              px: 3, 
-              py: 1,
-              bgcolor: 'rgba(0, 0, 0, 0.02)',
-              borderTop: '1px solid',
-              borderBottom: '1px solid',
-              borderColor: 'divider'
-            }}>
-              <Typography variant="subtitle2" color="text.secondary">
-                Kategoriler
-              </Typography>
-            </Box>
-
-            {/* Sub Navigation Items */}
-            {subNavItems.map((item) => {
-              const isActive = pathname === item.path;
-              return (
-                <ListItem 
-                  key={item.name} 
-                  disablePadding
-                  sx={{
-                    backgroundColor: isActive ? 'rgba(0, 127, 255, 0.04)' : 'transparent',
-                  }}
-                >
-                  <Link 
-                    href={item.path} 
-                    style={{ 
-                      width: '100%', 
-                      textDecoration: 'none',
-                      color: isActive ? '#007FFF' : '#1a1a1a'
-                    }}
-                  >
-                    <ListItem 
-                      sx={{ 
-                        px: 3,
-                        '&:hover': {
-                          backgroundColor: 'rgba(0, 127, 255, 0.04)',
-                        }
-                      }}
-                    >
                       <ListItemText 
                         primary={item.name}
                         sx={{
