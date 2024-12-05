@@ -4,8 +4,8 @@ import SearchResultItem from "./SearchResultItem"
 import ChipContainer from "./ChipContainer"
 import SelectedDiziChip from "./SelectedDiziChip"
 //import TopNavigation from "@/app/components/TopNavigation"
-import { mappedData } from "../Application"
-import PersistentDrawerLeft from "@/app/components/drawer"
+// import { mappedData } from "../Application"
+// import PersistentDrawerLeft from "@/app/components/drawer"
 import getViews from "@/app/utils/firebase/supabase"
 
 // Memoized view count mapping function
@@ -52,20 +52,28 @@ export default async function SearchResultContainer({
   return (
     <>
       {/* <TopNavigation selected={2} /> */}
-      <PersistentDrawerLeft data={mappedData} title="Dizi Sponsoru">
-        <Container>
+   
+        <Container maxWidth="lg" sx={{ overflow: 'hidden' }}>
           <SelectedDiziChip category={pageTitle} />
           
           <Grid 
             container 
-            gap={1} 
+            spacing={1} 
             justifyContent="center"
+            sx={{ 
+              width: '100%', 
+              margin: 0,
+              overflow: 'hidden',
+              paddingX: 1
+            }}
           >
-            <ChipContainer {...chipContainerProps} />
+            <Grid item xs={12}>
+              <ChipContainer {...chipContainerProps} />
+            </Grid>
             
             {mappedResult.map((item, index) => (
               <GridItem 
-                key={item.Website} // Using Website as a unique key instead of index
+                key={item.Website}
                 item={item}
                 userViewData={userViewData}
                 index={index}
@@ -85,7 +93,7 @@ export default async function SearchResultContainer({
             <ChipContainer dizi={dizi} keyword={keyword} />
           </Grid>
         </Container>
-      </PersistentDrawerLeft>
+  
     </>
   );
 }
