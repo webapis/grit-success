@@ -14,49 +14,78 @@ const cardStyles = {
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
-    transition: 'transform 0.2s, box-shadow 0.2s',
+    transition: 'all 0.3s ease-in-out',
+    borderRadius: 2,
+    overflow: 'hidden',
+    backgroundColor: '#fff',
     '&:hover': {
-        transform: 'translateY(-4px)',
-        boxShadow: '0 4px 20px rgba(0,0,0,0.1)'
+        transform: 'translateY(-8px)',
+        boxShadow: '0 12px 24px rgba(0,0,0,0.1)',
+        '& .MuiCardMedia-root': {
+            transform: 'scale(1.05)'
+        }
     }
 };
 
 const mediaStyles = { 
-    height: 200,
+    height: 240,
     backgroundSize: 'cover',
-    backgroundPosition: 'center center'
+    backgroundPosition: 'center center',
+    transition: 'transform 0.3s ease-in-out'
 };
 
 const boxStyles = {
     display: 'flex',
     alignItems: 'baseline',
     justifyContent: 'space-between',
-    marginBottom: 1
+    marginBottom: 1.5,
+    flexWrap: 'wrap'
 };
 
 const titleStyles = { 
-    fontWeight: 600,
-    fontSize: '1.1rem',
+    fontWeight: 700,
+    fontSize: '1.2rem',
     textTransform: 'capitalize',
-    color: 'primary.main'
+    color: 'primary.main',
+    marginRight: 1,
+    lineHeight: 1.3
 };
 
 const dateStyles = { 
     textAlign: 'end', 
     opacity: 0.7,
-    fontSize: '0.85rem'
+    fontSize: '0.85rem',
+    color: 'text.secondary',
+    fontWeight: 500
 };
 
 const descriptionStyles = { 
     textTransform: 'capitalize',
     color: 'text.secondary',
-    marginBottom: 2
+    marginBottom: 2,
+    lineHeight: 1.6,
+    fontSize: '0.95rem'
 };
 
 const cardActionsStyles = {
     marginTop: 'auto',
     borderTop: '1px solid',
-    borderColor: 'divider'
+    borderColor: 'divider',
+    padding: 2,
+    '& .MuiButton-root': {
+        borderRadius: 6,
+        textTransform: 'none',
+        fontWeight: 600,
+        fontSize: '0.9rem',
+        '&:hover': {
+            backgroundColor: 'primary.main',
+            color: 'white'
+        }
+    }
+};
+
+const cardContentStyles = {
+    padding: 2.5
 };
 
 const Diziview = React.memo(function Diziview({title, content, href, userViewData}) {
@@ -80,7 +109,7 @@ const Diziview = React.memo(function Diziview({title, content, href, userViewDat
                 title={description}
             />
 
-            <CardContent>
+            <CardContent sx={cardContentStyles}>
                 <Box sx={boxStyles}>
                     <Typography sx={titleStyles} variant="h5" component="div">
                         {title}

@@ -4,7 +4,7 @@ import Application from "./comps/Application"
 import TopNavigation from "../components/TopNavigation";
 0
 
-export async function generateMetadata() {
+export  function generateMetadata() {
 
   return {
     title: 'Dizi Kıyafetleri',
@@ -13,7 +13,7 @@ export async function generateMetadata() {
 
 }
 
-export default async function Home(props) {
+export default  function Home(props) {
 
   return <>
     <TopNavigation selected={1} />
