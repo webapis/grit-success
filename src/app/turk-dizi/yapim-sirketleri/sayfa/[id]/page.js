@@ -5,7 +5,7 @@ import PaginationContainer from '../../components/PaginationContainer';
 import ysData from '../../../../../../turk-dizi-data/yapim-sirketleri.json';
 import  Typography  from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import TopNavigation from '@/app/components/TopNavigation';
+//import TopNavigation from '@/app/components/TopNavigation';
 import DrawerWrapper from '../../DrawerWrapper';
 export async function generateMetadata() {
     return {

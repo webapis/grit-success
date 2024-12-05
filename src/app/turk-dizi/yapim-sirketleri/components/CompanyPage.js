@@ -1,56 +1,143 @@
 // src/components/CompanyPage.js
 
 import React from 'react';
-
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import HomeIcon from '@mui/icons-material/Home';
+import Paper from '@mui/material/Paper';
+import Divider from '@mui/material/Divider';
+import MovieIcon from '@mui/icons-material/Movie';
 
 import TVSeriesThumbnail from './TVSeriesThumbnail';
 import CompanyInfo from './CompanyInfo';
 
 const CompanyPage = ({ company, companyId }) => {
   return (
-    <Container
-      sx={{
-        py: 4,
-        marginTop: 1,
-      }}
-    >
-
-      <Breadcrumbs aria-label="breadcrumb">
-        <Link underline="hover" color="inherit" href={`/turk-dizi/yapim-sirketleri`}>
-          Yapım Şirketleri
-        </Link>
-
-        <Typography sx={{ color: 'text.primary' }}>{companyId}</Typography>
-      </Breadcrumbs>
-      <Box >
-        <CompanyInfo company={company} />
-
-        <Typography variant="h5" component="h2" gutterBottom sx={{ mt: 6, mb: 3 }}>
-          Son TV Dizileri
-        </Typography>
-
-        <Grid
-          spacing={1}
-          container
+    <Container maxWidth="xl" sx={{ py: 4 }}>
+      {/* Breadcrumb Section */}
+      <Paper 
+        elevation={0} 
+        sx={{ 
+          p: 2, 
+          mb: 3, 
+          backgroundColor: 'background.paper',
+          borderRadius: 2
+        }}
+      >
+        <Breadcrumbs 
+          separator={<NavigateNextIcon fontSize="small" />}
+          aria-label="breadcrumb"
+          sx={{
+            '& .MuiBreadcrumbs-ol': {
+              alignItems: 'center',
+            },
+            '& .MuiBreadcrumbs-li': {
+              display: 'flex',
+              alignItems: 'center',
+            }
+          }}
         >
-          {company.tvSeries.map((series, i) => (
-            <Grid item key={i} xs={6} md={2}> <TVSeriesThumbnail key={series.id} series={series} /></Grid>
-          ))}
-        </Grid>
-      </Box>
-      <Breadcrumbs aria-label="breadcrumb">
-        <Link underline="hover" color="inherit" href={`/turk-dizi/yapim-sirketleri`}>
-          Yapım Şirketleri
-        </Link>
+          <Link 
+            underline="hover" 
+            color="inherit" 
+            href="/"
+            sx={{ display: 'flex', alignItems: 'center' }}
+          >
+            <HomeIcon sx={{ mr: 0.5 }} fontSize="small" />
+            Ana Sayfa
+          </Link>
+          <Link 
+            underline="hover" 
+            color="inherit" 
+            href="/turk-dizi/yapim-sirketleri"
+            sx={{ display: 'flex', alignItems: 'center' }}
+          >
+            Yapım Şirketleri
+          </Link>
+          <Typography 
+            sx={{ 
+              color: 'text.primary',
+              fontWeight: 500 
+            }}
+          >
+            {company.name || companyId}
+          </Typography>
+        </Breadcrumbs>
+      </Paper>
 
-        <Typography sx={{ color: 'text.primary' }}>{companyId}</Typography>
-      </Breadcrumbs>
+      {/* Main Content */}
+      <Paper 
+        elevation={1} 
+        sx={{ 
+          p: 3,
+          borderRadius: 2,
+          backgroundColor: 'background.paper'
+        }}
+      >
+        {/* Company Info Section */}
+        <Box sx={{ mb: 4 }}>
+          <CompanyInfo company={company} />
+        </Box>
+
+        <Divider sx={{ my: 4 }} />
+
+        {/* TV Series Section */}
+        <Box>
+          <Typography 
+            variant="h5" 
+            component="h2" 
+            gutterBottom 
+            sx={{ 
+              display: 'flex',
+              alignItems: 'center',
+              gap: 1,
+              mb: 3,
+              fontWeight: 600
+            }}
+          >
+            <MovieIcon color="primary" />
+            Son TV Dizileri
+            <Typography 
+              component="span" 
+              variant="body2" 
+              sx={{ 
+                ml: 2,
+                backgroundColor: 'primary.main',
+                color: 'white',
+                px: 1.5,
+                py: 0.5,
+                borderRadius: 10,
+              }}
+            >
+              {company.tvSeries.length}
+            </Typography>
+          </Typography>
+
+          <Grid
+            container
+            spacing={2}
+            sx={{
+              '& .MuiGrid-item': {
+                transition: 'transform 0.2s ease-in-out',
+                '&:hover': {
+                  transform: 'translateY(-4px)',
+                }
+              }
+            }}
+          >
+            {company.tvSeries.map((series, i) => (
+              <Grid item key={i} xs={6} sm={4} md={3} lg={2}>
+                <TVSeriesThumbnail series={series} />
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+      </Paper>
     </Container>
   );
 };
