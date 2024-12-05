@@ -6,9 +6,7 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import HomeIcon from '@mui/icons-material/Home';
 import Paper from '@mui/material/Paper';
 
-const BreadcrumbsComponent = ({ urlPath }) => {
-  const segments = urlPath.split('/').filter(Boolean);
-
+const Breadcrumb = ({ company }) => {
   return (
     <Paper 
       elevation={0} 
@@ -33,7 +31,7 @@ const BreadcrumbsComponent = ({ urlPath }) => {
         }}
       >
         <Link 
-          href="/" 
+          href="/"
           style={{
             color: 'inherit',
             textDecoration: 'none',
@@ -44,43 +42,42 @@ const BreadcrumbsComponent = ({ urlPath }) => {
           <HomeIcon sx={{ mr: 0.5 }} fontSize="small" />
           Ana Sayfa
         </Link>
-        {segments.map((segment, index) => {
-          const cleanSegment = segment.replace(/-/g, ' ');
-          const path = `/${segments.slice(0, index + 1).join('/')}`;
-          const isLastSegment = index === segments.length - 1;
 
-          if (/[a-zA-Z]/.test(segment) && /\d/.test(segment)) {
-            return null;
-          }
+        <Link 
+          href="/turk-dizi"
+          style={{
+            color: 'inherit',
+            textDecoration: 'none',
+            display: 'flex',
+            alignItems: 'center'
+          }}
+        >
+          Türk Dizileri
+        </Link>
+        
+        <Link 
+          href="/turk-dizi/yapim-sirketleri"
+          style={{
+            color: 'inherit',
+            textDecoration: 'none',
+            display: 'flex',
+            alignItems: 'center'
+          }}
+        >
+          Yapım Şirketleri
+        </Link>
 
-          return isLastSegment ? (
-            <Typography 
-              key={index} 
-              sx={{ 
-                color: 'text.primary',
-                fontWeight: 500 
-              }}
-            >
-              {cleanSegment}
-            </Typography>
-          ) : (
-            <Link 
-              key={index} 
-              href={path} 
-              style={{
-                color: 'inherit',
-                textDecoration: 'none',
-                display: 'flex',
-                alignItems: 'center'
-              }}
-            >
-              {cleanSegment}
-            </Link>
-          );
-        })}
+        <Typography 
+          sx={{ 
+            color: 'text.primary',
+            fontWeight: 500 
+          }}
+        >
+          {company.name}
+        </Typography>
       </MuiBreadcrumbs>
     </Paper>
   );
 };
 
-export default BreadcrumbsComponent;
+export default Breadcrumb; 

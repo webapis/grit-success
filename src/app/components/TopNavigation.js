@@ -56,7 +56,7 @@ export default function TopNavigation({ selected }) {
   );
 
   return (
-    <div style={{ marginTop: 70, display: 'flex' }}>
+    <div style={{ marginTop: 0, display: 'flex' }}>
       <Tabs 
         value={selected} 
         variant="scrollable" 

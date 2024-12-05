@@ -34,7 +34,7 @@ export default function SponsorKategori() {
     
   return (
     <>
-      <TopNavigation selected={3} />
+      {/* <TopNavigation selected={3} /> */}
       <PersistentDrawerLeft data={mappedNavData} title="Sponsor Kategori">
         <Container sx={{width:{xs:'100%',md:'50%'}}}>
           <Typography variant='h4' textAlign='center' sx={{ marginTop: 2, marginBottom: 3 }}>

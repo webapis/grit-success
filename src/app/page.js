@@ -15,7 +15,7 @@ export default  function Home(props) {
 
 
   return <>
-    <TopNavigation selected={0} />
+    {/* <TopNavigation selected={0} /> */}
     <SponsorGiyimDrawerContainer selectedGender={'kadın'}>
 
       <GenderCards />

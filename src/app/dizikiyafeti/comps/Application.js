@@ -80,6 +80,69 @@ export default async function Application() {
             </Container>
         </PersistentDrawerLeft>
     );
+    return (
+        <PersistentDrawerLeft data={mappedNavData} title="Dizi Kıyafeti">
+            <Container maxWidth="xl" sx={containerStyles}>
+                <Box sx={{ mb: 3 }}>
+                    <Breadcrumbs 
+                        separator="›" 
+                        aria-label="breadcrumb"
+                        sx={{
+                            '& .MuiBreadcrumbs-separator': {
+                                mx: 1,
+                                color: 'text.secondary'
+                            }
+                        }}
+                    >
+                        <Link 
+                            underline="hover" 
+                            color="inherit" 
+                            href="/"
+                            sx={{ 
+                                display: 'flex',
+                                alignItems: 'center'
+                            }}
+                        >
+                            <HomeIcon sx={{ mr: 0.5 }} fontSize="small" />
+                            Ana Sayfa
+                        </Link>
+                        <Typography 
+                            color="text.primary"
+                            sx={{ 
+                                fontWeight: 500
+                            }}
+                        >
+                            Dizi Kıyafetleri
+                        </Typography>
+                    </Breadcrumbs>
+                </Box>
+
+                <Typography 
+                    variant='h4' 
+                    textAlign='center' 
+                    sx={titleStyles}
+                    component="h1"
+                >
+                    Dizi Kıyafetleri
+                </Typography>
+                
+                <Grid 
+                    container 
+                    sx={gridContainerStyles}
+                >
+                    {sortedNavData.map((item, i) => (
+                        <Grid 
+                            key={item.href} 
+                            item 
+                            {...gridItemStyles}
+                        >
+                            <Diziview {...item} userViewData={userViewData} />
+                        </Grid>
+                    ))}
+                </Grid>
+            </Container>
+        </PersistentDrawerLeft>
+    );
 }
 
 

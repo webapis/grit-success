@@ -3,52 +3,92 @@ import { permanentRedirect, usePathname } from 'next/navigation'
 import { GoogleTagManager } from '@next/third-parties/google'
 import { Inter, Poppins } from 'next/font/google'
 import ScrollToTopButton from './components/ScrollToTopButton';
-import { Box } from '@mui/material';
-
+import { Box, CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+import Header from './components/Header';
 import './globals.css'
-
 import Footer from './components/Footer';
 import Script from 'next/script'
 
+const poppins = Poppins({ 
+  subsets: ['latin'], 
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+});
 
-const inter = Poppins({ subsets: ['latin'], weight: ['400', '700'], })
-
-
+// Create a custom theme
+const theme = createTheme({
+  typography: {
+    fontFamily: poppins.style.fontFamily,
+  },
+  palette: {
+    primary: {
+      main: '#007FFF',
+    },
+    background: {
+      default: '#F5F5F7',
+    },
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: 'none',
+          borderRadius: 8,
+        },
+      },
+    },
+  },
+});
 
 export default function RootLayout(props) {
-  const {children}=props
-
-  const pathName =usePathname()
+  const {children} = props;
+  const pathName = usePathname();
+  
   const endsWithSayfa = pathName.match(/\/sayfa\/?$/) !== null;
   if(endsWithSayfa){
-
-    debugger
     let redirectPath = pathName+'/1'
     permanentRedirect(redirectPath.replace('//','/'))
   }
 
   return (
-    <html lang="en">
- <meta name="fo-verify" content="8de09664-17ab-4040-a646-0c5652e5e37d" />
-      <body className={inter.className}>
-      <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        minHeight: '100vh', // This ensures the footer sticks to bottom
-      }}
-    >
-      {/* Your header component */}
-      <Box sx={{ flex: 1 }}>
-      {children}
-      </Box>
-      <Footer />
-    </Box>
+    <html lang="tr">
+      <head>
+        <meta name="fo-verify" content="8de09664-17ab-4040-a646-0c5652e5e37d" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Türk dizilerindeki kıyafetler ve sponsorlar hakkında detaylı bilgi" />
+      </head>
+      <body className={poppins.className}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              minHeight: '100vh',
+              bgcolor: 'background.default',
+            }}
+          >
+            <Header />
+            <Box 
+              component="main" 
+              sx={{ 
+                flex: 1,
+                py: 3,
+                px: { xs: 2, sm: 4 },
+              }}
+            >
+              {children}
+            </Box>
+            <Footer />
+          </Box>
+          <ScrollToTopButton />
+        </ThemeProvider>
         
-<ScrollToTopButton />
-    
-        <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1960990522971470" crossorigin="anonymous" />
-
+        <Script 
+          async 
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1960990522971470" 
+          crossOrigin="anonymous" 
+        />
         <GoogleTagManager gtmId="GTM-WVW74LTW" />
       </body>
     </html>

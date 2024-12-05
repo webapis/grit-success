@@ -1,23 +1,52 @@
 import { Grid,Typography } from '@mui/material';  // Import MUI's Grid component
 import ProductDisplay from './ProductDisplay';
 import SelectedProductCategoryChip from './SelectedProductCategoryChip';
-export default function ProductDisplayContainer({ brands,title, selectedGender }) {
-  return (
-    <Grid container spacing={2}> {/* Grid container for layout */}
-<Grid item xs={12}>
+import { useMemo } from 'react';
 
-<SelectedProductCategoryChip selectedGender={selectedGender} category={title}/>
-</Grid>
-      {brands.map(m=>{return {...m,product:m.children[0]}}).sort((a,b)=>b.product.isLinkCandidate-a.product.isLinkCandidate).map(({product}, i) => {
-    
-       // const product = m.children[0]; // Assume each brand has children
- 
-        return (
-          <Grid item xs={6} sm={6} md={4} lg={2} key={i}> {/* Responsive grid item */}
-            <ProductDisplay product={product} /> {/* Render your product */}
-          </Grid>
-        );
-      })}
+export default function ProductDisplayContainer({ brands, title, selectedGender }) {
+  // Memoize the transformed and sorted brands array
+  const sortedProducts = useMemo(() => {
+    return brands
+      .map(brand => ({
+        ...brand,
+        product: brand.children[0]
+      }))
+      .sort((a, b) => b.product.isLinkCandidate - a.product.isLinkCandidate);
+  }, [brands]);
+
+  return (
+    <Grid 
+      container 
+      spacing={{ xs: 1, sm: 2, md: 3 }}
+      sx={{ 
+        padding: { xs: 1, sm: 2, md: 3 },
+        maxWidth: '100%',
+        margin: '0 auto'
+      }}
+    >
+      <Grid item xs={12} sx={{ mb: 0 }}>
+        <SelectedProductCategoryChip 
+          selectedGender={selectedGender} 
+          category={title}
+        />
+      </Grid>
+
+      {sortedProducts.map(({ product }, index) => (
+        <Grid 
+          item 
+          xs={6} 
+          sm={4} 
+          md={3} 
+          lg={2} 
+          key={product.id || index}
+          sx={{ 
+            display: 'flex',
+            justifyContent: 'center'
+          }}
+        > 
+          <ProductDisplay product={product} />
+        </Grid>
+      ))}
     </Grid>
   );
 }
