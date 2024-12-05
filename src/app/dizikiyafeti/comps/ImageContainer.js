@@ -51,8 +51,60 @@ InfoChip.propTypes = {
   value: PropTypes.string.isRequired,
 };
 
-const ImageContainer = ({ filteredData, pageTitle, userViewData }) => {
-  debugger
+const ImageContainer = React.memo(({ filteredData, pageTitle, userViewData }) => {
+  const sortedData = React.useMemo(() => 
+    filteredData.sort((a, b) => b.Time - a.Time),
+    [filteredData]
+  );
+
+  const renderGridItem = React.useCallback((item, i) => (
+    <Grid item xs={12} sm={6} lg={4} key={item.ProductLink || i}>
+      <Paper elevation={3} sx={{ p: 2, height: '100%', display: 'flex', flexDirection: 'column', borderRadius: '12px' }}>
+        <article>
+          <Typography 
+            variant="h2" 
+            component="h2" 
+            gutterBottom
+            sx={{ 
+              fontSize: { xs: '1.1rem', sm: '1.25rem', md: '1.4rem' },
+              mb: 2,
+              color: 'primary.main',
+            }}
+          >
+            {item.TVSeriesTitle}
+          </Typography>
+          <Box mb={2} sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <InfoChip label="Sezon" value={item.Season} />
+            <InfoChip label="Bölüm" value={item.Episode} />
+            <InfoChip label="Tarih" value={item.Date} />
+            <InfoChip label="Karakter" value={item.CaracterName} />
+            <InfoChip label="Oyuncu" value={item.FullName} />
+          </Box>
+
+          <Box position="relative" mb={2}>
+            <Image
+              fotografUrl={`${process.env.NEXT_PUBLIC_IMG_HOST}/dk-image/${item.ImageUrl}.jpg`}
+              alt={`${item.TVSeriesTitle} dizisinde ${item.FullName}'in canlandırdığı ${item.CaracterName} karakterinin ${item.Season}. sezon ${item.Episode}. bölümündeki kıyafeti`}
+              style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+            />
+            <Box position="absolute" bottom={8} right={8}>
+              <ViewCount rootPath="dizikiyafeti" linkId={item.ProductLink} userViewData={userViewData} />
+            </Box>
+          </Box>
+
+          <Box mt="auto">
+            <ClickableLink
+              rootPath="dizikiyafeti"
+              brand={item.BrandTitle}
+              linkId={item.ProductLink}
+              title={item.Title.toLowerCase()}
+            />
+          </Box>
+        </article>
+      </Paper>
+    </Grid>
+  ), []);
+
   return (
     <ThemeProvider theme={turkishTheme}>
       <Container component="main" maxWidth="lg" sx={{ bgcolor: 'background.default', py: 3 }}>
@@ -73,59 +125,31 @@ const ImageContainer = ({ filteredData, pageTitle, userViewData }) => {
         </Box>
 
         <Grid container spacing={3} component="section" aria-label="Dizi Kıyafetleri">
-          {filteredData.sort((a,b)=>b.Time-a.Time).map((item,i) => (
-            <Grid item xs={12} sm={6} lg={4} key={i}>
-              <Paper elevation={3} sx={{ p: 2, height: '100%', display: 'flex', flexDirection: 'column', borderRadius: '12px' }}>
-                <article>
-                  <Typography 
-                    variant="h2" 
-                    component="h2" 
-                    gutterBottom
-                    sx={{ 
-                      fontSize: { xs: '1.1rem', sm: '1.25rem', md: '1.4rem' },
-                      mb: 2,
-                      color: 'primary.main',
-                    }}
-                  >
-                    {item.TVSeriesTitle}
-                  </Typography>
-                  <Box mb={2} sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
-                    <InfoChip label="Sezon" value={item.Season} />
-                    <InfoChip label="Bölüm" value={item.Episode} />
-                    <InfoChip label="Tarih" value={item.Date} />
-                    <InfoChip label="Karakter" value={item.CaracterName} />
-                    <InfoChip label="Oyuncu" value={item.FullName} />
-                  </Box>
-
-                  <Box position="relative" mb={2}>
-                    <Image
-                      fotografUrl={`${process.env.NEXT_PUBLIC_IMG_HOST}/dk-image/${item.ImageUrl}.jpg`}
-                      alt={`${item.TVSeriesTitle} dizisinde ${item.FullName}'in canlandırdığı ${item.CaracterName} karakterinin ${item.Season}. sezon ${item.Episode}. bölümündeki kıyafeti`}
-                      style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
-                    />
-                    <Box position="absolute" bottom={8} right={8}>
-                      <ViewCount rootPath="dizikiyafeti" linkId={item.ProductLink} userViewData={userViewData} />
-                    </Box>
-                  </Box>
-
-                  <Box mt="auto">
-                    <ClickableLink
-                      rootPath="dizikiyafeti"
-                      brand={item.BrandTitle}
-                      linkId={item.ProductLink}
-                      title={item.Title.toLowerCase()}
-                    />
-                  </Box>
-                </article>
-              </Paper>
-            </Grid>
-          ))}
+          {sortedData.map(renderGridItem)}
         </Grid>
       </Container>
     </ThemeProvider>
   );
+});
+
+ImageContainer.displayName = 'ImageContainer';
+
+ImageContainer.propTypes = {
+  filteredData: PropTypes.arrayOf(PropTypes.shape({
+    Time: PropTypes.number,
+    TVSeriesTitle: PropTypes.string,
+    Season: PropTypes.string,
+    Episode: PropTypes.string,
+    Date: PropTypes.string,
+    CaracterName: PropTypes.string,
+    FullName: PropTypes.string,
+    ImageUrl: PropTypes.string,
+    ProductLink: PropTypes.string,
+    BrandTitle: PropTypes.string,
+    Title: PropTypes.string,
+  })).isRequired,
+  pageTitle: PropTypes.string.isRequired,
+  userViewData: PropTypes.object.isRequired,
 };
-
-
 
 export default ImageContainer;

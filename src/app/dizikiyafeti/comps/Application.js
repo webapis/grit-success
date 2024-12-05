@@ -1,38 +1,85 @@
-
 import React from 'react';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import Diziview from '@/app/dizikiyafeti/comps/Diziview';
-import data from '@/app/dizikiyafeti/page-data/dizikiyafetiMenu.json'
-
+import data from '@/app/dizikiyafeti/page-data/dizikiyafetiMenu.json';
 import PersistentDrawerLeft from '@/app/components/drawer';
 import getViews from '@/app/utils/firebase/supabase';
-const arrayData = Object.entries(data)
 
+// Move data processing outside component
+const mappedNavData = Object.entries(data).map(([title, content]) => ({
+    title,
+    content,
+    href: `/dizikiyafeti/${content.tag}-dizi-kiyafetleri`
+}));
 
+// Sort data once, outside the component
+const sortedNavData = [...mappedNavData].sort((a, b) => b.content.Time - a.content.Time);
 
-const mappedNavData = arrayData.map(m => {
-    const title = m[0]
-    const content = m[1]
-    const href = `/dizikiyafeti/${content.tag}-dizi-kiyafetleri`
-    return { ...m, title, content, href }
-})
+// Enhanced static styles
+const containerStyles = { 
+    paddingTop: 4,
+    paddingBottom: 8
+};
 
-export {mappedNavData}
-export default async  function Application() {
-    const userViewData = await getViews({table:'dizikiyafeti-home'})
-    return <PersistentDrawerLeft data={mappedNavData} title="Dizi Kıyafeti"> <Container>
-        <Typography variant='h4' textAlign='center' sx={{ marginTop: 0 }}>Dizi kıyafetleri</Typography>
-        <Grid container gap={1} style={{ display: 'flex', justifyContent: 'center' }}>
-            {mappedNavData.sort((a, b) => b[1].Time - a[1].Time).map((m, i) => {
+const titleStyles = {
+    marginBottom: 4,
+    fontWeight: 700,
+    color: 'primary.main',
+    textTransform: 'capitalize',
+    letterSpacing: '0.5px'
+};
 
-                return <Grid key={i} item xs={12} md={3}> <Diziview {...m} userViewData={userViewData} /></Grid>
+const gridContainerStyles = { 
+    display: 'flex', 
+    justifyContent: 'center',
+    gap: 3  // Increased gap between cards
+};
 
-            })}
-        </Grid>
-    </Container>
-    </PersistentDrawerLeft>
+const gridItemStyles = { 
+    xs: 12,
+    sm: 6,
+    md: 4,
+    lg: 3,
+    display: 'flex'  // This ensures equal height cards
+};
+
+export { mappedNavData };
+
+export default async function Application() {
+    const userViewData = await getViews({table:'dizikiyafeti-home'});
+    
+    return (
+        <PersistentDrawerLeft data={mappedNavData} title="Dizi Kıyafeti">
+            <Container maxWidth="xl" sx={containerStyles}>
+                
+                <Typography 
+                    variant='h4' 
+                    textAlign='center' 
+                    sx={titleStyles}
+                    component="h1"
+                >
+                    Dizi Kıyafetleri
+                </Typography>
+                
+                <Grid 
+                    container 
+                    sx={gridContainerStyles}
+                >
+                    {sortedNavData.map((item, i) => (
+                        <Grid 
+                            key={item.href} 
+                            item 
+                            {...gridItemStyles}
+                        >
+                            <Diziview {...item} userViewData={userViewData} />
+                        </Grid>
+                    ))}
+                </Grid>
+            </Container>
+        </PersistentDrawerLeft>
+    );
 }
 
 
