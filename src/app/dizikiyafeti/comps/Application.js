@@ -27,7 +27,7 @@ const titleStyles = {
     marginBottom: 4,
     fontWeight: 700,
     color: 'primary.main',
-    textTransform: 'uppercase',
+    textTransform: 'capitalize',
     letterSpacing: '0.5px'
 };
 
@@ -53,6 +53,7 @@ export default async function Application() {
     return (
         <PersistentDrawerLeft data={mappedNavData} title="Dizi Kıyafeti">
             <Container maxWidth="xl" sx={containerStyles}>
+                
                 <Typography 
                     variant='h4' 
                     textAlign='center' 
