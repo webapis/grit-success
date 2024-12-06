@@ -36,31 +36,7 @@ export default function GenderCards() {
             px: { xs: 2, sm: 3, md: 4 }
           }}
         >
-          {/* Section Header */}
-          <Box sx={{ mb: 4, textAlign: 'center' }}>
-            <Typography
-              variant="h4"
-              component="h1"
-              sx={{
-                fontWeight: 700,
-                mb: 2,
-                fontSize: { xs: '1.75rem', sm: '2rem', md: '2.25rem' }
-              }}
-            >
-              Dizi Sponsorları Koleksiyonu
-            </Typography>
-            <Typography
-              variant="subtitle1"
-              color="text.secondary"
-              sx={{
-                maxWidth: 600,
-                mx: 'auto',
-                lineHeight: 1.6
-              }}
-            >
-              Türk dizilerinin sponsor markalarının en yeni koleksiyonlarını keşfedin. Markaların özel seçili ürünlerini inceleyin.
-            </Typography>
-          </Box>
+
 
           {/* Cards Grid */}
           <Grid
