@@ -3,9 +3,9 @@ import Grid from "@mui/material/Grid"
 import SearchResultItem from "./SearchResultItem"
 import ChipContainer from "./ChipContainer"
 import SelectedDiziChip from "./SelectedDiziChip"
-//import TopNavigation from "@/app/components/TopNavigation"
-// import { mappedData } from "../Application"
-// import PersistentDrawerLeft from "@/app/components/drawer"
+import BreadcrumbsComponent from "@/app/components/BreadcrumbsComponent"
+import HomeIcon from '@mui/icons-material/Home';
+import Paper from '@mui/material/Paper';
 import getViews from "@/app/utils/firebase/supabase"
 
 // Memoized view count mapping function
@@ -60,6 +60,24 @@ export default async function SearchResultContainer({
             px: { xs: 0, sm: 2 }  // 0 padding on mobile, 16px (theme.spacing(2)) on tablet and up
           }}
         >
+          <Paper 
+            elevation={0} 
+            sx={{ 
+              p: 2, 
+              mb: 3, 
+              backgroundColor: 'background.paper',
+              borderRadius: 2
+            }}
+          >
+            <BreadcrumbsComponent
+              items={[
+                { label: 'Ana Sayfa', href: '/', icon: HomeIcon },
+                { label: 'Dizi Sponsoru', href: '/dizisponsoru' },
+                { label: pageTitle }
+              ]}
+            />
+          </Paper>
+
           <SelectedDiziChip category={pageTitle} />
           
           <Grid 

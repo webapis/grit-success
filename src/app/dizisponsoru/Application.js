@@ -41,7 +41,7 @@ export default async function Application() {
 
   return (
  
-      <Container maxWidth="xl">
+      <>
         <Box
           sx={{
             py: { xs: 2, md: 4 },
@@ -52,7 +52,7 @@ export default async function Application() {
           <Typography 
             sx={{
               textAlign: 'center',
-              mb: { xs: 2, md: 4 },
+              mb: { xs: 2, md: 2 },
               fontSize: { xs: '1.75rem', md: '2.125rem' },
               fontWeight: 600
             }}
@@ -98,7 +98,7 @@ export default async function Application() {
             ))}
           </Grid>
         </Box>
-      </Container>
+      </>
 
   );
 }

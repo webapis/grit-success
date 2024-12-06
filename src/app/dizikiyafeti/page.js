@@ -21,7 +21,7 @@ export default  function Home(props) {
     elevation={0} 
     sx={{ 
       p: 2, 
-      mb: 3, 
+      mb: 0, 
       backgroundColor: 'background.paper',
       borderRadius: 2
     }}

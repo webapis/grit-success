@@ -4,9 +4,9 @@ import ImageContainer from '../comps/ImageContainer';
 import Fuse from 'fuse.js'
 import pagesMetaData from '@/app/dizikiyafeti/meta/pageMetaData.json';
 import pagesData from '@/app/dizikiyafeti/page-data/dizikiyafeti.json';
-// import TopNavigation from '@/app/components/TopNavigation';
-// import PersistentDrawerLeft from '@/app/components/drawer';
-// import { mappedNavData } from '@/app/dizikiyafeti/comps/Application';
+import BreadcrumbsComponent from '@/app/components/BreadcrumbsComponent';
+import HomeIcon from '@mui/icons-material/Home';
+import Paper from '@mui/material/Paper';
 import getViews from '@/app/utils/firebase/supabase';
 export  function generateMetadata({ params, searchParams }, parent) {
 
@@ -52,7 +52,23 @@ export default async function DiziPage({ params }) {
 
 
     return <>
-        {/* <TopNavigation selected={1} /> */}
+            <Paper 
+              elevation={0} 
+              sx={{ 
+                p: 2, 
+                mb: 3, 
+                backgroundColor: 'background.paper',
+                borderRadius: 2
+              }}
+            >
+              <BreadcrumbsComponent
+                items={[
+                  { label: 'Ana Sayfa', href: '/', icon: HomeIcon },
+                  { label: 'Dizi Kıyafetleri', href: '/dizikiyafeti' },
+                  { label: title }
+                ]}
+              />
+            </Paper>
      
             <ImageContainer userViewData={userViewData} filteredData={mappedResult} pageTitle={title} />
    
