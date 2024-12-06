@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from  '@mui/material/Container'
+import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import Paper from '@mui/material/Paper';
 import BreadcrumbsComponent from '@/app/components/BreadcrumbsComponent';
@@ -8,14 +8,14 @@ import NavList from './comp/NavList';
 import pagesData from '@/app/dizi-sponsor-kategori/page-data/keywordMeta.json';
 // Main page component
 const mappedNavData = pagesData.map(m => {
-   // console.log('m.keyword',m.keyword)
-    const href = `/dizi-sponsor-kategori/${m.keyword}/sayfa/1`
-    const imageUrl =`/dizi/sponsor-kategori/${m.keyword}.jpg`
-    const title = m.keywordTitle
+  // console.log('m.keyword',m.keyword)
+  const href = `/dizi-sponsor-kategori/${m.keyword}/sayfa/1`
+  const imageUrl = `/dizi/sponsor-kategori/${m.keyword}.jpg`
+  const title = m.keywordTitle
 
-    return { ...m, href, title,imageUrl }
+  return { ...m, href, title, imageUrl }
 })
-export  function generateMetadata() {
+export function generateMetadata() {
 
   return {
     title: 'Türk Dizi Sponsor Kategoriler',
@@ -30,35 +30,37 @@ export  function generateMetadata() {
 
 export default function SponsorKategori() {
 
-    
+
   return (
     <>
       {/* <TopNavigation selected={3} /> */}
-
-        <Container sx={{width:{xs:'100%',md:'50%'}}}>
-          <Paper 
-            elevation={0} 
-            sx={{ 
-              p: 2, 
-              mb: 3, 
-              backgroundColor: 'background.paper',
-              borderRadius: 2
-            }}
-          >
-            <BreadcrumbsComponent
-              items={[
-                { label: 'Ana Sayfa', href: '/', icon: HomeIcon },
-                { label: 'Dizi Sponsor Kategorileri' }
-              ]}
-            />
-          </Paper>
-          <Typography variant='h4' textAlign='center' sx={{ marginTop: 2, marginBottom: 3 }}>
-            Dizi Sponsor Kategorileri
-          </Typography>
-          <NavList
-            items={mappedNavData}
+      <Container >
+        <Paper
+          elevation={0}
+          sx={{
+            p: 2,
+            mb: 3,
+            backgroundColor: 'background.paper',
+            borderRadius: 2
+          }}
+        >
+          <BreadcrumbsComponent
+            items={[
+              { label: 'Ana Sayfa', href: '/', icon: HomeIcon },
+              { label: 'Dizi Sponsor Kategorileri' }
+            ]}
           />
-        </Container>
+        </Paper>
+      </Container>
+      <Container sx={{ width: { xs: '100%', md: '50%' } }}>
+
+        <Typography variant='h4' textAlign='center' sx={{ marginTop: 2, marginBottom: 3 }}>
+          Dizi Sponsor Kategorileri
+        </Typography>
+        <NavList
+          items={mappedNavData}
+        />
+      </Container>
 
     </>
   );

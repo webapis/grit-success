@@ -9,8 +9,10 @@ import Fuse from 'fuse.js'
 import keywordMetaData from '@/app/dizi-sponsor-kategori/page-data/keywordMeta.json';
 import pagesData from '@/app/dizi-sponsor-kategori/page-data/sponsor-kategori.json';
 import getViews from '@/app/utils/firebase/supabase';
-
-
+import BreadcrumbsComponent from '@/app/components/BreadcrumbsComponent';
+import HomeIcon from '@mui/icons-material/Home';
+import Paper from '@mui/material/Paper';
+import Container from '@mui/material/Container';
 
 export  function generateMetadata({ params }) {
     const kategori = params.slug[0];
@@ -109,10 +111,28 @@ debugger
     const sortData = results.map(m => { return { ...m.item, duplicateTitles: m.item.duplicateTitles ? m.item.duplicateTitles : [m.item.TVSeriesTitle] } }).sort((a, b) => b.duplicateTitles.length - a.duplicateTitles.length)
     const paginatedData = paginate(sortData, page, 50)
     const pageCount = Math.ceil(sortData.length / 50)
-    return <>
+    return <Container maxWidth="xl">
+  
+        <Paper 
+          elevation={0} 
+          sx={{ 
+            p: 2, 
+            mb: 3, 
+            backgroundColor: 'background.paper',
+            borderRadius: 2
+          }}
+        >
+          <BreadcrumbsComponent
+            items={[
+              { label: 'Ana Sayfa', href: '/', icon: HomeIcon },
+              { label: 'Dizi Sponsor Kategorileri', href: '/dizi-sponsor-kategori' },
+              { label: `${keywordObj.keywordTitle} Sponsorları` }
+            ]}
+          />
+        </Paper>
         <SearchResultContainer userViewData={userViewData} data={paginatedData} pageTitle={` Dizilerde ${keywordObj.keywordTitle} Sponsorları`} dizi={''} page={page} keyword={'keyword'} />
         <PaginationContainer count={pageCount} page={page} url={`/dizi-sponsor-kategori/${keywordObj.keyword}/sayfa/`} />
-    </>
+    </Container>
 }
 
 
