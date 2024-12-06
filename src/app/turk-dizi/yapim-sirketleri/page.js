@@ -39,40 +39,34 @@ export default function TVseriesProductionCompanies() {
     const data = paginate(ysData, currentPage, 10)
     return (
         <>
-            <Grid container spacing={2} sx={{ px: { xs: 2, md: 4 }, py: 2 }}>
-                {/* Breadcrumbs - Full width */}
-                <Grid item xs={12}>
-                    <BreadcrumbsComponent
+                      <BreadcrumbsComponent
                         urlPath={`/turk-dizi`}
                     />
-                </Grid>
-
-                {/* Title - Full width */}
-                <Grid item xs={12}>
-                    <Typography 
+             <Typography 
                         variant='h4' 
                         textAlign="center"
                         sx={{ 
-                            mb: 3,
+                           
                             fontWeight: 500
                         }}
                     >
                         Türk yapım şirketleri ve dizileri
                     </Typography>
-                </Grid>
+                    <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                        <PaginationContainer
+                            totalPages={totalPages}
+                            currentPage={currentPage}
+                            basePath="/turk-dizi/yapim-sirketleri"
+                        />
+                    </Box>
+          
+            <Grid container spacing={2} sx={{ px: { xs: 2, md: 4 }, py: 2 }}>
+         
 
                 {/* Content Container - Centered with max width */}
                 <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center' }}>
                     <Box sx={{ width: '100%', maxWidth: 'md' }}>
-                        {/* Pagination at top */}
-                        <Box sx={{ mb: 3 }}>
-                            <PaginationContainer
-                                totalPages={totalPages}
-                                currentPage={currentPage}
-                                basePath="/turk-dizi/yapim-sirketleri"
-                            />
-                        </Box>
-
+                      
                         {/* Company List */}
                         {data.map((company, index) => (
                             <TVSeriesCompany key={company.id || index} company={company} />
