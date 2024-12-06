@@ -17,9 +17,9 @@ export default function ProductDisplayContainer({ brands, title, selectedGender 
   return (
     <Grid 
       container 
-      spacing={{ xs: 1, sm: 2, md: 3 }}
+      spacing={{ xs: 1, sm: 1, md: 3 }}
       sx={{ 
-        padding: { xs: 1, sm: 2, md: 3 },
+         padding: { xs: 0, sm: 0, md: 0 },
         maxWidth: '100%',
         margin: '0 auto'
       }}
@@ -37,11 +37,12 @@ export default function ProductDisplayContainer({ brands, title, selectedGender 
           xs={6} 
           sm={4} 
           md={3} 
-          lg={2} 
+          lg={3} 
           key={product.id || index}
           sx={{ 
             display: 'flex',
-            justifyContent: 'center'
+            justifyContent: 'center',
+       
           }}
         > 
           <ProductDisplay product={product} />

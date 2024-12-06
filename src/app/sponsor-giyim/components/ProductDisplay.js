@@ -121,7 +121,7 @@ const ProductDisplay = React.memo(({ product }) => {
         maxWidth: 345,
         width: '100%',
         margin: 'auto',
-        marginTop: 3,
+        marginTop: 1,
         borderRadius: 2,
         transition: 'all 0.3s ease-in-out',
         opacity: imageLoaded ? 1 : 0.9,
