@@ -8,16 +8,17 @@ const AboutPage = () => {
         Glumzi'ye Hoş Geldiniz!
       </Typography>
       <Typography variant="body1" paragraph>
-        Glumzi, ziyaretçilerimize benzersiz ve ilgi çekici bir çevrimiçi deneyim sunmaya kendini adamıştır. 
-        Platformumuz, popüler diziler ve onların sponsorları üzerine odaklanarak moda, yaşam tarzı ve eğlence alanındaki en son trendleri keşfetmek için bir merkezdir.
+        Glumzi, Türk dizilerindeki moda dünyasını keşfetmeniz için tasarlanmış özel bir platformdur. 
+        Favori dizilerinizdeki kıyafetleri ve markaları bulmanızı sağlayan, moda ve dizi dünyasını bir araya getiren benzersiz bir deneyim sunuyoruz.
       </Typography>
       
       <Typography variant="h5" gutterBottom>
         Misyonumuz
       </Typography>
       <Typography variant="body1" paragraph>
-        Misyonumuz, hayranları sevdikleri markalarla buluşturmaktır. Favori dizilerinde yer alan ürünleri sergileyerek, 
-        hikaye anlatımının gücüne inanıyor ve bu bağlamda izleyiciler ile markalar arasında anlamlı bir bağlantı kurmayı hedefliyoruz.
+        Misyonumuz, dizi severler ile moda markalarını buluşturmaktır. Türk dizilerinde gördüğünüz kıyafetleri kolayca bulmanızı sağlayarak, 
+        ekrandaki stili gerçek hayata taşımanıza yardımcı oluyoruz. Her bölümde yer alan ürünleri detaylı bir şekilde kategorize ederek 
+        size en doğru alışveriş deneyimini sunuyoruz.
       </Typography>
 
       <Typography variant="h5" gutterBottom>
@@ -25,34 +26,34 @@ const AboutPage = () => {
       </Typography>
       <Box component="ul">
         <Typography component="li" variant="body1">
-          <strong>Dizi Sponsorlukları:</strong> Favori TV dizilerinizi destekleyen çeşitli markaları keşfedin.
+          <strong>Dizi Kıyafetleri:</strong> Türk dizilerinde gördüğünüz kıyafetleri marka, kategori ve cinsiyet bazında filtreleyerek bulabilirsiniz.
         </Typography>
         <Typography component="li" variant="body1">
-          <strong>Moda Bilgileri:</strong> Popüler dizilerden ilham alan en son moda trendleriyle güncel kalın.
+          <strong>Yapım Şirketleri:</strong> Türk dizi sektöründeki yapım şirketlerini ve projelerini keşfedebilirsiniz.
         </Typography>
         <Typography component="li" variant="body1">
-          <strong>Çevrimiçi Alışveriş:</strong> Özelliklerini tanıttığımız ürünleri güvenilir ortaklarımızdan satın almak için doğrudan bağlantılarla sorunsuz bir alışveriş deneyimi yaşayın.
+          <strong>Kolay Alışveriş:</strong> Beğendiğiniz ürünlere doğrudan erişim sağlayarak, güvenilir markalardan alışveriş yapabilirsiniz.
+        </Typography>
+        <Typography component="li" variant="body1">
+          <strong>Detaylı Filtreleme:</strong> Kadın, erkek ve çocuk kategorilerinde, farklı giyim türlerine göre arama yapabilirsiniz.
         </Typography>
       </Box>
 
       <Typography variant="h5" gutterBottom>
-        Gizlilik Taahhüdü
+        Kullanıcı Deneyimi
       </Typography>
       <Typography variant="body1" paragraph>
-        Gizliliğiniz bizim için çok önemlidir. Verilerinizin korunmasını ve sorumlu bir şekilde kullanılmasını sağlıyoruz. 
-        Daha fazla bilgi için lütfen Gizlilik Politikamız sayfasını ziyaret edin.
+        Platformumuzda her ürün için detaylı bilgiler, fiyat karşılaştırmaları ve doğrudan satın alma linkleri sunuyoruz. 
+        Modern ve kullanıcı dostu arayüzümüz sayesinde aradığınız ürünleri kolayca bulabilir, favori dizilerinizdeki 
+        stili yakalayabilirsiniz.
       </Typography>
 
       <Typography variant="h5" gutterBottom>
         Bize Katılın
       </Typography>
-      <Typography variant="body1" paragraph>
-        Sitemizi keşfetmeye, içeriklerimizle etkileşimde bulunmaya ve yaşam tarzınızı zenginleştirecek yeni ürünler keşfetmeye davet ediyoruz. 
-        İster moda meraklısı, ister dizi tutkunuz olun, Glumzi'de herkes için bir şeyler var.
-      </Typography>
-
       <Typography variant="body1">
-        Glumzi'yi ziyaret ettiğiniz için teşekkür ederiz! Moda ve eğlencede en iyileri keşfetme yolculuğunuzda sizinle birlikte olmayı dört gözle bekliyoruz.
+        Türk dizilerindeki modayı keşfetmek ve sevdiğiniz karakterlerin stilini yakalamak için Glumzi'yi keşfetmeye başlayın. 
+        Size en trend ürünleri, en kolay ulaşılabilir şekilde sunmaktan mutluluk duyuyoruz.
       </Typography>
     </Container>
   );
