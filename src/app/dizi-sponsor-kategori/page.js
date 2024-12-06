@@ -6,17 +6,16 @@ import BreadcrumbsComponent from '@/app/components/BreadcrumbsComponent';
 import HomeIcon from '@mui/icons-material/Home';
 import NavList from './comp/NavList';
 import pagesData from '@/app/dizi-sponsor-kategori/page-data/keywordMeta.json';
-// Main page component
-const mappedNavData = pagesData.map(m => {
-  // console.log('m.keyword',m.keyword)
-  const href = `/dizi-sponsor-kategori/${m.keyword}/sayfa/1`
-  const imageUrl = `/dizi/sponsor-kategori/${m.keyword}.jpg`
-  const title = m.keywordTitle
 
-  return { ...m, href, title, imageUrl }
-})
+// Pre-compute mapped data outside component
+const mappedNavData = pagesData.map(m => ({
+  ...m,
+  href: `/dizi-sponsor-kategori/${m.keyword}/sayfa/1`,
+  imageUrl: `/dizi/sponsor-kategori/${m.keyword}.jpg`,
+  title: m.keywordTitle
+}));
+
 export function generateMetadata() {
-
   return {
     title: 'Türk Dizi Sponsor Kategoriler',
     description: 'Türk dizilerinde yer alan sponsorların kategorileştirilmiş listesi. En güncel dizi sponsorları ve markalar hakkında detaylı bilgiler.',
@@ -24,18 +23,22 @@ export function generateMetadata() {
       title: 'Türk Dizi Sponsor Kategoriler',
       description: 'Türk dizilerinde yer alan sponsorların kategorileştirilmiş listesi',
       type: 'website',
-    }
+      siteName: 'Dizi Sponsor',
+      locale: 'tr_TR',
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
   }
 }
 
 export default function SponsorKategori() {
-
-
   return (
-    <>
-      {/* <TopNavigation selected={3} /> */}
-      <Container >
+    <main>
+      <Container>
         <Paper
+          component="section"
           elevation={0}
           sx={{
             p: 2,
@@ -52,17 +55,31 @@ export default function SponsorKategori() {
           />
         </Paper>
       </Container>
-      <Container sx={{ width: { xs: '100%', md: '50%' } }}>
-
-        <Typography variant='h4' textAlign='center' sx={{ marginTop: 2, marginBottom: 3 }}>
+      
+      <Container 
+        component="section"
+        sx={{ 
+          width: { xs: '100%', md: '50%' },
+          transition: 'width 0.3s ease-in-out'
+        }}
+      >
+        <Typography 
+          variant='h1' 
+          component="h1"
+          textAlign='center' 
+          sx={{ 
+            marginTop: 2, 
+            marginBottom: 3,
+            fontSize: { xs: '1.75rem', md: '2.125rem' },
+            fontWeight: 500
+          }}
+        >
           Dizi Sponsor Kategorileri
         </Typography>
-        <NavList
-          items={mappedNavData}
-        />
+        
+        <NavList items={mappedNavData} />
       </Container>
-
-    </>
+    </main>
   );
 }
 

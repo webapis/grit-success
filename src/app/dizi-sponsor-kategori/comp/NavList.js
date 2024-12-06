@@ -1,22 +1,34 @@
-
 'use client'
-import React, { useState } from 'react';
-import  Box  from '@mui/material/Box';
+import React, { useState, memo, useCallback } from 'react';
+import Box from '@mui/material/Box';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import NavItem from './NavItem';
 
-const NavList = ({ items }) => {
+const NavList = memo(({ items }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const visibleItems = isExpanded ? items : items.slice(0, 8);
   const [activeHref, setActiveHref] = useState(null);
 
-  const onItemClick = (href) => {
+  const visibleItems = isExpanded ? items : items.slice(0, 8);
+
+  const onItemClick = useCallback((href) => {
     setActiveHref(href);
-    // You can add additional logic here, such as updating the URL or fetching related data
-  };
+  }, []);
+
+  const toggleExpand = useCallback(() => {
+    setIsExpanded(prev => !prev);
+  }, []);
 
   return (
-    <Box sx={{ bgcolor: 'background.paper', borderRadius: 1, overflow: 'hidden', boxShadow: 1 }}>
+    <Box 
+      component="nav" 
+      sx={{ 
+        bgcolor: 'background.paper', 
+        borderRadius: 1, 
+        overflow: 'hidden', 
+        boxShadow: 1,
+        transition: 'all 0.2s ease-in-out'
+      }}
+    >
       {visibleItems.map((item) => (
         <NavItem
           key={item.keyword}
@@ -28,7 +40,7 @@ const NavList = ({ items }) => {
       {items.length > 8 && (
         <Box
           component="button"
-          onClick={() => setIsExpanded(!isExpanded)}
+          onClick={toggleExpand}
           sx={{
             width: '100%',
             border: 'none',
@@ -36,6 +48,11 @@ const NavList = ({ items }) => {
             textAlign: 'center',
             color: 'primary.main',
             bgcolor: 'background.paper',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            transition: 'background-color 0.2s ease',
             '&:hover': {
               bgcolor: 'action.hover',
             },
@@ -44,18 +61,20 @@ const NavList = ({ items }) => {
           {isExpanded ? (
             <>
               <span>Daha Az Göster</span>
-              <ChevronUp style={{ marginLeft: 4, width: 16, height: 16 }} />
+              <ChevronUp style={{ marginLeft: 8, width: 16, height: 16 }} />
             </>
           ) : (
             <>
               <span>Daha Fazla Göster</span>
-              <ChevronDown style={{ marginLeft: 4, width: 16, height: 16 }} />
+              <ChevronDown style={{ marginLeft: 8, width: 16, height: 16 }} />
             </>
           )}
         </Box>
       )}
     </Box>
   );
-};
+});
+
+NavList.displayName = 'NavList';
 
 export default NavList;
