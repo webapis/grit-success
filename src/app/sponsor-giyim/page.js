@@ -21,9 +21,9 @@ export default function SponsorGiyim(props) {
 
     debugger
     return <Container>
-        <SponsorGiyimDrawerContainer selectedGender={'kadın'}>
+     
             <Application {...props} selectedGender={'kadın'} />
-        </SponsorGiyimDrawerContainer>
+   
     </Container>
 }
 

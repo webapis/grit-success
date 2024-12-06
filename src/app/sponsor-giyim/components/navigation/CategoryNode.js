@@ -274,7 +274,8 @@ const CategoryNode = memo(({ category, gender }) => {
                         endIcon={expanded ? <KeyboardArrowDown /> : <KeyboardArrowRight />}
                         sx={styles.showMoreButton(theme)}
                     >
-                        {expanded ? 'Show Less' : `Show ${sortedChildren.length - MAX_ITEMS_DISPLAY} More`}
+                        {expanded ? 'Daha Az Göster' : `${sortedChildren.length - MAX_ITEMS_DISPLAY} Daha Fazla Göster`}
+                        {/* {expanded ? 'Show Less' : `Show ${sortedChildren.length - MAX_ITEMS_DISPLAY} More`} */}
                     </Button>
                 </Box>
             )}

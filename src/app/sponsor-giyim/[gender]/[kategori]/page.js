@@ -1,7 +1,6 @@
 import React from 'react';
 import { Typography, List, ListItem, ListItemText, Link, Container, Box } from '@mui/material';
 import genderData from '../../components/genderData';
-import SponsorGiyimDrawerContainer from '../../components/drawer/SponsorGiyimDrawerContainer';
 import BreadcrumbsComponent from '@/app/components/BreadcrumbsComponent';
 import getNavigationData from '../../components/getNavigationData';
 import {
@@ -63,7 +62,7 @@ export default function Page({ params: { gender, kategori} }) {
   }
 
   return (
-    <SponsorGiyimDrawerContainer selectedGender={selectedGender}>
+  
       <Container maxWidth="md" sx={{ py: 4 }}>
         <BreadcrumbsComponent urlPath={`/sponsor-giyim/${genderDecoded}/${kategoriDecoded}`} />
 
@@ -101,7 +100,7 @@ export default function Page({ params: { gender, kategori} }) {
           ))}
         </List>
       </Container>
-    </SponsorGiyimDrawerContainer>
+   
   );
 }
 

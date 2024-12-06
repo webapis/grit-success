@@ -25,9 +25,9 @@ export default function SponsorGiyim(props) {
     const selectedGender = genderData.find(f => f.urlGender === decodeURI(gender)).urlGender
 
     return <>
-        <SponsorGiyimDrawerContainer title="Sponsor Giyim" selectedGender={selectedGender}>
+   
             <Application {...props} selectedGender={selectedGender} />
-        </SponsorGiyimDrawerContainer>
+      
 
 
     </>
