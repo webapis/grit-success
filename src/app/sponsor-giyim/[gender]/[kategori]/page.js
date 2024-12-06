@@ -1,9 +1,16 @@
 import React from 'react';
-import { Typography, List, ListItem, ListItemText, Link, Container } from '@mui/material';
+import { Typography, List, ListItem, ListItemText, Link, Container, Box } from '@mui/material';
 import genderData from '../../components/genderData';
 import SponsorGiyimDrawerContainer from '../../components/drawer/SponsorGiyimDrawerContainer';
 import BreadcrumbsComponent from '../../components/BreadcrumbsComponent';
 import getNavigationData from '../../components/getNavigationData';
+import {
+    Checkroom,
+    Palette,
+    Style,
+    LocalMall,
+    Category
+} from '@mui/icons-material';
 
 // Fetch navigation data asynchronously
 const navigationData = await getNavigationData({ URI: 'data-sponsor-giyim/unzipped-data/5.step-data/giyim/navigation.json' });
@@ -18,6 +25,16 @@ const getCategoryData = (genderDecoded, kategoriDecoded) => {
   return kategoriDecodedData;
 };
 
+function getIconComponent(title) {
+    const lowercaseTitle = title.toLowerCase();
+    
+    if (lowercaseTitle.includes('elbise')) return <Checkroom />;
+    if (lowercaseTitle.includes('renk')) return <Palette />;
+    if (lowercaseTitle.includes('stil')) return <Style />;
+    if (lowercaseTitle.includes('çanta')) return <LocalMall />;
+    
+    return <Category />;
+}
 
 export  function generateMetadata({ params: { gender, kategori } }) {
 
@@ -63,6 +80,16 @@ export default function Page({ params: { gender, kategori} }) {
                 color="primary"
                 sx={{ display: 'flex', width: '100%', textDecoration: 'none' }}
               >
+                <Box sx={{
+                  minWidth: { xs: 24, sm: 28 },
+                  mr: { xs: 1.5, sm: 2 },
+                  color: 'primary.main',
+                  opacity: 0.8,
+                  display: 'flex',
+                  alignItems: 'center'
+                }}>
+                  {getIconComponent(child.title)}
+                </Box>
                 <ListItemText 
                   primary={child.title} 
                   secondary={`${child.childrenLength} marka`} 
