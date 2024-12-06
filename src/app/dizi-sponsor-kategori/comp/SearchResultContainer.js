@@ -22,7 +22,9 @@ export default function SearchResultContainer({ data, pageTitle,userViewData }) 
 
     return <>
         {/* <TopNavigation selected={3} /> */}
-        <PersistentDrawerLeft data={mappedNavData} title="Sponsor Kategori"><Container sx={{ display:'flex',justifyContent:'center'}}>
+
+            
+    <Container sx={{ display:'flex',justifyContent:'center'}}>
     
             
     <Grid container spacing={1}  sx={{width:{xs:"100%", md:"50%"}}}>
@@ -35,7 +37,8 @@ export default function SearchResultContainer({ data, pageTitle,userViewData }) 
         })}
     </Grid>
  
-</Container></PersistentDrawerLeft>
+</Container>
+
     </>
 }
 //

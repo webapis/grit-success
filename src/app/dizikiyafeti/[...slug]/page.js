@@ -4,9 +4,9 @@ import ImageContainer from '../comps/ImageContainer';
 import Fuse from 'fuse.js'
 import pagesMetaData from '@/app/dizikiyafeti/meta/pageMetaData.json';
 import pagesData from '@/app/dizikiyafeti/page-data/dizikiyafeti.json';
-import TopNavigation from '@/app/components/TopNavigation';
-import PersistentDrawerLeft from '@/app/components/drawer';
-import { mappedNavData } from '@/app/dizikiyafeti/comps/Application';
+// import TopNavigation from '@/app/components/TopNavigation';
+// import PersistentDrawerLeft from '@/app/components/drawer';
+// import { mappedNavData } from '@/app/dizikiyafeti/comps/Application';
 import getViews from '@/app/utils/firebase/supabase';
 export  function generateMetadata({ params, searchParams }, parent) {
 
@@ -53,9 +53,9 @@ export default async function DiziPage({ params }) {
 
     return <>
         {/* <TopNavigation selected={1} /> */}
-        <PersistentDrawerLeft data={mappedNavData} title="Dizi Kıyafeti">
+     
             <ImageContainer userViewData={userViewData} filteredData={mappedResult} pageTitle={title} />
-        </PersistentDrawerLeft>
+   
     </>
 
 }

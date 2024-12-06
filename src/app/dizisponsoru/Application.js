@@ -40,7 +40,7 @@ export default async function Application() {
   const userViewData = await getViews({ table: 'dizisponsoru-home' });
 
   return (
-    <PersistentDrawerLeft data={mappedData} title="Dizi Sponsoru">
+ 
       <Container maxWidth="xl">
         <Box
           sx={{
@@ -99,7 +99,7 @@ export default async function Application() {
           </Grid>
         </Box>
       </Container>
-    </PersistentDrawerLeft>
+
   );
 }
 
