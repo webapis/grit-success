@@ -2,6 +2,7 @@
 import TVSeriesCompany from './components/TVSeriesCompany';
 
 import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
 import PaginationContainer from './components/PaginationContainer';
 import ysData from '../../../../turk-dizi-data/yapim-sirketleri.json';
 //import DrawerWrapper from './DrawerWrapper';
@@ -37,40 +38,58 @@ export default function TVseriesProductionCompanies() {
     const currentPage = '1'
     const data = paginate(ysData, currentPage, 10)
     return (
-        
-            <>
-                {/* <TopNavigation selected={4}/> */}
+        <>
+            <Grid container spacing={2} sx={{ px: { xs: 2, md: 4 }, py: 2 }}>
+                {/* Breadcrumbs - Full width */}
+                <Grid item xs={12}>
+                    <BreadcrumbsComponent
+                        urlPath={`/turk-dizi`}
+                    />
+                </Grid>
 
-            {/* <DrawerWrapper> */}
-                <Grid container sx={{ display: "flex", justifyContent: "center", marginTop: 0 }}>
-                    <Grid item xs={12}>
-                        <BreadcrumbsComponent
-                            urlPath={`/turk-dizi`}
-                        />
-                    </Grid>
-                    <Grid item xs={12}>
+                {/* Title - Full width */}
+                <Grid item xs={12}>
+                    <Typography 
+                        variant='h4' 
+                        textAlign="center"
+                        sx={{ 
+                            mb: 3,
+                            fontWeight: 500
+                        }}
+                    >
+                        Türk yapım şirketleri ve dizileri
+                    </Typography>
+                </Grid>
 
-                        <Typography variant='h4' textAlign="center">Türk yapım şirketleri ve dizileri</Typography>
-                    </Grid>
-                    <Grid item xs={12} md={8}>
-                    <PaginationContainer
-                            totalPages={totalPages}
-                            currentPage={currentPage}
-                            basePath="/turk-dizi/yapim-sirketleri"
-                        />
+                {/* Content Container - Centered with max width */}
+                <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center' }}>
+                    <Box sx={{ width: '100%', maxWidth: 'md' }}>
+                        {/* Pagination at top */}
+                        <Box sx={{ mb: 3 }}>
+                            <PaginationContainer
+                                totalPages={totalPages}
+                                currentPage={currentPage}
+                                basePath="/turk-dizi/yapim-sirketleri"
+                            />
+                        </Box>
+
+                        {/* Company List */}
                         {data.map((company, index) => (
                             <TVSeriesCompany key={company.id || index} company={company} />
                         ))}
-                        <PaginationContainer
-                            totalPages={totalPages}
-                            currentPage={currentPage}
-                            basePath="/turk-dizi/yapim-sirketleri"
-                        />
-                    </Grid>
+
+                        {/* Pagination at bottom */}
+                        <Box sx={{ mt: 3 }}>
+                            <PaginationContainer
+                                totalPages={totalPages}
+                                currentPage={currentPage}
+                                basePath="/turk-dizi/yapim-sirketleri"
+                            />
+                        </Box>
+                    </Box>
                 </Grid>
-                {/* </DrawerWrapper> */}
-            </>
-       
+            </Grid>
+        </>
     );
 }
 
