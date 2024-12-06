@@ -6,8 +6,49 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import HomeIcon from '@mui/icons-material/Home';
 import Paper from '@mui/material/Paper';
 
-const BreadcrumbsComponent = ({ urlPath }) => {
-  const segments = urlPath.split('/').filter(Boolean);
+const BreadcrumbsComponent = ({ urlPath, items }) => {
+  if (items) {
+    return (
+      <MuiBreadcrumbs 
+        separator={<NavigateNextIcon fontSize="small" />}
+        aria-label="breadcrumb"
+      >
+        {items.map((item, index) => {
+          const Icon = item.icon;
+          if (index === items.length - 1) {
+            return (
+              <Typography 
+                key={index} 
+                sx={{ 
+                  color: 'text.primary',
+                  fontWeight: 500,
+                  display: 'flex',
+                  alignItems: 'center'
+                }}
+              >
+                {Icon && <Icon sx={{ mr: 0.5 }} fontSize="small" />}
+                {item.label}
+              </Typography>
+            );
+          }
+          return (
+            <Link 
+              key={index} 
+              underline="hover" 
+              color="inherit" 
+              href={item.href} 
+              sx={{ display: 'flex', alignItems: 'center' }}
+            >
+              {Icon && <Icon sx={{ mr: 0.5 }} fontSize="small" />}
+              {item.label}
+            </Link>
+          );
+        })}
+      </MuiBreadcrumbs>
+    );
+  }
+
+  const segments = urlPath?.split('/').filter(Boolean) || [];
 
   return (
     <Paper 

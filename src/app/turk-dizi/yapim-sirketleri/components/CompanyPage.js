@@ -15,6 +15,7 @@ import MovieIcon from '@mui/icons-material/Movie';
 
 import TVSeriesThumbnail from './TVSeriesThumbnail';
 import CompanyInfo from './CompanyInfo';
+import BreadcrumbsComponent from '@/app/components/BreadcrumbsComponent';
 
 const CompanyPage = ({ company, companyId }) => {
   return (
@@ -29,45 +30,13 @@ const CompanyPage = ({ company, companyId }) => {
           borderRadius: 2
         }}
       >
-        <Breadcrumbs 
-          separator={<NavigateNextIcon fontSize="small" />}
-          aria-label="breadcrumb"
-          sx={{
-            '& .MuiBreadcrumbs-ol': {
-              alignItems: 'center',
-            },
-            '& .MuiBreadcrumbs-li': {
-              display: 'flex',
-              alignItems: 'center',
-            }
-          }}
-        >
-          <Link 
-            underline="hover" 
-            color="inherit" 
-            href="/"
-            sx={{ display: 'flex', alignItems: 'center' }}
-          >
-            <HomeIcon sx={{ mr: 0.5 }} fontSize="small" />
-            Ana Sayfa
-          </Link>
-          <Link 
-            underline="hover" 
-            color="inherit" 
-            href="/turk-dizi/yapim-sirketleri"
-            sx={{ display: 'flex', alignItems: 'center' }}
-          >
-            Yapım Şirketleri
-          </Link>
-          <Typography 
-            sx={{ 
-              color: 'text.primary',
-              fontWeight: 500 
-            }}
-          >
-            {company.name || companyId}
-          </Typography>
-        </Breadcrumbs>
+        <BreadcrumbsComponent
+          items={[
+            { label: 'Ana Sayfa', href: '/', icon: HomeIcon },
+            { label: 'Yapım Şirketleri', href: '/turk-dizi/yapim-sirketleri' },
+            { label: company.name || companyId }
+          ]}
+        />
       </Paper>
 
       {/* Main Content */}

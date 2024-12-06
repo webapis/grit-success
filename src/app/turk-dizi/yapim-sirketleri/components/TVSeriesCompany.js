@@ -6,12 +6,12 @@ import Divider from '@mui/material/Divider';
 import Box from '@mui/material/Box';
 import CompanyInfo from './CompanyInfo';
 import TVSeriesList from './TVSeriesList';
-import Breadcrumb from './Breadcrumb';
+import BreadcrumbsComponent from '@/app/components/BreadcrumbsComponent';
 
 const TVSeriesCompany = ({ company, displayedSeriesCount = 5 }) => {
   return (
     <Box>
-      <Breadcrumb company={company} />
+
       <Card 
         elevation={2}
         sx={{ 

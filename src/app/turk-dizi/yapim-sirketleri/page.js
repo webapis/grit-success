@@ -7,7 +7,7 @@ import ysData from '../../../../turk-dizi-data/yapim-sirketleri.json';
 //import DrawerWrapper from './DrawerWrapper';
 //import TopNavigation from '@/app/components/TopNavigation';
 import  Typography  from '@mui/material/Typography';
-
+import BreadcrumbsComponent from '@/app/components/BreadcrumbsComponent';
 const NavData = ysData.map((m) => { return { href: `/turk-dizi/yapim-sirketleri/${m.id}`, title: m.title } })
 export { NavData }
 
@@ -42,7 +42,12 @@ export default function TVseriesProductionCompanies() {
                 {/* <TopNavigation selected={4}/> */}
 
             {/* <DrawerWrapper> */}
-                <Grid container sx={{ display: "flex", justifyContent: "center", marginTop: 1 }}>
+                <Grid container sx={{ display: "flex", justifyContent: "center", marginTop: 0 }}>
+                    <Grid item xs={12}>
+                        <BreadcrumbsComponent
+                            urlPath={`/turk-dizi`}
+                        />
+                    </Grid>
                     <Grid item xs={12}>
 
                         <Typography variant='h4' textAlign="center">Türk yapım şirketleri ve dizileri</Typography>
