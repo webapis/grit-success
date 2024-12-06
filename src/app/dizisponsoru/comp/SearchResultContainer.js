@@ -35,88 +35,86 @@ export default async function SearchResultContainer({
   keywordsCounter,
   totalItems 
 }) {
-  // Get view data
   const userViewData = await getViews({ table: 'dizisponsoru' });
-  
-  // Map and sort data efficiently using the memoized function
   const mappedResult = mapViewCountToData(data, userViewData);
-
-  // Common props for ChipContainer to avoid prop spreading
-  const chipContainerProps = {
-    dizi,
-    keyword,
-    keywordsCounter,
-    totalItems
-  };
 
   return (
     <>
-      {/* <TopNavigation selected={2} /> */}
-   
-        <Container 
-          maxWidth="lg" 
+      <Container 
+        maxWidth="lg" 
+        sx={{ 
+          overflow: 'hidden',
+          px: { xs: 0, sm: 2 }
+        }}
+      >
+        <Paper 
+          elevation={0} 
           sx={{ 
-            overflow: 'hidden',
-            px: { xs: 0, sm: 2 }  // 0 padding on mobile, 16px (theme.spacing(2)) on tablet and up
+            p: 2, 
+            mb: 3, 
+            backgroundColor: 'background.paper',
+            borderRadius: 2
           }}
         >
-          <Paper 
-            elevation={0} 
-            sx={{ 
-              p: 2, 
-              mb: 3, 
-              backgroundColor: 'background.paper',
-              borderRadius: 2
-            }}
-          >
-            <BreadcrumbsComponent
-              items={[
-                { label: 'Ana Sayfa', href: '/', icon: HomeIcon },
-                { label: 'Dizi Sponsoru', href: '/dizisponsoru' },
-                { label: pageTitle }
-              ]}
+          <BreadcrumbsComponent
+            items={[
+              { label: 'Ana Sayfa', href: '/', icon: HomeIcon },
+              { label: 'Dizi Sponsoru', href: '/dizisponsoru' },
+              { label: pageTitle }
+            ]}
+          />
+        </Paper>
+
+        <SelectedDiziChip category={pageTitle} />
+        
+        <Grid 
+          item 
+          xs={12} 
+          sx={{ 
+            display: 'flex', 
+            justifyContent: 'center', 
+            marginBottom: 3 
+          }}
+        >
+          <ChipContainer 
+            dizi={dizi} 
+            keyword={keyword} 
+          />
+        </Grid>
+
+        <Grid 
+          container 
+          spacing={1} 
+          justifyContent="center"
+          sx={{ 
+            width: '100%', 
+            margin: 0,
+            overflow: 'hidden',
+            paddingX: { xs: 0, sm: 1 }  // Remove horizontal padding on mobile
+          }}
+        >
+          {mappedResult.map((item, index) => (
+            <GridItem 
+              key={item.Website}
+              item={item}
+              userViewData={userViewData}
+              index={index}
             />
-          </Paper>
+          ))}
+        </Grid>
 
-          <SelectedDiziChip category={pageTitle} />
-          
-          <Grid 
-            container 
-            spacing={1} 
-            justifyContent="center"
-            sx={{ 
-              width: '100%', 
-              margin: 0,
-              overflow: 'hidden',
-              paddingX: { xs: 0, sm: 1 }  // Remove horizontal padding on mobile
-            }}
-          >
-            <Grid item xs={12}>
-              <ChipContainer {...chipContainerProps} />
-            </Grid>
-            
-            {mappedResult.map((item, index) => (
-              <GridItem 
-                key={item.Website}
-                item={item}
-                userViewData={userViewData}
-                index={index}
-              />
-            ))}
-          </Grid>
-
-          <Grid 
-            item 
-            xs={12} 
-            sx={{ 
-              display: 'flex', 
-              justifyContent: 'center', 
-              marginTop: 3 
-            }}
-          >
-            <ChipContainer dizi={dizi} keyword={keyword} />
-          </Grid>
-        </Container>
+        <Grid 
+          item 
+          xs={12} 
+          sx={{ 
+            display: 'flex', 
+            justifyContent: 'center', 
+            marginTop: 3 
+          }}
+        >
+          <ChipContainer dizi={dizi} keyword={keyword} />
+        </Grid>
+      </Container>
   
     </>
   );

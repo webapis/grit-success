@@ -52,7 +52,7 @@ export default async function Application() {
     
     return (
       
-            <Container maxWidth="xl" sx={containerStyles}>
+            <>
                 
                 <Typography 
                     variant='h4' 
@@ -77,7 +77,7 @@ export default async function Application() {
                         </Grid>
                     ))}
                 </Grid>
-            </Container>
+            </>
       
     );
 

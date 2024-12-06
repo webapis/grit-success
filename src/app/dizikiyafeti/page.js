@@ -4,7 +4,7 @@ import Application from "./comps/Application"
 import BreadcrumbsComponent from "@/app/components/BreadcrumbsComponent"
 import HomeIcon from '@mui/icons-material/Home';
 import Paper from '@mui/material/Paper';
-
+import Container from '@mui/material/Container';
 export  function generateMetadata() {
 
   return {
@@ -16,7 +16,7 @@ export  function generateMetadata() {
 
 export default  function Home(props) {
 
-  return <>
+  return <Container maxWidth="xl">
   <Paper 
     elevation={0} 
     sx={{ 
@@ -36,7 +36,7 @@ export default  function Home(props) {
 
   <Application/>
   
-  </>
+  </Container>
 
 }
 
