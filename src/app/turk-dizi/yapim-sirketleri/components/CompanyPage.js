@@ -19,25 +19,9 @@ import BreadcrumbsComponent from '@/app/components/BreadcrumbsComponent';
 
 const CompanyPage = ({ company, companyId }) => {
   return (
-    <Container maxWidth="xl" sx={{ py: 4 }}>
+    <>
       {/* Breadcrumb Section */}
-      <Paper 
-        elevation={0} 
-        sx={{ 
-          p: 2, 
-          mb: 3, 
-          backgroundColor: 'background.paper',
-          borderRadius: 2
-        }}
-      >
-        <BreadcrumbsComponent
-          items={[
-            { label: 'Ana Sayfa', href: '/', icon: HomeIcon },
-            { label: 'Yapım Şirketleri', href: '/turk-dizi/yapim-sirketleri' },
-            { label: company.name || companyId }
-          ]}
-        />
-      </Paper>
+
 
       {/* Main Content */}
       <Paper 
@@ -107,7 +91,7 @@ const CompanyPage = ({ company, companyId }) => {
           </Grid>
         </Box>
       </Paper>
-    </Container>
+    </>
   );
 };
 

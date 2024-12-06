@@ -1,9 +1,11 @@
 
 import ysData from '../../../../../turk-dizi-data/yapim-sirketleri.json'
 import CompanyPage from '../components/CompanyPage'
-// import TopNavigation from '@/app/components/TopNavigation'
-// import DrawerWrapper from '../DrawerWrapper'
-
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import BreadcrumbsComponent from '@/app/components/BreadcrumbsComponent';
+import HomeIcon from '@mui/icons-material/Home';
+import Paper from '@mui/material/Paper';
 export  function generateMetadata({ params: { slug } }) {
     const companyId = slug[0]
     const company = ysData.find(f => f.id === companyId)
@@ -36,13 +38,40 @@ export default function TVseriesProductionCompanies({ params: { slug } }) {
     const company = ysData.find(f => f.id === companyId)
 
 
-    return <> 
-    {/* <TopNavigation selected={4}/> */}
-    {/* <DrawerWrapper> */}
+    return <Container maxWidth="xl" sx={{ py: 0}}> 
+      <Paper 
+        elevation={0} 
+        sx={{ 
+          p: 2, 
+          mb: 3, 
+          backgroundColor: 'background.paper',
+          borderRadius: 2
+        }}
+      >
+        <BreadcrumbsComponent
+          items={[
+            { label: 'Ana Sayfa', href: '/', icon: HomeIcon },
+            { label: 'Yapım Şirketleri', href: '/turk-dizi/yapim-sirketleri' },
+            { label: company.name || companyId }
+          ]}
+        />
+      </Paper>
+           <Typography 
+                        variant='h4' 
+                        textAlign="center"
+                        sx={{ 
+                           
+                            fontWeight: 500,
+                            marginBottom: 3
+                      
+                        }}
+                    >
+                        Türk yapım şirketleri ve dizileri ({company.title})
+                    </Typography>
     <CompanyPage company={company} companyId={companyId}/>
-    {/* </DrawerWrapper> */}
+
  
-    </> 
+    </Container> 
 }
 
 

@@ -5,8 +5,10 @@ import PaginationContainer from '../../components/PaginationContainer';
 import ysData from '../../../../../../turk-dizi-data/yapim-sirketleri.json';
 import  Typography  from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-//import TopNavigation from '@/app/components/TopNavigation';
-import DrawerWrapper from '../../DrawerWrapper';
+import Container from '@mui/material/Container';
+import BreadcrumbsComponent from '@/app/components/BreadcrumbsComponent';
+import Box from '@mui/material/Box';
+
 export async function generateMetadata() {
     return {
       title: 'Türk Yapım Şirketlerinin En İyi Dizileri | Top Turkish TV Series',
@@ -34,19 +36,24 @@ export default function TVseriesProductionCompanies({ params: { id } }) {
     debugger
     return (
         <>
-            {/* <TopNavigation selected={4}/> */}
-            <DrawerWrapper>
-            <Grid container sx={{ display: "flex", justifyContent: "center", marginTop:1 }}>
-            <Grid item xs={12}>
-
-<Typography variant='h4' textAlign="center">Türk yapım şirketleri ve dizileri</Typography>
-</Grid>
-                <Grid item xs={12} md={8}>
-                <PaginationContainer
-                        totalPages={totalPages}
-                        currentPage={currentPage}
-                        basePath="/turk-dizi/yapim-sirketleri"
+       
+            <Container maxWidth="xl" sx={{ py: 0}}>
+            <BreadcrumbsComponent
+                        urlPath={`/turk-dizi`}
                     />
+                    <Typography variant='h4' textAlign="center">Türk yapım şirketleri ve dizileri</Typography>
+                                       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                        <PaginationContainer
+                            totalPages={totalPages}
+                            currentPage={currentPage}
+                            basePath="/turk-dizi/yapim-sirketleri"
+                        />
+                    </Box>
+            <Grid container sx={{ display: "flex", justifyContent: "center", marginTop:1 }}>
+
+
+                <Grid item xs={12} md={8}>
+
                     {data.map((company, index) => (
                         <TVSeriesCompany key={company.id || index} company={company} />
                     ))}
@@ -57,7 +64,8 @@ export default function TVseriesProductionCompanies({ params: { id } }) {
                     />
                 </Grid>
             </Grid>
-            </DrawerWrapper>
+            </Container>
+       
         </>
     );
 }

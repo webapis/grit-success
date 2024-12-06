@@ -1,12 +1,11 @@
 import React from 'react';
-import { alpha } from '@mui/material/styles';
+
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Divider from '@mui/material/Divider';
 import Box from '@mui/material/Box';
 import CompanyInfo from './CompanyInfo';
 import TVSeriesList from './TVSeriesList';
-import BreadcrumbsComponent from '@/app/components/BreadcrumbsComponent';
 
 const TVSeriesCompany = ({ company, displayedSeriesCount = 5 }) => {
   return (

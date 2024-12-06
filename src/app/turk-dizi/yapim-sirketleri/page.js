@@ -3,6 +3,7 @@ import TVSeriesCompany from './components/TVSeriesCompany';
 
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
 import PaginationContainer from './components/PaginationContainer';
 import ysData from '../../../../turk-dizi-data/yapim-sirketleri.json';
 //import DrawerWrapper from './DrawerWrapper';
@@ -38,7 +39,7 @@ export default function TVseriesProductionCompanies() {
     const currentPage = '1'
     const data = paginate(ysData, currentPage, 10)
     return (
-        <>
+        <Container maxWidth="xl" sx={{ py: 0}}>
                       <BreadcrumbsComponent
                         urlPath={`/turk-dizi`}
                     />
@@ -83,7 +84,7 @@ export default function TVseriesProductionCompanies() {
                     </Box>
                 </Grid>
             </Grid>
-        </>
+        </Container>
     );
 }
 
