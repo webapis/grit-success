@@ -1,9 +1,12 @@
-import GenderCards from "./sponsor-giyim/components/gender-card/GenderCards"
-import BreadcrumbsComponent from "@/app/components/BreadcrumbsComponent"
+import React from 'react';
+import { memo } from 'react';
+import { Box, Typography, Container, Paper } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
-import Container from '@mui/material/Container';
-import Paper from '@mui/material/Paper';
-import { Box, Typography } from '@mui/material';
+import BreadcrumbsComponent from "@/app/components/BreadcrumbsComponent";
+import GenderCards from "./sponsor-giyim/components/gender-card/GenderCards";
+
+const MemoizedBreadcrumbsComponent = memo(BreadcrumbsComponent);
+const MemoizedGenderCards = memo(GenderCards);
 
 export function generateMetadata() {
   return {
@@ -14,7 +17,7 @@ export function generateMetadata() {
 
 export default function Home() {
   return (
-    <Box sx={{ bgcolor: '#f5f7fa', minHeight: '100vh', py: 3 }}>
+    <Box sx={{ bgcolor: '#f5f7fa', minHeight: '100vh', py: 4 }}>
       <Container maxWidth="lg">
         {/* Breadcrumbs Section */}
         <Paper
@@ -22,12 +25,12 @@ export default function Home() {
           sx={{
             p: 2,
             mb: 4,
-            backgroundColor: 'background.paper',
             borderRadius: 2,
+            backgroundColor: 'background.paper',
             boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
           }}
         >
-          <BreadcrumbsComponent
+          <MemoizedBreadcrumbsComponent
             items={[
               { label: 'Ana Sayfa', href: '/', icon: HomeIcon }
             ]}
@@ -35,14 +38,15 @@ export default function Home() {
         </Paper>
 
         {/* Page Title Section */}
-        <Box sx={{ mb: 4, textAlign: 'center' }}>
+        <Box sx={{ textAlign: 'center', mb: 6 }}>
           <Typography
             component="h1"
             variant="h4"
             sx={{
               fontWeight: 600,
-              mb: 2,
-              color: 'text.primary'
+              mb: 3,
+              color: 'text.primary',
+              letterSpacing: '-0.5px'
             }}
           >
             Dizi Sponsoru Giyim Markalar
@@ -52,7 +56,9 @@ export default function Home() {
             sx={{
               color: 'text.secondary',
               maxWidth: '800px',
-              mx: 'auto'
+              mx: 'auto',
+              lineHeight: 1.6,
+              fontWeight: 400
             }}
           >
             Popüler dizilerde yer alan en trend giyim markalarını keşfedin
@@ -60,7 +66,9 @@ export default function Home() {
         </Box>
 
         {/* Gender Cards Section */}
-        <GenderCards />
+        <Box sx={{ mt: 4 }}>
+          <MemoizedGenderCards />
+        </Box>
       </Container>
     </Box>
   );
