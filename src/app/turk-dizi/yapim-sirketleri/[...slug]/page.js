@@ -38,9 +38,9 @@ export default function TVseriesProductionCompanies({ params: { slug } }) {
 
     return <> 
     {/* <TopNavigation selected={4}/> */}
-    <DrawerWrapper>
+    {/* <DrawerWrapper> */}
     <CompanyPage company={company} companyId={companyId}/>
-    </DrawerWrapper>
+    {/* </DrawerWrapper> */}
  
     </> 
 }

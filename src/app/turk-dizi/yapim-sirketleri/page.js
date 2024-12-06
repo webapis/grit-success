@@ -41,7 +41,7 @@ export default function TVseriesProductionCompanies() {
             <>
                 {/* <TopNavigation selected={4}/> */}
 
-            <DrawerWrapper>
+            {/* <DrawerWrapper> */}
                 <Grid container sx={{ display: "flex", justifyContent: "center", marginTop: 1 }}>
                     <Grid item xs={12}>
 
@@ -63,7 +63,7 @@ export default function TVseriesProductionCompanies() {
                         />
                     </Grid>
                 </Grid>
-                </DrawerWrapper>
+                {/* </DrawerWrapper> */}
             </>
        
     );
