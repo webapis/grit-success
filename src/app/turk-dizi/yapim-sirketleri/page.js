@@ -4,7 +4,7 @@ import TVSeriesCompany from './components/TVSeriesCompany';
 import Grid from '@mui/material/Grid';
 import PaginationContainer from './components/PaginationContainer';
 import ysData from '../../../../turk-dizi-data/yapim-sirketleri.json';
-import DrawerWrapper from './DrawerWrapper';
+//import DrawerWrapper from './DrawerWrapper';
 //import TopNavigation from '@/app/components/TopNavigation';
 import  Typography  from '@mui/material/Typography';
 

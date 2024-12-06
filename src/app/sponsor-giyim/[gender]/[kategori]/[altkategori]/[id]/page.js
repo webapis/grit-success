@@ -5,7 +5,7 @@ import ProductDisplayContainer from '@/app/sponsor-giyim/components/ProductDispl
 
 import { Container } from '@mui/material'
 import genderData from '../../../../components/genderData'
-import BreadcrumbsComponent from '@/app/sponsor-giyim/components/BreadcrumbsComponent'
+import BreadcrumbsComponent from '@/app/components/BreadcrumbsComponent';
 import SponsorGiyimDrawerContainer from '@/app/sponsor-giyim/components/drawer/SponsorGiyimDrawerContainer'
 import getNavigationData from '@/app/sponsor-giyim/components/getNavigationData'
 
@@ -38,7 +38,7 @@ debugger
 
   return <Container>
     <SponsorGiyimDrawerContainer selectedGender={selectedGender}>
-      <BreadcrumbsComponent urlPath={`/sponsor-giyim/${genderDecoded}/${category}/${subCategori}/${id}`} />
+      <BreadcrumbsComponent urlPath={`/sponsor-giyim/${genderDecoded}/${category}/${subCategori}`} />
       <ProductDisplayContainer title={title} brands={brands} slug={`/sponsor-giyim/${genderDecoded}/${category.replace('-',' ')}/${id}`} selectedGender={genderDecoded}/>
     </SponsorGiyimDrawerContainer>
   </Container>

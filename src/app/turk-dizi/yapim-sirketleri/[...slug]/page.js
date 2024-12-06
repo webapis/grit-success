@@ -1,8 +1,8 @@
 
 import ysData from '../../../../../turk-dizi-data/yapim-sirketleri.json'
 import CompanyPage from '../components/CompanyPage'
-import TopNavigation from '@/app/components/TopNavigation'
-import DrawerWrapper from '../DrawerWrapper'
+// import TopNavigation from '@/app/components/TopNavigation'
+// import DrawerWrapper from '../DrawerWrapper'
 
 export  function generateMetadata({ params: { slug } }) {
     const companyId = slug[0]
