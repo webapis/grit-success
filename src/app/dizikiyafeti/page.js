@@ -1,8 +1,9 @@
 
 
 import Application from "./comps/Application"
-import TopNavigation from "../components/TopNavigation";
-0
+import BreadcrumbsComponent from "@/app/components/BreadcrumbsComponent"
+import HomeIcon from '@mui/icons-material/Home';
+import Paper from '@mui/material/Paper';
 
 export  function generateMetadata() {
 
@@ -16,7 +17,23 @@ export  function generateMetadata() {
 export default  function Home(props) {
 
   return <>
-    {/* <TopNavigation selected={1} /> */}
+  <Paper 
+    elevation={0} 
+    sx={{ 
+      p: 2, 
+      mb: 3, 
+      backgroundColor: 'background.paper',
+      borderRadius: 2
+    }}
+  >
+    <BreadcrumbsComponent
+      items={[
+        { label: 'Ana Sayfa', href: '/', icon: HomeIcon },
+        { label: 'Dizi Kıyafetleri' }
+      ]}
+    />
+  </Paper>
+
   <Application/>
   
   </>
