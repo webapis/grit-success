@@ -52,7 +52,7 @@ export default async function DiziPage({ params }) {
 
 
     return <>
-        <TopNavigation selected={1} />
+        {/* <TopNavigation selected={1} /> */}
         <PersistentDrawerLeft data={mappedNavData} title="Dizi Kıyafeti">
             <ImageContainer userViewData={userViewData} filteredData={mappedResult} pageTitle={title} />
         </PersistentDrawerLeft>
