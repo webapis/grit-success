@@ -77,6 +77,8 @@ export default async function SearchResultContainer({
           }}
         >
           <ChipContainer 
+            keywordsCounter={keywordsCounter}
+            totalItems={totalItems}
             dizi={dizi} 
             keyword={keyword} 
           />
