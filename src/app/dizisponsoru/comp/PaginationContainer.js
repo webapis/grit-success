@@ -1,8 +1,8 @@
 'use client';
 
 import Pagination from '@mui/material/Pagination';
-import Box  from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
+import Container from '@mui/material/Container';
+import Box from '@mui/material/Box';
 
 export default function PaginationContainer({ count, page, url }) {
 
@@ -10,16 +10,17 @@ export default function PaginationContainer({ count, page, url }) {
       window.location.replace(url+ value)
     };
 
-    return <Stack 
-      spacing={2}
-      sx={{
-        width: '100%',
-        overflow: 'hidden',
-        display: 'flex',
-        justifyContent: 'center',
-        padding: '20px 0'
-      }}
-    >
-      <Pagination count={count} page={page} onChange={handleChange}/>
-    </Stack>
+    return (
+      <Container maxWidth="lg">
+        <Box sx={{ display: 'flex', justifyContent: 'center', py: 4 }}>
+          <Pagination 
+            count={count} 
+            page={page} 
+            onChange={handleChange} 
+            size="large"
+            sx={{ '& .MuiPagination-ul': { justifyContent: 'center' } }}
+          />
+        </Box>
+      </Container>
+    );
 }
