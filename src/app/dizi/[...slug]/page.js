@@ -1,11 +1,10 @@
 
-//import { promises as fs } from 'fs';
+
 
 import SearchResultContainer from '../../dizisponsoru/comp/SearchResultContainer';
 
 import PaginationContainer from '@/app/dizisponsoru/comp/PaginationContainer';
-//import path from 'path'
-//import Fuse from 'fuse.js'
+
 import pagesMetaData from '@/app/dizi/pageMetadata.json'
 import keywordMetaData from '@/app/dizisponsoru/keywordMetaData.json';
 import pagesData from '@/app/dizi/dizisponsoru.json'
