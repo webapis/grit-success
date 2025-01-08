@@ -1,14 +1,16 @@
 'use client'
 import { permanentRedirect, usePathname } from 'next/navigation'
-import { GoogleTagManager } from '@next/third-parties/google'
 import { Inter, Poppins } from 'next/font/google'
 import ScrollToTopButton from './components/ScrollToTopButton';
 import { Box, CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import Header from './components/Header';
 import HideOnScroll from './components/HideOnScroll';
+import CookieConsent from './components/CookieConsent';
 import './globals.css'
 import Footer from './components/Footer';
 import Script from 'next/script'
+import { useEffect } from 'react'
+import { initGTM } from './utils/gtm'
 
 const poppins = Poppins({ 
   subsets: ['latin'], 
@@ -61,6 +63,14 @@ export default function RootLayout(props) {
   const {children} = props;
   const pathName = usePathname();
   
+  useEffect(() => {
+    // Check if user has already consented
+    const hasConsented = localStorage.getItem('cookieConsent') === 'true'
+    if (hasConsented) {
+      initGTM()
+    }
+  }, [])
+
   const endsWithSayfa = pathName.match(/\/sayfa\/?$/) !== null;
   if(endsWithSayfa){
     let redirectPath = pathName+'/1'
@@ -117,15 +127,18 @@ export default function RootLayout(props) {
             <Footer />
           </Box>
           <ScrollToTopButton />
+          <CookieConsent />
         </ThemeProvider>
         
+        {/* Load AdSense only if consent is given */}
         <Script 
+          id="adsense"
           async 
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1960990522971470" 
           crossOrigin="anonymous"
           strategy="lazyOnload"
+          data-consent-pending="true"
         />
-        <GoogleTagManager gtmId="GTM-WVW74LTW" />
       </body>
     </html>
   )
