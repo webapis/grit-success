@@ -61,7 +61,7 @@ export const revalidate = false
  * @param {Object} props.params - URL parameters
  * @returns {JSX.Element} Rendered page component
  */
-export default function DiziPage({ params }) {
+export default async function DiziPage({ params }) {
     const page = params.slug[2] ? parseInt(params.slug[2]) : 1
     const result = pagesMetaData.find(f => {
         const current = f.slug
@@ -86,6 +86,9 @@ export default function DiziPage({ params }) {
     const pageCount = Math.ceil(resultSimple.length / 50)
     const diziSlug = deaccent(result.dizi).replaceAll(' ', '-').toLowerCase()
 
+    // Fetch view data at the page level
+    const userViewData = await getViews({ table: 'dizisponsoru' })
+
     return (
         <main>
             <SearchResultContainer 
@@ -94,7 +97,8 @@ export default function DiziPage({ params }) {
                 data={paginatedData} 
                 pageTitle={pageTitle} 
                 dizi={diziSlug} 
-                keyword="tum" 
+                keyword="tum"
+                userViewData={userViewData}
             />
             <PaginationContainer 
                 count={pageCount} 
