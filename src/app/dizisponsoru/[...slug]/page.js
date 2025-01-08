@@ -5,6 +5,7 @@ import keywordMetaData from '@/app/dizisponsoru/keywordMetaData.json';
 import pagesMetaData from '@/app/dizi/pageMetadata.json';
 import pagesData from '@/app/dizi/dizisponsoru.json';
 import deaccent from './deaccent';
+import getViews from "@/app/utils/firebase/supabase"
 
 // Route segment config for static generation
 export const dynamic = 'force-static';
@@ -177,10 +178,18 @@ export function generateMetadata({ params }) {
 }
 
 // Main component with optimized data fetching
-export default function DiziSponsoru({ params }) {
+export default async function DiziSponsoru({ params }) {
     const dizi = params.slug[0];
     const keyword = params.slug[1];
     const page = parseInt(params.slug[3]) || 1;
+
+    // Fetch view data with error handling
+    let userViewData = { data: [] }
+    try {
+        userViewData = await getViews({ table: 'dizisponsoru' })
+    } catch (error) {
+        console.error('Failed to fetch view data:', error)
+    }
 
     const pageObj = pagesMetaData.find(f => getProcessedSlug(f.dizi) === dizi);
     if (!pageObj) return null;
@@ -202,7 +211,8 @@ export default function DiziSponsoru({ params }) {
                     pageTitle={`${pageObj.dizi} Dizisi Tüm Sponsorları`} 
                     dizi={dizi} 
                     page={page} 
-                    keyword={keyword} 
+                    keyword={keyword}
+                    userViewData={userViewData}
                 />
                 <PaginationContainer 
                     count={pageCount} 
@@ -237,7 +247,8 @@ export default function DiziSponsoru({ params }) {
                 pageTitle={`${pageObj.dizi} Dizisi ${keywordObj.keywordTitle} Sponsorları`} 
                 dizi={dizi} 
                 page={page} 
-                keyword={keyword} 
+                keyword={keyword}
+                userViewData={userViewData}
             />
             <PaginationContainer 
                 count={pageCount} 
