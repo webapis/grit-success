@@ -5,8 +5,7 @@ import keywordMetaData from '@/app/dizisponsoru/keywordMetaData.json';
 import pagesMetaData from '@/app/dizi/pageMetadata.json';
 import pagesData from '@/app/dizi/dizisponsoru.json';
 import deaccent from './deaccent';
-import {mappedData} from "../[...slug]/../Application"
-import PersistentDrawerLeft from "@/app/components/drawer"
+
 const keywordsCounter = countItemsByKeyword({ pagesMetaData, keywordMetaData });
 
 export function generateMetadata({ params }) {
