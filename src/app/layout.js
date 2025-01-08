@@ -14,6 +14,7 @@ const poppins = Poppins({
   subsets: ['latin'], 
   weight: ['400', '500', '600', '700'],
   display: 'swap',
+  fallback: ['system-ui', 'arial'],
 });
 
 // Create a custom theme
@@ -27,6 +28,7 @@ const theme = createTheme({
     },
     background: {
       default: '#F5F5F7',
+      paper: '#FFFFFF',
     },
   },
   components: {
@@ -35,6 +37,20 @@ const theme = createTheme({
         root: {
           textTransform: 'none',
           borderRadius: 8,
+        },
+      },
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          height: '100%',
+        },
+      },
+    },
+    MuiImageListItem: {
+      styleOverrides: {
+        root: {
+          aspectRatio: '16/9',
         },
       },
     },
@@ -57,6 +73,11 @@ export default function RootLayout(props) {
         <meta name="fo-verify" content="8de09664-17ab-4040-a646-0c5652e5e37d" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="Türk dizilerindeki kıyafetler ve sponsorlar hakkında detaylı bilgi" />
+        <link 
+          rel="preconnect" 
+          href={process.env.NEXT_PUBLIC_IMG_HOST} 
+          crossOrigin="anonymous"
+        />
       </head>
       <body className={poppins.className}>
         <ThemeProvider theme={theme}>
@@ -71,6 +92,7 @@ export default function RootLayout(props) {
               minHeight: '100vh',
               bgcolor: 'background.default',
               pt: { xs: '56px', sm: '64px' },
+              height: '100%',
             }}
           >
             <Box 
@@ -79,6 +101,15 @@ export default function RootLayout(props) {
                 flex: 1,
                 py: 3,
                 px: { xs: 0, sm: 0 },
+                minHeight: 0,
+                overflowX: 'hidden',
+                '& img': {
+                  height: 'auto',
+                  maxWidth: '100%',
+                },
+                '& .MuiGrid-item': {
+                  display: 'flex',
+                },
               }}
             >
               {children}
@@ -91,7 +122,8 @@ export default function RootLayout(props) {
         <Script 
           async 
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1960990522971470" 
-          crossOrigin="anonymous" 
+          crossOrigin="anonymous"
+          strategy="lazyOnload"
         />
         <GoogleTagManager gtmId="GTM-WVW74LTW" />
       </body>
