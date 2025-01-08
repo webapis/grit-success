@@ -7,14 +7,13 @@ import keywordMetaData from '@/app/dizisponsoru/keywordMetaData.json';
 import pagesData from '@/app/dizi/dizisponsoru.json'
 import deaccent from '@/app/dizisponsoru/[...slug]/deaccent';
 import { countItemsByKeyword } from '@/app/dizisponsoru/[...slug]/page';
-import { Metadata } from 'next'
 import getViews from "@/app/utils/firebase/supabase"
 
 
 const keywordsCounter = countItemsByKeyword({ pagesMetaData, keywordMetaData })
 
 /**
- * @type {import('next').Metadata}
+ * @type {import('next/types').Metadata}
  */
 export function generateMetadata({ params }) {
     const result = pagesMetaData.find(f => {
@@ -50,7 +49,7 @@ export function generateMetadata({ params }) {
 }
 
 /**
- * @type {import('next').PageConfig}
+ * @type {import('next/types').PageConfig}
  */
 export const dynamic = 'force-static'
 export const dynamicParams = false
