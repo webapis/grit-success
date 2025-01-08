@@ -8,6 +8,7 @@ import pagesData from '@/app/dizi/dizisponsoru.json'
 import deaccent from '@/app/dizisponsoru/[...slug]/deaccent';
 import { countItemsByKeyword } from '@/app/dizisponsoru/[...slug]/page';
 import { Metadata } from 'next'
+import getViews from "@/app/utils/firebase/supabase"
 
 
 const keywordsCounter = countItemsByKeyword({ pagesMetaData, keywordMetaData })
@@ -86,8 +87,13 @@ export default async function DiziPage({ params }) {
     const pageCount = Math.ceil(resultSimple.length / 50)
     const diziSlug = deaccent(result.dizi).replaceAll(' ', '-').toLowerCase()
 
-    // Fetch view data at the page level
-    const userViewData = await getViews({ table: 'dizisponsoru' })
+    // Fetch view data with error handling
+    let userViewData = { data: [] }
+    try {
+        userViewData = await getViews({ table: 'dizisponsoru' })
+    } catch (error) {
+        console.error('Failed to fetch view data:', error)
+    }
 
     return (
         <main>
