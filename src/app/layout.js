@@ -5,6 +5,7 @@ import { Inter, Poppins } from 'next/font/google'
 import ScrollToTopButton from './components/ScrollToTopButton';
 import { Box, CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import Header from './components/Header';
+import HideOnScroll from './components/HideOnScroll';
 import './globals.css'
 import Footer from './components/Footer';
 import Script from 'next/script'
@@ -60,15 +61,18 @@ export default function RootLayout(props) {
       <body className={poppins.className}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
+          <HideOnScroll>
+            <Header />
+          </HideOnScroll>
           <Box
             sx={{
               display: 'flex',
               flexDirection: 'column',
               minHeight: '100vh',
               bgcolor: 'background.default',
+              pt: { xs: '56px', sm: '64px' },
             }}
           >
-            <Header />
             <Box 
               component="main" 
               sx={{ 
