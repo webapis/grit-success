@@ -5,294 +5,150 @@ import keywordMetaData from '@/app/dizisponsoru/keywordMetaData.json';
 import pagesMetaData from '@/app/dizi/pageMetadata.json';
 import pagesData from '@/app/dizi/dizisponsoru.json';
 import deaccent from './deaccent';
-import getViews from "@/app/utils/firebase/supabase"
 
-// Route segment config for static generation
-export const dynamic = 'force-static';
-export const dynamicParams = false;
-export const revalidate = 3600; // Revalidate every hour
-
-// Global caches
-const CACHE_VERSION = '1.0';
-const slugCache = new Map();
-const memoizedPageData = new Map();
-const fuseInstances = new Map();
-const searchResultsCache = new Map();
-const keywordResultsCache = new Map();
-
-// Fuse.js options optimized for performance
+// Pre-compute common data at build time
+const ITEMS_PER_PAGE = 50;
 const fuseOptions = {
     keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'Acyklama'],
     minMatchCharLength: 4,
     threshold: 0.0,
-    distance: 100,
-    ignoreLocation: true,
-    useExtendedSearch: true,
-    includeScore: false,
-    includeMatches: false,
-    shouldSort: true,
-    findAllMatches: false,
 };
 
-// Utility functions with improved caching
-function getProcessedSlug(dizi) {
-    const cacheKey = `${CACHE_VERSION}:slug:${dizi}`;
-    if (!slugCache.has(cacheKey)) {
-        slugCache.set(cacheKey, deaccent(dizi).replaceAll(' ', '-').toLowerCase());
-    }
-    return slugCache.get(cacheKey);
-}
+// Pre-process page metadata for faster lookups
+const pageMetadataMap = new Map(
+    pagesMetaData.map(page => [
+        deaccent(page.dizi).replaceAll(' ', '-').toLowerCase(),
+        page
+    ])
+);
 
-function getPageData(slug) {
-    const cacheKey = `${CACHE_VERSION}:page:${slug}`;
-    if (!memoizedPageData.has(cacheKey)) {
-        const cleanSlug = slug.replace('-dizi-sponsorlari', '');
-        memoizedPageData.set(
-            cacheKey,
-            pagesData.filter((f) => f.tag === cleanSlug)
-        );
-    }
-    return memoizedPageData.get(cacheKey);
-}
+// Pre-process keyword metadata for faster lookups
+const keywordMetadataMap = new Map(
+    keywordMetaData.map(keyword => [keyword.keyword, keyword])
+);
 
-function getFuseInstance(data) {
-    const key = `${CACHE_VERSION}:fuse:${data.length}`;
-    if (!fuseInstances.has(key)) {
-        fuseInstances.set(key, new Fuse(data, fuseOptions));
-    }
-    return fuseInstances.get(key);
-}
+// Pre-compute keyword counts
+const keywordsCounter = (() => {
+    const candidateKeywords = [];
+    const fuseInstances = new Map();
 
-function getSearchResults(fuse, pattern, cacheKey) {
-    if (!searchResultsCache.has(cacheKey)) {
-        try {
-            const results = pattern && fuse
-                ? fuse.search({ "$and": [pattern] }).map(m => ({ ...m.item }))
-                : (fuse ? fuse.__collection : []);
-            searchResultsCache.set(cacheKey, results || []);
-        } catch (error) {
-            console.error('Search error:', error);
-            searchResultsCache.set(cacheKey, []);
+    for (const pageObj of pagesMetaData) {
+        const tag = pageObj.slug.replace('-dizi-sponsorlari', '');
+        const resultSimple = pagesData.filter(f => f.tag === tag);
+        
+        // Reuse Fuse instance for the same dataset
+        if (!fuseInstances.has(tag)) {
+            fuseInstances.set(tag, new Fuse(resultSimple, fuseOptions));
         }
-    }
-    return searchResultsCache.get(cacheKey) || [];
-}
+        const fuse = fuseInstances.get(tag);
 
-function paginate(array, page, pageSize = 50) {
-    const startIndex = (page - 1) * pageSize;
-    return array.slice(startIndex, startIndex + pageSize);
-}
+        for (const keywordObj of keywordMetaData) {
+            const results = keywordObj.or 
+                ? fuse.search({ "$and": [keywordObj.or] }).map(m => ({ ...m.item }))
+                : resultSimple;
 
-function flattenArrayByPageCount(arrayOfObjects) {
-    return arrayOfObjects.flatMap(({ dizi, pageCount, keyword }) =>
-        Array.from({ length: pageCount }, (_, index) => ({
-            dizi,
-            keyword,
-            page: index + 1,
-        }))
-    );
-}
-
-// Optimized data processing with caching
-export function countItemsByKeyword({ pagesMetaData, keywordMetaData }) {
-    const cacheKey = `${CACHE_VERSION}:keywords:${pagesMetaData.length}:${keywordMetaData.length}`;
-    
-    if (!keywordResultsCache.has(cacheKey)) {
-        try {
-            const results = pagesMetaData.flatMap(pageObj => {
-                if (!pageObj?.slug) return [];
-
-                const resultSimple = getPageData(pageObj.slug);
-                if (!resultSimple?.length) return [];
-
-                const fuse = getFuseInstance(resultSimple);
-                if (!fuse) return [];
-                
-                // Add "Tümü" option first
-                const allResults = [{
-                    dizi: pageObj.slug.replace('-dizi-sponsorlari', ''),
-                    keyword: 'tum',
-                    count: resultSimple.length,
-                    keywordTitle: 'Tümü',
-                }];
-                
-                // Then add other keyword results
-                const keywordResults = keywordMetaData.map(keywordObj => {
-                    if (!keywordObj) return null;
-
-                    const searchCacheKey = `${CACHE_VERSION}:search:${pageObj.slug}:${keywordObj.keyword}`;
-                    const results = getSearchResults(fuse, keywordObj.or, searchCacheKey);
-
-                    return {
-                        dizi: pageObj.slug.replace('-dizi-sponsorlari', ''),
-                        keyword: keywordObj.keyword || 'tum',
-                        count: Array.isArray(results) ? results.length : 0,
-                        keywordTitle: keywordObj.keywordTitle || 'Tüm Ürünler',
-                    };
-                }).filter(Boolean); // Remove null results
-
-                return [...allResults, ...keywordResults];
+            candidateKeywords.push({
+                dizi: tag,
+                keyword: keywordObj.keyword,
+                count: results.length,
+                keywordTitle: keywordObj.keywordTitle,
             });
-
-            keywordResultsCache.set(cacheKey, results || []);
-        } catch (error) {
-            console.error('Keyword counting error:', error);
-            keywordResultsCache.set(cacheKey, []);
         }
     }
-    
-    return keywordResultsCache.get(cacheKey) || [];
-}
+    return candidateKeywords;
+})();
 
-// Initialize counters with caching
-const keywordsCounter = countItemsByKeyword({ pagesMetaData, keywordMetaData });
-
-// Optimized metadata generation
 export function generateMetadata({ params }) {
-    const dizi = params.slug[0];
-    const keyword = params.slug[1];
+    const pageObj = pageMetadataMap.get(params.slug[0]);
+    const keywordObj = keywordMetadataMap.get(params.slug[1]);
 
-    const keywordObj = keywordMetaData.find(f => f.keyword === keyword);
-    const pageObj = pagesMetaData.find(f => getProcessedSlug(f.dizi) === dizi);
-
-    if (!pageObj || !keywordObj) {
-        return { title: 'Dizi Sponsoru' };
-    }
-
-    const title = `${pageObj.dizi} Dizisi ${keywordObj.keywordTitle} Sponsorları`;
-    const description = `${pageObj.dizi} dizisinin ${keywordObj.keywordTitle.toLowerCase()} sponsorları ve ürünleri hakkında detaylı bilgi.`;
-    
     return {
-        title,
-        description,
-        openGraph: {
-            title,
-            description,
-            type: 'website',
-            locale: 'tr_TR',
-        },
-        alternates: {
-            canonical: `/dizisponsoru/${dizi}/${keyword}`
-        }
+        title: `${pageObj.dizi} Dizisi ${keywordObj.keywordTitle} Sponsorları`,
     };
 }
 
-// Main component with optimized data fetching
 export default async function DiziSponsoru({ params }) {
-    const dizi = params.slug[0];
-    const keyword = params.slug[1];
-    const page = parseInt(params.slug[3]) || 1;
+    const [dizi, keyword, _, pageStr] = params.slug;
+    const page = parseInt(pageStr) || 1;
 
-    // Fetch view data with error handling
-    let userViewData = { data: [] }
-    try {
-        userViewData = await getViews({ table: 'dizisponsoru' })
-    } catch (error) {
-        console.error('Failed to fetch view data:', error)
-    }
-
-    const pageObj = pagesMetaData.find(f => getProcessedSlug(f.dizi) === dizi);
-    if (!pageObj) return null;
-
-    // Handle "Tümü" case
-    if (keyword === 'tum') {
-        const resultSimple = getPageData(pageObj.slug);
-        if (!resultSimple?.length) return null;
-
-        const paginatedData = paginate(resultSimple, page);
-        const pageCount = Math.ceil(resultSimple.length / 50);
-
-        return (
-            <main className="min-h-screen py-8">
-                <SearchResultContainer 
-                    totalItems={resultSimple.length} 
-                    keywordsCounter={keywordsCounter.filter(f => f?.dizi === dizi) || []} 
-                    data={paginatedData} 
-                    pageTitle={`${pageObj.dizi} Dizisi Tüm Sponsorları`} 
-                    dizi={dizi} 
-                    page={page} 
-                    keyword={keyword}
-                    userViewData={userViewData}
-                />
-                <PaginationContainer 
-                    count={pageCount} 
-                    page={page} 
-                    url={`/dizisponsoru/${dizi}/${keyword}/sayfa/`} 
-                />
-            </main>
-        );
-    }
-
-    const keywordObj = keywordMetaData.find(f => f.keyword === keyword);
-    if (!keywordObj) return null;
-
-    const resultSimple = getPageData(pageObj.slug);
-    if (!resultSimple?.length) return null;
-
-    const fuse = getFuseInstance(resultSimple);
-    if (!fuse) return null;
+    const pageObj = pageMetadataMap.get(dizi);
+    const keywordObj = keywordMetadataMap.get(keyword);
+    const tag = pageObj.slug.replace('-dizi-sponsorlari', '');
     
-    const searchCacheKey = `${CACHE_VERSION}:search:${pageObj.slug}:${keyword}:${page}`;
-    const results = getSearchResults(fuse, keywordObj.or, searchCacheKey);
+    // Filter results based on the page object slug
+    const resultSimple = pagesData.filter(f => f.tag === tag);
+    
+    // Search results
+    const results = keywordObj.or
+        ? new Fuse(resultSimple, fuseOptions)
+            .search({ "$and": [keywordObj.or] })
+            .map(m => ({ ...m.item }))
+        : resultSimple;
 
-    const paginatedData = paginate(results, page);
-    const pageCount = Math.ceil(results.length / 50);
+    // Paginate results
+    const startIndex = (page - 1) * ITEMS_PER_PAGE;
+    const paginatedData = results.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+    const pageCount = Math.ceil(results.length / ITEMS_PER_PAGE);
 
     return (
-        <main className="min-h-screen py-8">
+        <>
             <SearchResultContainer 
                 totalItems={resultSimple.length} 
-                keywordsCounter={keywordsCounter.filter(f => f?.dizi === dizi) || []} 
+                keywordsCounter={keywordsCounter.filter(f => f.dizi === tag)} 
                 data={paginatedData} 
                 pageTitle={`${pageObj.dizi} Dizisi ${keywordObj.keywordTitle} Sponsorları`} 
                 dizi={dizi} 
                 page={page} 
-                keyword={keyword}
-                userViewData={userViewData}
+                keyword={keyword} 
             />
             <PaginationContainer 
                 count={pageCount} 
                 page={page} 
                 url={`/dizisponsoru/${dizi}/${keyword}/sayfa/`} 
             />
-        </main>
+        </>
     );
 }
 
-// Optimized static params generation
 export function generateStaticParams() {
-    const pageCandidates = pagesMetaData.flatMap(pageObj => {
-        const resultSimple = getPageData(pageObj.slug);
-        const fuse = getFuseInstance(resultSimple);
+    const pageCandidates = [];
+    const fuseInstances = new Map();
+
+    for (const pageObj of pagesMetaData) {
+        const tag = pageObj.slug.replace('-dizi-sponsorlari', '');
+        const resultSimple = pagesData.filter(f => f.tag === tag);
         
-        // Add "Tümü" option first
-        const allResults = [{
-            dizi: pageObj.dizi,
-            keyword: 'tum',
-            pageCount: Math.ceil(resultSimple.length / 50)
-        }];
-        
-        // Then add other keyword results
-        const keywordResults = keywordMetaData.map(keywordObj => {
-            const searchCacheKey = `${CACHE_VERSION}:static:${pageObj.slug}:${keywordObj.keyword}`;
-            const results = getSearchResults(fuse, keywordObj.or, searchCacheKey);
+        // Reuse Fuse instance for the same dataset
+        if (!fuseInstances.has(tag)) {
+            fuseInstances.set(tag, new Fuse(resultSimple, fuseOptions));
+        }
+        const fuse = fuseInstances.get(tag);
 
-            return {
-                dizi: pageObj.dizi,
-                keyword: keywordObj.keyword,
-                pageCount: Math.ceil(results.length / 50)
-            };
-        });
+        for (const keywordObj of keywordMetaData) {
+            const results = keywordObj.or 
+                ? fuse.search({ "$and": [keywordObj.or] }).map(m => ({ ...m.item }))
+                : resultSimple;
+            
+            const pageCount = Math.ceil(results.length / ITEMS_PER_PAGE);
+            
+            if (pageCount > 0) {
+                pageCandidates.push({
+                    dizi: pageObj.dizi,
+                    keyword: keywordObj.keyword,
+                    pageCount
+                });
+            }
+        }
+    }
 
-        return [...allResults, ...keywordResults];
-    });
-
-    return flattenArrayByPageCount(pageCandidates).map(({ dizi, keyword, page }) => ({
-        slug: [
-            getProcessedSlug(dizi),
-            keyword,
-            'sayfa',
-            page.toString()
-        ],
-    }));
+    return pageCandidates.flatMap(({ dizi, keyword, pageCount }) =>
+        Array.from({ length: pageCount }, (_, index) => ({
+            slug: [
+                deaccent(dizi).toLowerCase().replaceAll(' ', '-'),
+                keyword,
+                'sayfa',
+                (index + 1).toString()
+            ]
+        }))
+    );
 }
