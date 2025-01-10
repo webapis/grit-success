@@ -5,7 +5,7 @@ import keywordMetaData from '@/app/dizisponsoru/keywordMetaData.json';
 import pagesData from '@/app/dizi/dizisponsoru.json';
 import deaccent from '@/app/dizisponsoru/[...slug]/deaccent';
 import getViews from "@/app/utils/firebase/supabase";
-
+import Fuse from 'fuse.js';
 const ITEMS_PER_PAGE = 50;
 
 // Remove Fuse.js since it's not being used in this file
@@ -17,6 +17,41 @@ export function countItemsByKeyword(dizi) {
         keywordTitle: keywordObj.keywordTitle,
     }));
 }
+const fuseOptions = {
+    keys: ['ServiceName', 'TVSeriesTitle', 'Tag', 'Name', 'Acyklama'],
+    minMatchCharLength: 4,
+    threshold: 0.0,
+};
+
+const keywordsCounter = (() => {
+    const candidateKeywords = [];
+    const fuseInstances = new Map();
+
+    for (const pageObj of pagesMetaData) {
+        const tag = pageObj.slug.replace('-dizi-sponsorlari', '');
+        const resultSimple = pagesData.filter(f => f.tag === tag);
+        
+        // Reuse Fuse instance for the same dataset
+        if (!fuseInstances.has(tag)) {
+            fuseInstances.set(tag, new Fuse(resultSimple, fuseOptions));
+        }
+        const fuse = fuseInstances.get(tag);
+
+        for (const keywordObj of keywordMetaData) {
+            const results = keywordObj.or 
+                ? fuse.search({ "$and": [keywordObj.or] }).map(m => ({ ...m.item }))
+                : resultSimple;
+
+            candidateKeywords.push({
+                dizi: tag,
+                keyword: keywordObj.keyword,
+                count: results.length,
+                keywordTitle: keywordObj.keywordTitle,
+            });
+        }
+    }
+    return candidateKeywords;
+})();
 
 export function generateMetadata({ params }) {
     const result = pagesMetaData.find(f => f.slug === params.slug[0]);
@@ -82,7 +117,7 @@ export default async function DiziPage({ params }) {
         <main>
             <SearchResultContainer 
                 totalItems={resultSimple.length} 
-                keywordsCounter={countItemsByKeyword(tag)} 
+                keywordsCounter={keywordsCounter.filter(f => f.dizi === tag)} 
                 data={paginatedData} 
                 pageTitle={result.pageTitle} 
                 dizi={diziSlug} 
