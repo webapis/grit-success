@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useCallback, memo, useMemo } from 'react';
+import React, { useState, useCallback, memo,useMemo } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
@@ -16,15 +16,10 @@ import extractSubdomain from './extractSubdomain';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import ImageIcon from '@mui/icons-material/Image';
 
-// Helper function for hostname formatting
+// Add this utility function at the top with other imports
 const formatHostname = (url) => {
-  try {
-    const hostname = new URL(url).hostname;
-    return hostname.replace(/^www\./, '');
-  } catch (e) {
-    console.error('Invalid URL:', url);
-    return url;
-  }
+  const hostname = new URL(url).hostname;
+  return hostname.replace(/^www\./, '');  // Remove www.
 };
 
 // Styled components remain unchanged since they're already optimized
@@ -103,16 +98,14 @@ const ExpandableTypography = styled(Typography)(({ theme }) => ({
   },
 }));
 
-// Memoized image component with loading optimization
-const OptimizedImage = memo(function OptimizedImage({ src, alt, onLoad, onError }) {
+// Memoized image component
+const MemoizedImage = memo(function Image({ src, alt, onLoad, onError }) {
   return (
     <StyledImage
       src={src}
       alt={alt}
       onLoad={onLoad}
       onError={onError}
-      loading="lazy"
-      decoding="async"
     />
   );
 });
@@ -181,98 +174,16 @@ const Description = memo(function Description({ description, expanded, onClick }
   );
 });
 
-// Memoized header section
-const HeaderSection = memo(function HeaderSection({ TVSeriesTitle, hostname, Website }) {
-  return (
-    <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
-      <Typography 
-        variant="subtitle2" 
-        color="text.secondary"
-        sx={{ 
-          fontSize: '0.9rem',
-          fontWeight: 500,
-          letterSpacing: '0.02em'
-        }}
-      >
-        {TVSeriesTitle}
-      </Typography>
-      
-      <Tooltip title={hostname}>
-        <IconButton
-          component={ClickableLink}
-          rootPath="dizisponsoru"
-          clickable={1}
-          title={hostname}
-          linkId={Website}
-          size="small"
-          sx={{ 
-            backgroundColor: (theme) => theme.palette.grey[50],
-            '&:hover': {
-              backgroundColor: (theme) => theme.palette.primary.light,
-              color: (theme) => theme.palette.primary.main,
-            }
-          }}
-        >
-          <OpenInNewIcon fontSize="small" />
-        </IconButton>
-      </Tooltip>
-    </Box>
-  );
-});
-
-// Memoized title section
-const TitleSection = memo(function TitleSection({ name }) {
-  return (
-    <Typography 
-      variant="h6" 
-      component="div" 
-      gutterBottom
-      sx={{ 
-        fontSize: '1.2rem',
-        fontWeight: 600,
-        color: (theme) => theme.palette.text.primary,
-        mb: 2
-      }}
-    >
-      <Tooltip title="Sponsor" arrow>
-        <Box component="span" sx={{ 
-          color: 'primary.main', 
-          fontSize: '0.9em', 
-          mr: 1,
-          fontWeight: 500
-        }}>
-          S:
-        </Box>
-      </Tooltip>
-      {name}
-    </Typography>
-  );
-});
-
-// Memoized image section
-const ImageSection = memo(function ImageSection({ item, imageName, renderImage }) {
-  return (
-    <ImageContainer>
-      <StyledImageWrapper>
-        {renderImage(`${process.env.NEXT_PUBLIC_IMG_HOST}/dizi-image/${item.Tag}.jpg`, `${item.TVSeriesTitle} dizi resmi`, 'dizi')}
-      </StyledImageWrapper>
-      <StyledImageWrapper>
-        {renderImage(`${process.env.NEXT_PUBLIC_IMG_HOST}/dizi/marka/${imageName}.jpg`, `${item.Name} marka resmi`, 'marka')}
-      </StyledImageWrapper>
-    </ImageContainer>
-  );
-});
-
-function SearchResultItem({ item, userViewData }) {
+export default function SearchResultItem({ item, userViewData }) {
   const { Name: name, Website, Acyklama, TVSeriesTitle, tag, brandTag, ServiceName, h3 } = item;
-  const imageName = useMemo(() => brandTag || extractSubdomain(Website), [brandTag, Website]);
+  const imageName = brandTag || extractSubdomain(Website);
   const hostname = useMemo(() => formatHostname(Website), [Website]);
   const [expanded, setExpanded] = useState(false);
   const [imageLoaded, setImageLoaded] = useState({ dizi: false, marka: false });
   const [imageError, setImageError] = useState({ dizi: false, marka: false });
 
   const toggleExpand = useCallback(() => setExpanded(prev => !prev), []);
-  const description = useMemo(() => Acyklama || 'No description available.', [Acyklama]);
+  const description = Acyklama || 'No description available.';
 
   const handleImageLoad = useCallback((imageType) => {
     setImageLoaded(prev => ({ ...prev, [imageType]: true }));
@@ -280,6 +191,7 @@ function SearchResultItem({ item, userViewData }) {
 
   const handleImageError = useCallback((imageType) => {
     setImageError(prev => ({ ...prev, [imageType]: true }));
+    console.error(`Failed to load ${imageType} image`);
   }, []);
 
   const renderImage = useCallback((src, alt, imageType) => {
@@ -287,7 +199,7 @@ function SearchResultItem({ item, userViewData }) {
       return <ImageIcon style={{ fontSize: 40, color: 'grey' }} />;
     }
     return (
-      <OptimizedImage
+      <MemoizedImage
         src={src}
         alt={alt}
         onLoad={() => handleImageLoad(imageType)}
@@ -298,17 +210,74 @@ function SearchResultItem({ item, userViewData }) {
 
   return (
     <StyledCard elevation={0}>
-      <ImageSection item={item} imageName={imageName} renderImage={renderImage} />
+      <ImageContainer>
+        <StyledImageWrapper>
+          {renderImage(`${process.env.NEXT_PUBLIC_IMG_HOST}/dizi-image/${item.Tag}.jpg`, `${TVSeriesTitle} dizi resmi`, 'dizi')}
+        </StyledImageWrapper>
+        <StyledImageWrapper>
+          {renderImage(`${process.env.NEXT_PUBLIC_IMG_HOST}/dizi/marka/${imageName}.jpg`, `${name} marka resmi`, 'marka')}
+        </StyledImageWrapper>
+      </ImageContainer>
 
       <ContentWrapper>
         <CardContent sx={{ flexGrow: 1, py: 2, px: 3 }}>
-          <HeaderSection 
-            TVSeriesTitle={TVSeriesTitle} 
-            hostname={hostname} 
-            Website={Website}
-          />
+          <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
+            <Typography 
+              variant="subtitle2" 
+              color="text.secondary"
+              sx={{ 
+                fontSize: '0.9rem',
+                fontWeight: 500,
+                letterSpacing: '0.02em'
+              }}
+            >
+              {TVSeriesTitle}
+            </Typography>
+            
+            <Tooltip title={hostname}>
+              <IconButton
+                component={ClickableLink}
+                rootPath="dizisponsoru"
+                clickable={1}
+                title={hostname}
+                linkId={Website}
+                size="small"
+                sx={{ 
+                  backgroundColor: (theme) => theme.palette.grey[50],
+                  '&:hover': {
+                    backgroundColor: (theme) => theme.palette.primary.light,
+                    color: (theme) => theme.palette.primary.main,
+                  }
+                }}
+              >
+                <OpenInNewIcon fontSize="small" />
+              </IconButton>
+            </Tooltip>
+          </Box>
           
-          <TitleSection name={name} />
+          <Typography 
+            variant="h6" 
+            component="div" 
+            gutterBottom
+            sx={{ 
+              fontSize: '1.2rem',
+              fontWeight: 600,
+              color: (theme) => theme.palette.text.primary,
+              mb: 2
+            }}
+          >
+            <Tooltip title="Sponsor" arrow>
+              <Box component="span" sx={{ 
+                color: 'primary.main', 
+                fontSize: '0.9em', 
+                mr: 1,
+                fontWeight: 500
+              }}>
+                S:
+              </Box>
+            </Tooltip>
+            {name}
+          </Typography>
           
           {ServiceName && (
             <Box sx={{ mt: 1, mb: 2 }}>
@@ -348,5 +317,3 @@ function SearchResultItem({ item, userViewData }) {
     </StyledCard>
   );
 }
-
-export default memo(SearchResultItem);
