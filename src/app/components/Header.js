@@ -1,12 +1,31 @@
 import { AppBar, Toolbar, Typography, Button, Container, IconButton, Box, Drawer, List, ListItem, ListItemText, ListItemIcon, Tabs, Tab } from '@mui/material';
 import { Menu as MenuIcon, Home, Movie, Checkroom, Business, Info } from '@mui/icons-material';
 import Link from 'next/link';
-import { useState } from 'react';
-import { usePathname } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [activeLoadingPath, setActiveLoadingPath] = useState(null);
   const pathname = usePathname();
+  const router = useRouter();
+
+  useEffect(() => {
+    setIsLoading(false);
+    setActiveLoadingPath(null);
+    setMobileOpen(false);
+  }, [pathname]);
+
+  const handleNavigation = (path) => {
+    if (path === pathname) {
+      setMobileOpen(false);
+      return;
+    }
+    setIsLoading(true);
+    setActiveLoadingPath(path);
+    router.push(path);
+  };
 
   const mainNavItems = [
     { name: 'Ana Sayfa', path: '/', icon: Home },
@@ -75,30 +94,58 @@ export default function Header() {
             <Box sx={{ display: { xs: 'none', sm: 'flex' }, gap: 0.5 }}>
               {mainNavItems.map((item) => {
                 const isActive = pathname === item.path;
+                const isLoadingThis = isLoading && activeLoadingPath === item.path;
                 const Icon = item.icon;
                 return (
-                  <Button
+                  <Box
                     key={item.name}
-                    component={Link}
-                    href={item.path}
-                    startIcon={<Icon />}
-                    sx={{
-                      color: isActive ? 'primary.main' : '#1a1a1a',
-                      mx: 0.5,
-                      py: 1,
-                      px: 2,
-                      '&:hover': {
-                        color: 'primary.main',
-                        backgroundColor: 'rgba(0, 127, 255, 0.04)',
-                      },
-                      textTransform: 'none',
-                      fontWeight: isActive ? 600 : 400,
-                      borderRadius: 2,
-                      transition: 'all 0.2s ease-in-out'
-                    }}
+                    sx={{ position: 'relative' }}
                   >
-                    {item.name}
-                  </Button>
+                    <Button
+                      onClick={() => handleNavigation(item.path)}
+                      startIcon={<Icon />}
+                      sx={{
+                        color: isActive ? 'primary.main' : '#1a1a1a',
+                        mx: 0.5,
+                        py: 1,
+                        px: 2,
+                        '&:hover': {
+                          color: 'primary.main',
+                          backgroundColor: 'rgba(0, 127, 255, 0.04)',
+                        },
+                        textTransform: 'none',
+                        fontWeight: isActive ? 600 : 400,
+                        borderRadius: 2,
+                        transition: 'all 0.2s ease-in-out'
+                      }}
+                    >
+                      {item.name}
+                    </Button>
+                    
+                    {/* Loading indicator under desktop nav button */}
+                    {isLoadingThis && (
+                      <Box
+                        sx={{
+                          position: 'absolute',
+                          bottom: 0,
+                          left: 0,
+                          right: 0,
+                          height: '2px',
+                          bgcolor: 'primary.main',
+                          zIndex: 1,
+                          animation: 'loading 1s infinite linear',
+                          '@keyframes loading': {
+                            '0%': {
+                              transform: 'translateX(-100%)',
+                            },
+                            '100%': {
+                              transform: 'translateX(100%)',
+                            },
+                          },
+                        }}
+                      />
+                    )}
+                  </Box>
                 );
               })}
             </Box>
@@ -168,9 +215,9 @@ export default function Header() {
           </Box>
 
           <List sx={{ flex: 1, pt: 2 }}>
-            {/* Main Navigation Items */}
             {mainNavItems.map((item) => {
               const isActive = pathname === item.path;
+              const isLoadingThis = isLoading && activeLoadingPath === item.path;
               const Icon = item.icon;
               return (
                 <ListItem 
@@ -178,40 +225,59 @@ export default function Header() {
                   disablePadding
                   sx={{
                     backgroundColor: isActive ? 'rgba(0, 127, 255, 0.04)' : 'transparent',
+                    position: 'relative',
+                    cursor: 'pointer'
                   }}
+                  onClick={() => handleNavigation(item.path)}
                 >
-                  <Link 
-                    href={item.path} 
-                    style={{ 
-                      width: '100%', 
-                      textDecoration: 'none',
-                      color: isActive ? '#007FFF' : '#1a1a1a'
+                  <ListItem 
+                    sx={{ 
+                      px: 3,
+                      '&:hover': {
+                        backgroundColor: 'rgba(0, 127, 255, 0.04)',
+                      }
                     }}
                   >
-                    <ListItem 
-                      sx={{ 
-                        px: 3,
-                        '&:hover': {
-                          backgroundColor: 'rgba(0, 127, 255, 0.04)',
+                    <ListItemIcon sx={{ 
+                      color: isActive ? 'primary.main' : '#1a1a1a',
+                      minWidth: 40
+                    }}>
+                      <Icon />
+                    </ListItemIcon>
+                    <ListItemText 
+                      primary={item.name}
+                      sx={{
+                        '& .MuiListItemText-primary': {
+                          fontWeight: isActive ? 600 : 400,
+                          color: isActive ? '#007FFF' : '#1a1a1a'
                         }
                       }}
-                    >
-                      <ListItemIcon sx={{ 
-                        color: isActive ? 'primary.main' : '#1a1a1a',
-                        minWidth: 40
-                      }}>
-                        <Icon />
-                      </ListItemIcon>
-                      <ListItemText 
-                        primary={item.name}
-                        sx={{
-                          '& .MuiListItemText-primary': {
-                            fontWeight: isActive ? 600 : 400,
-                          }
-                        }}
-                      />
-                    </ListItem>
-                  </Link>
+                    />
+                  </ListItem>
+                  
+                  {/* Loading indicator under the nav item */}
+                  {isLoadingThis && (
+                    <Box
+                      sx={{
+                        position: 'absolute',
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        height: '2px',
+                        bgcolor: 'primary.main',
+                        zIndex: 1,
+                        animation: 'loading 1s infinite linear',
+                        '@keyframes loading': {
+                          '0%': {
+                            transform: 'translateX(-100%)',
+                          },
+                          '100%': {
+                            transform: 'translateX(100%)',
+                          },
+                        },
+                      }}
+                    />
+                  )}
                 </ListItem>
               );
             })}
