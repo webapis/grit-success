@@ -7,7 +7,13 @@ import Box from '@mui/material/Box';
 export default function PaginationContainer({ count, page, url }) {
 
     const handleChange = (event, value) => {
-      window.location.replace(url+ value)
+      if(value===1){
+        window.location.replace(url.replace('/sayfa/', ''));
+      }else{
+        window.location.replace(url+ value)
+      }
+
+   
     };
 
     return (
